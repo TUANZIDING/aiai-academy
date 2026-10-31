@@ -145,6 +145,28 @@ code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.88em;background:r
 pre.cmd code{background:none;color:inherit}
 #p1 .eye img{transform:scale(1.0);animation:zoom2 14s ease-in-out infinite alternate}
 @keyframes zoom2{to{transform:scale(1.12)}}
+/* v0.3 投屏放大层 */
+#brand{font-size:22px}#brand b{font-size:24px}#magbadge{font-size:22px}
+.kick{font-size:23px}.kick .no{font-size:26px}
+h2.t{font-size:56px}
+.lede{font-size:28px;line-height:1.55}
+.tag{font-size:21px;padding:4px 14px}
+.demo{font-size:19px}
+.src{font-size:20px}
+.box h3{font-size:34px}
+.box p,.box li{font-size:27px;line-height:1.55}
+.num{font-size:72px}.num small{font-size:28px}
+table.t{font-size:25px}
+table.t td,table.t th{padding:12px 16px}
+#p1 .ttl .k{font-size:26px}#p1 .ttl h1{font-size:68px}#p1 .ttl .sub{font-size:32px}#p1 .ttl .meta{font-size:25px}
+#p1 .chips div{font-size:23px}#p1 .chips b{font-size:34px}
+#chapName{font-size:22px}
+#toc button{font-size:22px}
+.cap{font-size:19px}
+.pt h4{font-size:27px}.pt p{font-size:23px}
+.en{font-size:20px}.qt .zh{font-size:20px}.qt .wh{font-size:18px}
+.dense h2.t{font-size:48px}.dense table.t{font-size:22px}.dense .box h3{font-size:28px}.dense .box li,.dense .box p{font-size:23px}
+pre.cmd{font-size:23px}
 </style></head><body>
 <div id="viewport"><div id="stage">
 <div id="brand"><span class="dot"></span><b>Kosmos-lite</b><span>· AI 科研工作流实战课</span></div>
@@ -181,7 +203,7 @@ pre.cmd code{background:none;color:inherit}
 <section class="page" id="p4" data-title="核心反转" data-mag="理念">
 <div class="hd"><div class="kick"><span class="no">03</span>核心理念</div><h2 class="t">AI 的问题不是不够聪明，而是<em class="hl">太会讲故事</em></h2></div>
 <div class="g2" style="grid-template-columns:1fr 1.1fr">
-<div class="card box" data-b="1"><h3>所以我们要的不是更强的 AI</h3><p style="font-size:26px;line-height:1.7">而是一套<b>更严的流程</b>：<br>它跑得快没关系，但每一步都要<br>① 留下痕迹　② 分清证据等级　③ 关键决定必须由人放行。</p></div>
+<div class="card box" data-b="1"><h3>所以我们要的不是更强的 AI</h3><p style="font-size:31px;line-height:1.7">而是一套<b>更严的流程</b>：<br>它跑得快没关系，但每一步都要<br>① 留下痕迹　② 分清证据等级　③ 关键决定必须由人放行。</p></div>
 <div class="card box" data-b="2"><h3>Kosmos-lite 的三句话</h3><table class="t">
 <tr><th style="width:30%">借鉴</th><th>做法</th></tr>
 <tr><td><b>世界模型</b></td><td><code>world-model.md</code> 是唯一真值，假设的支持、削弱、待定都写在这里</td></tr>
@@ -308,7 +330,7 @@ pre.cmd code{background:none;color:inherit}
 <li>证明实验数据真实、作者身份真实</li>
 <li>证明“引用存在”就等于“引用支持你”</li>
 <li>证明隐私扫描通过就没有隐私信息</li></ul></div></div>
-<div class="card box" data-b="3" style="margin-top:24px"><p style="font-size:24px"><b>一句话：</b>工具把“偷懒和作弊”的成本提高了，但科研诚信的最后一道门，永远是你自己。</p></div></section>
+<div class="card box" data-b="3" style="margin-top:24px"><p style="font-size:29px"><b>一句话：</b>工具把“偷懒和作弊”的成本提高了，但科研诚信的最后一道门，永远是你自己。</p></div></section>
 
 <section class="page" id="p15" data-title="现场演示" data-mag="演示">
 <div class="dense"><div class="hd"><div class="kick"><span class="no">14</span>现场演示 · Codex</div><h2 class="t">10 分钟跑通：安装 → 体检 → 建项目 → 看门禁拦住 AI</h2></div>
@@ -347,11 +369,11 @@ manuscript-v1.3.0.py check ~/Projects/demo-loop</pre></div>
 <section class="page" id="p17" data-title="带走 5 条规则" data-mag="总结">
 <div class="hd"><div class="kick"><span class="no">16</span>今天带走的 5 条规则</div><h2 class="t">就算不用这个工具，这 5 条也能直接用在你的课题上</h2></div>
 <div class="pts" style="max-width:1560px">
-<div class="pt bl" data-b="1"><h4>1 · 先干后湿</h4><p style="font-size:21px">立项前，先用公开数据花一周给假设“找茬”；结论不是“能不能做”，而是“先做哪个最便宜的实验”。</p></div>
-<div class="pt eo" data-b="2"><h4>2 · 每句话三选一</h4><p style="font-size:21px">事实、关联、推测。分不清的，就按推测处理。</p></div>
-<div class="pt he" data-b="3" style="border-left:6px solid var(--he)"><h4>3 · 统计要第二双眼睛</h4><p style="font-size:21px">关键检验用成熟库并交叉验证；先查样本类型和重复单位，再看 p 值。</p></div>
-<div class="pt wn" data-b="4"><h4>4 · 先写判定标准，再看数据</h4><p style="font-size:21px">止损线、阳性 / 阴性对照、三向预测，在实验开始前写下来并留下时间。</p></div>
-<div class="pt ok" data-b="5"><h4>5 · AI 跑，人放行</h4><p style="font-size:21px">课题、花钱、对外发布、锁定数据，这四件事永远由你本人决定。</p></div></div></section>
+<div class="pt bl" data-b="1"><h4>1 · 先干后湿</h4><p style="font-size:26px">立项前，先用公开数据花一周给假设“找茬”；结论不是“能不能做”，而是“先做哪个最便宜的实验”。</p></div>
+<div class="pt eo" data-b="2"><h4>2 · 每句话三选一</h4><p style="font-size:26px">事实、关联、推测。分不清的，就按推测处理。</p></div>
+<div class="pt he" data-b="3" style="border-left:6px solid var(--he)"><h4>3 · 统计要第二双眼睛</h4><p style="font-size:26px">关键检验用成熟库并交叉验证；先查样本类型和重复单位，再看 p 值。</p></div>
+<div class="pt wn" data-b="4"><h4>4 · 先写判定标准，再看数据</h4><p style="font-size:26px">止损线、阳性 / 阴性对照、三向预测，在实验开始前写下来并留下时间。</p></div>
+<div class="pt ok" data-b="5"><h4>5 · AI 跑，人放行</h4><p style="font-size:26px">课题、花钱、对外发布、锁定数据，这四件事永远由你本人决定。</p></div></div></section>
 
 <section class="page" id="p18" data-title="讨论与资源" data-mag="讨论">
 <div class="hd"><div class="kick"><span class="no">17</span>讨论与资源</div><h2 class="t">留给你的三个问题</h2></div>
