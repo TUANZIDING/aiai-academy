@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="assets/gamesv1.0.css?v=1.0">
 <link rel="stylesheet" href="assets/videosv1.0.css?v=1.0">
 <link rel="stylesheet" href="assets/shelfv1.0.css?v=1.1">
-<link rel="stylesheet" href="assets/lessons-catalogv1.0.css?v=1.0.1">
+<link rel="stylesheet" href="assets/lessons-catalogv1.0.css?v=1.1">
 <style>.brand .aiai-mark{height:38px;width:auto;display:block}.w-brand .aiai-mark{height:34px;width:auto;display:block}.w-brand .aiai-sub{display:flex;flex-direction:column;line-height:1.2;font-size:.92rem}.w-brand .aiai-sub small,.brand small{display:block;font-size:.6rem;letter-spacing:.2em;font-weight:500;opacity:.7}</style>
 </head>
 <body>
@@ -207,11 +207,15 @@
 
 <section id="gallery" class="section">
   <p class="eyebrow"><span class="jn">05</span><span class="ek">GALLERY</span></p>
-  <h2>作品馆</h2>
-  <p class="sub">全部来自我的 GitHub 公开项目。<b>在线演示</b>可以课上直接打开；其余是源码和文档。</p>
-  <div class="filters" role="toolbar" aria-label="按板块筛选" id="filters"></div>
-  <p class="filter-state" id="filterState" aria-live="polite"></p>
-  <div class="grid" id="grid"></div>
+  <p class="lc-kick">GALLERY / 作品馆</p>
+  <h2 class="lc-h">作品全部公开，<em>课上就能点开。</em></h2>
+  <p class="lc-lede">全部来自我的 GitHub 公开项目：创伤教学、科研工具、智能体治理和亲子创作。带<b>在线演示</b>的课上直接打开，其余是源码和文档。</p>
+  <hr class="lc-rule">
+  <h3 class="lc-find">找到想看的作品板块</h3>
+  <div class="lc-chips" role="group" aria-label="按板块筛选" id="filters"></div>
+  <p class="lc-line" id="filterState" aria-live="polite"></p>
+  <div class="lc-list" id="grid"></div>
+  <button type="button" class="lc-more" id="gridMore" hidden></button>
 </section>
 
 <section id="games" class="section games">
@@ -263,9 +267,15 @@
 
 <section id="camp" class="section camp">
   <p class="eyebrow"><span class="jn">09</span><span class="ek">TRAINING CAMP</span></p>
-  <h2>丁医生的 AI 训练营 · <em><span data-n="camp">22</span> 堂战术课</em></h2>
-  <p class="sub">每堂课一个主题，配一个球场比喻、一个急诊或科研里的真实场景、一道课堂练习。10 到 20 分钟一堂，按顺序练，也可以挑着练。</p>
-  <div class="camp-tracks" id="campTracks"></div>
+  <p class="lc-kick">TRAINING CAMP / 训练营</p>
+  <h2 class="lc-h">一堂一个招式，<em>练完就能上场。</em></h2>
+  <p class="lc-lede">丁医生原创的 <span data-n="camp">22</span> 堂 AI 战术课：每堂配一个球场比喻、一个急诊或科研里的真实场景、一道课堂练习。10 到 45 分钟一堂，按顺序练，也可以挑着练。</p>
+  <hr class="lc-rule">
+  <h3 class="lc-find">找到想练的课程</h3>
+  <div class="lc-chips" role="group" aria-label="训练营分组" id="campChips"></div>
+  <p class="lc-line" id="campLine" aria-live="polite"></p>
+  <div class="lc-list" id="campTracks"></div>
+  <button type="button" class="lc-more" id="campMore" hidden></button>
 </section>
 
 <div class="camp-reader" id="campReader" hidden role="dialog" aria-modal="true" aria-labelledby="crTitle">
@@ -330,15 +340,15 @@
   <p class="muted" id="updated"></p>
   <p class="muted">背景音乐：“Unity” Kevin MacLeod (<a href="https://incompetech.com" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
 </footer>
-<script src="assets/appv1.0.js?v=3.0.4"></script>
+<script src="assets/appv1.0.js?v=3.1"></script>
 <script src="assets/welcomev1.0.js?v=2.0.1"></script>
-<script src="assets/campv1.0.js?v=2.5.1" defer></script>
+<script src="assets/campv1.0.js?v=3.0" defer></script>
 <script src="assets/cursorv1.0.js?v=2.0.1" defer></script>
 <script src="assets/home-v3v1.0.js?v=3.0.1" defer></script>
 <script src="assets/hlsv1.5.17.min.js" defer></script>
 <script src="assets/videosv1.0.js?v=1.0" defer></script>
 <script src="assets/lessons-catalogv1.0.js?v=1.0" defer></script>
-<script src="assets/shelfv1.0.js?v=1.2" defer></script>
+<script src="assets/shelfv1.0.js?v=1.3" defer></script>
 <script>document.addEventListener("click",e=>{const d=document.querySelector(".nav-more[open]");if(d&&(!d.contains(e.target)||e.target.closest(".menu a")))d.removeAttribute("open")});</script>
 </body>
 </html>

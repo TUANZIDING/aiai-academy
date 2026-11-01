@@ -3,21 +3,30 @@
   const $ = s => document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   let camp = null;
+  const IMG = { 'lessons/ai-historyv1.0.html': 'assets/story/hist-move37v1.0.jpg', 'lessons/onco-guidev1.0.html': 'assets/story/onco-mapv1.0.jpg', 'lessons/ai-judgmentv1.0.html': 'assets/story/judg-feedv1.0.jpg', 'lessons/rcm-paperv1.0.html': 'assets/story/rcm-erv1.0.jpg', 'lessons/kosmos-lite-coursev1.0.html': 'assets/story/kosmos-thumbv1.0.webp' };
+  let topic = 'all', more = false;
+  function no(l) { const ks = Object.keys(camp.tracks), ti = ks.indexOf(l.track); return (ti ? 'S' : 'O') + String(camp.lessons.filter(x => x.track === l.track).indexOf(l) + 1).padStart(2, '0'); }
   function render() {
-    const html = Object.entries(camp.tracks).map(([k, t], ti) => {
-      const ls = camp.lessons.filter(l => l.track === k);
-      return `<div class="camp-track t-${k}">
-        <header><span class="ct-en">${esc(t.en)}</span><h3>${esc(t.name)}</h3><p>${esc(t.desc)}</p>
-        <span class="ct-meta">${ls.length} 堂 · 约 ${ls.reduce((a, l) => a + l.min, 0)} 分钟</span></header>
-        <ol class="camp-list">${ls.map((l, i) => `
-          <li><button class="camp-card" data-id="${l.id}">
-            <span class="cc-no">${ti ? 'S' : 'O'}${String(i + 1).padStart(2, '0')}</span>
-            <span class="cc-main"><b>${esc(l.title)}</b><em>${esc(l.one)}</em></span>
-            <span class="cc-tag${l.story ? ' story' : l.deck ? ' deck' : ''}">${l.story ? '▶ 故事版' : l.deck ? '▣ 课件 · ' + l.min + '′' : l.level + ' · ' + l.min + '′'}</span>
-          </button></li>`).join('')}</ol></div>`;
+    const T = [['all', '全部课程', () => true]].concat(Object.entries(camp.tracks).map(([k, t]) => [k, t.name, l => l.track === k]), [['story', '故事版', l => !!l.story]]);
+    const cur = T.find(t => t[0] === topic);
+    $('#campChips').innerHTML = T.map(([k, n, f]) => `<button type="button" data-t="${k}" aria-pressed="${k === topic}">${esc(n)}<b>${camp.lessons.filter(f).length}</b></button>`).join('');
+    $('#campChips').querySelectorAll('button').forEach(b => b.onclick = () => { topic = b.dataset.t; more = false; render(); });
+    const rows = camp.lessons.filter(cur[2]);
+    const mins = rows.reduce((a, l) => a + (+l.min || 0), 0);
+    $('#campLine').textContent = `${cur[1]} · ${rows.length} 堂 · 约 ${mins} 分钟 · 按课程顺序`;
+    const vis = more ? rows : rows.slice(0, 6);
+    $('#campTracks').innerHTML = vis.map(l => {
+      const t = camp.tracks[l.track], img = l.story && IMG[l.story], kind = l.story ? '故事版' : l.deck ? '投屏课件' : '课程卡';
+      return `<article class="lc-card">
+        <a class="lc-thumb" href="${l.story ? esc(l.story) : '#camp-' + l.id}" data-id="${l.id}" tabindex="-1" aria-hidden="true">${img ? `<img src="${esc(img)}" alt="" loading="lazy">` : `<span class="lc-tile"><b>${no(l)}</b><small>${esc(t.name.split(' · ')[0])}</small></span>`}</a>
+        <div class="lc-body"><p class="lc-kind">${no(l)} · ${esc(t.name.split(' · ')[1] || t.name)} · ${esc(l.level)} · ${esc(l.min)} 分钟</p>
+          <h3>${esc(l.title)}</h3><p class="lc-desc">${esc(l.one)}</p>
+          <p class="lc-date">${l.story ? '▶ 全屏故事版课件' : l.deck ? '▣ 要点卡 + 投屏课件' : '要点卡'} · 更新于 ${esc(camp.updated)}</p>
+          <a class="lc-go" href="${l.story ? esc(l.story) : '#camp-' + l.id}" data-id="${l.id}">${l.story ? '进入故事版' : '看要点和课件'}<span aria-hidden="true">↗</span></a></div></article>`;
     }).join('');
-    $('#campTracks').innerHTML = html;
-    $('#campTracks').querySelectorAll('.camp-card').forEach(b => b.onclick = () => { const l = camp.lessons.find(x => x.id === b.dataset.id); if (l.story) location.href = l.story; else open(b.dataset.id, true); });
+    $('#campTracks').querySelectorAll('[data-id]').forEach(a => a.onclick = e => { const l = camp.lessons.find(x => x.id === a.dataset.id); if (l.story) return; e.preventDefault(); open(l.id, true); });
+    const m = $('#campMore'); m.hidden = rows.length <= 6; m.textContent = more ? '收起' : `展开全部 ${rows.length} 堂 ↓`;
+    m.onclick = () => { more = !more; render(); if (!more) $('#camp').scrollIntoView({ block: 'start' }); };
   }
   function open(id, push) {
     const all = camp.lessons, idx = all.findIndex(l => l.id === id); if (idx < 0) return;

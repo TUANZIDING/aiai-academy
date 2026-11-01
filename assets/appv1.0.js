@@ -64,31 +64,24 @@
     });
   }
 
+  let gOpen = false;
   function renderFilters() {
     $('#filters').innerHTML = Object.entries(CATS).map(([k, v]) => {
       const n = k === 'all' ? data.projects.length : data.projects.filter(p => p.category === k).length;
-      return `<button class="chip" data-cat="${k}" aria-pressed="${cat === k}">${v} ${n}</button>`;
+      return `<button type="button" data-cat="${k}" aria-pressed="${cat === k}">${k === 'all' ? '全部作品' : v}<b>${n}</b></button>`;
     }).join('');
-    $('#filters').querySelectorAll('.chip').forEach(b => b.onclick = () => { cat = b.dataset.cat; renderFilters(); renderGrid(); });
+    $('#filters').querySelectorAll('button').forEach(b => b.onclick = () => { cat = b.dataset.cat; gOpen = false; renderFilters(); renderGrid(); });
   }
 
   function card(p) {
     const lv = LEVELS.find(l => l.id === p.level);
-    return `<article class="card">
-      <div class="thumb">
-        <div class="ph">${esc(p.title)}</div>
-        <img src="${esc(p.cover)}" alt="${esc(p.title)} 封面" loading="lazy" onerror="this.remove()">
-        <div class="badges"><span class="badge lv">${p.level} ${lv ? lv.name : ''}</span>${p.live ? '<span class="badge live">在线演示</span>' : ''}</div>
-      </div>
-      <div class="card-body">
-        <span class="tag">${CATS[p.category]}</span>
-        <h3>${esc(p.title)}</h3>
-        <p>${esc(p.summary)}</p>
-        <p class="teach"><b>课上讲：</b>${esc(p.teach)}</p>
-        <div class="links">
-          ${p.live ? `<a class="go" href="${esc(p.live)}" target="_blank" rel="noopener">打开演示 ↗</a>` : ''}
-          <a class="src" href="${esc(p.source)}" target="_blank" rel="noopener">看源码 ↗</a>
-        </div>
+    const href = p.live || p.source;
+    return `<article class="lc-card">
+      <a class="lc-thumb og" href="${esc(href)}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="${esc(p.cover)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'lc-route',textContent:'${esc(p.level)}'}))"></a>
+      <div class="lc-body"><p class="lc-kind">${esc(CATS[p.category])} · ${p.level} ${lv ? lv.name : ''}${p.live ? '<span class="lc-badge">在线演示</span>' : ''}</p>
+        <h3>${esc(p.title)}</h3><p class="lc-desc">${esc(p.summary)}</p>
+        <p class="lc-date">课上讲：${esc(p.teach)}</p>
+        <div class="lc-links">${p.live ? `<a href="${esc(p.live)}" target="_blank" rel="noopener">打开演示 ↗</a>` : ''}<a class="${p.live ? 'src' : ''}" href="${esc(p.source)}" target="_blank" rel="noopener">看源码 ↗</a></div>
       </div></article>`;
   }
 
@@ -97,12 +90,14 @@
       .filter(p => cat === 'all' || p.category === cat)
       .filter(p => !level || p.level === level)
       .sort((a, b) => (b.live ? 1 : 0) - (a.live ? 1 : 0));
-    $('#grid').innerHTML = list.length ? list.map(card).join('') : (level && cat === 'all' ? drill(level) : '<p class="sub">这个组合下暂时没有作品，试试清除筛选。</p>');
-    const parts = [];
+    const vis = gOpen ? list : list.slice(0, 6);
+    $('#grid').innerHTML = list.length ? vis.map(card).join('') : (level && cat === 'all' ? drill(level) : '<p class="sub">这个组合下暂时没有作品，试试清除筛选。</p>');
+    const parts = [cat === 'all' ? '全部作品' : CATS[cat]];
     if (level) parts.push(`${level} 档`);
-    if (cat !== 'all') parts.push(CATS[cat]);
-    $('#filterState').innerHTML = parts.length ? `正在看：${parts.join(' · ')}（${list.length} 个） <button id="clr">清除筛选</button>` : '';
-    const clr = $('#clr'); if (clr) clr.onclick = () => { cat = 'all'; level = null; renderFilters(); renderLevels(); renderGrid(); };
+    $('#filterState').innerHTML = `${parts.join(' · ')} · ${list.length} 个作品 · 在线演示优先${level ? ' <button class="lc-clear" id="clr">清除档位</button>' : ''}`;
+    const clr = $('#clr'); if (clr) clr.onclick = () => { level = null; renderLevels(); renderGrid(); };
+    const m = $('#gridMore'); m.hidden = list.length <= 6; m.textContent = gOpen ? '收起' : `展开全部 ${list.length} 个 ↓`;
+    m.onclick = () => { gOpen = !gOpen; renderGrid(); if (!gOpen) $('#gallery').scrollIntoView({ block: 'start' }); };
   }
 
 

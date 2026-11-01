@@ -1,7 +1,7 @@
 /* 横滑展馆：把各馆的卡片网格变成可左右滑动的一排（筛选重绘后自动复位） */
 (() => {
   const SPECS = [
-    ['#conceptGrid', 'w-s'], ['#gearGrid', 'w-m'], ['#grid', 'w-m'],
+    ['#conceptGrid', 'w-s'], ['#gearGrid', 'w-m'],
     ['#libList', 'w-s rows2'], ['#tools', 'w-s rows2']
   ];
   function shelf(el, cls) {
@@ -27,7 +27,7 @@
   }
   function boot() {
     SPECS.forEach(([s, c]) => shelf(document.querySelector(s), c));
-    const ct = document.getElementById('campTracks');
+    const ct = null;
     if (ct) {
       const apply = () => ct.querySelectorAll('.camp-list').forEach(l => shelf(l, 'w-s'));
       apply(); new MutationObserver(apply).observe(ct, { childList: true });
