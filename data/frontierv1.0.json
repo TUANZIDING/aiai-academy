@@ -16,9 +16,45 @@
   {
    "id": "device",
    "name": "AI 与医疗器械"
+  },
+  {
+   "id": "agent",
+   "name": "AI 智能体"
+  },
+  {
+   "id": "drug",
+   "name": "AI 与药物研发"
   }
  ],
  "items": [
+  {
+   "t": [
+    "drug",
+    "bio"
+   ],
+   "no": "04",
+   "kind": "AI 与药物研发 · 预印本精读",
+   "title": "AI 从头设计的酶，第一次催化了一种艾滋病预防药的关键一步",
+   "d": "Baker 实验室与 NVIDIA 的 RFD4-Proteina：电脑里成功率大幅领先，试管里 67 个设计 4 个有活性。分清计算成功和实验成功，附作者原帖和局限性。",
+   "level": "预印本（未经同行评审）",
+   "date": "2026-11-01",
+   "img": "assets/frontier/rfd4-proteina-thumbv1.0.webp",
+   "href": "frontier/rfd4-proteinav1.0.html"
+  },
+  {
+   "t": [
+    "agent",
+    "device"
+   ],
+   "no": "03",
+   "kind": "AI 智能体 · 论文精读",
+   "title": "谷歌的个人健康智能体，是按“会诊”的样子搭起来的",
+   "d": "Nature 新论文 PHA：一个统筹者加三个专科智能体，读手表数据和化验单。专家更偏好它，但证明的是对话质量，不是健康结局，每轮还要等 3 分多钟。",
+   "level": "同行评审",
+   "date": "2026-11-01",
+   "img": "assets/frontier/health-agent-thumbv1.0.webp",
+   "href": "frontier/health-agentv1.0.html"
+  },
   {
    "t": [
     "onco",

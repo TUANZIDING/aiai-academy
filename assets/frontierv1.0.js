@@ -19,7 +19,7 @@
     const m = $('#frMore'); m.hidden = rows.length <= 6; m.textContent = more ? '收起' : `展开全部 ${rows.length} 篇 ↓`;
     m.onclick = () => { more = !more; render(); };
   }
-  fetch('data/frontierv1.0.json?v=1.1').then(r => r.json()).then(d => {
+  fetch('data/frontierv1.0.json?v=1.2').then(r => r.json()).then(d => {
     D = d; render();
     if (location.hash === '#frontier') { const go = () => $('#frontier').scrollIntoView(); go(); setTimeout(go, 700); setTimeout(go, 1600); }
   }).catch(() => { $('#frList').innerHTML = '<p class="sub">加载失败，请刷新页面。</p>'; });
