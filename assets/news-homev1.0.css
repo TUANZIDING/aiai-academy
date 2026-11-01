@@ -1,0 +1,39 @@
+/* 12 NEWS PLAYBOOK homepage section — broadcast tone (navy #0B1A2E, signal red #D62839, teal #0FA3B1, amber #F2A516) */
+.section.news-home{background:#0B1A2E;color:#E8EEF6;overflow:hidden}
+.section.news-home::before{opacity:.12}
+.news-home .eyebrow .ek{color:#fff}
+.news-home .eyebrow .jn{-webkit-text-stroke-color:#FF5A6A;text-shadow:3px 3px 0 rgba(0,0,0,.3)}
+.news-home h2{color:#fff;margin:6px 0 2px}
+.news-home h2 em{color:#45D3DF;font-style:normal}
+.news-home .nh-en{margin:0 0 10px;color:#8FA3BF;font-weight:700;letter-spacing:.02em}
+.news-home .sub{color:#C9D4E3;max-width:70ch}
+.nh-lower{display:inline-flex;align-items:stretch;margin:4px 0 10px;border-radius:6px;overflow:hidden;font:800 .74rem/1 "Arial Black","Helvetica Neue",Impact,"PingFang SC",sans-serif;letter-spacing:.12em}
+.nh-lower>span:last-child{background:#13294A;color:#fff;padding:8px 12px}
+.nh-live{display:inline-flex;align-items:center;gap:6px;background:#D62839;color:#fff;padding:8px 10px}
+.nh-live i{width:7px;height:7px;border-radius:50%;background:#fff;animation:nhb 1.6s steps(2,start) infinite}
+@keyframes nhb{to{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.nh-live i{animation:none}}
+.nh-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,520px),1fr));gap:18px;margin:22px 0 18px}
+.nh-card{display:grid;grid-template-columns:40% 1fr;background:#fff;color:#142033;border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.28);transition:transform .25s,box-shadow .25s}
+.nh-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.nh-thumb{display:block;background:#13294A;position:relative}
+.nh-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.nh-thumb .ai{position:absolute;left:8px;bottom:8px;font:700 .62rem/1 Menlo,monospace;background:rgba(11,26,46,.8);color:#C9D4E3;padding:3px 6px;border-radius:3px}
+.nh-body{padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.nh-no{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font:800 .7rem/1 Menlo,Consolas,monospace;letter-spacing:.1em;color:#B81F2F}
+.nh-badge{font:800 .7rem/1.2 -apple-system,"PingFang SC",sans-serif;letter-spacing:0;padding:3px 8px;border-radius:999px}
+.nh-badge.peer{background:#E5F4EC;color:#14714A}
+.nh-badge.warn{background:#FFF4DD;color:#8A5300}
+.nh-badge.prev{background:#F2A516;color:#0B1A2E}
+.nh-body h3{margin:2px 0 0;font-size:1.12rem;line-height:1.4;color:#142033}
+.nh-body .en{margin:0;font-size:.86rem;color:#4A5568;line-height:1.45}
+.nh-dates{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.78rem;color:#4A5568}
+.nh-dates b{color:#0B7480;font-weight:800}
+.nh-go{margin-top:auto;align-self:flex-start;display:inline-flex;gap:6px;align-items:center;background:#0B1A2E;color:#fff;text-decoration:none;font-weight:800;font-size:.86rem;padding:10px 14px;border-radius:999px;min-height:44px}
+.nh-go:hover{background:#D62839}
+.nh-empty{color:#C9D4E3}
+.nh-x{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.86rem}
+.nh-x span{color:#8FA3BF}
+.nh-x a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center}
+.nh-x a:hover{border-color:#45D3DF;color:#45D3DF}
+@media (max-width:620px){.nh-card{grid-template-columns:1fr}.nh-thumb{aspect-ratio:16/9}}

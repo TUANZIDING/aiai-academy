@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="assets/shelfv1.0.css?v=1.1">
 <link rel="stylesheet" href="assets/lessons-catalogv1.0.css?v=1.3">
 <link rel="stylesheet" href="assets/micro-hallv1.0.css?v=1.0.1">
+<link rel="stylesheet" href="assets/news-homev1.0.css?v=1.0">
 <style>.brand .aiai-mark{height:38px;width:auto;display:block}.w-brand .aiai-mark{height:34px;width:auto;display:block}.w-brand .aiai-sub{display:flex;flex-direction:column;line-height:1.2;font-size:.92rem}.w-brand .aiai-sub small,.brand small{display:block;font-size:.6rem;letter-spacing:.2em;font-weight:500;opacity:.7}</style>
 </head>
 <body>
@@ -79,6 +80,7 @@
     <a href="#micro">微观馆</a>
     <a href="#camp">训练营</a>
     <a href="#frontier">前沿观察</a>
+    <a href="#news">新闻课</a>
     <details class="nav-more"><summary>更多</summary><div class="menu">
       <a href="#concepts">战术词典</a>
       <a href="#gear">装备库</a>
@@ -317,8 +319,24 @@
   <button type="button" class="lc-more" id="frMore" hidden></button>
 </section>
 
+<section id="news" class="section news-home" aria-labelledby="newsH">
+  <p class="eyebrow"><span class="jn">12</span><span class="ek">NEWS PLAYBOOK</span></p>
+  <p class="nh-lower"><span class="nh-live"><i aria-hidden="true"></i>LIVE</span><span>AI 前沿新闻战术课 · AI NEWS PLAYBOOK</span></p>
+  <h2 id="newsH">新闻刷到了，<em>先核对再转发。</em></h2>
+  <p class="nh-en" lang="en">Saw the headline? Verify before you forward.</p>
+  <p class="sub">每期挑一条 AI 前沿新闻：回到原文，分清事件日期和传播日期，用证据裁判矩阵给每句话判类，再练一招、带回急诊和临床。6 章 · 中英双语 · 投屏可用。</p>
+  <div class="nh-list" id="newsList" aria-live="polite"><p class="nh-empty">正在加载新闻课……</p></div>
+  <nav class="nh-x" aria-label="新闻课相关栏目">
+    <span>接着练 Keep training：</span>
+    <a href="#frontier">11 前沿观察 · 精读证据</a>
+    <a href="#camp">10 训练营 · 练招式</a>
+    <a href="#gallery">05 作品馆 · 证据审阅作品</a>
+    <a href="#lessons">08 课件馆 · 投屏课件</a>
+  </nav>
+</section>
+
 <section id="library" class="section">
-  <p class="eyebrow"><span class="jn">12</span><span class="ek">FILM ROOM</span></p>
+  <p class="eyebrow"><span class="jn">13</span><span class="ek">FILM ROOM</span></p>
   <h2>延伸学习 · 录像室</h2>
   <p class="sub" id="libCredit"></p>
   <div class="filters" role="toolbar" aria-label="按主题筛选课程" id="libFilters"></div>
@@ -328,7 +346,7 @@
 <section id="safety" class="section safety">
   <div class="sec-art">
   <div>
-  <p class="eyebrow"><span class="jn">13</span><span class="ek">SAFETY</span></p>
+  <p class="eyebrow"><span class="jn">14</span><span class="ek">SAFETY</span></p>
   <h2>AI 可以跑路线，<em>判断留给人。</em></h2>
   <div class="rules">
     <article><span>01</span><h3>患者隐私停在门外</h3><p>任何真实病历、影像、身份信息都不进入公共 AI。公开仓库只放代码与模拟数据。</p></article>
@@ -342,14 +360,14 @@
 </section>
 
 <section id="toolbox" class="section">
-  <p class="eyebrow"><span class="jn">14</span><span class="ek">TOOLBOX</span></p>
+  <p class="eyebrow"><span class="jn">15</span><span class="ek">TOOLBOX</span></p>
   <h2>开源工具箱</h2>
   <p class="sub">我收藏并在用的他人开源项目（fork），课上作为“装备库”介绍，和我自己的作品分开。</p>
   <div class="tools" id="tools"></div>
 </section>
 
 <section id="mystudy" class="section">
-  <p class="eyebrow"><span class="jn">15</span><span class="ek">MY STUDY</span></p>
+  <p class="eyebrow"><span class="jn">16</span><span class="ek">MY STUDY</span></p>
   <h2>我的学习 · 英语</h2>
   <p class="sub">教练自己也在练：正在备考雅思，随时点开接着学。</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:16px;margin-top:18px">
@@ -378,7 +396,7 @@
   <div class="sec-art">
   <figure class="rv"><img src="assets/home/home-coachv1.0.webp?v=3.1" alt="吉祥物团子教练站在球场边挥手" loading="lazy" width="1000" height="750"></figure>
   <div>
-    <p class="eyebrow"><span class="jn">16</span><span class="ek">COACH</span></p>
+    <p class="eyebrow"><span class="jn">17</span><span class="ek">COACH</span></p>
     <h2>丁海祥 · Haixiang Ding, MD</h2>
     <p>急诊创伤外科主治医师，苏州大学临床医学博士在读。研究方向：放射性骨骼肌损伤、骨质疏松。把临床问题、教学经验和开源实践放在同一张战术板上，帮助医护人员从“想学 AI”走到“能用、用对”。</p>
     <div class="cta">
@@ -407,6 +425,7 @@
 <script src="assets/lessons-catalogv1.0.js?v=1.3" defer></script>
 <script src="assets/micro-hallv1.0.js?v=1.0.1" defer></script>
 <script src="assets/frontierv1.0.js?v=1.2" defer></script>
+<script src="assets/news-homev1.0.js?v=1.0" defer></script>
 <script src="assets/shelfv1.0.js?v=1.3" defer></script>
 <script>document.addEventListener("click",e=>{const d=document.querySelector(".nav-more[open]");if(d&&(!d.contains(e.target)||e.target.closest(".menu a")))d.removeAttribute("open")});</script>
 </body>

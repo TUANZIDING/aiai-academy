@@ -1,0 +1,1586 @@
+{
+ "id": "news-001",
+ "no": "AIAI NEWS 001",
+ "version": "1.0",
+ "status": "preview",
+ "title": {
+  "en": "An AI squad reads oncology notes for immunotherapy side effects: 0.92 is real — but it isn't the whole story",
+  "zh": "一支 AI 小队读病历找免疫副作用：0.92 是真的，但不是全部"
+ },
+ "dek": {
+  "en": "A Nature Cancer study tested an agentic LLM system in three stages — retrospective, silent live deployment, randomized crossover. The score dropped when it met real notes, yet it still made human reviewers faster and more consistent.",
+  "zh": "Nature Cancer 新论文把一个智能体大模型系统放进三级考场：回顾性测试、静默上线、随机交叉试验。换到真实病历后分数下滑，但它仍让人工审阅更快、更一致。"
+ },
+ "eventDate": "2026-10-29",
+ "spreadDates": [
+  "2026-10-30",
+  "2026-10-31"
+ ],
+ "publishedAt": null,
+ "verifiedAt": "2026-11-01",
+ "topics": [
+  "agent",
+  "onco"
+ ],
+ "level": [
+  "L0",
+  "L1",
+  "L2",
+  "L3",
+  "L4"
+ ],
+ "difficulty": 2,
+ "evidence": {
+  "key": "peer",
+  "label": {
+   "en": "Peer-reviewed · open access",
+   "zh": "同行评审 · 开放获取"
+  }
+ },
+ "editor": {
+  "en": "Edited by Haixiang Ding, MD (emergency & trauma surgeon). Drafted with AI assistance; every number checked against the original paper.",
+  "zh": "编辑：丁海祥（急诊创伤外科医师）。AI 协助起草，所有数字已逐条对照原文核对。"
+ },
+ "hero": {
+  "src": "../assets/news/news-001-herov1.0.webp",
+  "alt": {
+   "en": "Illustration: three small AI agents beam onto the same clinical note on a newsroom desk while a referee agent watches; a chart on the wall dips.",
+   "zh": "插图：新闻演播台上，三个小 AI 智能体同时照向同一页病历，另一个“裁判”智能体在后面看；墙上的曲线略有下滑。"
+  },
+  "credit": {
+   "en": "AI-generated illustration (original, not from the paper). No real patient data.",
+   "zh": "AI 生成插图（原创，非论文图片），不含任何真实患者信息。"
+  }
+ },
+ "ticker": [
+  {
+   "en": "PUBLISHED 29 OCT 2026 · Nature Cancer · open access (CC BY 4.0)",
+   "zh": "10 月 29 日发表 · Nature Cancer · 开放获取（CC BY 4.0）"
+  },
+  {
+   "en": "Retrospective F1 0.92 → live silent deployment 0.72–0.79",
+   "zh": "回顾性 F1 0.92 → 真实静默部署 0.72–0.79"
+  },
+  {
+   "en": "Median review time 428 s → 242 s with AI assistance (−43.5%)",
+   "zh": "有 AI 辅助，中位审阅时间 428 秒 → 242 秒（−43.5%）"
+  },
+  {
+   "en": "All three phases in ONE health system — no external validation yet",
+   "zh": "三个阶段都在同一医疗体系内完成，尚无外部验证"
+  },
+  {
+   "en": "FACT-CHECK: “halved annotation time” — close, but the paper says 43.5%",
+   "zh": "事实核查：“审阅时间减半”接近，但原文是 43.5%"
+  }
+ ],
+ "chapters": [
+  {
+   "id": "kickoff",
+   "no": "01",
+   "en": "KICKOFF",
+   "zh": "新闻开球",
+   "level": "L0",
+   "yard": "10 YDS · ASK"
+  },
+  {
+   "id": "replay",
+   "no": "02",
+   "en": "REPLAY",
+   "zh": "原始回放",
+   "level": "L1",
+   "yard": "20 YDS · VERIFY"
+  },
+  {
+   "id": "playbook",
+   "no": "03",
+   "en": "PLAYBOOK",
+   "zh": "战术拆解",
+   "level": "L1–L2",
+   "yard": "20–40 YDS"
+  },
+  {
+   "id": "review",
+   "no": "04",
+   "en": "REVIEW",
+   "zh": "证据裁判",
+   "level": "L1 + L4",
+   "yard": "VERIFY + GOVERN"
+  },
+  {
+   "id": "practice",
+   "no": "05",
+   "en": "PRACTICE",
+   "zh": "场上训练",
+   "level": "L2",
+   "yard": "40 YDS · WORKFLOW"
+  },
+  {
+   "id": "gameplan",
+   "no": "06",
+   "en": "GAME PLAN",
+   "zh": "迁移应用",
+   "level": "L3–L4",
+   "yard": "70 YDS → END ZONE"
+  }
+ ],
+ "kickoff": {
+  "lede": {
+   "en": "Separate the date of the event from the date it reached you, then read three numbers before any headline.",
+   "zh": "先把“事件哪天发生”和“你哪天刷到”分开，再看三个数字，最后才看标题。"
+  },
+  "dateline": [
+   {
+    "date": "2026-04-21",
+    "label": {
+     "en": "Received",
+     "zh": "投稿"
+    },
+    "note": {
+     "en": "Manuscript received by Nature Cancer",
+     "zh": "Nature Cancer 收稿"
+    }
+   },
+   {
+    "date": "2026-09-28",
+    "label": {
+     "en": "Accepted",
+     "zh": "接收"
+    },
+    "note": {
+     "en": "After peer review",
+     "zh": "经同行评审后接收"
+    }
+   },
+   {
+    "date": "2026-10-29",
+    "label": {
+     "en": "EVENT · Published",
+     "zh": "事件 · 发表"
+    },
+    "note": {
+     "en": "Article + a News & Views commentary, same day",
+     "zh": "论文与同期 News & Views 评论同日上线"
+    },
+    "key": true
+   },
+   {
+    "date": "2026-10-30",
+    "label": {
+     "en": "Spread",
+     "zh": "传播"
+    },
+    "note": {
+     "en": "Secondary write-ups (e.g. Medspark) — what most people actually read",
+     "zh": "二次报道（如 Medspark）——多数人真正读到的版本"
+    }
+   },
+   {
+    "date": "2026-11-01",
+    "label": {
+     "en": "Verified here",
+     "zh": "本课核验"
+    },
+    "note": {
+     "en": "Every number re-checked against the paper",
+     "zh": "所有数字重新对照原文"
+    }
+   }
+  ],
+  "oneLine": {
+   "en": "A team at Brigham and Women's Hospital and Dana-Farber built a squad of LLM agents that reads oncology notes for six immune-related side effects. It scored F1 0.92 on old, curated notes, 0.72–0.79 on three months of live notes, and in a randomized trial made research staff faster and more consistent — all inside one health system.",
+   "zh": "布莱根妇女医院和丹娜-法伯癌症研究所的团队，搭了一支大模型智能体小队，读肿瘤科病历、找六类免疫相关副作用。在整理好的旧病历上 F1 0.92，在三个月真实新病历上 0.72–0.79；随机试验中让科研人员审阅更快、更一致。三个阶段都在同一个医疗体系内完成。"
+  },
+  "scoreboard": [
+   {
+    "big": "0.92 → 0.72–0.79",
+    "label": {
+     "en": "F1: curated old notes → 3 months of live notes",
+     "zh": "F1：整理好的旧病历 → 三个月真实新病历"
+    },
+    "note": {
+     "en": "Same fixed system, different field",
+     "zh": "同一套系统，换了场地"
+    }
+   },
+   {
+    "big": "428 s → 242 s",
+    "label": {
+     "en": "Median review time per note, manual → AI-assisted",
+     "zh": "每条病历中位审阅时间：纯人工 → AI 辅助"
+    },
+    "note": {
+     "en": "−43.5%; model estimate −2.71 min",
+     "zh": "降 43.5%；模型估计 −2.71 分钟"
+    }
+   },
+   {
+    "big": "≈ US$0.02",
+    "label": {
+     "en": "Inference cost per note (best configuration)",
+     "zh": "每条病历推理成本（最佳配置）"
+    },
+    "note": {
+     "en": "US$0.021; about US$18.50 for 884 notes",
+     "zh": "0.021 美元；884 条约 18.5 美元"
+    }
+   }
+  ],
+  "question": {
+   "q": {
+    "en": "Opening question: does AI read charts better than humans?",
+    "zh": "开场提问：AI 读病历比人准吗？"
+   },
+   "reveal": {
+    "en": "That's the wrong question for this paper. It never pits AI against people alone. It asks: is a person WITH the AI faster, more accurate and more consistent than a person WITHOUT it? Keep that framing — it changes how every number below should be read.",
+    "zh": "这篇论文其实没在比“AI 和人谁准”。它问的是：有 AI 帮忙的人，是否比没有 AI 的人更快、更准、更一致？带着这个问题往下看，每个数字的读法都会不同。"
+   }
+  }
+ },
+ "replay": {
+  "lede": {
+   "en": "Original first. The abstract, sentence by sentence, then the three-stage timeline.",
+   "zh": "原文优先。先逐句读摘要，再看三阶段时间线。"
+  },
+  "translationNote": {
+   "en": "Abstract quoted from Gallifant et al., Nature Cancer (2026), CC BY 4.0. Chinese translation and coach's notes by AIAI Academy — translated, adapted; not an official translation.",
+   "zh": "摘要原文引自 Gallifant 等，Nature Cancer（2026），CC BY 4.0。中文译文和教练批注由 aiai 学院完成——已翻译、改编，非官方译本。"
+  },
+  "transcript": [
+   {
+    "en": "Immune-related adverse events (irAEs) affect up to 40% of patients receiving immune checkpoint inhibitors, yet identification requires laborious, inconsistent manual chart review.",
+    "zh": "免疫相关不良事件（irAE）影响多达 40% 接受免疫检查点抑制剂治疗的患者，但要找出它们，只能靠费时费力、结果还不一致的人工病历审阅。",
+    "note": {
+     "en": "The problem: a common, dangerous side effect hidden in free-text notes.",
+     "zh": "问题所在：常见又危险的副作用，藏在自由文本病历里。"
+    }
+   },
+   {
+    "en": "Here we show that agentic artificial intelligence coupled with human verification could enhance efficiency, performance and consistency for irAE assessment.",
+    "zh": "本研究表明，智能体人工智能配合人工核验，有望提升 irAE 评估的效率、表现和一致性。",
+    "note": {
+     "en": "Watch the words “coupled with human verification” and “could”.",
+     "zh": "注意两个词：“配合人工核验”和“有望”。"
+    }
+   },
+   {
+    "en": "We developed and evaluated an agentic large language model system to extract the presence, temporality, severity grade, attribution and certainty of six irAE types from clinical notes.",
+    "zh": "我们开发并评估了一个智能体大语言模型系统，从临床病历中提取六类 irAE 的有无、时间状态、严重程度分级、归因和确定程度。",
+    "note": {
+     "en": "Five attributes, not just yes/no — that is what makes it useful and hard.",
+     "zh": "不只判断有没有，而是五个属性——这正是它有用、也难做的地方。"
+    }
+   },
+   {
+    "en": "Retrospectively, the system achieved a macro-averaged F1 of 0.92 for current-event detection and 0.66 for multi-class severity grading; self-consistency improved F1 by 0.14.",
+    "zh": "回顾性评估中，系统对当前事件检测的宏平均 F1 为 0.92，多分类严重程度分级为 0.66；自洽机制使 F1 提高 0.14。",
+    "note": {
+     "en": "0.92 is the home-field number. Grading (0.66) is much harder.",
+     "zh": "0.92 是主场成绩；分级只有 0.66，难得多。"
+    }
+   },
+   {
+    "en": "The best-performing configuration cost approximately US$0.02 per note.",
+    "zh": "表现最好的配置，每条病历花费约 0.02 美元。",
+    "note": {
+     "en": "Cheap per note — but it runs on a commercial API (see Chapter 04, governance).",
+     "zh": "单条很便宜，但依赖商用 API（见第 04 章治理部分）。"
+    }
+   },
+   {
+    "en": "In prospective silent deployment over 3 months, the binary F1 was 0.72–0.79.",
+    "zh": "在为期 3 个月的前瞻性静默部署中，二分类 F1 为 0.72–0.79。",
+    "note": {
+     "en": "The away-game number: live notes, nobody acting on the output.",
+     "zh": "客场成绩：真实新病历，系统输出不影响诊疗。"
+    }
+   },
+   {
+    "en": "In a randomized crossover study of clinical trial staff, agentic assistance reduced annotation time by 2.71 min (P < 0.001), increased complete-match accuracy (odds ratio 1.45; 95% confidence interval 1.01–2.08; P = 0.045) and improved interannotator agreement (Krippendorff’s α from 0.22–0.51 to 0.82–0.85).",
+    "zh": "在一项针对临床试验工作人员的随机交叉研究中，智能体辅助使标注时间减少 2.71 分钟（P < 0.001），完全匹配准确率提高（比值比 1.45；95% 置信区间 1.01–2.08；P = 0.045），标注者间一致性也提高（Krippendorff α 从 0.22–0.51 升至 0.82–0.85）。",
+    "note": {
+     "en": "Users were clinical research staff, not physicians. The CI lower bound 1.01 sits right next to 1.",
+     "zh": "使用者是临床科研人员，不是医生；置信区间下限 1.01 紧贴 1。"
+    }
+   }
+  ],
+  "timeline": [
+   {
+    "phase": "PHASE 1",
+    "when": {
+     "en": "Notes from patients treated 2015–2024",
+     "zh": "2015–2024 年接受治疗患者的病历"
+    },
+    "title": {
+     "en": "Retrospective build & test",
+     "zh": "回顾性开发与测试"
+    },
+    "n": {
+     "en": "289 expert-annotated notes: 26 for development (pneumonitis only), 263 held-out test",
+     "zh": "289 条专家标注病历：26 条用于开发（仅肺炎），263 条留作测试"
+    },
+    "result": {
+     "en": "Current-event F1 0.92 · grading 0.66 · ≈US$0.021/note",
+     "zh": "当前事件 F1 0.92 · 分级 0.66 · 每条约 0.021 美元"
+    }
+   },
+   {
+    "phase": "PHASE 2",
+    "when": {
+     "en": "May–July 2025 (3 months)",
+     "zh": "2025 年 5–7 月（3 个月）"
+    },
+    "title": {
+     "en": "Prospective silent deployment",
+     "zh": "前瞻性静默部署"
+    },
+    "n": {
+     "en": "884 live notes, 31,824 label adjudications",
+     "zh": "884 条真实新病历，31,824 次标签判定"
+    },
+    "result": {
+     "en": "Binary F1 0.72 (current) / 0.79 (past) · grade matched humans in 62% of notes",
+     "zh": "二分类 F1 0.72（当前）/ 0.79（既往）· 分级与人工一致 62%"
+    }
+   },
+   {
+    "phase": "PHASE 3",
+    "when": {
+     "en": "Randomized 2×2 crossover",
+     "zh": "随机 2×2 交叉试验"
+    },
+    "title": {
+     "en": "Human + AI vs human alone",
+     "zh": "有 AI 的人 vs 没有 AI 的人"
+    },
+    "n": {
+     "en": "17 participants (16 clinical research coordinators + 1 research nurse), 20 notes, 316 timed observations",
+     "zh": "17 名参与者（16 名临床研究协调员 + 1 名研究护士），20 条病历，316 次计时观察"
+    },
+    "result": {
+     "en": "Median 428 s → 242 s · complete-match 19.4% → 25.9% · 88% preferred AI-assisted",
+     "zh": "中位 428 秒 → 242 秒 · 完全匹配 19.4% → 25.9% · 88% 更喜欢 AI 辅助"
+    }
+   }
+  ],
+  "glossary": [
+   {
+    "term": "irAE",
+    "def": {
+     "en": "Immune-related adverse event: inflammation of normal organs caused by immunotherapy (here: pneumonitis, hepatitis, colitis, myocarditis, thyroiditis, dermatitis).",
+     "zh": "免疫相关不良事件：免疫治疗引起的正常器官炎症（本文六类：肺炎、肝炎、结肠炎、心肌炎、甲状腺炎、皮炎）。"
+    }
+   },
+   {
+    "term": "ICI",
+    "def": {
+     "en": "Immune checkpoint inhibitor, e.g. pembrolizumab, nivolumab.",
+     "zh": "免疫检查点抑制剂，如帕博利珠单抗、纳武利尤单抗。"
+    }
+   },
+   {
+    "term": "CTCAE v5.0",
+    "def": {
+     "en": "The US National Cancer Institute's standard scale for grading adverse events, grade 1–5.",
+     "zh": "美国国家癌症研究所的不良事件分级标准，1–5 级。"
+    }
+   },
+   {
+    "term": "F1 / macro-F1",
+    "def": {
+     "en": "Balances precision and recall (0–1). Macro-F1 averages the F1 of each class equally. It is NOT “accuracy %”.",
+     "zh": "兼顾精确率和召回率的分数（0–1）；宏平均对每一类一视同仁。它不是“准确率百分比”。"
+    }
+   },
+   {
+    "term": {
+     "en": "Silent deployment",
+     "zh": "静默部署"
+    },
+    "def": {
+     "en": "The system runs on live data but nobody sees or acts on its output; humans label the same notes to score it.",
+     "zh": "系统在真实数据上运行，但输出不给临床看、也不影响诊疗；另由人工标注同批病历来打分。"
+    }
+   },
+   {
+    "term": {
+     "en": "Self-consistency",
+     "zh": "自洽投票"
+    },
+    "def": {
+     "en": "Run the same step several times (here ×3) and let a judge reconcile the answers.",
+     "zh": "同一步骤跑多次（本文 3 次），再由裁判汇总答案。"
+    }
+   },
+   {
+    "term": "Krippendorff α",
+    "def": {
+     "en": "Agreement between several annotators beyond chance (1 = perfect, 0 = chance).",
+     "zh": "多名标注者之间超出偶然的一致程度（1 为完全一致，0 相当于随机）。"
+    }
+   },
+   {
+    "term": {
+     "en": "Crossover trial",
+     "zh": "交叉试验"
+    },
+    "def": {
+     "en": "Each participant works under both conditions, in randomized order, so they serve as their own control.",
+     "zh": "每位参与者两种条件都做，顺序随机，自己当自己的对照。"
+    }
+   }
+  ],
+  "unsaid": [
+   {
+    "en": "Prompts were tuned on only 26 notes, all from pneumonitis patients — then applied to all six conditions.",
+    "zh": "提示词只在 26 条病历上调过，而且全是肺炎患者，再推广到六类副作用。"
+   },
+   {
+    "en": "The phase 3 users were clinical research coordinators and one research nurse — not physicians at the bedside.",
+    "zh": "第三阶段的使用者是临床研究协调员和一名研究护士，不是床旁医生。"
+   },
+   {
+    "en": "Label-level grade accuracy did not differ significantly (exact paired sign test P = 0.791); the significant gain is in the strict complete-match metric.",
+    "zh": "按单个标签算的分级准确率差异不显著（精确配对符号检验 P = 0.791）；显著的是更严格的“完全匹配”指标。"
+   },
+   {
+    "en": "No patient outcomes were measured (e.g. time to steroids, hospitalization).",
+    "zh": "没有测量患者结局（如开始激素的时间、住院）。"
+   },
+   {
+    "en": "The authors flag automation complacency: reviewers may anchor on the AI's suggestion; the study was not designed to separate consistency from complacency.",
+    "zh": "作者自己提醒“自动化自满”：审阅者可能被 AI 答案锚定；本研究的设计无法区分“更一致”和“更盲从”。"
+   },
+   {
+    "en": "A simple keyword rule list (779 terms) performed comparably to some LLM methods for yes/no detection — LLMs earn their keep on grade, attribution, certainty and evidence spans.",
+    "zh": "一个 779 个关键词的简单规则表，在“有没有”这一步和部分大模型方法相当；大模型的价值在分级、归因、确定程度和证据句。"
+   }
+  ]
+ },
+ "charts": {
+  "f1": {
+   "title": {
+    "en": "Same system, three fields",
+    "zh": "同一系统，三块场地"
+   },
+   "max": 1,
+   "bars": [
+    {
+     "label": {
+      "en": "Retrospective · current-event detection",
+      "zh": "回顾性 · 当前事件检测"
+     },
+     "v": 0.92,
+     "tone": "teal"
+    },
+    {
+     "label": {
+      "en": "Retrospective · without self-consistency",
+      "zh": "回顾性 · 去掉自洽投票"
+     },
+     "v": 0.78,
+     "tone": "muted"
+    },
+    {
+     "label": {
+      "en": "Retrospective · severity grading",
+      "zh": "回顾性 · 严重程度分级"
+     },
+     "v": 0.66,
+     "tone": "amber"
+    },
+    {
+     "label": {
+      "en": "Live silent · binary, past events",
+      "zh": "真实静默 · 二分类，既往事件"
+     },
+     "v": 0.79,
+     "tone": "navy"
+    },
+    {
+     "label": {
+      "en": "Live silent · binary, current events",
+      "zh": "真实静默 · 二分类，当前事件"
+     },
+     "v": 0.72,
+     "tone": "navy"
+    }
+   ],
+   "src": "s1"
+  },
+  "time": {
+   "title": {
+    "en": "Seconds per note (median and IQR)",
+    "zh": "每条病历用时（秒，中位数与四分位距）"
+   },
+   "rows": [
+    {
+     "label": {
+      "en": "Manual",
+      "zh": "纯人工"
+     },
+     "med": 428,
+     "lo": 253,
+     "hi": 671,
+     "tone": "muted"
+    },
+    {
+     "label": {
+      "en": "AI-assisted",
+      "zh": "AI 辅助"
+     },
+     "med": 242,
+     "lo": 160,
+     "hi": 385,
+     "tone": "teal"
+    }
+   ],
+   "max": 700,
+   "src": "s1"
+  },
+  "alpha": {
+   "title": {
+    "en": "Agreement between annotators (Krippendorff α, current grade)",
+    "zh": "标注者之间的一致性（Krippendorff α，当前分级）"
+   },
+   "rows": [
+    {
+     "label": {
+      "en": "Note set A",
+      "zh": "病历组 A"
+     },
+     "a": 0.22,
+     "b": 0.85
+    },
+    {
+     "label": {
+      "en": "Note set B",
+      "zh": "病历组 B"
+     },
+     "a": 0.51,
+     "b": 0.82
+    }
+   ],
+   "src": "s1"
+  }
+ },
+ "fieldLabels": {
+  "plain": {
+   "en": "Plain definition",
+   "zh": "通俗定义"
+  },
+  "principle": {
+   "en": "How it works",
+   "zh": "原理"
+  },
+  "analogy": {
+   "en": "Field analogy",
+   "zh": "球场类比"
+  },
+  "case": {
+   "en": "AI case in this paper",
+   "zh": "本文案例"
+  },
+  "mistake": {
+   "en": "Common mistake",
+   "zh": "常见错误"
+  },
+  "tip": {
+   "en": "Learning tip",
+   "zh": "学习建议"
+  }
+ },
+ "playbook": [
+  {
+   "id": "p1",
+   "tag": "PLAY 01",
+   "level": "L1–L2",
+   "title": {
+    "en": "Self-consistency + a judge",
+    "zh": "自洽投票 + 裁判"
+   },
+   "fields": {
+    "plain": {
+     "en": "Ask the same question three times and let a judge settle disagreements. Random slips cancel out.",
+     "zh": "同一个问题问三遍，意见不一时由裁判拍板，偶然失误会被抵消。"
+    },
+    "principle": {
+     "en": "LLM outputs vary from run to run. The paper ran detection and grading three times each; detection disagreements went to a judge agent, grading used consensus. Attribution and certainty ran once.",
+     "zh": "大模型每次输出会有波动。本文“检测”和“分级”各跑 3 次：检测由裁判智能体裁决，分级取共识；归因和确定程度只跑一次。"
+    },
+    "analogy": {
+     "en": "Three line judges each make a call; the head referee reviews the replay before the play stands.",
+     "zh": "三位边裁各自判罚，主裁看完回放再确认判罚有效。"
+    },
+    "case": {
+     "en": "Dropping the vote cut detection F1 from 0.92 to 0.78 while roughly halving cost (US$0.011 vs US$0.021 per note).",
+     "zh": "去掉投票后，检测 F1 从 0.92 降到 0.78，成本约减半（每条 0.011 vs 0.021 美元）。"
+    },
+    "mistake": {
+     "en": "Believing voting fixes systematic errors. If the note never records stool counts, three runs will agree on the same guess.",
+     "zh": "以为投票能纠正系统性错误。病历里根本没写大便次数，三次运行只会一致地猜错。"
+    },
+    "tip": {
+     "en": "On your own pipeline, run 3 times on 20 samples first and measure how often the runs disagree. No disagreement → the vote buys little.",
+     "zh": "先在自己的流程上用 20 个样本跑 3 遍，统计分歧率；几乎没有分歧，投票就意义不大。"
+    }
+   }
+  },
+  {
+   "id": "p2",
+   "tag": "PLAY 02",
+   "level": "L1",
+   "title": {
+    "en": "Home game vs away game: data drift",
+    "zh": "主场 vs 客场：数据漂移"
+   },
+   "fields": {
+    "plain": {
+     "en": "A score on old, tidy notes is not a score on tomorrow's messy notes.",
+     "zh": "在整理好的旧病历上的分数，不等于在明天乱糟糟的新病历上的分数。"
+    },
+    "principle": {
+     "en": "Case mix, wording and note templates change over time. The fixed system went from 0.92 to 0.72 (current) and 0.79 (past) on live notes; attribution and certainty held up better than grading.",
+     "zh": "病例构成、措辞和病历模板会随时间变。同一套固定系统在真实新病历上从 0.92 降到 0.72（当前）和 0.79（既往）；归因和确定程度比分级更稳。"
+    },
+    "analogy": {
+     "en": "A training scrimmage on your home turf vs an away game in a different stadium, in the rain.",
+     "zh": "主场训练赛 vs 下雨天去别人球场打正式比赛。"
+    },
+    "case": {
+     "en": "Phase 2 ran silently May–July 2025 on 884 notes. At note level, the model matched human review in 62% of notes for grade, 87% for attribution, 83% for certainty.",
+     "zh": "第二阶段 2025 年 5–7 月静默运行 884 条病历；按病历计，分级与人工一致 62%，归因 87%，确定程度 83%。"
+    },
+    "mistake": {
+     "en": "Quoting the best retrospective number as “real-world performance”.",
+     "zh": "把最好看的回顾性数字当成“真实世界表现”来引用。"
+    },
+    "tip": {
+     "en": "For every number, ask: which phase, which data, which year? Then demand a silent run and drift monitoring before go-live.",
+     "zh": "看到任何数字先问：哪个阶段、什么数据、哪一年？上线前一定要静默运行并持续监测漂移。"
+    }
+   }
+  },
+  {
+   "id": "p3",
+   "tag": "PLAY 03",
+   "level": "L2",
+   "title": {
+    "en": "Measuring human + AI, not AI alone",
+    "zh": "测“人 + AI”，不只测 AI"
+   },
+   "fields": {
+    "plain": {
+     "en": "Let the same people work with and without the AI, in random order, and compare.",
+     "zh": "让同一批人有 AI、无 AI 各做一遍，顺序随机，再比较。"
+    },
+    "principle": {
+     "en": "A 2×2 crossover balances order (AI first or manual first) and note set (A or B). Primary endpoint: time. Secondary: complete-match accuracy and inter-annotator agreement. GEE models handle repeated measures per person.",
+     "zh": "2×2 交叉设计同时平衡顺序（先 AI 还是先人工）和病历组（A 或 B）。主要终点是时间；次要终点是完全匹配准确率和标注者间一致性；用 GEE 处理同一人的重复测量。"
+    },
+    "analogy": {
+     "en": "The same players run plays with and without the tactics board; half the squad starts each way, then they swap.",
+     "zh": "同一批球员，有战术板和没战术板各打一节；一半人先用、一半人后用，然后交换。"
+    },
+    "case": {
+     "en": "17 participants, 20 notes: median 428 s → 242 s; complete-match OR 1.45 (95% CI 1.01–2.08); α 0.22→0.85 and 0.51→0.82; 15 of 17 preferred the AI workflow.",
+     "zh": "17 人、20 条病历：中位 428 秒 → 242 秒；完全匹配 OR 1.45（95% CI 1.01–2.08）；α 0.22→0.85、0.51→0.82；17 人中 15 人更喜欢 AI 流程。"
+    },
+    "mistake": {
+     "en": "Reading higher agreement as higher correctness. If everyone copies the same AI answer, agreement rises even when the answer is wrong.",
+     "zh": "把“更一致”当成“更正确”。大家都照抄同一个 AI 答案，即使答错，一致性也会上升。"
+    },
+    "tip": {
+     "en": "When you read a human–AI study, check who the users were and whether accuracy and agreement are reported separately.",
+     "zh": "读人机协作研究时，先看使用者是谁，再看准确率和一致性是否分开报告。"
+    }
+   }
+  }
+ ],
+ "verdicts": {
+  "proven": {
+   "label": {
+    "en": "Established",
+    "zh": "已证实"
+   },
+   "icon": "✓",
+   "desc": {
+    "en": "Measured in the paper, with numbers.",
+    "zh": "论文里有测量和数字。"
+   }
+  },
+  "interpretation": {
+   "label": {
+    "en": "Interpretation",
+    "zh": "解释"
+   },
+   "icon": "≈",
+   "desc": {
+    "en": "The authors' explanation of a result — plausible, not tested.",
+    "zh": "作者对结果的解释，合理但未经实验验证。"
+   }
+  },
+  "opinion": {
+   "label": {
+    "en": "Opinion",
+    "zh": "观点"
+   },
+   "icon": "❝",
+   "desc": {
+    "en": "A stance or recommendation.",
+    "zh": "立场或建议。"
+   }
+  },
+  "prediction": {
+   "label": {
+    "en": "Unverified prediction",
+    "zh": "待验证"
+   },
+   "icon": "?",
+   "desc": {
+    "en": "A claim about the future or about settings not yet tested.",
+    "zh": "关于未来或尚未测试场景的说法。"
+   }
+  },
+  "misleading": {
+   "label": {
+    "en": "Misleading",
+    "zh": "误导"
+   },
+   "icon": "!",
+   "desc": {
+    "en": "True numbers, framed to imply more than the evidence shows.",
+    "zh": "数字本身没错，但呈现方式让人以为证据更强。"
+   }
+  }
+ },
+ "claims": [
+  {
+   "id": "c1",
+   "verdict": "proven",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "Retrospective current-event detection: macro-F1 0.92 on 263 test notes.",
+    "zh": "回顾性当前事件检测：263 条测试病历，宏平均 F1 0.92。"
+   },
+   "evidence": {
+    "en": "Abstract and Results; held-out test set from 2015–2024 patients.",
+    "zh": "摘要与结果部分；测试集来自 2015–2024 年患者，开发时未使用。"
+   },
+   "sourceId": "s1",
+   "quote": "Retrospectively, the system achieved a macro-averaged F1 of 0.92 for current-event detection and 0.66 for multi-class severity grading",
+   "quoteZh": "回顾性评估中，系统对当前事件检测的宏平均 F1 为 0.92，多分类严重程度分级为 0.66",
+   "tags": []
+  },
+  {
+   "id": "c2",
+   "verdict": "proven",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "Live silent deployment: binary F1 0.72 for current events and 0.79 for past events (884 notes, May–July 2025).",
+    "zh": "真实静默部署：当前事件二分类 F1 0.72，既往事件 0.79（884 条，2025 年 5–7 月）。"
+   },
+   "evidence": {
+    "en": "Results, phase 2.",
+    "zh": "结果部分，第二阶段。"
+   },
+   "sourceId": "s1",
+   "quote": "binary F1 across grade, attribution and certainty labels was 0.72 for current events and 0.79 for past events",
+   "quoteZh": "分级、归因和确定程度标签的二分类 F1：当前事件 0.72，既往事件 0.79",
+   "tags": []
+  },
+  {
+   "id": "c3",
+   "verdict": "proven",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "Severity grading is the weak spot: macro-F1 0.66; colitis lowest at 0.51; most errors at grades 2–3.",
+    "zh": "分级是短板：宏平均 F1 0.66；结肠炎最低 0.51；误判多在 2–3 级。"
+   },
+   "evidence": {
+    "en": "Results, phase 1 (Fig. 3a).",
+    "zh": "结果部分，第一阶段（图 3a）。"
+   },
+   "sourceId": "s1",
+   "quote": "Intermediate grades (2–3) accounted for the majority of misclassifications.",
+   "quoteZh": "中间级别（2–3 级）占了误分类的大多数。",
+   "tags": []
+  },
+  {
+   "id": "c4",
+   "verdict": "proven",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "AI assistance cut review time: −2.71 min (95% CI −3.89 to −1.53); median 428 s → 242 s (−43.5%).",
+    "zh": "AI 辅助缩短审阅时间：−2.71 分钟（95% CI −3.89 至 −1.53）；中位数 428 秒 → 242 秒（−43.5%）。"
+   },
+   "evidence": {
+    "en": "Primary endpoint of the randomized crossover study.",
+    "zh": "随机交叉研究的主要终点。"
+   },
+   "sourceId": "s1",
+   "quote": "Median annotation time was 428 s (interquartile range (IQR) 253–671) with manual review versus 242 s (IQR 160–385) with AI assistance—a 43.5% reduction",
+   "quoteZh": "人工审阅中位标注时间 428 秒（四分位距 253–671），AI 辅助 242 秒（四分位距 160–385），减少 43.5%",
+   "tags": []
+  },
+  {
+   "id": "c5",
+   "verdict": "proven",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "Complete-match accuracy rose from 19.4% to 25.9% (OR 1.45, 95% CI 1.01–2.08, P = 0.045) — a real but fragile gain; label-level grade accuracy was not significantly different (P = 0.791).",
+    "zh": "完全匹配准确率从 19.4% 升到 25.9%（OR 1.45，95% CI 1.01–2.08，P = 0.045）——成立但脆弱；按单个标签算的分级准确率差异不显著（P = 0.791）。"
+   },
+   "evidence": {
+    "en": "Secondary endpoint; the CI lower bound sits just above 1. The label-level test is in the Fig. 3 legend.",
+    "zh": "次要终点；置信区间下限刚过 1。单标签检验见图 3 图注。"
+   },
+   "sourceId": "s1",
+   "quote": "In GEE analysis, AI assistance increased the odds of complete accuracy by 45% (odds ratio 1.45; 95% CI 1.01 to 2.08; P = 0.045).",
+   "quoteZh": "GEE 分析中，AI 辅助使完全准确的比值提高 45%（比值比 1.45；95% CI 1.01 至 2.08；P = 0.045）。",
+   "tags": [
+    "L1"
+   ]
+  },
+  {
+   "id": "c6",
+   "verdict": "proven",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "Agreement between annotators jumped: Krippendorff α 0.22 → 0.85 (set A) and 0.51 → 0.82 (set B).",
+    "zh": "标注者间一致性大幅上升：Krippendorff α 0.22 → 0.85（A 组），0.51 → 0.82（B 组）。"
+   },
+   "evidence": {
+    "en": "Secondary endpoint, bootstrap CIs reported.",
+    "zh": "次要终点，报告了 bootstrap 置信区间。"
+   },
+   "sourceId": "s1",
+   "quote": "Krippendorff’s α increased from 0.22 (95% bootstrap CI 0.16 to 0.29) to 0.85 (95% CI 0.79 to 0.89) in note set A",
+   "quoteZh": "A 组 Krippendorff α 从 0.22（95% bootstrap CI 0.16 至 0.29）升至 0.85（95% CI 0.79 至 0.89）",
+   "tags": []
+  },
+  {
+   "id": "c7",
+   "verdict": "proven",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "Self-consistency matters: removing it dropped detection F1 from 0.92 to 0.78 and roughly halved cost.",
+    "zh": "自洽投票有用：去掉后检测 F1 从 0.92 降到 0.78，成本约减半。"
+   },
+   "evidence": {
+    "en": "Ablation within the GPT-4.1-mini family.",
+    "zh": "在 GPT-4.1-mini 系列内做的消融。"
+   },
+   "sourceId": "s1",
+   "quote": "the single-inference variant (without self-consistency) reduced detection F1 from 0.92 to 0.78, while approximately halving inference cost (US$0.011 versus US$0.021 per note)",
+   "quoteZh": "单次推理版本（无自洽机制）使检测 F1 从 0.92 降到 0.78，同时推理成本约减半（每条 0.011 vs 0.021 美元）",
+   "tags": []
+  },
+  {
+   "id": "c8",
+   "verdict": "interpretation",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "The live-data drop is due to drift in case mix, terminology and note templates — not a fundamental model limit.",
+    "zh": "真实数据上的下滑来自病例构成、术语和病历模板的漂移，而非模型本身的根本局限。"
+   },
+   "evidence": {
+    "en": "Authors' explanation; plausible, but no experiment isolates each cause.",
+    "zh": "作者的解释，合理，但没有实验逐一拆开原因。"
+   },
+   "sourceId": "s1",
+   "quote": "This degradation, therefore, probably reflects the combined effects of distributional shift in case mix and clinical terminology, evolving EHR templates and note structures, and variation in documentation practices across clinician cohorts, rather than fundamental model limitations.",
+   "quoteZh": "因此，这种性能下降很可能反映了病例构成与临床术语的分布偏移、电子病历模板与结构的变化，以及不同医生群体书写习惯差异的综合作用，而不是模型的根本局限。",
+   "tags": []
+  },
+  {
+   "id": "c9",
+   "verdict": "interpretation",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "Agreement went up because annotators anchored on the model's suggestions.",
+    "zh": "一致性上升，是因为标注者被模型建议“锚定”了。"
+   },
+   "evidence": {
+    "en": "Authors' explanation — and a warning sign for automation complacency.",
+    "zh": "作者的解释，同时也是“自动化自满”的预警。"
+   },
+   "sourceId": "s1",
+   "quote": "This convergence effect probably arises because annotators anchor on model suggestions, reducing idiosyncratic interpretation of ambiguous documentation.",
+   "quoteZh": "这种趋同效应很可能是因为标注者以模型建议为锚点，减少了对模糊记录的个人化解读。",
+   "tags": [
+    "L4"
+   ]
+  },
+  {
+   "id": "c10",
+   "verdict": "opinion",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "Pair the agent with human verification and evidence highlighting — don't replace the reviewer.",
+    "zh": "让智能体配合人工核验和证据高亮使用，而不是取代审阅者。"
+   },
+   "evidence": {
+    "en": "Authors' recommended stance; supported by phase 3 but still a position.",
+    "zh": "作者推荐的立场，有第三阶段数据支持，但仍是立场。"
+   },
+   "sourceId": "s1",
+   "quote": "these results suggest that agentic LLM systems, coupled to human verification and evidence highlighting, could be further explored",
+   "quoteZh": "这些结果提示，配合人工核验和证据高亮的智能体大模型系统，值得进一步探索",
+   "tags": []
+  },
+  {
+   "id": "c11",
+   "verdict": "prediction",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "Such systems could accelerate real-time safety monitoring and high-reliability oncology care.",
+    "zh": "这类系统可以加速实时安全监测，提升高可靠性肿瘤照护。"
+   },
+   "evidence": {
+    "en": "Conditional on external validation and outcome trials that have not been done.",
+    "zh": "前提是外部验证和结局试验，而这些都还没做。"
+   },
+   "sourceId": "s1",
+   "quote": "With external validation and outcome‑focused trials, such systems could enhance and accelerate real‑time safety monitoring, trial curation and high‑reliability oncology care.",
+   "quoteZh": "若经过外部验证和以结局为导向的试验，这类系统可以增强并加速实时安全监测、试验数据整理和高可靠性肿瘤照护。",
+   "tags": []
+  },
+  {
+   "id": "c12",
+   "verdict": "prediction",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "It will work at other hospitals.",
+    "zh": "换到别的医院也能用。"
+   },
+   "evidence": {
+    "en": "Not tested. The paper itself says no phase establishes external validation.",
+    "zh": "未经测试。原文明确说没有任何阶段建立了外部验证。"
+   },
+   "sourceId": "s1",
+   "quote": "no phase of this work establishes external validation, which remains the most important open question for real-world deployment.",
+   "quoteZh": "本研究没有任何阶段建立外部验证，这仍是真实世界部署中最重要的未决问题。",
+   "tags": [
+    "L4"
+   ]
+  },
+  {
+   "id": "c13",
+   "verdict": "proven",
+   "who": {
+    "en": "Paper",
+    "zh": "原文"
+   },
+   "text": {
+    "en": "Governance cost: the system relies on a proprietary model (GPT-4.1-mini) via a commercial API; open-source models on local GPUs avoided API costs but performed worse.",
+    "zh": "治理成本：系统依赖商用 API 调用的闭源模型（GPT-4.1-mini）；本地 GPU 上的开源模型省了 API 费，但表现更差。"
+   },
+   "evidence": {
+    "en": "Discussion; ≈US$18.50 for the 884-note prospective corpus.",
+    "zh": "讨论部分；884 条前瞻病历约 18.5 美元。"
+   },
+   "sourceId": "s1",
+   "quote": "our system currently relies on a proprietary model (GPT-4.1-mini) accessed via a commercial Application Programming Interface (API)",
+   "quoteZh": "我们的系统目前依赖通过商业应用程序接口（API）调用的闭源模型（GPT-4.1-mini）",
+   "tags": [
+    "L4"
+   ]
+  },
+  {
+   "id": "c14",
+   "verdict": "misleading",
+   "who": {
+    "en": "Secondary · Medspark",
+    "zh": "二次报道 · Medspark"
+   },
+   "text": {
+    "en": "Secondary headline: “caught immune-related adverse events at F1 0.92”.",
+    "zh": "二次报道副标题：“以 F1 0.92 抓到免疫相关不良事件”。"
+   },
+   "evidence": {
+    "en": "Selective framing: the headline carries only the retrospective best score. The body does mention 0.72–0.79 later, but most readers stop at the headline.",
+    "zh": "选择性呈现：标题只放回顾性最佳成绩。正文后面确实写了 0.72–0.79，但多数读者只看标题。"
+   },
+   "sourceId": "s3",
+   "quote": "caught immune-related adverse events at F1 0.92 and halved annotation time for trial staff",
+   "quoteZh": "以 F1 0.92 抓到免疫相关不良事件，并把试验人员的标注时间减半",
+   "tags": [
+    "L1"
+   ]
+  },
+  {
+   "id": "c15",
+   "verdict": "misleading",
+   "who": {
+    "en": "Secondary · Medspark",
+    "zh": "二次报道 · Medspark"
+   },
+   "text": {
+    "en": "Secondary: “halved annotation time”.",
+    "zh": "二次报道：“标注时间减半”。"
+   },
+   "evidence": {
+    "en": "Close but not exact: the median fell 43.5% (428 → 242 s). Minor rounding up — note it, don't repeat it.",
+    "zh": "接近但不准确：中位数降 43.5%（428 → 242 秒）。属于轻度“往上凑整”，记下来，别照搬。"
+   },
+   "sourceId": "s3",
+   "quote": "halved annotation time for trial staff",
+   "quoteZh": "把试验人员的标注时间减半",
+   "tags": [
+    "L1"
+   ]
+  },
+  {
+   "id": "c16",
+   "verdict": "proven",
+   "who": {
+    "en": "Secondary · Medspark",
+    "zh": "二次报道 · Medspark"
+   },
+   "text": {
+    "en": "Secondary: “Removing that step dropped detection F1 from 0.92 to 0.78.”",
+    "zh": "二次报道：“去掉这一步，检测 F1 从 0.92 降到 0.78。”"
+   },
+   "evidence": {
+    "en": "Matches the paper exactly. Secondary sources can be right — check, then credit.",
+    "zh": "与原文完全一致。二次报道也会写对——核对后再采信。"
+   },
+   "sourceId": "s3",
+   "quote": "Removing that step dropped detection F1 from 0.92 to 0.78",
+   "quoteZh": "去掉这一步，检测 F1 从 0.92 降到 0.78",
+   "tags": []
+  },
+  {
+   "id": "c17",
+   "verdict": "opinion",
+   "who": {
+    "en": "Commentary · News & Views",
+    "zh": "评论 · News & Views"
+   },
+   "text": {
+    "en": "Same-day commentary: the system “can identify such events in prospectively collected clinical notes and can make human review of such notes faster and more consistent”.",
+    "zh": "同期评论：该系统“能在前瞻收集的病历中识别此类事件，并让人工审阅更快、更一致”。"
+   },
+   "evidence": {
+    "en": "An expert commentary, not an independent replication. Only the standfirst is open; the paper also thanks one commentary author (J. N. Kather) as a peer reviewer.",
+    "zh": "这是专家评论，不是独立复现。只有导语可免费阅读；论文同时致谢该评论作者之一（J. N. Kather）参与了同行评审。"
+   },
+   "sourceId": "s2",
+   "quote": "can identify such events in prospectively collected clinical notes and can make human review of such notes faster and more consistent",
+   "quoteZh": "能在前瞻收集的病历中识别此类事件，并让人工审阅更快、更一致",
+   "tags": [
+    "L4"
+   ]
+  }
+ ],
+ "review": {
+  "lede": {
+   "en": "Sort every sentence you meet into five boxes. Open any row to see the source line.",
+   "zh": "把读到的每句话放进五个盒子。点开任意一行，查看原文出处。"
+  },
+  "pattern": {
+   "en": "Spread pattern: the headline keeps the home-field score and the time saving; the away-game drop, the single-site limit and the complacency warning fall off.",
+   "zh": "传播规律：标题留下主场成绩和省时；客场下滑、单中心局限和“盲从”警告被丢掉。"
+  }
+ },
+ "practice": {
+  "lede": {
+   "en": "Practice on simulated notes only. Never paste a real patient record into a public AI tool.",
+   "zh": "只用模拟病历练习。绝不把真实病历贴进公共 AI 工具。"
+  },
+  "safety": {
+   "en": "Rule 01 of Safety: patient privacy stays outside the door. The note below is fictional.",
+   "zh": "安全边界第 01 条：患者隐私停在门外。下面这条病历是虚构的。"
+  },
+  "note": {
+   "label": {
+    "en": "SIMULATED NOTE · fictional patient, for teaching only",
+    "zh": "模拟病历 · 虚构患者，仅供教学"
+   },
+   "text": {
+    "en": "68-year-old man, metastatic non-small-cell lung cancer, on pembrolizumab (cycle 6). Reports 3 days of watery diarrhoea, 5–6 stools/day above his baseline, mild cramping, no blood. Afebrile. Assessment: likely immune-mediated colitis, grade 2. Plan: hold pembrolizumab, start loperamide, prednisone if no improvement in 48 h. Background: hypothyroidism since cycle 3, attributed to immunotherapy, on levothyroxine.",
+    "zh": "68 岁男性，转移性非小细胞肺癌，帕博利珠单抗第 6 周期。近 3 天水样腹泻，每天比平时多 5–6 次，轻度腹部绞痛，无便血，无发热。评估：考虑免疫相关结肠炎，2 级。计划：暂停帕博利珠单抗，予洛哌丁胺；48 小时无好转加用泼尼松。既往：第 3 周期起甲状腺功能减退，归因于免疫治疗，口服左甲状腺素。"
+   }
+  },
+  "prompts": [
+   {
+    "id": "pr1",
+    "title": {
+     "en": "Prompt 1 · Extractor (copy into any chat AI, with the simulated note)",
+     "zh": "提示词 1 · 抽取员（连同模拟病历复制到任意对话 AI）"
+    },
+    "text": {
+     "en": "You are a clinical data abstractor. From the NOTE below, extract immune-related adverse events for these six types only: pneumonitis, hepatitis, colitis, myocarditis, thyroiditis, dermatitis.\nFor each type found, return JSON with: type, temporality (current | past), CTCAE v5.0 grade (1-5 or \"not stated\"), attribution to immunotherapy (positive | negative | not stated), certainty (none | unlikely | possible | probable | definite), and evidence: the exact sentence copied from the note.\nRules: if the note does not say it, write \"not stated\" — do not infer. Do not add types that are not in the note.\nNOTE: <paste the simulated note>",
+     "zh": "你是临床数据抽取员。请只针对以下六类免疫相关不良事件，从【病历】中抽取信息：肺炎、肝炎、结肠炎、心肌炎、甲状腺炎、皮炎。\n每找到一类，用 JSON 返回：类型、时间状态（当前 | 既往）、CTCAE v5.0 分级（1-5 或“未写明”）、与免疫治疗的归因（阳性 | 阴性 | 未写明）、确定程度（无 | 不太可能 | 可能 | 很可能 | 肯定），以及证据：从病历中原样复制的句子。\n规则：病历没写的就写“未写明”，不要推断；病历里没有的类型不要添加。\n【病历】：<粘贴模拟病历>"
+    }
+   },
+   {
+    "id": "pr2",
+    "title": {
+     "en": "Prompt 2 · Judge (run Prompt 1 three times, then paste all three outputs)",
+     "zh": "提示词 2 · 裁判（把提示词 1 跑三次，再把三份结果贴进来）"
+    },
+    "text": {
+     "en": "You are the judge. Below are three independent extractions of the same NOTE.\n1) For each field, take the majority answer. If all three differ, choose the one whose evidence sentence best supports it, and mark the field \"needs human review\".\n2) Check every evidence sentence appears word-for-word in the NOTE; if not, flag it.\n3) Output the final JSON plus a short list of fields a human must check.\nNOTE: <paste>\nRUN A / RUN B / RUN C: <paste>",
+     "zh": "你是裁判。下面是对同一份【病历】的三次独立抽取结果。\n1）每个字段取多数答案；三次都不同时，选证据句最能支持的那个，并把该字段标为“需人工复核”。\n2）逐条检查证据句是否与病历原文逐字一致；不一致就标红。\n3）输出最终 JSON，并列出必须由人核对的字段清单。\n【病历】：<粘贴>\n【结果 A / B / C】：<粘贴>"
+    }
+   }
+  ],
+  "key": {
+   "en": "Reference answer (teaching example, not a clinical standard): colitis — current; grade 2 as documented; attribution positive; certainty “probable” (“likely”); evidence: “likely immune-mediated colitis, grade 2”. Thyroiditis (hypothyroidism) — ongoing on replacement, attributed to immunotherapy; whether to label it current or past is exactly the temporality ambiguity the paper describes, so a good judge flags it for human review. If your AI invents a grade or a sentence that is not in the note, that is the failure you are training to catch.",
+   "zh": "参考答案（教学示例，非临床标准）：结肠炎——当前；按病历记录为 2 级；归因阳性；确定程度“很可能”（原文“考虑”）；证据句：“考虑免疫相关结肠炎，2 级”。甲状腺炎（甲减）——仍在替代治疗、归因于免疫治疗；它算“当前”还是“既往”，正是论文说的时间状态难点，好的裁判应把它标为需人工复核。如果 AI 编出病历里没有的分级或句子，那正是本练习要你抓住的错误。"
+  },
+  "rewrite": {
+   "bad": {
+    "en": "“Is this AI good at finding side effects?”",
+    "zh": "“这个 AI 找副作用厉害吗？”"
+   },
+   "good": {
+    "en": "“In which phase was each number measured (retrospective, silent live, randomized with users)? Who were the users? Was it validated outside the developing hospital? Separate measured results from the authors' explanations and predictions, and quote the sentence for each.”",
+    "zh": "“每个数字是在哪个阶段测的（回顾性、真实静默、有用户的随机试验）？使用者是谁？是否在开发医院以外验证过？把测量结果和作者的解释、预测分开，并逐条引用原句。”"
+   },
+   "why": {
+    "en": "The good version forces phase, population, external validity and evidence type — the four places this news gets distorted.",
+    "zh": "好问题逼出四件事：阶段、人群、外部有效性、证据类型——这条新闻最容易被扭曲的四个地方。"
+   }
+  },
+  "headlinesNote": {
+   "en": "Practice headlines written by AIAI Academy for this exercise — not quotes from real outlets.",
+   "zh": "以下标题由 aiai 学院为练习编写，不是真实媒体的原话。"
+  },
+  "headlines": [
+   {
+    "h": {
+     "en": "AI catches immunotherapy side effects with 92% accuracy",
+     "zh": "AI 抓免疫治疗副作用，准确率 92%"
+    },
+    "answer": "misleading",
+    "why": {
+     "en": "F1 is not accuracy, and 0.92 is the retrospective score. Live notes gave 0.72–0.79.",
+     "zh": "F1 不是准确率，而且 0.92 是回顾性成绩；真实病历上是 0.72–0.79。"
+    }
+   },
+   {
+    "h": {
+     "en": "On three months of live notes, the system's F1 fell to 0.72–0.79",
+     "zh": "在三个月真实病历上，系统 F1 降到 0.72–0.79"
+    },
+    "answer": "proven",
+    "why": {
+     "en": "Measured in phase 2 (884 notes).",
+     "zh": "第二阶段 884 条病历实测。"
+    }
+   },
+   {
+    "h": {
+     "en": "Changing note templates explain the drop",
+     "zh": "病历模板变化导致了分数下滑"
+    },
+    "answer": "interpretation",
+    "why": {
+     "en": "The authors say “probably”; no experiment isolates templates as the cause.",
+     "zh": "作者用的是“很可能”；没有实验把模板单独拎出来证明。"
+    }
+   },
+   {
+    "h": {
+     "en": "Agentic AI will soon monitor immunotherapy safety in every hospital",
+     "zh": "智能体 AI 很快将在所有医院监测免疫治疗安全"
+    },
+    "answer": "prediction",
+    "why": {
+     "en": "No external validation or outcome trial yet.",
+     "zh": "还没有外部验证和结局试验。"
+    }
+   },
+   {
+    "h": {
+     "en": "AI should check charts with humans, not instead of them",
+     "zh": "AI 应该和人一起核对病历，而不是取代人"
+    },
+    "answer": "opinion",
+    "why": {
+     "en": "A reasonable stance supported by phase 3 — but still a stance.",
+     "zh": "有第三阶段支持的合理立场，但仍是立场。"
+    }
+   }
+  ]
+ },
+ "gameplan": {
+  "lede": {
+   "en": "Take the play to your own field: emergency and trauma.",
+   "zh": "把这套战术带回自己的场地：急诊与创伤。"
+  },
+  "transfer": [
+   {
+    "level": "L0",
+    "yard": "10 YDS",
+    "step": {
+     "en": "Ask a precise question",
+     "zh": "把问题问准"
+    },
+    "detail": {
+     "en": "Pick one registry complication with a written definition — e.g. venous thromboembolism or pressure injury in trauma inpatients — instead of “find complications”.",
+     "zh": "选一个有书面定义的创伤登记并发症，例如创伤住院患者的静脉血栓栓塞或压力性损伤，而不是笼统地“找并发症”。"
+    }
+   },
+   {
+    "level": "L1",
+    "yard": "20 YDS",
+    "step": {
+     "en": "Demand evidence sentences",
+     "zh": "要求证据句"
+    },
+    "detail": {
+     "en": "Every label must come with the exact sentence from the note, like the paper's evidence highlighting.",
+     "zh": "每个标签都要附病历原句，就像论文里的证据高亮。"
+    }
+   },
+   {
+    "level": "L2",
+    "yard": "40 YDS",
+    "step": {
+     "en": "Build the workflow: extractor ×3 + judge",
+     "zh": "搭流程：抽取员 ×3 + 裁判"
+    },
+    "detail": {
+     "en": "Test first on simulated or properly approved de-identified notes, inside your hospital's compliance rules and with a locally approved model.",
+     "zh": "先在模拟病历或经审批的去标识化病历上测试，遵守医院合规要求，使用院内批准的模型。"
+    }
+   },
+   {
+    "level": "L3",
+    "yard": "70 YDS",
+    "step": {
+     "en": "Run it silently, then test with users",
+     "zh": "先静默运行，再做用户试验"
+    },
+    "detail": {
+     "en": "Silent run on new admissions with drift monitoring; then a small crossover study with registry staff measuring time, accuracy and agreement separately.",
+     "zh": "在新入院患者上静默运行并监测漂移；再和登记员做小型交叉试验，把时间、准确率和一致性分开测。"
+    }
+   },
+   {
+    "level": "L4",
+    "yard": "END ZONE",
+    "step": {
+     "en": "Govern it",
+     "zh": "治理它"
+    },
+    "detail": {
+     "en": "No patient data in public AI; audit logs; watch for anchoring and complacency; external validation before anyone calls it “proven”.",
+     "zh": "患者数据不进公共 AI；保留审计日志；警惕锚定与盲从；在外部验证之前，谁也不能说它“已证实”。"
+    }
+   }
+  ],
+  "quiz": [
+   {
+    "q": {
+     "en": "Which number comes from real-world (prospective) deployment?",
+     "zh": "哪个数字来自真实世界（前瞻性）部署？"
+    },
+    "options": [
+     {
+      "en": "0.92",
+      "zh": "0.92"
+     },
+     {
+      "en": "0.66",
+      "zh": "0.66"
+     },
+     {
+      "en": "0.72–0.79",
+      "zh": "0.72–0.79"
+     },
+     {
+      "en": "0.78",
+      "zh": "0.78"
+     }
+    ],
+    "answer": 2,
+    "why": {
+     "en": "0.72–0.79 is the binary F1 from three months of silent deployment. 0.92 and 0.66 are retrospective; 0.78 is the retrospective score without self-consistency.",
+     "zh": "0.72–0.79 是三个月静默部署的二分类 F1。0.92 和 0.66 是回顾性成绩；0.78 是去掉自洽投票后的回顾性成绩。"
+    }
+   },
+   {
+    "q": {
+     "en": "Why can't we say the system is “externally validated”?",
+     "zh": "为什么不能说这个系统“已经外部验证”？"
+    },
+    "options": [
+     {
+      "en": "Only 884 notes were used",
+      "zh": "只用了 884 条病历"
+     },
+     {
+      "en": "All three phases ran in the same health system",
+      "zh": "三个阶段都在同一个医疗体系内进行"
+     },
+     {
+      "en": "It used GPT-4.1-mini",
+      "zh": "它用的是 GPT-4.1-mini"
+     },
+     {
+      "en": "Phase 3 was not randomized",
+      "zh": "第三阶段没有随机化"
+     }
+    ],
+    "answer": 1,
+    "why": {
+     "en": "External validation means testing at other institutions, EHRs and populations. The paper states that no phase did this. Phase 3 was randomized.",
+     "zh": "外部验证指在其他机构、其他病历系统和人群中测试。原文明确说没有任何阶段做到这一点；第三阶段是随机化的。"
+    }
+   },
+   {
+    "q": {
+     "en": "What problem does self-consistency mainly address?",
+     "zh": "自洽投票主要解决什么问题？"
+    },
+    "options": [
+     {
+      "en": "Errors in the grading guideline itself",
+      "zh": "分级指南本身的错误"
+     },
+     {
+      "en": "Run-to-run randomness of LLM outputs",
+      "zh": "大模型每次输出的随机波动"
+     },
+     {
+      "en": "Patient privacy",
+      "zh": "患者隐私"
+     },
+     {
+      "en": "Inference cost",
+      "zh": "推理成本"
+     }
+    ],
+    "answer": 1,
+    "why": {
+     "en": "Voting over three runs smooths random variation (F1 0.78 → 0.92). It cannot fix shared blind spots, and it doubles cost rather than saving it.",
+     "zh": "三次投票抵消随机波动（F1 0.78 → 0.92）。它修不了共同盲点，而且成本是翻倍而不是节省。"
+    }
+   }
+  ],
+  "summary": [
+   {
+    "en": "Read the phase before the number: 0.92 (retrospective) ≠ 0.72–0.79 (live).",
+    "zh": "先看阶段再看数字：0.92（回顾性）≠ 0.72–0.79（真实）。"
+   },
+   {
+    "en": "The tested claim is human + AI vs human alone — faster (428 → 242 s), more consistent, slightly more accurate on a strict metric.",
+    "zh": "被检验的是“人 + AI vs 只有人”：更快（428 → 242 秒）、更一致，在严格指标上略更准。"
+   },
+   {
+    "en": "Self-consistency (×3 + judge) bought +0.14 F1 at about double the cost.",
+    "zh": "自洽投票（×3 + 裁判）换来 F1 +0.14，成本约翻倍。"
+   },
+   {
+    "en": "Single health system, no patient outcomes, commercial API: not yet a deployable standard.",
+    "zh": "单一医疗体系、无患者结局、依赖商用 API：还不是可直接推广的标准。"
+   },
+   {
+    "en": "Secondary write-ups were mostly accurate, but headlines kept the best number and rounded 43.5% up to “half”.",
+    "zh": "二次报道大体准确，但标题只留最好看的数字，还把 43.5% 凑成“减半”。"
+   }
+  ],
+  "reading": [
+   "s1",
+   "s2",
+   "s4",
+   "s3"
+  ]
+ },
+ "sources": [
+  {
+   "id": "s1",
+   "type": "paper",
+   "title": "Gallifant J, Chen S, Shin K-Y, et al. An agentic AI system enhances clinical detection of immune-related adverse events in a multi-phase validation study. Nat Cancer (2026). doi:10.1038/s43018-026-01264-6",
+   "url": "https://www.nature.com/articles/s43018-026-01264-6",
+   "license": "CC BY 4.0",
+   "published": "2026-10-29",
+   "accessed": "2026-11-01",
+   "note": {
+    "en": "Primary source. Full text read (abstract, results, discussion, methods).",
+    "zh": "一手来源，已读全文（摘要、结果、讨论、方法）。"
+   }
+  },
+  {
+   "id": "s2",
+   "type": "commentary",
+   "title": "Jaume G, Kather JN. AI for detection of adverse events in the real world. Nat Cancer (2026), News & Views. doi:10.1038/s43018-026-01258-4",
+   "url": "https://www.nature.com/articles/s43018-026-01258-4",
+   "license": "© Springer Nature (subscription)",
+   "published": "2026-10-29",
+   "accessed": "2026-11-01",
+   "note": {
+    "en": "Opened; only the standfirst is free to read. Full commentary not read.",
+    "zh": "已打开；仅导语可免费阅读，评论全文未读。"
+   }
+  },
+  {
+   "id": "s3",
+   "type": "secondary",
+   "title": "Medspark. An AI team of agents grades immunotherapy side effects.",
+   "url": "https://medspark.ai/2026/10/30/an-ai-team-of-agents-grades-immunotherapy-side-effects/",
+   "license": "© Medspark — quoted briefly for fact-checking",
+   "published": "2026-10-30",
+   "accessed": "2026-11-01",
+   "note": {
+    "en": "Secondary write-up used for the fact-check rows.",
+    "zh": "用于事实核查的二次报道。"
+   }
+  },
+  {
+   "id": "s4",
+   "type": "code",
+   "title": "BittermanLab/AEGIS — code and prompts for the pipeline, interface and statistics (MIT licence, per the paper's Code availability statement)",
+   "url": "https://github.com/BittermanLab/AEGIS",
+   "license": "MIT",
+   "published": null,
+   "accessed": "2026-11-01",
+   "note": {
+    "en": "Repository page reachable; code not reviewed for this lesson.",
+    "zh": "仓库页面可访问；本课未审阅代码。"
+   }
+  }
+ ],
+ "related": [
+  {
+   "kind": {
+    "en": "Frontier Watch",
+    "zh": "前沿观察"
+   },
+   "title": {
+    "en": "Watch 03 · Google's personal health agent, built like a consult",
+    "zh": "观察 03 · 谷歌个人健康智能体，按“会诊”搭起来"
+   },
+   "href": "../frontier/health-agentv1.0.html"
+  },
+  {
+   "kind": {
+    "en": "Training Camp",
+    "zh": "训练营"
+   },
+   "title": {
+    "en": "Multi-agent teamwork: when one AI isn't enough",
+    "zh": "多智能体协作：一个 AI 不够，就组一支队"
+   },
+   "href": "../index.html#camp-a8"
+  },
+  {
+   "kind": {
+    "en": "Training Camp",
+    "zh": "训练营"
+   },
+   "title": {
+    "en": "Loop engineering: let AI check and fix itself",
+    "zh": "循环工程入门：让 AI 自己检查、自己改"
+   },
+   "href": "../index.html#camp-a7"
+  },
+  {
+   "kind": {
+    "en": "Gallery",
+    "zh": "作品馆"
+   },
+   "title": {
+    "en": "Auditable literature research agent (anti-hallucination)",
+    "zh": "可审计文献研究智能体（防幻觉）"
+   },
+   "href": "https://github.com/TUANZIDING/Paper-AI-Research-Agent",
+   "ext": true
+  },
+  {
+   "kind": {
+    "en": "Gallery",
+    "zh": "作品馆"
+   },
+   "title": {
+    "en": "Research evidence review workflow",
+    "zh": "研究证据审阅工作流"
+   },
+   "href": "https://github.com/TUANZIDING/research-evidence",
+   "ext": true
+  },
+  {
+   "kind": {
+    "en": "Lessons",
+    "zh": "课件馆"
+   },
+   "title": {
+    "en": "AI judgment lesson",
+    "zh": "AI 判断课"
+   },
+   "href": "../lessons/ai-judgmentv1.0.html"
+  },
+  {
+   "kind": {
+    "en": "Safety",
+    "zh": "安全边界"
+   },
+   "title": {
+    "en": "14 SAFETY · evidence in three layers, human in the loop",
+    "zh": "14 安全边界 · 证据分三层、人类复核在环"
+   },
+   "href": "../index.html#safety"
+  }
+ ],
+ "todo": [
+  {
+   "en": "Original video/audio replay: the paper has no official video — 待开发 (to be developed if an official talk appears).",
+   "zh": "原声视频回放：论文没有官方视频——待开发（如有官方讲座再补）。"
+  },
+  {
+   "en": "AIAI NEWS 002 — 待开发.",
+   "zh": "AIAI NEWS 002——待开发。"
+  }
+ ],
+ "revisions": [
+  {
+   "v": "1.0",
+   "date": "2026-11-01",
+   "note": {
+    "en": "First preview build; all numbers verified against the original article.",
+    "zh": "首个预览版；所有数字已对照原文核验。"
+   }
+  }
+ ]
+}

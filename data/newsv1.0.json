@@ -1,0 +1,35 @@
+{
+ "updated": "2026-11-01",
+ "lessons": [
+  {
+   "id": "news-001",
+   "no": "AIAI NEWS 001",
+   "title": {
+    "en": "An AI squad reads oncology notes for immunotherapy side effects: 0.92 is real — but it isn't the whole story",
+    "zh": "一支 AI 小队读病历找免疫副作用：0.92 是真的，但不是全部"
+   },
+   "short": {
+    "en": "Agentic AI reads oncology notes for immunotherapy side effects",
+    "zh": "智能体 AI 读病历找免疫治疗副作用"
+   },
+   "eventDate": "2026-10-29",
+   "verifiedAt": "2026-11-01",
+   "publishedAt": null,
+   "status": "preview",
+   "level": "L1–L4",
+   "evidence": {
+    "key": "peer",
+    "label": {
+     "en": "Peer-reviewed",
+     "zh": "同行评审"
+    }
+   },
+   "topic": {
+    "en": "AI agents · Oncology",
+    "zh": "AI 智能体 · 肿瘤"
+   },
+   "img": "assets/news/news-001-thumbv1.0.webp",
+   "href": "news/news-001v1.0.html"
+  }
+ ]
+}
