@@ -57,11 +57,12 @@ footer{max-width:820px;margin:0 auto;padding:0 22px 50px;font-size:.82rem;color:
 .chart h4{margin:0 0 12px;font-size:1rem}
 .bar{display:grid;grid-template-columns:150px 1fr 70px;gap:10px;align-items:center;margin:8px 0;font-size:.9rem}
 .bar i{display:block;height:18px;border-radius:9px;background:linear-gradient(90deg,#d58a3c,#b5532e)}
-.bar i.lo{background:linear-gradient(90deg,#7fc3b4,#1f7a72)}
+.bar i.lo{min-width:14px;background:linear-gradient(90deg,#7fc3b4,#1f7a72)}
 .bar span:last-child{font-weight:700;text-align:right}
 .hr{position:relative;height:30px;margin:6px 0}
-.hrrow{display:grid;grid-template-columns:190px 1fr 120px;gap:10px;align-items:center;font-size:.88rem;margin:4px 0}
+.hrrow{display:grid;grid-template-columns:190px 1fr 170px;gap:10px;align-items:center;font-size:.88rem;margin:4px 0}
 .axis{position:relative;height:22px;border-left:1px dashed #9aa;}
+.hrrow>span:last-child{white-space:nowrap;padding-left:8px}
 .axis .ci{position:absolute;top:10px;height:2px;background:var(--ink)}
 .axis .pt{position:absolute;top:5px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--teal)}
 .axis.gold .pt{background:#c0702c}
@@ -93,7 +94,7 @@ table.mini th{background:#f1ede3}
   <p class="one">一句话：哈佛 Mass General Brigham 团队用 4000 多万张人脸照片训练了一个人脸“基础模型” FAHR-Face，再分别微调成两个工具：一个估算“看上去的生物年龄”，一个直接预测癌症患者的死亡风险。两者在 4.3 万名放疗患者中都和生存显著相关，而且看的是脸上不同的地方。</p>
 
   <h2><i>00</i>先看作者的视频</h2>
-  <div class="vid" id="vid"><button type="button" id="vidBtn" aria-label="加载 LinkedIn 视频"><b>▶</b><span>点击加载作者在 LinkedIn 发布的视频</span><small>视频由 LinkedIn 提供，网络受限时可能打不开</small></button></div>
+  <div class="vid" id="vid"><button type="button" id="vidBtn" aria-label="加载 LinkedIn 视频"><b>▶</b><span>点击加载作者在 LinkedIn 发布的视频</span><small>视频由 LinkedIn 提供；如果加载后无法播放，请点下方链接到 LinkedIn 观看</small></button></div>
   <p class="vlink">作者：Fridolin Haugg（哈佛医学院博士生，论文共同第一作者）。<a href="https://www.linkedin.com/feed/update/urn:li:activity:7518087057429331968" target="_blank" rel="noopener">在 LinkedIn 打开原帖 ↗</a></p>
 
   <h2><i>01</i>它在问一个很老的问题</h2>
