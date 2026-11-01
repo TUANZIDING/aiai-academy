@@ -57,7 +57,7 @@
     });
     status.insertBefore(lg, ib);
     if (ib) {
-      const hb = el('button', 'ib', '◐'); hb.type = 'button'; hb.id = 'xHud';
+      const hb = el('button', 'ib', '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.7a6.3 6.3 0 0 1 0 12.6z" fill="currentColor"/></svg>'); hb.type = 'button'; hb.id = 'xHud';
       hb.title = '精简画面 / Clean view (H)'; hb.setAttribute('aria-label', '精简画面 Clean view (H)'); hb.setAttribute('aria-pressed', 'false');
       hb.onclick = () => setClean(!app.classList.contains('xclean'));
       ib.insertBefore(hb, ib.firstChild);
