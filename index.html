@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="assets/gamesv1.0.css?v=1.0">
 <link rel="stylesheet" href="assets/videosv1.0.css?v=1.0">
 <link rel="stylesheet" href="assets/shelfv1.0.css?v=1.1">
-<link rel="stylesheet" href="assets/lessons-catalogv1.0.css?v=1.1">
+<link rel="stylesheet" href="assets/lessons-catalogv1.0.css?v=1.2">
 <style>.brand .aiai-mark{height:38px;width:auto;display:block}.w-brand .aiai-mark{height:34px;width:auto;display:block}.w-brand .aiai-sub{display:flex;flex-direction:column;line-height:1.2;font-size:.92rem}.w-brand .aiai-sub small,.brand small{display:block;font-size:.6rem;letter-spacing:.2em;font-weight:500;opacity:.7}</style>
 </head>
 <body>
@@ -76,6 +76,7 @@
     <a href="#videos">放映厅</a>
     <a href="#lessons">课件馆</a>
     <a href="#camp">训练营</a>
+    <a href="#frontier">前沿观察</a>
     <details class="nav-more"><summary>更多</summary><div class="menu">
       <a href="#concepts">战术词典</a>
       <a href="#gear">装备库</a>
@@ -286,8 +287,21 @@
   </article>
 </div>
 
+<section id="frontier" class="section">
+  <p class="eyebrow"><span class="jn">10</span><span class="ek">FRONTIER WATCH</span></p>
+  <p class="lc-kick">FRONTIER WATCH / 前沿观察</p>
+  <h2 class="lc-h">看见新东西，<em>先分清证据再兴奋。</em></h2>
+  <p class="lc-lede">医学和 AI 交叉处的新研究、新产品、新演示。每篇都讲清它做了什么、对医生意味着什么、还缺哪些证据，并标出证据等级。</p>
+  <hr class="lc-rule">
+  <h3 class="lc-find">找到想看的方向</h3>
+  <div class="lc-chips" role="group" aria-label="前沿观察主题" id="frChips"></div>
+  <p class="lc-line" id="frLine" aria-live="polite"></p>
+  <div class="lc-list" id="frList"></div>
+  <button type="button" class="lc-more" id="frMore" hidden></button>
+</section>
+
 <section id="library" class="section">
-  <p class="eyebrow"><span class="jn">10</span><span class="ek">FILM ROOM</span></p>
+  <p class="eyebrow"><span class="jn">11</span><span class="ek">FILM ROOM</span></p>
   <h2>延伸学习 · 录像室</h2>
   <p class="sub" id="libCredit"></p>
   <div class="filters" role="toolbar" aria-label="按主题筛选课程" id="libFilters"></div>
@@ -297,7 +311,7 @@
 <section id="safety" class="section safety">
   <div class="sec-art">
   <div>
-  <p class="eyebrow"><span class="jn">11</span><span class="ek">SAFETY</span></p>
+  <p class="eyebrow"><span class="jn">12</span><span class="ek">SAFETY</span></p>
   <h2>AI 可以跑路线，<em>判断留给人。</em></h2>
   <div class="rules">
     <article><span>01</span><h3>患者隐私停在门外</h3><p>任何真实病历、影像、身份信息都不进入公共 AI。公开仓库只放代码与模拟数据。</p></article>
@@ -311,7 +325,7 @@
 </section>
 
 <section id="toolbox" class="section">
-  <p class="eyebrow"><span class="jn">12</span><span class="ek">TOOLBOX</span></p>
+  <p class="eyebrow"><span class="jn">13</span><span class="ek">TOOLBOX</span></p>
   <h2>开源工具箱</h2>
   <p class="sub">我收藏并在用的他人开源项目（fork），课上作为“装备库”介绍，和我自己的作品分开。</p>
   <div class="tools" id="tools"></div>
@@ -321,7 +335,7 @@
   <div class="sec-art">
   <figure class="rv"><img src="assets/home/home-coachv1.0.webp?v=3.1" alt="吉祥物团子教练站在球场边挥手" loading="lazy" width="1000" height="750"></figure>
   <div>
-    <p class="eyebrow"><span class="jn">13</span><span class="ek">COACH</span></p>
+    <p class="eyebrow"><span class="jn">14</span><span class="ek">COACH</span></p>
     <h2>丁海祥 · Haixiang Ding, MD</h2>
     <p>急诊创伤外科主治医师，苏州大学临床医学博士在读。研究方向：放射性骨骼肌损伤、骨质疏松。把临床问题、教学经验和开源实践放在同一张战术板上，帮助医护人员从“想学 AI”走到“能用、用对”。</p>
     <div class="cta">
@@ -348,6 +362,7 @@
 <script src="assets/hlsv1.5.17.min.js" defer></script>
 <script src="assets/videosv1.0.js?v=1.0" defer></script>
 <script src="assets/lessons-catalogv1.0.js?v=1.0" defer></script>
+<script src="assets/frontierv1.0.js?v=1.0" defer></script>
 <script src="assets/shelfv1.0.js?v=1.3" defer></script>
 <script>document.addEventListener("click",e=>{const d=document.querySelector(".nav-more[open]");if(d&&(!d.contains(e.target)||e.target.closest(".menu a")))d.removeAttribute("open")});</script>
 </body>

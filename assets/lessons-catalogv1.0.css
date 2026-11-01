@@ -46,3 +46,4 @@
 .lc-list>.drill{grid-column:1/-1}
 .lc-badge{display:inline-block;margin-left:8px;padding:1px 8px;border-radius:10px;background:#e3f1ea;color:#1e6e52;font-size:.75rem;letter-spacing:0;vertical-align:1px}
 .lc-clear{margin-left:8px;border:0;background:none;color:#a0763a;font:inherit;text-decoration:underline;cursor:pointer}
+.lc-badge.warn{background:#fff1dc;color:#8a5a12}
