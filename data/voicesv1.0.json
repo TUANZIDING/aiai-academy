@@ -1,0 +1,25 @@
+{
+ "schema": "aiai-voices-index/1.0",
+ "series": {
+  "name": "AI VOICES",
+  "zh": "AI 大师访谈与思想课",
+  "slogan": "Watch in English. Think in depth. Learn with AI."
+ },
+ "episodes": [
+  {
+   "no": "AI VOICES 001",
+   "num": 1,
+   "speaker": "Andrej Karpathy",
+   "title": "Software Is Changing (Again)",
+   "question": {
+    "zh": "当自然语言成为编程语言，人类还需要学习编程吗？",
+    "en": "When natural language becomes a programming language, do humans still need to learn to code?"
+   },
+   "href": "voices/voices-001v1.0.html",
+   "data": "data/voices/voices-001v1.0.json",
+   "thumb": "https://img.youtube.com/vi/LCEmiRjPEtQ/maxresdefault.jpg",
+   "status": "preview",
+   "verifiedAt": "2026-11-02"
+  }
+ ]
+}
