@@ -13,5 +13,6 @@
         <ul class="nh-dates"><li>事件 Event <b>${esc(n.eventDate)}</b></li><li>最近核验 Verified <b>${esc(n.verifiedAt)}</b></li><li>档位 Level <b>${esc(n.level)}</b></li><li>${esc(n.topic.zh)}</li></ul>
         <a class="nh-go" href="${esc(n.href)}">进入本期 · Enter <span aria-hidden="true">↗</span></a>
       </div></article>`).join('') || '<p class="nh-empty">第一期正在制作中。</p>';
+    if (location.hash === '#news') { const go = () => document.getElementById('news').scrollIntoView(); go(); setTimeout(go, 700); setTimeout(go, 1600); }
   }).catch(() => { box.innerHTML = '<p class="nh-empty">新闻课加载失败，请刷新页面。</p>'; });
 })();
