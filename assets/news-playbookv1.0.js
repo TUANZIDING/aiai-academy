@@ -21,7 +21,7 @@
     prev: { en: 'Previous', zh: '上一章' }, next: { en: 'Next', zh: '下一章' }, keys: { en: '← → keys turn chapters', zh: '键盘 ← → 翻章' },
     all: { en: 'All', zh: '全部' }, showing: (n, t) => ({ en: `Showing ${n} of ${t} claims`, zh: `显示 ${n} / ${t} 条论断` }),
     src: { en: 'Source & original line', zh: '出处与原文' }, copied: '已复制 Copied', copyEn: { en: 'Copy English', zh: '复制英文版' }, copyZh: { en: 'Copy Chinese', zh: '复制中文版' },
-    expand: { en: 'Open all cards', zh: '全部展开' }, collapse: { en: 'Close all cards', zh: '全部收起' }, flip: { en: 'Tap to open 6 fields', zh: '点开看 6 个栏目' },
+    expand: { en: 'Open all cards', zh: '全部展开' }, collapse: { en: 'Close all cards', zh: '全部收起' }, flip: { en: 'Open the other 5 fields', zh: '点开看其余 5 个栏目' },
     reset: { en: 'Reset quiz', zh: '重做小测' }, correct: { en: 'Correct.', zh: '答对了。' }, wrong: { en: 'Not quite.', zh: '再想想。' },
     ticker: { en: 'WIRE', zh: '快讯' }, pause: { en: 'Pause ticker', zh: '暂停滚动' }, play: { en: 'Play ticker', zh: '继续滚动' }
   };
@@ -157,7 +157,7 @@
     },
     playbook(D) {
       const L = D.fieldLabels;
-      return `${P({ en: 'Three ideas worth stealing. Each card opens into six fields.', zh: '三个值得学走的战术。每张卡点开都有六个栏目。' }, 'lede')}
+      return `${P({ en: 'Three ideas worth stealing. Each card has six fields: the plain definition on the front, five more inside.', zh: '三个值得学走的战术。每张卡六个栏目：正面是通俗定义，点开还有五个。' }, 'lede')}
       <div class="pb-tools"><button type="button" id="pbAll" aria-pressed="false">${T(UI.expand)}</button></div>
       <div class="pb">${D.playbook.map(p => `<article class="pc" data-open="false">
         <button type="button" aria-expanded="false" aria-controls="pc-${p.id}"><span class="tg">${esc(p.tag)}</span><span class="lv">${esc(p.level)}</span>
@@ -260,7 +260,7 @@
       $('#nxPrev').disabled = i === 0; $('#nxNext').disabled = i === N - 1;
       links[i].scrollIntoView({ block: 'nearest', inline: 'center' });
       if (push) history.replaceState(null, '', '#' + D.chapters[i].id);
-      if (focus) { const m = $('#main'); const y = m.getBoundingClientRect().top + scrollY - top.offsetHeight - $('#nxChap').offsetHeight - 8; scrollTo({ top: Math.max(0, y) }); $('#h-' + D.chapters[i].id).focus({ preventScroll: true }); }
+      if (focus) { const m = $('#main'); const stick = getComputedStyle(top).position === 'sticky' ? top.offsetHeight : 0; const y = m.getBoundingClientRect().top + scrollY - stick - $('#nxChap').offsetHeight - 8; scrollTo({ top: Math.max(0, y) }); $('#h-' + D.chapters[i].id).focus({ preventScroll: true }); }
     }
     links.forEach(a => a.addEventListener('click', e => { e.preventDefault(); go(+a.dataset.i); }));
     $('#nxPrev').onclick = () => go(cur - 1); $('#nxNext').onclick = () => go(cur + 1);
@@ -289,11 +289,12 @@
     if (vc) { vc.addEventListener('click', e => { const b = e.target.closest('button'); if (b) applyV(b.dataset.v); }); applyV('all'); }
 
     // copy prompts
-    const toast = msg => { const t = $('#nxToast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('on'), 1600); };
+    const toast = msg => { const t = $('#nxToast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('on'), 2600); };
+    const mark = b => { if (!b.dataset.lbl) b.dataset.lbl = b.innerHTML; b.innerHTML = '✓ 已复制 Copied'; b.classList.add('done'); clearTimeout(b._t); b._t = setTimeout(() => { b.innerHTML = b.dataset.lbl; b.classList.remove('done'); }, 2200); };
     $$('[data-copy]').forEach(b => b.addEventListener('click', async () => {
       const p = D.practice.prompts.find(x => x.id === b.dataset.copy); const txt = p.text[b.dataset.l];
-      try { await navigator.clipboard.writeText(txt); toast(UI.copied); }
-      catch (e) { const ta = document.createElement('textarea'); ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); let ok = false; try { ok = document.execCommand('copy'); } catch (x) {} ta.remove(); toast(ok ? UI.copied : '复制失败，请手动选择 Copy failed — select manually'); }
+      try { await navigator.clipboard.writeText(txt); toast(UI.copied); mark(b); }
+      catch (e) { const ta = document.createElement('textarea'); ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); let ok = false; try { ok = document.execCommand('copy'); } catch (x) {} ta.remove(); toast(ok ? UI.copied : '复制失败，请手动选择 Copy failed — select manually'); if (ok) mark(b); }
     }));
 
     // headline drill
