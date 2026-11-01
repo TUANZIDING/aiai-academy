@@ -1,2 +1,52 @@
-{"updated":"2026-11-01","topics":[{"id":"neuro","name":"神经肌肉与康复"},{"id":"device","name":"AI 与医疗器械"}],
-"items":[{"t":["neuro","device"],"no":"01","kind":"神经肌肉与康复 · 公司演示","title":"手腕上的一圈电极，能读出每根手指用了多大力","d":"18 通道腕部肌电实时判断哪几根手指在用力、轻还是重，准确率 80%–90%。对肌电假肢、手外伤康复有什么意义，还缺哪些证据。","level":"未经同行评审","date":"2026-11-01","img":"assets/frontier/emg-forcev1.0.webp","href":"frontier/emg-forcev1.0.html"}]}
+{
+ "updated": "2026-11-01",
+ "topics": [
+  {
+   "id": "onco",
+   "name": "肿瘤与预后"
+  },
+  {
+   "id": "bio",
+   "name": "AI 生物标志物"
+  },
+  {
+   "id": "neuro",
+   "name": "神经肌肉与康复"
+  },
+  {
+   "id": "device",
+   "name": "AI 与医疗器械"
+  }
+ ],
+ "items": [
+  {
+   "t": [
+    "onco",
+    "bio"
+   ],
+   "no": "02",
+   "kind": "肿瘤与预后 · 论文精读",
+   "title": "一张自拍，能读出两只不同的“健康时钟”",
+   "d": "Lancet Digital Health 新论文 FAHR-Face：4000 万张人脸训练的基础模型，估算生物年龄和癌症患者死亡风险。附作者视频、数据图和局限性分析。",
+   "level": "同行评审",
+   "date": "2026-11-01",
+   "img": "assets/frontier/face-age-thumbv1.0.webp",
+   "href": "frontier/face-agev1.0.html"
+  },
+  {
+   "t": [
+    "neuro",
+    "device",
+    "bio"
+   ],
+   "no": "01",
+   "kind": "神经肌肉与康复 · 公司演示",
+   "title": "手腕上的一圈电极，能读出每根手指用了多大力",
+   "d": "18 通道腕部肌电实时判断哪几根手指在用力、轻还是重，准确率 80%–90%。对肌电假肢、手外伤康复有什么意义，还缺哪些证据。",
+   "level": "未经同行评审",
+   "date": "2026-11-01",
+   "img": "assets/frontier/emg-forcev1.0.webp",
+   "href": "frontier/emg-forcev1.0.html"
+  }
+ ]
+}

@@ -12,14 +12,14 @@
     $('#frLine').textContent = `${T.find(t => t.id === topic).name} · ${rows.length} 篇 · 从新到旧 · 每篇都分开写事实、联想和推测`;
     $('#frList').innerHTML = (more ? rows : rows.slice(0, 6)).map(i => `<article class="lc-card">
       <a class="lc-thumb" href="${esc(i.href)}" tabindex="-1" aria-hidden="true"><img src="${esc(i.img)}" alt="" loading="lazy"></a>
-      <div class="lc-body"><p class="lc-kind">观察 ${esc(i.no)} · ${esc(i.kind)}<span class="lc-badge warn">${esc(i.level)}</span></p>
+      <div class="lc-body"><p class="lc-kind">观察 ${esc(i.no)} · ${esc(i.kind)}<span class="lc-badge${i.level === '同行评审' ? '' : ' warn'}">${esc(i.level)}</span></p>
         <h3>${esc(i.title)}</h3><p class="lc-desc">${esc(i.d)}</p>
         <p class="lc-date">更新于 ${esc(i.date)}</p>
         <a class="lc-go" href="${esc(i.href)}">读这篇观察<span aria-hidden="true">↗</span></a></div></article>`).join('') || '<p class="sub">这个主题还没有观察。</p>';
     const m = $('#frMore'); m.hidden = rows.length <= 6; m.textContent = more ? '收起' : `展开全部 ${rows.length} 篇 ↓`;
     m.onclick = () => { more = !more; render(); };
   }
-  fetch('data/frontierv1.0.json?v=1.0').then(r => r.json()).then(d => {
+  fetch('data/frontierv1.0.json?v=1.1').then(r => r.json()).then(d => {
     D = d; render();
     if (location.hash === '#frontier') { const go = () => $('#frontier').scrollIntoView(); go(); setTimeout(go, 700); setTimeout(go, 1600); }
   }).catch(() => { $('#frList').innerHTML = '<p class="sub">加载失败，请刷新页面。</p>'; });
