@@ -71,7 +71,7 @@
       <h1 id="vxQ">${esc(D.question.zh)}</h1>
       <p class="q-en" lang="en">${esc(D.question.en)}</p>
       <p class="vx-bg">${esc(D.background.zh)}</p>
-      <p class="vx-srcline">${esc(D.speaker.name)} · “${esc(D.talk.title)}” · ${esc(D.talk.event)} · ${esc(D.talk.deliveredOn)} · <a href="${esc(V.url)}" target="_blank" rel="noopener">YouTube · ${esc(V.channel)} ↗</a></p>
+      <p class="vx-srcline"><span>${esc(D.speaker.name)} · “${esc(D.talk.title)}”</span> · <span>${esc(D.talk.event)} · ${esc(D.talk.deliveredOn)}</span> · <a href="${esc(V.url)}" target="_blank" rel="noopener">YouTube · ${esc(V.channel)} ↗</a></p>
     </div>
     <button type="button" class="vx-cover" id="vxCover" aria-label="播放视频，进入第 02 章 Play the talk">
       <img src="${esc(V.thumb)}" alt="${esc(D.talk.title)} — YouTube 视频封面" width="1280" height="720" fetchpriority="high" referrerpolicy="no-referrer">
