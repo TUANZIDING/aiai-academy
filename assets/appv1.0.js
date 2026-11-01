@@ -137,7 +137,7 @@
     if (!e.target.closest('.drill-next a[href="#concepts"]')) return;
     if (typeof cLevel !== 'undefined' && learn && level) { cLevel = level; renderConcepts(); }
   });
-  function renderLessons() {
+  function renderLessons() { if (!$('#lessonList')) return;
     const byRepo = Object.fromEntries(data.projects.map(p => [p.repo, p]));
     $('#lessonList').innerHTML = LESSONS.map(l => `<article class="lesson">
       <span class="meta">${l.meta}</span><h3>${l.title}</h3>
@@ -162,7 +162,7 @@
   try { if (localStorage.getItem('projector') === '1') pj.click(); } catch (e) {}
 
   fetch('data/projectsv1.0.json?v=1.7').then(r => r.json()).then(d => {
-    data = d; renderStats(); renderLevels(); renderFilters(); renderGrid(); renderLessons(); renderTools();
+    data = d; renderStats(); renderLevels(); renderFilters(); renderGrid(); renderTools();
   }).catch(() => { $('#grid').innerHTML = '<p class="sub">作品数据加载失败，请刷新页面。</p>'; });
 
   let learn = null, cLevel = 'all', libTopic = 'all';

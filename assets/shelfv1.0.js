@@ -1,7 +1,7 @@
 /* 横滑展馆：把各馆的卡片网格变成可左右滑动的一排（筛选重绘后自动复位） */
 (() => {
   const SPECS = [
-    ['#conceptGrid', 'w-s'], ['#gearGrid', 'w-m'], ['#grid', 'w-m'], ['#lessonList', 'w-m'],
+    ['#conceptGrid', 'w-s'], ['#gearGrid', 'w-m'], ['#grid', 'w-m'],
     ['#libList', 'w-s rows2'], ['#tools', 'w-s rows2']
   ];
   function shelf(el, cls) {

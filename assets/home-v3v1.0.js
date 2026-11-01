@@ -12,8 +12,8 @@
   });
   // 课件馆：示范路线数 + 实战案例
   const countLessons = () => {
-    const n = document.querySelectorAll('#lessonList .lesson').length;
-    if (n) { set('lessons', n + document.querySelectorAll('#lessons .case-feature').length); return true; }
+    const n = document.querySelectorAll('#lessonCatalog .lc-chips b')[0];
+    if (n) { set('lessons', +n.textContent); return true; }
   };
   if (!countLessons()) { let t = 0; const iv = setInterval(() => { if (countLessons() || ++t > 40) clearInterval(iv); }, 150); }
 
