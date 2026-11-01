@@ -56,6 +56,7 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#campReader').hidden) close(); });
   fetch('data/campv1.0.json?v=1.4').then(r => r.json()).then(d => {
     camp = d; render();
+    if (location.hash === '#camp') { const go = () => $('#camp').scrollIntoView(); go(); setTimeout(go, 700); setTimeout(go, 1600); }
     const m = location.hash.match(/^#camp-(\w+)/); if (m) { $('#camp').scrollIntoView(); open(m[1], false); }
   }).catch(() => { $('#campTracks').innerHTML = '<p class="sub">课程加载失败，请刷新页面。</p>'; });
 })();
