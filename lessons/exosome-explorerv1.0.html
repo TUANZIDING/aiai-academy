@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>外泌体与细胞外囊泡漫游 · Exosome &amp; EV Explorer · aiai 学院</title>
+<meta name="description" content="可交互的外泌体与细胞外囊泡（EV）漫游：EV 家族、内吞、多囊体出芽、货物装载、释放、体液漂流与摄取，再进实验室看差速超速离心、分离方法和鉴定；配 EV 生命周期动画、离心沉降与 NTA 粒径分布示意、中文讲解卡和科研/临床联系。">
+<meta name="theme-color" content="#060b1d">
+<meta property="og:title" content="外泌体与细胞外囊泡 · EV｜从细胞里出发，到离心管里被捞出来">
+<meta property="og:image" content="https://aiai-academy.com/assets/exosome/exosome-herov1.0.webp">
+<link rel="preload" as="image" href="../assets/exosome/exosome-herov1.0.webp">
+<style>
+:root{
+  --bg:#060b1d;--bg2:#0b1430;--glass:rgba(14,24,52,.62);--line:rgba(140,180,255,.18);--line2:rgba(140,180,255,.32);
+  --ink:#e8eefc;--mute:#8d9bbd;--dim:#5d6a8c;--acc:#5ee7ff;--acc2:#ffb547;--hot:#ff5d8f;--ok:#7dffb2;
+  --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+  --tint:#a46bff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+body{overflow:hidden}
+button{font:inherit;color:inherit}
+a{color:var(--acc)}
+.app{height:100vh;height:100dvh;display:grid;grid-template-rows:auto 1fr auto;gap:8px;padding:10px 12px calc(6px + env(safe-area-inset-bottom));
+  background:radial-gradient(120% 80% at 50% 40%,#0f1d45 0%,var(--bg) 62%)}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:12px;backdrop-filter:blur(12px) saturate(140%);-webkit-backdrop-filter:blur(12px) saturate(140%);box-shadow:0 8px 30px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.04)}
+.k{font:600 10px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* ---------- top bar ---------- */
+.top{display:grid;grid-template-columns:auto 1fr auto auto;gap:10px;align-items:stretch;z-index:5}
+.title{padding:10px 14px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.title .brand{display:flex;gap:8px;align-items:center}
+.title .brand a{font:600 10px var(--mono);letter-spacing:.14em;color:var(--acc2);text-decoration:none}
+.title h1{margin:4px 0 2px;font-size:20px;line-height:1.15;font-weight:800;letter-spacing:.02em;
+  background:linear-gradient(90deg,#fff 0%,#bfe9ff 45%,var(--acc) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.title p{margin:0;font-size:12px;color:var(--mute);white-space:nowrap}
+.profile{padding:9px 14px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px 14px;align-content:center;min-width:0}
+.profile div{min-width:0}
+.profile b{display:block;font:600 12px var(--mono);color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:3px}
+.atp{padding:9px 12px;width:230px;display:flex;flex-direction:column;justify-content:center}
+.atp .row{display:flex;align-items:flex-end;gap:10px;margin-top:4px}
+.atp .num{font:700 24px/1 var(--mono);color:#fff}
+.atp canvas{flex:1;height:30px;width:100%}
+.status{padding:9px 12px;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:5px;min-width:150px}
+.live{display:flex;gap:6px;align-items:center;font:700 11px var(--mono);letter-spacing:.12em;color:#ff8aa8}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--hot);box-shadow:0 0 0 0 rgba(255,93,143,.7);animation:pulse 1.6s infinite}
+.paused .live i{animation:none;background:var(--dim);box-shadow:none}.paused .live{color:var(--mute)}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(255,93,143,0)}100%{box-shadow:0 0 0 0 rgba(255,93,143,0)}}
+.mag{font:800 22px/1 var(--mono);color:var(--acc);text-shadow:0 0 18px rgba(94,231,255,.35)}
+.fov{font:500 10px var(--mono);color:var(--mute)}
+.ibtns{display:flex;gap:6px}
+.ib{width:30px;height:30px;border-radius:8px;border:1px solid var(--line2);background:rgba(255,255,255,.04);display:grid;place-items:center;cursor:pointer;font-size:14px;line-height:1}
+.ib:hover{background:rgba(94,231,255,.12);border-color:var(--acc)}
+
+/* ---------- view ---------- */
+.view{position:relative;min-height:0;border-radius:14px;overflow:hidden}
+.stage{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.cam{position:absolute;inset:0;transform-origin:0 0;transition:transform 1.6s cubic-bezier(.65,0,.25,1);will-change:transform}
+.cam img{width:100%;height:100%;display:block;user-select:none;-webkit-user-drag:none;animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.012) rotate(.25deg)}}
+.hs{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:0;background:transparent;cursor:pointer;padding:0;transition:opacity .5s}
+.hs::before{content:"";position:absolute;inset:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(94,231,255,.45),0 0 14px rgba(94,231,255,.9)}
+.hs::after{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(94,231,255,.8);animation:ring 2.2s infinite}
+@keyframes ring{0%{transform:scale(.5);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.hs span{position:absolute;left:22px;top:50%;transform:translateY(-50%);white-space:nowrap;font:600 11px var(--sans);padding:3px 7px;border-radius:6px;background:rgba(6,11,29,.78);border:1px solid var(--line2);color:#fff;pointer-events:none}
+.hs.l span{left:auto;right:22px}
+.zoomed .hs{opacity:0;pointer-events:none}
+.close{position:absolute;inset:0;pointer-events:none;-webkit-mask-image:radial-gradient(130% 100% at 50% 50%,#000 60%,transparent 100%);mask-image:radial-gradient(130% 100% at 50% 50%,#000 60%,transparent 100%)}
+.close img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease;transform-origin:50% 50%}
+.close img.on{opacity:1;animation:kb 6s ease-out forwards}
+@keyframes kb{from{transform:scale(1.04) translate(0,0)}to{transform:scale(1.16) translate(-1.5%,-1%)}}
+#fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.chip{position:absolute;left:12px;top:12px;display:flex;gap:8px;align-items:center;padding:6px 10px;font:600 11px var(--mono);letter-spacing:.08em;border-radius:8px;z-index:3}
+.chip i{width:7px;height:7px;border-radius:2px;background:var(--tint);box-shadow:0 0 10px var(--tint)}
+.chip b{font-family:var(--sans);letter-spacing:0;font-size:13px;color:#fff}
+.ai{position:absolute;right:12px;bottom:10px;font:500 10px var(--sans);color:rgba(232,238,252,.6);background:rgba(6,11,29,.55);padding:3px 7px;border-radius:5px;z-index:3}
+.scale{position:absolute;left:14px;bottom:12px;z-index:3;font:600 11px var(--mono);color:#fff}
+.scale .bar{height:4px;margin-top:5px;border:1.5px solid #fff;border-top:0;transition:width 1s ease;min-width:14px}
+.corner{position:absolute;width:18px;height:18px;border-color:rgba(94,231,255,.55);border-style:solid;z-index:3;pointer-events:none}
+.c1{left:6px;top:6px;border-width:1.5px 0 0 1.5px}.c2{right:6px;top:6px;border-width:1.5px 1.5px 0 0}.c3{left:6px;bottom:6px;border-width:0 0 1.5px 1.5px}.c4{right:6px;bottom:6px;border-width:0 1.5px 1.5px 0}
+.stops{position:absolute;right:12px;top:50%;transform:translateY(-50%);z-index:4;padding:8px;display:flex;flex-direction:column;gap:2px;width:170px}
+.stops button{display:flex;align-items:center;gap:8px;border:0;background:transparent;padding:6px 8px;border-radius:7px;cursor:pointer;text-align:left;font-size:12.5px;color:var(--mute)}
+.stops button i{width:8px;height:8px;border-radius:50%;background:var(--c);opacity:.55;flex:none}
+.stops button em{font:600 10px var(--mono);font-style:normal;color:var(--dim);margin-left:auto}
+.stops button:hover{background:rgba(255,255,255,.05);color:var(--ink)}
+.stops button.on{background:rgba(94,231,255,.1);color:#fff}.stops button.on i{opacity:1;box-shadow:0 0 10px var(--c)}
+.ctrl{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);z-index:4;display:flex;align-items:center;gap:4px;padding:5px}
+.ctrl button{width:38px;height:34px;border:0;border-radius:8px;background:transparent;cursor:pointer;font-size:15px;display:grid;place-items:center}
+.ctrl button:hover{background:rgba(94,231,255,.12)}
+.ctrl .pp{background:rgba(94,231,255,.16);color:var(--acc)}
+.prog{width:120px;height:3px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden;margin:0 6px}
+.prog b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--tint))}
+
+/* ---------- bottom panels ---------- */
+.bottom{display:grid;grid-template-columns:150px 1.1fr 1.5fr 1fr 1.15fr;gap:8px;z-index:5;min-height:0}
+.p{padding:10px 12px;min-width:0;overflow:hidden}
+.p .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.p .hd span:last-child{font:500 10px var(--mono);color:var(--dim)}
+.mini{position:relative;width:100%;aspect-ratio:1;border-radius:8px;overflow:hidden;cursor:crosshair;background:#081128}
+.mini img{width:100%;height:100%;display:block;opacity:.9}
+.vbox{position:absolute;border:1.5px solid var(--acc);box-shadow:0 0 0 999px rgba(6,11,29,.35),0 0 12px rgba(94,231,255,.6);transition:all 1.4s cubic-bezier(.65,0,.25,1);border-radius:2px}
+.bars{display:grid;gap:5px}
+.bars .r{display:grid;grid-template-columns:62px 1fr 26px;gap:7px;align-items:center;font-size:11px;color:var(--mute)}
+.bars .r .t{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden}
+.bars .r .t b{display:block;height:100%;border-radius:3px;background:var(--bc,#6b8cff);transition:width 1.2s ease}
+.bars .r .v{font:600 10px var(--mono);color:var(--ink);text-align:right}
+.bars .r.hi{color:#fff}.bars .r.hi .t b{box-shadow:0 0 10px var(--bc)}
+.focus .nm{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.focus .nm h2{margin:0;font-size:19px;line-height:1.2;color:#fff}
+.focus .nm small{font:700 11px var(--mono);letter-spacing:.1em;color:var(--tint);text-transform:uppercase}
+.focus ul{margin:0;padding:0;list-style:none;display:grid;gap:5px}
+.focus li{font-size:12.8px;line-height:1.5;color:#cfd8ef;padding-left:13px;position:relative}
+.focus li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:1px;background:var(--tint)}
+.focus .sz{margin-top:7px;font:600 11px var(--mono);color:var(--acc2)}
+.fade{transition:opacity .35s ease,transform .35s ease}.fade.out{opacity:0;transform:translateY(4px)}
+.vit{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px}
+.vit div b{display:block;font:700 16px/1.15 var(--mono);color:#fff;margin-top:3px;white-space:nowrap}
+.vit div b small{font-size:10px;color:var(--mute);font-weight:500;margin-left:2px}
+.vit .rg{grid-column:1/-1;font-size:11.5px;color:var(--acc2)}
+.log{font:500 10.5px/1.55 var(--mono);color:#9fb0d6;height:118px;overflow:hidden;-webkit-mask-image:linear-gradient(transparent,#000 30%);mask-image:linear-gradient(transparent,#000 30%);display:flex;flex-direction:column;justify-content:flex-end}
+.log div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:ln .4s ease}
+.log div em{font-style:normal;color:var(--dim)}.log div b{font-weight:600;color:var(--ok)}
+@keyframes ln{from{opacity:0;transform:translateY(6px)}}
+.foot{font-size:10.5px;color:var(--dim);text-align:center;padding-top:5px;grid-column:1/-1}
+.foot a{color:var(--mute)}
+.mchips{display:none}
+
+/* ---------- sheet ---------- */
+.sheet{position:fixed;inset:0;z-index:20;display:none;align-items:center;justify-content:center;background:rgba(3,6,16,.6);padding:16px}
+.sheet.open{display:flex}
+.sheet .box{max-width:620px;width:100%;max-height:88dvh;overflow:auto;padding:22px 22px 18px;background:rgba(12,20,44,.96)}
+.sheet h3{margin:0 0 4px;font-size:18px}.sheet h4{margin:16px 0 6px;font-size:14px;color:var(--acc)}
+.sheet p,.sheet li{font-size:13.5px;line-height:1.7;color:#cdd6ee}
+.sheet ol{padding-left:20px;margin:6px 0}
+.sheet details{border:1px solid var(--line2);border-radius:10px;padding:8px 12px;margin-top:12px}
+.sheet summary{cursor:pointer;font-weight:700;color:#fff}
+.sheet .x{float:right}
+.sheet kbd{font:600 11px var(--mono);border:1px solid var(--line2);border-radius:4px;padding:1px 5px}
+
+/* ---------- mobile ---------- */
+@media (max-width:820px){
+  .app{gap:6px;padding:8px 8px calc(4px + env(safe-area-inset-bottom))}
+  .top{grid-template-columns:1fr auto}
+  .profile,.atp{display:none}
+  .title{padding:7px 10px}
+  .title h1{font-size:15px;letter-spacing:0}
+  .title{min-width:0}
+  .title .en{display:none}
+  .title p{font-size:11px}
+  .title .brand a{font-size:9px}
+  .status{padding:7px 10px;min-width:0;flex-direction:row;align-items:center;gap:8px}
+  .status .mg{display:flex;flex-direction:column;align-items:flex-end}
+  .mag{font-size:17px}
+  .live span{display:none}
+  .stops,.ctrl .prog{display:none}
+  .hs span{display:none}
+  .chip{left:8px;top:8px;padding:5px 8px;font-size:10px}.chip b{font-size:12px}
+  .ctrl{bottom:8px;padding:3px}
+  .ctrl button{width:40px;height:34px}
+  .scale{left:10px;bottom:52px}
+  .ai{bottom:auto;top:10px;right:10px}
+  .bottom{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;padding-bottom:2px;scrollbar-width:none;flex-wrap:nowrap}
+  .bottom::-webkit-scrollbar{display:none}
+  .bottom>.p{flex:0 0 calc(100% - 26px);scroll-snap-align:center;height:186px}
+  .bottom>.p.loc{display:none}
+  .focus{order:-2}.vitp{order:-1}
+  .focus li{font-size:12.5px;line-height:1.45}
+  .focus .sz{margin-top:5px}
+  .log{height:124px}
+  .mchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:0 1px}
+  .mchips::-webkit-scrollbar{display:none}
+  .mchips button{flex:none;border:1px solid var(--line);background:rgba(14,24,52,.6);border-radius:999px;padding:5px 11px;font-size:12px;color:var(--mute);cursor:pointer}
+  .mchips button.on{border-color:var(--c);color:#fff;background:rgba(94,231,255,.1)}
+  .dots{display:flex;justify-content:center;gap:5px}
+  .dots i{width:5px;height:5px;border-radius:50%;background:var(--dim)}.dots i.on{background:var(--acc);width:14px;border-radius:3px}
+  .lower{display:grid;gap:6px;min-width:0}
+  .foot{padding-top:0;font-size:10px}
+}
+@media (max-width:440px){.fov{display:none}#fsB{display:none!important}.status{gap:6px;padding:7px 8px}.title h1{font-size:14.5px}}
+@media (min-width:821px){.dots{display:none}.lower{display:contents}}
+@media (max-width:820px) and (max-height:700px){.bottom>.p{height:150px}.log{height:98px}.focus li:nth-child(3){display:none}}
+@media (min-width:821px) and (max-height:760px){.log{height:90px}.focus li{font-size:12px}.bottom{grid-template-columns:120px 1.1fr 1.5fr 1fr 1.15fr}}
+@media (prefers-reduced-motion:reduce){
+  .cam,.vbox,.bars .r .t b,.scale .bar{transition:none!important}
+  .cam img,.close img.on,.hs::after,.live i{animation:none!important}
+}
+
+/* ---------- exosome additions ---------- */
+:root{--tint:#5ee7ff}
+.atp{width:290px}
+.atp .num{font-size:15px;min-width:92px;line-height:1.2;white-space:nowrap}
+.atp .num small{display:block;font-size:10px;color:var(--mute);font-weight:500}
+.atp canvas{height:40px}
+.vm2{display:none}
+.cam>img{-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent),linear-gradient(180deg,transparent,#000 3%,#000 97%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent),linear-gradient(180deg,transparent,#000 3%,#000 97%,transparent);mask-composite:intersect}
+.pulse{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.zoomed .pulse{opacity:.3}
+.stops{width:184px;max-height:calc(100% - 24px);overflow:auto;scrollbar-width:none}
+.stops::-webkit-scrollbar{display:none}
+.stops button{padding:5px 8px}
+.stops .actk{font:600 9.5px var(--mono);letter-spacing:.12em;color:var(--dim);padding:5px 8px 2px}
+.stops .actk:not(:first-child){border-top:1px solid var(--line);margin-top:3px;padding-top:7px}
+.focus .one{font-size:13.2px;line-height:1.55;color:#fff;margin:0 0 6px}
+.focus .clin{margin-top:7px;font-size:12.3px;line-height:1.5;color:#ffd9b0;padding:6px 8px;border-radius:8px;background:rgba(255,181,71,.08);border:1px solid rgba(255,181,71,.22)}
+.focus .clin b{color:var(--acc2);font-weight:700;margin-right:4px}
+.p.focus{overflow:auto;scrollbar-width:thin}
+.vit div b{font-size:15px}
+.vit div b small{white-space:nowrap}
+.vit .lb{font-size:10.5px;color:var(--mute)}
+.bars .r{grid-template-columns:78px 1fr 26px}
+.bars .r span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.labhud{position:absolute;left:12px;top:52px;z-index:3;padding:10px 12px;width:300px;display:none}
+.labhud.on{display:block}
+.labhud .k{display:flex;justify-content:space-between;margin-bottom:6px}
+.labhud canvas{display:block;width:100%;height:auto}
+.labhud svg{display:block;width:100%;height:auto}
+.labhud small{display:block;font-size:10.5px;line-height:1.45;color:var(--mute);margin-top:6px}
+@media (max-width:820px){
+  .vm2{display:flex;position:absolute;left:8px;top:44px;z-index:3;padding:4px 8px;gap:6px;align-items:center;border-radius:8px}
+  .vm2 b{font:700 11px var(--mono);min-width:58px;color:#fff;white-space:nowrap}
+  .vm2 canvas{width:96px;height:24px}
+  .vm2 small{font:500 9px var(--sans);color:var(--mute)}
+  .lab .vm2{display:none}
+  .labhud{left:8px;top:44px;width:min(230px,calc(100% - 16px));padding:7px 9px}
+  .labhud small{display:none}
+  .bottom>.p{height:212px}
+  .focus .one{font-size:12.6px;margin-bottom:4px}
+  .focus .clin{font-size:12px;margin-top:5px;padding:5px 7px}
+}
+@media (max-width:820px) and (max-height:700px){.bottom>.p{height:170px}.labhud{transform:scale(.85);transform-origin:0 0}}
+@media (min-width:821px) and (max-height:760px){.labhud{width:260px}.stops button{padding:4px 8px;font-size:12px}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <header class="top">
+    <div class="title glass">
+      <div class="brand"><a href="../index.html#lessons">← AIAI 学院 · 课件馆</a></div>
+      <h1>外泌体与细胞外囊泡 · EV</h1>
+      <p>从细胞里出发，到离心管里被捞出来<span class="en"> · exosomes &amp; extracellular vesicles</span></p>
+    </div>
+    <div class="profile glass" aria-label="EV 档案">
+      <div><span class="k">统称 Term</span><b>细胞外囊泡 EV</b></div>
+      <div><span class="k">外泌体 Size</span><b>≈40–160 nm</b></div>
+      <div><span class="k">起源 Origin</span><b>内体 · 多囊体</b></div>
+      <div><span class="k">浮力密度</span><b>≈1.13–1.19 g/mL</b></div>
+      <div><span class="k">血浆 EV</span><b>≈10¹⁰ 个/mL</b></div>
+    </div>
+    <div class="atp glass">
+      <span class="k" id="lcK">EV 生命周期 · 示意（时间已压缩）</span>
+      <div class="row"><span class="num mono" id="vmN">ILV ×0</span><canvas id="spark" width="380" height="80" aria-hidden="true"></canvas></div>
+    </div>
+    <div class="status glass">
+      <div class="live"><i></i><span id="liveT">LIVE · 自动漫游</span></div>
+      <div class="mg"><div class="mag mono" id="mag">×4 500</div><div class="fov" id="fov">视野 20 µm · 1/11</div></div>
+      <div class="ibtns"><button class="ib" id="infoB" title="说明 / 课堂用法" aria-label="说明与课堂用法">ⓘ</button><button class="ib" id="fsB" title="全屏 (F)" aria-label="全屏">⛶</button></div>
+    </div>
+  </header>
+
+  <main class="view" id="view">
+    <div class="stage" id="stage">
+      <div class="cam" id="cam">
+        <img src="../assets/exosome/exosome-herov1.0.webp" alt="细胞释放细胞外囊泡的全貌示意图（AI 生成）：左侧紫色细胞核，上方质膜内陷形成内吞小泡，中央是装满小泡的多囊体，右侧多囊体与质膜融合放出一串小囊泡，飘向右下角的另一个细胞" width="1000" height="1000" fetchpriority="high">
+        <svg class="pulse" id="pulse" viewBox="0 0 1000 1000" aria-hidden="true">
+          <defs>
+            <radialGradient id="pgA"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#ffd27a"/><stop offset="1" stop-color="#ff9a45" stop-opacity="0"/></radialGradient>
+            <radialGradient id="pgC"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#8ff3ff"/><stop offset="1" stop-color="#5ee7ff" stop-opacity="0"/></radialGradient>
+          </defs>
+          <g id="ilvG"></g><g id="relG"></g>
+          <circle id="mvBud" r="0" fill="none" stroke="#ffc76b" stroke-width="3"/>
+          <circle id="mvGlow" r="0" fill="url(#pgA)" opacity=".55"/>
+        </svg>
+        <div id="hsLayer"></div>
+      </div>
+    </div>
+    <div class="close" id="close"></div>
+    <canvas id="fx"></canvas>
+    <div class="chip glass"><i></i><span id="chipK">全景</span><b id="chipN">细胞外囊泡全景</b></div>
+    <div class="vm2 glass" aria-hidden="true"><b id="vmN2">ILV ×0</b><canvas id="spark2" width="192" height="48"></canvas><small>示意</small></div>
+    <div class="labhud glass" id="hudSed" aria-hidden="true">
+      <div class="k"><span>差速离心 · 沉降示意</span><span id="sedG">300×g</span></div>
+      <canvas id="sedC" width="560" height="300"></canvas>
+      <small>依据 Théry 2006 细胞上清流程；颗粒大小、速度均为示意。前三步留上清、弃沉淀，最后一步留沉淀。</small>
+    </div>
+    <div class="labhud glass" id="hudSc" aria-hidden="true">
+      <div class="k"><span>纯度 vs 得率 · 定性示意</span><span>非测量值</span></div>
+      <svg id="scSvg" viewBox="0 0 300 200"></svg>
+      <small>位置只表示文献中常见的相对趋势，具体取决于样本、参数和评价指标（MISEV2023 要求报告得率与特异性）。</small>
+    </div>
+    <div class="labhud glass" id="hudNta" aria-hidden="true">
+      <div class="k"><span>NTA 粒径分布 · 示意</span><span id="ntaN">0 颗粒</span></div>
+      <canvas id="ntaC" width="560" height="260"></canvas>
+      <small>形状为示意的对数正态分布。NTA 不区分 EV 与脂蛋白、蛋白聚集体，需配合电镜和蛋白标志物。</small>
+    </div>
+    <div class="scale"><span id="scaleT">5 µm</span><div class="bar" id="scaleB"></div></div>
+    <div class="ai">示意图（AI 生成）</div>
+    <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+    <nav class="stops glass" id="stops" aria-label="漫游站点"></nav>
+    <div class="ctrl glass">
+      <button id="prevB" aria-label="上一站 (←)" title="上一站 ←">◀</button>
+      <button id="ppB" class="pp" aria-label="暂停 / 播放 (空格)" title="暂停 / 播放 空格">❚❚</button>
+      <button id="nextB" aria-label="下一站 (→)" title="下一站 →">▶</button>
+      <div class="prog"><b id="progB"></b></div>
+    </div>
+  </main>
+
+  <div class="lower">
+    <div class="mchips" id="mchips" aria-label="选择站点"></div>
+    <section class="bottom" id="bottom">
+      <div class="p glass loc">
+        <div class="hd"><span class="k">定位 Locator</span><span id="locN">1/11</span></div>
+        <div class="mini" id="mini" title="点击跳到最近的站点"><img src="../assets/exosome/exosome-minimapv1.0.webp" alt="" width="240" height="240"><div class="vbox" id="vbox"></div></div>
+      </div>
+      <div class="p glass actp">
+        <div class="hd"><span class="k" id="barK">通路活跃度</span><span id="barU">相对 · 示意</span></div>
+        <div class="bars" id="bars"></div>
+      </div>
+      <div class="p glass focus" aria-live="polite">
+        <div class="hd"><span class="k">焦点 Focus</span><span id="focusIdx">01 / 11</span></div>
+        <div class="fade" id="focusBody"></div>
+      </div>
+      <div class="p glass vitp">
+        <div class="hd"><span class="k">关键数值 Numbers</span><span>典型值</span></div>
+        <div class="vit fade" id="vit"></div>
+      </div>
+      <div class="p glass logp">
+        <div class="hd"><span class="k">事件流 Log</span><span>示意</span></div>
+        <div class="log" id="log"></div>
+      </div>
+    </section>
+    <div class="dots" id="dots"></div>
+    <div class="foot">本页图像、文字与代码为原创，图片由 AI 生成，均为示意 · 姊妹篇：<a href="neuron-explorerv1.0.html">神经元漫游</a> · <a href="cell-explorerv1.0.html">动物细胞漫游</a> · <a href="#" id="infoL">说明 / 课堂用法 / 参考文献</a></div>
+  </div>
+</div>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="说明与课堂用法">
+  <div class="box glass">
+    <button class="ib x" id="sheetX" aria-label="关闭">✕</button>
+    <h3>外泌体与细胞外囊泡漫游 · 怎么用</h3>
+    <p>全程两幕 11 站，每站约 6 秒，循环播放。<b>第一幕 · 体内生命周期</b>（纳米尺度）：全景 → EV 家族 → 早期内体 → 多囊体出芽 → 货物装载 → 释放 vs 降解 → 体液漂流 → 被受体细胞摄取。<b>第二幕 · 实验室</b>：差速超速离心 → 其他分离方法 → 鉴定。随时可暂停，或点画面上的发光点、站点列表、左下角定位图直接跳转。</p>
+    <p>全景里注意看：右上方质膜向外鼓出一个琥珀色的小泡并断开（微囊泡，外层翻出磷脂酰丝氨酸）；中央多囊体边缘不断向内出芽；右侧多囊体与质膜融合，一串青色小泡飘向右下的受体细胞。右上角面板是同一过程的简化动画；进入第二幕后，它换成粒径分布和离心进度（均为示意）。</p>
+    <p>键盘：<kbd>←</kbd> <kbd>→</kbd> 上一站 / 下一站，<kbd>空格</kbd> 暂停 / 播放，<kbd>F</kbd> 全屏，<kbd>Esc</kbd> 关闭本窗口。手机上可在画面上左右滑动换站，下方面板也能左右滑。</p>
+    <details open>
+      <summary>课堂用法（3 个讨论问题）</summary>
+      <ol>
+        <li>一篇论文写"我们用 100,000×g 超速离心分离了外泌体"。按 MISEV2023，这个说法哪里不严谨？应该怎么改写？（提示：大小和密度重叠、内体起源有没有被证明、沉淀里还有什么。）</li>
+        <li>健康人血浆中 EV 大约 10¹⁰ 个/mL，脂蛋白却多出约六到七个数量级。用 NTA 直接数血浆颗粒，会得到什么？做 EV 液体活检时要怎样设计分离和对照？</li>
+        <li>小鼠静脉注射的 EV 几分钟内大部分离开血液，主要进了肝和脾。如果你想用 EV 把药送到肿瘤或脑，可以从哪些方向改？（提示：来源细胞、表面靶向分子、给药途径。）</li>
+      </ol>
+      <p>老师小建议：先停在"EV 家族"站，让学员说出三类囊泡各从哪里来；第二幕每站结束时，请学员判断"这一步得到的是纯外泌体吗？"，答案几乎总是"不是，是富集了某类 EV 的混合物"。</p>
+    </details>
+    <h4>关于数字</h4>
+    <p>页面上的尺寸、密度、浓度和离心参数都是文献中的典型值或范围，随细胞类型、样本和方法差别很大。<strong>EV 生命周期动画、离心沉降、纯度–得率散点、NTA 粒径分布、活跃度条和事件流都是示意</strong>，不是实时测量；时间被大幅压缩（真实的 100,000×g 离心至少 70 分钟）。放大倍数和比例尺按典型尺寸估算。图像由 AI 生成，形状和颜色做了艺术化处理，不代表真实显微照片。文中用「事实 / 联想 / 推测」区分证据强度；动物实验结论不等于人体疗效。</p>
+    <ul>
+      <li>EV 定义、"EV / small EV（常指 &lt;200 nm，无严格切点）"术语建议、small EV ≠ exosome、蛋白鉴定框架、得率/特异性报告：Welsh JA et al. MISEV2023. <i>J Extracell Vesicles</i> 2024;13:e12404 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10850029/" target="_blank" rel="noopener">PMC10850029</a></li>
+      <li>外泌体约 40–160 nm（平均约 100 nm），外体/微囊泡约 50 nm–1 µm：Kalluri R, LeBleu VS. <i>Science</i> 2020;367:eaau6977 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7717626" target="_blank" rel="noopener">PMC7717626</a></li>
+      <li>ILV 约 40–100 nm，微囊泡可达约 1,000 nm：Raposo G, Stoorvogel W. <i>J Cell Biol</i> 2013;200:373 · <a href="https://doi.org/10.1083/jcb.201211138" target="_blank" rel="noopener">doi</a></li>
+      <li>微囊泡 150–1000 nm、ARF6、凋亡小体约 1–5 µm、exomere/supermere：Jeppesen DK et al. <i>Trends Cell Biol</i> 2023;33:667 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10363204/" target="_blank" rel="noopener">PMC10363204</a>；exomere 约 35 nm：Tosar JP et al. <i>J Extracell Biol</i> 2022 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9610496" target="_blank" rel="noopener">PMC9610496</a>；supermere：Zhang Q et al. <i>Nat Cell Biol</i> 2021;23:1240 · <a href="https://www.nature.com/articles/s41556-021-00805-8" target="_blank" rel="noopener">链接</a></li>
+      <li>差速超速离心流程（300×g 10 min → 2,000×g 20 min → 10,000×g 30 min → 100,000×g ≥70 min → 洗涤 100,000×g 1 h）、浮力密度 1.15–1.19 g/mL、电镜杯状形态为制样伪影、calnexin 阴性、超滤适合临床级制备：Théry C et al. <i>Curr Protoc Cell Biol</i> 2006;Unit 3.22 · <a href="https://doi.org/10.1002/0471143030.cb0322s30" target="_blank" rel="noopener">doi</a>；2,000×g 10 min 的常见变体：Livshits MA et al. <i>Sci Rep</i> 2015;5:17319 · <a href="https://www.nature.com/articles/srep17319" target="_blank" rel="noopener">链接</a></li>
+      <li>神经酰胺 / nSMase2 驱动 ESCRT 非依赖出芽：Trajkovic K et al. <i>Science</i> 2008;319:1244 · <a href="https://doi.org/10.1126/science.1153124" target="_blank" rel="noopener">doi</a>；Rab27a/b 控制 MVB 停靠：Ostrowski M et al. <i>Nat Cell Biol</i> 2010;12:19 · <a href="https://www.nature.com/articles/ncb2000" target="_blank" rel="noopener">链接</a></li>
+      <li>SUMO 化 hnRNPA2B1 识别 GGAG 等基序分选 miRNA：Villarroya-Beltri C et al. <i>Nat Commun</i> 2013;4:2980 · <a href="https://www.nature.com/articles/ncomms3980" target="_blank" rel="noopener">链接</a>；每个外泌体平均 miRNA 拷贝数远低于 1：Chevillet JR et al. <i>PNAS</i> 2014;111:14888</li>
+      <li>静注 small EV：约 95% 在 5 分钟内离开循环、T½α 1.5–19.9 min：Kang M et al. <i>J Extracell Vesicles</i> 2021;10:e12085 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8224174" target="_blank" rel="noopener">PMC8224174</a>；分布以肝 &gt; 脾 &gt; 消化道、肺为主，受来源细胞和途径影响：Wiklander OPB et al. <i>J Extracell Vesicles</i> 2015;4:26316 · <a href="https://doi.org/10.3402/jev.v4.26316" target="_blank" rel="noopener">doi</a>；肝脾巨噬细胞依赖的清除：Imai T et al. 2015 · <a href="https://doi.org/10.3402/jev.v4.26238" target="_blank" rel="noopener">doi</a></li>
+      <li>血浆 EV 约 10¹⁰ 个/mL：Johnsen KB et al. <i>BBA Rev Cancer</i> 2019;1871:109 · <a href="https://doi.org/10.1016/j.bbcan.2018.11.006" target="_blank" rel="noopener">doi</a>；脂蛋白比 EV 多六到七个数量级：Auber M, Svenningsen P. <i>J Extracell Biol</i> 2022 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11080926" target="_blank" rel="noopener">PMC11080926</a>；未分离血浆中 NTA 颗粒 &gt;98% 为 VLDL：Jamaly S et al. <i>Sci Rep</i> 2018 · <a href="https://www.nature.com/articles/s41598-018-35401-8" target="_blank" rel="noopener">链接</a></li>
+      <li>EV 摄取途径：Mulcahy LA et al. <i>J Extracell Vesicles</i> 2014;3:24641 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4122821/" target="_blank" rel="noopener">PMC4122821</a></li>
+      <li>转移前微环境：Peinado H et al. <i>Nat Med</i> 2012;18:883 · <a href="https://www.nature.com/articles/nm.2753" target="_blank" rel="noopener">链接</a>；EV 整合素与器官嗜性：Hoshino A et al. <i>Nature</i> 2015;527:329 · <a href="https://pubmed.ncbi.nlm.nih.gov/26524530/" target="_blank" rel="noopener">PubMed</a></li>
+    </ul>
+    <h4>致谢</h4>
+    <p>页面结构沿用本站 <a href="neuron-explorerv1.0.html">神经元漫游</a>、<a href="cell-explorerv1.0.html">动物细胞漫游</a> 的 HUD 漫游形式（姊妹篇）。本页没有使用任何论文的原图或原文，图像、文字与代码均为原创；数值出处见上方「关于数字」。</p>
+    <p><a href="../index.html#lessons">← 回到 aiai 学院 · 课件馆</a></p>
+  </div>
+</div>
+
+<script>
+(() => {
+'use strict';
+const A = '../assets/exosome/';
+const ACT = ['ESCRT','神经酰胺/nSMase2','四跨膜蛋白','RNA 结合蛋白','Rab27a/b','SNARE','溶酶体降解','内吞/摄取'];
+const ACTC = ['#5ee7ff','#a46bff','#38e0c6','#ff5d9e','#ffb547','#9dff5c','#ff7a45','#6b8cff'];
+const LABL = ['纯度','得率','完整性','通量','可处理体积','经济性','易上手','可标准化'];
+// x,y: position on the 1000×1000 hero (fraction). fov / bar in µm. mag = 90 mm / fov
+const S = [
+  {id:'hero',zh:'细胞外囊泡全景',en:'EV overview',k:'第一幕',x:.5,y:.5,z:1,c:'#5ee7ff',fov:20,bar:5,
+   one:'几乎所有细胞都会向外"寄快递"：把蛋白、RNA、脂质装进带脂双层膜的小泡里释放出去，统称细胞外囊泡（EV）；外泌体是其中起源于内体的一类小囊泡。',
+   f:['镜头先走一遍体内生命周期（第 2–8 站：EV 家族 → 内吞 → 多囊体出芽 → 装货 → 释放 → 漂流 → 被摄取），再进实验室看怎么把它"捞"出来（第 9–11 站）。'],
+   clin:'EV 携带来源细胞的分子信息，被当作液体活检标志物的候选来源，也被研究作为药物载体；但多数应用仍在验证阶段，离常规临床还有距离。',
+   sz:'外泌体约 40–160 nm（平均约 100 nm）；一个细胞约 10–20 µm，相差约百倍',
+   rg:'细胞 + 细胞外空间',v:[['外泌体直径','40–160','nm'],['浮力密度','1.13–1.19','g/mL'],['血浆 EV','≈10¹⁰','个/mL'],['静注后 t½α','1.5–20','min·小鼠']],
+   act:[55,40,50,40,45,40,30,45],hi:-1,
+   log:['质膜 · 微囊泡向外出芽','多囊体 · 腔内小泡生成','多囊体 · 与质膜融合','EV · 漂向邻近细胞','受体细胞 · 摄取 EV']},
+  {id:'family',zh:'EV 家族：三类囊泡',en:'The EV family',k:'第一幕',x:.56,y:.205,z:3.2,c:'#ffb547',fov:2,bar:.5,
+   one:'EV 是个大家族：外泌体由多囊体"向内出芽"而来（约 40–160 nm）；微囊泡 / 外体（ectosome）由质膜直接向外出芽（约 100–1000 nm）；凋亡小体在细胞凋亡时脱落（约 1–5 µm）。',
+   f:['微囊泡出芽与 Ca²⁺ 内流、皮质细胞骨架重排有关，ARF6 等小 G 蛋白参与；翻转酶失活、爬行酶（scramblase）激活，把磷脂酰丝氨酸（PS）翻到膜外层——Annexin V 正是靠结合 PS 来识别它们（凋亡小体同样外露 PS）。',
+      '另有不带脂双层的纳米颗粒：exomere（约 35 nm）和更小的 supermere，按 MISEV2023 属于"非囊泡细胞外颗粒（NVEP）"，不算 EV。',
+      'MISEV2023：除非真正证明了生物发生途径，推荐统称"EV"，可按大小称 small EV（常指 <200 nm，但没有严格切点）。各类 EV 的大小、密度互相重叠，任何分离方法都拿不到"纯外泌体"。'],
+   clin:'事实：很多论文里的"外泌体"其实是超速离心沉淀下来的混合 small EV（其中也有小的外体）。联想：读文献或审稿时，看到 exosome 先问一句——内体起源证明了吗？',
+   sz:'外泌体 40–160 nm · 微囊泡 100–1000 nm · 凋亡小体 1–5 µm',
+   rg:'质膜 plasma membrane',v:[['外泌体','40–160','nm'],['微囊泡','100–1000','nm'],['凋亡小体','1–5','µm'],['small EV 常指','<200','nm']],
+   act:[50,40,55,30,35,30,15,25],hi:2,
+   log:['质膜 · Ca²⁺ 内流','皮质骨架 · 重排','PS · 翻到膜外层','微囊泡 · 向外出芽并断开','多囊体 · 放出一串小 EV']},
+  {id:'endosome',zh:'早期内体（内吞起点）',en:'Early endosome',k:'第一幕',x:.235,y:.17,z:3.4,c:'#6b8cff',fov:1,bar:.2,
+   one:'外泌体的故事从细胞"吞东西"开始：质膜内陷形成内吞小泡（如网格蛋白包被小窝），再与早期内体融合。早期内体是细胞的"收发室"，决定货物回收到膜上还是继续往里送。',
+   f:['早期内体以 Rab5 为标志，逐步成熟为晚期内体（Rab7），腔内 pH 也一步步变酸。',
+      '名字里的"外"容易让人误会：外泌体其实起源于细胞里面——内体系统。'],
+   clin:'很多 EV 摄取实验用内吞抑制剂（作用于网格蛋白或动力蛋白 dynamin 等）来判断进入途径；理解内吞，也就理解了这类实验的设计和局限（抑制剂特异性有限，需多种手段互证）。',
+   sz:'内吞小泡约 100 nm；早期内体约 0.1–0.5 µm（典型值）',
+   rg:'内体系统 endosome',v:[['早期内体标志','Rab5',''],['晚期内体标志','Rab7',''],['早期内体 pH','≈6.0–6.5',''],['晚期内体 pH','≈5.0–6.0','']],
+   act:[15,5,20,5,10,15,15,90],hi:7,
+   log:['质膜 · 内陷','网格蛋白 · 组装成笼','dynamin · 掐断小泡','早期内体 · Rab5 介导融合','内体 · 逐渐酸化']},
+  {id:'mvb',zh:'多囊体：向内出芽形成 ILV',en:'Multivesicular body',k:'第一幕',x:.43,y:.39,z:3.2,c:'#5ee7ff',fov:1,bar:.2,
+   one:'晚期内体的膜向"自己肚子里"出芽，掐下一个个腔内小泡（ILV）；装满小泡的内体叫多囊体（MVB）——这些 ILV 就是未来的外泌体。',
+   f:['ESCRT 依赖途径：ESCRT-0 识别泛素化货物，ESCRT-I/II 让膜出芽，ESCRT-III 螺旋聚合掐断颈部，VPS4 拆卸回收；辅助蛋白 ALIX、TSG101 也因此常被当作 EV 标志物。',
+      'ESCRT 非依赖途径：中性鞘磷脂酶 2（nSMase2）产生神经酰胺，锥形脂质让膜自发弯曲出芽（Trajkovic 2008）；四跨膜蛋白 CD63 / CD9 / CD81 富集成膜微区，也参与分选。'],
+   clin:'科研中常用 nSMase2 抑制剂 GW4869 或敲低 Rab27a 来"减少 EV 分泌"做功能实验；两者都不完全特异，结论最好用多种手段互相印证（这也是 MISEV2023 的思路）。',
+   sz:'ILV 约 40–100 nm；MVB 约 0.25–1 µm（典型值）',
+   rg:'多囊体腔 MVB lumen',v:[['ILV 直径','40–100','nm'],['ESCRT','0 / I / II / III',''],['掐断执行者','ESCRT-III',''],['非 ESCRT 途径','神经酰胺','']],
+   act:[95,60,70,30,10,5,20,10],hi:0,
+   log:['ESCRT-0 · 识别泛素化货物','ESCRT-I/II · 膜向腔内出芽','ESCRT-III · 螺旋收紧颈部','VPS4 · 拆卸回收','nSMase2 · 生成神经酰胺']},
+  {id:'cargo',zh:'货物装载：RNA、蛋白、脂质',en:'Cargo loading',k:'第一幕',x:.41,y:.37,z:4.4,c:'#ff5d9e',fov:.2,bar:.05,
+   one:'出芽的同时，胞质里的"货物"被装进 ILV：miRNA、mRNA 片段等 RNA，蛋白质（四跨膜蛋白、热休克蛋白、ALIX / TSG101 等），以及胆固醇、鞘磷脂、神经酰胺等脂质。',
+   f:['装货不是完全随机的：RNA 结合蛋白参与分选，例如 SUMO 化的 hnRNPA2B1 识别 miRNA 上的 GGAG 等序列基序，把它们装进外泌体（Villarroya-Beltri 2013）。',
+      '但定量研究显示，平均每个外泌体携带的某种 miRNA 远不到 1 个拷贝（Chevillet 2014），"一个 EV 能带多少功能分子"仍有争议。'],
+   clin:'联想：EV 里的 RNA 受膜保护、不易被 RNA 酶降解，因此被研究作为血液、尿液中的标志物。推测：如果能掌握"装货"规则，就可能主动装载治疗性 RNA——这是工程化 EV 的思路，目前主要在细胞和动物实验阶段。',
+   sz:'单个小 EV 约 100 nm；脂双层厚约 5 nm',
+   rg:'出芽中的 ILV',v:[['分选蛋白举例','hnRNPA2B1',''],['识别基序','GGAG',''],['单 EV 的 miRNA','≪1','拷贝·均值'],['脂双层厚','≈5','nm']],
+   act:[40,40,60,96,10,5,10,5],hi:3,
+   log:['hnRNPA2B1 · SUMO 化','hnRNPA2B1 · 结合 GGAG 基序','miRNA · 进入出芽小泡','CD63 · 富集于 ILV 膜','胆固醇 / 鞘脂 · 富集']},
+  {id:'fusion',zh:'释放 vs 降解：MVB 的两条路',en:'Release or degrade',k:'第一幕',x:.61,y:.52,z:3.4,c:'#38e0c6',fov:1,bar:.2,
+   one:'MVB 有两个结局：沿微管运到细胞边缘、与质膜融合，把 ILV 一次性"倒"出去——此时它们才叫外泌体；或者与溶酶体融合，把货物降解掉。',
+   f:['Rab27a 和 Rab27b 负责 MVB 运输与停靠到质膜（Ostrowski 2010），SNARE 蛋白像拉链一样驱动膜融合。',
+      '细胞在"分泌"和"降解"之间如何分配 MVB 受多种信号调控；溶酶体功能受抑制时，EV 分泌常被报道增加。'],
+   clin:'事实（动物实验）：肿瘤细胞敲低 Rab27a 可减少 EV 分泌，并减轻小鼠肿瘤生长或转移（Peinado 2012 等）。推测：干预 EV 分泌可能成为抗转移思路，但尚无临床证据。',
+   sz:'MVB 约 0.25–1 µm，一次融合可释放其腔内的全部 ILV',
+   rg:'质膜下方 cell cortex',v:[['停靠','Rab27a/b',''],['融合','SNARE',''],['另一条路','溶酶体降解',''],['释放后改称','外泌体','']],
+   act:[10,10,30,10,95,90,50,5],hi:4,
+   log:['MVB · 沿微管运往质膜','Rab27a · 停靠','SNARE · 拉链式组装','融合孔 · 打开','ILV · 释放为外泌体']},
+  {id:'blood',zh:'在体液中漂流',en:'Drifting in body fluids',k:'第一幕',x:.77,y:.66,z:2.6,c:'#ff7a45',fov:10,bar:2,
+   one:'离开细胞后，EV 进入组织间隙，部分进入血液、淋巴、尿液、唾液、脑脊液等体液。健康人血浆中估计约 10¹⁰ 个 EV/mL——而同体积里的脂蛋白颗粒要多出六到七个数量级。',
+   f:['小鼠静脉注射外源 EV 后清除极快：系统综述中，三项研究显示约 95% 在 5 分钟内离开循环，分布相半衰期 1.5–19.9 分钟（Kang 2021）。',
+      '去向以单核吞噬细胞系统为主：肝脏最多，其次是脾、消化道和肺（Wiklander 2015）；肝脾巨噬细胞是清除主力（Imai 2015）。'],
+   clin:'联想（药物递送）：静注的 EV 大多被肝脾"截胡"，想送到别处需要靶向修饰或换给药途径——来源细胞和给药途径都会改变分布（Wiklander 2015）。推测：内源性 EV 在血中的"传信距离"可能有限。',
+   sz:'红细胞直径约 7.5 µm（参照）；EV 约 0.1 µm',
+   rg:'血管腔 blood',v:[['血浆 EV','≈10¹⁰','个/mL'],['脂蛋白 : EV','10⁶–10⁷','倍'],['5 min 内离开循环','≈95','%·小鼠'],['t½α','1.5–19.9','min']],
+   act:[5,5,30,10,5,5,10,70],hi:7,
+   log:['EV · 进入血流','血浆 · 与脂蛋白混在一起','Kupffer 细胞 · 捕获 EV','脾巨噬细胞 · 吞噬','5 min · 大部分已离开循环']},
+  {id:'uptake',zh:'被受体细胞摄取',en:'Uptake by recipient cells',k:'第一幕',x:.86,y:.86,z:3,c:'#9dff5c',fov:2,bar:.5,
+   one:'EV 到达受体细胞后，可经多种途径进入：网格蛋白介导的内吞、小窝 / 脂筏途径、巨胞饮、吞噬，或直接与质膜融合；也可以只靠表面配体–受体结合在细胞外"敲门"传信号。',
+   f:['被内吞的 EV 要与内体膜融合、把货物"逃逸"进胞质才能起作用，否则多半被送进溶酶体降解（Mulcahy 2014）。',
+      '肿瘤 EV 表面的整合素影响它被哪个器官的细胞摄取：α6β4、α6β1 与肺转移相关，αvβ5 与肝转移相关（Hoshino 2015）。'],
+   clin:'事实（动物模型 + 患者样本）：肿瘤来源 EV 可预先"改造"远处器官，形成转移前微环境（Peinado 2012；Hoshino 2015）。联想：EV 整合素谱有望用于预测转移器官；推测：阻断摄取或可减少转移，尚未临床验证。',
+   sz:'单个 EV 约 0.1 µm；巨胞饮小泡约 0.2–5 µm',
+   rg:'受体细胞膜',v:[['主要入口','内吞',''],['巨胞饮小泡','0.2–5','µm'],['肺转移相关','α6β4',''],['肝转移相关','αvβ5','']],
+   act:[5,5,40,20,5,30,45,95],hi:7,
+   log:['整合素 · 结合受体细胞','网格蛋白 · 内吞','巨胞饮 · 膜皱褶包裹','内体 · 融合逃逸','miRNA · 释放入胞质']},
+  {id:'centrifuge',zh:'差速超速离心',en:'Differential ultracentrifugation',k:'第二幕',lab:1,hud:'sed',x:.74,y:.62,z:2.2,c:'#a46bff',fov:100000,bar:10000,
+   bk:'方法画像 · 差速离心',bu:'定性 · 示意',bl:LABL,
+   one:'经典流程（Théry 2006）：先低速去掉细胞和碎片，再越转越快，最后用 100,000×g 把小 EV 沉到管底——越小越轻，越要大力气才甩得下来。',
+   f:['细胞培养上清：300×g 10 min（去细胞）→ 2,000×g 20 min（死细胞、大碎片）→ 10,000×g 30 min（大囊泡、细胞器碎片）→ 100,000×g ≥70 min 收沉淀 → PBS 重悬后 100,000×g 1 h 洗涤；全程 4 °C。',
+      '不少实验室用 2,000×g 10 min 的变体（Livshits 2015 的理论分析即以此为例）；转子类型（k 因子）、时间、液柱高度都会改变得率和纯度。'],
+   clin:'事实：100,000×g 沉淀里除了小 EV，还会有蛋白聚集体、脂蛋白等；Théry 2006 本身就要求用电镜和蛋白印迹验证。联想：比较不同论文的"外泌体剂量"之前，先看离心参数是否可比。',
+   sz:'超速离心管长约 10 cm；最终沉淀常常肉眼不可见',
+   rg:'实验台 · 4 °C',v:[['去细胞','300×g','10 min'],['去碎片','2,000×g','20 min'],['去大囊泡','10,000×g','30 min'],['收小 EV','100,000×g','≥70 min']],
+   act:[55,45,60,40,85,60,40,45],hi:4,
+   log:['300×g · 10 min · 弃沉淀','2,000×g · 20 min · 弃沉淀','10,000×g · 30 min · 弃沉淀','100,000×g · 70 min · 留沉淀','PBS 洗涤 · 再 100,000×g 1 h']},
+  {id:'methods',zh:'其他分离方法：纯度与得率',en:'Other separation methods',k:'第二幕',lab:1,hud:'sc',x:.74,y:.62,z:2.2,c:'#4fb3ff',fov:100000,bar:10000,
+   bk:'相对纯度',bu:'定性 · 示意',bl:['差速离心','密度梯度','SEC','超滤','PEG 沉淀','免疫亲和','微流控','组合方法'],
+   one:'没有一种方法能同时做到"又纯、又多、又快"。MISEV2023 的建议是：按研究目的选方法，并报告得率和特异性。',
+   f:['按密度：密度梯度（蔗糖或碘克沙醇）纯度高，但费时、得率低。按大小：尺寸排阻色谱（SEC）能较好去除游离蛋白；超滤浓缩快，但会把蛋白一起浓缩。按溶解度：PEG 沉淀得率高、纯度低。按表面分子：免疫亲和（如抗 CD63 / CD81 磁珠）特异，但只捞到标志物阳性的亚群。微流控适合小样本，通量有限。',
+      '实际常用组合：如超滤浓缩 + SEC，或差速离心 + 密度梯度。'],
+   clin:'联想：做液体活检（追求特异、可重复）和做治疗用 EV 生产（追求规模和 GMP）选的方法往往不同；Théry 2006 就提到超滤更适合临床级的大体积制备。',
+   sz:'左上散点只表示定性的相对位置，不是测量值',
+   rg:'实验台',v:[['密度梯度','纯↑ 量↓',''],['SEC','去游离蛋白',''],['PEG 沉淀','量↑ 纯↓',''],['免疫亲和','只捞亚群','']],
+   act:[50,90,70,35,25,85,70,80],hi:1,
+   log:['密度梯度 · 碘克沙醇分层','SEC · EV 先流出、蛋白后流出','超滤 · 浓缩','免疫磁珠 · 抓 CD63⁺ 亚群','组合 · 超滤 + SEC']},
+  {id:'tem',zh:'鉴定：证明拿到的是 EV',en:'Characterization',k:'第二幕',hud:'nta',x:.74,y:.62,z:2.2,c:'#ffd23f',fov:1,bar:.1,
+   bk:'印迹信号',bu:'阳性 vs 阴性 · 示意',bl:['CD63','CD81','CD9','TSG101','ALIX','Calnexin','ApoA1','ApoB'],
+   one:'MISEV2023 强调用"正交"方法互相印证：颗粒数量与大小（如 NTA）、单颗粒形态（电镜）、蛋白组成（阳性标志物 + 阴性 / 纯度标志物）。',
+   f:['NTA 追踪每个颗粒的布朗运动来换算粒径并计数，但分不清 EV、脂蛋白和蛋白聚集体——未经分离的人血浆里，NTA 检到的颗粒 98% 以上是 VLDL（Jamaly 2018）。',
+      '负染透射电镜里常见"杯状"小泡，这是脱水制样造成的人为形态；冷冻电镜下 EV 是圆的（Théry 2006）。',
+      '蛋白印迹：阳性如 CD63 / CD81 / CD9（跨膜）、TSG101 / ALIX（胞质）；阴性 / 纯度对照如 calnexin（内质网），血液样本还要看 ApoA1、ApoB 等载脂蛋白。'],
+   clin:'事实：MISEV2023 不强制某个标志物，也不禁止某种技术，但要求把做了什么说清楚。联想：投稿 EV 论文前用 MISEV2023 清单（以及 EV-TRACK 平台）自查，能少收很多审稿意见。',
+   sz:'视野约 1 µm，比例尺 100 nm（电镜示意）',
+   rg:'电镜 / NTA / 蛋白印迹',v:[['阳性 · 跨膜','CD63/81/9',''],['阳性 · 胞质','TSG101/ALIX',''],['阴性对照','Calnexin',''],['血浆 NTA 中 VLDL','>98','%·未分离']],
+   act:[85,90,80,70,65,5,10,8],hi:-1,
+   log:['NTA · 追踪布朗运动','NTA · 众数约 100 nm（示意）','TEM · 杯状形态（制样伪影）','WB · CD63⁺ CD81⁺ TSG101⁺','WB · Calnexin 阴性']}
+];
+const N = S.length, DWELL0 = 7000, DWELL = 6200, ZOOMT = 1500;
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = s => document.querySelector(s);
+const app = $('#app'), view = $('#view'), stage = $('#stage'), cam = $('#cam');
+let idx = 0, playing = !RM, timer = 0, t0 = 0, dur = DWELL0, magNow = 4500, stT = performance.now();
+
+// hero geometry (1000×1000)
+const MV_P = [553, 210], MV_N = [.66, -.75];          // membrane point for microvesicle budding, outward normal
+const MVB = [429, 394], MVB_R = 92;                    // multivesicular body
+const FUS = [612, 525];                                // fusing MVB opening
+const RECV = [858, 845];                               // recipient cell uptake
+const NS = 'http://www.w3.org/2000/svg';
+const mk = (p, tag, a) => { const e = document.createElementNS(NS, tag); Object.entries(a).forEach(([k, v]) => e.setAttribute(k, v)); p.appendChild(e); return e; };
+const relEls = Array.from({length: 8}, () => mk($('#relG'), 'circle', {r: 0, fill: 'url(#pgC)'}));
+const ilvEls = Array.from({length: 3}, () => mk($('#ilvG'), 'circle', {r: 0, fill: 'none', stroke: '#8ff3ff', 'stroke-width': 2.5}));
+const mvBud = $('#mvBud'), mvGlow = $('#mvGlow');
+
+// build DOM
+const close = $('#close');
+S.forEach((s, i) => {
+  if (i) {
+    const im = new Image(); im.alt = s.zh + '示意图（AI 生成）'; im.decoding = 'async'; im.loading = i < 3 ? 'eager' : 'lazy';
+    im.src = A + 'exosome-' + s.id + 'v1.0.webp'; im.dataset.i = i;
+    close.appendChild(im);
+    if (!s.k.includes('二')) {
+      const h = document.createElement('button');
+      h.className = 'hs' + (s.x > .7 || ['endosome', 'cargo'].includes(s.id) ? ' l' : ''); h.style.left = s.x * 100 + '%'; h.style.top = s.y * 100 + '%';
+      h.setAttribute('aria-label', '前往 ' + s.zh); h.innerHTML = '<span>' + s.zh.replace(/（.*）|：.*/, '') + '</span>';
+      h.onclick = () => show(i); $('#hsLayer').appendChild(h);
+    }
+  }
+  if (i === 0 || i === 8) { const d = document.createElement('div'); d.className = 'actk'; d.textContent = i ? '第二幕 · 实验室' : '第一幕 · 体内生命周期'; $('#stops').appendChild(d); }
+  const short = s.zh.replace(/（.*）|：.*/, '');
+  const b = document.createElement('button'); b.style.setProperty('--c', s.c);
+  b.innerHTML = '<i></i>' + short + '<em>' + String(i + 1).padStart(2, '0') + '</em>'; b.onclick = () => show(i); $('#stops').appendChild(b);
+  const m = document.createElement('button'); m.style.setProperty('--c', s.c); m.textContent = short; m.onclick = () => show(i); $('#mchips').appendChild(m);
+});
+const stopBtns = [...$('#stops').querySelectorAll('button')];
+$('#bars').innerHTML = ACT.map((a, i) => `<div class="r" style="--bc:${ACTC[i]}"><span>${a}</span><div class="t"><b></b></div><span class="v">0</span></div>`).join('');
+const closeImgs = [...close.querySelectorAll('img')];
+
+// layout
+let VW = 0, VH = 0, SQ = 0;
+function layout() {
+  const r = view.getBoundingClientRect(); VW = r.width; VH = r.height;
+  const wide = innerWidth > 820;
+  SQ = Math.max(120, Math.min(VW - (wide ? 390 : 12), VH - (wide ? 70 : 54)));
+  if (!wide) SQ = Math.min(VW - 8, VH - 72);
+  stage.style.width = stage.style.height = SQ + 'px';
+  stage.style.marginTop = wide ? '-14px' : '6px';
+  setCam(S[idx], true); sizeFx(); updScale(S[idx]);
+}
+function setCam(s, instant) {
+  const z = s.z, tx = SQ / 2 - z * s.x * SQ, ty = SQ / 2 - z * s.y * SQ;
+  if (instant || RM) { cam.style.transition = 'none'; requestAnimationFrame(() => { cam.style.transition = ''; }); }
+  cam.style.transform = `translate(${tx}px,${ty}px) scale(${z})`;
+  view.classList.toggle('zoomed', z > 1);
+  const fr = Math.min(1, (Math.min(VW, VH) / SQ) / z) * (s.z > 1 ? .55 : 1);
+  const w = Math.max(.07, fr) * 100, l = Math.min(100 - w, Math.max(0, s.x * 100 - w / 2)), t = Math.min(100 - w, Math.max(0, s.y * 100 - w / 2));
+  Object.assign($('#vbox').style, {width: w + '%', height: w + '%', left: l + '%', top: t + '%', opacity: s.lab || s.hud ? .25 : 1});
+}
+const lenTxt = um => um >= 10000 ? (um / 10000) + ' cm' : um >= 1000 ? (um / 1000) + ' mm' : um >= 1 ? um + ' µm' : Math.round(um * 1000) + ' nm';
+function updScale(s) {
+  const px = s.bar / s.fov * (s.z > 1 ? VW : SQ);
+  $('#scaleB').style.width = Math.max(14, Math.min(VW * .4, px)) + 'px';
+  $('#scaleT').textContent = lenTxt(s.bar) + ' · 示意';
+}
+const fmt = n => Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+function tweenMag(to) {
+  const from = magNow, st = performance.now(), d = RM ? 1 : 1300;
+  magNow = to;
+  const step = now => { const p = Math.min(1, (now - st) / d), e = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+    $('#mag').textContent = '×' + fmt(Math.exp(Math.log(from) + (Math.log(to) - Math.log(from)) * e)); if (p < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+
+// HUD
+let logLines = [];
+function hud(s, i) {
+  document.documentElement.style.setProperty('--tint', s.c);
+  if (s.lab) { magNow = 1; $('#mag').textContent = '实验台'; } else tweenMag(90000 / s.fov);
+  $('#fov').textContent = '视野 ' + lenTxt(s.fov) + ' · ' + (i + 1) + '/' + N;
+  $('#locN').textContent = (i + 1) + '/' + N; $('#focusIdx').textContent = String(i + 1).padStart(2, '0') + ' / ' + String(N).padStart(2, '0');
+  $('#chipK').textContent = s.k + (s.lab ? ' · LAB' : s.hud ? ' · TEM' : i ? ' · CLOSE-UP' : ' · OVERVIEW'); $('#chipN').textContent = s.zh.replace(/（.*）|：.*/, '') + ' ' + s.en;
+  const fb = $('#focusBody'), vt = $('#vit'); fb.classList.add('out'); vt.classList.add('out');
+  setTimeout(() => {
+    fb.innerHTML = `<div class="nm"><h2>${s.zh}</h2><small>${s.en}</small></div><p class="one">${s.one}</p><ul>${s.f.map(x => '<li>' + x + '</li>').join('')}</ul><div class="clin"><b>科研 / 临床联系</b>${s.clin}</div><div class="sz">${s.sz}</div>`;
+    fb.parentNode.scrollTop = 0;
+    vt.innerHTML = `<div class="rg">区域：${s.rg}</div>` + s.v.map(([l, n, u]) => `<div><span class="lb">${l}</span><b>${n}<small>${u}</small></b></div>`).join('');
+    fb.classList.remove('out'); vt.classList.remove('out');
+  }, RM ? 0 : 320);
+  const labels = s.bl || ACT;
+  $('#barK').textContent = s.bk || '通路活跃度'; $('#barU').textContent = s.bu || '相对 · 示意';
+  [...$('#bars').children].forEach((r, k) => { r.querySelector('span').textContent = labels[k]; r.querySelector('b').style.width = s.act[k] + '%'; r.querySelector('.v').textContent = s.act[k]; r.classList.toggle('hi', k === s.hi); });
+  stopBtns.forEach((b, k) => b.classList.toggle('on', k === i));
+  const cs = stopBtns[i]; if (cs && innerWidth > 820) { const nv = $('#stops'); if (cs.offsetTop < nv.scrollTop || cs.offsetTop > nv.scrollTop + nv.clientHeight - 30) nv.scrollTo({top: cs.offsetTop - 40, behavior: RM ? 'auto' : 'smooth'}); }
+  const mc = [...$('#mchips').children]; mc.forEach((b, k) => b.classList.toggle('on', k === i));
+  const cur = mc[i]; if (cur && innerWidth <= 820) cur.parentNode.scrollTo({left: cur.offsetLeft - cur.parentNode.clientWidth / 2 + cur.clientWidth / 2, behavior: RM ? 'auto' : 'smooth'});
+  updScale(s);
+  const act2 = i >= 8;
+  view.classList.toggle('lab', act2);
+  $('#hudSed').classList.toggle('on', s.hud === 'sed'); $('#hudSc').classList.toggle('on', s.hud === 'sc'); $('#hudNta').classList.toggle('on', s.hud === 'nta');
+  $('#lcK').textContent = act2 ? (s.hud === 'sed' ? '离心进度 · 示意（时间已压缩）' : 'NTA 粒径分布 · 示意') : 'EV 生命周期 · 示意（时间已压缩）';
+  if (s.hud === 'sc') drawScatter();
+  logLines = s.log.slice(); pushLog(); pushLog();
+}
+let tick = 0;
+function pushLog(txt) {
+  let l = txt;
+  if (!l) { if (!logLines.length) return; l = logLines.shift(); logLines.push(l); }
+  const ts = new Date().toTimeString().slice(0, 8);
+  const el = document.createElement('div'); el.innerHTML = `<em>${ts}</em> <b>›</b> ${l}`;
+  const lg = $('#log'); lg.appendChild(el); while (lg.children.length > 9) lg.firstChild.remove();
+}
+
+// tour
+function show(i, instant) {
+  clearTimeout(timer); idx = (i + N) % N; const s = S[idx];
+  closeImgs.forEach(im => im.classList.remove('on'));
+  hud(s, idx);
+  setCam(s, instant);
+  stT = performance.now(); ntaReset();
+  if (idx) {
+    timer = setTimeout(() => {
+      const im = closeImgs[idx - 1]; im.style.animation = 'none'; void im.offsetWidth; im.style.animation = ''; im.classList.add('on');
+      schedule(DWELL - ZOOMT);
+    }, RM || instant ? 0 : (s.lab || s.hud ? 500 : ZOOMT));
+    dur = DWELL;
+  } else { dur = DWELL0; schedule(DWELL0); }
+  t0 = performance.now();
+}
+function schedule(ms) { clearTimeout(timer); if (playing) timer = setTimeout(() => show(idx + 1), ms); }
+let started = false;
+function setPlay(p) {
+  playing = p; app.classList.toggle('paused', !p);
+  $('#ppB').textContent = p ? '❚❚' : '▶'; $('#ppB').setAttribute('aria-label', p ? '暂停 (空格)' : '播放 (空格)');
+  $('#liveT').textContent = p ? 'LIVE · 自动漫游' : '已暂停 · PAUSED';
+  if (!started) return;
+  if (p) { t0 = performance.now() - dur + 1400; schedule(1400); }
+  else { clearTimeout(timer); if (idx) closeImgs[idx - 1].classList.add('on'); }
+}
+$('#ppB').onclick = () => setPlay(!playing);
+$('#nextB').onclick = () => show(idx + 1);
+$('#prevB').onclick = () => show(idx - 1);
+$('#mini').onclick = e => {
+  const r = e.currentTarget.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+  let best = 0, bd = 1e9; S.forEach((s, i) => { if (!i || i >= 8) return; const d = (s.x - x) ** 2 + (s.y - y) ** 2; if (d < bd) { bd = d; best = i; } });
+  show(bd < .02 ? best : 0);
+};
+// fullscreen
+const fsOK = !!(document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen);
+function fs() {
+  const d = document, el = d.documentElement;
+  if (d.fullscreenElement || d.webkitFullscreenElement) (d.exitFullscreen || d.webkitExitFullscreen).call(d);
+  else if (fsOK) (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
+}
+if (!fsOK) $('#fsB').style.display = 'none';
+$('#fsB').onclick = fs;
+// sheet
+const sheet = $('#sheet'); let wasPlaying = false;
+const openSheet = e => { e && e.preventDefault(); wasPlaying = playing; if (playing) setPlay(false); sheet.classList.add('open'); };
+const closeSheet = () => { sheet.classList.remove('open'); if (wasPlaying) setPlay(true); };
+$('#infoB').onclick = openSheet; $('#infoL').onclick = openSheet; $('#sheetX').onclick = closeSheet;
+sheet.onclick = e => { if (e.target === sheet) closeSheet(); };
+addEventListener('keydown', e => {
+  if (e.target.closest && e.target.closest('input,textarea')) return;
+  if (e.key === 'Escape' && sheet.classList.contains('open')) return closeSheet();
+  if (sheet.classList.contains('open')) return;
+  if (e.key === 'ArrowRight') { e.preventDefault(); show(idx + 1); }
+  else if (e.key === 'ArrowLeft') { e.preventDefault(); show(idx - 1); }
+  else if (e.key === ' ' || e.code === 'Space') { e.preventDefault(); setPlay(!playing); }
+  else if (e.key === 'f' || e.key === 'F') fs();
+});
+// swipe on view
+let sx = 0, sy = 0;
+view.addEventListener('touchstart', e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive: true});
+view.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) show(idx + (dx < 0 ? 1 : -1)); }, {passive: true});
+// panel dots (mobile)
+const bottom = $('#bottom'), dots = $('#dots');
+function mkDots() { const ps = [...bottom.children].filter(p => getComputedStyle(p).display !== 'none'); dots.innerHTML = ps.map(() => '<i></i>').join(''); updDots(); }
+function updDots() { const ps = [...bottom.children].filter(p => getComputedStyle(p).display !== 'none').sort((a, b) => a.offsetLeft - b.offsetLeft);
+  let k = 0, bd = 1e9; ps.forEach((p, i) => { const d = Math.abs(p.offsetLeft - bottom.scrollLeft); if (d < bd) { bd = d; k = i; } });
+  [...dots.children].forEach((d, i) => d.classList.toggle('on', i === k)); }
+bottom.addEventListener('scroll', () => requestAnimationFrame(updDots), {passive: true});
+
+// ---------- signature animation: EV lifecycle (illustrative, time compressed) ----------
+const sm = p => p * p * (3 - 2 * p);
+const cl = p => Math.max(0, Math.min(1, p));
+const lerp = (a, b, p) => a + (b - a) * p;
+const CYC = 6400;
+const ILV_A = [0.3, 1.5, 2.6, 3.7, 4.8, 5.8, .9, 2.1, 3.2, 4.3];
+const sparks = [['#spark', '#vmN'], ['#spark2', '#vmN2']].map(([c, n]) => ({c: $(c), x: $(c).getContext('2d'), n: $(n)}));
+function lifecycle(sp, t) {
+  const {c, x} = sp, w = c.width, h = c.height; x.clearRect(0, 0, w, h);
+  const big = w > 250, lw = big ? 2.2 : 1.4;
+  const mx = w * .64;                                  // plasma membrane x
+  // interior tint
+  const g = x.createLinearGradient(0, 0, mx, 0); g.addColorStop(0, 'rgba(94,231,255,0)'); g.addColorStop(1, 'rgba(94,231,255,.07)');
+  x.fillStyle = g; x.fillRect(0, 0, mx, h);
+  const r = h * .34, cy = h * .58;
+  const nIlv = Math.min(8, Math.floor(cl(t / 2800) * 8.99));
+  const move = sm(cl((t - 3000) / 1000)), fus = cl((t - 4000) / 2000);
+  const cx = lerp(w * .27, mx - r * .98, move);
+  // membrane with fusion opening
+  const gap = fus > 0 ? r * .75 * Math.sin(Math.min(1, fus * 1.6) * Math.PI / 2) : 0;
+  x.strokeStyle = '#5ee7ff'; x.lineWidth = lw * 1.3; x.beginPath();
+  x.moveTo(mx, 0); x.lineTo(mx, cy - gap); x.moveTo(mx, cy + gap); x.lineTo(mx, h); x.stroke();
+  // microvesicle budding outward near top (PS exposed = amber)
+  const mt = (t % 3200) / 3200, by = h * .17, br = h * .13 * sm(cl(mt / .45));
+  const off = mt < .45 ? br * .9 : br * .9 + (mt - .45) * w * .55;
+  if (mt < .92) {
+    x.globalAlpha = mt < .45 ? 1 : 1 - (mt - .45) / .47;
+    x.strokeStyle = '#ffc76b'; x.lineWidth = lw; x.beginPath(); x.arc(mx + off, by - (mt > .45 ? (mt - .45) * h * .2 : 0), Math.max(.1, br), 0, 6.283); x.stroke();
+    x.fillStyle = 'rgba(255,181,71,.18)'; x.fill(); x.globalAlpha = 1;
+  }
+  // MVB
+  if (fus < 1) {
+    x.globalAlpha = 1 - fus;
+    x.strokeStyle = '#a46bff'; x.lineWidth = lw; x.beginPath(); x.arc(cx, cy, r, 0, 6.283); x.stroke();
+    // budding ILV (inward bud on rim)
+    if (t < 2800) {
+      const k = nIlv % ILV_A.length, a = ILV_A[k] + Math.PI, bp = (t % 350) / 350;
+      x.strokeStyle = '#8ff3ff'; x.beginPath(); x.arc(cx + Math.cos(a) * r * (1 - .18 * bp), cy + Math.sin(a) * r * (1 - .18 * bp), r * .16 * sm(bp), 0, 6.283); x.stroke();
+    }
+    x.globalAlpha = 1;
+  }
+  // ILVs
+  for (let i = 0; i < nIlv; i++) {
+    const a = ILV_A[i], rr = r * (.25 + .38 * ((i * 37) % 10) / 10);
+    let px = cx + Math.cos(a) * rr, py = cy + Math.sin(a) * rr;
+    if (fus > 0) { const d = sm(fus); px = lerp(px, mx + (w - mx) * (.25 + .7 * ((i * 53) % 10) / 10), d); py = lerp(py, cy + (((i * 29) % 10) / 10 - .5) * h * .9, d); }
+    x.fillStyle = '#8ff3ff'; x.beginPath(); x.arc(px, py, r * .12, 0, 6.283); x.fill();
+  }
+  const rel = fus > .25 ? nIlv : 0;
+  return rel ? '释放 ' + rel + ' 个' : (t > 3000 ? '运往质膜' : 'ILV ×' + nIlv);
+}
+// NTA-like histogram (illustrative log-normal, mode ≈100 nm)
+const NB = 40, NMAX = 400; let ntaH = new Array(NB).fill(0), ntaCount = 0;
+function ntaReset() { ntaH = new Array(NB).fill(0); ntaCount = 0; }
+function ntaSample() { // log-normal: median ~110 nm, sigma 0.38
+  const u = Math.random(), v = Math.random(), z = Math.sqrt(-2 * Math.log(u + 1e-9)) * Math.cos(6.283 * v);
+  return Math.exp(Math.log(110) + .38 * z);
+}
+function drawHist(ctx, w, h, axis) {
+  ctx.clearRect(0, 0, w, h);
+  const pb = axis ? 22 : 3, pl = axis ? 6 : 2, mxv = Math.max(8, ...ntaH);
+  const bw = (w - pl * 2) / NB;
+  ntaH.forEach((n, i) => { const bh = n / mxv * (h - pb - 6); const hue = i * bw + pl;
+    ctx.fillStyle = i * 10 < 200 ? 'rgba(94,231,255,.85)' : 'rgba(164,107,255,.8)'; ctx.fillRect(hue, h - pb - bh, bw - 1, bh); });
+  ctx.strokeStyle = 'rgba(232,238,252,.4)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(pl, h - pb + .5); ctx.lineTo(w - pl, h - pb + .5); ctx.stroke();
+  if (axis) {
+    ctx.fillStyle = 'rgba(232,238,252,.7)'; ctx.font = '600 15px ui-monospace,Menlo,monospace';
+    [0, 100, 200, 300, 400].forEach(v => { const px = pl + v / NMAX * (w - pl * 2); ctx.fillText(v + (v === 400 ? ' nm' : ''), Math.min(w - 60, Math.max(0, px - 8)), h - 4); });
+    const x2 = pl + 200 / NMAX * (w - pl * 2);
+    ctx.setLineDash([4, 4]); ctx.strokeStyle = 'rgba(255,181,71,.7)'; ctx.beginPath(); ctx.moveTo(x2, 6); ctx.lineTo(x2, h - pb); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = 'rgba(255,181,71,.9)'; ctx.fillText('200 nm（small EV 常用界线）', x2 + 6, 20);
+  }
+}
+// sedimentation HUD (Théry 2006 steps, illustrative)
+const SED = [['300×g', '10 min', '细胞', 5.2], ['2,000×g', '20 min', '死细胞 / 碎片', 3.8], ['10,000×g', '30 min', '大囊泡', 2.6], ['100,000×g', '≥70 min', '小 EV ✓', 1.5]];
+const sedP = Array.from({length: 70}, (_, i) => ({c: i % 4, x: Math.random(), y: Math.random()}));
+const sedC = $('#sedC'), sx2 = sedC.getContext('2d');
+function drawSed(p) {
+  const w = sedC.width, h = sedC.height; sx2.clearRect(0, 0, w, h);
+  const st = Math.min(3, Math.floor(p * 4)), sp = p * 4 - st;
+  // tube
+  const tx = 30, tw = 70, ty = 14, th = h - 40;
+  sx2.strokeStyle = 'rgba(232,238,252,.7)'; sx2.lineWidth = 2.5; sx2.beginPath();
+  sx2.moveTo(tx, ty); sx2.lineTo(tx, ty + th - 20); sx2.quadraticCurveTo(tx + tw / 2, ty + th + 14, tx + tw, ty + th - 20); sx2.lineTo(tx + tw, ty); sx2.stroke();
+  sx2.fillStyle = 'rgba(94,231,255,.08)'; sx2.fill();
+  const cols = ['#ffb547', '#ff7a45', '#a46bff', '#5ee7ff'];
+  sedP.forEach(q => {
+    let fall = q.c < st ? 1 : q.c === st ? sm(cl(sp * 1.15)) : 0;
+    if (q.c < st) return;                           // pellet discarded after its step (supernatant moved on)
+    const y0 = ty + 8 + q.y * (th - 40), y1 = ty + th - 8 - (q.x * 6);
+    const yy = lerp(y0, y1, fall);
+    sx2.fillStyle = cols[q.c]; sx2.globalAlpha = q.c === 3 && st === 3 && sp > .85 ? 1 : .85;
+    sx2.beginPath(); sx2.arc(tx + 10 + q.x * (tw - 20) * (fall > .9 ? .5 : 1) + (fall > .9 ? (tw - 20) * .25 : 0), yy, SED[q.c][3] * 1.6, 0, 6.283); sx2.fill();
+  });
+  sx2.globalAlpha = 1;
+  // steps
+  const lx = 130; sx2.font = '600 17px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+  SED.forEach(([g, t, what], i) => {
+    const y = 24 + i * 66, done = i < st, on = i === st;
+    sx2.fillStyle = on ? '#fff' : done ? 'rgba(232,238,252,.55)' : 'rgba(232,238,252,.35)';
+    sx2.fillText(g + ' · ' + t, lx, y + 4);
+    sx2.font = '500 15px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif'; sx2.fillStyle = i === 3 ? '#7dffb2' : 'rgba(232,238,252,.6)';
+    sx2.fillText((i === 3 ? '留沉淀：' : '弃沉淀：') + what, lx, y + 26);
+    sx2.font = '600 17px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+    sx2.fillStyle = 'rgba(255,255,255,.1)'; sx2.fillRect(lx, y + 36, w - lx - 10, 7);
+    sx2.fillStyle = cols[i]; sx2.fillRect(lx, y + 36, (w - lx - 10) * (done ? 1 : on ? cl(sp) : 0), 7);
+  });
+  return SED[st][0];
+}
+function drawSedBar(sp, p) { // top-panel compact progress
+  const {c, x} = sp, w = c.width, h = c.height; x.clearRect(0, 0, w, h);
+  const seg = (w - 6) / 4, cols = ['#ffb547', '#ff7a45', '#a46bff', '#5ee7ff'];
+  for (let i = 0; i < 4; i++) {
+    const f = cl(p * 4 - i);
+    x.fillStyle = 'rgba(255,255,255,.08)'; x.fillRect(i * seg + 2, h * .55, seg - 4, h * .22);
+    x.fillStyle = cols[i]; x.fillRect(i * seg + 2, h * .55, (seg - 4) * f, h * .22);
+    if (w > 250) { x.fillStyle = f > 0 ? '#fff' : 'rgba(232,238,252,.4)'; x.font = '600 15px ui-monospace,Menlo,monospace'; x.fillText(SED[i][0].replace(',000', 'k'), i * seg + 4, h * .42); }
+  }
+}
+// scatter HUD (qualitative)
+const SC = [['差速离心', 120, 115, '#a46bff'], ['密度梯度', 70, 40, '#5ee7ff'], ['SEC', 150, 72, '#38e0c6'], ['超滤', 225, 130, '#ffb547'], ['PEG 沉淀', 250, 165, '#ff7a45'], ['免疫亲和', 55, 70, '#ff5d9e'], ['微流控', 95, 92, '#9dff5c'], ['超滤 + SEC', 195, 60, '#ffd23f']];
+function drawScatter() {
+  const s = $('#scSvg');
+  s.innerHTML = '<line x1="30" y1="182" x2="292" y2="182" stroke="rgba(232,238,252,.5)"/><line x1="30" y1="182" x2="30" y2="8" stroke="rgba(232,238,252,.5)"/>' +
+    '<text x="290" y="197" fill="#8d9bbd" font-size="10.5" text-anchor="end">得率 / 回收 →</text><text x="12" y="12" fill="#8d9bbd" font-size="10.5" transform="rotate(-90 12 12)" text-anchor="end">纯度 / 特异性 →</text>' +
+    SC.map(([n, xx, yy, c], i) => `<g style="opacity:0;animation:scIn .5s ${RM ? 0 : .2 + i * .25}s forwards"><circle cx="${xx + 10}" cy="${yy}" r="6" fill="${c}"/><text x="${xx + 19}" y="${yy + 4}" fill="#e8eefc" font-size="11">${n}</text></g>`).join('') +
+    '<style>@keyframes scIn{to{opacity:1}}</style>';
+}
+const ntaC = $('#ntaC'), nx2 = ntaC.getContext('2d');
+let lastS = 0, lastHud = 0;
+function frame(now) {
+  if (playing) $('#progB').style.width = Math.min(100, (now - t0) / dur * 100) + '%';
+  const s = S[idx], act2 = idx >= 8, et = now - stT;
+  if (now - lastS > 33) {
+    lastS = now;
+    if (act2 && (s.hud === 'nta' || s.hud === 'sc')) { for (let k = 0; k < 6 && ntaCount < 2400; k++) { const d = ntaSample(); if (d < NMAX) { ntaH[Math.floor(d / NMAX * NB)]++; ntaCount++; } } }
+    sparks.forEach(sp => {
+      if (!sp.c.offsetParent) return;
+      if (!act2) sp.n.textContent = lifecycle(sp, (now % CYC));
+      else if (s.hud === 'sed') { const p = cl(et / 5200); drawSedBar(sp, p); sp.n.textContent = SED[Math.min(3, Math.floor(p * 4))][0]; }
+      else { drawHist(sp.x, sp.c.width, sp.c.height, false); sp.n.textContent = '众数≈100 nm'; }
+    });
+    if (s.hud === 'sed' && $('#hudSed').offsetParent) $('#sedG').textContent = drawSed(cl(et / 5200));
+    if (s.hud === 'nta' && $('#hudNta').offsetParent) { drawHist(nx2, ntaC.width, ntaC.height, true); $('#ntaN').textContent = ntaCount + ' 颗粒'; }
+  }
+  if (!RM && !act2) heroAnim(now);
+  if (++tick % 150 === 0 && playing) pushLog();
+  requestAnimationFrame(frame);
+}
+// hero overlay: microvesicle budding at the membrane + EV release stream + ILV budding in the MVB
+function heroAnim(now) {
+  const t = now % 4200;
+  // microvesicle
+  const mp = t / 4200, gr = sm(cl(mp / .4)), rr = 26 * gr;
+  const d = mp < .4 ? rr * .8 : rr * .8 + (mp - .4) * 260;
+  const cx = MV_P[0] + MV_N[0] * d + (mp > .4 ? (mp - .4) * 60 : 0), cy = MV_P[1] + MV_N[1] * d;
+  const al = mp < .4 ? 1 : Math.max(0, 1 - (mp - .4) / .55);
+  mvBud.setAttribute('cx', cx); mvBud.setAttribute('cy', cy); mvBud.setAttribute('r', rr); mvBud.setAttribute('opacity', al.toFixed(2));
+  mvGlow.setAttribute('cx', cx); mvGlow.setAttribute('cy', cy); mvGlow.setAttribute('r', rr * 1.6); mvGlow.setAttribute('opacity', (al * .5).toFixed(2));
+  // release stream
+  relEls.forEach((e, i) => {
+    const p = ((now / 3600) + i / relEls.length) % 1, q = sm(p);
+    const ctlx = 760, ctly = 520, sxp = (i % 3 - 1) * 26;
+    const x = (1 - q) * (1 - q) * FUS[0] + 2 * (1 - q) * q * (ctlx + sxp) + q * q * (RECV[0] + sxp * .3);
+    const y = (1 - q) * (1 - q) * FUS[1] + 2 * (1 - q) * q * (ctly + sxp) + q * q * RECV[1];
+    e.setAttribute('cx', x.toFixed(1)); e.setAttribute('cy', y.toFixed(1)); e.setAttribute('r', (13 * Math.sin(p * Math.PI)).toFixed(1));
+  });
+  // ILV buds on MVB rim
+  ilvEls.forEach((e, i) => {
+    const p = ((now / 1500) + i / 3) % 1, a = ILV_A[(Math.floor(now / 1500 + i / 3) * 3 + i) % ILV_A.length];
+    const rr2 = MVB_R * (1 - .2 * p);
+    e.setAttribute('cx', (MVB[0] + Math.cos(a) * rr2).toFixed(1)); e.setAttribute('cy', (MVB[1] + Math.sin(a) * rr2).toFixed(1));
+    e.setAttribute('r', (14 * sm(p)).toFixed(1)); e.setAttribute('opacity', (1 - p * .6).toFixed(2));
+  });
+}
+
+// particles
+const fx = $('#fx'), fc = fx.getContext('2d'); let parts = [], DPR = 1;
+function sizeFx() { DPR = Math.min(2, devicePixelRatio || 1); fx.width = VW * DPR; fx.height = VH * DPR;
+  const n = Math.round(Math.min(70, VW * VH / 9000)); parts = Array.from({length: n}, () => ({x: Math.random() * VW, y: Math.random() * VH, r: Math.random() * 2.2 + .4, vx: (Math.random() - .5) * .18, vy: (Math.random() - .5) * .18 - .05, a: Math.random() * .5 + .15, p: Math.random() * 6.28})); }
+function fxLoop() {
+  if (RM) return;
+  fc.setTransform(DPR, 0, 0, DPR, 0, 0); fc.clearRect(0, 0, VW, VH);
+  const tint = getComputedStyle(document.documentElement).getPropertyValue('--tint').trim() || '#5ee7ff';
+  const zoomBoost = idx ? 1.6 : 1;
+  parts.forEach((q, i) => { q.x += q.vx * zoomBoost; q.y += q.vy * zoomBoost; q.p += .02;
+    if (q.x < -5) q.x = VW + 5; if (q.x > VW + 5) q.x = -5; if (q.y < -5) q.y = VH + 5; if (q.y > VH + 5) q.y = -5;
+    fc.globalAlpha = q.a * (.6 + .4 * Math.sin(q.p)); fc.fillStyle = i % 3 ? '#cfe8ff' : tint;
+    fc.beginPath(); fc.arc(q.x, q.y, q.r, 0, 6.283); fc.fill(); });
+  fc.globalAlpha = 1; requestAnimationFrame(fxLoop);
+}
+document.addEventListener('visibilitychange', () => { if (document.hidden) clearTimeout(timer); else if (playing) schedule(1500); });
+
+addEventListener('resize', () => { layout(); mkDots(); });
+layout(); mkDots(); setPlay(playing); started = true;
+show(0, true);
+requestAnimationFrame(frame); fxLoop();
+})();
+
+</script>
+</body>
+</html>
