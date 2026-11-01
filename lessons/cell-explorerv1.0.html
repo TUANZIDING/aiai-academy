@@ -163,10 +163,11 @@ a{color:var(--acc)}
   .ai{bottom:auto;top:10px;right:10px}
   .bottom{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;padding-bottom:2px;scrollbar-width:none;flex-wrap:nowrap}
   .bottom::-webkit-scrollbar{display:none}
-  .bottom>.p{flex:0 0 calc(100% - 26px);scroll-snap-align:center;height:176px}
+  .bottom>.p{flex:0 0 calc(100% - 26px);scroll-snap-align:center;height:186px}
   .bottom>.p.loc{display:none}
   .focus{order:-2}.vitp{order:-1}
-  .focus li{font-size:12.5px}
+  .focus li{font-size:12.5px;line-height:1.45}
+  .focus .sz{margin-top:5px}
   .log{height:124px}
   .mchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:0 1px}
   .mchips::-webkit-scrollbar{display:none}
@@ -348,7 +349,7 @@ S.forEach((s, i) => {
     if (s.id === 'mito') im.style.objectPosition = '64% 50%';
     close.appendChild(im);
     const h = document.createElement('button');
-    h.className = 'hs' + (s.x > .6 ? ' l' : ''); h.style.left = s.x * 100 + '%'; h.style.top = s.y * 100 + '%';
+    h.className = 'hs' + (s.x > .6 || s.id === 'golgi' ? ' l' : ''); h.style.left = s.x * 100 + '%'; h.style.top = s.y * 100 + '%';
     h.setAttribute('aria-label', '前往 ' + s.zh); h.innerHTML = '<span>' + s.zh + '</span>';
     h.onclick = () => jump(i); $('#hsLayer').appendChild(h);
   }
