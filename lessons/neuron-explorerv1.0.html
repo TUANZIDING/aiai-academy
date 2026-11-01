@@ -214,30 +214,31 @@ a{color:var(--acc)}
 }
 @media (max-width:820px) and (max-height:700px){.bottom>.p{height:170px}}
 </style>
+<link rel="stylesheet" href="../assets/explorer-shellv1.0.css?v=1.0">
 </head>
 <body>
 <div class="app" id="app">
   <header class="top">
     <div class="title glass">
-      <div class="brand"><a href="../index.html#lessons">← AIAI 学院 · 课件馆</a></div>
-      <h1>神经元 · NEURON</h1>
-      <p>顺着信号走一遍<span class="en"> · from soma to synapse</span></p>
+      <div class="brand"><a href="../index.html#micro">← <span class="bi-in"><span class="t-zh" lang="zh-CN">AIAI 学院</span><span class="t-en" lang="en">AIAI Academy</span></span> · <span class="bi-in"><span class="t-zh" lang="zh-CN">微观馆</span><span class="t-en" lang="en">Micro Hall</span></span></a></div>
+      <h1><span class="t-zh" lang="zh-CN">神经元</span><span class="t-en" lang="en">Neuron</span></h1>
+      <p><span class="t-zh" lang="zh-CN">顺着信号走一遍：从胞体到突触</span><span class="t-en" lang="en">Follow a signal from soma to synapse</span></p>
     </div>
     <div class="profile glass" aria-label="神经元档案">
-      <div><span class="k">类型 Type</span><b>多极 · 运动神经元型</b></div>
-      <div><span class="k">胞体 Soma</span><b>4–100 µm</b></div>
-      <div><span class="k">静息电位</span><b>≈ −70 mV</b></div>
-      <div><span class="k">传导 Speed</span><b>0.5–120 m/s</b></div>
-      <div><span class="k">突触 Synapse</span><b>化学性</b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">类型</span><span class="t-en" lang="en">Type</span></span></span><b><span class="t-zh" lang="zh-CN">多极 · 运动神经元型</span><span class="t-en" lang="en">Multipolar · motor-neuron type</span></b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">胞体</span><span class="t-en" lang="en">Soma</span></span></span><b>4–100 µm</b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">静息电位</span><span class="t-en" lang="en">Resting potential</span></span></span><b>≈ −70 mV</b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">传导速度</span><span class="t-en" lang="en">Conduction</span></span></span><b>0.5–120 m/s</b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">突触</span><span class="t-en" lang="en">Synapse</span></span></span><b><span class="t-zh" lang="zh-CN">化学性</span><span class="t-en" lang="en">Chemical</span></b></div>
     </div>
     <div class="atp glass">
-      <span class="k">膜电位 Vm · 示意（时间轴已拉长）</span>
+      <span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">膜电位 Vm · 示意（时间轴已拉长）</span><span class="t-en" lang="en">Membrane potential Vm · illustrative (time stretched)</span></span></span>
       <div class="row"><span class="num mono" id="vmN">−70 mV</span><canvas id="spark" width="360" height="76" aria-hidden="true"></canvas></div>
     </div>
     <div class="status glass">
-      <div class="live"><i></i><span id="liveT">LIVE · 自动漫游</span></div>
+      <div class="live"><i></i><span id="liveT">LIVE</span></div>
       <div class="mg"><div class="mag mono" id="mag">×225</div><div class="fov" id="fov">视野 400 µm · 1/9</div></div>
-      <div class="ibtns"><button class="ib" id="infoB" title="说明 / 课堂用法" aria-label="说明与课堂用法">ⓘ</button><button class="ib" id="fsB" title="全屏 (F)" aria-label="全屏">⛶</button></div>
+      <div class="ibtns"><button class="ib" id="infoB" title="说明 / 课堂用法 · How to use" aria-label="说明与课堂用法 How to use">ⓘ</button><button class="ib" id="fsB" title="全屏 Full screen (F)" aria-label="全屏 Full screen">⛶</button></div>
     </div>
   </header>
 
@@ -258,13 +259,13 @@ a{color:var(--acc)}
     <div class="chip glass"><i></i><span id="chipK">全景</span><b id="chipN">神经元全貌</b></div>
     <div class="vm2 glass" aria-hidden="true"><b id="vmN2">−70 mV</b><canvas id="spark2" width="192" height="48"></canvas><small>示意</small></div>
     <div class="scale"><span id="scaleT">100 µm</span><div class="bar" id="scaleB"></div></div>
-    <div class="ai">示意图（AI 生成）</div>
+    <div class="ai"><span class="bi-in"><span class="t-zh" lang="zh-CN">示意图（AI 生成）</span><span class="t-en" lang="en">Illustration (AI-generated)</span></span></div>
     <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
     <nav class="stops glass" id="stops" aria-label="漫游站点"></nav>
     <div class="ctrl glass">
-      <button id="prevB" aria-label="上一站 (←)" title="上一站 ←">◀</button>
-      <button id="ppB" class="pp" aria-label="暂停 / 播放 (空格)" title="暂停 / 播放 空格">❚❚</button>
-      <button id="nextB" aria-label="下一站 (→)" title="下一站 →">▶</button>
+      <button id="prevB" aria-label="上一站 Previous (←)" title="上一站 Previous ←">◀</button>
+      <button id="ppB" class="pp" aria-label="暂停 / 播放 Pause / play (Space)" title="暂停 / 播放 Pause / play · Space">❚❚</button>
+      <button id="nextB" aria-label="下一站 Next (→)" title="下一站 Next →">▶</button>
       <div class="prog"><b id="progB"></b></div>
     </div>
   </main>
@@ -273,60 +274,64 @@ a{color:var(--acc)}
     <div class="mchips" id="mchips" aria-label="选择站点"></div>
     <section class="bottom" id="bottom">
       <div class="p glass loc">
-        <div class="hd"><span class="k">定位 Locator</span><span id="locN">1/9</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">定位</span><span class="t-en" lang="en">Locator</span></span></span><span id="locN">1/9</span></div>
         <div class="mini" id="mini" title="点击跳到最近的站点"><img src="../assets/neuron/neuron-minimapv1.0.webp" alt="" width="240" height="240"><div class="vbox" id="vbox"></div></div>
       </div>
       <div class="p glass actp">
-        <div class="hd"><span class="k">分子活跃度</span><span>相对 · 示意</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">分子活跃度</span><span class="t-en" lang="en">Molecular activity</span></span></span><span><span class="bi-in"><span class="t-zh" lang="zh-CN">相对 · 示意</span><span class="t-en" lang="en">relative · illustrative</span></span></span></div>
         <div class="bars" id="bars"></div>
       </div>
       <div class="p glass focus" aria-live="polite">
-        <div class="hd"><span class="k">焦点 Focus</span><span id="focusIdx">01 / 09</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">焦点</span><span class="t-en" lang="en">Focus</span></span></span><span id="focusIdx">01 / 09</span></div>
         <div class="fade" id="focusBody"></div>
       </div>
       <div class="p glass vitp">
-        <div class="hd"><span class="k">关键数值 Numbers</span><span>典型值</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">关键数值</span><span class="t-en" lang="en">Key numbers</span></span></span><span><span class="bi-in"><span class="t-zh" lang="zh-CN">典型值</span><span class="t-en" lang="en">typical</span></span></span></div>
         <div class="vit fade" id="vit"></div>
       </div>
       <div class="p glass logp">
-        <div class="hd"><span class="k">事件流 Log</span><span>示意</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">事件流</span><span class="t-en" lang="en">Event log</span></span></span><span><span class="bi-in"><span class="t-zh" lang="zh-CN">示意</span><span class="t-en" lang="en">illustrative</span></span></span></div>
         <div class="log" id="log"></div>
       </div>
     </section>
     <div class="dots" id="dots"></div>
-    <div class="foot">灵感来源 <a href="https://x.com/thegreatest_sv/status/2116241528737693741" target="_blank" rel="noopener">@thegreatest_sv</a>（X 上的神经元 HUD 动画）；本页图像、文字与代码为原创，图片由 AI 生成，均为示意 · <a href="#" id="infoL">说明 / 课堂用法</a></div>
+    <div class="foot"><span class="t-zh" lang="zh-CN">灵感来源 <a href="https://x.com/thegreatest_sv/status/2116241528737693741" target="_blank" rel="noopener">@thegreatest_sv</a>（X 上的神经元 HUD 动画）；本页图像、文字与代码为原创，图片由 AI 生成，均为示意</span><span class="t-en" lang="en">Inspired by <a href="https://x.com/thegreatest_sv/status/2116241528737693741" target="_blank" rel="noopener">@thegreatest_sv</a> (a neuron HUD animation on X); images, text and code here are original, and all images are AI-generated illustrations</span> · <a href="#" id="infoL"><span class="bi-in"><span class="t-zh" lang="zh-CN">说明 / 课堂用法</span><span class="t-en" lang="en">How to use / in class</span></span></a></div>
   </div>
 </div>
 
-<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="说明与课堂用法">
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="说明与课堂用法 How to use">
   <div class="box glass">
-    <button class="ib x" id="sheetX" aria-label="关闭">✕</button>
-    <h3>神经元漫游 · 怎么用</h3>
-    <p>镜头按信号的走向依次停 8 站：胞体 → 尼氏体 → 高尔基体 → 线粒体 → 轴丘 → 髓鞘与郎飞结 → 轴突末梢 → 突触，每站约 6 秒，再回到全景循环。随时可以暂停，或点神经元上的发光点、站点列表、左下角定位图直接跳转。</p>
-    <p>全景里注意看：膜电位曲线每冲过阈值一次，就有一个橙色光点从轴丘出发，在郎飞结之间一跳一跳地跑到末梢——这就是跳跃式传导（速度和时间都放慢了，示意）。</p>
-    <p>键盘：<kbd>←</kbd> <kbd>→</kbd> 上一站 / 下一站，<kbd>空格</kbd> 暂停 / 播放，<kbd>F</kbd> 全屏，<kbd>Esc</kbd> 关闭本窗口。手机上可以在画面上左右滑动换站，下方面板也可以左右滑。</p>
+    <button class="ib x" id="sheetX" aria-label="关闭 Close">✕</button>
+    <h3><span class="t-zh" lang="zh-CN">神经元漫游 · 怎么用</span><span class="t-en" lang="en">Neuron Explorer · How to use</span></h3>
+    <p><span class="t-zh" lang="zh-CN">镜头按信号的走向依次停 8 站：胞体 → 尼氏体 → 高尔基体 → 线粒体 → 轴丘 → 髓鞘与郎飞结 → 轴突末梢 → 突触，每站约 6 秒，再回到全景循环。随时可以暂停，或点神经元上的发光点、站点列表、左下角定位图直接跳转。</span><span class="t-en" lang="en">The camera follows the signal through 8 stops: soma → Nissl bodies → Golgi apparatus → mitochondria → axon hillock → myelin and nodes of Ranvier → axon terminal → synapse, about 6 seconds each, then returns to the overview and loops. Pause at any time, or jump straight to a stop by tapping a glowing dot on the neuron, the station list or the locator map at bottom left.</span></p>
+    <p><span class="t-zh" lang="zh-CN">全景里注意看：膜电位曲线每冲过阈值一次，就有一个橙色光点从轴丘出发，在郎飞结之间一跳一跳地跑到末梢——这就是跳跃式传导（速度和时间都放慢了，示意）。膜电位曲线在「讲解」抽屉里。</span><span class="t-en" lang="en">Watch the overview: each time the membrane potential crosses threshold, an orange spark leaves the axon hillock and hops from node to node down to the terminals — saltatory conduction (slowed down, illustrative). The membrane-potential trace is in the Explain drawer.</span></p>
+    <p><span class="t-zh" lang="zh-CN">点「讲解 Explain」或按 <kbd>E</kbd> 打开讲解抽屉：每站的要点、临床联系、关键数值、膜电位曲线和事件流都在里面，默认收起。右上角可切换 中 / EN / 中英。</span><span class="t-en" lang="en">Tap “讲解 Explain” or press <kbd>E</kbd> to open the explanation drawer: key points, the clinical link, key numbers, the membrane-potential trace and the event log for each stop. It starts closed. Switch 中 / EN / 中英 at top right.</span></p>
+    <p><span class="t-zh" lang="zh-CN">键盘：<kbd>←</kbd> <kbd>→</kbd> 上一站 / 下一站，<kbd>空格</kbd> 暂停 / 播放，<kbd>E</kbd> 讲解，<kbd>H</kbd> 精简画面，<kbd>F</kbd> 全屏，<kbd>Esc</kbd> 关闭。手机上可以在画面上左右滑动换站。</span><span class="t-en" lang="en">Keyboard: <kbd>←</kbd> <kbd>→</kbd> previous / next stop, <kbd>Space</kbd> pause / play, <kbd>E</kbd> explain, <kbd>H</kbd> clean view, <kbd>F</kbd> full screen, <kbd>Esc</kbd> close. On a phone, swipe left or right on the picture to change stops.</span></p>
     <details open>
-      <summary>课堂用法（3 个讨论问题）</summary>
+      <summary><span class="t-zh" lang="zh-CN">课堂用法（3 个讨论问题）</span><span class="t-en" lang="en">In class: 3 discussion questions</span></summary>
       <ol>
-        <li>动作电位是"全或无"的：刺激再强，单个动作电位也不会更高。那神经怎么告诉大脑"这次疼得更厉害"？（提示：看发放频率和参与的神经元数量。）</li>
-        <li>多发性硬化患者洗热水澡或发烧后，视物模糊、肢体无力常会暂时加重（Uhthoff 现象）。结合"脱髓鞘的纤维传导本来就勉强"想一想为什么。</li>
-        <li>做局部麻醉时，往往痛觉、温度觉先消失，运动功能最后受影响。从纤维的粗细和有没有髓鞘推理一下原因。</li>
+        <li><span class="t-zh" lang="zh-CN">动作电位是"全或无"的：刺激再强，单个动作电位也不会更高。那神经怎么告诉大脑"这次疼得更厉害"？（提示：看发放频率和参与的神经元数量。）</span><span class="t-en" lang="en">Action potentials are all-or-none: a stronger stimulus does not make a single spike taller. So how does a nerve tell the brain “this hurts more”? (Hint: firing frequency and the number of neurons recruited.)</span></li>
+        <li><span class="t-zh" lang="zh-CN">多发性硬化患者洗热水澡或发烧后，视物模糊、肢体无力常会暂时加重（Uhthoff 现象）。结合"脱髓鞘的纤维传导本来就勉强"想一想为什么。</span><span class="t-en" lang="en">In multiple sclerosis, blurred vision and limb weakness often get temporarily worse after a hot bath or a fever (Uhthoff’s phenomenon). Think about why, given that demyelinated fibers only just manage to conduct.</span></li>
+        <li><span class="t-zh" lang="zh-CN">做局部麻醉时，往往痛觉、温度觉先消失，运动功能最后受影响。从纤维的粗细和有没有髓鞘推理一下原因。</span><span class="t-en" lang="en">During local anesthesia, pain and temperature sensation usually go first and motor function last. Work out why from fiber diameter and myelination.</span></li>
       </ol>
-      <p>老师小建议：投屏后先暂停在全景，让学生沿着神经元说出"信号从哪进、从哪出"，再用 <kbd>→</kbd> 逐站揭晓；每站最后读一下"临床联系"，把结构和疾病连起来。</p>
+      <p><span class="t-zh" lang="zh-CN">老师小建议：投屏后先暂停在全景，让学生沿着神经元说出"信号从哪进、从哪出"，再用 <kbd>→</kbd> 逐站揭晓；每站最后读一下"临床联系"，把结构和疾病连起来。</span><span class="t-en" lang="en">Teacher’s tip: on the projector, pause on the overview and have students trace “where the signal comes in and where it goes out”, then reveal each stop with <kbd>→</kbd>; end each stop by reading the clinical link to connect structure with disease.</span></p>
     </details>
-    <h4>关于数字</h4>
-    <p>静息电位 −70 mV、阈电位约 −55 mV、峰值约 +30 mV、离子浓度、传导速度等，都是教科书常用的典型值，不同神经元差别不小。膜电位曲线、光点传导、活跃度条和事件流是<strong>示意动画</strong>，时间轴被大幅拉长（真实的动作电位只有 1–2 毫秒），不是实时测量。放大倍数和比例尺按典型尺寸估算；全景图里的轴突被大大缩短了（真实的运动神经元轴突可长达约 1 米）。图像由 AI 生成，形状和颜色做了艺术化处理，不代表真实显微照片。</p>
-    <h4>致谢</h4>
-    <p>灵感来源 <a href="https://x.com/thegreatest_sv/status/2116241528737693741" target="_blank" rel="noopener">@thegreatest_sv 在 X 上分享的神经元 HUD 动画</a>；本页没有使用原视频或其画面，图像、文字与代码均为原创。姊妹篇：<a href="cell-explorerv1.0.html">动物细胞漫游</a> · <a href="exosome-explorerv1.0.html">外泌体与细胞外囊泡漫游</a>。</p>
-    <p><a href="../index.html#lessons">← 回到 aiai 学院 · 课件馆</a></p>
+    <h4><span class="t-zh" lang="zh-CN">关于数字</span><span class="t-en" lang="en">About the numbers</span></h4>
+    <p><span class="t-zh" lang="zh-CN">静息电位 −70 mV、阈电位约 −55 mV、峰值约 +30 mV、离子浓度、传导速度等，都是教科书常用的典型值，不同神经元差别不小。膜电位曲线、光点传导、活跃度条和事件流是<strong>示意动画</strong>，时间轴被大幅拉长（真实的动作电位只有 1–2 毫秒），不是实时测量。放大倍数和比例尺按典型尺寸估算；全景图里的轴突被大大缩短了（真实的运动神经元轴突可长达约 1 米）。图像由 AI 生成，形状和颜色做了艺术化处理，不代表真实显微照片。</span><span class="t-en" lang="en">The resting potential of −70 mV, threshold of about −55 mV, peak of about +30 mV, ion concentrations and conduction speeds are common textbook values and differ considerably between neurons. The membrane-potential trace, the conducting spark, the activity bars and the event log are <strong>illustrative animations</strong> with a greatly stretched time axis (a real action potential lasts only 1–2 ms); they are not real-time measurements. Magnification and scale bars are estimated from typical sizes, and the axon in the overview is drastically shortened (a real motor-neuron axon can be about 1 m long). Images are AI-generated with stylized shapes and colors; they are not real micrographs.</span></p>
+    <h4><span class="t-zh" lang="zh-CN">致谢</span><span class="t-en" lang="en">Credits</span></h4>
+    <p><span class="t-zh" lang="zh-CN">灵感来源 <a href="https://x.com/thegreatest_sv/status/2116241528737693741" target="_blank" rel="noopener">@thegreatest_sv 在 X 上分享的神经元 HUD 动画</a>；本页没有使用原视频或其画面，图像、文字与代码均为原创。姊妹篇：<a href="cell-explorerv1.0.html">动物细胞漫游</a> · <a href="exosome-explorerv1.0.html">外泌体与细胞外囊泡漫游</a>。</span><span class="t-en" lang="en">Inspired by <a href="https://x.com/thegreatest_sv/status/2116241528737693741" target="_blank" rel="noopener">a neuron HUD animation shared on X by @thegreatest_sv</a>; no footage or frames from the original video are used, and the images, text and code here are original. Companion pages: <a href="cell-explorerv1.0.html">Animal Cell Explorer</a> · <a href="exosome-explorerv1.0.html">Exosome &amp; EV Explorer</a>.</span></p>
+    <p><a href="../index.html#micro"><span class="bi-in"><span class="t-zh" lang="zh-CN">← 回到 aiai 学院 · 微观馆</span><span class="t-en" lang="en">← Back to the aiai Micro Hall</span></span></a></p>
   </div>
 </div>
 
+<script src="../assets/explorer-shellv1.0.js?v=1.0"></script>
 <script>
 (() => {
 'use strict';
 const A = '../assets/neuron/';
 const ACT = ['电压门控 Na⁺','电压门控 K⁺','钠钾泵','电压门控 Ca²⁺','递质受体','囊泡释放','蛋白合成','轴浆运输'];
+const ACT_EN = ['Voltage-gated Na⁺','Voltage-gated K⁺','Na⁺/K⁺ pump','Voltage-gated Ca²⁺','Transmitter receptors','Vesicle release','Protein synthesis','Axonal transport'];
+const B = XS.b, I = XS.i, zhOnly = t => t.replace(/\s+[A-Za-z][A-Za-z .()-]*$/, '');
 const ACTC = ['#ff7a45','#ffb547','#5ee7ff','#38e0c6','#ff5d9e','#9dff5c','#a46bff','#6b8cff'];
 // x,y: position on the 1000×1000 hero (fraction). fov: µm across the view; mag = 90 mm / fov
 const S = [
@@ -403,6 +408,78 @@ const S = [
    act:[20,20,40,60,95,96,5,30],hi:5,
    log:['SNARE · 拉链式组装','囊泡 · 融合释放','乙酰胆碱 · 扩散过间隙','受体 · 离子通道开放','胆碱酯酶 · 分解递质']}
 ];
+
+// English text per station (same order as S)
+const EN = [
+ {n:'The whole neuron',
+  one:'A neuron is a cell that “sends telegrams”: dendrites receive signals, the soma adds them up, the axon carries the electrical signal to its terminals, and at the synapse it becomes a chemical signal handed to the next cell.',
+  f:['The human brain has about 86 billion neurons; signals flow essentially one way: dendrites → soma → axon hillock → axon → terminals.'],
+  clin:'Mature neurons essentially no longer divide, so large losses are hard to replace — one important reason function rarely recovers fully after a stroke or spinal cord injury.',
+  sz:'Soma 4–100 µm; the longest axons (in the sciatic nerve) can reach about 1 m — greatly shortened in this picture',
+  rg:'Whole neuron',v:[['Resting potential'],['Threshold'],['Action-potential peak'],['Conduction speed']],
+  log:['Dendrite · excitatory input received','Soma · summing potentials','Axon hillock · threshold reached','Node of Ranvier · action potential regenerated','Terminal · transmitter released']},
+ {n:'Soma and nucleus',
+  one:'The soma is the neuron’s “headquarters and factory”: its nucleus is large and round with loosely packed chromatin and a prominent nucleolus — signs of nonstop protein synthesis.',
+  f:['Thousands of synapses cover the soma and dendrites; excitatory and inhibitory inputs add up here (spatial and temporal summation).'],
+  clin:'Poliovirus specifically destroys the cell bodies of motor neurons in the anterior horn of the spinal cord; once they die, the muscles they supply develop flaccid paralysis and wasting.',
+  sz:'Soma 4–100 µm across; the nucleus is usually central, large and round',
+  rg:'Soma',v:[['Input synapses','10³–10⁴',''],['Nucleolus','1','prominent'],['Intracellular K⁺'],['Extracellular K⁺']],
+  log:['Dendritic spine · EPSP +4 mV','Inhibitory synapse · IPSP −2 mV','Soma · spatial summation','Nucleus · active transcription','Nucleolus · ribosome assembly']},
+ {n:'Nissl bodies (rough ER)',
+  one:'Nissl bodies are stacks of rough ER plus free ribosomes. Basic dyes such as toluidine blue stain them as blue-violet patches — the neuron’s “protein production line”.',
+  f:['They are found only in the soma and dendrites, not in the axon hillock or axon — which is exactly how the hillock is spotted under the light microscope.'],
+  clin:'After an axon is cut, the soma swells, the nucleus moves to one side and the Nissl bodies break up and fade (“chromatolysis”) — the neuron is reorganizing protein synthesis for repair and regeneration.',
+  sz:'Ribosome diameter about 25 nm',
+  rg:'ER lumen',v:[['Ribosome diameter'],['ER Ca²⁺'],['Cytosolic Ca²⁺'],['Location','Soma · dendrites','']],
+  log:['Ribosome · chain elongation','Signal peptide · entering the ER','Chaperones · assisting folding','Ion-channel protein · being made','COPII vesicle · shipping to the Golgi']},
+ {n:'Golgi apparatus',
+  one:'The Golgi is the “sorting and packing center”: it receives proteins from the ER, adds sugar chains, sorts them and packs them into vesicles bound for the axon, the dendrites or the plasma membrane.',
+  f:['Neuropeptides are packed here into large dense-core vesicles and shipped down the axon to the terminals; membrane proteins such as ion channels also get their “address labels” here before setting off.'],
+  clin:'I-cell disease (mucolipidosis type II): the Golgi enzyme that puts the M6P “address tag” on lysosomal enzymes is missing, so the enzymes are wrongly sent out of the cell; affected children have severe developmental and intellectual delay.',
+  sz:'4–8 flattened cisternae; each stack about 1 µm wide',
+  rg:'Golgi lumen',v:[['Cisternae','4–8',''],['Lumen pH'],['cis face','Receiving',''],['trans face','Shipping','']],
+  log:['cis face · receiving cargo','Glycosyltransferases · modifying glycans','trans face · sorting','Dense-core vesicles · loading neuropeptides','Vesicle · handed to motor proteins']},
+ {n:'Mitochondrion',
+  one:'Mitochondria are the neuron’s “power plants”. The brain is only about 2% of body weight yet uses about 20% of the body’s oxygen at rest, and a large share of that (often quoted as about half) drives the Na⁺/K⁺ pump.',
+  f:['Motor proteins carry mitochondria along microtubules to energy-hungry sites such as terminals and nodes of Ranvier: kinesin carries them outward, dynein brings them back.'],
+  clin:'After cardiac arrest, the brain suffers irreversible injury within minutes (often quoted as 4–6 min) as ATP runs out and the Na⁺/K⁺ pump stops — which is why every second counts in CPR.',
+  sz:'0.5–1 µm wide, often 1–4 µm long',
+  rg:'Mitochondrial matrix',v:[['Brain / body weight'],['Brain share of O₂ use'],['Per Na⁺/K⁺ pump cycle'],['mtDNA']],
+  log:['TCA cycle · producing NADH','Electron transport chain · O₂ → H₂O','ATP synthase · rotating','Kinesin · anterograde transport','Na⁺/K⁺ pump · consuming ATP']},
+ {n:'Axon hillock (where the action potential starts)',
+  one:'This is where the action potential “ignites” (strictly, in the axon initial segment just beyond it): voltage-gated Na⁺ channels are densest and the threshold lowest, so once the potential reaches about −55 mV it fires in an all-or-none way.',
+  f:['Na⁺ influx depolarizes the membrane to about +30 mV; K⁺ efflux then repolarizes it, with a brief hyperpolarization. The refractory period lets the signal travel forward only, never backward.'],
+  clin:'Local anesthetics (e.g. lidocaine) block voltage-gated Na⁺ channels from the inner side of the membrane, so action potentials can neither start nor propagate and pain is blocked; thin pain fibers are usually blocked first.',
+  sz:'An action potential lasts about 1–2 ms',
+  rg:'Axon initial segment (AIS)',v:[['Threshold'],['Peak'],['Extracellular Na⁺'],['Intracellular Na⁺']],
+  log:['Summed potential · −62 mV','Threshold · −55 mV reached','Na⁺ channels · open','Peak · +30 mV','K⁺ channels · repolarizing']},
+ {n:'Myelin and nodes of Ranvier',
+  one:'Myelin works like the insulation on a wire; the action potential is regenerated only at the bare nodes of Ranvier, so it seems to “jump” from node to node — saltatory conduction.',
+  f:['Myelin is made by oligodendrocytes in the central nervous system and by Schwann cells in peripheral nerves; large myelinated fibers reach about 120 m/s, small unmyelinated fibers only about 0.5–2 m/s.'],
+  clin:'Multiple sclerosis: the immune system attacks myelin in the central nervous system, slowing or blocking conduction and causing optic neuritis, limb numbness and weakness; Guillain–Barré syndrome mostly targets peripheral nerves.',
+  sz:'Internodes about 0.2–2 mm long; nodes of Ranvier about 1 µm wide',
+  rg:'Node of Ranvier',v:[['Myelinated fibers'],['Unmyelinated fibers'],['Node width'],['Internode']],
+  log:['Node 1 · action potential regenerated','Internode · current spreads inside the axon','Node 2 · regenerated','Node 3 · regenerated','Conduction · one way, forward']},
+ {n:'Axon terminal',
+  one:'When the action potential reaches the terminal it opens voltage-gated Ca²⁺ channels; the influx of Ca²⁺ is the master switch for transmitter release.',
+  f:['The terminal swells into a bouton packed with synaptic vesicles and mitochondria; the axon branches of one neuron can form synapses with hundreds to thousands of cells.'],
+  clin:'Lambert–Eaton syndrome: antibodies attack voltage-gated Ca²⁺ channels on the terminal, so less acetylcholine is released and proximal muscles become weak; it is often associated with small-cell lung cancer, and strength can briefly improve with repeated effort.',
+  sz:'Bouton about 1 µm across',
+  rg:'Presynaptic terminal',v:[['Extracellular Ca²⁺'],['Intracellular Ca²⁺'],['Gradient','≈10,000','×'],['Vesicle diameter']],
+  log:['Action potential · reaches the terminal','Ca²⁺ channels · open','Ca²⁺ · flowing in','Vesicles · docking at the active zone','Mitochondria · replenishing ATP']},
+ {n:'Synapse (vesicle release and receptors)',
+  one:'A chemical synapse turns the electrical signal into a chemical one: vesicles fuse with the presynaptic membrane and empty transmitter into a cleft about 20–40 nm wide; the transmitter binds receptors on the postsynaptic membrane and is turned back into an electrical signal.',
+  f:['SNARE proteins zip together to pull the vesicle into fusion; the transmitter is then broken down by enzymes (e.g. acetylcholinesterase) or taken back up, so the signal can be switched off in time.'],
+  clin:'Myasthenia gravis: autoantibodies attack acetylcholine receptors on the postsynaptic membrane of the neuromuscular junction, causing drooping eyelids and fatigable weakness that worsens with activity; neostigmine, a cholinesterase inhibitor, improves symptoms.',
+  sz:'Synaptic cleft about 20–40 nm (wider at the neuromuscular junction, about 50–100 nm)',
+  rg:'Synaptic cleft',v:[['Cleft width'],['Vesicle diameter'],['Synaptic delay'],['Examples']],
+  log:['SNARE · zippering','Vesicle · fusion and release','Acetylcholine · diffusing across the cleft','Receptor · ion channel opening','Cholinesterase · breaking down transmitter']}
+];
+S.forEach((s, i) => { s.E = EN[i]; });
+// one number cell: label + value + unit, each bilingual when the English differs
+const pair = (a, c) => a === c ? a : '<span class="t-zh" lang="zh-CN">' + a + '</span>' + (c ? '<span class="t-en" lang="en">' + c + '</span>' : '');
+const numCell = (z, e) => { e = e || []; const n = e[1] !== undefined ? e[1] : z[1], u = e[2] !== undefined ? e[2] : z[2];
+  return `<div><span class="lb">${pair(z[0], e[0] || z[0])}</span><b>${pair(z[1], n)}<small>${pair(z[2], u)}</small></b></div>`; };
 const N = S.length, DWELL0 = 7000, DWELL = 6200, ZOOMT = 1500;
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = s => document.querySelector(s);
@@ -427,15 +504,15 @@ S.forEach((s, i) => {
     close.appendChild(im);
     const h = document.createElement('button');
     h.className = 'hs' + (s.x > .6 || ['nissl', 'mito'].includes(s.id) ? ' l' : ''); h.style.left = s.x * 100 + '%'; h.style.top = s.y * 100 + '%';
-    h.setAttribute('aria-label', '前往 ' + s.zh); h.innerHTML = '<span>' + s.zh.replace(/（.*）/, '') + '</span>';
+    h.setAttribute('aria-label', '前往 ' + s.zh + ' · Go to ' + s.en); h.innerHTML = '<span>' + I(s.zh.replace(/（.*）/, ''), s.en) + '</span>';
     h.onclick = () => show(i); $('#hsLayer').appendChild(h);
   }
   const short = s.zh.replace(/（.*）/, '');
   const b = document.createElement('button'); b.style.setProperty('--c', s.c);
-  b.innerHTML = '<i></i>' + short + '<em>' + String(i + 1).padStart(2, '0') + '</em>'; b.onclick = () => show(i); $('#stops').appendChild(b);
-  const m = document.createElement('button'); m.style.setProperty('--c', s.c); m.textContent = short; m.onclick = () => show(i); $('#mchips').appendChild(m);
+  b.innerHTML = '<i></i><span>' + B(short, s.en) + '</span><em>' + String(i + 1).padStart(2, '0') + '</em>'; b.onclick = () => show(i); $('#stops').appendChild(b);
+  const m = document.createElement('button'); m.style.setProperty('--c', s.c); m.innerHTML = I(short, s.en); m.onclick = () => show(i); $('#mchips').appendChild(m);
 });
-$('#bars').innerHTML = ACT.map((a, i) => `<div class="r" style="--bc:${ACTC[i]}"><span>${a}</span><div class="t"><b></b></div><span class="v">0</span></div>`).join('');
+$('#bars').innerHTML = ACT.map((a, i) => `<div class="r" style="--bc:${ACTC[i]}"><span>${B(a, ACT_EN[i])}</span><div class="t"><b></b></div><span class="v">0</span></div>`).join('');
 const closeImgs = [...close.querySelectorAll('img')];
 
 // layout
@@ -443,10 +520,12 @@ let VW = 0, VH = 0, SQ = 0;
 function layout() {
   const r = view.getBoundingClientRect(); VW = r.width; VH = r.height;
   const wide = innerWidth > 820;
-  SQ = Math.max(120, Math.min(VW - (wide ? 380 : 12), VH - (wide ? 70 : 54)));
-  if (!wide) SQ = Math.min(VW - 8, VH - 72);
+  const sw = wide ? 190 : 0;                       // room for the station list on the right
+  SQ = Math.max(120, Math.min(VW - sw - 24, VH - 40));
+  if (!wide) SQ = Math.max(120, Math.min(VW - 8, VH - 72));
   stage.style.width = stage.style.height = SQ + 'px';
-  stage.style.marginTop = wide ? '-14px' : '6px';
+  stage.style.left = ((VW - sw) / 2) + 'px';
+  stage.style.marginTop = wide ? '0px' : '-8px';
   setCam(S[idx], true); sizeFx(); updScale(S[idx]);
 }
 function setCam(s, instant) {
@@ -461,7 +540,7 @@ function setCam(s, instant) {
 function updScale(s) {
   const px = s.bar / s.fov * (s.z > 1 ? VW : SQ) * (s.bu === 'nm' ? .001 : 1);
   $('#scaleB').style.width = Math.max(14, Math.min(VW * .4, px)) + 'px';
-  $('#scaleT').textContent = (s.bar < 1 && s.bu === 'µm' ? (s.bar * 1000) + ' nm' : s.bar + ' ' + s.bu) + ' · 示意';
+  $('#scaleT').innerHTML = (s.bar < 1 && s.bu === 'µm' ? (s.bar * 1000) + ' nm' : s.bar + ' ' + s.bu) + ' · ' + I('示意', 'illustrative');
 }
 const fmt = n => Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 function tweenMag(to) {
@@ -478,14 +557,15 @@ let logLines = [];
 function hud(s, i) {
   document.documentElement.style.setProperty('--tint', s.c);
   tweenMag(90000 / s.fov);
-  $('#fov').textContent = '视野 ' + fovTxt(s.fov) + ' · ' + (i + 1) + '/' + N;
+  $('#fov').innerHTML = I('视野', 'FOV') + ' ' + fovTxt(s.fov) + ' · ' + (i + 1) + '/' + N;
   $('#locN').textContent = (i + 1) + '/' + N; $('#focusIdx').textContent = String(i + 1).padStart(2, '0') + ' / ' + String(N).padStart(2, '0');
-  $('#chipK').textContent = s.k + (i ? ' · CLOSE-UP' : ' · OVERVIEW'); $('#chipN').textContent = s.zh.replace(/（.*）/, '') + ' ' + s.en;
+  $('#chipK').innerHTML = i ? I('近景', 'Close-up') : I('全景', 'Overview'); $('#chipN').innerHTML = I(s.zh.replace(/（.*）/, ''), s.en);
   const fb = $('#focusBody'), vt = $('#vit'); fb.classList.add('out'); vt.classList.add('out');
   setTimeout(() => {
-    fb.innerHTML = `<div class="nm"><h2>${s.zh}</h2><small>${s.en}</small></div><p class="one">${s.one}</p><ul>${s.f.map(x => '<li>' + x + '</li>').join('')}</ul><div class="clin"><b>临床联系</b>${s.clin}</div><div class="sz">${s.sz}</div>`;
+    const E = s.E;
+    fb.innerHTML = `<div class="nm"><h2>${B(s.zh, E.n)}</h2><small class="zo">${s.en}</small></div><p class="one">${B(s.one, E.one)}</p><ul>${s.f.map((x, k) => '<li>' + B(x, E.f[k]) + '</li>').join('')}</ul><div class="clin"><b>${I('临床联系', 'Clinical link')}</b>${B(s.clin, E.clin)}</div><div class="sz">${B(s.sz, E.sz)}</div>`;
     fb.parentNode.scrollTop = 0;
-    vt.innerHTML = `<div class="rg">区域：${s.rg}</div>` + s.v.map(([l, n, u]) => `<div><span class="lb">${l}</span><b>${n}<small>${u}</small></b></div>`).join('');
+    vt.innerHTML = `<div class="rg">${I('区域', 'Region')}：${B(zhOnly(s.rg), E.rg)}</div>` + s.v.map((z, k) => numCell(z, E.v[k])).join('');
     fb.classList.remove('out'); vt.classList.remove('out');
   }, RM ? 0 : 320);
   [...$('#bars').children].forEach((r, k) => { r.querySelector('b').style.width = s.act[k] + '%'; r.querySelector('.v').textContent = s.act[k]; r.classList.toggle('hi', k === s.hi); });
@@ -493,14 +573,14 @@ function hud(s, i) {
   const mc = [...$('#mchips').children]; mc.forEach((b, k) => b.classList.toggle('on', k === i));
   const cur = mc[i]; if (cur && innerWidth <= 820) cur.parentNode.scrollTo({left: cur.offsetLeft - cur.parentNode.clientWidth / 2 + cur.clientWidth / 2, behavior: RM ? 'auto' : 'smooth'});
   updScale(s);
-  logLines = s.log.slice(); pushLog(); pushLog();
+  logLines = s.log.map((z, k) => [z, s.E.log[k]]); pushLog(); pushLog();
 }
 let tick = 0;
 function pushLog(txt) {
   let l = txt;
   if (!l) { if (!logLines.length) return; l = logLines.shift(); logLines.push(l); }
   const ts = new Date().toTimeString().slice(0, 8);
-  const el = document.createElement('div'); el.innerHTML = `<em>${ts}</em> <b>›</b> ${l}`;
+  const el = document.createElement('div'); el.innerHTML = `<em>${ts}</em> <b>›</b> ${B(l[0], l[1])}`;
   const lg = $('#log'); lg.appendChild(el); while (lg.children.length > 9) lg.firstChild.remove();
 }
 
@@ -523,8 +603,8 @@ function schedule(ms) { clearTimeout(timer); if (playing) timer = setTimeout(() 
 let started = false;
 function setPlay(p) {
   playing = p; app.classList.toggle('paused', !p);
-  $('#ppB').textContent = p ? '❚❚' : '▶'; $('#ppB').setAttribute('aria-label', p ? '暂停 (空格)' : '播放 (空格)');
-  $('#liveT').textContent = p ? 'LIVE · 自动漫游' : '已暂停 · PAUSED';
+  $('#ppB').textContent = p ? '❚❚' : '▶'; $('#ppB').setAttribute('aria-label', p ? '暂停 Pause (Space)' : '播放 Play (Space)');
+  $('#liveT').innerHTML = p ? 'LIVE · ' + I('自动漫游', 'auto tour') : I('已暂停', 'Paused');
   if (!started) return;
   if (p) { t0 = performance.now() - dur + 1400; schedule(1400); }
   else { clearTimeout(timer); if (idx) closeImgs[idx - 1].classList.add('on'); }
@@ -599,7 +679,7 @@ function drawVm(sp, last) {
   x.strokeStyle = 'rgba(141,155,189,.45)'; x.beginPath(); x.moveTo(0, Y(-70)); x.lineTo(w, Y(-70)); x.stroke();
   x.strokeStyle = 'rgba(255,181,71,.6)'; x.beginPath(); x.moveTo(0, Y(-55)); x.lineTo(w, Y(-55)); x.stroke();
   x.setLineDash([]);
-  if (w > 250) { x.font = '600 15px ui-monospace,Menlo,monospace'; x.fillStyle = 'rgba(255,181,71,.8)'; x.fillText('阈 −55', w - 64, Y(-55) - 4); }
+  if (w > 250) { x.font = '600 15px ui-monospace,Menlo,monospace'; x.fillStyle = 'rgba(255,181,71,.8)'; const tl = XS.pick('阈 −55', 'thr −55', '阈 thr −55'); x.fillText(tl, w - x.measureText(tl).width - 6, Y(-55) - 4); }
   const g = x.createLinearGradient(0, 0, w, 0); g.addColorStop(0, 'rgba(94,231,255,.15)'); g.addColorStop(1, '#5ee7ff');
   x.beginPath(); hist.forEach((v, i) => { const px = i / (HN - 1) * w, py = Y(v); i ? x.lineTo(px, py) : x.moveTo(px, py); });
   x.strokeStyle = g; x.lineWidth = w > 250 ? 3 : 2; x.lineJoin = 'round'; x.stroke();
@@ -628,7 +708,7 @@ function frame(now) {
   if (playing) $('#progB').style.width = Math.min(100, (now - t0) / dur * 100) + '%';
   let t = now - cycStart; if (t > CYC) { cycStart = now; t = 0; fired = false; }
   const v = vmAt(t) + (t < 1300 || t > 2700 ? (Math.random() - .5) * .8 : 0);
-  if (!fired && t >= 1850) { fired = true; if (!RM) pulseT = now; if (playing && !idx) pushLog('轴丘 · 达到阈值，动作电位发放'); }
+  if (!fired && t >= 1850) { fired = true; if (!RM) pulseT = now; if (playing && !idx) pushLog(['轴丘 · 达到阈值，动作电位发放', 'Axon hillock · threshold reached, action potential fired']); }
   if (now - lastS > 33) {
     lastS = now; hist.push(v); hist.shift();
     const txt = (v >= 0 ? '+' : '−') + Math.abs(Math.round(v)) + ' mV';

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>动物细胞漫游 · Animal Cell Explorer · aiai 学院</title>
+<title>动物细胞漫游 · Animal Cell Explorer · aiai 学院 微观馆</title>
 <meta name="description" content="可交互的动物细胞结构漫游：自动镜头依次放大细胞核、内质网、线粒体、高尔基体、溶酶体、中心体和细胞膜，配中文讲解卡与教科书典型数值。">
 <meta name="theme-color" content="#060b1d">
 <meta property="og:title" content="动物细胞 · ANIMAL CELL｜真核细胞结构漫游">
@@ -187,30 +187,32 @@ a{color:var(--acc)}
   .cam img,.close img.on,.hs::after,.live i{animation:none!important}
 }
 </style>
+<link rel="stylesheet" href="../assets/explorer-shellv1.0.css?v=1.0">
+<style>html.xs .cam>img{-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(180deg,transparent,#000 4%,#000 96%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(180deg,transparent,#000 4%,#000 96%,transparent);mask-composite:intersect}</style>
 </head>
 <body>
 <div class="app" id="app">
   <header class="top">
     <div class="title glass">
-      <div class="brand"><a href="../index.html#lessons">← AIAI 学院 · 课件馆</a></div>
-      <h1>动物细胞 · ANIMAL CELL</h1>
-      <p>真核细胞结构漫游<span class="en"> · eukaryote tour</span></p>
+      <div class="brand"><a href="../index.html#micro">← <span class="bi-in"><span class="t-zh" lang="zh-CN">AIAI 学院</span><span class="t-en" lang="en">AIAI Academy</span></span> · <span class="bi-in"><span class="t-zh" lang="zh-CN">微观馆</span><span class="t-en" lang="en">Micro Hall</span></span></a></div>
+      <h1><span class="t-zh" lang="zh-CN">动物细胞</span><span class="t-en" lang="en">Animal Cell</span></h1>
+      <p><span class="t-zh" lang="zh-CN">真核细胞结构漫游：镜头依次飞进 8 个结构</span><span class="t-en" lang="en">A tour of the eukaryotic cell: the camera flies into 8 structures</span></p>
     </div>
     <div class="profile glass" aria-label="细胞档案">
-      <div><span class="k">类型 Type</span><b>真核 · 动物</b></div>
-      <div><span class="k">直径 Size</span><b>10–30 µm</b></div>
-      <div><span class="k">细胞核</span><b>有核膜包被</b></div>
-      <div><span class="k">细胞壁</span><b>无（植物有）</b></div>
-      <div><span class="k">中心体</span><b>有</b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">类型</span><span class="t-en" lang="en">Type</span></span></span><b><span class="t-zh" lang="zh-CN">真核 · 动物</span><span class="t-en" lang="en">Eukaryotic · animal</span></b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">直径</span><span class="t-en" lang="en">Size</span></span></span><b>10–30 µm</b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">细胞核</span><span class="t-en" lang="en">Nucleus</span></span></span><b><span class="t-zh" lang="zh-CN">有核膜包被</span><span class="t-en" lang="en">Enclosed by an envelope</span></b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">细胞壁</span><span class="t-en" lang="en">Cell wall</span></span></span><b><span class="t-zh" lang="zh-CN">无（植物有）</span><span class="t-en" lang="en">None (plants have one)</span></b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">中心体</span><span class="t-en" lang="en">Centrosome</span></span></span><b><span class="t-zh" lang="zh-CN">有</span><span class="t-en" lang="en">Present</span></b></div>
     </div>
     <div class="atp glass">
-      <span class="k">ATP 周转 · 相对值（示意）</span>
+      <span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">ATP 周转 · 相对值（示意）</span><span class="t-en" lang="en">ATP turnover · relative (illustrative)</span></span></span>
       <div class="row"><span class="num mono" id="atpN">1.00</span><canvas id="spark" width="300" height="60" aria-hidden="true"></canvas></div>
     </div>
     <div class="status glass">
-      <div class="live"><i></i><span id="liveT">LIVE · 自动漫游</span></div>
+      <div class="live"><i></i><span id="liveT">LIVE</span></div>
       <div class="mg"><div class="mag mono" id="mag">×3 000</div><div class="fov" id="fov">视野 30 µm · 1/9</div></div>
-      <div class="ibtns"><button class="ib" id="infoB" title="说明 / 课堂用法" aria-label="说明与课堂用法">ⓘ</button><button class="ib" id="fsB" title="全屏 (F)" aria-label="全屏">⛶</button></div>
+      <div class="ibtns"><button class="ib" id="infoB" title="说明 / 课堂用法 · How to use" aria-label="说明与课堂用法 How to use">ⓘ</button><button class="ib" id="fsB" title="全屏 Full screen (F)" aria-label="全屏 Full screen">⛶</button></div>
     </div>
   </header>
 
@@ -225,13 +227,13 @@ a{color:var(--acc)}
     <canvas id="fx"></canvas>
     <div class="chip glass"><i></i><span id="chipK">全景</span><b id="chipN">整个细胞</b></div>
     <div class="scale"><span id="scaleT">5 µm</span><div class="bar" id="scaleB"></div></div>
-    <div class="ai">示意图（AI 生成）</div>
+    <div class="ai"><span class="bi-in"><span class="t-zh" lang="zh-CN">示意图（AI 生成）</span><span class="t-en" lang="en">Illustration (AI-generated)</span></span></div>
     <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
     <nav class="stops glass" id="stops" aria-label="漫游站点"></nav>
     <div class="ctrl glass">
-      <button id="prevB" aria-label="上一站 (←)" title="上一站 ←">◀</button>
-      <button id="ppB" class="pp" aria-label="暂停 / 播放 (空格)" title="暂停 / 播放 空格">❚❚</button>
-      <button id="nextB" aria-label="下一站 (→)" title="下一站 →">▶</button>
+      <button id="prevB" aria-label="上一站 Previous (←)" title="上一站 Previous ←">◀</button>
+      <button id="ppB" class="pp" aria-label="暂停 / 播放 Pause / play (Space)" title="暂停 / 播放 Pause / play · Space">❚❚</button>
+      <button id="nextB" aria-label="下一站 Next (→)" title="下一站 Next →">▶</button>
       <div class="prog"><b id="progB"></b></div>
     </div>
   </main>
@@ -240,59 +242,63 @@ a{color:var(--acc)}
     <div class="mchips" id="mchips" aria-label="选择细胞器"></div>
     <section class="bottom" id="bottom">
       <div class="p glass loc">
-        <div class="hd"><span class="k">定位 Locator</span><span id="locN">1/9</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">定位</span><span class="t-en" lang="en">Locator</span></span></span><span id="locN">1/9</span></div>
         <div class="mini" id="mini" title="点击跳到最近的细胞器"><img src="../assets/cell/cell-minimapv1.0.webp" alt="" width="240" height="240"><div class="vbox" id="vbox"></div></div>
       </div>
       <div class="p glass actp">
-        <div class="hd"><span class="k">细胞器活跃度</span><span>相对 · 示意</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">细胞器活跃度</span><span class="t-en" lang="en">Organelle activity</span></span></span><span><span class="bi-in"><span class="t-zh" lang="zh-CN">相对 · 示意</span><span class="t-en" lang="en">relative · illustrative</span></span></span></div>
         <div class="bars" id="bars"></div>
       </div>
       <div class="p glass focus" aria-live="polite">
-        <div class="hd"><span class="k">焦点 Focus</span><span id="focusIdx">01 / 09</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">焦点</span><span class="t-en" lang="en">Focus</span></span></span><span id="focusIdx">01 / 09</span></div>
         <div class="fade" id="focusBody"></div>
       </div>
       <div class="p glass vitp">
-        <div class="hd"><span class="k">内环境 Vitals</span><span>典型值</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">内环境</span><span class="t-en" lang="en">Vitals</span></span></span><span><span class="bi-in"><span class="t-zh" lang="zh-CN">典型值</span><span class="t-en" lang="en">typical</span></span></span></div>
         <div class="vit fade" id="vit"></div>
       </div>
       <div class="p glass logp">
-        <div class="hd"><span class="k">事件流 Log</span><span>示意</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">事件流</span><span class="t-en" lang="en">Event log</span></span></span><span><span class="bi-in"><span class="t-zh" lang="zh-CN">示意</span><span class="t-en" lang="en">illustrative</span></span></span></div>
         <div class="log" id="log"></div>
       </div>
     </section>
     <div class="dots" id="dots"></div>
-    <div class="foot">灵感来自 <a href="https://x.com/thegreatest_sv/status/2116587002493542781" target="_blank" rel="noopener">@thegreatest_sv 在 X 上分享的细胞动画</a>；本页图像与代码为原创，示意图由 AI 生成 · <a href="#" id="infoL">说明 / 课堂用法</a></div>
+    <div class="foot"><span class="t-zh" lang="zh-CN">灵感来自 <a href="https://x.com/thegreatest_sv/status/2116587002493542781" target="_blank" rel="noopener">@thegreatest_sv 在 X 上分享的细胞动画</a>；本页图像与代码为原创，示意图由 AI 生成</span><span class="t-en" lang="en">Inspired by <a href="https://x.com/thegreatest_sv/status/2116587002493542781" target="_blank" rel="noopener">a cell animation shared on X by @thegreatest_sv</a>; images and code on this page are original, illustrations are AI-generated</span> · <a href="#" id="infoL"><span class="bi-in"><span class="t-zh" lang="zh-CN">说明 / 课堂用法</span><span class="t-en" lang="en">How to use / in class</span></span></a></div>
   </div>
 </div>
 
-<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="说明与课堂用法">
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="说明与课堂用法 How to use">
   <div class="box glass">
-    <button class="ib x" id="sheetX" aria-label="关闭">✕</button>
-    <h3>动物细胞漫游 · 怎么用</h3>
-    <p>镜头会自动依次飞向 8 个结构，每站约 5 秒，然后回到全景循环。随时可以暂停，或点细胞上的发光点、站点列表、左下角定位图直接跳转。</p>
-    <p>键盘：<kbd>←</kbd> <kbd>→</kbd> 上一站 / 下一站，<kbd>空格</kbd> 暂停 / 播放，<kbd>F</kbd> 全屏，<kbd>Esc</kbd> 关闭本窗口。手机上可以在画面上左右滑动换站，下方面板也可以左右滑。</p>
+    <button class="ib x" id="sheetX" aria-label="关闭 Close">✕</button>
+    <h3><span class="t-zh" lang="zh-CN">动物细胞漫游 · 怎么用</span><span class="t-en" lang="en">Animal Cell Explorer · How to use</span></h3>
+    <p><span class="t-zh" lang="zh-CN">镜头会自动依次飞向 8 个结构，每站约 5 秒，然后回到全景循环。随时可以暂停，或点细胞上的发光点、站点列表、左下角定位图直接跳转。</span><span class="t-en" lang="en">The camera flies to 8 structures in turn, about 5 seconds each, then returns to the overview and loops. Pause at any time, or jump straight to a stop by tapping a glowing dot on the cell, the station list or the locator map at bottom left.</span></p>
+    <p><span class="t-zh" lang="zh-CN">点「讲解 Explain」或按 <kbd>E</kbd> 打开讲解抽屉：每站的要点、典型数值、活跃度和事件流都在里面，默认收起，让画面占满屏幕。右上角可切换 中 / EN / 中英。</span><span class="t-en" lang="en">Tap “讲解 Explain” or press <kbd>E</kbd> to open the explanation drawer with each stop’s key points, typical values, activity bars and event log. It starts closed so the picture fills the screen. Switch 中 / EN / 中英 at top right.</span></p>
+    <p><span class="t-zh" lang="zh-CN">键盘：<kbd>←</kbd> <kbd>→</kbd> 上一站 / 下一站，<kbd>空格</kbd> 暂停 / 播放，<kbd>E</kbd> 讲解，<kbd>H</kbd> 精简画面，<kbd>F</kbd> 全屏，<kbd>Esc</kbd> 关闭。手机上可以在画面上左右滑动换站。</span><span class="t-en" lang="en">Keyboard: <kbd>←</kbd> <kbd>→</kbd> previous / next stop, <kbd>Space</kbd> pause / play, <kbd>E</kbd> explain, <kbd>H</kbd> clean view, <kbd>F</kbd> full screen, <kbd>Esc</kbd> close. On a phone, swipe left or right on the picture to change stops.</span></p>
     <details open>
-      <summary>课堂用法（给孩子和学生的 3 个问题）</summary>
+      <summary><span class="t-zh" lang="zh-CN">课堂用法（给孩子和学生的 3 个问题）</span><span class="t-en" lang="en">In class: 3 questions for children and students</span></summary>
       <ol>
-        <li>如果把细胞想成一座城市，细胞核、线粒体、溶酶体、细胞膜分别像城市里的什么？说说理由。</li>
-        <li>溶酶体里面是酸性的（pH 约 4.5–5），细胞质接近中性（pH 约 7.2）。它里面的消化酶在酸性环境里最能干活。如果溶酶体破了、酶漏到细胞质里，会怎样？细胞为什么要把这些酶"关"起来？</li>
-        <li>心肌细胞和脂肪细胞，哪一种线粒体更多？从"谁更需要能量"推理一下，再查资料验证。</li>
+        <li><span class="t-zh" lang="zh-CN">如果把细胞想成一座城市，细胞核、线粒体、溶酶体、细胞膜分别像城市里的什么？说说理由。</span><span class="t-en" lang="en">If the cell were a city, what would the nucleus, mitochondria, lysosomes and plasma membrane be? Explain your choices.</span></li>
+        <li><span class="t-zh" lang="zh-CN">溶酶体里面是酸性的（pH 约 4.5–5），细胞质接近中性（pH 约 7.2）。它里面的消化酶在酸性环境里最能干活。如果溶酶体破了、酶漏到细胞质里，会怎样？细胞为什么要把这些酶"关"起来？</span><span class="t-en" lang="en">The inside of a lysosome is acidic (pH about 4.5–5), while the cytosol is close to neutral (pH about 7.2), and lysosomal enzymes work best in acid. What would happen if a lysosome burst and its enzymes leaked into the cytosol? Why does the cell keep these enzymes “locked up”?</span></li>
+        <li><span class="t-zh" lang="zh-CN">心肌细胞和脂肪细胞，哪一种线粒体更多？从"谁更需要能量"推理一下，再查资料验证。</span><span class="t-en" lang="en">Which has more mitochondria, a heart muscle cell or a fat cell? Reason it out from “which one needs more energy”, then look it up to check.</span></li>
       </ol>
-      <p>老师小建议：全屏投屏后先暂停在全景，让学生猜每个彩色结构是什么，再用 <kbd>→</kbd> 逐站揭晓；最后对比一下：植物细胞多了细胞壁、叶绿体和大液泡，通常没有中心体。</p>
+      <p><span class="t-zh" lang="zh-CN">老师小建议：全屏投屏后先暂停在全景，让学生猜每个彩色结构是什么，再用 <kbd>→</kbd> 逐站揭晓；最后对比一下：植物细胞多了细胞壁、叶绿体和大液泡，通常没有中心体。</span><span class="t-en" lang="en">Teacher’s tip: project in full screen, pause on the overview and let students guess what each colored structure is, then reveal one stop at a time with <kbd>→</kbd>. Finish with a comparison: plant cells add a cell wall, chloroplasts and a large vacuole, and usually have no centrosome.</span></p>
     </details>
-    <h4>关于数字</h4>
-    <p>放大倍数按"屏幕约 9 cm 宽 ÷ 视野宽度"换算，比例尺按各结构的典型尺寸设定；pH、Ca²⁺ 等是教科书中常见的典型范围，不同细胞类型差别很大。ATP 曲线、活跃度条和事件流是<strong>示意动画</strong>，不是实时测量。图像是 AI 生成的示意图，形状和比例做了艺术化处理，不代表真实显微照片。</p>
-    <h4>致谢</h4>
-    <p>灵感来自 <a href="https://x.com/thegreatest_sv/status/2116587002493542781" target="_blank" rel="noopener">@thegreatest_sv 在 X 上分享的细胞动画</a>；本页图像与代码为原创，示意图由 AI 生成。姊妹篇：<a href="neuron-explorerv1.0.html">神经元漫游</a> · <a href="exosome-explorerv1.0.html">外泌体与细胞外囊泡漫游</a>。</p>
-    <p><a href="../index.html#lessons">← 回到 aiai 学院 · 课件馆</a></p>
+    <h4><span class="t-zh" lang="zh-CN">关于数字</span><span class="t-en" lang="en">About the numbers</span></h4>
+    <p><span class="t-zh" lang="zh-CN">放大倍数按"屏幕约 9 cm 宽 ÷ 视野宽度"换算，比例尺按各结构的典型尺寸设定；pH、Ca²⁺ 等是教科书中常见的典型范围，不同细胞类型差别很大。ATP 曲线、活跃度条和事件流是<strong>示意动画</strong>，不是实时测量。图像是 AI 生成的示意图，形状和比例做了艺术化处理，不代表真实显微照片。</span><span class="t-en" lang="en">Magnification is estimated as “screen width of about 9 cm ÷ field of view”, and each scale bar is set from the structure’s typical size. pH, Ca²⁺ and similar values are common textbook ranges and vary a lot between cell types. The ATP curve, activity bars and event log are <strong>illustrative animations</strong>, not real-time measurements. The images are AI-generated illustrations with stylized shapes and proportions; they are not real micrographs.</span></p>
+    <h4><span class="t-zh" lang="zh-CN">致谢</span><span class="t-en" lang="en">Credits</span></h4>
+    <p><span class="t-zh" lang="zh-CN">灵感来自 <a href="https://x.com/thegreatest_sv/status/2116587002493542781" target="_blank" rel="noopener">@thegreatest_sv 在 X 上分享的细胞动画</a>；本页图像与代码为原创，示意图由 AI 生成。姊妹篇：<a href="neuron-explorerv1.0.html">神经元漫游</a> · <a href="exosome-explorerv1.0.html">外泌体与细胞外囊泡漫游</a>。</span><span class="t-en" lang="en">Inspired by <a href="https://x.com/thegreatest_sv/status/2116587002493542781" target="_blank" rel="noopener">a cell animation shared on X by @thegreatest_sv</a>; the images and code on this page are original, and the illustrations are AI-generated. Companion pages: <a href="neuron-explorerv1.0.html">Neuron Explorer</a> · <a href="exosome-explorerv1.0.html">Exosome &amp; EV Explorer</a>.</span></p>
+    <p><a href="../index.html#micro"><span class="bi-in"><span class="t-zh" lang="zh-CN">← 回到 aiai 学院 · 微观馆</span><span class="t-en" lang="en">← Back to the aiai Micro Hall</span></span></a></p>
   </div>
 </div>
 
+<script src="../assets/explorer-shellv1.0.js?v=1.0"></script>
 <script>
 (() => {
 'use strict';
 const A = '../assets/cell/';
 const ACT = ['转录','翻译','蛋白折叠','脂质合成','氧化磷酸化','糖酵解','囊泡运输','降解'];
+const ACT_EN = ['Transcription','Translation','Protein folding','Lipid synthesis','Oxidative phosphorylation','Glycolysis','Vesicle transport','Degradation'];
+const B = XS.b, I = XS.i, zhOnly = t => t.replace(/\s+[A-Za-z][A-Za-z .()-]*$/, '');
 const ACTC = ['#a46bff','#6b8cff','#4fb3ff','#38e0c6','#ff7a45','#ffb547','#ff5d9e','#9dff5c'];
 // fov in µm across the view; mag = 90 mm / fov
 const S = [
@@ -333,6 +339,38 @@ const S = [
    sz:'厚约 7–10 nm',rg:'胞外液 extracellular',ph:'7.4',ca:['≈1.2','mM'],act:[20,30,25,40,45,50,70,30],hi:6,
    log:['Na⁺/K⁺-ATP 酶 · 3 Na⁺ 出 / 2 K⁺ 入','受体 · 结合配体','网格蛋白小窝 · 内吞','胞吐 · 囊泡融合','整合素 · 连接细胞外基质']}
 ];
+
+// English text per station (same order as S)
+const EN = [
+ {f:['Eukaryotic cell: the genetic material is enclosed in a nucleus by the nuclear envelope, and membrane-bound organelles share out the work.','Compared with a plant cell: no cell wall, chloroplasts or large central vacuole, but it does have a centrosome.','The human body has some 30-plus trillion cells — very different in shape, but built on the same basic plan.'],
+  sz:'Typical diameter 10–30 µm',rg:'Cytosol',
+  log:['Overview · organelles located','Plasma membrane · intact','Cytosol · streaming normally','Cell cycle · interphase G1','Free ribosomes · translating']},
+ {f:['The double nuclear envelope is studded with nuclear pore complexes: mRNA leaves through them and proteins come in.','Chromatin = DNA + histones; stretched out, the DNA in a single human cell is about 2 m long.','The nucleolus makes rRNA and assembles ribosomal subunits.'],
+  sz:'Diameter about 5–10 µm (typically ~6 µm)',rg:'Nucleoplasm',
+  log:['Nuclear pore · mRNA export','RNA polymerase II · transcript elongation','Nucleolus · rRNA processing','Histones · acetylation','Nuclear pore · importing transcription factors']},
+ {f:['Its surface is studded with ribosomes, which makes it look “rough” — hence the name.','Makes secretory and membrane proteins: the new chain is threaded into the ER lumen and folds while it is still being made.','Its membrane is continuous with the outer nuclear membrane, forming one connected network.'],
+  sz:'Ribosome diameter about 25 nm',rg:'ER lumen',
+  log:['Ribosome · chain elongation +1 aa','Signal peptide · entering the translocon','Chaperone BiP · assisting folding','N-glycosylation · complete','COPII vesicle · shipping to the Golgi']},
+ {f:['No ribosomes on its surface; usually a branching network of tubules.','Makes phospholipids, cholesterol and steroid hormones; in liver cells it also helps detoxify drugs.','Stores and releases Ca²⁺; in muscle cells the smooth ER is called the sarcoplasmic reticulum.'],
+  sz:'Tubule diameter about 50 nm',rg:'ER lumen',
+  log:['Phospholipids · synthesis','Cholesterol · synthesis','Cytochrome P450 · oxidizing substrate','Ca²⁺ channel · closed','Lipid droplet · forming']},
+ {f:['Two membranes; the inner one folds inward into cristae, greatly increasing its surface area.','Main site of aerobic respiration: the TCA cycle runs in the matrix, while the electron transport chain and ATP synthase sit in the inner membrane.','Has its own circular DNA (about 16.6 kb in humans), inherited mainly from the mother.'],
+  sz:'0.5–1 µm wide, often 1–4 µm long',rg:'Mitochondrial matrix',
+  log:['TCA cycle · producing NADH','Complex IV · O₂ → H₂O','Proton gradient · established','ATP synthase · rotating','ADP + Pi → ATP']},
+ {f:['A stack of flattened membrane sacs (cisternae), like a pile of curved plates.','Receives proteins from the ER, trims and adds sugar chains, sorts them and packs them into vesicles for shipping.','The cis face, next to the ER, receives; the trans face ships out.'],
+  sz:'Each stack about 1 µm wide, usually 4–8 cisternae',rg:'Golgi lumen',
+  log:['cis face · receiving COPII cargo','Glycosyltransferases · modifying glycans','trans face · sorting','Secretory vesicle · budding','Lysosomal enzymes · M6P tag']},
+ {f:['A single-membrane vesicle holding dozens of acid hydrolases — the cell’s “digestion workshop”.','Proton pumps in its membrane push H⁺ inside, keeping the lumen at about pH 4.5–5.','Breaks down worn-out organelles (autophagy) as well as engulfed bacteria and macromolecules.'],
+  sz:'Diameter about 0.1–1.2 µm',rg:'Lysosomal lumen',
+  log:['V-type H⁺-ATPase · pumping protons','Cathepsins · hydrolyzing proteins','Autophagosome · fusing','Amino acids · recycled to the cytosol','Endosome · maturing']},
+ {f:['Two centrioles set at right angles to each other, surrounded by pericentriolar material.','Each centriole is a small cylinder made of nine microtubule triplets.','The main microtubule-organizing center; before division it duplicates and moves to opposite poles to build the spindle.'],
+  sz:'Centriole about 0.2 µm wide and 0.5 µm long',rg:'Cytosol',
+  log:['γ-tubulin ring · nucleating','Microtubule · plus-end growing','Motor proteins · moving along microtubules','Centrioles · interphase position','Spindle checkpoint · standing by']},
+ {f:['A phospholipid bilayer with proteins embedded in it and free to move (the fluid mosaic model).','Membrane proteins handle transport and signaling: for every ATP it uses, the Na⁺/K⁺ pump moves 3 Na⁺ out and 2 K⁺ in.','The glycocalyx on the outer surface helps cells recognize each other; the extracellular matrix (collagen and more) provides support.'],
+  sz:'About 7–10 nm thick',rg:'Extracellular fluid',
+  log:['Na⁺/K⁺-ATPase · 3 Na⁺ out / 2 K⁺ in','Receptor · binding ligand','Clathrin-coated pit · endocytosis','Exocytosis · vesicle fusing','Integrins · anchoring to the ECM']}
+];
+S.forEach((s, i) => { s.E = EN[i]; });
 const N = S.length, DWELL0 = 4300, DWELL = 5200, ZOOMT = 1500;
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = s => document.querySelector(s);
@@ -350,14 +388,14 @@ S.forEach((s, i) => {
     close.appendChild(im);
     const h = document.createElement('button');
     h.className = 'hs' + (s.x > .6 || s.id === 'golgi' ? ' l' : ''); h.style.left = s.x * 100 + '%'; h.style.top = s.y * 100 + '%';
-    h.setAttribute('aria-label', '前往 ' + s.zh); h.innerHTML = '<span>' + s.zh + '</span>';
+    h.setAttribute('aria-label', '前往 ' + s.zh + ' · Go to ' + s.en); h.innerHTML = '<span>' + I(s.zh, s.en) + '</span>';
     h.onclick = () => jump(i); $('#hsLayer').appendChild(h);
   }
   const b = document.createElement('button'); b.style.setProperty('--c', s.c);
-  b.innerHTML = '<i></i>' + s.zh + '<em>' + String(i + 1).padStart(2, '0') + '</em>'; b.onclick = () => jump(i); $('#stops').appendChild(b);
-  const m = document.createElement('button'); m.style.setProperty('--c', s.c); m.textContent = s.zh; m.onclick = () => jump(i); $('#mchips').appendChild(m);
+  b.innerHTML = '<i></i><span>' + B(s.zh, s.en) + '</span><em>' + String(i + 1).padStart(2, '0') + '</em>'; b.onclick = () => jump(i); $('#stops').appendChild(b);
+  const m = document.createElement('button'); m.style.setProperty('--c', s.c); m.innerHTML = I(s.zh, s.en); m.onclick = () => jump(i); $('#mchips').appendChild(m);
 });
-$('#bars').innerHTML = ACT.map((a, i) => `<div class="r" style="--bc:${ACTC[i]}"><span>${a}</span><div class="t"><b></b></div><span class="v">0</span></div>`).join('');
+$('#bars').innerHTML = ACT.map((a, i) => `<div class="r" style="--bc:${ACTC[i]}"><span>${B(a, ACT_EN[i])}</span><div class="t"><b></b></div><span class="v">0</span></div>`).join('');
 const closeImgs = [...close.querySelectorAll('img')];
 
 // layout
@@ -365,10 +403,12 @@ let VW = 0, VH = 0, SQ = 0;
 function layout() {
   const r = view.getBoundingClientRect(); VW = r.width; VH = r.height;
   const wide = innerWidth > 820;
-  SQ = Math.max(120, Math.min(VW - (wide ? 380 : 12), VH - (wide ? 70 : 54)));
-  if (!wide) SQ = Math.min(VW - 8, VH - 72);
+  const sw = wide ? 190 : 0;                       // room for the station list on the right
+  SQ = Math.max(120, Math.min(VW - sw - 24, VH - 40));
+  if (!wide) SQ = Math.max(120, Math.min(VW - 8, VH - 72));
   stage.style.width = stage.style.height = SQ + 'px';
-  stage.style.marginTop = wide ? '-14px' : '2px';
+  stage.style.left = ((VW - sw) / 2) + 'px';
+  stage.style.marginTop = wide ? '0px' : '-8px';
   setCam(S[idx], true); sizeFx(); updScale(S[idx]);
 }
 function setCam(s, instant) {
@@ -401,13 +441,13 @@ let logLines = [], logT = 0;
 function hud(s, i) {
   document.documentElement.style.setProperty('--tint', s.c);
   const mag = 90000 / s.fov; tweenMag(mag);
-  $('#fov').textContent = '视野 ' + fovTxt(s.fov) + ' · ' + (i + 1) + '/' + N;
+  $('#fov').innerHTML = I('视野', 'FOV') + ' ' + fovTxt(s.fov) + ' · ' + (i + 1) + '/' + N;
   $('#locN').textContent = (i + 1) + '/' + N; $('#focusIdx').textContent = String(i + 1).padStart(2, '0') + ' / ' + String(N).padStart(2, '0');
-  $('#chipK').textContent = s.k + (i ? ' · CLOSE-UP' : ' · OVERVIEW'); $('#chipN').textContent = s.zh + ' ' + s.en;
+  $('#chipK').innerHTML = i ? I('近景', 'Close-up') : I('全景', 'Overview'); $('#chipN').innerHTML = I(s.zh, s.en);
   const fb = $('#focusBody'), vt = $('#vit'); fb.classList.add('out'); vt.classList.add('out');
   setTimeout(() => {
-    fb.innerHTML = `<div class="nm"><h2>${s.zh}</h2><small>${s.en}</small></div><ul>${s.f.map(x => '<li>' + x + '</li>').join('')}</ul><div class="sz">${s.sz}</div>`;
-    vt.innerHTML = `<div class="rg">区域：${s.rg}</div><div><span class="k">pH</span><b>${s.ph}</b></div><div><span class="k">游离 Ca²⁺</span><b>${s.ca[0]}<small>${s.ca[1]}</small></b></div><div><span class="k">胞质 ATP</span><b>≈3<small>mM</small></b></div><div><span class="k">温度</span><b>37.0<small>°C</small></b></div>`;
+    fb.innerHTML = `<div class="nm"><h2>${B(s.zh, s.en)}</h2><small class="zo">${s.en}</small></div><ul>${s.f.map((x, k) => '<li>' + B(x, s.E.f[k]) + '</li>').join('')}</ul><div class="sz">${B(s.sz, s.E.sz)}</div>`;
+    vt.innerHTML = `<div class="rg">${I('区域', 'Region')}：${B(zhOnly(s.rg), s.E.rg)}</div><div><span class="k">pH</span><b>${s.ph}</b></div><div><span class="k">${I('游离 Ca²⁺', 'Free Ca²⁺')}</span><b>${s.ca[0]}<small>${s.ca[1]}</small></b></div><div><span class="k">${I('胞质 ATP', 'Cytosolic ATP')}</span><b>≈3<small>mM</small></b></div><div><span class="k">${I('温度', 'Temp.')}</span><b>37.0<small>°C</small></b></div>`;
     fb.classList.remove('out'); vt.classList.remove('out');
   }, RM ? 0 : 320);
   [...$('#bars').children].forEach((r, k) => { r.querySelector('b').style.width = s.act[k] + '%'; r.querySelector('.v').textContent = s.act[k]; r.classList.toggle('hi', k === s.hi); });
@@ -415,14 +455,14 @@ function hud(s, i) {
   const mc = [...$('#mchips').children]; mc.forEach((b, k) => b.classList.toggle('on', k === i));
   const cur = mc[i]; if (cur && innerWidth <= 820) cur.parentNode.scrollTo({left: cur.offsetLeft - cur.parentNode.clientWidth / 2 + cur.clientWidth / 2, behavior: RM ? 'auto' : 'smooth'});
   updScale(s);
-  logLines = s.log.slice(); pushLog(); pushLog();
+  logLines = s.log.map((z, k) => [z, s.E.log[k]]); pushLog(); pushLog();
 }
 let tick = 0;
 function pushLog() {
   if (!logLines.length) return;
   const l = logLines.shift(); logLines.push(l);
   const d = new Date(), ts = d.toTimeString().slice(0, 8);
-  const el = document.createElement('div'); el.innerHTML = `<em>${ts}</em> <b>›</b> ${l}`;
+  const el = document.createElement('div'); el.innerHTML = `<em>${ts}</em> <b>›</b> ${B(l[0], l[1])}`;
   const lg = $('#log'); lg.appendChild(el); while (lg.children.length > 9) lg.firstChild.remove();
 }
 
@@ -445,8 +485,8 @@ function schedule(ms) { clearTimeout(timer); if (playing) timer = setTimeout(() 
 function jump(i) { show(i); if (playing) { /* keep playing from here */ } }
 function setPlay(p) {
   playing = p; app.classList.toggle('paused', !p);
-  $('#ppB').textContent = p ? '❚❚' : '▶'; $('#ppB').setAttribute('aria-label', p ? '暂停 (空格)' : '播放 (空格)');
-  $('#liveT').textContent = p ? 'LIVE · 自动漫游' : '已暂停 · PAUSED';
+  $('#ppB').textContent = p ? '❚❚' : '▶'; $('#ppB').setAttribute('aria-label', p ? '暂停 Pause (Space)' : '播放 Play (Space)');
+  $('#liveT').innerHTML = p ? 'LIVE · ' + I('自动漫游', 'auto tour') : I('已暂停', 'Paused');
   if (!started) return;
   if (p) { t0 = performance.now() - dur + 1400; schedule(1400); }
   else { clearTimeout(timer); if (idx) closeImgs[idx - 1].classList.add('on'); }

@@ -233,30 +233,32 @@ a{color:var(--acc)}
 @media (max-width:820px) and (max-height:700px){.bottom>.p{height:170px}.labhud{transform:scale(.85);transform-origin:0 0}}
 @media (min-width:821px) and (max-height:760px){.labhud{width:260px}.stops button{padding:4px 8px;font-size:12px}}
 </style>
+<link rel="stylesheet" href="../assets/explorer-shellv1.0.css?v=1.0">
+<style>html.xs .stops .actk .t-en{font-size:9px}html.xs .labhud .k .t-en{font-size:10px}html.xs .labhud small .t-en{font-size:10px}</style>
 </head>
 <body>
 <div class="app" id="app">
   <header class="top">
     <div class="title glass">
-      <div class="brand"><a href="../index.html#lessons">← AIAI 学院 · 课件馆</a></div>
-      <h1>外泌体与细胞外囊泡 · EV</h1>
-      <p>从细胞里出发，到离心管里被捞出来<span class="en"> · exosomes &amp; extracellular vesicles</span></p>
+      <div class="brand"><a href="../index.html#micro">← <span class="bi-in"><span class="t-zh" lang="zh-CN">AIAI 学院</span><span class="t-en" lang="en">AIAI Academy</span></span> · <span class="bi-in"><span class="t-zh" lang="zh-CN">微观馆</span><span class="t-en" lang="en">Micro Hall</span></span></a></div>
+      <h1><span class="t-zh" lang="zh-CN">外泌体与细胞外囊泡 · EV</span><span class="t-en" lang="en">Exosomes &amp; Extracellular Vesicles</span></h1>
+      <p><span class="t-zh" lang="zh-CN">从细胞里出发，到离心管里被捞出来</span><span class="t-en" lang="en">From inside the cell to the bottom of a centrifuge tube</span></p>
     </div>
     <div class="profile glass" aria-label="EV 档案">
-      <div><span class="k">统称 Term</span><b>细胞外囊泡 EV</b></div>
-      <div><span class="k">外泌体 Size</span><b>≈40–160 nm</b></div>
-      <div><span class="k">起源 Origin</span><b>内体 · 多囊体</b></div>
-      <div><span class="k">浮力密度</span><b>≈1.13–1.19 g/mL</b></div>
-      <div><span class="k">血浆 EV</span><b>≈10¹⁰ 个/mL</b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">统称</span><span class="t-en" lang="en">Umbrella term</span></span></span><b><span class="t-zh" lang="zh-CN">细胞外囊泡 EV</span><span class="t-en" lang="en">Extracellular vesicles (EVs)</span></b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">外泌体大小</span><span class="t-en" lang="en">Exosome size</span></span></span><b>≈40–160 nm</b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">起源</span><span class="t-en" lang="en">Origin</span></span></span><b><span class="t-zh" lang="zh-CN">内体 · 多囊体</span><span class="t-en" lang="en">Endosome · MVB</span></b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">浮力密度</span><span class="t-en" lang="en">Buoyant density</span></span></span><b>≈1.13–1.19 g/mL</b></div>
+      <div><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">血浆 EV</span><span class="t-en" lang="en">Plasma EVs</span></span></span><b><span class="t-zh" lang="zh-CN">≈10¹⁰ 个/mL</span><span class="t-en" lang="en">≈10¹⁰ per mL</span></b></div>
     </div>
     <div class="atp glass">
-      <span class="k" id="lcK">EV 生命周期 · 示意（时间已压缩）</span>
+      <span class="k" id="lcK"></span>
       <div class="row"><span class="num mono" id="vmN">ILV ×0</span><canvas id="spark" width="380" height="80" aria-hidden="true"></canvas></div>
     </div>
     <div class="status glass">
-      <div class="live"><i></i><span id="liveT">LIVE · 自动漫游</span></div>
+      <div class="live"><i></i><span id="liveT">LIVE</span></div>
       <div class="mg"><div class="mag mono" id="mag">×4 500</div><div class="fov" id="fov">视野 20 µm · 1/11</div></div>
-      <div class="ibtns"><button class="ib" id="infoB" title="说明 / 课堂用法" aria-label="说明与课堂用法">ⓘ</button><button class="ib" id="fsB" title="全屏 (F)" aria-label="全屏">⛶</button></div>
+      <div class="ibtns"><button class="ib" id="infoB" title="说明 / 课堂用法 / 参考文献 · How to use &amp; references" aria-label="说明与课堂用法 How to use">ⓘ</button><button class="ib" id="fsB" title="全屏 Full screen (F)" aria-label="全屏 Full screen">⛶</button></div>
     </div>
   </header>
 
@@ -281,28 +283,28 @@ a{color:var(--acc)}
     <div class="chip glass"><i></i><span id="chipK">全景</span><b id="chipN">细胞外囊泡全景</b></div>
     <div class="vm2 glass" aria-hidden="true"><b id="vmN2">ILV ×0</b><canvas id="spark2" width="192" height="48"></canvas><small>示意</small></div>
     <div class="labhud glass" id="hudSed" aria-hidden="true">
-      <div class="k"><span>差速离心 · 沉降示意</span><span id="sedG">300×g</span></div>
+      <div class="k"><span><span class="t-zh" lang="zh-CN">差速离心 · 沉降示意</span><span class="t-en" lang="en">Differential centrifugation · sedimentation</span></span><span id="sedG">300×g</span></div>
       <canvas id="sedC" width="560" height="300"></canvas>
-      <small>依据 Théry 2006 细胞上清流程；颗粒大小、速度均为示意。前三步留上清、弃沉淀，最后一步留沉淀。</small>
+      <small><span class="t-zh" lang="zh-CN">依据 Théry 2006 细胞上清流程；颗粒大小、速度均为示意。前三步留上清、弃沉淀，最后一步留沉淀。</span><span class="t-en" lang="en">Based on the Théry 2006 protocol for culture supernatant; particle sizes and speeds are illustrative. The first three spins keep the supernatant and discard the pellet; the last one keeps the pellet.</span></small>
     </div>
     <div class="labhud glass" id="hudSc" aria-hidden="true">
-      <div class="k"><span>纯度 vs 得率 · 定性示意</span><span>非测量值</span></div>
+      <div class="k"><span><span class="t-zh" lang="zh-CN">纯度 vs 得率 · 定性示意</span><span class="t-en" lang="en">Purity vs yield · qualitative</span></span><span><span class="t-zh" lang="zh-CN">非测量值</span><span class="t-en" lang="en">not measured</span></span></div>
       <svg id="scSvg" viewBox="0 0 300 200"></svg>
-      <small>位置只表示文献中常见的相对趋势，具体取决于样本、参数和评价指标（MISEV2023 要求报告得率与特异性）。</small>
+      <small><span class="t-zh" lang="zh-CN">位置只表示文献中常见的相对趋势，具体取决于样本、参数和评价指标（MISEV2023 要求报告得率与特异性）。</span><span class="t-en" lang="en">Positions show only relative trends commonly reported in the literature; real results depend on the sample, settings and metrics (MISEV2023 asks for yield and specificity to be reported).</span></small>
     </div>
     <div class="labhud glass" id="hudNta" aria-hidden="true">
-      <div class="k"><span>NTA 粒径分布 · 示意</span><span id="ntaN">0 颗粒</span></div>
+      <div class="k"><span><span class="t-zh" lang="zh-CN">NTA 粒径分布 · 示意</span><span class="t-en" lang="en">NTA size distribution · illustrative</span></span><span id="ntaN">0</span></div>
       <canvas id="ntaC" width="560" height="260"></canvas>
-      <small>形状为示意的对数正态分布。NTA 不区分 EV 与脂蛋白、蛋白聚集体，需配合电镜和蛋白标志物。</small>
+      <small><span class="t-zh" lang="zh-CN">形状为示意的对数正态分布。NTA 不区分 EV 与脂蛋白、蛋白聚集体，需配合电镜和蛋白标志物。</span><span class="t-en" lang="en">The shape is an illustrative log-normal distribution. NTA cannot tell EVs from lipoproteins or protein aggregates, so pair it with electron microscopy and protein markers.</span></small>
     </div>
     <div class="scale"><span id="scaleT">5 µm</span><div class="bar" id="scaleB"></div></div>
-    <div class="ai">示意图（AI 生成）</div>
+    <div class="ai"><span class="bi-in"><span class="t-zh" lang="zh-CN">示意图（AI 生成）</span><span class="t-en" lang="en">Illustration (AI-generated)</span></span></div>
     <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
     <nav class="stops glass" id="stops" aria-label="漫游站点"></nav>
     <div class="ctrl glass">
-      <button id="prevB" aria-label="上一站 (←)" title="上一站 ←">◀</button>
-      <button id="ppB" class="pp" aria-label="暂停 / 播放 (空格)" title="暂停 / 播放 空格">❚❚</button>
-      <button id="nextB" aria-label="下一站 (→)" title="下一站 →">▶</button>
+      <button id="prevB" aria-label="上一站 Previous (←)" title="上一站 Previous ←">◀</button>
+      <button id="ppB" class="pp" aria-label="暂停 / 播放 Pause / play (Space)" title="暂停 / 播放 Pause / play · Space">❚❚</button>
+      <button id="nextB" aria-label="下一站 Next (→)" title="下一站 Next →">▶</button>
       <div class="prog"><b id="progB"></b></div>
     </div>
   </main>
@@ -311,74 +313,79 @@ a{color:var(--acc)}
     <div class="mchips" id="mchips" aria-label="选择站点"></div>
     <section class="bottom" id="bottom">
       <div class="p glass loc">
-        <div class="hd"><span class="k">定位 Locator</span><span id="locN">1/11</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">定位</span><span class="t-en" lang="en">Locator</span></span></span><span id="locN">1/11</span></div>
         <div class="mini" id="mini" title="点击跳到最近的站点"><img src="../assets/exosome/exosome-minimapv1.0.webp" alt="" width="240" height="240"><div class="vbox" id="vbox"></div></div>
       </div>
       <div class="p glass actp">
-        <div class="hd"><span class="k" id="barK">通路活跃度</span><span id="barU">相对 · 示意</span></div>
+        <div class="hd"><span class="k" id="barK"></span><span id="barU"></span></div>
         <div class="bars" id="bars"></div>
       </div>
       <div class="p glass focus" aria-live="polite">
-        <div class="hd"><span class="k">焦点 Focus</span><span id="focusIdx">01 / 11</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">焦点</span><span class="t-en" lang="en">Focus</span></span></span><span id="focusIdx">01 / 11</span></div>
         <div class="fade" id="focusBody"></div>
       </div>
       <div class="p glass vitp">
-        <div class="hd"><span class="k">关键数值 Numbers</span><span>典型值</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">关键数值</span><span class="t-en" lang="en">Key numbers</span></span></span><span><span class="bi-in"><span class="t-zh" lang="zh-CN">典型值</span><span class="t-en" lang="en">typical</span></span></span></div>
         <div class="vit fade" id="vit"></div>
       </div>
       <div class="p glass logp">
-        <div class="hd"><span class="k">事件流 Log</span><span>示意</span></div>
+        <div class="hd"><span class="k"><span class="bi-in"><span class="t-zh" lang="zh-CN">事件流</span><span class="t-en" lang="en">Event log</span></span></span><span><span class="bi-in"><span class="t-zh" lang="zh-CN">示意</span><span class="t-en" lang="en">illustrative</span></span></span></div>
         <div class="log" id="log"></div>
       </div>
     </section>
     <div class="dots" id="dots"></div>
-    <div class="foot">本页图像、文字与代码为原创，图片由 AI 生成，均为示意 · 姊妹篇：<a href="neuron-explorerv1.0.html">神经元漫游</a> · <a href="cell-explorerv1.0.html">动物细胞漫游</a> · <a href="#" id="infoL">说明 / 课堂用法 / 参考文献</a></div>
+    <div class="foot"><span class="t-zh" lang="zh-CN">本页图像、文字与代码为原创，图片由 AI 生成，均为示意 · 姊妹篇：<a href="neuron-explorerv1.0.html">神经元漫游</a> · <a href="cell-explorerv1.0.html">动物细胞漫游</a></span><span class="t-en" lang="en">Images, text and code on this page are original; all images are AI-generated illustrations · Companion pages: <a href="neuron-explorerv1.0.html">Neuron Explorer</a> · <a href="cell-explorerv1.0.html">Animal Cell Explorer</a></span> · <a href="#" id="infoL"><span class="bi-in"><span class="t-zh" lang="zh-CN">说明 / 课堂用法 / 参考文献</span><span class="t-en" lang="en">How to use / in class / references</span></span></a></div>
   </div>
 </div>
 
-<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="说明与课堂用法">
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="说明与课堂用法 How to use">
   <div class="box glass">
-    <button class="ib x" id="sheetX" aria-label="关闭">✕</button>
-    <h3>外泌体与细胞外囊泡漫游 · 怎么用</h3>
-    <p>全程两幕 11 站，每站约 6 秒，循环播放。<b>第一幕 · 体内生命周期</b>（纳米尺度）：全景 → EV 家族 → 早期内体 → 多囊体出芽 → 货物装载 → 释放 vs 降解 → 体液漂流 → 被受体细胞摄取。<b>第二幕 · 实验室</b>：差速超速离心 → 其他分离方法 → 鉴定。随时可暂停，或点画面上的发光点、站点列表、左下角定位图直接跳转。</p>
-    <p>全景里注意看：右上方质膜向外鼓出一个琥珀色的小泡并断开（微囊泡，外层翻出磷脂酰丝氨酸）；中央多囊体边缘不断向内出芽；右侧多囊体与质膜融合，一串青色小泡飘向右下的受体细胞。右上角面板是同一过程的简化动画；进入第二幕后，它换成粒径分布和离心进度（均为示意）。</p>
-    <p>键盘：<kbd>←</kbd> <kbd>→</kbd> 上一站 / 下一站，<kbd>空格</kbd> 暂停 / 播放，<kbd>F</kbd> 全屏，<kbd>Esc</kbd> 关闭本窗口。手机上可在画面上左右滑动换站，下方面板也能左右滑。</p>
+    <button class="ib x" id="sheetX" aria-label="关闭 Close">✕</button>
+    <h3><span class="t-zh" lang="zh-CN">外泌体与细胞外囊泡漫游 · 怎么用</span><span class="t-en" lang="en">Exosome &amp; EV Explorer · How to use</span></h3>
+    <p><span class="t-zh" lang="zh-CN">全程两幕 11 站，每站约 6 秒，循环播放。<b>第一幕 · 体内生命周期</b>（纳米尺度）：全景 → EV 家族 → 早期内体 → 多囊体出芽 → 货物装载 → 释放 vs 降解 → 体液漂流 → 被受体细胞摄取。<b>第二幕 · 实验室</b>：差速超速离心 → 其他分离方法 → 鉴定。随时可暂停，或点画面上的发光点、站点列表、左下角定位图直接跳转。</span><span class="t-en" lang="en">Two acts, 11 stops, about 6 seconds each, on a loop. <b>Act I · Life cycle in the body</b> (nanometer scale): overview → the EV family → early endosome → MVB budding → cargo loading → release vs degradation → drifting in body fluids → uptake by recipient cells. <b>Act II · In the lab</b>: differential ultracentrifugation → other separation methods → characterization. Pause at any time, or jump straight to a stop with the glowing dots, the station list or the locator map at bottom left.</span></p>
+    <p><span class="t-zh" lang="zh-CN">全景里注意看：右上方质膜向外鼓出一个琥珀色的小泡并断开（微囊泡，外层翻出磷脂酰丝氨酸）；中央多囊体边缘不断向内出芽；右侧多囊体与质膜融合，一串青色小泡飘向右下的受体细胞。「讲解」抽屉里的生命周期小面板是同一过程的简化动画；进入第二幕后，它换成粒径分布和离心进度（均为示意）。</span><span class="t-en" lang="en">Watch the overview: at upper right the plasma membrane bulges out an amber vesicle that pinches off (a microvesicle, with phosphatidylserine flipped to its outer leaflet); the rim of the central MVB keeps budding inward; on the right an MVB fuses with the plasma membrane and a stream of cyan vesicles drifts toward the recipient cell at lower right. The small life-cycle panel in the Explain drawer is a simplified animation of the same process; in Act II it switches to a size distribution and centrifugation progress (all illustrative).</span></p>
+    <p><span class="t-zh" lang="zh-CN">点「讲解 Explain」或按 <kbd>E</kbd> 打开讲解抽屉：每站要点、科研 / 临床联系、关键数值、活跃度和事件流都在里面，默认收起。右上角可切换 中 / EN / 中英。</span><span class="t-en" lang="en">Tap “讲解 Explain” or press <kbd>E</kbd> to open the explanation drawer with each stop’s key points, research / clinical link, key numbers, activity bars and event log. It starts closed. Switch 中 / EN / 中英 at top right.</span></p>
+    <p><span class="t-zh" lang="zh-CN">键盘：<kbd>←</kbd> <kbd>→</kbd> 上一站 / 下一站，<kbd>空格</kbd> 暂停 / 播放，<kbd>E</kbd> 讲解，<kbd>H</kbd> 精简画面，<kbd>F</kbd> 全屏，<kbd>Esc</kbd> 关闭。手机上可在画面上左右滑动换站。</span><span class="t-en" lang="en">Keyboard: <kbd>←</kbd> <kbd>→</kbd> previous / next stop, <kbd>Space</kbd> pause / play, <kbd>E</kbd> explain, <kbd>H</kbd> clean view, <kbd>F</kbd> full screen, <kbd>Esc</kbd> close. On a phone, swipe left or right on the picture to change stops.</span></p>
     <details open>
-      <summary>课堂用法（3 个讨论问题）</summary>
+      <summary><span class="t-zh" lang="zh-CN">课堂用法（3 个讨论问题）</span><span class="t-en" lang="en">In class: 3 discussion questions</span></summary>
       <ol>
-        <li>一篇论文写"我们用 100,000×g 超速离心分离了外泌体"。按 MISEV2023，这个说法哪里不严谨？应该怎么改写？（提示：大小和密度重叠、内体起源有没有被证明、沉淀里还有什么。）</li>
-        <li>健康人血浆中 EV 大约 10¹⁰ 个/mL，脂蛋白却多出约六到七个数量级。用 NTA 直接数血浆颗粒，会得到什么？做 EV 液体活检时要怎样设计分离和对照？</li>
-        <li>小鼠静脉注射的 EV 几分钟内大部分离开血液，主要进了肝和脾。如果你想用 EV 把药送到肿瘤或脑，可以从哪些方向改？（提示：来源细胞、表面靶向分子、给药途径。）</li>
+        <li><span class="t-zh" lang="zh-CN">一篇论文写"我们用 100,000×g 超速离心分离了外泌体"。按 MISEV2023，这个说法哪里不严谨？应该怎么改写？（提示：大小和密度重叠、内体起源有没有被证明、沉淀里还有什么。）</span><span class="t-en" lang="en">A paper says “we isolated exosomes by ultracentrifugation at 100,000×g”. Under MISEV2023, what is imprecise about this, and how should it be rewritten? (Hint: overlapping size and density, whether endosomal origin was shown, and what else is in the pellet.)</span></li>
+        <li><span class="t-zh" lang="zh-CN">健康人血浆中 EV 大约 10¹⁰ 个/mL，脂蛋白却多出约六到七个数量级。用 NTA 直接数血浆颗粒，会得到什么？做 EV 液体活检时要怎样设计分离和对照？</span><span class="t-en" lang="en">Healthy plasma holds about 10¹⁰ EVs/mL, yet lipoproteins outnumber them by about six to seven orders of magnitude. What will you get if you count plasma particles directly by NTA? How should separation and controls be designed for an EV liquid biopsy?</span></li>
+        <li><span class="t-zh" lang="zh-CN">小鼠静脉注射的 EV 几分钟内大部分离开血液，主要进了肝和脾。如果你想用 EV 把药送到肿瘤或脑，可以从哪些方向改？（提示：来源细胞、表面靶向分子、给药途径。）</span><span class="t-en" lang="en">In mice, intravenously injected EVs mostly leave the blood within minutes, ending up mainly in the liver and spleen. If you wanted EVs to deliver a drug to a tumor or the brain, what could you change? (Hint: source cell, surface targeting molecules, route of administration.)</span></li>
       </ol>
-      <p>老师小建议：先停在"EV 家族"站，让学员说出三类囊泡各从哪里来；第二幕每站结束时，请学员判断"这一步得到的是纯外泌体吗？"，答案几乎总是"不是，是富集了某类 EV 的混合物"。</p>
+      <p><span class="t-zh" lang="zh-CN">老师小建议：先停在"EV 家族"站，让学员说出三类囊泡各从哪里来；第二幕每站结束时，请学员判断"这一步得到的是纯外泌体吗？"，答案几乎总是"不是，是富集了某类 EV 的混合物"。</span><span class="t-en" lang="en">Teacher’s tip: pause on “The EV family” and have learners say where each of the three vesicle classes comes from; at the end of each Act II stop, ask “is what we have now pure exosomes?” — the answer is almost always “no, a mixture enriched for a certain kind of EV”.</span></p>
     </details>
-    <h4>关于数字</h4>
-    <p>页面上的尺寸、密度、浓度和离心参数都是文献中的典型值或范围，随细胞类型、样本和方法差别很大。<strong>EV 生命周期动画、离心沉降、纯度–得率散点、NTA 粒径分布、活跃度条和事件流都是示意</strong>，不是实时测量；时间被大幅压缩（真实的 100,000×g 离心至少 70 分钟）。放大倍数和比例尺按典型尺寸估算。图像由 AI 生成，形状和颜色做了艺术化处理，不代表真实显微照片。文中用「事实 / 联想 / 推测」区分证据强度；动物实验结论不等于人体疗效。</p>
+    <h4><span class="t-zh" lang="zh-CN">关于数字</span><span class="t-en" lang="en">About the numbers</span></h4>
+    <p><span class="t-zh" lang="zh-CN">页面上的尺寸、密度、浓度和离心参数都是文献中的典型值或范围，随细胞类型、样本和方法差别很大。<strong>EV 生命周期动画、离心沉降、纯度–得率散点、NTA 粒径分布、活跃度条和事件流都是示意</strong>，不是实时测量；时间被大幅压缩（真实的 100,000×g 离心至少 70 分钟）。放大倍数和比例尺按典型尺寸估算。图像由 AI 生成，形状和颜色做了艺术化处理，不代表真实显微照片。文中用「事实 / 联想 / 推测」区分证据强度；动物实验结论不等于人体疗效。</span><span class="t-en" lang="en">Sizes, densities, concentrations and centrifugation settings on this page are typical values or ranges from the literature and vary widely with cell type, sample and method. <strong>The EV life-cycle animation, sedimentation, purity–yield scatter, NTA size distribution, activity bars and event log are all illustrative</strong>, not real-time measurements, and time is heavily compressed (a real 100,000×g spin takes at least 70 minutes). Magnification and scale bars are estimated from typical sizes. Images are AI-generated with stylized shapes and colors; they are not real micrographs. The text labels evidence strength as “fact / association / speculation”; findings in animals do not equal efficacy in humans.</span></p>
     <ul>
-      <li>EV 定义、"EV / small EV（常指 &lt;200 nm，无严格切点）"术语建议、small EV ≠ exosome、蛋白鉴定框架、得率/特异性报告：Welsh JA et al. MISEV2023. <i>J Extracell Vesicles</i> 2024;13:e12404 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10850029/" target="_blank" rel="noopener">PMC10850029</a></li>
-      <li>外泌体约 40–160 nm（平均约 100 nm），外体/微囊泡约 50 nm–1 µm：Kalluri R, LeBleu VS. <i>Science</i> 2020;367:eaau6977 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7717626" target="_blank" rel="noopener">PMC7717626</a></li>
-      <li>ILV 约 40–100 nm，微囊泡可达约 1,000 nm：Raposo G, Stoorvogel W. <i>J Cell Biol</i> 2013;200:373 · <a href="https://doi.org/10.1083/jcb.201211138" target="_blank" rel="noopener">doi</a></li>
-      <li>微囊泡 150–1000 nm、ARF6、凋亡小体约 1–5 µm、exomere/supermere：Jeppesen DK et al. <i>Trends Cell Biol</i> 2023;33:667 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10363204/" target="_blank" rel="noopener">PMC10363204</a>；exomere 约 35 nm：Tosar JP et al. <i>J Extracell Biol</i> 2022 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9610496" target="_blank" rel="noopener">PMC9610496</a>；supermere：Zhang Q et al. <i>Nat Cell Biol</i> 2021;23:1240 · <a href="https://www.nature.com/articles/s41556-021-00805-8" target="_blank" rel="noopener">链接</a></li>
-      <li>差速超速离心流程（300×g 10 min → 2,000×g 20 min → 10,000×g 30 min → 100,000×g ≥70 min → 洗涤 100,000×g 1 h）、浮力密度 1.15–1.19 g/mL、电镜杯状形态为制样伪影、calnexin 阴性、超滤适合临床级制备：Théry C et al. <i>Curr Protoc Cell Biol</i> 2006;Unit 3.22 · <a href="https://doi.org/10.1002/0471143030.cb0322s30" target="_blank" rel="noopener">doi</a>；2,000×g 10 min 的常见变体：Livshits MA et al. <i>Sci Rep</i> 2015;5:17319 · <a href="https://www.nature.com/articles/srep17319" target="_blank" rel="noopener">链接</a></li>
-      <li>神经酰胺 / nSMase2 驱动 ESCRT 非依赖出芽：Trajkovic K et al. <i>Science</i> 2008;319:1244 · <a href="https://doi.org/10.1126/science.1153124" target="_blank" rel="noopener">doi</a>；Rab27a/b 控制 MVB 停靠：Ostrowski M et al. <i>Nat Cell Biol</i> 2010;12:19 · <a href="https://www.nature.com/articles/ncb2000" target="_blank" rel="noopener">链接</a></li>
-      <li>SUMO 化 hnRNPA2B1 识别 GGAG 等基序分选 miRNA：Villarroya-Beltri C et al. <i>Nat Commun</i> 2013;4:2980 · <a href="https://www.nature.com/articles/ncomms3980" target="_blank" rel="noopener">链接</a>；每个外泌体平均 miRNA 拷贝数远低于 1：Chevillet JR et al. <i>PNAS</i> 2014;111:14888</li>
-      <li>静注 small EV：约 95% 在 5 分钟内离开循环、T½α 1.5–19.9 min：Kang M et al. <i>J Extracell Vesicles</i> 2021;10:e12085 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8224174" target="_blank" rel="noopener">PMC8224174</a>；分布以肝 &gt; 脾 &gt; 消化道、肺为主，受来源细胞和途径影响：Wiklander OPB et al. <i>J Extracell Vesicles</i> 2015;4:26316 · <a href="https://doi.org/10.3402/jev.v4.26316" target="_blank" rel="noopener">doi</a>；肝脾巨噬细胞依赖的清除：Imai T et al. 2015 · <a href="https://doi.org/10.3402/jev.v4.26238" target="_blank" rel="noopener">doi</a></li>
-      <li>血浆 EV 约 10¹⁰ 个/mL：Johnsen KB et al. <i>BBA Rev Cancer</i> 2019;1871:109 · <a href="https://doi.org/10.1016/j.bbcan.2018.11.006" target="_blank" rel="noopener">doi</a>；脂蛋白比 EV 多六到七个数量级：Auber M, Svenningsen P. <i>J Extracell Biol</i> 2022 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11080926" target="_blank" rel="noopener">PMC11080926</a>；未分离血浆中 NTA 颗粒 &gt;98% 为 VLDL：Jamaly S et al. <i>Sci Rep</i> 2018 · <a href="https://www.nature.com/articles/s41598-018-35401-8" target="_blank" rel="noopener">链接</a></li>
-      <li>EV 摄取途径：Mulcahy LA et al. <i>J Extracell Vesicles</i> 2014;3:24641 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4122821/" target="_blank" rel="noopener">PMC4122821</a></li>
-      <li>转移前微环境：Peinado H et al. <i>Nat Med</i> 2012;18:883 · <a href="https://www.nature.com/articles/nm.2753" target="_blank" rel="noopener">链接</a>；EV 整合素与器官嗜性：Hoshino A et al. <i>Nature</i> 2015;527:329 · <a href="https://pubmed.ncbi.nlm.nih.gov/26524530/" target="_blank" rel="noopener">PubMed</a></li>
+      <li><span class="t-zh" lang="zh-CN">EV 定义、"EV / small EV（常指 &lt;200 nm，无严格切点）"术语建议、small EV ≠ exosome、蛋白鉴定框架、得率/特异性报告：Welsh JA et al. MISEV2023. <i>J Extracell Vesicles</i> 2024;13:e12404 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10850029/" target="_blank" rel="noopener">PMC10850029</a></span><span class="t-en" lang="en">EV definition, the recommended terms “EV / small EV (often &lt;200 nm, no strict cutoff)”, small EV ≠ exosome, the protein characterization framework, reporting of yield and specificity: Welsh JA et al. MISEV2023. <i>J Extracell Vesicles</i> 2024;13:e12404 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10850029/" target="_blank" rel="noopener">PMC10850029</a></span></li>
+      <li><span class="t-zh" lang="zh-CN">外泌体约 40–160 nm（平均约 100 nm），外体/微囊泡约 50 nm–1 µm：Kalluri R, LeBleu VS. <i>Science</i> 2020;367:eaau6977 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7717626" target="_blank" rel="noopener">PMC7717626</a></span><span class="t-en" lang="en">Exosomes about 40–160 nm (average about 100 nm), ectosomes / microvesicles about 50 nm–1 µm: Kalluri R, LeBleu VS. <i>Science</i> 2020;367:eaau6977 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7717626" target="_blank" rel="noopener">PMC7717626</a></span></li>
+      <li><span class="t-zh" lang="zh-CN">ILV 约 40–100 nm，微囊泡可达约 1,000 nm：Raposo G, Stoorvogel W. <i>J Cell Biol</i> 2013;200:373 · <a href="https://doi.org/10.1083/jcb.201211138" target="_blank" rel="noopener">doi</a></span><span class="t-en" lang="en">ILVs about 40–100 nm, microvesicles up to about 1,000 nm: Raposo G, Stoorvogel W. <i>J Cell Biol</i> 2013;200:373 · <a href="https://doi.org/10.1083/jcb.201211138" target="_blank" rel="noopener">doi</a></span></li>
+      <li><span class="t-zh" lang="zh-CN">微囊泡 150–1000 nm、ARF6、凋亡小体约 1–5 µm、exomere/supermere：Jeppesen DK et al. <i>Trends Cell Biol</i> 2023;33:667 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10363204/" target="_blank" rel="noopener">PMC10363204</a>；exomere 约 35 nm：Tosar JP et al. <i>J Extracell Biol</i> 2022 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9610496" target="_blank" rel="noopener">PMC9610496</a>；supermere：Zhang Q et al. <i>Nat Cell Biol</i> 2021;23:1240 · <a href="https://www.nature.com/articles/s41556-021-00805-8" target="_blank" rel="noopener">链接</a></span><span class="t-en" lang="en">Microvesicles 150–1000 nm, ARF6, apoptotic bodies about 1–5 µm, exomeres / supermeres: Jeppesen DK et al. <i>Trends Cell Biol</i> 2023;33:667 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10363204/" target="_blank" rel="noopener">PMC10363204</a>; exomeres about 35 nm: Tosar JP et al. <i>J Extracell Biol</i> 2022 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9610496" target="_blank" rel="noopener">PMC9610496</a>; supermeres: Zhang Q et al. <i>Nat Cell Biol</i> 2021;23:1240 · <a href="https://www.nature.com/articles/s41556-021-00805-8" target="_blank" rel="noopener">link</a></span></li>
+      <li><span class="t-zh" lang="zh-CN">差速超速离心流程（300×g 10 min → 2,000×g 20 min → 10,000×g 30 min → 100,000×g ≥70 min → 洗涤 100,000×g 1 h）、浮力密度 1.15–1.19 g/mL、电镜杯状形态为制样伪影、calnexin 阴性、超滤适合临床级制备：Théry C et al. <i>Curr Protoc Cell Biol</i> 2006;Unit 3.22 · <a href="https://doi.org/10.1002/0471143030.cb0322s30" target="_blank" rel="noopener">doi</a>；2,000×g 10 min 的常见变体：Livshits MA et al. <i>Sci Rep</i> 2015;5:17319 · <a href="https://www.nature.com/articles/srep17319" target="_blank" rel="noopener">链接</a></span><span class="t-en" lang="en">Differential ultracentrifugation protocol (300×g 10 min → 2,000×g 20 min → 10,000×g 30 min → 100,000×g ≥70 min → wash at 100,000×g 1 h), buoyant density 1.15–1.19 g/mL, the cup shape in EM as a preparation artifact, calnexin negativity, ultrafiltration for clinical-grade preparation: Théry C et al. <i>Curr Protoc Cell Biol</i> 2006;Unit 3.22 · <a href="https://doi.org/10.1002/0471143030.cb0322s30" target="_blank" rel="noopener">doi</a>; the common 2,000×g 10 min variant: Livshits MA et al. <i>Sci Rep</i> 2015;5:17319 · <a href="https://www.nature.com/articles/srep17319" target="_blank" rel="noopener">link</a></span></li>
+      <li><span class="t-zh" lang="zh-CN">神经酰胺 / nSMase2 驱动 ESCRT 非依赖出芽：Trajkovic K et al. <i>Science</i> 2008;319:1244 · <a href="https://doi.org/10.1126/science.1153124" target="_blank" rel="noopener">doi</a>；Rab27a/b 控制 MVB 停靠：Ostrowski M et al. <i>Nat Cell Biol</i> 2010;12:19 · <a href="https://www.nature.com/articles/ncb2000" target="_blank" rel="noopener">链接</a></span><span class="t-en" lang="en">Ceramide / nSMase2 drives ESCRT-independent budding: Trajkovic K et al. <i>Science</i> 2008;319:1244 · <a href="https://doi.org/10.1126/science.1153124" target="_blank" rel="noopener">doi</a>; Rab27a/b control MVB docking: Ostrowski M et al. <i>Nat Cell Biol</i> 2010;12:19 · <a href="https://www.nature.com/articles/ncb2000" target="_blank" rel="noopener">link</a></span></li>
+      <li><span class="t-zh" lang="zh-CN">SUMO 化 hnRNPA2B1 识别 GGAG 等基序分选 miRNA：Villarroya-Beltri C et al. <i>Nat Commun</i> 2013;4:2980 · <a href="https://www.nature.com/articles/ncomms3980" target="_blank" rel="noopener">链接</a>；每个外泌体平均 miRNA 拷贝数远低于 1：Chevillet JR et al. <i>PNAS</i> 2014;111:14888</span><span class="t-en" lang="en">SUMOylated hnRNPA2B1 recognizes motifs such as GGAG to sort miRNAs: Villarroya-Beltri C et al. <i>Nat Commun</i> 2013;4:2980 · <a href="https://www.nature.com/articles/ncomms3980" target="_blank" rel="noopener">link</a>; average miRNA copies per exosome far below 1: Chevillet JR et al. <i>PNAS</i> 2014;111:14888</span></li>
+      <li><span class="t-zh" lang="zh-CN">静注 small EV：约 95% 在 5 分钟内离开循环、T½α 1.5–19.9 min：Kang M et al. <i>J Extracell Vesicles</i> 2021;10:e12085 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8224174" target="_blank" rel="noopener">PMC8224174</a>；分布以肝 &gt; 脾 &gt; 消化道、肺为主，受来源细胞和途径影响：Wiklander OPB et al. <i>J Extracell Vesicles</i> 2015;4:26316 · <a href="https://doi.org/10.3402/jev.v4.26316" target="_blank" rel="noopener">doi</a>；肝脾巨噬细胞依赖的清除：Imai T et al. 2015 · <a href="https://doi.org/10.3402/jev.v4.26238" target="_blank" rel="noopener">doi</a></span><span class="t-en" lang="en">Intravenous small EVs: about 95% leave the circulation within 5 min, T½α 1.5–19.9 min: Kang M et al. <i>J Extracell Vesicles</i> 2021;10:e12085 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8224174" target="_blank" rel="noopener">PMC8224174</a>; distribution mainly liver &gt; spleen &gt; GI tract and lungs, depending on cell source and route: Wiklander OPB et al. <i>J Extracell Vesicles</i> 2015;4:26316 · <a href="https://doi.org/10.3402/jev.v4.26316" target="_blank" rel="noopener">doi</a>; clearance dependent on liver and spleen macrophages: Imai T et al. 2015 · <a href="https://doi.org/10.3402/jev.v4.26238" target="_blank" rel="noopener">doi</a></span></li>
+      <li><span class="t-zh" lang="zh-CN">血浆 EV 约 10¹⁰ 个/mL：Johnsen KB et al. <i>BBA Rev Cancer</i> 2019;1871:109 · <a href="https://doi.org/10.1016/j.bbcan.2018.11.006" target="_blank" rel="noopener">doi</a>；脂蛋白比 EV 多六到七个数量级：Auber M, Svenningsen P. <i>J Extracell Biol</i> 2022 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11080926" target="_blank" rel="noopener">PMC11080926</a>；未分离血浆中 NTA 颗粒 &gt;98% 为 VLDL：Jamaly S et al. <i>Sci Rep</i> 2018 · <a href="https://www.nature.com/articles/s41598-018-35401-8" target="_blank" rel="noopener">链接</a></span><span class="t-en" lang="en">Plasma EVs about 10¹⁰ per mL: Johnsen KB et al. <i>BBA Rev Cancer</i> 2019;1871:109 · <a href="https://doi.org/10.1016/j.bbcan.2018.11.006" target="_blank" rel="noopener">doi</a>; lipoproteins outnumber EVs by six to seven orders of magnitude: Auber M, Svenningsen P. <i>J Extracell Biol</i> 2022 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11080926" target="_blank" rel="noopener">PMC11080926</a>; &gt;98% of NTA particles in unseparated plasma are VLDL: Jamaly S et al. <i>Sci Rep</i> 2018 · <a href="https://www.nature.com/articles/s41598-018-35401-8" target="_blank" rel="noopener">link</a></span></li>
+      <li><span class="t-zh" lang="zh-CN">EV 摄取途径：Mulcahy LA et al. <i>J Extracell Vesicles</i> 2014;3:24641 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4122821/" target="_blank" rel="noopener">PMC4122821</a></span><span class="t-en" lang="en">Routes of EV uptake: Mulcahy LA et al. <i>J Extracell Vesicles</i> 2014;3:24641 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4122821/" target="_blank" rel="noopener">PMC4122821</a></span></li>
+      <li><span class="t-zh" lang="zh-CN">转移前微环境：Peinado H et al. <i>Nat Med</i> 2012;18:883 · <a href="https://www.nature.com/articles/nm.2753" target="_blank" rel="noopener">链接</a>；EV 整合素与器官嗜性：Hoshino A et al. <i>Nature</i> 2015;527:329 · <a href="https://pubmed.ncbi.nlm.nih.gov/26524530/" target="_blank" rel="noopener">PubMed</a></span><span class="t-en" lang="en">Pre-metastatic niche: Peinado H et al. <i>Nat Med</i> 2012;18:883 · <a href="https://www.nature.com/articles/nm.2753" target="_blank" rel="noopener">link</a>; EV integrins and organ tropism: Hoshino A et al. <i>Nature</i> 2015;527:329 · <a href="https://pubmed.ncbi.nlm.nih.gov/26524530/" target="_blank" rel="noopener">PubMed</a></span></li>
     </ul>
-    <h4>致谢</h4>
-    <p>页面结构沿用本站 <a href="neuron-explorerv1.0.html">神经元漫游</a>、<a href="cell-explorerv1.0.html">动物细胞漫游</a> 的 HUD 漫游形式（姊妹篇）。本页没有使用任何论文的原图或原文，图像、文字与代码均为原创；数值出处见上方「关于数字」。</p>
-    <p><a href="../index.html#lessons">← 回到 aiai 学院 · 课件馆</a></p>
+    <h4><span class="t-zh" lang="zh-CN">致谢</span><span class="t-en" lang="en">Credits</span></h4>
+    <p><span class="t-zh" lang="zh-CN">页面结构沿用本站 <a href="neuron-explorerv1.0.html">神经元漫游</a>、<a href="cell-explorerv1.0.html">动物细胞漫游</a> 的 HUD 漫游形式（姊妹篇）。本页没有使用任何论文的原图或原文，图像、文字与代码均为原创；数值出处见上方「关于数字」。</span><span class="t-en" lang="en">The page follows the HUD-tour format of the companion <a href="neuron-explorerv1.0.html">Neuron Explorer</a> and <a href="cell-explorerv1.0.html">Animal Cell Explorer</a>. No figures or text from any paper are reproduced; images, text and code are original, and the sources for the numbers are listed under “About the numbers” above.</span></p>
+    <p><a href="../index.html#micro"><span class="bi-in"><span class="t-zh" lang="zh-CN">← 回到 aiai 学院 · 微观馆</span><span class="t-en" lang="en">← Back to the aiai Micro Hall</span></span></a></p>
   </div>
 </div>
 
+<script src="../assets/explorer-shellv1.0.js?v=1.0"></script>
 <script>
 (() => {
 'use strict';
 const A = '../assets/exosome/';
 const ACT = ['ESCRT','神经酰胺','四跨膜蛋白','RNA 结合蛋白','Rab27a/b','SNARE','溶酶体降解','内吞/摄取'];
 const ACTC = ['#5ee7ff','#a46bff','#38e0c6','#ff5d9e','#ffb547','#9dff5c','#ff7a45','#6b8cff'];
+const ACT_EN = ['ESCRT','Ceramide','Tetraspanins','RNA-binding proteins','Rab27a/b','SNARE','Lysosomal degradation','Endocytosis / uptake'];
+const LABL_EN = ['Purity','Yield','Integrity','Throughput','Input volume','Cost','Ease of use','Standardization'];
+const B = XS.b, I = XS.i, zhOnly = t => t.replace(/\s+[A-Za-z][A-Za-z .()-]*$/, '');
 const LABL = ['纯度','得率','完整性','通量','可处理体积','经济性','易上手','可标准化'];
 // x,y: position on the 1000×1000 hero (fraction). fov / bar in µm. mag = 90 mm / fov
 const S = [
@@ -486,6 +493,104 @@ const S = [
    act:[85,90,80,70,65,5,10,8],hi:-1,
    log:['NTA · 追踪布朗运动','NTA · 众数约 100 nm（示意）','TEM · 杯状形态（制样伪影）','WB · CD63⁺ CD81⁺ TSG101⁺','WB · Calnexin 阴性']}
 ];
+
+// English text per station (same order as S). v: [label, value, unit] — a value/unit left out falls back to the Chinese one
+const EN = [
+ {n:'Extracellular vesicles: the big picture',
+  one:'Almost every cell “mails parcels”: it packs proteins, RNA and lipids into small vesicles wrapped in a lipid bilayer and releases them — collectively called extracellular vesicles (EVs). Exosomes are the subset of small EVs that originate from endosomes.',
+  f:['The camera first follows the life cycle in the body (stops 2–8: EV family → endocytosis → MVB budding → cargo loading → release → drifting → uptake), then goes into the lab to see how EVs are “fished out” (stops 9–11).'],
+  clin:'EVs carry molecular information from their cell of origin, so they are studied as a candidate source of liquid-biopsy biomarkers and as drug carriers; most applications are still being validated and are some way from routine clinical use.',
+  sz:'Exosomes about 40–160 nm (average about 100 nm); a cell is about 10–20 µm — roughly a hundredfold difference',
+  rg:'Cell + extracellular space',v:[['Exosome diameter'],['Buoyant density'],['Plasma EVs','≈10¹⁰','per mL'],['t½α after IV injection','1.5–20','min · mice']],
+  log:['Plasma membrane · microvesicle budding outward','MVB · forming intraluminal vesicles','MVB · fusing with the plasma membrane','EVs · drifting toward a neighboring cell','Recipient cell · taking up EVs']},
+ {n:'The EV family: three classes of vesicles',
+  one:'EVs are a big family: exosomes come from inward budding in multivesicular bodies (about 40–160 nm); microvesicles / ectosomes bud directly outward from the plasma membrane (about 100–1000 nm); apoptotic bodies are shed when a cell undergoes apoptosis (about 1–5 µm).',
+  f:['Microvesicle budding involves Ca²⁺ influx and remodeling of the cortical cytoskeleton, with small GTPases such as ARF6; flippase is switched off and scramblase switched on, flipping phosphatidylserine (PS) to the outer leaflet — which is exactly what Annexin V binds to recognize them (apoptotic bodies expose PS too).',
+     'There are also nanoparticles without a lipid bilayer: exomeres (about 35 nm) and the even smaller supermeres. Under MISEV2023 these are “non-vesicular extracellular particles” (NVEPs), not EVs.',
+     'MISEV2023: unless the biogenesis pathway has actually been shown, use the umbrella term “EV”, optionally by size as “small EVs” (often <200 nm, with no strict cutoff). Sizes and densities of the EV classes overlap, so no separation method yields “pure exosomes”.'],
+  clin:'Fact: many papers’ “exosomes” are really mixed small EVs pelleted by ultracentrifugation (including some small ectosomes). Association: when reading or reviewing, the first question to ask on seeing “exosome” is — was endosomal origin shown?',
+  sz:'Exosomes 40–160 nm · microvesicles 100–1000 nm · apoptotic bodies 1–5 µm',
+  rg:'Plasma membrane',v:[['Exosomes'],['Microvesicles'],['Apoptotic bodies'],['“Small EV” usually']],
+  log:['Plasma membrane · Ca²⁺ influx','Cortical cytoskeleton · remodeling','PS · flipped to the outer leaflet','Microvesicle · budding out and pinching off','MVB · releasing a burst of small EVs']},
+ {n:'Early endosome (where endocytosis begins)',
+  one:'The exosome story begins with the cell “swallowing”: the plasma membrane folds inward into endocytic vesicles (e.g. clathrin-coated pits), which fuse with early endosomes. The early endosome is the cell’s “mailroom”, deciding whether cargo is recycled to the surface or sent further in.',
+  f:['Early endosomes are marked by Rab5 and gradually mature into late endosomes (Rab7), their lumen becoming more acidic step by step.',
+     'The “exo” in the name is misleading: exosomes actually originate inside the cell — in the endosomal system.'],
+  clin:'Many EV-uptake experiments use endocytosis inhibitors (acting on clathrin, dynamin and so on) to infer the entry route; understanding endocytosis means understanding both the design and the limits of such experiments (the inhibitors are not very specific, so several methods should corroborate each other).',
+  sz:'Endocytic vesicles about 100 nm; early endosomes about 0.1–0.5 µm (typical values)',
+  rg:'Endosomal system',v:[['Early endosome marker'],['Late endosome marker'],['Early endosome pH'],['Late endosome pH']],
+  log:['Plasma membrane · folding inward','Clathrin · assembling a cage','Dynamin · pinching off the vesicle','Early endosome · Rab5-mediated fusion','Endosome · gradually acidifying']},
+ {n:'Multivesicular body: inward budding forms ILVs',
+  one:'The membrane of the late endosome buds into its own lumen, pinching off intraluminal vesicles (ILVs); an endosome full of them is a multivesicular body (MVB) — and these ILVs are the exosomes-to-be.',
+  f:['ESCRT-dependent route: ESCRT-0 recognizes ubiquitinated cargo, ESCRT-I/II bend the membrane into a bud, ESCRT-III spirals to cut the neck and VPS4 takes it apart for reuse; the accessory proteins ALIX and TSG101 are therefore often used as EV markers.',
+     'ESCRT-independent route: neutral sphingomyelinase 2 (nSMase2) generates ceramide, a cone-shaped lipid that makes the membrane bend and bud on its own (Trajkovic 2008); the tetraspanins CD63 / CD9 / CD81 cluster into membrane microdomains and also help with sorting.'],
+  clin:'Research often uses the nSMase2 inhibitor GW4869 or Rab27a knockdown to “reduce EV secretion” in functional experiments; neither is fully specific, so conclusions are best cross-checked with several approaches (which is also the spirit of MISEV2023).',
+  sz:'ILVs about 40–100 nm; MVBs about 0.25–1 µm (typical values)',
+  rg:'MVB lumen',v:[['ILV diameter'],['ESCRT'],['Neck scission by'],['Non-ESCRT route','Ceramide','']],
+  log:['ESCRT-0 · recognizing ubiquitinated cargo','ESCRT-I/II · membrane budding into the lumen','ESCRT-III · spiral tightening the neck','VPS4 · disassembly and recycling','nSMase2 · generating ceramide']},
+ {n:'Cargo loading: RNA, proteins, lipids',
+  one:'As the membrane buds, cytoplasmic “cargo” is packed into ILVs: RNAs such as miRNAs and mRNA fragments; proteins (tetraspanins, heat-shock proteins, ALIX / TSG101 and others); and lipids such as cholesterol, sphingomyelin and ceramide.',
+  f:['Loading is not entirely random: RNA-binding proteins help sort the cargo — for example, SUMOylated hnRNPA2B1 recognizes motifs such as GGAG in miRNAs and loads them into exosomes (Villarroya-Beltri 2013).',
+     'But quantitative work shows that, on average, an exosome carries far less than one copy of a given miRNA (Chevillet 2014), so how many functional molecules one EV can deliver is still debated.'],
+  clin:'Association: RNA inside EVs is shielded from RNases by the membrane, so it is being studied as a biomarker in blood and urine. Speculation: if the loading rules can be mastered, therapeutic RNAs might be loaded on purpose — the idea behind engineered EVs, still mainly at the cell and animal stage.',
+  sz:'A single small EV about 100 nm; lipid bilayer about 5 nm thick',
+  rg:'Budding ILV',v:[['Sorting protein (example)'],['Recognized motif'],['miRNA per EV','≪1','copy · mean'],['Bilayer thickness']],
+  log:['hnRNPA2B1 · SUMOylated','hnRNPA2B1 · binding the GGAG motif','miRNA · entering the budding vesicle','CD63 · enriched in the ILV membrane','Cholesterol / sphingolipids · enriched']},
+ {n:'Release vs degradation: two fates of the MVB',
+  one:'An MVB has two possible fates: it travels along microtubules to the cell periphery and fuses with the plasma membrane, emptying all its ILVs at once — only now are they called exosomes; or it fuses with a lysosome and its cargo is degraded.',
+  f:['Rab27a and Rab27b handle MVB transport and docking at the plasma membrane (Ostrowski 2010); SNARE proteins zip together to drive membrane fusion.',
+     'How a cell divides its MVBs between “secrete” and “degrade” is controlled by many signals; when lysosomal function is inhibited, increased EV secretion is often reported.'],
+  clin:'Fact (animal studies): knocking down Rab27a in tumor cells reduces EV secretion and lessens tumor growth or metastasis in mice (Peinado 2012 and others). Speculation: interfering with EV secretion might become an anti-metastatic strategy, but there is no clinical evidence yet.',
+  sz:'MVBs about 0.25–1 µm; one fusion releases all the ILVs inside',
+  rg:'Cell cortex, just beneath the plasma membrane',v:[['Docking'],['Fusion'],['Other fate','Lysosomal degradation',''],['Called after release','Exosomes','']],
+  log:['MVB · moving along microtubules to the membrane','Rab27a · docking','SNARE · zippering','Fusion pore · opening','ILVs · released as exosomes']},
+ {n:'Drifting in body fluids',
+  one:'After leaving the cell, EVs enter the interstitial space and some reach blood, lymph, urine, saliva, cerebrospinal fluid and other fluids. Healthy human plasma is estimated to hold about 10¹⁰ EVs/mL — while lipoprotein particles in the same volume outnumber them by six to seven orders of magnitude.',
+  f:['Exogenous EVs injected intravenously into mice are cleared very fast: in a systematic review, three studies found about 95% leave the circulation within 5 minutes, with distribution half-lives of 1.5–19.9 minutes (Kang 2021).',
+     'They go mainly to the mononuclear phagocyte system: most to the liver, then the spleen, gastrointestinal tract and lungs (Wiklander 2015); liver and spleen macrophages do most of the clearing (Imai 2015).'],
+  clin:'Association (drug delivery): most intravenously injected EVs are “intercepted” by the liver and spleen, so reaching other targets needs targeting modifications or a different route — both the source cell and the route change biodistribution (Wiklander 2015). Speculation: endogenous EVs in the blood may only “carry messages” over limited distances.',
+  sz:'Red blood cell about 7.5 µm across (for reference); EVs about 0.1 µm',
+  rg:'Blood vessel lumen',v:[['Plasma EVs','≈10¹⁰','per mL'],['Lipoproteins : EVs','10⁶–10⁷','×'],['Cleared within 5 min','≈95','% · mice'],['t½α']],
+  log:['EVs · entering the bloodstream','Plasma · mixed with lipoproteins','Kupffer cells · capturing EVs','Splenic macrophages · engulfing','5 min · most already gone from circulation']},
+ {n:'Uptake by recipient cells',
+  one:'At a recipient cell, EVs can get in by several routes: clathrin-mediated endocytosis, caveolae / lipid-raft pathways, macropinocytosis, phagocytosis, or direct fusion with the plasma membrane; they can also signal from outside through surface ligand–receptor binding, just “knocking on the door”.',
+  f:['An endocytosed EV must fuse with the endosomal membrane and let its cargo “escape” into the cytosol to have an effect; otherwise it is mostly sent to lysosomes for degradation (Mulcahy 2014).',
+     'Integrins on tumor EVs influence which organ’s cells take them up: α6β4 and α6β1 are linked to lung metastasis, αvβ5 to liver metastasis (Hoshino 2015).'],
+  clin:'Fact (animal models + patient samples): tumor-derived EVs can “prepare” distant organs in advance, forming a pre-metastatic niche (Peinado 2012; Hoshino 2015). Association: EV integrin profiles might help predict the organ of metastasis; speculation: blocking uptake could reduce metastasis — not yet clinically validated.',
+  sz:'A single EV about 0.1 µm; macropinosomes about 0.2–5 µm',
+  rg:'Recipient cell membrane',v:[['Main entry','Endocytosis',''],['Macropinosomes'],['Linked to lung metastasis'],['Linked to liver metastasis']],
+  log:['Integrins · binding the recipient cell','Clathrin · endocytosis','Macropinocytosis · membrane ruffles engulfing','Endosome · fusion and escape','miRNA · released into the cytosol']},
+ {n:'Differential ultracentrifugation',bk:'Method profile · differential UC',bu:'qualitative · illustrative',bl:LABL_EN,
+  one:'The classic protocol (Théry 2006): first remove cells and debris at low speed, then spin faster and faster, finally pelleting small EVs at 100,000×g — the smaller and lighter the particle, the harder you have to spin to bring it down.',
+  f:['Cell-culture supernatant: 300×g 10 min (remove cells) → 2,000×g 20 min (dead cells, large debris) → 10,000×g 30 min (large vesicles, organelle fragments) → 100,000×g ≥70 min, keep the pellet → resuspend in PBS and wash at 100,000×g for 1 h; all at 4 °C.',
+     'Many labs use a 2,000×g 10 min variant (the example in Livshits 2015’s theoretical analysis); rotor type (k-factor), run time and liquid column height all change yield and purity.'],
+  clin:'Fact: besides small EVs, a 100,000×g pellet also contains protein aggregates, lipoproteins and more; Théry 2006 itself calls for validation by electron microscopy and western blot. Association: before comparing “exosome doses” across papers, check whether the centrifugation settings are comparable.',
+  sz:'An ultracentrifuge tube is about 10 cm long; the final pellet is often invisible to the naked eye',
+  rg:'Lab bench · 4 °C',v:[['Remove cells'],['Remove debris'],['Remove large vesicles'],['Collect small EVs']],
+  log:['300×g · 10 min · discard pellet','2,000×g · 20 min · discard pellet','10,000×g · 30 min · discard pellet','100,000×g · 70 min · keep pellet','PBS wash · another 100,000×g for 1 h']},
+ {n:'Other separation methods: purity vs yield',bk:'Relative purity',bu:'qualitative · illustrative',bl:['Differential UC','Density gradient','SEC','Ultrafiltration','PEG precipitation','Immunoaffinity','Microfluidics','Combined methods'],
+  one:'No single method is pure, high-yield and fast all at once. MISEV2023 recommends choosing the method to fit the research question and reporting yield and specificity.',
+  f:['By density: density gradients (sucrose or iodixanol) give high purity but are slow and low-yield. By size: size-exclusion chromatography (SEC) removes free protein fairly well; ultrafiltration concentrates quickly but concentrates proteins too. By solubility: PEG precipitation gives high yield and low purity. By surface molecules: immunoaffinity (e.g. anti-CD63 / CD81 beads) is specific but captures only the marker-positive subpopulation. Microfluidics suits small samples but has limited throughput.',
+     'Combinations are common in practice, e.g. ultrafiltration + SEC, or differential centrifugation + a density gradient.'],
+  clin:'Association: liquid biopsy (which needs specificity and reproducibility) and therapeutic EV production (which needs scale and GMP) often call for different methods; Théry 2006 already noted that ultrafiltration suits large-volume, clinical-grade preparation.',
+  sz:'The scatter plot at upper left shows qualitative relative positions only, not measured values',
+  rg:'Lab bench',v:[['Density gradient','Purity ↑ yield ↓',''],['SEC','Removes free protein',''],['PEG precipitation','Yield ↑ purity ↓',''],['Immunoaffinity','Catches a subset only','']],
+  log:['Density gradient · iodixanol layers','SEC · EVs elute first, proteins later','Ultrafiltration · concentrating','Immunomagnetic beads · capturing the CD63⁺ subset','Combined · ultrafiltration + SEC']},
+ {n:'Characterization: proving you have EVs',bk:'Blot signal',bu:'positive vs negative · illustrative',
+  one:'MISEV2023 stresses “orthogonal” methods that corroborate each other: particle number and size (e.g. NTA), single-particle morphology (electron microscopy), and protein composition (positive markers plus negative / purity markers).',
+  f:['NTA tracks the Brownian motion of each particle to estimate size and count, but cannot tell EVs from lipoproteins and protein aggregates — in unseparated human plasma, over 98% of NTA-detected particles are VLDL (Jamaly 2018).',
+     'The “cup-shaped” vesicles often seen in negative-stain TEM are an artifact of dehydration during sample preparation; under cryo-EM, EVs are round (Théry 2006).',
+     'Western blot: positive markers such as CD63 / CD81 / CD9 (transmembrane) and TSG101 / ALIX (cytosolic); negative / purity controls such as calnexin (ER), plus apolipoproteins such as ApoA1 and ApoB for blood samples.'],
+  clin:'Fact: MISEV2023 does not mandate any single marker or ban any technique, but it does require you to report clearly what was done. Association: checking an EV manuscript against the MISEV2023 checklist (and the EV-TRACK platform) before submission heads off many reviewer comments.',
+  sz:'Field of view about 1 µm, scale bar 100 nm (EM illustration)',
+  rg:'EM / NTA / western blot',v:[['Positive · transmembrane'],['Positive · cytosolic'],['Negative control'],['VLDL among plasma NTA particles','>98','% · unseparated']],
+  log:['NTA · tracking Brownian motion','NTA · mode about 100 nm (illustrative)','TEM · cup shape (prep artifact)','WB · CD63⁺ CD81⁺ TSG101⁺','WB · calnexin negative']}
+];
+S.forEach((s, i) => { s.E = EN[i]; });
+const pair = (a, c) => a === c ? a : '<span class="t-zh" lang="zh-CN">' + a + '</span>' + (c ? '<span class="t-en" lang="en">' + c + '</span>' : '');
+const numCell = (z, e) => { e = e || []; const n = e[1] !== undefined ? e[1] : z[1], u = e[2] !== undefined ? e[2] : z[2];
+  return `<div><span class="lb">${pair(z[0], e[0] || z[0])}</span><b>${pair(z[1], n)}<small>${pair(z[2], u)}</small></b></div>`; };
+const ACTK = s => s.k === '第二幕' ? I('第二幕', 'Act II') : I('第一幕', 'Act I');
 const N = S.length, DWELL0 = 7000, DWELL = 6200, ZOOMT = 1500;
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = s => document.querySelector(s);
@@ -513,18 +618,18 @@ S.forEach((s, i) => {
     if (!s.k.includes('二')) {
       const h = document.createElement('button');
       h.className = 'hs' + (s.x > .7 || ['endosome', 'cargo'].includes(s.id) ? ' l' : ''); h.style.left = s.x * 100 + '%'; h.style.top = s.y * 100 + '%';
-      h.setAttribute('aria-label', '前往 ' + s.zh); h.innerHTML = '<span>' + s.zh.replace(/（.*）|：.*/, '') + '</span>';
+      h.setAttribute('aria-label', '前往 ' + s.zh + ' · Go to ' + s.en); h.innerHTML = '<span>' + I(s.zh.replace(/（.*）|：.*/, ''), s.en) + '</span>';
       h.onclick = () => show(i); $('#hsLayer').appendChild(h);
     }
   }
-  if (i === 0 || i === 8) { const d = document.createElement('div'); d.className = 'actk'; d.textContent = i ? '第二幕 · 实验室' : '第一幕 · 体内生命周期'; $('#stops').appendChild(d); }
+  if (i === 0 || i === 8) { const d = document.createElement('div'); d.className = 'actk'; d.innerHTML = i ? I('第二幕 · 实验室', 'Act II · In the lab') : I('第一幕 · 体内生命周期', 'Act I · Life cycle in the body'); $('#stops').appendChild(d); }
   const short = s.zh.replace(/（.*）|：.*/, '');
   const b = document.createElement('button'); b.style.setProperty('--c', s.c);
-  b.innerHTML = '<i></i>' + short + '<em>' + String(i + 1).padStart(2, '0') + '</em>'; b.onclick = () => show(i); $('#stops').appendChild(b);
-  const m = document.createElement('button'); m.style.setProperty('--c', s.c); m.textContent = short; m.onclick = () => show(i); $('#mchips').appendChild(m);
+  b.innerHTML = '<i></i><span>' + B(short, s.en) + '</span><em>' + String(i + 1).padStart(2, '0') + '</em>'; b.onclick = () => show(i); $('#stops').appendChild(b);
+  const m = document.createElement('button'); m.style.setProperty('--c', s.c); m.innerHTML = I(short, s.en); m.onclick = () => show(i); $('#mchips').appendChild(m);
 });
 const stopBtns = [...$('#stops').querySelectorAll('button')];
-$('#bars').innerHTML = ACT.map((a, i) => `<div class="r" style="--bc:${ACTC[i]}"><span>${a}</span><div class="t"><b></b></div><span class="v">0</span></div>`).join('');
+$('#bars').innerHTML = ACT.map((a, i) => `<div class="r" style="--bc:${ACTC[i]}"><span>${B(a, ACT_EN[i])}</span><div class="t"><b></b></div><span class="v">0</span></div>`).join('');
 const closeImgs = [...close.querySelectorAll('img')];
 
 // layout
@@ -532,10 +637,12 @@ let VW = 0, VH = 0, SQ = 0;
 function layout() {
   const r = view.getBoundingClientRect(); VW = r.width; VH = r.height;
   const wide = innerWidth > 820;
-  SQ = Math.max(120, Math.min(VW - (wide ? 390 : 12), VH - (wide ? 70 : 54)));
-  if (!wide) SQ = Math.min(VW - 8, VH - 72);
+  const sw = wide ? 190 : 0;                       // room for the station list on the right
+  SQ = Math.max(120, Math.min(VW - sw - 24, VH - 40));
+  if (!wide) SQ = Math.max(120, Math.min(VW - 8, VH - 72));
   stage.style.width = stage.style.height = SQ + 'px';
-  stage.style.marginTop = wide ? '-14px' : '6px';
+  stage.style.left = ((VW - sw) / 2) + 'px';
+  stage.style.marginTop = wide ? '0px' : '-8px';
   setCam(S[idx], true); sizeFx(); updScale(S[idx]);
 }
 function setCam(s, instant) {
@@ -551,7 +658,7 @@ const lenTxt = um => um >= 10000 ? (um / 10000) + ' cm' : um >= 1000 ? (um / 100
 function updScale(s) {
   const px = s.bar / s.fov * (s.z > 1 ? VW : SQ);
   $('#scaleB').style.width = Math.max(14, Math.min(VW * .4, px)) + 'px';
-  $('#scaleT').textContent = lenTxt(s.bar) + ' · 示意';
+  $('#scaleT').innerHTML = lenTxt(s.bar) + ' · ' + I('示意', 'illustrative');
 }
 const fmt = n => Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 function tweenMag(to) {
@@ -566,20 +673,21 @@ function tweenMag(to) {
 let logLines = [];
 function hud(s, i) {
   document.documentElement.style.setProperty('--tint', s.c);
-  if (s.lab) { magNow = 1; $('#mag').textContent = '实验台'; } else tweenMag(90000 / s.fov);
-  $('#fov').textContent = '视野 ' + lenTxt(s.fov) + ' · ' + (i + 1) + '/' + N;
+  if (s.lab) { magNow = 1; $('#mag').textContent = XS.pick('实验台', 'Bench', '实验台 Bench'); } else tweenMag(90000 / s.fov);
+  $('#fov').innerHTML = I('视野', 'FOV') + ' ' + lenTxt(s.fov) + ' · ' + (i + 1) + '/' + N;
   $('#locN').textContent = (i + 1) + '/' + N; $('#focusIdx').textContent = String(i + 1).padStart(2, '0') + ' / ' + String(N).padStart(2, '0');
-  $('#chipK').textContent = s.k + (s.lab ? ' · LAB' : s.hud ? ' · TEM' : i ? ' · CLOSE-UP' : ' · OVERVIEW'); $('#chipN').textContent = s.zh.replace(/（.*）|：.*/, '') + ' ' + s.en;
+  $('#chipK').innerHTML = ACTK(s) + (s.lab ? ' · LAB' : s.hud ? ' · TEM' : i ? ' · CLOSE-UP' : ' · OVERVIEW'); $('#chipN').innerHTML = I(s.zh.replace(/（.*）|：.*/, ''), s.en);
   const fb = $('#focusBody'), vt = $('#vit'); fb.classList.add('out'); vt.classList.add('out');
   setTimeout(() => {
-    fb.innerHTML = `<div class="nm"><h2>${s.zh}</h2><small>${s.en}</small></div><p class="one">${s.one}</p><ul>${s.f.map(x => '<li>' + x + '</li>').join('')}</ul><div class="clin"><b>科研 / 临床联系</b>${s.clin}</div><div class="sz">${s.sz}</div>`;
+    const E = s.E;
+    fb.innerHTML = `<div class="nm"><h2>${B(s.zh, E.n)}</h2><small class="zo">${s.en}</small></div><p class="one">${B(s.one, E.one)}</p><ul>${s.f.map((x, k) => '<li>' + B(x, E.f[k]) + '</li>').join('')}</ul><div class="clin"><b>${I('科研 / 临床联系', 'Research / clinical link')}</b>${B(s.clin, E.clin)}</div><div class="sz">${B(s.sz, E.sz)}</div>`;
     fb.parentNode.scrollTop = 0;
-    vt.innerHTML = `<div class="rg">区域：${s.rg}</div>` + s.v.map(([l, n, u]) => `<div><span class="lb">${l}</span><b>${n}<small>${u}</small></b></div>`).join('');
+    vt.innerHTML = `<div class="rg">${I('区域', 'Region')}：${B(zhOnly(s.rg), E.rg)}</div>` + s.v.map((z, k) => numCell(z, E.v[k])).join('');
     fb.classList.remove('out'); vt.classList.remove('out');
   }, RM ? 0 : 320);
-  const labels = s.bl || ACT;
-  $('#barK').textContent = s.bk || '通路活跃度'; $('#barU').textContent = s.bu || '相对 · 示意';
-  [...$('#bars').children].forEach((r, k) => { r.querySelector('span').textContent = labels[k]; r.querySelector('b').style.width = s.act[k] + '%'; r.querySelector('.v').textContent = s.act[k]; r.classList.toggle('hi', k === s.hi); });
+  const labels = s.bl || ACT, labelsE = s.E.bl || (s.bl ? s.bl : ACT_EN);
+  $('#barK').innerHTML = I(s.bk || '通路活跃度', s.E.bk || 'Pathway activity'); $('#barU').innerHTML = I(s.bu || '相对 · 示意', s.E.bu || 'relative · illustrative');
+  [...$('#bars').children].forEach((r, k) => { r.querySelector('span').innerHTML = B(labels[k], labelsE[k]); r.querySelector('b').style.width = s.act[k] + '%'; r.querySelector('.v').textContent = s.act[k]; r.classList.toggle('hi', k === s.hi); });
   stopBtns.forEach((b, k) => b.classList.toggle('on', k === i));
   const cs = stopBtns[i]; if (cs && innerWidth > 820) { const nv = $('#stops'); if (cs.offsetTop < nv.scrollTop || cs.offsetTop > nv.scrollTop + nv.clientHeight - 30) nv.scrollTo({top: cs.offsetTop - 40, behavior: RM ? 'auto' : 'smooth'}); }
   const mc = [...$('#mchips').children]; mc.forEach((b, k) => b.classList.toggle('on', k === i));
@@ -588,16 +696,16 @@ function hud(s, i) {
   const act2 = i >= 8;
   view.classList.toggle('lab', act2);
   $('#hudSed').classList.toggle('on', s.hud === 'sed'); $('#hudSc').classList.toggle('on', s.hud === 'sc'); $('#hudNta').classList.toggle('on', s.hud === 'nta');
-  $('#lcK').textContent = act2 ? (s.hud === 'sed' ? '离心进度 · 示意（时间已压缩）' : 'NTA 粒径分布 · 示意') : 'EV 生命周期 · 示意（时间已压缩）';
+  $('#lcK').innerHTML = act2 ? (s.hud === 'sed' ? I('离心进度 · 示意（时间已压缩）', 'Centrifugation progress · illustrative (time compressed)') : I('NTA 粒径分布 · 示意', 'NTA size distribution · illustrative')) : I('EV 生命周期 · 示意（时间已压缩）', 'EV life cycle · illustrative (time compressed)');
   if (s.hud === 'sc') drawScatter();
-  logLines = s.log.slice(); pushLog(); pushLog();
+  logLines = s.log.map((z, k) => [z, s.E.log[k]]); pushLog(); pushLog();
 }
 let tick = 0;
 function pushLog(txt) {
   let l = txt;
   if (!l) { if (!logLines.length) return; l = logLines.shift(); logLines.push(l); }
   const ts = new Date().toTimeString().slice(0, 8);
-  const el = document.createElement('div'); el.innerHTML = `<em>${ts}</em> <b>›</b> ${l}`;
+  const el = document.createElement('div'); el.innerHTML = `<em>${ts}</em> <b>›</b> ${B(l[0], l[1])}`;
   const lg = $('#log'); lg.appendChild(el); while (lg.children.length > 9) lg.firstChild.remove();
 }
 
@@ -621,8 +729,8 @@ function schedule(ms) { clearTimeout(timer); if (playing) timer = setTimeout(() 
 let started = false;
 function setPlay(p) {
   playing = p; app.classList.toggle('paused', !p);
-  $('#ppB').textContent = p ? '❚❚' : '▶'; $('#ppB').setAttribute('aria-label', p ? '暂停 (空格)' : '播放 (空格)');
-  $('#liveT').textContent = p ? 'LIVE · 自动漫游' : '已暂停 · PAUSED';
+  $('#ppB').textContent = p ? '❚❚' : '▶'; $('#ppB').setAttribute('aria-label', p ? '暂停 Pause (Space)' : '播放 Play (Space)');
+  $('#liveT').innerHTML = p ? 'LIVE · ' + I('自动漫游', 'auto tour') : I('已暂停', 'Paused');
   if (!started) return;
   if (p) { t0 = performance.now() - dur + 1400; schedule(1400); }
   else { clearTimeout(timer); if (idx) closeImgs[idx - 1].classList.add('on'); }
@@ -721,7 +829,7 @@ function lifecycle(sp, t) {
     x.fillStyle = '#8ff3ff'; x.beginPath(); x.arc(px, py, r * .12, 0, 6.283); x.fill();
   }
   const rel = fus > .25 ? nIlv : 0;
-  return rel ? '释放 ' + rel + ' 个' : (t > 3000 ? '运往质膜' : 'ILV ×' + nIlv);
+  return rel ? XS.pick('释放 ' + rel + ' 个', rel + ' released', '释放 ' + rel + ' released') : (t > 3000 ? XS.pick('运往质膜', 'to membrane', '运往质膜 to PM') : 'ILV ×' + nIlv);
 }
 // NTA-like histogram (illustrative log-normal, mode ≈100 nm)
 const NB = 40, NMAX = 400; let ntaH = new Array(NB).fill(0), ntaCount = 0;
@@ -742,11 +850,11 @@ function drawHist(ctx, w, h, axis) {
     [0, 100, 200, 300, 400].forEach(v => { const px = pl + v / NMAX * (w - pl * 2); ctx.fillText(v + (v === 400 ? ' nm' : ''), Math.min(w - 88, Math.max(0, px - 8)), h - 4); });
     const x2 = pl + 200 / NMAX * (w - pl * 2);
     ctx.setLineDash([4, 4]); ctx.strokeStyle = 'rgba(255,181,71,.7)'; ctx.beginPath(); ctx.moveTo(x2, 6); ctx.lineTo(x2, h - pb); ctx.stroke(); ctx.setLineDash([]);
-    ctx.fillStyle = 'rgba(255,181,71,.95)'; ctx.font = '600 22px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif'; ctx.fillText('← 200 nm：small EV 常用界线', x2 + 8, 26); ctx.textAlign = 'left';
+    ctx.fillStyle = 'rgba(255,181,71,.95)'; ctx.font = '600 22px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif'; ctx.fillText(XS.pick('← 200 nm：small EV 常用界线', '← 200 nm: common small-EV cutoff', '← 200 nm：small EV 界线 cutoff'), x2 + 8, 26, w - x2 - 14); ctx.textAlign = 'left';
   }
 }
 // sedimentation HUD (Théry 2006 steps, illustrative)
-const SED = [['300×g', '10 min', '细胞', 5.2], ['2,000×g', '20 min', '死细胞 / 碎片', 3.8], ['10,000×g', '30 min', '大囊泡', 2.6], ['100,000×g', '≥70 min', '小 EV ✓', 1.5]];
+const SED = [['300×g', '10 min', '细胞', 5.2, 'cells'], ['2,000×g', '20 min', '死细胞 / 碎片', 3.8, 'dead cells / debris'], ['10,000×g', '30 min', '大囊泡', 2.6, 'large vesicles'], ['100,000×g', '≥70 min', '小 EV ✓', 1.5, 'small EVs ✓']];
 const sedP = Array.from({length: 70}, (_, i) => ({c: i % 4, x: Math.random(), y: Math.random()}));
 const sedC = $('#sedC'), sx2 = sedC.getContext('2d');
 function drawSed(p) {
@@ -769,12 +877,12 @@ function drawSed(p) {
   sx2.globalAlpha = 1;
   // steps
   const lx = 130; sx2.font = '600 25px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
-  SED.forEach(([g, t, what], i) => {
+  SED.forEach(([g, t, what, , whatE], i) => {
     const y = 22 + i * 68, done = i < st, on = i === st;
     sx2.fillStyle = on ? '#fff' : done ? 'rgba(232,238,252,.55)' : 'rgba(232,238,252,.35)';
     sx2.fillText(g + ' · ' + t, lx, y + 6);
     sx2.font = '500 23px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif'; sx2.fillStyle = i === 3 ? '#7dffb2' : 'rgba(232,238,252,.6)';
-    sx2.fillText((i === 3 ? '留沉淀：' : '弃沉淀：') + what, lx, y + 33);
+    sx2.fillText(i === 3 ? XS.pick('留沉淀：' + what, 'Keep pellet: ' + whatE, '留沉淀：' + what + ' · keep') : XS.pick('弃沉淀：' + what, 'Discard pellet: ' + whatE, '弃沉淀：' + what + ' · discard'), lx, y + 33, w - lx - 10);
     sx2.font = '600 25px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
     sx2.fillStyle = 'rgba(255,255,255,.1)'; sx2.fillRect(lx, y + 42, w - lx - 10, 7);
     sx2.fillStyle = cols[i]; sx2.fillRect(lx, y + 42, (w - lx - 10) * (done ? 1 : on ? cl(sp) : 0), 7);
@@ -792,12 +900,13 @@ function drawSedBar(sp, p) { // top-panel compact progress
   }
 }
 // scatter HUD (qualitative)
-const SC = [['差速离心', 120, 115, '#a46bff'], ['密度梯度', 70, 40, '#5ee7ff'], ['SEC', 150, 74, '#38e0c6'], ['超滤', 200, 128, '#ffb547'], ['PEG 沉淀', 185, 162, '#ff7a45'], ['免疫亲和', 55, 70, '#ff5d9e'], ['微流控', 95, 92, '#9dff5c'], ['超滤 + SEC', 160, 50, '#ffd23f']];
+const SC = [['差速离心', 120, 115, '#a46bff', 'dUC'], ['密度梯度', 70, 40, '#5ee7ff', 'Density gradient'], ['SEC', 150, 74, '#38e0c6', 'SEC'], ['超滤', 200, 128, '#ffb547', 'UF'], ['PEG 沉淀', 185, 162, '#ff7a45', 'PEG'], ['免疫亲和', 55, 70, '#ff5d9e', 'Immunoaffinity'], ['微流控', 95, 92, '#9dff5c', 'Microfluidics'], ['超滤 + SEC', 160, 50, '#ffd23f', 'UF + SEC']];
 function drawScatter() {
   const s = $('#scSvg');
   s.innerHTML = '<line x1="30" y1="182" x2="292" y2="182" stroke="rgba(232,238,252,.5)"/><line x1="30" y1="182" x2="30" y2="8" stroke="rgba(232,238,252,.5)"/>' +
-    '<text x="290" y="197" fill="#b9c5e3" font-size="12" text-anchor="end">得率 / 回收 →</text><text x="12" y="12" fill="#b9c5e3" font-size="12" transform="rotate(-90 12 12)" text-anchor="end">纯度 / 特异性 →</text>' +
-    SC.map(([n, xx, yy, c], i) => `<g style="opacity:0;animation:scIn .5s ${RM ? 0 : .2 + i * .25}s forwards"><circle cx="${xx + 10}" cy="${yy}" r="6" fill="${c}"/><text x="${xx + 19}" y="${yy + 4}" fill="#e8eefc" font-size="12.5" font-weight="600">${n}</text></g>`).join('') +
+    `<text x="290" y="197" fill="#b9c5e3" font-size="12" text-anchor="end">${XS.pick('得率 / 回收 →', 'Yield / recovery →', '得率 Yield →')}</text><text x="12" y="12" fill="#b9c5e3" font-size="12" transform="rotate(-90 12 12)" text-anchor="end">${XS.pick('纯度 / 特异性 →', 'Purity / specificity →', '纯度 Purity →')}</text>` +
+    SC.map(([n, xx, yy, c, ne], i) => { const L = XS.lang(), lab = L === 'en' ? ne : n, sub = L === 'both' && ne !== n ? `<tspan x="${xx + 19}" dy="11" font-size="9.5" font-weight="500" fill="#aab6d4">${ne}</tspan>` : '';
+      return `<g style="opacity:0;animation:scIn .5s ${RM ? 0 : .2 + i * .25}s forwards"><circle cx="${xx + 10}" cy="${yy}" r="6" fill="${c}"/><text x="${xx + 19}" y="${yy + 4}" fill="#e8eefc" font-size="12.5" font-weight="600">${lab}${sub}</text></g>`; }).join('') +
     '<style>@keyframes scIn{to{opacity:1}}</style>';
 }
 const ntaC = $('#ntaC'), nx2 = ntaC.getContext('2d');
@@ -812,10 +921,10 @@ function frame(now) {
       if (!sp.c.offsetParent) return;
       if (!act2) sp.n.textContent = lifecycle(sp, (now % CYC));
       else if (s.hud === 'sed') { const p = cl(et / 5200); drawSedBar(sp, p); sp.n.textContent = SED[Math.min(3, Math.floor(p * 4))][0]; }
-      else { drawHist(sp.x, sp.c.width, sp.c.height, false); sp.n.textContent = '众数≈100 nm'; }
+      else { drawHist(sp.x, sp.c.width, sp.c.height, false); sp.n.textContent = XS.pick('众数≈100 nm', 'mode ≈100 nm', '众数 mode ≈100 nm'); }
     });
     if (s.hud === 'sed' && $('#hudSed').offsetParent) $('#sedG').textContent = drawSed(cl(et / 5200));
-    if (s.hud === 'nta' && $('#hudNta').offsetParent) { drawHist(nx2, ntaC.width, ntaC.height, true); $('#ntaN').textContent = ntaCount + ' 颗粒'; }
+    if (s.hud === 'nta' && $('#hudNta').offsetParent) { drawHist(nx2, ntaC.width, ntaC.height, true); $('#ntaN').textContent = ntaCount + XS.pick(' 颗粒', ' particles', ' 颗粒 particles'); }
   }
   if (!RM && !act2) heroAnim(now);
   if (++tick % 150 === 0 && playing) pushLog();
@@ -866,6 +975,7 @@ function fxLoop() {
 document.addEventListener('visibilitychange', () => { if (document.hidden) clearTimeout(timer); else if (playing) schedule(1500); });
 
 addEventListener('resize', () => { layout(); mkDots(); });
+XS.onLang(() => { const s = S[idx]; if (s.lab) $('#mag').textContent = XS.pick('实验台', 'Bench', '实验台 Bench'); if (s.hud === 'sc') drawScatter(); });
 layout(); mkDots(); setPlay(playing); started = true;
 show(0, true);
 requestAnimationFrame(frame); fxLoop();

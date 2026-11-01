@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="assets/videosv1.0.css?v=1.0">
 <link rel="stylesheet" href="assets/shelfv1.0.css?v=1.1">
 <link rel="stylesheet" href="assets/lessons-catalogv1.0.css?v=1.3">
+<link rel="stylesheet" href="assets/micro-hallv1.0.css?v=1.0">
 <style>.brand .aiai-mark{height:38px;width:auto;display:block}.w-brand .aiai-mark{height:34px;width:auto;display:block}.w-brand .aiai-sub{display:flex;flex-direction:column;line-height:1.2;font-size:.92rem}.w-brand .aiai-sub small,.brand small{display:block;font-size:.6rem;letter-spacing:.2em;font-weight:500;opacity:.7}</style>
 </head>
 <body>
@@ -75,6 +76,7 @@
     <a href="#games">游戏馆</a>
     <a href="#videos">放映厅</a>
     <a href="#lessons">课件馆</a>
+    <a href="#micro">微观馆</a>
     <a href="#camp">训练营</a>
     <a href="#frontier">前沿观察</a>
     <details class="nav-more"><summary>更多</summary><div class="menu">
@@ -258,6 +260,7 @@
     <p class="lc-kick">LESSONS / 课件馆</p>
     <h2 class="lc-h">把 AI 用对，<em>把过程讲清。</em></h2>
     <p class="lc-lede">围绕医院、实验室和家里的具体问题，用投屏课件、实战案例和可复制提示词，把每一步讲清楚、练得会。面向医生、护士、科研人员、年轻父母和社会工作者。</p>
+    <a class="mh-jump" href="#micro"><i>●</i>细胞与分子漫游已单独成馆：微观馆 Cells &amp; Molecules →</a>
     <hr class="lc-rule">
     <h3 class="lc-find">找到想学的课件主题</h3>
     <div class="lc-chips" role="group" aria-label="课件主题"></div>
@@ -267,8 +270,21 @@
   </div>
 </section>
 
+<section id="micro" class="section micro">
+  <div class="mh-top">
+    <div>
+      <p class="eyebrow"><span class="jn">09</span><span class="ek">MICRO HALL · CELLS &amp; MOLECULES</span></p>
+      <h2>微观馆 · <em>Cells &amp; Molecules</em></h2>
+      <p class="sub">生物医学 · 细胞与分子。把显微镜下的世界做成可以自动漫游的大画面：图像占满屏幕，讲解按需打开，中英对照，适合投屏上课，也适合孩子自己点着看。<span class="en" lang="en">Biomedicine · cells and molecules — full-screen guided tours with explanations on demand, in Chinese and English.</span></p>
+    </div>
+    <ul class="stats" id="microStats" aria-label="微观馆数据"></ul>
+  </div>
+  <div class="mh-grid" id="microGrid"></div>
+  <noscript><p><a href="lessons/cell-explorerv1.0.html">动物细胞漫游</a> · <a href="lessons/neuron-explorerv1.0.html">神经元漫游</a> · <a href="lessons/exosome-explorerv1.0.html">外泌体与细胞外囊泡漫游</a></p></noscript>
+</section>
+
 <section id="camp" class="section camp">
-  <p class="eyebrow"><span class="jn">09</span><span class="ek">TRAINING CAMP</span></p>
+  <p class="eyebrow"><span class="jn">10</span><span class="ek">TRAINING CAMP</span></p>
   <p class="lc-kick">TRAINING CAMP / 训练营</p>
   <h2 class="lc-h">一堂一个招式，<em>练完就能上场。</em></h2>
   <p class="lc-lede">丁医生原创的 <span data-n="camp">22</span> 堂 AI 战术课：每堂配一个球场比喻、一个急诊或科研里的真实场景、一道课堂练习。10 到 45 分钟一堂，按顺序练，也可以挑着练。</p>
@@ -289,7 +305,7 @@
 </div>
 
 <section id="frontier" class="section">
-  <p class="eyebrow"><span class="jn">10</span><span class="ek">FRONTIER WATCH</span></p>
+  <p class="eyebrow"><span class="jn">11</span><span class="ek">FRONTIER WATCH</span></p>
   <p class="lc-kick">FRONTIER WATCH / 前沿观察</p>
   <h2 class="lc-h">看见新东西，<em>先分清证据再兴奋。</em></h2>
   <p class="lc-lede">医学和 AI 交叉处的新研究、新产品、新演示。每篇都讲清它做了什么、对医生意味着什么、还缺哪些证据，并标出证据等级。</p>
@@ -302,7 +318,7 @@
 </section>
 
 <section id="library" class="section">
-  <p class="eyebrow"><span class="jn">11</span><span class="ek">FILM ROOM</span></p>
+  <p class="eyebrow"><span class="jn">12</span><span class="ek">FILM ROOM</span></p>
   <h2>延伸学习 · 录像室</h2>
   <p class="sub" id="libCredit"></p>
   <div class="filters" role="toolbar" aria-label="按主题筛选课程" id="libFilters"></div>
@@ -312,7 +328,7 @@
 <section id="safety" class="section safety">
   <div class="sec-art">
   <div>
-  <p class="eyebrow"><span class="jn">12</span><span class="ek">SAFETY</span></p>
+  <p class="eyebrow"><span class="jn">13</span><span class="ek">SAFETY</span></p>
   <h2>AI 可以跑路线，<em>判断留给人。</em></h2>
   <div class="rules">
     <article><span>01</span><h3>患者隐私停在门外</h3><p>任何真实病历、影像、身份信息都不进入公共 AI。公开仓库只放代码与模拟数据。</p></article>
@@ -326,14 +342,14 @@
 </section>
 
 <section id="toolbox" class="section">
-  <p class="eyebrow"><span class="jn">13</span><span class="ek">TOOLBOX</span></p>
+  <p class="eyebrow"><span class="jn">14</span><span class="ek">TOOLBOX</span></p>
   <h2>开源工具箱</h2>
   <p class="sub">我收藏并在用的他人开源项目（fork），课上作为“装备库”介绍，和我自己的作品分开。</p>
   <div class="tools" id="tools"></div>
 </section>
 
 <section id="mystudy" class="section">
-  <p class="eyebrow"><span class="jn">14</span><span class="ek">MY STUDY</span></p>
+  <p class="eyebrow"><span class="jn">15</span><span class="ek">MY STUDY</span></p>
   <h2>我的学习 · 英语</h2>
   <p class="sub">教练自己也在练：正在备考雅思，随时点开接着学。</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:16px;margin-top:18px">
@@ -362,7 +378,7 @@
   <div class="sec-art">
   <figure class="rv"><img src="assets/home/home-coachv1.0.webp?v=3.1" alt="吉祥物团子教练站在球场边挥手" loading="lazy" width="1000" height="750"></figure>
   <div>
-    <p class="eyebrow"><span class="jn">15</span><span class="ek">COACH</span></p>
+    <p class="eyebrow"><span class="jn">16</span><span class="ek">COACH</span></p>
     <h2>丁海祥 · Haixiang Ding, MD</h2>
     <p>急诊创伤外科主治医师，苏州大学临床医学博士在读。研究方向：放射性骨骼肌损伤、骨质疏松。把临床问题、教学经验和开源实践放在同一张战术板上，帮助医护人员从“想学 AI”走到“能用、用对”。</p>
     <div class="cta">
@@ -389,6 +405,7 @@
 <script src="assets/hlsv1.5.17.min.js" defer></script>
 <script src="assets/videosv1.0.js?v=1.0" defer></script>
 <script src="assets/lessons-catalogv1.0.js?v=1.3" defer></script>
+<script src="assets/micro-hallv1.0.js?v=1.0" defer></script>
 <script src="assets/frontierv1.0.js?v=1.2" defer></script>
 <script src="assets/shelfv1.0.js?v=1.3" defer></script>
 <script>document.addEventListener("click",e=>{const d=document.querySelector(".nav-more[open]");if(d&&(!d.contains(e.target)||e.target.closest(".menu a")))d.removeAttribute("open")});</script>
