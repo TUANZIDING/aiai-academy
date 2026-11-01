@@ -32,3 +32,4 @@
 .lc-more:hover{background:#1d4a42;color:#fff}
 @media (max-width:980px){.lc-list{grid-template-columns:1fr}}
 @media (max-width:520px){.lc-card{grid-template-columns:40% 1fr;min-height:0}.lc-thumb{padding:10px}.lc-body{padding:14px 14px 12px}.lc-body h3{font-size:1.12rem}.lc-desc{font-size:.9rem}.lc-kind,.lc-date{font-size:.78rem}}
+.lc-more[hidden]{display:none}
