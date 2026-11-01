@@ -249,14 +249,16 @@
 
   /* ---------------- interactions ---------------- */
   function toast(msg) { const t = $('#vxToast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove('on'), 1800); }
-  async function copy(txt, btn) {
+  function copy(txt, btn) {
+    // feedback first (some browsers never resolve clipboard promises), then copy
+    const o = btn ? btn.textContent : '';
+    if (btn) { btn.textContent = '✓ 已复制'; btn.classList.add('done'); setTimeout(() => { btn.textContent = o; btn.classList.remove('done'); }, 1600); }
+    toast('已复制 Copied');
     let ok = false;
-    try { await navigator.clipboard.writeText(txt); ok = true; } catch (e) {
-      const ta = document.createElement('textarea'); ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
-      try { ok = document.execCommand('copy'); } catch (e2) { } ta.remove();
-    }
-    toast(ok ? '已复制 Copied' : '复制失败，请手动选择');
-    if (btn && ok) { const o = btn.textContent; btn.textContent = '✓ 已复制'; setTimeout(() => btn.textContent = o, 1500); }
+    const ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.top = '0'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
+    try { ok = document.execCommand('copy'); } catch (e) { } ta.remove();
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).catch(() => { if (!ok) { toast('复制失败，请手动选择文字'); if (btn) btn.textContent = o; } });
+    else if (!ok) { toast('复制失败，请手动选择文字'); if (btn) btn.textContent = o; }
   }
   const sentById = id => SENT.find(s => s.id === id);
   const segById = id => D.segments.find(g => g.id === id);

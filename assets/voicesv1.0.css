@@ -109,6 +109,7 @@ html[data-vl="en"] .l-zh{display:none!important}
 .vx-grp>span{color:var(--vx-faint);font-size:.74rem;letter-spacing:.08em;margin-right:4px}
 .vx-chip{border:1px solid var(--vx-line2);background:#fff;border-radius:999px;padding:5px 11px;cursor:pointer;font-size:.8rem;line-height:1.2;color:var(--vx-ink2)}
 .vx-chip[aria-pressed="true"]{background:var(--vx-ink);border-color:var(--vx-ink);color:#fff}
+.vx-chip.done{background:var(--vx-okbg);border-color:var(--vx-ok);color:var(--vx-ok)}
 .vx-chip:disabled{opacity:.45;cursor:not-allowed}
 .vx-now{margin-top:12px;font-size:.8rem;color:var(--vx-muted);min-height:1.4em}
 .vx-shadow{display:none;margin-top:12px;padding:12px 14px;border-radius:10px;background:var(--vx-hl);border:1px solid #f1d2bd;font-size:.88rem}
