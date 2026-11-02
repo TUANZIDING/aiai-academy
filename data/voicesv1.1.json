@@ -121,23 +121,65 @@
         "English",
         "Philosophy"
       ]
-    }
-  ],
-  "also": [
+    },
     {
-      "kind": "news",
-      "label": "新闻课 · 第 1 期",
-      "title": "智能体 AI 读病历，找免疫治疗副作用",
-      "source": "Nature Cancer",
-      "href": "news/news-001v1.0.html",
-      "thumb": "assets/news/news-001-thumbv1.0.webp",
-      "thumbNote": "AI 生成插图",
-      "meta": "6 章 · 中英双语",
+      "no": "AI VOICES 005",
+      "num": 5,
+      "speaker": "Jensen Huang",
+      "speakerZh": "黄仁勋",
+      "title": "View From The Top: Jensen Huang",
+      "question": {
+        "zh": "第一性原理，怎样变成每天能用的判断方法？",
+        "en": "How can first-principles thinking improve everyday decisions?"
+      },
+      "href": "voices/voices-005v1.1.html",
+      "data": "data/voices/voices-005v1.1.json",
+      "thumb": "https://i.ytimg.com/vi/lXLBTBBil2U/hqdefault.jpg",
+      "status": "published",
+      "verifiedAt": "2026-11-02",
+      "minutes": {
+        "zh": "约 25 分钟",
+        "note": "三段原声与同步双语释义"
+      },
+      "level": {
+        "zh": "入门至进阶",
+        "en": "Beginner to intermediate"
+      },
       "dims": [
         "AI",
         "English",
-        "Evidence"
+        "Philosophy"
+      ]
+    },
+    {
+      "no": "AI VOICES 006",
+      "num": 6,
+      "speaker": "Jensen Huang",
+      "speakerZh": "黄仁勋",
+      "title": "Caltech 2024 Commencement Address",
+      "question": {
+        "zh": "长期投入，怎样兼顾信念、转向与生活？",
+        "en": "How can long-term work balance conviction, adaptation and life?"
+      },
+      "href": "voices/voices-006v1.1.html",
+      "data": "data/voices/voices-006v1.1.json",
+      "thumb": "https://i.ytimg.com/vi/Sc48ToLIQAY/hqdefault.jpg",
+      "status": "published",
+      "verifiedAt": "2026-11-02",
+      "minutes": {
+        "zh": "约 25 分钟",
+        "note": "三段原声与同步双语释义"
+      },
+      "level": {
+        "zh": "入门至进阶",
+        "en": "Beginner to intermediate"
+      },
+      "dims": [
+        "AI",
+        "English",
+        "Philosophy"
       ]
     }
-  ]
+  ],
+  "also": []
 }

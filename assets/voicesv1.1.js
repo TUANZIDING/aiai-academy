@@ -14,7 +14,7 @@
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } }
   };
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const fmt = t => { t = Math.max(0, Math.floor(t)); return Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0'); };
+  const fmt = t => { t = Math.max(0, Math.floor(t)); return (t >= 3600 ? Math.floor(t / 3600) + ':' + String(Math.floor(t / 60) % 60).padStart(2, '0') : Math.floor(t / 60)) + ':' + String(t % 60).padStart(2, '0'); };
   const $ = (s, el) => (el || document).querySelector(s);
   const $$ = (s, el) => Array.from((el || document).querySelectorAll(s));
   const pair = (o, tag, cls) => { tag = tag || 'p'; cls = cls || ''; let h = ''; if (o.en) h += `<${tag} class="l-en ${cls}" lang="en">${esc(o.en)}</${tag}>`; if (o.zh) h += `<${tag} class="l-zh ${cls}" lang="zh-CN">${esc(o.zh)}</${tag}>`; return h; };
@@ -127,10 +127,10 @@
         <div class="vx-ctl" role="toolbar" aria-label="播放控制 Player controls">
           <span class="vx-grp"><span>片段</span>${D.segments.map(g => `<button type="button" class="vx-chip" data-seg="${g.id}">${g.id}</button>`).join('')}</span>
           <span class="vx-grp" role="group" aria-label="速度 Speed"><span>速度</span>${[0.75, 1, 1.25].map(r => `<button type="button" class="vx-chip" data-rate="${r}" aria-pressed="${r === 1}">${r}×</button>`).join('')}</span>
-          <button type="button" class="vx-chip" id="vxLoop" aria-pressed="false">${guide ? '⟲ 循环本段' : '⟲ 循环本句'}</button>
+          <button type="button" class="vx-chip" id="vxLoop" aria-pressed="false">${D.syncedParaphrase ? '⟲ 循环这条释义' : guide ? '⟲ 循环本段' : '⟲ 循环本句'}</button>
           <button type="button" class="vx-chip" id="vxFull">⛶ 全屏</button>
         </div>
-        <p class="vx-cap"><b>${esc(D.speaker.name)}</b> ${esc(D.speaker.role.zh)} · 视频由 ${esc(V.channel)} 官方上传；${guide ? '旁侧内容为 aiai 学院原创导读。' : '中文为 aiai 学院译文。'}<span class="vx-now" id="vxNow" aria-live="polite"></span></p>
+        <p class="vx-cap"><b>${esc(D.speaker.name)}</b> ${esc(D.speaker.role.zh)} · 视频由 ${esc(V.channel)} ${V.official === false ? '上传（非官方频道）' : '官方上传'}；${guide ? '旁侧内容为 aiai 学院原创导读。' : '中文为 aiai 学院译文。'}<span class="vx-now" id="vxNow" aria-live="polite"></span></p>
         <div class="vx-shadow" id="vxShadow" role="status"><span>${guide ? '复述任务：' : '跟读：'}<b id="vxShadowText"></b></span><button type="button" class="vx-chip" id="vxShadowGo">继续 ▶</button></div>
         <div class="vx-fallback" id="vxFallback" role="alert">
           <strong>视频播放器没有加载出来。</strong> 在中国大陆通常无法访问 YouTube。右边（手机上是下面）的文稿可以独立学习；每一句都附有“在 YouTube 打开（从此处）”链接。<br><a href="${esc(V.url)}" target="_blank" rel="noopener">在 YouTube 打开完整视频 ↗</a> · <button type="button" class="vx-chip" id="vxRetry">重试</button>
@@ -138,7 +138,7 @@
       </div>
       <div class="vx-tx-col" id="vxTxCol">
         <div class="vx-tx-head">
-          <h3>${guide ? '原创双语导读' : '双语文稿'}</h3>
+          <h3>${D.syncedParaphrase ? '同步双语释义' : guide ? '原创双语导读' : '双语文稿'}</h3>
           <div class="vx-lang" role="radiogroup" aria-label="文稿语言 Transcript language">
             <button type="button" role="radio" data-l="bi" aria-checked="false">中英双语</button><button type="button" role="radio" data-l="zh" aria-checked="false">只看中文</button><button type="button" role="radio" data-l="en" aria-checked="false">只看英文</button>
           </div>
@@ -415,7 +415,7 @@
 
     // expressions copy / save
     const saved = new Set(store.get(LS.saved, []));
-    const exTxt = e => `${e.phrase}\n“${e.snippet}” — ${D.speaker.name}, ${D.talk.title} (${e.at.label})\n${e.zh}\n${e.example.en}\n${e.example.zh}`;
+    const exTxt = e => `${e.phrase}\n${D.learningMode === 'guide' ? '课程原创练习 · 非讲者引文' : '“' + e.snippet + '” — ' + D.speaker.name}\n${D.talk.title} (${e.at.label})\n${e.zh}\n${e.example.en}\n${e.example.zh}`;
     const upd = () => { $('#vxSavedN').textContent = saved.size ? `已收藏 ${saved.size} 个表达（保存在本机）` : '还没有收藏。点 ☆ 收藏想记住的表达。'; $('#vxCopySaved').disabled = !saved.size; };
     $$('[data-copyex]').forEach(b => b.addEventListener('click', () => copy(exTxt(D.expressions.find(x => x.id === b.dataset.copyex)), b)));
     $$('[data-save]').forEach(b => b.addEventListener('click', () => {
@@ -485,10 +485,10 @@
 
   function mark(i, scroll) {
     if (i === active) return;
-    const prev = $('.vx-s.on'); if (prev) prev.classList.remove('on');
+    const prev = $('.vx-s.on'); if (prev) { prev.classList.remove('on'); prev.removeAttribute('aria-current'); }
     active = i; if (i < 0) return;
     const el = document.getElementById('s-' + SENT[i].id); if (!el) return;
-    el.classList.add('on');
+    el.classList.add('on'); el.setAttribute('aria-current', 'true');
     const box = $('#vxTx');
     if (box && box.offsetParent !== null && page === 1) {
       const top = el.getBoundingClientRect().top - box.getBoundingClientRect().top + box.scrollTop - box.clientHeight * 0.3;
@@ -498,15 +498,15 @@
 
   /* ---------------- YouTube IFrame API ---------------- */
   function loadYT() {
-    const timer = setTimeout(() => { if (!ready) goFallback('timeout'); }, 9000);
+    const timer = setTimeout(() => { if (!ready) goFallback('timeout'); }, 20000);
     window.onYouTubeIframeAPIReady = function () {
       try {
         player = new YT.Player('vxPlayer', {
           host: 'https://www.youtube-nocookie.com', videoId: D.video.id,
           playerVars: { start: Math.floor(D.segments[0].start), rel: 0, playsinline: 1, modestbranding: 1, iv_load_policy: 3, cc_load_policy: 0, origin: location.origin },
           events: {
-            onReady: () => { ready = true; clearTimeout(timer); $('#vxPState').textContent = '▶ 点击播放片段 A'; root.classList.remove('vx-nf'); if (pendingSeek) { const p = pendingSeek; pendingSeek = null; seek(p, true); } },
-            onStateChange: e => { if (e.data === 1) { $('#vxPoster').style.display = 'none'; startPoll(); } else if (e.data === 0 || e.data === 2) stopPoll(); },
+            onReady: () => { ready = true; fallback = false; clearTimeout(timer); $('#vxFallback').classList.remove('on'); $('.vx-ctl button').forEach(b => b.disabled = false); $('#vxPState').textContent = '▶ 点击播放片段 A'; root.classList.remove('vx-nf'); startPoll(); tick(); if (pendingSeek !== null) { const p = pendingSeek; pendingSeek = null; seek(p, true); } },
+            onStateChange: e => { if (e.data === 1) $('#vxPoster').style.display = 'none'; tick(); },
             onError: e => { clearTimeout(timer); goFallback('error ' + e.data); }
           }
         });
@@ -519,7 +519,7 @@
   let pendingSeek = null;
   function goFallback(why) {
     if (ready && why === 'timeout') return;
-    fallback = true; root.classList.add('vx-nf');
+    fallback = true; stopPoll(); root.classList.add('vx-nf');
     $('#vxFallback').classList.add('on'); $('#vxPState').textContent = '视频不可用 · 文稿可独立学习';
     $$('.vx-ctl button').forEach(b => b.disabled = true);
     console.info('[AI VOICES] fallback:', why);
@@ -540,11 +540,12 @@
   function tick() {
     if (!ready) return;
     const t = player.getCurrentTime();
-    if (loopAB && (t >= loopAB.b - 0.05 || t < loopAB.a - 1.5)) { player.seekTo(loopAB.a, true); return; }
+    const playing = player.getPlayerState() === 1;
+    if (playing && loopAB && (t >= loopAB.b - 0.05 || t < loopAB.a - 1.5)) { player.seekTo(loopAB.a, true); return; }
     let i = -1;
     for (let k = 0; k < SENT.length; k++) { if (t >= SENT[k].start - 0.05 && t < SENT[k].end - 0.05) { i = k; break; } }
     if (i !== active) mark(i, true);
-    if (onlySegs && !loopAB && i < 0) {
+    if (playing && onlySegs && !loopAB && i < 0) {
       const gs = D.segments; const nxt = gs.find(g => t < g.start - 0.5);
       const inside = gs.some(g => t >= g.start - 0.5 && t < g.end);
       if (!inside) {
@@ -553,7 +554,7 @@
         else if (nxt && t > gs[0].start) { player.seekTo(nxt.start, true); toast(`跳到 ${nxt.title.zh}`); }
       }
     }
-    if (round === 3 && !loopAB && active >= 0 && shadowFor !== active) {
+    if (playing && round === 3 && !loopAB && active >= 0 && shadowFor !== active) {
       const s = SENT[active];
       if (t >= s.end - 0.25) {
         shadowFor = active; player.pauseVideo();

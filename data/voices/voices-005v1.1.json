@@ -1,0 +1,889 @@
+{
+  "schema": "aiai-voices/1.0",
+  "no": "AI VOICES 005",
+  "num": 5,
+  "version": "1.4.0",
+  "verifiedAt": "2026-11-02",
+  "publishedAt": "2026-11-02",
+  "speaker": {
+    "name": "Jensen Huang",
+    "zh": "黄仁勋",
+    "role": {
+      "zh": "NVIDIA 联合创始人；2024 年斯坦福商学院访谈嘉宾",
+      "en": ""
+    }
+  },
+  "talk": {
+    "title": "View From The Top: Jensen Huang",
+    "event": "Stanford GSB · View From The Top",
+    "deliveredOn": "2024-03-01",
+    "uploadedOn": null,
+    "duration": "56:26"
+  },
+  "video": {
+    "provider": "youtube",
+    "id": "lXLBTBBil2U",
+    "url": "https://www.youtube.com/watch?v=lXLBTBBil2U",
+    "channel": "Stanford Graduate School of Business",
+    "channelUrl": "https://www.youtube.com/@stanfordgsb",
+    "thumb": "https://i.ytimg.com/vi/lXLBTBBil2U/hqdefault.jpg",
+    "thumbFallback": "https://i.ytimg.com/vi/lXLBTBBil2U/hqdefault.jpg"
+  },
+  "question": {
+    "zh": "第一性原理，怎样变成每天能用的判断方法？",
+    "en": "How can first-principles thinking improve everyday decisions?"
+  },
+  "background": {
+    "zh": "从重做一个问题，到寻找市场的早期信号，再到把推理过程教给别人：用三段访谈练习清晰判断。",
+    "en": ""
+  },
+  "goals": [],
+  "transcriptNote": {
+    "zh": "根据斯坦福商学院官方视频转写时间轴编写。右侧是按语义段同步的原创中英释义，并非逐字字幕；只覆盖本课三段精选原声。",
+    "en": "Original bilingual listening guide, not a verbatim transcript."
+  },
+  "segments": [
+    {
+      "id": "A",
+      "title": {
+        "zh": "片段 A · 重新设计，而非照搬",
+        "en": ""
+      },
+      "start": 824,
+      "end": 890,
+      "sentences": [
+        {
+          "id": "A01",
+          "start": 824,
+          "end": 831,
+          "en": "Copying an old method does not ensure a new result.",
+          "zh": "照搬旧方法，并不能保证产生新结果。"
+        },
+        {
+          "id": "A02",
+          "start": 831,
+          "end": 852,
+          "en": "Reconsider the problem using today’s tools and constraints.",
+          "zh": "用今天的工具和约束条件，重新考虑问题。"
+        },
+        {
+          "id": "A03",
+          "start": 852,
+          "end": 862,
+          "en": "He tests this approach with cars, computers and software.",
+          "zh": "他用汽车、计算机和软件举例，说明重新设计的思路。"
+        },
+        {
+          "id": "A04",
+          "start": 862,
+          "end": 879,
+          "en": "Changed conditions can make earlier designs less suitable.",
+          "zh": "条件变化后，过去的设计未必仍然适合。"
+        },
+        {
+          "id": "A05",
+          "start": 879,
+          "end": 890,
+          "en": "Re-examining assumptions can reveal opportunities.",
+          "zh": "重新检查假设，可能发现新的机会。"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": {
+        "zh": "片段 B · 技术价值与市场证据",
+        "en": ""
+      },
+      "start": 1097,
+      "end": 1191,
+      "sentences": [
+        {
+          "id": "B01",
+          "start": 1097,
+          "end": 1118,
+          "en": "His conviction begins with a technical limitation to overcome.",
+          "zh": "他的信念首先来自一个有待突破的技术限制。"
+        },
+        {
+          "id": "B02",
+          "start": 1118,
+          "end": 1129,
+          "en": "A useful technical problem also needs a sustainable market.",
+          "zh": "有价值的技术问题，还需要能持续支撑它的市场。"
+        },
+        {
+          "id": "B03",
+          "start": 1129,
+          "end": 1147,
+          "en": "He recalls investing before those markets became visible.",
+          "zh": "他回忆，在相关市场尚未显现时，公司就开始投入。"
+        },
+        {
+          "id": "B04",
+          "start": 1147,
+          "end": 1173,
+          "en": "Keeping a whole team committed without market evidence is difficult.",
+          "zh": "缺少市场证据时，让整个团队持续投入并不容易。"
+        },
+        {
+          "id": "B05",
+          "start": 1173,
+          "end": 1191,
+          "en": "Research uses offer clues, but he still seeks commercial signals.",
+          "zh": "科研应用提供线索，但他仍然寻找商业需求的信号。"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": {
+        "zh": "片段 C · 把推理过程教给别人",
+        "en": ""
+      },
+      "start": 1831,
+      "end": 1944,
+      "sentences": [
+        {
+          "id": "C01",
+          "start": 1831,
+          "end": 1862,
+          "en": "He uses his early service work to explain his attitude to ordinary tasks.",
+          "zh": "他以早年服务工作说明：不应轻视普通任务。"
+        },
+        {
+          "id": "C02",
+          "start": 1862,
+          "end": 1884,
+          "en": "Reviewing someone’s work can also reveal how a decision is reached.",
+          "zh": "审阅别人的工作，也可以展示一个判断是怎样形成的。"
+        },
+        {
+          "id": "C03",
+          "start": 1884,
+          "end": 1913,
+          "en": "Explaining reasoning helps others approach uncertainty.",
+          "zh": "解释推理过程，可以帮助别人处理不确定的问题。"
+        },
+        {
+          "id": "C04",
+          "start": 1913,
+          "end": 1928,
+          "en": "Strategy and forecasting become opportunities to teach problem-solving.",
+          "zh": "战略与预测，都可以成为教别人解决问题的机会。"
+        },
+        {
+          "id": "C05",
+          "start": 1928,
+          "end": 1944,
+          "en": "The reviewer also learns from the person asking for help.",
+          "zh": "提供审阅的人，也会从求助者那里学到东西。"
+        }
+      ]
+    }
+  ],
+  "expressions": [
+    {
+      "id": "005-e0",
+      "phrase": "assumption",
+      "zh": "假设",
+      "sid": "A01",
+      "at": {
+        "t": 824,
+        "label": "13:44"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "假设"
+      ],
+      "collocations": [
+        "assumption"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "扩大项目之前，我们应检验这个假设。",
+        "en": "We should test the assumption before scaling the project."
+      }
+    },
+    {
+      "id": "005-e1",
+      "phrase": "constraint",
+      "zh": "约束",
+      "sid": "B01",
+      "at": {
+        "t": 1097,
+        "label": "18:17"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "约束"
+      ],
+      "collocations": [
+        "constraint"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "时间是一项约束，但工作流程可以改变。",
+        "en": "Time is a constraint, but the workflow can change."
+      }
+    },
+    {
+      "id": "005-e2",
+      "phrase": "sustainable",
+      "zh": "可持续的",
+      "sid": "C01",
+      "at": {
+        "t": 1831,
+        "label": "30:31"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "可持续的"
+      ],
+      "collocations": [
+        "sustainable"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "服务需要可持续地覆盖成本。",
+        "en": "The service needs a sustainable way to cover its costs."
+      }
+    },
+    {
+      "id": "005-e3",
+      "phrase": "early indicator",
+      "zh": "早期信号",
+      "sid": "C01",
+      "at": {
+        "t": 1831,
+        "label": "30:31"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "早期信号"
+      ],
+      "collocations": [
+        "early indicator"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "一位热情的用户是早期信号，不是证明。",
+        "en": "One enthusiastic user is an early indicator, not proof."
+      }
+    },
+    {
+      "id": "005-e4",
+      "phrase": "reason through",
+      "zh": "推理分析",
+      "sid": "C01",
+      "at": {
+        "t": 1831,
+        "label": "30:31"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "推理分析"
+      ],
+      "collocations": [
+        "reason through"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "解释你如何分析一个不确定的结果。",
+        "en": "Explain how you reason through an uncertain result."
+      }
+    }
+  ],
+  "ideas": [
+    {
+      "id": "i1",
+      "front": {
+        "zh": "先列约束，再设计方法。",
+        "en": "Start with constraints, then design."
+      },
+      "label": "analysis",
+      "quoteLabel": "主题依据 · 转述",
+      "quote": {
+        "zh": "他把今天的条件与过去的做法分开。",
+        "en": ""
+      },
+      "meaning": {
+        "zh": "课程练习：列出目标、不可改变的约束、可以替换的步骤，再提出两个方案。",
+        "en": ""
+      },
+      "example": {
+        "zh": "把“我以前一直这样做”改成“今天为什么仍然需要这一步”。",
+        "en": ""
+      },
+      "at": {
+        "t": 831,
+        "label": "13:51"
+      }
+    },
+    {
+      "id": "i2",
+      "front": {
+        "zh": "技术可行与需求成立分开验证。",
+        "en": "Test feasibility and demand separately."
+      },
+      "label": "analysis",
+      "quoteLabel": "主题依据 · 转述",
+      "quote": {
+        "zh": "他区分技术问题与可持续的市场。",
+        "en": ""
+      },
+      "meaning": {
+        "zh": "课程练习：分别写出技术指标与使用者指标，不用一个漂亮演示替代两种验证。",
+        "en": ""
+      },
+      "example": {
+        "zh": "自动整理文献能运行，不代表读者愿意用它改变工作习惯。",
+        "en": ""
+      },
+      "at": {
+        "t": 1118,
+        "label": "18:38"
+      }
+    },
+    {
+      "id": "i3",
+      "front": {
+        "zh": "交付答案，也交付推理路径。",
+        "en": "Explain the path to the answer."
+      },
+      "label": "analysis",
+      "quoteLabel": "主题依据 · 转述",
+      "quote": {
+        "zh": "他把审阅工作视为传递思考方式的机会。",
+        "en": ""
+      },
+      "meaning": {
+        "zh": "课程练习：给建议时写清依据、排除的替代解释与仍不确定的部分。",
+        "en": ""
+      },
+      "example": {
+        "zh": "给学生改研究问题时，展示删去一个变量的理由。",
+        "en": ""
+      },
+      "at": {
+        "t": 1884,
+        "label": "31:24"
+      }
+    }
+  ],
+  "labels": {
+    "speaker": {
+      "zh": "讲者原意",
+      "en": "Speaker’s view"
+    },
+    "analysis": {
+      "zh": "课程分析",
+      "en": "Our analysis"
+    },
+    "open": {
+      "zh": "尚无共识",
+      "en": "No consensus"
+    }
+  },
+  "claims": [],
+  "debate": {
+    "q": {
+      "zh": "好方法，应该复制还是重做？",
+      "en": ""
+    },
+    "pro": {
+      "zh": "先保留已被检验的方法，减少重新试错的成本。",
+      "en": "Keep tested methods to reduce the cost of trial and error."
+    },
+    "con": {
+      "zh": "条件改变时，需要重新检验原来的假设。",
+      "en": "When conditions change, earlier assumptions need testing again."
+    }
+  },
+  "reflect": {
+    "english": {
+      "prompt": {
+        "zh": "用两三句英语说明：改流程之前，你会检验哪个假设？",
+        "en": "Describe one assumption you will test before changing a workflow."
+      },
+      "starters": [
+        "My current assumption is …",
+        "The main constraint is …",
+        "I would test this by …"
+      ]
+    },
+    "prompt": {
+      "title": {
+        "zh": "继续和 AI 练英语",
+        "en": ""
+      },
+      "text": "Act as my English tutor. I studied Jensen Huang's 2024-03-01 talk, \"View From The Top: Jensen Huang\". Ask me one question at a time about a task in [your field]. Help me separate observation, prediction and opinion. Correct my English after I answer. Do not invent quotations or recent results. End with a short Chinese explanation."
+    },
+    "quiz": [
+      {
+        "q": {
+          "zh": "重新设计流程时，先做什么？",
+          "en": ""
+        },
+        "options": [
+          {
+            "zh": "照抄最流行工具"
+          },
+          {
+            "zh": "明确目标和当前约束"
+          },
+          {
+            "zh": "增加更多步骤"
+          }
+        ],
+        "answer": 1,
+        "why": {
+          "zh": "先明确条件，才知道哪些旧步骤仍然必要。",
+          "en": ""
+        }
+      },
+      {
+        "q": {
+          "zh": "市场需求应怎样验证？",
+          "en": ""
+        },
+        "options": [
+          {
+            "zh": "只看演示是否流畅"
+          },
+          {
+            "zh": "只看创始人是否自信"
+          },
+          {
+            "zh": "观察真实使用、持续采用和成本"
+          }
+        ],
+        "answer": 2,
+        "why": {
+          "zh": "技术与需求需要不同的证据。",
+          "en": ""
+        }
+      },
+      {
+        "q": {
+          "zh": "怎样使审阅更有教学价值？",
+          "en": ""
+        },
+        "options": [
+          {
+            "zh": "只发最终答案"
+          },
+          {
+            "zh": "展示依据与推理过程"
+          },
+          {
+            "zh": "避免讨论不确定性"
+          }
+        ],
+        "answer": 1,
+        "why": {
+          "zh": "学习者需要能够重建判断，而不仅是记住结论。",
+          "en": ""
+        }
+      }
+    ]
+  },
+  "medical": {
+    "title": {
+      "zh": "课程延伸 · 医学与科研学习",
+      "en": ""
+    },
+    "author": {
+      "zh": "aiai 学院 · AI 辅助课程整理",
+      "en": ""
+    },
+    "points": [
+      {
+        "zh": "教学迁移：选择公开数据的文献整理练习，让学生分别提出“能否正确提取”和“是否帮助读者”两个问题，再为每个问题设计一项检查。",
+        "en": ""
+      }
+    ],
+    "text": {
+      "zh": "教学迁移：选择公开数据的文献整理练习，让学生分别提出“能否正确提取”和“是否帮助读者”两个问题，再为每个问题设计一项检查。",
+      "en": ""
+    }
+  },
+  "sources": [
+    "video",
+    "stanford",
+    "event"
+  ],
+  "sourceMap": {
+    "video": {
+      "title": "Stanford Graduate School of Business · View From The Top: Jensen Huang",
+      "url": "https://www.youtube.com/watch?v=lXLBTBBil2U",
+      "note": {
+        "zh": "官方原视频。字幕与时间可能随平台更新。"
+      }
+    },
+    "stanford": {
+      "title": "Stanford GSB · 官方访谈与文稿",
+      "url": "https://www.gsb.stanford.edu/insights/jensen-huang-how-use-first-principles-thinking-drive-decisions"
+    },
+    "event": {
+      "title": "Stanford GSB · 访谈日期记录",
+      "url": "https://www.gsb.stanford.edu/alumni/featured-events/award-events/encore"
+    }
+  },
+  "further": [
+    {
+      "title": "Stanford GSB · 官方访谈与文稿",
+      "url": "https://www.gsb.stanford.edu/insights/jensen-huang-how-use-first-principles-thinking-drive-decisions",
+      "zh": "核对原始语境与日期"
+    },
+    {
+      "title": "Stanford GSB · 访谈日期记录",
+      "url": "https://www.gsb.stanford.edu/alumni/featured-events/award-events/encore",
+      "zh": "核对原始语境与日期"
+    }
+  ],
+  "editor": {
+    "zh": "aiai 学院原创导读与练习；原视频由来源平台提供。未重传音视频；课程与讲者无隶属或背书关系。",
+    "en": ""
+  },
+  "revisions": [
+    {
+      "v": "1.2.0",
+      "date": "2026-11-02",
+      "note": {
+        "zh": "沿用五章课件结构；原声分段播放、原创双语导读、表达卡、辨析与练习。",
+        "en": ""
+      }
+    }
+  ],
+  "layout": "deck",
+  "cover": {
+    "series": {
+      "zh": "AI VOICES · AI 大师访谈与思想课",
+      "en": "Watch in English. Think in depth. Learn with AI."
+    },
+    "issue": {
+      "zh": "第 5 期",
+      "no": "AI VOICES 005"
+    },
+    "theme": {
+      "zh": "本期主题：第一性原理、早期证据与领导力"
+    },
+    "extra": {
+      "zh": "经典回看 · 同步双语释义"
+    },
+    "titleLines": [
+      "第一性原理，",
+      "怎样变成每天",
+      "能用的[判断方法]？"
+    ],
+    "who": {
+      "zh": "从重做一个问题，到寻找市场的早期信号，再到把推理过程教给别人：用三段访谈练习清晰判断。"
+    },
+    "dateline": {
+      "zh": "演讲／访谈：2024-03-01 · Stanford GSB · View From The Top｜课程整理：2026-11-02"
+    },
+    "image": {
+      "src": "https://i.ytimg.com/vi/lXLBTBBil2U/hqdefault.jpg",
+      "fallback": "https://i.ytimg.com/vi/lXLBTBBil2U/hqdefault.jpg",
+      "alt": "Jensen Huang 官方视频封面",
+      "credit": {
+        "zh": "Stanford Graduate School of Business 官方视频封面；通过 YouTube 原地址展示。"
+      }
+    },
+    "honesty": {
+      "zh": "经典回看：这是 2024-03-01 的内容，不是最新新闻。人物预测与课程分析均需和当下事实区分。"
+    },
+    "background": {
+      "zh": "先听三段原声，再用自己的英语复述；第 4 章练习区分事实、观点与推断。"
+    },
+    "facts": [
+      {
+        "n": "56:26",
+        "zh": "原片长度"
+      },
+      {
+        "n": "3 段",
+        "zh": "精选原声 + 同步双语释义"
+      },
+      {
+        "n": "5 个",
+        "zh": "主题英语表达与原创例句"
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "no": 1,
+      "zh": "一个问题",
+      "en": "THE QUESTION"
+    },
+    {
+      "no": 2,
+      "zh": "原声与同步释义",
+      "en": "WATCH & LISTEN",
+      "h2": "三段原声：第一性原理、早期证据与领导力",
+      "dek": "播放时，右侧按原声语义段同步高亮并滚动；点击任意释义可跳到对应位置。原创释义不是逐字字幕。"
+    },
+    {
+      "no": 3,
+      "zh": "三个大想法",
+      "en": "THREE BIG IDEAS",
+      "h2": "把讲话变成自己的问题",
+      "dek": "翻开卡片，看主题依据、课程分析和一个可以实践的例子。"
+    },
+    {
+      "no": 4,
+      "zh": "事实核查台",
+      "en": "THINK & VERIFY",
+      "h2": "分清说过什么、证明什么",
+      "dek": "带着可检验的问题读来源。以下包含课程编写的辨析命题，并非网络舆情统计。"
+    },
+    {
+      "no": 5,
+      "zh": "课堂与医学视角",
+      "en": "REFLECT & PRACTICE",
+      "h2": "动手练：从听懂到会表达",
+      "dek": "点一下每个“坏提示”，看看怎么改，以及为什么这样改更好。"
+    }
+  ],
+  "glossary": {},
+  "rest": {
+    "title": {
+      "zh": "继续观看原片",
+      "en": ""
+    },
+    "note": {
+      "zh": "沿着原片展开学习，避免仅凭短片段理解整场讲话。",
+      "en": ""
+    },
+    "items": [
+      {
+        "at": {
+          "t": 0,
+          "label": "0:00"
+        },
+        "zh": "从开头观看完整原片，记录这三个片段之前和之后的语境。"
+      }
+    ]
+  },
+  "ideaLabels": {
+    "speaker": {
+      "zh": "讲者观点",
+      "d": "对讲话内容的有来源概括。"
+    },
+    "analysis": {
+      "zh": "课程分析",
+      "d": "原创学习方法或应用，不是讲者原话。"
+    },
+    "open": {
+      "zh": "待检验",
+      "d": "不能凭演讲本身判定普遍成立。"
+    }
+  },
+  "contrast": {
+    "title": {
+      "zh": "照搬流程，还是重建问题？",
+      "en": ""
+    },
+    "left": {
+      "k": "照搬",
+      "zh": "因为别人这样做，就复制全部步骤。"
+    },
+    "right": {
+      "k": "重建",
+      "zh": "按目标、约束和可检验假设重新安排步骤。"
+    },
+    "at": {
+      "t": 824,
+      "label": "13:44"
+    },
+    "note": {
+      "zh": "左右为课程教学对照，不是讲者逐字引文。",
+      "en": ""
+    },
+    "image": {
+      "src": "../assets/voices/learning-cycle.svg",
+      "alt": "观察、提问、验证、修正的学习循环图",
+      "cap": {
+        "zh": "把观点转成自己可以检查的问题。",
+        "en": ""
+      },
+      "credit": "课程原创示意图"
+    }
+  },
+  "factcheck": {
+    "stamp": {
+      "en": "THINK & VERIFY",
+      "zh": "来源与判断"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "zh": "全部"
+      },
+      {
+        "id": "ok",
+        "zh": "有来源"
+      },
+      {
+        "id": "off",
+        "zh": "推论过度"
+      },
+      {
+        "id": "view",
+        "zh": "观点与预测"
+      },
+      {
+        "id": "miss",
+        "zh": "不能遗漏"
+      }
+    ],
+    "items": [
+      {
+        "tag": "ok",
+        "said": {
+          "zh": "本课访谈发生于 2024 年 3 月 1 日。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "日期由斯坦福活动记录支持；官方文章在 4 月发布，发布日期与访谈日期不同。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 824,
+            "label": "13:44"
+          }
+        ],
+        "src": "event"
+      },
+      {
+        "tag": "off",
+        "said": {
+          "zh": "第一性原理就是忽略前人的经验。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "他先谈学习已有方法，再按新条件重新思考；“不学习任何经验”不是本段含义。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 824,
+            "label": "13:44"
+          }
+        ],
+        "src": "stanford"
+      },
+      {
+        "tag": "view",
+        "said": {
+          "zh": "技术演示成功就等于市场成熟。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "这是课程设置的辨析命题。使用需求、成本和持续采用仍需单独验证。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 1118,
+            "label": "18:38"
+          }
+        ],
+        "src": "video"
+      },
+      {
+        "tag": "miss",
+        "said": {
+          "zh": "领导者只要给出最终结论。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "本段还强调让别人理解推理过程，省略这一点会丢掉教学意义。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 1884,
+            "label": "31:24"
+          }
+        ],
+        "src": "video"
+      }
+    ],
+    "evidenceTitle": {
+      "zh": "课堂核对：如何记录证据",
+      "en": ""
+    },
+    "takeaway": {
+      "zh": "本台包含课程设置的辨析命题，不声称每一条都在网上广泛流传。出处能证明“说过什么”，不自动证明“说的必然正确”。",
+      "en": ""
+    }
+  },
+  "practice": {
+    "pairs": [
+      {
+        "bad": "帮我复制别人最成功的流程。",
+        "good": "请列出我的目标、约束与可调整步骤，再比较两个可验证方案。",
+        "why": "把模仿改成问题建模。"
+      },
+      {
+        "bad": "这个工具肯定会受欢迎。",
+        "good": "请分别设计技术可行性测试和三位使用者的需求访谈。",
+        "why": "为技术和需求分别找证据。"
+      },
+      {
+        "bad": "直接告诉学生正确答案。",
+        "good": "给出答案后，解释关键依据、排除的方案和一个反例。",
+        "why": "让结论变成可学习的过程。"
+      }
+    ]
+  },
+  "discussion": [
+    {
+      "zh": "你工作中哪个步骤只因为习惯而保留？"
+    },
+    {
+      "zh": "你如何区分技术上能做与使用者真的需要？"
+    }
+  ],
+  "closing": {
+    "line": {
+      "zh": "把信念拆成可以检查的假设。",
+      "en": ""
+    },
+    "homework": {
+      "zh": "选一个现有流程，列三项约束、两种方案和一个检验标准。",
+      "en": ""
+    },
+    "image": {
+      "src": "../assets/voices/evidence-notes.svg",
+      "alt": "观察、推断、待核实三栏学习笔记",
+      "credit": "课程原创示意图"
+    }
+  },
+  "aiImageNote": {
+    "zh": "图示为课程原创 SVG，不是讲者肖像。",
+    "en": ""
+  },
+  "learningMode": "guide",
+  "blindPrompt": "先不看导读。听完后，用一句话说出这一段在回答什么问题。",
+  "syncedParaphrase": true
+}
