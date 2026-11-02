@@ -2,7 +2,7 @@
   "schema": "aiai-voices/1.0",
   "no": "AI VOICES 005",
   "num": 5,
-  "version": "1.4.0",
+  "version": "1.5.0",
   "verifiedAt": "2026-11-02",
   "publishedAt": "2026-11-02",
   "speaker": {
@@ -39,7 +39,7 @@
   },
   "goals": [],
   "transcriptNote": {
-    "zh": "根据斯坦福商学院官方视频转写时间轴编写。右侧是按语义段同步的原创中英释义，并非逐字字幕；只覆盖本课三段精选原声。",
+    "zh": "右侧是按短语义段定位的原创双语要点，不是讲者逐字原话。逐句听力请对照视频内英文 CC 字幕（可在播放器设置中切换语言）；右栏仅覆盖 A/B/C 三段。时间点按当前 YouTube 版本的转写重新核对。",
     "en": "Original bilingual listening guide, not a verbatim transcript."
   },
   "segments": [
@@ -56,36 +56,64 @@
           "id": "A01",
           "start": 824,
           "end": 831,
-          "en": "Copying an old method does not ensure a new result.",
-          "zh": "照搬旧方法，并不能保证产生新结果。"
+          "en": "Imitation alone cannot deliver different outcomes.",
+          "zh": "仅靠照搬，难以得到不同结果。"
         },
         {
           "id": "A02",
           "start": 831,
-          "end": 852,
-          "en": "Reconsider the problem using today’s tools and constraints.",
-          "zh": "用今天的工具和约束条件，重新考虑问题。"
+          "end": 838,
+          "en": "Use prior knowledge as a starting point.",
+          "zh": "把已有知识作为重新思考的起点。"
         },
         {
           "id": "A03",
-          "start": 852,
-          "end": 862,
-          "en": "He tests this approach with cars, computers and software.",
-          "zh": "他用汽车、计算机和软件举例，说明重新设计的思路。"
+          "start": 838,
+          "end": 846,
+          "en": "Reassess present conditions and available tools.",
+          "zh": "重新评估当前条件与可用工具。"
         },
         {
           "id": "A04",
-          "start": 862,
-          "end": 879,
-          "en": "Changed conditions can make earlier designs less suitable.",
-          "zh": "条件变化后，过去的设计未必仍然适合。"
+          "start": 846,
+          "end": 852,
+          "en": "Consider rebuilding rather than incremental changes.",
+          "zh": "考虑重新设计，而非仅作增量修改。"
         },
         {
           "id": "A05",
+          "start": 852,
+          "end": 857,
+          "en": "Cars illustrate this redesign question.",
+          "zh": "汽车是这种重新设计思路的例子。"
+        },
+        {
+          "id": "A06",
+          "start": 857,
+          "end": 862,
+          "en": "Computers and software pose similar questions.",
+          "zh": "计算机与软件也可以这样追问。"
+        },
+        {
+          "id": "A07",
+          "start": 862,
+          "end": 871,
+          "en": "Revisit assumptions as circumstances change.",
+          "zh": "条件变化时，再次检查基本假设。"
+        },
+        {
+          "id": "A08",
+          "start": 871,
+          "end": 879,
+          "en": "Software architecture provides a concrete example.",
+          "zh": "软件架构提供了具体例子。"
+        },
+        {
+          "id": "A09",
           "start": 879,
           "end": 890,
-          "en": "Re-examining assumptions can reveal opportunities.",
-          "zh": "重新检查假设，可能发现新的机会。"
+          "en": "Fresh reasoning can reveal opportunities.",
+          "zh": "重新推理有助于发现机会。"
         }
       ]
     },
@@ -101,37 +129,65 @@
         {
           "id": "B01",
           "start": 1097,
-          "end": 1118,
-          "en": "His conviction begins with a technical limitation to overcome.",
-          "zh": "他的信念首先来自一个有待突破的技术限制。"
+          "end": 1109,
+          "en": "Technical conviction precedes a visible market.",
+          "zh": "技术信念可能先于可见的市场。"
         },
         {
           "id": "B02",
-          "start": 1118,
-          "end": 1129,
-          "en": "A useful technical problem also needs a sustainable market.",
-          "zh": "有价值的技术问题，还需要能持续支撑它的市场。"
+          "start": 1109,
+          "end": 1118,
+          "en": "General-purpose computing has limitations.",
+          "zh": "通用计算存在能力边界。"
         },
         {
           "id": "B03",
-          "start": 1129,
-          "end": 1147,
-          "en": "He recalls investing before those markets became visible.",
-          "zh": "他回忆，在相关市场尚未显现时，公司就开始投入。"
+          "start": 1118,
+          "end": 1129,
+          "en": "Interesting problems need sustainable demand.",
+          "zh": "有趣的问题也需要可持续的需求。"
         },
         {
           "id": "B04",
-          "start": 1147,
-          "end": 1173,
-          "en": "Keeping a whole team committed without market evidence is difficult.",
-          "zh": "缺少市场证据时，让整个团队持续投入并不容易。"
+          "start": 1129,
+          "end": 1141,
+          "en": "Investment began before new markets appeared.",
+          "zh": "投入开始时，新市场尚未形成。"
         },
         {
           "id": "B05",
+          "start": 1141,
+          "end": 1147,
+          "en": "Later growth depended on once-absent markets.",
+          "zh": "后来的增长来自当初不存在的市场。"
+        },
+        {
+          "id": "B06",
+          "start": 1147,
+          "end": 1161,
+          "en": "Maintaining team commitment is difficult.",
+          "zh": "维持团队的持续投入并不容易。"
+        },
+        {
+          "id": "B07",
+          "start": 1161,
+          "end": 1173,
+          "en": "Many stakeholders share that uncertainty.",
+          "zh": "股东、董事与合作方也共同承担不确定性。"
+        },
+        {
+          "id": "B08",
           "start": 1173,
+          "end": 1184,
+          "en": "Research achievements are only partial evidence.",
+          "zh": "科研成果只提供了部分证据。"
+        },
+        {
+          "id": "B09",
+          "start": 1184,
           "end": 1191,
-          "en": "Research uses offer clues, but he still seeks commercial signals.",
-          "zh": "科研应用提供线索，但他仍然寻找商业需求的信号。"
+          "en": "Early signals are still necessary.",
+          "zh": "市场形成前，仍需寻找早期信号。"
         }
       ]
     },
@@ -147,37 +203,79 @@
         {
           "id": "C01",
           "start": 1831,
-          "end": 1862,
-          "en": "He uses his early service work to explain his attitude to ordinary tasks.",
-          "zh": "他以早年服务工作说明：不应轻视普通任务。"
+          "end": 1840,
+          "en": "Service work shaped his view of tasks.",
+          "zh": "服务工作的经历影响了他对任务的看法。"
         },
         {
           "id": "C02",
-          "start": 1862,
-          "end": 1884,
-          "en": "Reviewing someone’s work can also reveal how a decision is reached.",
-          "zh": "审阅别人的工作，也可以展示一个判断是怎样形成的。"
+          "start": 1840,
+          "end": 1854,
+          "en": "He jokes about unpleasant cleaning memories.",
+          "zh": "他拿不愉快的清洁经历开了玩笑。"
         },
         {
           "id": "C03",
-          "start": 1884,
-          "end": 1913,
-          "en": "Explaining reasoning helps others approach uncertainty.",
-          "zh": "解释推理过程，可以帮助别人处理不确定的问题。"
+          "start": 1854,
+          "end": 1862,
+          "en": "He rejects treating ordinary work as inferior.",
+          "zh": "他不把普通工作看作低人一等。"
         },
         {
           "id": "C04",
-          "start": 1913,
-          "end": 1928,
-          "en": "Strategy and forecasting become opportunities to teach problem-solving.",
-          "zh": "战略与预测，都可以成为教别人解决问题的机会。"
+          "start": 1862,
+          "end": 1870,
+          "en": "Status is not his only consideration.",
+          "zh": "身份高低不是他唯一考虑的因素。"
         },
         {
           "id": "C05",
+          "start": 1870,
+          "end": 1884,
+          "en": "A review can make reasoning visible.",
+          "zh": "审阅工作可以展示思考过程。"
+        },
+        {
+          "id": "C06",
+          "start": 1884,
+          "end": 1898,
+          "en": "That visibility builds another person’s ability.",
+          "zh": "展示思路，有助于增强他人的能力。"
+        },
+        {
+          "id": "C07",
+          "start": 1898,
+          "end": 1913,
+          "en": "Difficult uncertainty becomes easier to approach.",
+          "zh": "棘手的不确定问题可以变得更容易入手。"
+        },
+        {
+          "id": "C08",
+          "start": 1913,
+          "end": 1924,
+          "en": "Strategy and forecasts offer teaching opportunities.",
+          "zh": "战略与预测都能成为教学机会。"
+        },
+        {
+          "id": "C09",
+          "start": 1924,
+          "end": 1928,
+          "en": "He frames this as empowering colleagues.",
+          "zh": "他把这看作增强同事的能力。"
+        },
+        {
+          "id": "C10",
           "start": 1928,
+          "end": 1936,
+          "en": "He offers help through practical review.",
+          "zh": "他愿意通过具体审阅提供帮助。"
+        },
+        {
+          "id": "C11",
+          "start": 1936,
           "end": 1944,
-          "en": "The reviewer also learns from the person asking for help.",
-          "zh": "提供审阅的人，也会从求助者那里学到东西。"
+          "en": "The exchange also teaches the reviewer.",
+          "zh": "交流也让审阅者有所收获。"
         }
       ]
     }
@@ -569,6 +667,13 @@
         "zh": "沿用五章课件结构；原声分段播放、原创双语导读、表达卡、辨析与练习。",
         "en": ""
       }
+    },
+    {
+      "v": "1.5.0",
+      "date": "2026-11-02",
+      "note": {
+        "zh": "逐段核对当前视频时间轴；将长段听力任务改为短段双语要点；启用原片英文字幕。"
+      }
     }
   ],
   "layout": "deck",
@@ -635,10 +740,10 @@
     },
     {
       "no": 2,
-      "zh": "原声与同步释义",
+      "zh": "原声与同步要点",
       "en": "WATCH & LISTEN",
       "h2": "三段原声：第一性原理、早期证据与领导力",
-      "dek": "播放时，右侧按原声语义段同步高亮并滚动；点击任意释义可跳到对应位置。原创释义不是逐字字幕。"
+      "dek": "听原话：看视频内英文 CC 字幕。理解意思：看右侧随时间切换的双语要点。点击要点可回听对应语段。"
     },
     {
       "no": 3,
@@ -885,5 +990,6 @@
   },
   "learningMode": "guide",
   "blindPrompt": "先不看导读。听完后，用一句话说出这一段在回答什么问题。",
-  "syncedParaphrase": true
+  "syncedParaphrase": true,
+  "captionLanguage": "en"
 }

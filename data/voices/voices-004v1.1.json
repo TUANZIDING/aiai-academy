@@ -2,7 +2,7 @@
   "schema": "aiai-voices/1.0",
   "no": "AI VOICES 004",
   "num": 4,
-  "version": "1.2.0",
+  "version": "1.5.0",
   "verifiedAt": "2026-11-02",
   "publishedAt": "2026-11-02",
   "speaker": {
@@ -39,7 +39,7 @@
   },
   "goals": [],
   "transcriptNote": {
-    "zh": "演讲月份与片段时间据 TED 官方英文转写核对；播放器位置可能有数秒差异。右侧为原创双语导读，不是逐字字幕。完整英文与官方中文可在 TED 转写页切换。",
+    "zh": "右侧是按短语义段定位的原创双语要点，不是讲者逐字原话。逐句听力请对照视频内英文 CC 字幕（可在播放器设置中切换语言）；右栏仅覆盖 A/B/C 三段。时间点按当前 YouTube 版本的转写重新核对。",
     "en": "Original bilingual listening guide, not a verbatim transcript."
   },
   "segments": [
@@ -55,9 +55,65 @@
         {
           "id": "A01",
           "start": 319,
+          "end": 330,
+          "en": "Images alone do not establish understanding.",
+          "zh": "获得图像，不等于理解眼前的世界。"
+        },
+        {
+          "id": "A02",
+          "start": 330,
+          "end": 336,
+          "en": "Vision supports learning through action.",
+          "zh": "视觉帮助行动，也帮助学习。"
+        },
+        {
+          "id": "A03",
+          "start": 336,
+          "end": 346,
+          "en": "Acting improves subsequent perception.",
+          "zh": "行动反过来改善感知。"
+        },
+        {
+          "id": "A04",
+          "start": 346,
+          "end": 354,
+          "en": "Spatial reasoning connects this cycle.",
+          "zh": "空间推理把这个循环连接起来。"
+        },
+        {
+          "id": "A05",
+          "start": 354,
+          "end": 364,
+          "en": "A picture provokes an immediate reaction.",
+          "zh": "一幅画面激起了立即行动的冲动。"
+        },
+        {
+          "id": "A06",
+          "start": 364,
+          "end": 376,
+          "en": "Geometry and relationships explain the reaction.",
+          "zh": "几何形状与物体关系解释了这种反应。"
+        },
+        {
+          "id": "A07",
+          "start": 376,
+          "end": 387,
+          "en": "Prediction creates an urge to intervene.",
+          "zh": "预判后果，让人想要介入。"
+        },
+        {
+          "id": "A08",
+          "start": 387,
+          "end": 390,
+          "en": "Perception and action are linked.",
+          "zh": "感知与行动在这里相连。"
+        },
+        {
+          "id": "A09",
+          "start": 390,
           "end": 402,
-          "en": "Watch the scene with the glass. Separate three questions: what is visible, what may happen next, and what action could change the outcome?",
-          "zh": "看杯子的场景，把三个问题分开：眼前有什么、接下来可能发生什么、什么行动能改变结果？"
+          "en": "She calls for AI that acts.",
+          "zh": "她希望 AI 不仅能看和说，还能行动。"
         }
       ]
     },
@@ -73,9 +129,44 @@
         {
           "id": "B01",
           "start": 527,
+          "end": 536,
+          "en": "Spatial reasoning is accelerating a learning cycle.",
+          "zh": "空间推理加速了学习循环。"
+        },
+        {
+          "id": "B02",
+          "start": 536,
+          "end": 552,
+          "en": "Robots must interact with three-dimensional surroundings.",
+          "zh": "机器人需要与三维环境互动。"
+        },
+        {
+          "id": "B03",
+          "start": 552,
+          "end": 563,
+          "en": "ImageNet supplied examples for visual learning.",
+          "zh": "ImageNet 曾为视觉学习提供大量例子。"
+        },
+        {
+          "id": "B04",
+          "start": 563,
+          "end": 574,
+          "en": "The training focus expands to behavior.",
+          "zh": "训练目标从图像扩展到行为。"
+        },
+        {
+          "id": "B05",
+          "start": 574,
+          "end": 590,
+          "en": "Simulated worlds provide varied practice.",
+          "zh": "模拟世界提供多样化的练习条件。"
+        },
+        {
+          "id": "B06",
+          "start": 590,
           "end": 600,
-          "en": "Listen for the role of simulated environments. What could you vary in a simulation, and what would still need checking in the physical world?",
-          "zh": "听模拟环境的作用：哪些条件可以在模拟中变化，哪些仍需在物理世界核对？"
+          "en": "She introduces examples from BEHAVIOR.",
+          "zh": "她展示了 BEHAVIOR 项目的训练例子。"
         }
       ]
     },
@@ -91,9 +182,65 @@
         {
           "id": "C01",
           "start": 796,
+          "end": 811,
+          "en": "Vision transformed biological evolution.",
+          "zh": "视觉改变了生物演化进程。"
+        },
+        {
+          "id": "C02",
+          "start": 811,
+          "end": 817,
+          "en": "She compares that change with AI.",
+          "zh": "她把这一变化与 AI 的进展作比较。"
+        },
+        {
+          "id": "C03",
+          "start": 817,
+          "end": 835,
+          "en": "Spatial reasoning could unlock further capabilities.",
+          "zh": "空间推理可能释放更多能力。"
+        },
+        {
+          "id": "C04",
+          "start": 835,
+          "end": 845,
+          "en": "Digital systems could explore physical worlds.",
+          "zh": "数字系统可以学习探索物理世界。"
+        },
+        {
+          "id": "C05",
+          "start": 845,
+          "end": 851,
+          "en": "They might also create new environments.",
+          "zh": "它们也可能创造新的可探索环境。"
+        },
+        {
+          "id": "C06",
+          "start": 851,
+          "end": 858,
+          "en": "Progress requires deliberate human choices.",
+          "zh": "进步需要人类审慎作出选择。"
+        },
+        {
+          "id": "C07",
+          "start": 858,
+          "end": 863,
+          "en": "Human needs should guide technology.",
+          "zh": "技术发展应以人的需要为中心。"
+        },
+        {
+          "id": "C08",
+          "start": 863,
+          "end": 874,
+          "en": "Her goal extends beyond useful tools.",
+          "zh": "她的目标不止于制造有用工具。"
+        },
+        {
+          "id": "C09",
+          "start": 874,
           "end": 885,
-          "en": "Listen to the closing vision. Who should benefit from a new system? Name one benefit you would measure and one human choice you would preserve.",
-          "zh": "听结尾的愿景：新系统应让谁受益？说出一个可衡量的收益，以及一种应保留给人的选择。"
+          "en": "Dignity and shared benefits remain central.",
+          "zh": "人的尊严与共同受益仍是核心。"
         }
       ]
     }
@@ -474,6 +621,13 @@
         "zh": "沿用五章课件结构；原声分段播放、原创双语导读、表达卡、辨析与练习。",
         "en": ""
       }
+    },
+    {
+      "v": "1.5.0",
+      "date": "2026-11-02",
+      "note": {
+        "zh": "逐段核对当前视频时间轴；将长段听力任务改为短段双语要点；启用原片英文字幕。"
+      }
     }
   ],
   "layout": "deck",
@@ -540,10 +694,10 @@
     },
     {
       "no": 2,
-      "zh": "原声与导读",
+      "zh": "原声与同步要点",
       "en": "WATCH & LISTEN",
       "h2": "三段原声：空间智能与以人为本",
-      "dek": "先听原视频，再读原创双语导读。点导读卡跳到对应片段；逐字原文请查看官方转写。"
+      "dek": "听原话：看视频内英文 CC 字幕。理解意思：看右侧随时间切换的双语要点。点击要点可回听对应语段。"
     },
     {
       "no": 3,
@@ -789,5 +943,7 @@
     "en": ""
   },
   "learningMode": "guide",
-  "blindPrompt": "先不看导读。听完后，用一句话说出这一段在回答什么问题。"
+  "blindPrompt": "先不看导读。听完后，用一句话说出这一段在回答什么问题。",
+  "syncedParaphrase": true,
+  "captionLanguage": "en"
 }

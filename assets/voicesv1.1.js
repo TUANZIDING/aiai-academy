@@ -127,9 +127,10 @@
         <div class="vx-ctl" role="toolbar" aria-label="播放控制 Player controls">
           <span class="vx-grp"><span>片段</span>${D.segments.map(g => `<button type="button" class="vx-chip" data-seg="${g.id}">${g.id}</button>`).join('')}</span>
           <span class="vx-grp" role="group" aria-label="速度 Speed"><span>速度</span>${[0.75, 1, 1.25].map(r => `<button type="button" class="vx-chip" data-rate="${r}" aria-pressed="${r === 1}">${r}×</button>`).join('')}</span>
-          <button type="button" class="vx-chip" id="vxLoop" aria-pressed="false">${D.syncedParaphrase ? '⟲ 循环这条释义' : guide ? '⟲ 循环本段' : '⟲ 循环本句'}</button>
+          <button type="button" class="vx-chip" id="vxLoop" aria-pressed="false">${D.syncedParaphrase ? '⟲ 循环这段' : guide ? '⟲ 循环本段' : '⟲ 循环本句'}</button>
           <button type="button" class="vx-chip" id="vxFull">⛶ 全屏</button>
         </div>
+        <p class="vx-note">逐句听力：视频内默认请求英文 CC 字幕；可在 ⚙ → Subtitles/字幕 中切换。若听到配音，请在 Audio track/音轨 中选择 Original/原始英语。盲听时可关闭 CC。</p>
         <p class="vx-cap"><b>${esc(D.speaker.name)}</b> ${esc(D.speaker.role.zh)} · 视频由 ${esc(V.channel)} ${V.official === false ? '上传（非官方频道）' : '官方上传'}；${guide ? '旁侧内容为 aiai 学院原创导读。' : '中文为 aiai 学院译文。'}<span class="vx-now" id="vxNow" aria-live="polite"></span></p>
         <div class="vx-shadow" id="vxShadow" role="status"><span>${guide ? '复述任务：' : '跟读：'}<b id="vxShadowText"></b></span><button type="button" class="vx-chip" id="vxShadowGo">继续 ▶</button></div>
         <div class="vx-fallback" id="vxFallback" role="alert">
@@ -138,7 +139,7 @@
       </div>
       <div class="vx-tx-col" id="vxTxCol">
         <div class="vx-tx-head">
-          <h3>${D.syncedParaphrase ? '同步双语释义' : guide ? '原创双语导读' : '双语文稿'}</h3>
+          <h3>${D.syncedParaphrase ? '同步双语要点 · 非原话' : guide ? '原创双语导读' : '双语文稿'}</h3>
           <div class="vx-lang" role="radiogroup" aria-label="文稿语言 Transcript language">
             <button type="button" role="radio" data-l="bi" aria-checked="false">中英双语</button><button type="button" role="radio" data-l="zh" aria-checked="false">只看中文</button><button type="button" role="radio" data-l="en" aria-checked="false">只看英文</button>
           </div>
@@ -151,7 +152,7 @@
         </div>
         <div class="vx-blind"><strong>第 1 轮 · 先只听</strong><p>${esc(D.blindPrompt || '不看字幕，试着抓住三个词：1.0、2.0、3.0 分别指什么？')}</p><button type="button" class="vx-chip" data-round="2">听完了，看字幕 → 第 2 轮</button></div>
         <div class="vx-tx" id="vxTx" aria-label="${guide ? '分段双语导读 Bilingual listening guide' : '同步文稿 Synced transcript'}">${tx}</div>
-        <p class="vx-txnote">${esc(D.transcriptNote.zh)}</p>${guide ? `<p class="vx-txnote"><a href="${esc(S.ted ? S.ted.url : V.url)}" target="_blank" rel="noopener">打开官方原文／转写文稿 ↗</a> · 英文导读为课程编写，请勿当作讲者原话引用。</p>` : ''}
+        <p class="vx-txnote">${esc(D.transcriptNote.zh)}</p>${guide ? `<p class="vx-txnote"><a href="${esc(S.ted ? S.ted.url : V.url)}" target="_blank" rel="noopener">打开原片／来源转写 ↗</a> · 英文导读为课程编写，请勿当作讲者原话引用。</p>` : ''}
       </div>
     </div>
     <div class="vx-below">
@@ -377,7 +378,7 @@
       const s = sentById(b.dataset.id);
       if (fallback) { window.open(`${D.video.url}&t=${Math.floor(s.start)}s`, '_blank', 'noopener'); return; }
       if (loopAB) setLoop(s);
-      seek(s.start, true); mark(SENT.indexOf(s), true);
+      seek(s.start, true);
     });
     $$('[data-seg]').forEach(b => b.addEventListener('click', () => playSeg(b.dataset.seg)));
     $$('[data-rate]').forEach(b => b.addEventListener('click', () => {
@@ -478,7 +479,7 @@
     $$('.vx-rounds [data-round]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.round === r)));
     $('#vxTxCol').classList.toggle('blind', r === 1);
     if (r === 2) setLang('bi', false);
-    if (r === 3) { setLang('en', false); toast(D.learningMode === 'guide' ? '第 3 轮：片段结束暂停，用自己的英语复述后点继续' : '第 3 轮：每句结束会暂停，跟读原声后继续'); }
+    if (r === 3) { setLang('en', false); toast(D.learningMode === 'guide' ? '第 3 轮：每个要点语段结束暂停，用自己的英语复述后点继续' : '第 3 轮：每句结束会暂停，跟读原声后继续'); }
     if (r !== 3) endShadow();
   }
   function setLoop(s) { loopAB = { a: s.start, b: s.end, id: s.id }; $('#vxLoop').setAttribute('aria-pressed', 'true'); $('#vxNow').textContent = ` · 循环 ${fmt(s.start)}–${fmt(s.end)}`; }
@@ -503,7 +504,7 @@
       try {
         player = new YT.Player('vxPlayer', {
           host: 'https://www.youtube-nocookie.com', videoId: D.video.id,
-          playerVars: { start: Math.floor(D.segments[0].start), rel: 0, playsinline: 1, modestbranding: 1, iv_load_policy: 3, cc_load_policy: 0, origin: location.origin },
+          playerVars: { start: Math.floor(D.segments[0].start), rel: 0, playsinline: 1, modestbranding: 1, iv_load_policy: 3, cc_load_policy: 1, cc_lang_pref: 'en', hl: 'en', origin: location.origin },
           events: {
             onReady: () => { ready = true; fallback = false; clearTimeout(timer); $('#vxFallback').classList.remove('on'); $$('.vx-ctl button').forEach(b => b.disabled = false); $('#vxPState').textContent = '▶ 点击播放片段 A'; root.classList.remove('vx-nf'); startPoll(); tick(); if (pendingSeek !== null) { const p = pendingSeek; pendingSeek = null; seek(p, true); } },
             onStateChange: e => { if (e.data === 1) $('#vxPoster').style.display = 'none'; tick(); },
@@ -527,13 +528,13 @@
   function seek(t, play) {
     if (!ready) { if (fallback) toast('视频不可用，可在 YouTube 打开'); else { pendingSeek = t; toast('播放器还在加载…'); } return; }
     endShadow(true); shadowFor = -1; endedOnce = false;
-    player.seekTo(Math.max(0, t - 0.15), true); if (play) player.playVideo();
+    mark(-1, false); player.seekTo(Math.max(0, t), true); if (play) player.playVideo();
   }
   function playSeg(id) {
     const g = segById(id); if (!g) return;
     if (loopAB) { loopAB = null; $('#vxLoop').setAttribute('aria-pressed', 'false'); }
     if (!onlySegs) { onlySegs = true; $('#vxOnly').checked = true; }
-    seek(g.start, true); mark(SENT.findIndex(s => s.seg === id), true);
+    seek(g.start, true);
   }
   function startPoll() { stopPoll(); poll = setInterval(tick, 200); }
   function stopPoll() { if (poll) clearInterval(poll); poll = null; }
@@ -543,7 +544,7 @@
     const playing = player.getPlayerState() === 1;
     if (playing && loopAB && (t >= loopAB.b - 0.05 || t < loopAB.a - 1.5)) { player.seekTo(loopAB.a, true); return; }
     let i = -1;
-    for (let k = 0; k < SENT.length; k++) { if (t >= SENT[k].start - 0.05 && t < SENT[k].end - 0.05) { i = k; break; } }
+    for (let k = 0; k < SENT.length; k++) { if (t >= SENT[k].start && t < SENT[k].end) { i = k; break; } }
     if (i !== active) mark(i, true);
     if (playing && onlySegs && !loopAB && i < 0) {
       const gs = D.segments; const nxt = gs.find(g => t < g.start - 0.5);

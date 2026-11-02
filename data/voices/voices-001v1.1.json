@@ -2,7 +2,7 @@
   "schema": "aiai-voices/1.0",
   "no": "AI VOICES 001",
   "num": 1,
-  "version": "1.1.0",
+  "version": "1.5.0",
   "verifiedAt": "2026-11-02",
   "publishedAt": "2026-11-02",
   "speaker": {
@@ -1056,6 +1056,13 @@
         "zh": "改为分页课件结构（5 章，一章一屏，← / → 翻页）；新增事实核查台、坏提示→好提示、课堂讨论、其余内容转述",
         "en": "Paged courseware layout (5 chapters, one per screen, arrow-key paging); fact-check desk, prompt pairs, discussion, rest-of-talk summary"
       }
+    },
+    {
+      "v": "1.5.0",
+      "date": "2026-11-02",
+      "note": {
+        "zh": "核对原片字幕时间轴，保留已有逐句文稿；统一播放器按实际播放时间高亮，开启视频英文 CC。"
+      }
     }
   ],
   "layout": "deck",
@@ -1566,5 +1573,6 @@
   },
   "aiImageNote": {
     "zh": "第 3 章“自主滑杆”和第 5 章“书桌”两张插图为 AI 生成示意图；封面为 YouTube 官方视频封面。没有使用任何 AI 生成的讲者肖像。"
-  }
+  },
+  "captionLanguage": "en"
 }

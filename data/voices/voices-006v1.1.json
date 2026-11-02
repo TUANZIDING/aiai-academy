@@ -2,7 +2,7 @@
   "schema": "aiai-voices/1.0",
   "no": "AI VOICES 006",
   "num": 6,
-  "version": "1.4.0",
+  "version": "1.5.0",
   "verifiedAt": "2026-11-02",
   "publishedAt": "2026-11-02",
   "speaker": {
@@ -40,7 +40,7 @@
   },
   "goals": [],
   "transcriptNote": {
-    "zh": "右侧为按原声语义段同步的原创双语释义，不是逐字字幕；只覆盖三段精选。播放器采用 New SciTech 新科技的同场演讲剪辑，非官方频道，时间轴已按该版本核对。Caltech 官方完整录像保留在来源区。",
+    "zh": "右侧是按短语义段定位的原创双语要点，不是讲者逐字原话。逐句听力请对照视频内英文 CC 字幕（可在播放器设置中切换语言）；右栏仅覆盖 A/B/C 三段。时间点按当前 YouTube 版本的转写重新核对。",
     "en": "Original bilingual listening guide, not a verbatim transcript."
   },
   "segments": [
@@ -56,30 +56,65 @@
         {
           "id": "A01",
           "start": 827,
-          "end": 842,
-          "en": "He describes a belief that learning methods could solve more kinds of problems.",
-          "zh": "他描述了一种判断：学习方法可能解决更多类型的问题。"
+          "end": 834,
+          "en": "He saw broader potential in learning.",
+          "zh": "他看到了深度学习的更广泛潜力。"
         },
         {
           "id": "A02",
-          "start": 842,
-          "end": 869,
-          "en": "That promise raised a practical question about how far the approach could scale.",
-          "zh": "这一潜力带来实际问题：这种方法究竟能扩展到什么程度？"
+          "start": 834,
+          "end": 842,
+          "en": "Analysis supported that initial belief.",
+          "zh": "分析为最初的信念提供了支撑。"
         },
         {
           "id": "A03",
-          "start": 869,
-          "end": 896,
-          "en": "Testing the idea required expensive computing infrastructure, without certainty of success.",
-          "zh": "检验这个想法需要昂贵的计算设施，而成功并无保证。"
+          "start": 842,
+          "end": 857,
+          "en": "Learning might address hard-to-formulate problems.",
+          "zh": "学习方法可能处理难以明确表达的问题。"
         },
         {
           "id": "A04",
+          "start": 857,
+          "end": 861,
+          "en": "The technology deserved closer attention.",
+          "zh": "这项技术值得进一步关注。"
+        },
+        {
+          "id": "A05",
+          "start": 861,
+          "end": 869,
+          "en": "Model and data scale appeared crucial.",
+          "zh": "模型与数据规模似乎是关键。"
+        },
+        {
+          "id": "A06",
+          "start": 869,
+          "end": 882,
+          "en": "Testing limits required substantial infrastructure.",
+          "zh": "探索能力边界需要大规模计算设施。"
+        },
+        {
+          "id": "A07",
+          "start": 882,
+          "end": 889,
+          "en": "The cost challenged a small company.",
+          "zh": "高昂成本给当时的小公司带来挑战。"
+        },
+        {
+          "id": "A08",
+          "start": 889,
+          "end": 896,
+          "en": "Spending offered no guaranteed outcome.",
+          "zh": "投入资金，并不保证成功。"
+        },
+        {
+          "id": "A09",
           "start": 896,
           "end": 907,
-          "en": "Without building the system, its limits would remain unknown.",
-          "zh": "如果不建立系统，就无法弄清它的边界。"
+          "en": "Without experiments, the limits stayed unknown.",
+          "zh": "不进行实践，就无法知道能力边界。"
         }
       ]
     },
@@ -95,30 +130,72 @@
         {
           "id": "B01",
           "start": 1414,
-          "end": 1448,
-          "en": "After losing access to markets, he describes looking for an undeveloped field.",
-          "zh": "失去原有市场机会后，他描述了转向尚未开发领域的选择。"
+          "end": 1423,
+          "en": "Losing markets forced another direction.",
+          "zh": "失去市场，迫使公司另寻方向。"
         },
         {
           "id": "B02",
-          "start": 1448,
-          "end": 1457,
-          "en": "Robotics became a place to apply the capabilities they had built.",
-          "zh": "机器人领域成为运用既有能力的一个方向。"
+          "start": 1423,
+          "end": 1430,
+          "en": "They chose an area without customers.",
+          "zh": "他们选择了一个尚无顾客的领域。"
         },
         {
           "id": "B03",
-          "start": 1457,
-          "end": 1471,
-          "en": "He evaluates the opportunity from the perspective of a decade later.",
-          "zh": "他从十年后的视角回看这一机会。"
+          "start": 1430,
+          "end": 1437,
+          "en": "Absent customers also meant absent rivals.",
+          "zh": "没有顾客，也意味着没有竞争者。"
         },
         {
           "id": "B04",
+          "start": 1437,
+          "end": 1448,
+          "en": "They deliberately entered an undeveloped market.",
+          "zh": "他们有意进入尚未形成的市场。"
+        },
+        {
+          "id": "B05",
+          "start": 1448,
+          "end": 1457,
+          "en": "That direction was robotic computing.",
+          "zh": "这个方向就是机器人计算。"
+        },
+        {
+          "id": "B06",
+          "start": 1457,
+          "end": 1465,
+          "en": "He looks back across a decade.",
+          "zh": "他从十年后的视角回看。"
+        },
+        {
+          "id": "B07",
+          "start": 1465,
+          "end": 1471,
+          "en": "Accumulated work enabled another opportunity.",
+          "zh": "积累的成果带来了新的机会。"
+        },
+        {
+          "id": "B08",
           "start": 1471,
+          "end": 1478,
+          "en": "Adaptation became part of company culture.",
+          "zh": "适应变化成为公司文化的一部分。"
+        },
+        {
+          "id": "B09",
+          "start": 1478,
+          "end": 1487,
+          "en": "Setbacks strengthened skills and character.",
+          "zh": "挫折磨炼了技能与品格。"
+        },
+        {
+          "id": "B10",
+          "start": 1487,
           "end": 1494,
-          "en": "He links repeated adaptation with stronger skills and resilience.",
-          "zh": "他把一次次调整与技能、韧性的增强联系起来。"
+          "en": "He describes greater resistance to discouragement.",
+          "zh": "他描述了公司更不容易气馁的状态。"
         }
       ]
     },
@@ -134,30 +211,65 @@
         {
           "id": "C01",
           "start": 1681,
-          "end": 1703,
-          "en": "The gardener’s long commitment changes how Huang thinks about time.",
-          "zh": "园丁的长期投入，改变了黄仁勋理解时间的方式。"
+          "end": 1688,
+          "en": "The gardener describes his patient work.",
+          "zh": "园丁讲述了自己耐心照料的工作。"
         },
         {
           "id": "C02",
-          "start": 1703,
-          "end": 1720,
-          "en": "He connects this story with dedication to a craft.",
-          "zh": "他把这个故事与专注打磨一门技艺联系起来。"
+          "start": 1688,
+          "end": 1694,
+          "en": "Huang questions the garden’s enormous scale.",
+          "zh": "黄仁勋问起花园如此庞大的规模。"
         },
         {
           "id": "C03",
-          "start": 1720,
-          "end": 1744,
-          "en": "His daily routine begins with the task he considers most important.",
-          "zh": "他的日常安排从自己认为最重要的任务开始。"
+          "start": 1694,
+          "end": 1703,
+          "en": "Long dedication changes the time perspective.",
+          "zh": "长期投入改变了看待时间的方式。"
         },
         {
           "id": "C04",
+          "start": 1703,
+          "end": 1710,
+          "en": "The encounter becomes a personal lesson.",
+          "zh": "这次相遇成为他的人生一课。"
+        },
+        {
+          "id": "C05",
+          "start": 1710,
+          "end": 1720,
+          "en": "He emphasizes commitment to a craft.",
+          "zh": "他强调对一门技艺的持续投入。"
+        },
+        {
+          "id": "C06",
+          "start": 1720,
+          "end": 1728,
+          "en": "He connects this with daily habits.",
+          "zh": "他把这个道理联系到日常习惯。"
+        },
+        {
+          "id": "C07",
+          "start": 1728,
+          "end": 1735,
+          "en": "His mornings begin with priorities.",
+          "zh": "他从最重要的事项开始一天。"
+        },
+        {
+          "id": "C08",
+          "start": 1735,
+          "end": 1744,
+          "en": "Early progress changes the remaining day.",
+          "zh": "先取得重要进展，改变了一天后续的安排。"
+        },
+        {
+          "id": "C09",
           "start": 1744,
           "end": 1754,
-          "en": "Finishing that task leaves room to help other people.",
-          "zh": "先完成重要任务，才能留出精力帮助别人。"
+          "en": "Completed priorities leave room for others.",
+          "zh": "完成优先事项后，就有余力帮助别人。"
         }
       ]
     }
@@ -559,6 +671,13 @@
         "zh": "沿用五章课件结构；原声分段播放、原创双语导读、表达卡、辨析与练习。",
         "en": ""
       }
+    },
+    {
+      "v": "1.5.0",
+      "date": "2026-11-02",
+      "note": {
+        "zh": "逐段核对当前视频时间轴；将长段听力任务改为短段双语要点；启用原片英文字幕。"
+      }
     }
   ],
   "layout": "deck",
@@ -625,10 +744,10 @@
     },
     {
       "no": 2,
-      "zh": "原声与同步释义",
+      "zh": "原声与同步要点",
       "en": "WATCH & LISTEN",
       "h2": "三段原声：长期投入、韧性与优先级",
-      "dek": "播放时，右侧按原声语义段同步高亮并滚动；点击任意释义可跳到对应位置。原创释义不是逐字字幕。"
+      "dek": "听原话：看视频内英文 CC 字幕。理解意思：看右侧随时间切换的双语要点。点击要点可回听对应语段。"
     },
     {
       "no": 3,
@@ -875,5 +994,6 @@
   },
   "learningMode": "guide",
   "blindPrompt": "先不看导读。听完后，用一句话说出这一段在回答什么问题。",
-  "syncedParaphrase": true
+  "syncedParaphrase": true,
+  "captionLanguage": "en"
 }

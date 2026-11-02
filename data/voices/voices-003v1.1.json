@@ -2,7 +2,7 @@
   "schema": "aiai-voices/1.0",
   "no": "AI VOICES 003",
   "num": 3,
-  "version": "1.2.0",
+  "version": "1.5.0",
   "verifiedAt": "2026-11-02",
   "publishedAt": "2026-11-02",
   "speaker": {
@@ -39,7 +39,7 @@
   },
   "goals": [],
   "transcriptNote": {
-    "zh": "录制日期与段落时间据 TED 官方访谈及英文字幕核对；YouTube 播放位置可能有数秒差异。右侧是原创双语听力导读，不是逐字字幕；原文请打开 TED 官方转写页。文中的“今年”指 2022 年。",
+    "zh": "右侧是按短语义段定位的原创双语要点，不是讲者逐字原话。逐句听力请对照视频内英文 CC 字幕（可在播放器设置中切换语言）；右栏仅覆盖 A/B/C 三段。时间点按当前 YouTube 版本的转写重新核对。",
     "en": "Original bilingual listening guide, not a verbatim transcript."
   },
   "segments": [
@@ -49,15 +49,99 @@
         "zh": "片段 A · 从预测回到技术问题",
         "en": ""
       },
-      "start": 751,
+      "start": 752,
       "end": 860,
       "sentences": [
         {
           "id": "A01",
-          "start": 751,
+          "start": 752,
+          "end": 759,
+          "en": "Musk predicts progress within 2022.",
+          "zh": "马斯克预测在 2022 年内取得突破。"
+        },
+        {
+          "id": "A02",
+          "start": 759,
+          "end": 767,
+          "en": "He compares accident probabilities.",
+          "zh": "他用事故概率作比较。"
+        },
+        {
+          "id": "A03",
+          "start": 767,
+          "end": 771,
+          "en": "The interviewer asks for supporting evidence.",
+          "zh": "主持人追问判断依据。"
+        },
+        {
+          "id": "A04",
+          "start": 771,
+          "end": 775,
+          "en": "His explanation starts with spatial representation.",
+          "zh": "他的解释从空间表示开始。"
+        },
+        {
+          "id": "A05",
+          "start": 775,
+          "end": 789,
+          "en": "Single images leave ambiguities.",
+          "zh": "单张图像存在歧义。"
+        },
+        {
+          "id": "A06",
+          "start": 789,
+          "end": 795,
+          "en": "Sequences provide missing context.",
+          "zh": "连续画面补足了语境。"
+        },
+        {
+          "id": "A07",
+          "start": 795,
+          "end": 810,
+          "en": "Cameras and annotations need synchronization.",
+          "zh": "多摄像头画面与标注需要同步。"
+        },
+        {
+          "id": "A08",
+          "start": 810,
+          "end": 817,
+          "en": "Consistent labeling reduces disagreement.",
+          "zh": "统一标注有助于减少不一致。"
+        },
+        {
+          "id": "A09",
+          "start": 817,
+          "end": 827,
+          "en": "Time becomes another essential dimension.",
+          "zh": "时间成为另一个重要维度。"
+        },
+        {
+          "id": "A10",
+          "start": 827,
+          "end": 837,
+          "en": "This required custom labeling software.",
+          "zh": "这需要专门开发标注软件。"
+        },
+        {
+          "id": "A11",
+          "start": 837,
+          "end": 849,
+          "en": "Automation helps human annotators.",
+          "zh": "自动标注帮助人工提高效率。"
+        },
+        {
+          "id": "A12",
+          "start": 849,
+          "end": 856,
+          "en": "Manual annotation alone cannot scale.",
+          "zh": "单靠人工标注难以扩大规模。"
+        },
+        {
+          "id": "A13",
+          "start": 856,
           "end": 860,
-          "en": "Listen for a deadline and then for the evidence offered after it. What would you need to measure before accepting a claim of safer driving?",
-          "zh": "先听一个期限，再听支撑它的理由。接受“驾驶更安全”的判断之前，你还需要测量什么？"
+          "en": "Humans increasingly correct automated labels.",
+          "zh": "人的角色更多转向修正自动标注。"
         }
       ]
     },
@@ -73,9 +157,72 @@
         {
           "id": "B01",
           "start": 1241,
+          "end": 1247,
+          "en": "Driving requires understanding the physical world.",
+          "zh": "自动驾驶需要理解物理世界。"
+        },
+        {
+          "id": "B02",
+          "start": 1247,
+          "end": 1258,
+          "en": "He extends that idea to legged robots.",
+          "zh": "他把这一路径延伸到有腿的机器人。"
+        },
+        {
+          "id": "B03",
+          "start": 1258,
+          "end": 1268,
+          "en": "Other firms demonstrate capable machines.",
+          "zh": "其他公司已展示了有能力的机器。"
+        },
+        {
+          "id": "B04",
+          "start": 1268,
+          "end": 1276,
+          "en": "Mechanical feasibility has been demonstrated.",
+          "zh": "机械层面的可行性已有展示。"
+        },
+        {
+          "id": "B05",
+          "start": 1276,
+          "end": 1287,
+          "en": "Useful autonomous behavior remains difficult.",
+          "zh": "自主完成有用行为仍有难度。"
+        },
+        {
+          "id": "B06",
+          "start": 1287,
+          "end": 1294,
+          "en": "Intelligence and manufacturing are the bottlenecks.",
+          "zh": "智能与规模制造是他指出的瓶颈。"
+        },
+        {
+          "id": "B07",
+          "start": 1294,
+          "end": 1297,
+          "en": "He argues Tesla has relevant strengths.",
+          "zh": "他认为特斯拉拥有相关优势。"
+        },
+        {
+          "id": "B08",
+          "start": 1297,
+          "end": 1306,
+          "en": "Specialized components still need designing.",
+          "zh": "专用执行器与传感器仍需设计。"
+        },
+        {
+          "id": "B09",
+          "start": 1306,
+          "end": 1310,
+          "en": "He predicts a market beyond cars.",
+          "zh": "他预测机器人市场会超过汽车。"
+        },
+        {
+          "id": "B10",
+          "start": 1310,
           "end": 1314,
-          "en": "List the requirements for a robot that works in an unfamiliar room. Which requirements concern software, hardware or manufacturing?",
-          "zh": "列出机器人在陌生房间工作所需的条件，分成软件、硬件和制造三类。"
+          "en": "The interviewer begins comparing risks.",
+          "zh": "主持人开始比较两者的风险。"
         }
       ]
     },
@@ -91,9 +238,51 @@
         {
           "id": "C01",
           "start": 1397,
+          "end": 1400,
+          "en": "The discussion turns to preventing harm.",
+          "zh": "讨论转向如何防止伤害。"
+        },
+        {
+          "id": "C02",
+          "start": 1400,
+          "end": 1409,
+          "en": "He proposes a protected local safeguard.",
+          "zh": "他提出不可远程改写的本地保护机制。"
+        },
+        {
+          "id": "C03",
+          "start": 1409,
+          "end": 1416,
+          "en": "A spoken command would halt activity.",
+          "zh": "口头指令应能让机器人停止行动。"
+        },
+        {
+          "id": "C04",
+          "start": 1416,
+          "end": 1423,
+          "en": "Remote changes must not remove protection.",
+          "zh": "远程更新不应取消这种保护。"
+        },
+        {
+          "id": "C05",
+          "start": 1423,
+          "end": 1428,
+          "en": "He supports public oversight of AI.",
+          "zh": "他支持对 AI 进行公共监管。"
+        },
+        {
+          "id": "C06",
+          "start": 1428,
+          "end": 1432,
+          "en": "Safety outweighs his dislike of regulation.",
+          "zh": "公共安全比他个人对监管的反感更重要。"
+        },
+        {
+          "id": "C07",
+          "start": 1432,
           "end": 1435,
-          "en": "Listen for a safety mechanism. Then ask: what failures would it address, and what failures would remain? A safety proposal is the start of a test plan.",
-          "zh": "听一个安全机制，然后问：它解决哪些失效，又遗漏哪些？安全设想应成为测试计划的起点。"
+          "en": "The interviewer redirects to household robots.",
+          "zh": "主持人把话题带回家用机器人。"
         }
       ]
     }
@@ -105,8 +294,8 @@
       "zh": "现实世界人工智能",
       "sid": "A01",
       "at": {
-        "t": 751,
-        "label": "12:31"
+        "t": 752,
+        "label": "12:32"
       },
       "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
       "keys": [
@@ -474,6 +663,13 @@
         "zh": "沿用五章课件结构；原声分段播放、原创双语导读、表达卡、辨析与练习。",
         "en": ""
       }
+    },
+    {
+      "v": "1.5.0",
+      "date": "2026-11-02",
+      "note": {
+        "zh": "逐段核对当前视频时间轴；将长段听力任务改为短段双语要点；启用原片英文字幕。"
+      }
     }
   ],
   "layout": "deck",
@@ -540,10 +736,10 @@
     },
     {
       "no": 2,
-      "zh": "原声与导读",
+      "zh": "原声与同步要点",
       "en": "WATCH & LISTEN",
       "h2": "三段原声：机器人、预测与证据",
-      "dek": "先听原视频，再读原创双语导读。点导读卡跳到对应片段；逐字原文请查看官方转写。"
+      "dek": "听原话：看视频内英文 CC 字幕。理解意思：看右侧随时间切换的双语要点。点击要点可回听对应语段。"
     },
     {
       "no": 3,
@@ -789,5 +985,7 @@
     "en": ""
   },
   "learningMode": "guide",
-  "blindPrompt": "先不看导读。听完后，用一句话说出这一段在回答什么问题。"
+  "blindPrompt": "先不看导读。听完后，用一句话说出这一段在回答什么问题。",
+  "syncedParaphrase": true,
+  "captionLanguage": "en"
 }

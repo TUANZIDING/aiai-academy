@@ -2,7 +2,7 @@
   "schema": "aiai-voices/1.0",
   "no": "AI VOICES 002",
   "num": 2,
-  "version": "1.2.0",
+  "version": "1.5.0",
   "verifiedAt": "2026-11-02",
   "publishedAt": "2026-11-02",
   "speaker": {
@@ -39,7 +39,7 @@
   },
   "goals": [],
   "transcriptNote": {
-    "zh": "演讲日期由台大官网核对；片段位置据 NTUCommencement 官方视频的自动字幕核对，可能有数秒误差。右侧为原创双语导读与听力任务，不是逐字字幕；完整原文请使用原播放器转写文稿。",
+    "zh": "右侧是按短语义段定位的原创双语要点，不是讲者逐字原话。逐句听力请对照视频内英文 CC 字幕（可在播放器设置中切换语言）；右栏仅覆盖 A/B/C 三段。时间点按当前 YouTube 版本的转写重新核对。",
     "en": "Original bilingual listening guide, not a verbatim transcript."
   },
   "segments": [
@@ -49,15 +49,64 @@
         "zh": "片段 A · AI 与工作的变化",
         "en": ""
       },
-      "start": 433,
+      "start": 434,
       "end": 506,
       "sentences": [
         {
           "id": "A01",
-          "start": 433,
+          "start": 434,
+          "end": 438,
+          "en": "AI brings unfamiliar occupations.",
+          "zh": "AI 带来过去不存在的职业。"
+        },
+        {
+          "id": "A02",
+          "start": 438,
+          "end": 451,
+          "en": "New roles span data and safety.",
+          "zh": "新岗位涉及数据、提示词、运维与安全。"
+        },
+        {
+          "id": "A03",
+          "start": 451,
+          "end": 458,
+          "en": "Automation also displaces some work.",
+          "zh": "自动化也会淘汰部分工作。"
+        },
+        {
+          "id": "A04",
+          "start": 458,
+          "end": 462,
+          "en": "Every profession faces changes.",
+          "zh": "各类职业都会发生变化。"
+        },
+        {
+          "id": "A05",
+          "start": 462,
+          "end": 473,
+          "en": "Many kinds of workers gain capabilities.",
+          "zh": "程序员、设计师等从业者的能力得到增强。"
+        },
+        {
+          "id": "A06",
+          "start": 473,
+          "end": 483,
+          "en": "Adaptation requires learning these tools.",
+          "zh": "适应变化，需要学习运用新工具。"
+        },
+        {
+          "id": "A07",
+          "start": 483,
+          "end": 493,
+          "en": "AI becomes a working companion.",
+          "zh": "AI 可以成为工作中的协作助手。"
+        },
+        {
+          "id": "A08",
+          "start": 493,
           "end": 506,
-          "en": "Listen for the difference between a task and a job. Does a change in tools necessarily remove an entire profession? Write down one opportunity and one uncertainty.",
-          "zh": "听任务与职业有什么区别：工具改变，是否意味着整个职业消失？记下一项机会与一项不确定性。"
+          "en": "Competition includes skilled AI users.",
+          "zh": "竞争也来自善用 AI 的人。"
         }
       ]
     },
@@ -73,9 +122,72 @@
         {
           "id": "B01",
           "start": 729,
+          "end": 737,
+          "en": "He disclosed the flawed technical direction.",
+          "zh": "他向世嘉说明技术路线有误。"
+        },
+        {
+          "id": "B02",
+          "start": 737,
+          "end": 749,
+          "en": "The partner needed a different supplier.",
+          "zh": "世嘉需要另找合作方。"
+        },
+        {
+          "id": "B03",
+          "start": 749,
+          "end": 759,
+          "en": "Stopping still required financial help.",
+          "zh": "终止项目后，公司仍需要资金援助。"
+        },
+        {
+          "id": "B04",
+          "start": 759,
+          "end": 763,
+          "en": "The request was personally difficult.",
+          "zh": "提出这个请求，让他感到难堪。"
+        },
+        {
+          "id": "B05",
+          "start": 763,
+          "end": 773,
+          "en": "Sega accepted his unusual request.",
+          "zh": "世嘉接受了这一不同寻常的请求。"
+        },
+        {
+          "id": "B06",
+          "start": 773,
+          "end": 780,
+          "en": "That support bought development time.",
+          "zh": "这份支持为研发争取了时间。"
+        },
+        {
+          "id": "B07",
+          "start": 780,
+          "end": 797,
+          "en": "A new chip rescued the business.",
+          "zh": "新芯片帮助公司渡过危机。"
+        },
+        {
+          "id": "B08",
+          "start": 797,
+          "end": 812,
+          "en": "Demand led to the TSMC partnership.",
+          "zh": "产品需求促成了与台积电的合作。"
+        },
+        {
+          "id": "B09",
+          "start": 812,
+          "end": 822,
+          "en": "Humility made recovery possible.",
+          "zh": "直面错误、谦逊求助促成了转机。"
+        },
+        {
+          "id": "B10",
+          "start": 822,
           "end": 830,
-          "en": "Notice what makes asking for help difficult. Describe a situation in your own work where admitting a mistaken assumption could save time.",
-          "zh": "留意为什么求助很难。用自己的工作举例：承认哪一个错误假设，反而能节省时间？"
+          "en": "Success can make humility harder.",
+          "zh": "成功者有时更难做到谦逊。"
         }
       ]
     },
@@ -91,9 +203,65 @@
         {
           "id": "C01",
           "start": 1130,
+          "end": 1136,
+          "en": "The company chose to leave.",
+          "zh": "公司选择退出原来的市场。"
+        },
+        {
+          "id": "C02",
+          "start": 1136,
+          "end": 1154,
+          "en": "Its mission guided resource allocation.",
+          "zh": "公司的使命决定资源投向。"
+        },
+        {
+          "id": "C03",
+          "start": 1154,
+          "end": 1165,
+          "en": "Withdrawal opened another possibility.",
+          "zh": "退出旧市场，打开了新思路。"
+        },
+        {
+          "id": "C04",
+          "start": 1165,
+          "end": 1181,
+          "en": "Robotics suggested a different computer.",
+          "zh": "机器人需要另一种计算机。"
+        },
+        {
+          "id": "C05",
+          "start": 1181,
+          "end": 1188,
+          "en": "The proposed market was initially absent.",
+          "zh": "这个设想最初还没有现成市场。"
+        },
+        {
+          "id": "C06",
+          "start": 1188,
+          "end": 1198,
+          "en": "A large market was exchanged for uncertainty.",
+          "zh": "放弃庞大市场，转向未知机会。"
+        },
+        {
+          "id": "C07",
+          "start": 1198,
+          "end": 1210,
+          "en": "Later business validated the direction.",
+          "zh": "后来的业务发展验证了这个方向。"
+        },
+        {
+          "id": "C08",
+          "start": 1210,
+          "end": 1222,
+          "en": "Withdrawal challenges successful people.",
+          "zh": "主动退让对成功者并不容易。"
+        },
+        {
+          "id": "C09",
+          "start": 1222,
           "end": 1234,
-          "en": "Listen for the trade-off. If a team leaves one project, what could it gain and what could it lose? Make a two-column decision note.",
-          "zh": "听取舍：团队离开一个项目，可能得到什么，又会失去什么？写一张两栏决策表。"
+          "en": "Choosing what to abandon matters.",
+          "zh": "决定放弃什么，也是重要选择。"
         }
       ]
     }
@@ -105,8 +273,8 @@
       "zh": "利用；善用",
       "sid": "A01",
       "at": {
-        "t": 433,
-        "label": "7:13"
+        "t": 434,
+        "label": "7:14"
       },
       "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
       "keys": [
@@ -484,6 +652,13 @@
         "zh": "沿用五章课件结构；原声分段播放、原创双语导读、表达卡、辨析与练习。",
         "en": ""
       }
+    },
+    {
+      "v": "1.5.0",
+      "date": "2026-11-02",
+      "note": {
+        "zh": "逐段核对当前视频时间轴；将长段听力任务改为短段双语要点；启用原片英文字幕。"
+      }
     }
   ],
   "layout": "deck",
@@ -550,10 +725,10 @@
     },
     {
       "no": 2,
-      "zh": "原声与导读",
+      "zh": "原声与同步要点",
       "en": "WATCH & LISTEN",
       "h2": "三段原声：AI、职业与学习",
-      "dek": "先听原视频，再读原创双语导读。点导读卡跳到对应片段；逐字原文请查看官方转写。"
+      "dek": "听原话：看视频内英文 CC 字幕。理解意思：看右侧随时间切换的双语要点。点击要点可回听对应语段。"
     },
     {
       "no": 3,
@@ -799,5 +974,7 @@
     "en": ""
   },
   "learningMode": "guide",
-  "blindPrompt": "先不看导读。听完后，用一句话说出这一段在回答什么问题。"
+  "blindPrompt": "先不看导读。听完后，用一句话说出这一段在回答什么问题。",
+  "syncedParaphrase": true,
+  "captionLanguage": "en"
 }
