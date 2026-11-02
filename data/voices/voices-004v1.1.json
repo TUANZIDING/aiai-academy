@@ -1,0 +1,793 @@
+{
+  "schema": "aiai-voices/1.0",
+  "no": "AI VOICES 004",
+  "num": 4,
+  "version": "1.2.0",
+  "verifiedAt": "2026-11-02",
+  "publishedAt": "2026-11-02",
+  "speaker": {
+    "name": "Fei-Fei Li",
+    "zh": "李飞飞",
+    "role": {
+      "zh": "计算机视觉研究者；本课为 TED2024 演讲",
+      "en": ""
+    }
+  },
+  "talk": {
+    "title": "With spatial intelligence, AI will understand the real world",
+    "event": "TED2024",
+    "deliveredOn": "2024-04",
+    "uploadedOn": null,
+    "duration": "约 15 分钟"
+  },
+  "video": {
+    "provider": "youtube",
+    "id": "y8NtMZ7VGmU",
+    "url": "https://www.youtube.com/watch?v=y8NtMZ7VGmU",
+    "channel": "TED",
+    "channelUrl": "https://www.youtube.com/@TED",
+    "thumb": "https://i.ytimg.com/vi/y8NtMZ7VGmU/hqdefault.jpg",
+    "thumbFallback": "https://i.ytimg.com/vi/y8NtMZ7VGmU/hqdefault.jpg"
+  },
+  "question": {
+    "zh": "AI 会描述世界，就真的理解三维世界了吗？",
+    "en": "If AI can describe the world, does it understand three-dimensional space?"
+  },
+  "background": {
+    "zh": "李飞飞从视觉谈到空间中的行动。课程把“识别了什么”“预测会怎样”“接下来做什么”分开，练习理解具身智能的基本问题。",
+    "en": ""
+  },
+  "goals": [],
+  "transcriptNote": {
+    "zh": "演讲月份与片段时间据 TED 官方英文转写核对；播放器位置可能有数秒差异。右侧为原创双语导读，不是逐字字幕。完整英文与官方中文可在 TED 转写页切换。",
+    "en": "Original bilingual listening guide, not a verbatim transcript."
+  },
+  "segments": [
+    {
+      "id": "A",
+      "title": {
+        "zh": "片段 A · 从看见走向行动",
+        "en": ""
+      },
+      "start": 319,
+      "end": 402,
+      "sentences": [
+        {
+          "id": "A01",
+          "start": 319,
+          "end": 402,
+          "en": "Watch the scene with the glass. Separate three questions: what is visible, what may happen next, and what action could change the outcome?",
+          "zh": "看杯子的场景，把三个问题分开：眼前有什么、接下来可能发生什么、什么行动能改变结果？"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": {
+        "zh": "片段 B · 在环境中学习",
+        "en": ""
+      },
+      "start": 527,
+      "end": 600,
+      "sentences": [
+        {
+          "id": "B01",
+          "start": 527,
+          "end": 600,
+          "en": "Listen for the role of simulated environments. What could you vary in a simulation, and what would still need checking in the physical world?",
+          "zh": "听模拟环境的作用：哪些条件可以在模拟中变化，哪些仍需在物理世界核对？"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": {
+        "zh": "片段 C · 以人为本的方向",
+        "en": ""
+      },
+      "start": 796,
+      "end": 885,
+      "sentences": [
+        {
+          "id": "C01",
+          "start": 796,
+          "end": 885,
+          "en": "Listen to the closing vision. Who should benefit from a new system? Name one benefit you would measure and one human choice you would preserve.",
+          "zh": "听结尾的愿景：新系统应让谁受益？说出一个可衡量的收益，以及一种应保留给人的选择。"
+        }
+      ]
+    }
+  ],
+  "expressions": [
+    {
+      "id": "004-e0",
+      "phrase": "spatial intelligence",
+      "zh": "空间智能",
+      "sid": "A01",
+      "at": {
+        "t": 319,
+        "label": "5:19"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "空间智能"
+      ],
+      "collocations": [
+        "spatial intelligence"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "涉及位置与行动的任务需要空间智能。",
+        "en": "Spatial intelligence matters when a task involves positions and actions."
+      }
+    },
+    {
+      "id": "004-e1",
+      "phrase": "perception",
+      "zh": "感知",
+      "sid": "B01",
+      "at": {
+        "t": 527,
+        "label": "8:47"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "感知"
+      ],
+      "collocations": [
+        "perception"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "仅有感知并不能告诉我们该选哪种行动。",
+        "en": "Perception alone does not tell us which action to choose."
+      }
+    },
+    {
+      "id": "004-e2",
+      "phrase": "simulation",
+      "zh": "模拟",
+      "sid": "C01",
+      "at": {
+        "t": 796,
+        "label": "13:16"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "模拟"
+      ],
+      "collocations": [
+        "simulation"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "模拟让我们能够重复一个困难情境。",
+        "en": "A simulation lets us repeat a difficult situation."
+      }
+    },
+    {
+      "id": "004-e3",
+      "phrase": "human-centered",
+      "zh": "以人为本的",
+      "sid": "C01",
+      "at": {
+        "t": 796,
+        "label": "13:16"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "以人为本的"
+      ],
+      "collocations": [
+        "human-centered"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "以人为本的工具让用户能够纠错。",
+        "en": "A human-centered tool gives users a way to correct it."
+      }
+    },
+    {
+      "id": "004-e4",
+      "phrase": "augment",
+      "zh": "增强；辅助提升",
+      "sid": "C01",
+      "at": {
+        "t": 796,
+        "label": "13:16"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "增强；辅助提升"
+      ],
+      "collocations": [
+        "augment"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "目标是增强学习，而不是让我们不再提问。",
+        "en": "The goal is to augment our learning, not remove our questions."
+      }
+    }
+  ],
+  "ideas": [
+    {
+      "id": "i1",
+      "front": {
+        "zh": "识别物体只是一个起点。",
+        "en": "Recognition is a starting point."
+      },
+      "label": "analysis",
+      "quoteLabel": "主题依据 · 转述",
+      "quote": {
+        "zh": "演讲把空间感知、预测与行动联系起来。",
+        "en": ""
+      },
+      "meaning": {
+        "zh": "课程练习：不要只描述图片里“有杯子”，还要问它与边缘的距离、可能的移动和你的行动。",
+        "en": ""
+      },
+      "example": {
+        "zh": "读一张房间图片时，区分物体名称与能否安全通行。",
+        "en": ""
+      },
+      "at": {
+        "t": 319,
+        "label": "5:19"
+      }
+    },
+    {
+      "id": "i2",
+      "front": {
+        "zh": "模拟环境，让条件可以重复改变。",
+        "en": "Simulation lets us vary conditions."
+      },
+      "label": "analysis",
+      "quoteLabel": "主题依据 · 转述",
+      "quote": {
+        "zh": "她介绍用模拟环境支持机器人的学习。",
+        "en": ""
+      },
+      "meaning": {
+        "zh": "课程延伸：固定一个目标，逐次改变光照、位置或遮挡，记录失败模式；模拟结果还需要现实核对。",
+        "en": ""
+      },
+      "example": {
+        "zh": "在虚拟房间中改变桌子位置，比较导航方案是否仍有效。",
+        "en": ""
+      },
+      "at": {
+        "t": 527,
+        "label": "8:47"
+      }
+    },
+    {
+      "id": "i3",
+      "front": {
+        "zh": "能力之外，还要问谁受益。",
+        "en": "Ask who benefits from capability."
+      },
+      "label": "analysis",
+      "quoteLabel": "主题依据 · 转述",
+      "quote": {
+        "zh": "结尾强调以人为中心的发展方向。",
+        "en": ""
+      },
+      "meaning": {
+        "zh": "课程延伸：评价技术时，除了准确率，也问使用者能否理解、拒绝或纠正系统。",
+        "en": ""
+      },
+      "example": {
+        "zh": "学习工具应允许学生查看依据并修改错误，而不是只给一个分数。",
+        "en": ""
+      },
+      "at": {
+        "t": 796,
+        "label": "13:16"
+      }
+    }
+  ],
+  "labels": {
+    "speaker": {
+      "zh": "讲者原意",
+      "en": "Speaker’s view"
+    },
+    "analysis": {
+      "zh": "课程分析",
+      "en": "Our analysis"
+    },
+    "open": {
+      "zh": "尚无共识",
+      "en": "No consensus"
+    }
+  },
+  "claims": [],
+  "debate": {
+    "q": {
+      "zh": "评估空间智能，应该优先追求能力，还是先限定应用场景？"
+    },
+    "pro": {
+      "zh": "先推进能力：通用的研究可能打开原本想不到的应用。",
+      "en": "General research may reveal applications we have not imagined."
+    },
+    "con": {
+      "zh": "先限定场景：具体的人与任务，能让收益和错误更容易测量。",
+      "en": "A defined user and task make benefits and errors easier to measure."
+    }
+  },
+  "reflect": {
+    "english": {
+      "prompt": {
+        "zh": "用 2–3 句英语写一个不能只靠认出物体完成的任务：系统还须预测或做什么？",
+        "en": "Describe a task that needs more than recognizing objects. What must the system predict or do?"
+      },
+      "starters": [
+        "Recognizing the object is not enough because …",
+        "The system also needs to predict …",
+        "A human should be able to …"
+      ]
+    },
+    "prompt": {
+      "title": {
+        "zh": "继续和 AI 练英语",
+        "en": ""
+      },
+      "text": "Act as my English tutor. I studied Fei-Fei Li's 2024-04 talk, \"With spatial intelligence, AI will understand the real world\". Ask me one question at a time about a task in [your field]. Help me separate observation, prediction and opinion. Correct my English after I answer. Do not invent quotations or recent results. End with a short Chinese explanation."
+    },
+    "quiz": [
+      {
+        "q": {
+          "zh": "哪项任务最直接涉及空间关系？",
+          "en": ""
+        },
+        "options": [
+          {
+            "zh": "统计段落字数"
+          },
+          {
+            "zh": "判断杯子靠近桌边后可能怎样移动"
+          },
+          {
+            "zh": "按姓名字母排序"
+          }
+        ],
+        "answer": 1,
+        "why": {
+          "zh": "问题包含位置、可能的运动与后果。",
+          "en": ""
+        }
+      },
+      {
+        "q": {
+          "zh": "模拟中表现好，接下来还应该做什么？",
+          "en": ""
+        },
+        "options": [
+          {
+            "zh": "直接宣称所有场景可靠"
+          },
+          {
+            "zh": "检查真实环境差异与失败条件"
+          },
+          {
+            "zh": "不再记录错误"
+          }
+        ],
+        "answer": 1,
+        "why": {
+          "zh": "模拟中的条件与现实之间可能存在差异。",
+          "en": ""
+        }
+      },
+      {
+        "q": {
+          "zh": "哪项更符合本课的以人为本评估？",
+          "en": ""
+        },
+        "options": [
+          {
+            "zh": "只追求模型参数更多"
+          },
+          {
+            "zh": "只展示最好看的结果"
+          },
+          {
+            "zh": "定义受益者，测量收益，并保留纠错渠道"
+          }
+        ],
+        "answer": 2,
+        "why": {
+          "zh": "能力指标与使用者实际收益需要分别检查。",
+          "en": ""
+        }
+      }
+    ]
+  },
+  "medical": {
+    "title": {
+      "zh": "课程延伸 · 医学与科研学习",
+      "en": ""
+    },
+    "author": {
+      "zh": "aiai 学院 · AI 辅助课程整理",
+      "en": ""
+    },
+    "points": [
+      {
+        "zh": "课堂迁移：在教学用的虚拟三维场景中，让学习者先描述可见关系，再提出预测，最后检查操作后的结果。把“识别结构”与“理解操作后果”分开练习。这是教学设计示例，不是对任何临床系统有效性的主张。",
+        "en": ""
+      }
+    ],
+    "text": {
+      "zh": "课堂迁移：在教学用的虚拟三维场景中，让学习者先描述可见关系，再提出预测，最后检查操作后的结果。把“识别结构”与“理解操作后果”分开练习。这是教学设计示例，不是对任何临床系统有效性的主张。",
+      "en": ""
+    }
+  },
+  "sources": [
+    "video",
+    "ted"
+  ],
+  "sourceMap": {
+    "video": {
+      "title": "TED · With spatial intelligence, AI will understand the real world",
+      "url": "https://www.youtube.com/watch?v=y8NtMZ7VGmU",
+      "note": {
+        "zh": "官方原视频。字幕与时间可能随平台更新。"
+      }
+    },
+    "ted": {
+      "title": "TED · 空间智能官方演讲与多语种转写",
+      "url": "https://www.ted.com/talks/fei_fei_li_with_spatial_intelligence_ai_will_understand_the_real_world?view=transcript"
+    }
+  },
+  "further": [
+    {
+      "title": "TED · 空间智能官方演讲与多语种转写",
+      "url": "https://www.ted.com/talks/fei_fei_li_with_spatial_intelligence_ai_will_understand_the_real_world?view=transcript",
+      "zh": "核对原始语境与日期"
+    }
+  ],
+  "editor": {
+    "zh": "aiai 学院原创导读与练习；原视频由来源平台提供。未重传音视频；课程与讲者无隶属或背书关系。",
+    "en": ""
+  },
+  "revisions": [
+    {
+      "v": "1.2.0",
+      "date": "2026-11-02",
+      "note": {
+        "zh": "沿用五章课件结构；原声分段播放、原创双语导读、表达卡、辨析与练习。",
+        "en": ""
+      }
+    }
+  ],
+  "layout": "deck",
+  "cover": {
+    "series": {
+      "zh": "AI VOICES · AI 大师访谈与思想课",
+      "en": "Watch in English. Think in depth. Learn with AI."
+    },
+    "issue": {
+      "zh": "第 4 期",
+      "no": "AI VOICES 004"
+    },
+    "theme": {
+      "zh": "本期主题：空间智能与以人为本"
+    },
+    "extra": {
+      "zh": "经典演讲 · 双语导读"
+    },
+    "titleLines": [
+      "AI 会描述世界，",
+      "就真的理解",
+      "[三维世界]了吗？"
+    ],
+    "who": {
+      "zh": "李飞飞从视觉谈到空间中的行动。课程把“识别了什么”“预测会怎样”“接下来做什么”分开，练习理解具身智能的基本问题。"
+    },
+    "dateline": {
+      "zh": "演讲／访谈：2024-04 · TED2024｜课程整理：2026-11-02"
+    },
+    "image": {
+      "src": "https://i.ytimg.com/vi/y8NtMZ7VGmU/hqdefault.jpg",
+      "fallback": "https://i.ytimg.com/vi/y8NtMZ7VGmU/hqdefault.jpg",
+      "alt": "Fei-Fei Li 官方视频封面",
+      "credit": {
+        "zh": "TED 官方视频封面；通过 YouTube 原地址展示。"
+      }
+    },
+    "honesty": {
+      "zh": "经典回看：这是 2024-04 的内容，不是最新新闻。人物预测与课程分析均需和当下事实区分。"
+    },
+    "background": {
+      "zh": "先听三段原声，再用自己的英语复述；第 4 章练习区分事实、观点与推断。"
+    },
+    "facts": [
+      {
+        "n": "约 15 分钟",
+        "zh": "原片长度"
+      },
+      {
+        "n": "3 段",
+        "zh": "官方原声 + 原创双语导读"
+      },
+      {
+        "n": "5 个",
+        "zh": "主题英语表达与原创例句"
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "no": 1,
+      "zh": "一个问题",
+      "en": "THE QUESTION"
+    },
+    {
+      "no": 2,
+      "zh": "原声与导读",
+      "en": "WATCH & LISTEN",
+      "h2": "三段原声：空间智能与以人为本",
+      "dek": "先听原视频，再读原创双语导读。点导读卡跳到对应片段；逐字原文请查看官方转写。"
+    },
+    {
+      "no": 3,
+      "zh": "三个大想法",
+      "en": "THREE BIG IDEAS",
+      "h2": "把讲话变成自己的问题",
+      "dek": "翻开卡片，看主题依据、课程分析和一个可以实践的例子。"
+    },
+    {
+      "no": 4,
+      "zh": "事实核查台",
+      "en": "THINK & VERIFY",
+      "h2": "分清说过什么、证明什么",
+      "dek": "带着可检验的问题读来源。以下包含课程编写的辨析命题，并非网络舆情统计。"
+    },
+    {
+      "no": 5,
+      "zh": "课堂与医学视角",
+      "en": "REFLECT & PRACTICE",
+      "h2": "动手练：从听懂到会表达",
+      "dek": "点一下每个“坏提示”，看看怎么改，以及为什么这样改更好。"
+    }
+  ],
+  "glossary": {},
+  "rest": {
+    "title": {
+      "zh": "继续观看原片",
+      "en": ""
+    },
+    "note": {
+      "zh": "沿着原片展开学习，避免仅凭短片段理解整场讲话。",
+      "en": ""
+    },
+    "items": [
+      {
+        "at": {
+          "t": 0,
+          "label": "0:00"
+        },
+        "zh": "从开头观看完整原片，记录这三个片段之前和之后的语境。"
+      }
+    ]
+  },
+  "ideaLabels": {
+    "speaker": {
+      "zh": "讲者观点",
+      "d": "对讲话内容的有来源概括。"
+    },
+    "analysis": {
+      "zh": "课程分析",
+      "d": "原创学习方法或应用，不是讲者原话。"
+    },
+    "open": {
+      "zh": "待检验",
+      "d": "不能凭演讲本身判定普遍成立。"
+    }
+  },
+  "contrast": {
+    "title": {
+      "zh": "看懂一张图，与在空间中行动",
+      "en": ""
+    },
+    "left": {
+      "k": "描述",
+      "zh": "指出物体、颜色和画面关系。"
+    },
+    "right": {
+      "k": "行动",
+      "zh": "结合位置、时间、后果与反馈，选择并修正行为。"
+    },
+    "at": {
+      "t": 319,
+      "label": "5:19"
+    },
+    "note": {
+      "zh": "左右为课程教学对照，不是讲者逐字引文。",
+      "en": ""
+    },
+    "image": {
+      "src": "../assets/voices/learning-cycle.svg",
+      "alt": "观察、提问、验证、修正的学习循环图",
+      "cap": {
+        "zh": "把观点转成自己可以检查的问题。",
+        "en": ""
+      },
+      "credit": "课程原创示意图"
+    }
+  },
+  "factcheck": {
+    "stamp": {
+      "en": "THINK & VERIFY",
+      "zh": "来源与判断"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "zh": "全部"
+      },
+      {
+        "id": "ok",
+        "zh": "有来源"
+      },
+      {
+        "id": "off",
+        "zh": "推论过度"
+      },
+      {
+        "id": "view",
+        "zh": "观点与预测"
+      },
+      {
+        "id": "miss",
+        "zh": "不能遗漏"
+      }
+    ],
+    "items": [
+      {
+        "tag": "ok",
+        "said": {
+          "zh": "演讲讨论的范围超出了给图片贴标签。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "空间中的预测与行动是本次演讲的主题。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 319,
+            "label": "5:19"
+          }
+        ],
+        "src": "ted"
+      },
+      {
+        "tag": "off",
+        "said": {
+          "zh": "能生成逼真图像，就证明理解物理世界。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "这是课程设置的辨析命题；视觉逼真与可验证的物理一致性是不同评价。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 319,
+            "label": "5:19"
+          }
+        ],
+        "src": "ted"
+      },
+      {
+        "tag": "view",
+        "said": {
+          "zh": "未来愿景等于已经普遍部署。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "演讲包含研究原型与未来想象；不能据此推断某项服务已广泛可用。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 527,
+            "label": "8:47"
+          }
+        ],
+        "src": "ted"
+      },
+      {
+        "tag": "miss",
+        "said": {
+          "zh": "只要更强，就一定更有益。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "结尾同时强调人类处境与尊严；收益需要额外定义和评价。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 796,
+            "label": "13:16"
+          }
+        ],
+        "src": "ted"
+      }
+    ],
+    "evidenceTitle": {
+      "zh": "课堂核对：如何记录证据",
+      "en": ""
+    },
+    "takeaway": {
+      "zh": "本台包含课程设置的辨析命题，不声称每一条都在网上广泛流传。出处能证明“说过什么”，不自动证明“说的必然正确”。",
+      "en": ""
+    }
+  },
+  "practice": {
+    "pairs": [
+      {
+        "bad": "这张图里有什么？",
+        "good": "请分别列出可见物体、可观察的空间关系和不确定之处；不要把看不见的内容当成事实。",
+        "why": "把观察与推测分开。"
+      },
+      {
+        "bad": "做一个能理解所有场景的模型。",
+        "good": "先限定为虚拟房间导航：规定起点、目标和障碍，记录每次路径、失败原因与环境变化。",
+        "why": "把抽象能力变成可重复的任务。"
+      },
+      {
+        "bad": "这个工具准确率高，就值得推广。",
+        "good": "请同时列出准确率之外的可用性、错误发现成本与用户纠正方式，并提出小规模评估方案。",
+        "why": "技术表现之外，还要评估人的使用体验。"
+      }
+    ]
+  },
+  "discussion": [
+    {
+      "zh": "看一张照片与亲自在房间走动，你获得的信息有哪些不同？"
+    },
+    {
+      "zh": "如果一个 AI 学习工具成绩很好，却不能解释或纠正错误，你会怎样使用它？"
+    }
+  ],
+  "closing": {
+    "line": {
+      "zh": "看见之后，还有预测、行动与人的选择。",
+      "en": ""
+    },
+    "homework": {
+      "zh": "选一个日常场景，写出“我看见—我预测—我会做—我如何核对”四句话。",
+      "en": ""
+    },
+    "image": {
+      "src": "../assets/voices/evidence-notes.svg",
+      "alt": "观察、推断、待核实三栏学习笔记",
+      "credit": "课程原创示意图"
+    }
+  },
+  "aiImageNote": {
+    "zh": "图示为课程原创 SVG，不是讲者肖像。",
+    "en": ""
+  },
+  "learningMode": "guide",
+  "blindPrompt": "先不看导读。听完后，用一句话说出这一段在回答什么问题。"
+}

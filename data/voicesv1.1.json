@@ -1,56 +1,143 @@
 {
- "schema": "aiai-voices-index/1.1",
- "series": {
-  "name": "AI VOICES",
-  "zh": "AI 大师访谈与思想课",
-  "slogan": "Watch in English. Think in depth. Learn with AI."
- },
- "episodes": [
-  {
-   "no": "AI VOICES 001",
-   "num": 1,
-   "speaker": "Andrej Karpathy",
-   "title": "Software Is Changing (Again)",
-   "question": {
-    "zh": "当自然语言成为编程语言，人类还需要学习编程吗？",
-    "en": "When natural language becomes a programming language, do humans still need to learn to code?"
-   },
-   "href": "voices/voices-001v1.1.html",
-   "data": "data/voices/voices-001v1.1.json",
-   "thumb": "https://i.ytimg.com/vi/LCEmiRjPEtQ/maxresdefault.jpg",
-   "status": "preview",
-   "verifiedAt": "2026-11-02",
-   "speakerZh": "安德烈·卡帕西",
-   "minutes": {
-    "zh": "约 25 分钟",
-    "note": "含约 5 分钟英文原声"
-   },
-   "level": {
-    "zh": "入门",
-    "en": "Beginner"
-   },
-   "dims": [
-    "AI",
-    "English",
-    "Philosophy"
-   ]
-  }
- ],
- "also": [
-  {
-   "kind": "news",
-   "label": "新闻课 · 第 1 期",
-   "title": "智能体 AI 读病历，找免疫治疗副作用",
-   "source": "Nature Cancer",
-   "href": "news/news-001v1.0.html",
-   "thumb": "assets/news/news-001-thumbv1.0.webp",
-   "thumbNote": "AI 生成插图",
-   "meta": "6 章 · 中英双语",
-   "dims": [
-    "AI",
-    "English",
-    "Evidence"
-   ]
-  }
- ]
+  "schema": "aiai-voices-index/1.1",
+  "series": {
+    "name": "AI VOICES",
+    "zh": "AI 大师访谈与思想课",
+    "slogan": "Watch in English. Think in depth. Learn with AI."
+  },
+  "episodes": [
+    {
+      "no": "AI VOICES 001",
+      "num": 1,
+      "speaker": "Andrej Karpathy",
+      "title": "Software Is Changing (Again)",
+      "question": {
+        "zh": "当自然语言成为编程语言，人类还需要学习编程吗？",
+        "en": "When natural language becomes a programming language, do humans still need to learn to code?"
+      },
+      "href": "voices/voices-001v1.1.html",
+      "data": "data/voices/voices-001v1.1.json",
+      "thumb": "https://i.ytimg.com/vi/LCEmiRjPEtQ/maxresdefault.jpg",
+      "status": "published",
+      "verifiedAt": "2026-11-02",
+      "speakerZh": "安德烈·卡帕西",
+      "minutes": {
+        "zh": "约 25 分钟",
+        "note": "含约 5 分钟英文原声"
+      },
+      "level": {
+        "zh": "入门",
+        "en": "Beginner"
+      },
+      "dims": [
+        "AI",
+        "English",
+        "Philosophy"
+      ]
+    },
+    {
+      "no": "AI VOICES 002",
+      "num": 2,
+      "speaker": "Jensen Huang",
+      "speakerZh": "黄仁勋",
+      "title": "National Taiwan University Commencement Address",
+      "question": {
+        "zh": "AI 改变工作，我们该追赶工具，还是训练判断？",
+        "en": "As AI changes work, should we chase tools or train our judgment?"
+      },
+      "href": "voices/voices-002v1.1.html",
+      "data": "data/voices/voices-002v1.1.json",
+      "thumb": "https://i.ytimg.com/vi/HMt2cG4TsY0/hqdefault.jpg",
+      "status": "published",
+      "verifiedAt": "2026-11-02",
+      "minutes": {
+        "zh": "约 25 分钟",
+        "note": "三段原声与双语导读"
+      },
+      "level": {
+        "zh": "入门至进阶",
+        "en": "Beginner to intermediate"
+      },
+      "dims": [
+        "AI",
+        "English",
+        "Philosophy"
+      ]
+    },
+    {
+      "no": "AI VOICES 003",
+      "num": 3,
+      "speaker": "Elon Musk",
+      "speakerZh": "埃隆·马斯克",
+      "title": "A future worth getting excited about",
+      "question": {
+        "zh": "AI 愿景令人兴奋，怎样判断它离现实还有多远？",
+        "en": "How can we judge the distance between an exciting AI vision and reality?"
+      },
+      "href": "voices/voices-003v1.1.html",
+      "data": "data/voices/voices-003v1.1.json",
+      "thumb": "https://i.ytimg.com/vi/YRvf00NooN8/hqdefault.jpg",
+      "status": "published",
+      "verifiedAt": "2026-11-02",
+      "minutes": {
+        "zh": "约 25 分钟",
+        "note": "三段原声与双语导读"
+      },
+      "level": {
+        "zh": "入门至进阶",
+        "en": "Beginner to intermediate"
+      },
+      "dims": [
+        "AI",
+        "English",
+        "Philosophy"
+      ]
+    },
+    {
+      "no": "AI VOICES 004",
+      "num": 4,
+      "speaker": "Fei-Fei Li",
+      "speakerZh": "李飞飞",
+      "title": "With spatial intelligence, AI will understand the real world",
+      "question": {
+        "zh": "AI 会描述世界，就真的理解三维世界了吗？",
+        "en": "If AI can describe the world, does it understand three-dimensional space?"
+      },
+      "href": "voices/voices-004v1.1.html",
+      "data": "data/voices/voices-004v1.1.json",
+      "thumb": "https://i.ytimg.com/vi/y8NtMZ7VGmU/hqdefault.jpg",
+      "status": "published",
+      "verifiedAt": "2026-11-02",
+      "minutes": {
+        "zh": "约 25 分钟",
+        "note": "三段原声与双语导读"
+      },
+      "level": {
+        "zh": "入门至进阶",
+        "en": "Beginner to intermediate"
+      },
+      "dims": [
+        "AI",
+        "English",
+        "Philosophy"
+      ]
+    }
+  ],
+  "also": [
+    {
+      "kind": "news",
+      "label": "新闻课 · 第 1 期",
+      "title": "智能体 AI 读病历，找免疫治疗副作用",
+      "source": "Nature Cancer",
+      "href": "news/news-001v1.0.html",
+      "thumb": "assets/news/news-001-thumbv1.0.webp",
+      "thumbNote": "AI 生成插图",
+      "meta": "6 章 · 中英双语",
+      "dims": [
+        "AI",
+        "English",
+        "Evidence"
+      ]
+    }
+  ]
 }

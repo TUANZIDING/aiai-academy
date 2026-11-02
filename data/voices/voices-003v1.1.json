@@ -1,0 +1,793 @@
+{
+  "schema": "aiai-voices/1.0",
+  "no": "AI VOICES 003",
+  "num": 3,
+  "version": "1.2.0",
+  "verifiedAt": "2026-11-02",
+  "publishedAt": "2026-11-02",
+  "speaker": {
+    "name": "Elon Musk",
+    "zh": "埃隆·马斯克",
+    "role": {
+      "zh": "Tesla 与 SpaceX 企业家；本课为 2022 年 TED 访谈",
+      "en": ""
+    }
+  },
+  "talk": {
+    "title": "A future worth getting excited about",
+    "event": "TED · Tesla Texas Gigafactory interview",
+    "deliveredOn": "2022-04-06",
+    "uploadedOn": null,
+    "duration": "66:28"
+  },
+  "video": {
+    "provider": "youtube",
+    "id": "YRvf00NooN8",
+    "url": "https://www.youtube.com/watch?v=YRvf00NooN8",
+    "channel": "TED",
+    "channelUrl": "https://www.youtube.com/@TED",
+    "thumb": "https://i.ytimg.com/vi/YRvf00NooN8/hqdefault.jpg",
+    "thumbFallback": "https://i.ytimg.com/vi/YRvf00NooN8/hqdefault.jpg"
+  },
+  "question": {
+    "zh": "AI 愿景令人兴奋，怎样判断它离现实还有多远？",
+    "en": "How can we judge the distance between an exciting AI vision and reality?"
+  },
+  "background": {
+    "zh": "在这场与 Chris Anderson 的访谈中，马斯克讨论自动驾驶、机器人与未来。课程用它练习：把技术路线、商业愿景和时间预测分开听。",
+    "en": ""
+  },
+  "goals": [],
+  "transcriptNote": {
+    "zh": "录制日期与段落时间据 TED 官方访谈及英文字幕核对；YouTube 播放位置可能有数秒差异。右侧是原创双语听力导读，不是逐字字幕；原文请打开 TED 官方转写页。文中的“今年”指 2022 年。",
+    "en": "Original bilingual listening guide, not a verbatim transcript."
+  },
+  "segments": [
+    {
+      "id": "A",
+      "title": {
+        "zh": "片段 A · 从预测回到技术问题",
+        "en": ""
+      },
+      "start": 751,
+      "end": 860,
+      "sentences": [
+        {
+          "id": "A01",
+          "start": 751,
+          "end": 860,
+          "en": "Listen for a deadline and then for the evidence offered after it. What would you need to measure before accepting a claim of safer driving?",
+          "zh": "先听一个期限，再听支撑它的理由。接受“驾驶更安全”的判断之前，你还需要测量什么？"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": {
+        "zh": "片段 B · 机器人需要什么能力",
+        "en": ""
+      },
+      "start": 1241,
+      "end": 1314,
+      "sentences": [
+        {
+          "id": "B01",
+          "start": 1241,
+          "end": 1314,
+          "en": "List the requirements for a robot that works in an unfamiliar room. Which requirements concern software, hardware or manufacturing?",
+          "zh": "列出机器人在陌生房间工作所需的条件，分成软件、硬件和制造三类。"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": {
+        "zh": "片段 C · 安全设计与监管",
+        "en": ""
+      },
+      "start": 1397,
+      "end": 1435,
+      "sentences": [
+        {
+          "id": "C01",
+          "start": 1397,
+          "end": 1435,
+          "en": "Listen for a safety mechanism. Then ask: what failures would it address, and what failures would remain? A safety proposal is the start of a test plan.",
+          "zh": "听一个安全机制，然后问：它解决哪些失效，又遗漏哪些？安全设想应成为测试计划的起点。"
+        }
+      ]
+    }
+  ],
+  "expressions": [
+    {
+      "id": "003-e0",
+      "phrase": "real-world AI",
+      "zh": "现实世界人工智能",
+      "sid": "A01",
+      "at": {
+        "t": 751,
+        "label": "12:31"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "现实世界人工智能"
+      ],
+      "collocations": [
+        "real-world AI"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "现实世界 AI 需要在精心准备的演示之外接受测试。",
+        "en": "A real-world AI system needs tests outside a polished demo."
+      }
+    },
+    {
+      "id": "003-e1",
+      "phrase": "scaling up",
+      "zh": "扩大规模",
+      "sid": "B01",
+      "at": {
+        "t": 1241,
+        "label": "20:41"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "扩大规模"
+      ],
+      "collocations": [
+        "scaling up"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "扩大原型的规模可能暴露新问题。",
+        "en": "Scaling up a prototype may reveal new problems."
+      }
+    },
+    {
+      "id": "003-e2",
+      "phrase": "safety features",
+      "zh": "安全功能",
+      "sid": "C01",
+      "at": {
+        "t": 1397,
+        "label": "23:17"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "安全功能"
+      ],
+      "collocations": [
+        "safety features"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "哪些安全功能可以今天就测试？",
+        "en": "Which safety features can we test today?"
+      }
+    },
+    {
+      "id": "003-e3",
+      "phrase": "confident",
+      "zh": "有信心的",
+      "sid": "C01",
+      "at": {
+        "t": 1397,
+        "label": "23:17"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "有信心的"
+      ],
+      "collocations": [
+        "confident"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "我对计划有信心，但仍然需要证据。",
+        "en": "I am confident in the plan, but I still need evidence."
+      }
+    },
+    {
+      "id": "003-e4",
+      "phrase": "timeline",
+      "zh": "时间计划",
+      "sid": "C01",
+      "at": {
+        "t": 1397,
+        "label": "23:17"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "时间计划"
+      ],
+      "collocations": [
+        "timeline"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "时间计划应包含假设与检查点。",
+        "en": "A timeline should include assumptions and checkpoints."
+      }
+    }
+  ],
+  "ideas": [
+    {
+      "id": "i1",
+      "front": {
+        "zh": "有期限的判断，要当作预测来听。",
+        "en": "A deadline is a forecast to test."
+      },
+      "label": "analysis",
+      "quoteLabel": "主题依据 · 转述",
+      "quote": {
+        "zh": "访谈中谈到当年解决自动驾驶问题的信心。",
+        "en": ""
+      },
+      "meaning": {
+        "zh": "课程方法：写下预测提出日期、截止日期、适用条件和成功标准，再决定将来怎样核对。",
+        "en": ""
+      },
+      "example": {
+        "zh": "“今年可用”需要补充在哪些环境、由谁接管、以什么错误率评估。",
+        "en": ""
+      },
+      "at": {
+        "t": 751,
+        "label": "12:31"
+      }
+    },
+    {
+      "id": "i2",
+      "front": {
+        "zh": "演示、可靠工作、量产是不同关口。",
+        "en": "A demo, reliability and scale are separate tests."
+      },
+      "label": "analysis",
+      "quoteLabel": "主题依据 · 转述",
+      "quote": {
+        "zh": "马斯克把现实世界智能与规模化制造列为挑战。",
+        "en": ""
+      },
+      "meaning": {
+        "zh": "课程延伸：看到机器人完成一次动作时，继续追问失败次数、换环境表现和维护成本。",
+        "en": ""
+      },
+      "example": {
+        "zh": "机械臂成功拿起一次杯子，不等于在不同桌面上连续稳定工作。",
+        "en": ""
+      },
+      "at": {
+        "t": 1241,
+        "label": "20:41"
+      }
+    },
+    {
+      "id": "i3",
+      "front": {
+        "zh": "谈安全，要能设计反例。",
+        "en": "Make safety claims testable."
+      },
+      "label": "analysis",
+      "quoteLabel": "主题依据 · 转述",
+      "quote": {
+        "zh": "他提出停止机制与 AI 监管的想法。",
+        "en": ""
+      },
+      "meaning": {
+        "zh": "课程方法：把“很安全”改写成“在什么故障下，谁能停止，怎样检查是否真的停止”。",
+        "en": ""
+      },
+      "example": {
+        "zh": "桌面模拟中让任务超时，验证停止按钮是否仍响应。",
+        "en": ""
+      },
+      "at": {
+        "t": 1397,
+        "label": "23:17"
+      }
+    }
+  ],
+  "labels": {
+    "speaker": {
+      "zh": "讲者原意",
+      "en": "Speaker’s view"
+    },
+    "analysis": {
+      "zh": "课程分析",
+      "en": "Our analysis"
+    },
+    "open": {
+      "zh": "尚无共识",
+      "en": "No consensus"
+    }
+  },
+  "claims": [],
+  "debate": {
+    "q": {
+      "zh": "激进的技术期限，能帮助创新吗？"
+    },
+    "pro": {
+      "zh": "可以：明确且有挑战的期限，可能促使团队更快验证假设。",
+      "en": "A demanding deadline may push a team to test assumptions sooner."
+    },
+    "con": {
+      "zh": "也可能有害：过度强调期限，会诱发选择性展示和掩盖失败。",
+      "en": "Too much pressure may encourage selective demos and hidden failures."
+    }
+  },
+  "reflect": {
+    "english": {
+      "prompt": {
+        "zh": "选一条 AI 预测，用 2–3 句英语写：什么证据会让你改变判断？",
+        "en": "Choose one prediction about AI. What evidence would change your mind?"
+      },
+      "starters": [
+        "The prediction I want to test is …",
+        "The claim would be stronger if …",
+        "I would change my mind when …"
+      ]
+    },
+    "prompt": {
+      "title": {
+        "zh": "继续和 AI 练英语",
+        "en": ""
+      },
+      "text": "Act as my English tutor. I studied Elon Musk's 2022-04-06 talk, \"A future worth getting excited about\". Ask me one question at a time about a task in [your field]. Help me separate observation, prediction and opinion. Correct my English after I answer. Do not invent quotations or recent results. End with a short Chinese explanation."
+    },
+    "quiz": [
+      {
+        "q": {
+          "zh": "访谈里的“今年”应怎样理解？",
+          "en": ""
+        },
+        "options": [
+          {
+            "zh": "观看视频的这一年"
+          },
+          {
+            "zh": "访谈发生的 2022 年"
+          },
+          {
+            "zh": "随意理解"
+          }
+        ],
+        "answer": 1,
+        "why": {
+          "zh": "时间指示词必须绑定发言日期。",
+          "en": ""
+        }
+      },
+      {
+        "q": {
+          "zh": "验证机器人可靠性，哪项更有帮助？",
+          "en": ""
+        },
+        "options": [
+          {
+            "zh": "只看最好的一次演示"
+          },
+          {
+            "zh": "听支持者评价"
+          },
+          {
+            "zh": "预先定义场景，报告所有试验与失败"
+          }
+        ],
+        "answer": 2,
+        "why": {
+          "zh": "选择性展示无法代替完整的测试记录。",
+          "en": ""
+        }
+      },
+      {
+        "q": {
+          "zh": "停止按钮为什么还需要测试？",
+          "en": ""
+        },
+        "options": [
+          {
+            "zh": "按钮存在就足够"
+          },
+          {
+            "zh": "需要验证故障发生时是否仍有效"
+          },
+          {
+            "zh": "因为所有机器人都不能工作"
+          }
+        ],
+        "answer": 1,
+        "why": {
+          "zh": "安全设计要检查失效情况，不能仅检查正常流程。",
+          "en": ""
+        }
+      }
+    ]
+  },
+  "medical": {
+    "title": {
+      "zh": "课程延伸 · 医学与科研学习",
+      "en": ""
+    },
+    "author": {
+      "zh": "aiai 学院 · AI 辅助课程整理",
+      "en": ""
+    },
+    "points": [
+      {
+        "zh": "课堂迁移：给一个科研自动化方案建立“能力—证据—未知”三栏表。能生成报告，不等于能独立审查研究设计；展示一次成功，也不等于经得住不同数据的复核。这里讨论的是课程评估方法，不是诊疗建议。",
+        "en": ""
+      }
+    ],
+    "text": {
+      "zh": "课堂迁移：给一个科研自动化方案建立“能力—证据—未知”三栏表。能生成报告，不等于能独立审查研究设计；展示一次成功，也不等于经得住不同数据的复核。这里讨论的是课程评估方法，不是诊疗建议。",
+      "en": ""
+    }
+  },
+  "sources": [
+    "video",
+    "ted"
+  ],
+  "sourceMap": {
+    "video": {
+      "title": "TED · A future worth getting excited about",
+      "url": "https://www.youtube.com/watch?v=YRvf00NooN8",
+      "note": {
+        "zh": "官方原视频。字幕与时间可能随平台更新。"
+      }
+    },
+    "ted": {
+      "title": "TED · 官方访谈及转写文稿",
+      "url": "https://www.ted.com/talks/elon_musk_a_future_worth_getting_excited_about?view=transcript"
+    }
+  },
+  "further": [
+    {
+      "title": "TED · 官方访谈及转写文稿",
+      "url": "https://www.ted.com/talks/elon_musk_a_future_worth_getting_excited_about?view=transcript",
+      "zh": "核对原始语境与日期"
+    }
+  ],
+  "editor": {
+    "zh": "aiai 学院原创导读与练习；原视频由来源平台提供。未重传音视频；课程与讲者无隶属或背书关系。",
+    "en": ""
+  },
+  "revisions": [
+    {
+      "v": "1.2.0",
+      "date": "2026-11-02",
+      "note": {
+        "zh": "沿用五章课件结构；原声分段播放、原创双语导读、表达卡、辨析与练习。",
+        "en": ""
+      }
+    }
+  ],
+  "layout": "deck",
+  "cover": {
+    "series": {
+      "zh": "AI VOICES · AI 大师访谈与思想课",
+      "en": "Watch in English. Think in depth. Learn with AI."
+    },
+    "issue": {
+      "zh": "第 3 期",
+      "no": "AI VOICES 003"
+    },
+    "theme": {
+      "zh": "本期主题：机器人、预测与证据"
+    },
+    "extra": {
+      "zh": "经典演讲 · 双语导读"
+    },
+    "titleLines": [
+      "AI 愿景令人兴奋，",
+      "怎样判断它离现实",
+      "还有[多远]？"
+    ],
+    "who": {
+      "zh": "在这场与 Chris Anderson 的访谈中，马斯克讨论自动驾驶、机器人与未来。课程用它练习：把技术路线、商业愿景和时间预测分开听。"
+    },
+    "dateline": {
+      "zh": "演讲／访谈：2022-04-06 · TED · Tesla Texas Gigafactory interview｜课程整理：2026-11-02"
+    },
+    "image": {
+      "src": "https://i.ytimg.com/vi/YRvf00NooN8/hqdefault.jpg",
+      "fallback": "https://i.ytimg.com/vi/YRvf00NooN8/hqdefault.jpg",
+      "alt": "Elon Musk 官方视频封面",
+      "credit": {
+        "zh": "TED 官方视频封面；通过 YouTube 原地址展示。"
+      }
+    },
+    "honesty": {
+      "zh": "经典回看：这是 2022-04-06 的内容，不是最新新闻。人物预测与课程分析均需和当下事实区分。"
+    },
+    "background": {
+      "zh": "先听三段原声，再用自己的英语复述；第 4 章练习区分事实、观点与推断。"
+    },
+    "facts": [
+      {
+        "n": "66:28",
+        "zh": "原片长度"
+      },
+      {
+        "n": "3 段",
+        "zh": "官方原声 + 原创双语导读"
+      },
+      {
+        "n": "5 个",
+        "zh": "主题英语表达与原创例句"
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "no": 1,
+      "zh": "一个问题",
+      "en": "THE QUESTION"
+    },
+    {
+      "no": 2,
+      "zh": "原声与导读",
+      "en": "WATCH & LISTEN",
+      "h2": "三段原声：机器人、预测与证据",
+      "dek": "先听原视频，再读原创双语导读。点导读卡跳到对应片段；逐字原文请查看官方转写。"
+    },
+    {
+      "no": 3,
+      "zh": "三个大想法",
+      "en": "THREE BIG IDEAS",
+      "h2": "把讲话变成自己的问题",
+      "dek": "翻开卡片，看主题依据、课程分析和一个可以实践的例子。"
+    },
+    {
+      "no": 4,
+      "zh": "事实核查台",
+      "en": "THINK & VERIFY",
+      "h2": "分清说过什么、证明什么",
+      "dek": "带着可检验的问题读来源。以下包含课程编写的辨析命题，并非网络舆情统计。"
+    },
+    {
+      "no": 5,
+      "zh": "课堂与医学视角",
+      "en": "REFLECT & PRACTICE",
+      "h2": "动手练：从听懂到会表达",
+      "dek": "点一下每个“坏提示”，看看怎么改，以及为什么这样改更好。"
+    }
+  ],
+  "glossary": {},
+  "rest": {
+    "title": {
+      "zh": "继续观看原片",
+      "en": ""
+    },
+    "note": {
+      "zh": "沿着原片展开学习，避免仅凭短片段理解整场讲话。",
+      "en": ""
+    },
+    "items": [
+      {
+        "at": {
+          "t": 0,
+          "label": "0:00"
+        },
+        "zh": "从开头观看完整原片，记录这三个片段之前和之后的语境。"
+      }
+    ]
+  },
+  "ideaLabels": {
+    "speaker": {
+      "zh": "讲者观点",
+      "d": "对讲话内容的有来源概括。"
+    },
+    "analysis": {
+      "zh": "课程分析",
+      "d": "原创学习方法或应用，不是讲者原话。"
+    },
+    "open": {
+      "zh": "待检验",
+      "d": "不能凭演讲本身判定普遍成立。"
+    }
+  },
+  "contrast": {
+    "title": {
+      "zh": "愿景与验证，分别回答什么？",
+      "en": ""
+    },
+    "left": {
+      "k": "愿景",
+      "zh": "希望未来变成什么样，为什么值得投入。"
+    },
+    "right": {
+      "k": "验证",
+      "zh": "已经观察到什么，在哪些条件下，怎样重复检查。"
+    },
+    "at": {
+      "t": 751,
+      "label": "12:31"
+    },
+    "note": {
+      "zh": "左右为课程教学对照，不是讲者逐字引文。",
+      "en": ""
+    },
+    "image": {
+      "src": "../assets/voices/learning-cycle.svg",
+      "alt": "观察、提问、验证、修正的学习循环图",
+      "cap": {
+        "zh": "把观点转成自己可以检查的问题。",
+        "en": ""
+      },
+      "credit": "课程原创示意图"
+    }
+  },
+  "factcheck": {
+    "stamp": {
+      "en": "THINK & VERIFY",
+      "zh": "来源与判断"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "zh": "全部"
+      },
+      {
+        "id": "ok",
+        "zh": "有来源"
+      },
+      {
+        "id": "off",
+        "zh": "推论过度"
+      },
+      {
+        "id": "view",
+        "zh": "观点与预测"
+      },
+      {
+        "id": "miss",
+        "zh": "不能遗漏"
+      }
+    ],
+    "items": [
+      {
+        "tag": "ok",
+        "said": {
+          "zh": "这是一场 2022 年的访谈。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "TED 标明录制于 2022 年 4 月 6 日；不能把其中的时间预测当作最新进展。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 751,
+            "label": "12:31"
+          }
+        ],
+        "src": "ted"
+      },
+      {
+        "tag": "view",
+        "said": {
+          "zh": "给出完成期限，就等于已经实现。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "期限属于预测。应另找截至目标日期的实际结果；本课不把访谈本身当成兑现证明。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 751,
+            "label": "12:31"
+          }
+        ],
+        "src": "ted"
+      },
+      {
+        "tag": "off",
+        "said": {
+          "zh": "演示一个动作就证明机器人普遍可靠。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "这是课程设置的辨析命题；演示不能自动提供跨场景成功率。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 1241,
+            "label": "20:41"
+          }
+        ],
+        "src": "ted"
+      },
+      {
+        "tag": "miss",
+        "said": {
+          "zh": "访谈只强调能力，没有谈安全。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "安全停止机制和监管也在讨论范围内；这仍是设想，不是完整安全认证。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 1397,
+            "label": "23:17"
+          }
+        ],
+        "src": "ted"
+      }
+    ],
+    "evidenceTitle": {
+      "zh": "课堂核对：如何记录证据",
+      "en": ""
+    },
+    "takeaway": {
+      "zh": "本台包含课程设置的辨析命题，不声称每一条都在网上广泛流传。出处能证明“说过什么”，不自动证明“说的必然正确”。",
+      "en": ""
+    }
+  },
+  "practice": {
+    "pairs": [
+      {
+        "bad": "这位大佬说两年实现，那就一定会实现吧？",
+        "good": "把这段预测拆成发言日期、目标日期、实现标准和限定条件。缺失的信息标为未知，不补写成事实。",
+        "why": "将信心表达转化为可核对的问题。"
+      },
+      {
+        "bad": "做一个完全自主的研究助手。",
+        "good": "先做一个只整理公开文献元数据的助手；列出允许动作、失败时停止条件，以及人工检查清单。",
+        "why": "明确作用范围，才能验证能力。"
+      },
+      {
+        "bad": "这个演示很棒，帮我写它已经成熟。",
+        "good": "请描述演示实际展示的行为，并列出尚未展示的跨环境稳定性、错误率与维护成本。",
+        "why": "把看到的内容与推断分开。"
+      }
+    ]
+  },
+  "discussion": [
+    {
+      "zh": "雄心勃勃的期限可以推动行动，但它什么时候会妨碍诚实汇报？"
+    },
+    {
+      "zh": "你会怎样记录一次失败的 AI 演示，让别人能据此改进？"
+    }
+  ],
+  "closing": {
+    "line": {
+      "zh": "可以对未来乐观，也要对证据具体。",
+      "en": ""
+    },
+    "homework": {
+      "zh": "把一条你见过的 AI 预测写成可检验的句子，注明日期、范围与成功标准。",
+      "en": ""
+    },
+    "image": {
+      "src": "../assets/voices/evidence-notes.svg",
+      "alt": "观察、推断、待核实三栏学习笔记",
+      "credit": "课程原创示意图"
+    }
+  },
+  "aiImageNote": {
+    "zh": "图示为课程原创 SVG，不是讲者肖像。",
+    "en": ""
+  },
+  "learningMode": "guide",
+  "blindPrompt": "先不看导读。听完后，用一句话说出这一段在回答什么问题。"
+}

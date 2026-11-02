@@ -40,6 +40,9 @@
 
   function render(data) {
     D = data; CH = D.chapters;
+    // Keep episode 001's existing saved data; isolate every later lesson.
+    if (D.num !== 1) ['saved', 'notes', 'side'].forEach(k => { LS[k] += '-' + D.num; });
+    const guide = D.learningMode === 'guide';
     const V = D.video, S = D.sourceMap, C = D.cover;
     SENT = D.segments.flatMap(g => g.sentences.map(s => Object.assign({ seg: g.id }, s)));
     document.title = `${D.no} · ${D.speaker.name} · ${D.question.zh} | aiai 学院`;
@@ -103,7 +106,7 @@
         <button type="button" class="vx-chip" data-save="${e.id}" aria-pressed="${saved.includes(e.id)}">${saved.includes(e.id) ? '★ 已收藏' : '☆ 收藏'}</button>
       </div></div>
       <p class="mn">${esc(e.zh)}</p>
-      <details><summary>原句、搭配、语境、例句</summary><div class="body">
+      <details><summary>${guide ? '释义、语境、原创例句' : '原句、搭配、语境、例句'}</summary><div class="body">
         <p class="snip" lang="en">${esc(e.snippet)}</p>
         <dl><dt>关键词</dt><dd>${e.keys.map(esc).join('<br>')}</dd><dt>常用搭配</dt><dd lang="en">${e.collocations.map(esc).join(' · ')}</dd><dt>语境</dt><dd>${esc(e.context.zh)}</dd></dl>
         <p><span lang="en">${esc(e.example.en)}</span><br><span class="mut">${esc(e.example.zh)}</span></p>
@@ -124,40 +127,40 @@
         <div class="vx-ctl" role="toolbar" aria-label="播放控制 Player controls">
           <span class="vx-grp"><span>片段</span>${D.segments.map(g => `<button type="button" class="vx-chip" data-seg="${g.id}">${g.id}</button>`).join('')}</span>
           <span class="vx-grp" role="group" aria-label="速度 Speed"><span>速度</span>${[0.75, 1, 1.25].map(r => `<button type="button" class="vx-chip" data-rate="${r}" aria-pressed="${r === 1}">${r}×</button>`).join('')}</span>
-          <button type="button" class="vx-chip" id="vxLoop" aria-pressed="false">⟲ 循环本句</button>
+          <button type="button" class="vx-chip" id="vxLoop" aria-pressed="false">${guide ? '⟲ 循环本段' : '⟲ 循环本句'}</button>
           <button type="button" class="vx-chip" id="vxFull">⛶ 全屏</button>
         </div>
-        <p class="vx-cap"><b>${esc(D.speaker.name)}</b> ${esc(D.speaker.role.zh)} · 视频由 ${esc(V.channel)} 官方上传；中文为 aiai 学院译文。<span class="vx-now" id="vxNow" aria-live="polite"></span></p>
-        <div class="vx-shadow" id="vxShadow" role="status"><span>跟读：<b id="vxShadowText"></b></span><button type="button" class="vx-chip" id="vxShadowGo">继续 ▶</button></div>
+        <p class="vx-cap"><b>${esc(D.speaker.name)}</b> ${esc(D.speaker.role.zh)} · 视频由 ${esc(V.channel)} 官方上传；${guide ? '旁侧内容为 aiai 学院原创导读。' : '中文为 aiai 学院译文。'}<span class="vx-now" id="vxNow" aria-live="polite"></span></p>
+        <div class="vx-shadow" id="vxShadow" role="status"><span>${guide ? '复述任务：' : '跟读：'}<b id="vxShadowText"></b></span><button type="button" class="vx-chip" id="vxShadowGo">继续 ▶</button></div>
         <div class="vx-fallback" id="vxFallback" role="alert">
           <strong>视频播放器没有加载出来。</strong> 在中国大陆通常无法访问 YouTube。右边（手机上是下面）的文稿可以独立学习；每一句都附有“在 YouTube 打开（从此处）”链接。<br><a href="${esc(V.url)}" target="_blank" rel="noopener">在 YouTube 打开完整视频 ↗</a> · <button type="button" class="vx-chip" id="vxRetry">重试</button>
         </div>
       </div>
       <div class="vx-tx-col" id="vxTxCol">
         <div class="vx-tx-head">
-          <h3>双语文稿</h3>
+          <h3>${guide ? '原创双语导读' : '双语文稿'}</h3>
           <div class="vx-lang" role="radiogroup" aria-label="文稿语言 Transcript language">
             <button type="button" role="radio" data-l="bi" aria-checked="false">中英双语</button><button type="button" role="radio" data-l="zh" aria-checked="false">只看中文</button><button type="button" role="radio" data-l="en" aria-checked="false">只看英文</button>
           </div>
         </div>
         <div class="vx-tx-sub">
           <div class="vx-rounds" role="group" aria-label="三轮学习 Three rounds"><span>三轮学</span>
-            <button type="button" data-round="1" aria-pressed="false">① 盲听</button><button type="button" data-round="2" aria-pressed="true">② 双语</button><button type="button" data-round="3" aria-pressed="false">③ 跟读</button>
+            <button type="button" data-round="1" aria-pressed="false">① 盲听</button><button type="button" data-round="2" aria-pressed="true">② 双语</button><button type="button" data-round="3" aria-pressed="false">${guide ? '③ 复述' : '③ 跟读'}</button>
           </div>
           <label class="vx-only"><input type="checkbox" id="vxOnly" checked> 只播三段</label>
         </div>
-        <div class="vx-blind"><strong>第 1 轮 · 先只听</strong><p>不看字幕，试着抓住三个词：1.0、2.0、3.0 分别指什么？</p><button type="button" class="vx-chip" data-round="2">听完了，看字幕 → 第 2 轮</button></div>
-        <div class="vx-tx" id="vxTx" aria-label="同步文稿 Synced transcript">${tx}</div>
-        <p class="vx-txnote">${esc(D.transcriptNote.zh)}</p>
+        <div class="vx-blind"><strong>第 1 轮 · 先只听</strong><p>${esc(D.blindPrompt || '不看字幕，试着抓住三个词：1.0、2.0、3.0 分别指什么？')}</p><button type="button" class="vx-chip" data-round="2">听完了，看字幕 → 第 2 轮</button></div>
+        <div class="vx-tx" id="vxTx" aria-label="${guide ? '分段双语导读 Bilingual listening guide' : '同步文稿 Synced transcript'}">${tx}</div>
+        <p class="vx-txnote">${esc(D.transcriptNote.zh)}</p>${guide ? `<p class="vx-txnote"><a href="${esc(S.ted ? S.ted.url : V.url)}" target="_blank" rel="noopener">打开官方原文／转写文稿 ↗</a> · 英文导读为课程编写，请勿当作讲者原话引用。</p>` : ''}
       </div>
     </div>
     <div class="vx-below">
-      <details class="vx-fold vx-exfold"><summary><b>5 个原声英语表达</b><span>听原句 · 复制 · 收藏（第 2 轮后再看效果最好）</span></summary>
+      <details class="vx-fold vx-exfold"><summary><b>${D.expressions.length} 个${guide ? '主题' : '原声'}英语表达</b><span>${guide ? '关联原声片段 · 原创例句 · 收藏' : '听原句 · 复制 · 收藏（第 2 轮后再看效果最好）'}</span></summary>
         <ul class="vx-ex" id="vxEx">${ex}</ul>
         <p class="vx-saved"><span id="vxSavedN"></span><button type="button" class="vx-chip" id="vxCopySaved">复制全部收藏</button></p>
-        <p class="vx-howto"><b>三轮学法：</b>① 盲听——不看字幕听一遍；② 双语——中英对照，点句子反复听；③ 跟读——只看英文，每句结束自动暂停，跟着说一遍再继续。</p>
+        <p class="vx-howto"><b>三轮学法：</b>① 盲听——不看字幕听一遍；② 双语——中英对照，点句子反复听；${guide ? '③ 复述——听完片段暂停，用自己的英文回答导读问题，再点继续。导读不是原声字幕。' : '③ 跟读——只看英文，每句结束自动暂停，跟着说一遍再继续。'}</p>
       </details>
-      <details class="vx-fold"><summary><b>${esc(R0.title.zh)}</b><span>${R0.items.length} 条简短转述</span></summary>
+      <details class="vx-fold"><summary><b>${esc(R0.title.zh)}</b><span>${guide ? '完整语境与原片入口' : R0.items.length + ' 条简短转述'}</span></summary>
         <p class="vx-note">${esc(R0.note.zh)}</p>
         <ul class="vx-rest">${R0.items.map(it => `<li>${tsBtn(it.at)}<span>${esc(it.zh)}</span></li>`).join('')}</ul>
       </details>
@@ -176,7 +179,7 @@
         <p class="lb"><span class="vx-label ${it.label}">${esc(IL[it.label].zh)}</span>${it.label === 'analysis' ? ` <span class="vx-label open">${esc(IL.open.zh)}</span>` : ''}</p>
         <span class="vx-flip" aria-hidden="true">点击翻面 ↻</span></div>
       <div class="vx-face back" aria-hidden="true">
-        <p class="who">他说：</p>
+        <p class="who">${esc(it.quoteLabel || '他说：')}</p>
         <blockquote>${pair(it.quote)}<p>${tsBtn(it.at)}</p></blockquote>
         <p>${esc(it.meaning.zh)}</p>
         <p class="ex"><b>例子：</b>${esc(it.example.zh)}</p>
@@ -189,7 +192,7 @@
         <p class="note">${esc(K.note.zh)} ${tsBtn(K.at)}</p>
         <dl class="vx-legend">${['speaker', 'analysis', 'open'].map(k => `<div><dt><span class="vx-label ${k}">${esc(IL[k].zh)}</span></dt><dd>${esc(IL[k].d)}</dd></div>`).join('')}</dl>
       </div>
-      <figure class="vx-ai"><img src="${esc(K.image.src)}" alt="${esc(K.image.alt)}" loading="lazy" width="1200" height="670"><figcaption>${esc(K.image.cap.zh)}<b>AI 生成示意图</b></figcaption></figure>
+      <figure class="vx-ai"><img src="${esc(K.image.src)}" alt="${esc(K.image.alt)}" loading="lazy" width="1200" height="670"><figcaption>${esc(K.image.cap.zh)}<b>${esc(K.image.credit || 'AI 生成示意图')}</b></figcaption></figure>
     </div>
   </div>
 </section>`;
@@ -205,11 +208,11 @@
     <div class="vx-filters" role="group" aria-label="按类别筛选 Filter">${F.filters.map(f => `<button type="button" data-f="${f.id}" aria-pressed="${f.id === 'all'}">${esc(f.zh)}<i>${f.id === 'all' ? F.items.length : F.items.filter(x => x.tag === f.id).length}</i></button>`).join('')}</div>
     <ul class="vx-facts-list" id="vxFacts">${F.items.map(it => `<li data-tag="${it.tag}">
       <p class="tg"><span class="vx-tag t-${it.tag}">${esc(TAG[it.tag])}</span>${it.sub ? `<span class="sub">${esc(it.sub)}</span>` : ''}</p>
-      <div class="rows"><p><b>流传说法</b><span>${esc(it.said.zh)}</span></p>
-      <p><b>原话</b><span>${esc(it.orig.zh)} <span class="tss">${it.at.map(tsBtn).join(' ')}</span>${it.src ? ` <a href="${esc(S[it.src].url)}" target="_blank" rel="noopener" class="srcl">出处 ↗</a>` : ''}</span></p></div>
+      <div class="rows"><p><b>${guide ? '辨析命题' : '流传说法'}</b><span>${esc(it.said.zh)}</span></p>
+      <p><b>${guide ? '核对与分析' : '原话'}</b><span>${esc(it.orig.zh)} <span class="tss">${it.at.map(tsBtn).join(' ')}</span>${it.src ? ` <a href="${esc(S[it.src].url)}" target="_blank" rel="noopener" class="srcl">出处 ↗</a>` : ''}</span></p></div>
     </li>`).join('')}</ul>
     <p class="vx-empty" id="vxEmpty" hidden>这一类暂时没有条目。</p>
-    <details class="vx-fold vx-evi"><summary><b>${esc(F.evidenceTitle.zh)}</b><span>调查与研究数据 · ${D.claims.length} 组</span></summary>
+    <details class="vx-fold vx-evi" ${D.claims.length ? '' : 'hidden'}><summary><b>${esc(F.evidenceTitle.zh)}</b><span>调查与研究数据 · ${D.claims.length} 组</span></summary>
       ${D.glossary && D.glossary['4'] ? gloss(D.glossary['4']) : ''}
       ${D.claims.map(k => `<div class="vx-claim">
         <p class="said"><span lang="en">“${esc(k.said.en)}”</span> ${esc(k.said.zh)} ${tsBtn(k.at)}</p>
@@ -260,7 +263,7 @@
     <details class="vx-fold vx-med"><summary><b>${esc(M.title.zh)}</b><span>选读</span></summary>
       <p class="mut">作者：${esc(M.author.zh)}</p>${M.points.map(p => `<p>${esc(p.zh)}</p>`).join('')}</details>
 
-    <figure class="vx-ai vx-close-fig"><img src="${esc(Z.image.src)}" alt="${esc(Z.image.alt)}" loading="lazy" width="1200" height="654"><figcaption><b>AI 生成示意图</b></figcaption></figure>
+    <figure class="vx-ai vx-close-fig"><img src="${esc(Z.image.src)}" alt="${esc(Z.image.alt)}" loading="lazy" width="1200" height="654"><figcaption><b>${esc(Z.image.credit || 'AI 生成示意图')}</b></figcaption></figure>
     <p class="vx-closing">${esc(Z.line.zh)}</p>
     <p class="vx-hw">${esc(Z.homework.zh)}</p>
 
@@ -475,7 +478,7 @@
     $$('.vx-rounds [data-round]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.round === r)));
     $('#vxTxCol').classList.toggle('blind', r === 1);
     if (r === 2) setLang('bi', false);
-    if (r === 3) { setLang('en', false); toast('第 3 轮：每句结束会暂停，跟读原声后继续'); }
+    if (r === 3) { setLang('en', false); toast(D.learningMode === 'guide' ? '第 3 轮：片段结束暂停，用自己的英语复述后点继续' : '第 3 轮：每句结束会暂停，跟读原声后继续'); }
     if (r !== 3) endShadow();
   }
   function setLoop(s) { loopAB = { a: s.start, b: s.end, id: s.id }; $('#vxLoop').setAttribute('aria-pressed', 'true'); $('#vxNow').textContent = ` · 循环 ${fmt(s.start)}–${fmt(s.end)}`; }
@@ -556,7 +559,7 @@
         shadowFor = active; player.pauseVideo();
         $('#vxShadowText').textContent = s.en; $('#vxShadow').classList.add('on');
         const wait = Math.min(12, Math.max(2.5, (s.end - s.start) * 1.1)) * 1000;
-        shadowTimer = setTimeout(endShadow, wait);
+        if (D.learningMode !== 'guide') shadowTimer = setTimeout(endShadow, wait);
       }
     }
     if (!loopAB) $('#vxNow').textContent = ' · ' + (i >= 0 ? `${SENT[i].seg} · ${fmt(t)}` : fmt(t));

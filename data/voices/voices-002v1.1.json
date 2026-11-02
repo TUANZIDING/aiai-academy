@@ -1,0 +1,803 @@
+{
+  "schema": "aiai-voices/1.0",
+  "no": "AI VOICES 002",
+  "num": 2,
+  "version": "1.2.0",
+  "verifiedAt": "2026-11-02",
+  "publishedAt": "2026-11-02",
+  "speaker": {
+    "name": "Jensen Huang",
+    "zh": "黄仁勋",
+    "role": {
+      "zh": "NVIDIA 联合创始人；本课身份为 2023 年台大毕业典礼演讲嘉宾",
+      "en": ""
+    }
+  },
+  "talk": {
+    "title": "National Taiwan University Commencement Address",
+    "event": "国立台湾大学毕业典礼",
+    "deliveredOn": "2023-05-27",
+    "uploadedOn": null,
+    "duration": "23:26"
+  },
+  "video": {
+    "provider": "youtube",
+    "id": "HMt2cG4TsY0",
+    "url": "https://www.youtube.com/watch?v=HMt2cG4TsY0",
+    "channel": "NTUCommencement",
+    "channelUrl": "https://www.youtube.com/@NTUCommencement",
+    "thumb": "https://i.ytimg.com/vi/HMt2cG4TsY0/hqdefault.jpg",
+    "thumbFallback": "https://i.ytimg.com/vi/HMt2cG4TsY0/hqdefault.jpg"
+  },
+  "question": {
+    "zh": "AI 改变工作，我们该追赶工具，还是训练判断？",
+    "en": "As AI changes work, should we chase tools or train our judgment?"
+  },
+  "background": {
+    "zh": "黄仁勋把 AI 时代的机会与创业中的失败放在一起讲。课程关注的不是成功秘诀，而是面对变化时怎样行动、求助与取舍。",
+    "en": ""
+  },
+  "goals": [],
+  "transcriptNote": {
+    "zh": "演讲日期由台大官网核对；片段位置据 NTUCommencement 官方视频的自动字幕核对，可能有数秒误差。右侧为原创双语导读与听力任务，不是逐字字幕；完整原文请使用原播放器转写文稿。",
+    "en": "Original bilingual listening guide, not a verbatim transcript."
+  },
+  "segments": [
+    {
+      "id": "A",
+      "title": {
+        "zh": "片段 A · AI 与工作的变化",
+        "en": ""
+      },
+      "start": 433,
+      "end": 506,
+      "sentences": [
+        {
+          "id": "A01",
+          "start": 433,
+          "end": 506,
+          "en": "Listen for the difference between a task and a job. Does a change in tools necessarily remove an entire profession? Write down one opportunity and one uncertainty.",
+          "zh": "听任务与职业有什么区别：工具改变，是否意味着整个职业消失？记下一项机会与一项不确定性。"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": {
+        "zh": "片段 B · 承认错误与求助",
+        "en": ""
+      },
+      "start": 729,
+      "end": 830,
+      "sentences": [
+        {
+          "id": "B01",
+          "start": 729,
+          "end": 830,
+          "en": "Notice what makes asking for help difficult. Describe a situation in your own work where admitting a mistaken assumption could save time.",
+          "zh": "留意为什么求助很难。用自己的工作举例：承认哪一个错误假设，反而能节省时间？"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": {
+        "zh": "片段 C · 放弃也是选择",
+        "en": ""
+      },
+      "start": 1130,
+      "end": 1234,
+      "sentences": [
+        {
+          "id": "C01",
+          "start": 1130,
+          "end": 1234,
+          "en": "Listen for the trade-off. If a team leaves one project, what could it gain and what could it lose? Make a two-column decision note.",
+          "zh": "听取舍：团队离开一个项目，可能得到什么，又会失去什么？写一张两栏决策表。"
+        }
+      ]
+    }
+  ],
+  "expressions": [
+    {
+      "id": "002-e0",
+      "phrase": "take advantage of",
+      "zh": "利用；善用",
+      "sid": "A01",
+      "at": {
+        "t": 433,
+        "label": "7:13"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "利用；善用"
+      ],
+      "collocations": [
+        "take advantage of"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "我们可以善用工具，同时不轻信每个回答。",
+        "en": "We can take advantage of this tool without trusting every answer."
+      }
+    },
+    {
+      "id": "002-e1",
+      "phrase": "ask for help",
+      "zh": "求助",
+      "sid": "B01",
+      "at": {
+        "t": 729,
+        "label": "12:09"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "求助"
+      ],
+      "collocations": [
+        "ask for help"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "假设与证据冲突时，我会求助。",
+        "en": "I ask for help when my assumptions conflict with the evidence."
+      }
+    },
+    {
+      "id": "002-e2",
+      "phrase": "strategic retreat",
+      "zh": "战略性退出",
+      "sid": "C01",
+      "at": {
+        "t": 1130,
+        "label": "18:50"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "战略性退出"
+      ],
+      "collocations": [
+        "strategic retreat"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "战略退出需要清晰的理由，而不是借口。",
+        "en": "A strategic retreat needs a clear reason, not an excuse."
+      }
+    },
+    {
+      "id": "002-e3",
+      "phrase": "sacrifice",
+      "zh": "取舍；牺牲",
+      "sid": "C01",
+      "at": {
+        "t": 1130,
+        "label": "18:50"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "取舍；牺牲"
+      ],
+      "collocations": [
+        "sacrifice"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "为了专注这个项目，我们必须舍弃什么？",
+        "en": "What must we sacrifice to focus on this project?"
+      }
+    },
+    {
+      "id": "002-e4",
+      "phrase": "humility",
+      "zh": "谦逊",
+      "sid": "C01",
+      "at": {
+        "t": 1130,
+        "label": "18:50"
+      },
+      "snippet": "Original practice sentence · 以下为课程原创例句，不是讲者引文。",
+      "keys": [
+        "谦逊"
+      ],
+      "collocations": [
+        "humility"
+      ],
+      "context": {
+        "zh": "用这个表达练习说明自己的任务、证据或选择。播放按钮跳至关联主题片段，不是精确单词定位。",
+        "en": ""
+      },
+      "example": {
+        "zh": "谦逊让我愿意修改最初的解释。",
+        "en": "Humility allows me to revise my first explanation."
+      }
+    }
+  ],
+  "ideas": [
+    {
+      "id": "i1",
+      "front": {
+        "zh": "把岗位拆成任务，再谈 AI。",
+        "en": "Analyze tasks before judging jobs."
+      },
+      "label": "analysis",
+      "quoteLabel": "主题依据 · 转述",
+      "quote": {
+        "zh": "讲者谈到新岗位与旧任务的变化。",
+        "en": ""
+      },
+      "meaning": {
+        "zh": "先记录你一周做的任务，逐项观察哪些能辅助、哪些必须亲自判断。不要只用一个职业名称讨论替代。",
+        "en": ""
+      },
+      "example": {
+        "zh": "给文献去重与决定研究问题，同属科研工作，却需要不同的判断。",
+        "en": ""
+      },
+      "at": {
+        "t": 433,
+        "label": "7:13"
+      }
+    },
+    {
+      "id": "i2",
+      "front": {
+        "zh": "求助需要具体说明哪里错了。",
+        "en": "Ask for help with a clear diagnosis."
+      },
+      "label": "analysis",
+      "quoteLabel": "主题依据 · 转述",
+      "quote": {
+        "zh": "讲者用早期产品路线错误说明求助的价值。",
+        "en": ""
+      },
+      "meaning": {
+        "zh": "把“帮帮我”改成“我原来假设 X，证据 Y 与它矛盾，我需要核对 Z”。这是一种可练习的表达。",
+        "en": ""
+      },
+      "example": {
+        "zh": "程序报错时附上预期、实际结果和最小示例。",
+        "en": ""
+      },
+      "at": {
+        "t": 729,
+        "label": "12:09"
+      }
+    },
+    {
+      "id": "i3",
+      "front": {
+        "zh": "坚持与转向，都需要停止条件。",
+        "en": "Define when to persist and when to pivot."
+      },
+      "label": "analysis",
+      "quoteLabel": "主题依据 · 转述",
+      "quote": {
+        "zh": "讲者讲到退出手机芯片市场的取舍。",
+        "en": ""
+      },
+      "meaning": {
+        "zh": "课程延伸：开始前写明何时继续、何时暂停，避免用已经投入的时间证明项目值得继续。",
+        "en": ""
+      },
+      "example": {
+        "zh": "给学习一个新工具两周试用期，以完成任务的质量评估是否保留。",
+        "en": ""
+      },
+      "at": {
+        "t": 1130,
+        "label": "18:50"
+      }
+    }
+  ],
+  "labels": {
+    "speaker": {
+      "zh": "讲者原意",
+      "en": "Speaker’s view"
+    },
+    "analysis": {
+      "zh": "课程分析",
+      "en": "Our analysis"
+    },
+    "open": {
+      "zh": "尚无共识",
+      "en": "No consensus"
+    }
+  },
+  "claims": [],
+  "debate": {
+    "q": {
+      "zh": "面对 AI，学习的起点应是熟悉工具，还是明确任务？"
+    },
+    "pro": {
+      "zh": "先试工具：亲手操作才能发现原来不知道的可能性。",
+      "en": "Try tools first: practical experience can reveal unexpected possibilities."
+    },
+    "con": {
+      "zh": "先定任务：有评价标准，才不容易被新鲜感牵着走。",
+      "en": "Define the task first: clear criteria keep novelty from driving the decision."
+    }
+  },
+  "reflect": {
+    "english": {
+      "prompt": {
+        "zh": "用 2–3 句英语写：本周用 AI 改进哪项任务？怎样判断确实有帮助？",
+        "en": "Describe one task you will improve with AI this week. How will you judge whether it helped?"
+      },
+      "starters": [
+        "The task I want to improve is …",
+        "I would ask for help when …",
+        "I will continue only if …"
+      ]
+    },
+    "prompt": {
+      "title": {
+        "zh": "继续和 AI 练英语",
+        "en": ""
+      },
+      "text": "Act as my English tutor. I studied Jensen Huang's 2023-05-27 talk, \"National Taiwan University Commencement Address\". Ask me one question at a time about a task in [your field]. Help me separate observation, prediction and opinion. Correct my English after I answer. Do not invent quotations or recent results. End with a short Chinese explanation."
+    },
+    "quiz": [
+      {
+        "q": {
+          "zh": "评估 AI 对工作的影响，哪个问题更具体？",
+          "en": ""
+        },
+        "options": [
+          {
+            "zh": "我的职业会不会消失？"
+          },
+          {
+            "zh": "这个任务的哪些步骤可辅助，怎样复核？"
+          },
+          {
+            "zh": "哪个名人最乐观？"
+          }
+        ],
+        "answer": 1,
+        "why": {
+          "zh": "把岗位拆成任务，才容易制定可测量的学习计划。",
+          "en": ""
+        }
+      },
+      {
+        "q": {
+          "zh": "下面哪种求助信息最有用？",
+          "en": ""
+        },
+        "options": [
+          {
+            "zh": "我不行，请帮忙"
+          },
+          {
+            "zh": "你替我全部做完"
+          },
+          {
+            "zh": "我的假设、观察到的反例和需要帮助的具体步骤"
+          }
+        ],
+        "answer": 2,
+        "why": {
+          "zh": "提供假设、证据与缺口，让对方能定位问题。",
+          "en": ""
+        }
+      },
+      {
+        "q": {
+          "zh": "坚持一个项目时，什么能减少沉没成本影响？",
+          "en": ""
+        },
+        "options": [
+          {
+            "zh": "投入越多越不能停"
+          },
+          {
+            "zh": "提前定义评估指标与停止条件"
+          },
+          {
+            "zh": "只听成功案例"
+          }
+        ],
+        "answer": 1,
+        "why": {
+          "zh": "这是课程的方法练习；投入多少不能单独证明继续投入合理。",
+          "en": ""
+        }
+      }
+    ]
+  },
+  "medical": {
+    "title": {
+      "zh": "课程延伸 · 医学与科研学习",
+      "en": ""
+    },
+    "author": {
+      "zh": "aiai 学院 · AI 辅助课程整理",
+      "en": ""
+    },
+    "points": [
+      {
+        "zh": "课堂迁移：选择一项不含患者隐私的教学资料整理任务，先保留人工完成的基准，再比较 AI 辅助后的时间与错误。把“看起来更快”与“经过测量更好”分开。这是学习实验设计，不是临床建议。",
+        "en": ""
+      }
+    ],
+    "text": {
+      "zh": "课堂迁移：选择一项不含患者隐私的教学资料整理任务，先保留人工完成的基准，再比较 AI 辅助后的时间与错误。把“看起来更快”与“经过测量更好”分开。这是学习实验设计，不是临床建议。",
+      "en": ""
+    }
+  },
+  "sources": [
+    "video",
+    "ntu",
+    "nvidia"
+  ],
+  "sourceMap": {
+    "video": {
+      "title": "NTUCommencement · National Taiwan University Commencement Address",
+      "url": "https://www.youtube.com/watch?v=HMt2cG4TsY0",
+      "note": {
+        "zh": "官方原视频。字幕与时间可能随平台更新。"
+      }
+    },
+    "ntu": {
+      "title": "台大 · 2023 毕业典礼报道",
+      "url": "https://www.ntu.edu.tw/english/spotlight/2023/2164_20230529.html"
+    },
+    "nvidia": {
+      "title": "NVIDIA · 台大演讲官方报道",
+      "url": "https://blogs.nvidia.com/blog/huang-ntu-commencement/"
+    }
+  },
+  "further": [
+    {
+      "title": "台大 · 2023 毕业典礼报道",
+      "url": "https://www.ntu.edu.tw/english/spotlight/2023/2164_20230529.html",
+      "zh": "核对原始语境与日期"
+    },
+    {
+      "title": "NVIDIA · 台大演讲官方报道",
+      "url": "https://blogs.nvidia.com/blog/huang-ntu-commencement/",
+      "zh": "核对原始语境与日期"
+    }
+  ],
+  "editor": {
+    "zh": "aiai 学院原创导读与练习；原视频由来源平台提供。未重传音视频；课程与讲者无隶属或背书关系。",
+    "en": ""
+  },
+  "revisions": [
+    {
+      "v": "1.2.0",
+      "date": "2026-11-02",
+      "note": {
+        "zh": "沿用五章课件结构；原声分段播放、原创双语导读、表达卡、辨析与练习。",
+        "en": ""
+      }
+    }
+  ],
+  "layout": "deck",
+  "cover": {
+    "series": {
+      "zh": "AI VOICES · AI 大师访谈与思想课",
+      "en": "Watch in English. Think in depth. Learn with AI."
+    },
+    "issue": {
+      "zh": "第 2 期",
+      "no": "AI VOICES 002"
+    },
+    "theme": {
+      "zh": "本期主题：AI、职业与学习"
+    },
+    "extra": {
+      "zh": "经典演讲 · 双语导读"
+    },
+    "titleLines": [
+      "AI 改变工作，",
+      "我们该追赶工具，",
+      "还是[训练判断]？"
+    ],
+    "who": {
+      "zh": "黄仁勋把 AI 时代的机会与创业中的失败放在一起讲。课程关注的不是成功秘诀，而是面对变化时怎样行动、求助与取舍。"
+    },
+    "dateline": {
+      "zh": "演讲／访谈：2023-05-27 · 国立台湾大学毕业典礼｜课程整理：2026-11-02"
+    },
+    "image": {
+      "src": "https://i.ytimg.com/vi/HMt2cG4TsY0/hqdefault.jpg",
+      "fallback": "https://i.ytimg.com/vi/HMt2cG4TsY0/hqdefault.jpg",
+      "alt": "Jensen Huang 官方视频封面",
+      "credit": {
+        "zh": "NTUCommencement 官方视频封面；通过 YouTube 原地址展示。"
+      }
+    },
+    "honesty": {
+      "zh": "经典回看：这是 2023-05-27 的内容，不是最新新闻。人物预测与课程分析均需和当下事实区分。"
+    },
+    "background": {
+      "zh": "先听三段原声，再用自己的英语复述；第 4 章练习区分事实、观点与推断。"
+    },
+    "facts": [
+      {
+        "n": "23:26",
+        "zh": "原片长度"
+      },
+      {
+        "n": "3 段",
+        "zh": "官方原声 + 原创双语导读"
+      },
+      {
+        "n": "5 个",
+        "zh": "主题英语表达与原创例句"
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "no": 1,
+      "zh": "一个问题",
+      "en": "THE QUESTION"
+    },
+    {
+      "no": 2,
+      "zh": "原声与导读",
+      "en": "WATCH & LISTEN",
+      "h2": "三段原声：AI、职业与学习",
+      "dek": "先听原视频，再读原创双语导读。点导读卡跳到对应片段；逐字原文请查看官方转写。"
+    },
+    {
+      "no": 3,
+      "zh": "三个大想法",
+      "en": "THREE BIG IDEAS",
+      "h2": "把讲话变成自己的问题",
+      "dek": "翻开卡片，看主题依据、课程分析和一个可以实践的例子。"
+    },
+    {
+      "no": 4,
+      "zh": "事实核查台",
+      "en": "THINK & VERIFY",
+      "h2": "分清说过什么、证明什么",
+      "dek": "带着可检验的问题读来源。以下包含课程编写的辨析命题，并非网络舆情统计。"
+    },
+    {
+      "no": 5,
+      "zh": "课堂与医学视角",
+      "en": "REFLECT & PRACTICE",
+      "h2": "动手练：从听懂到会表达",
+      "dek": "点一下每个“坏提示”，看看怎么改，以及为什么这样改更好。"
+    }
+  ],
+  "glossary": {},
+  "rest": {
+    "title": {
+      "zh": "继续观看原片",
+      "en": ""
+    },
+    "note": {
+      "zh": "沿着原片展开学习，避免仅凭短片段理解整场讲话。",
+      "en": ""
+    },
+    "items": [
+      {
+        "at": {
+          "t": 0,
+          "label": "0:00"
+        },
+        "zh": "从开头观看完整原片，记录这三个片段之前和之后的语境。"
+      }
+    ]
+  },
+  "ideaLabels": {
+    "speaker": {
+      "zh": "讲者观点",
+      "d": "对讲话内容的有来源概括。"
+    },
+    "analysis": {
+      "zh": "课程分析",
+      "d": "原创学习方法或应用，不是讲者原话。"
+    },
+    "open": {
+      "zh": "待检验",
+      "d": "不能凭演讲本身判定普遍成立。"
+    }
+  },
+  "contrast": {
+    "title": {
+      "zh": "追工具，还是追问题？",
+      "en": ""
+    },
+    "left": {
+      "k": "工具清单",
+      "zh": "每天收藏一个新产品，却没有记录完成了什么。"
+    },
+    "right": {
+      "k": "任务清单",
+      "zh": "固定一个问题，比较时间、质量和复核成本。"
+    },
+    "at": {
+      "t": 433,
+      "label": "7:13"
+    },
+    "note": {
+      "zh": "左右为课程教学对照，不是讲者逐字引文。",
+      "en": ""
+    },
+    "image": {
+      "src": "../assets/voices/learning-cycle.svg",
+      "alt": "观察、提问、验证、修正的学习循环图",
+      "cap": {
+        "zh": "把观点转成自己可以检查的问题。",
+        "en": ""
+      },
+      "credit": "课程原创示意图"
+    }
+  },
+  "factcheck": {
+    "stamp": {
+      "en": "THINK & VERIFY",
+      "zh": "来源与判断"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "zh": "全部"
+      },
+      {
+        "id": "ok",
+        "zh": "有来源"
+      },
+      {
+        "id": "off",
+        "zh": "推论过度"
+      },
+      {
+        "id": "view",
+        "zh": "观点与预测"
+      },
+      {
+        "id": "miss",
+        "zh": "不能遗漏"
+      }
+    ],
+    "items": [
+      {
+        "tag": "ok",
+        "said": {
+          "zh": "他鼓励学生拥抱 AI 带来的变化。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "台大与 NVIDIA 官方报道均支持这一概括。这里是演讲主张，并非量化的就业效果研究。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 433,
+            "label": "7:13"
+          }
+        ],
+        "src": "ntu"
+      },
+      {
+        "tag": "off",
+        "said": {
+          "zh": "学会一个 AI 工具，就能保证职业安全。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "这是课程设置的待辨析命题；一场毕业演讲不能提供个人就业保证。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 433,
+            "label": "7:13"
+          }
+        ],
+        "src": "ntu"
+      },
+      {
+        "tag": "view",
+        "said": {
+          "zh": "成功者的经历可以直接复制。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "亲历故事能启发行动，但单个企业的成功不能估计所有尝试者的成功率。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 729,
+            "label": "12:09"
+          }
+        ],
+        "src": "nvidia"
+      },
+      {
+        "tag": "miss",
+        "said": {
+          "zh": "坚持就意味着永远不退出。",
+          "en": ""
+        },
+        "orig": {
+          "zh": "官方报道也记录了战略退出；把整场演讲压缩成“坚持到底”会漏掉取舍。",
+          "en": ""
+        },
+        "at": [
+          {
+            "t": 1130,
+            "label": "18:50"
+          }
+        ],
+        "src": "nvidia"
+      }
+    ],
+    "evidenceTitle": {
+      "zh": "课堂核对：如何记录证据",
+      "en": ""
+    },
+    "takeaway": {
+      "zh": "本台包含课程设置的辨析命题，不声称每一条都在网上广泛流传。出处能证明“说过什么”，不自动证明“说的必然正确”。",
+      "en": ""
+    }
+  },
+  "practice": {
+    "pairs": [
+      {
+        "bad": "告诉我以后学哪个 AI 最保险。",
+        "good": "请把我的文献整理任务拆成五步，比较可用工具，并给出准确率、耗时和人工复核方式。",
+        "why": "把无法保证的未来，改成今天能比较的具体任务。"
+      },
+      {
+        "bad": "我做不出来，你帮我想办法。",
+        "good": "我想把文献编号与 DOI 对齐，已试方法 A，错误示例为 B。请帮我检查假设，并提出一个最小修复步骤。",
+        "why": "清楚的求助能减少反复猜测。"
+      },
+      {
+        "bad": "我已经投入半年，必须继续。",
+        "good": "请列出继续、缩小范围、暂停三种方案；按新增收益、成本和机会成本比较，不把过去投入当成未来收益。",
+        "why": "把既往投入与下一步决策分开。"
+      }
+    ]
+  },
+  "discussion": [
+    {
+      "zh": "你最近学的工具，解决了一个什么具体问题？如果没解决，是否值得继续？"
+    },
+    {
+      "zh": "回忆一次求助：你能否用“假设—证据—缺口”重新描述？"
+    }
+  ],
+  "closing": {
+    "line": {
+      "zh": "行动要快，判断要有依据。",
+      "en": ""
+    },
+    "homework": {
+      "zh": "本周只挑一项任务：记录原耗时、试用 AI 后耗时，以及你亲自发现的错误。",
+      "en": ""
+    },
+    "image": {
+      "src": "../assets/voices/evidence-notes.svg",
+      "alt": "观察、推断、待核实三栏学习笔记",
+      "credit": "课程原创示意图"
+    }
+  },
+  "aiImageNote": {
+    "zh": "图示为课程原创 SVG，不是讲者肖像。",
+    "en": ""
+  },
+  "learningMode": "guide",
+  "blindPrompt": "先不看导读。听完后，用一句话说出这一段在回答什么问题。"
+}

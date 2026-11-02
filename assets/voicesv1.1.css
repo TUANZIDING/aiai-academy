@@ -489,3 +489,6 @@ html{scroll-padding-top:0}
 @media (min-width:1280px) and (min-height:960px){
   .vx-ch .vx-wide{max-width:clamp(1200px,(100svh - 560px) * 2.4,min(1560px,100vw - 64px))}
 }
+
+/* Empty evidence sections must stay hidden despite component layout rules. */
+.vx-fold[hidden]{display:none}
