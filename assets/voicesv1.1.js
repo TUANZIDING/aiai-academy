@@ -505,7 +505,7 @@
           host: 'https://www.youtube-nocookie.com', videoId: D.video.id,
           playerVars: { start: Math.floor(D.segments[0].start), rel: 0, playsinline: 1, modestbranding: 1, iv_load_policy: 3, cc_load_policy: 0, origin: location.origin },
           events: {
-            onReady: () => { ready = true; fallback = false; clearTimeout(timer); $('#vxFallback').classList.remove('on'); $('.vx-ctl button').forEach(b => b.disabled = false); $('#vxPState').textContent = '▶ 点击播放片段 A'; root.classList.remove('vx-nf'); startPoll(); tick(); if (pendingSeek !== null) { const p = pendingSeek; pendingSeek = null; seek(p, true); } },
+            onReady: () => { ready = true; fallback = false; clearTimeout(timer); $('#vxFallback').classList.remove('on'); $$('.vx-ctl button').forEach(b => b.disabled = false); $('#vxPState').textContent = '▶ 点击播放片段 A'; root.classList.remove('vx-nf'); startPoll(); tick(); if (pendingSeek !== null) { const p = pendingSeek; pendingSeek = null; seek(p, true); } },
             onStateChange: e => { if (e.data === 1) $('#vxPoster').style.display = 'none'; tick(); },
             onError: e => { clearTimeout(timer); goFallback('error ' + e.data); }
           }
