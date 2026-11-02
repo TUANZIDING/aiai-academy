@@ -1,0 +1,1570 @@
+{
+ "schema": "aiai-voices/1.0",
+ "no": "AI VOICES 001",
+ "num": 1,
+ "version": "1.1.0",
+ "verifiedAt": "2026-11-02",
+ "publishedAt": null,
+ "speaker": {
+  "name": "Andrej Karpathy",
+  "zh": "安德烈·卡帕西",
+  "role": {
+   "zh": "前特斯拉 AI 总监、OpenAI 创始成员",
+   "en": "Former Director of AI at Tesla; founding member of OpenAI"
+  }
+ },
+ "talk": {
+  "title": "Software Is Changing (Again)",
+  "event": "Y Combinator · AI Startup School",
+  "place": "San Francisco",
+  "deliveredOn": "2025-06-17",
+  "uploadedOn": "2025-06-19",
+  "duration": "39:31"
+ },
+ "video": {
+  "provider": "youtube",
+  "id": "LCEmiRjPEtQ",
+  "url": "https://www.youtube.com/watch?v=LCEmiRjPEtQ",
+  "channel": "Y Combinator",
+  "channelUrl": "https://www.youtube.com/@ycombinator",
+  "thumb": "https://img.youtube.com/vi/LCEmiRjPEtQ/maxresdefault.jpg",
+  "thumbFallback": "https://img.youtube.com/vi/LCEmiRjPEtQ/hqdefault.jpg"
+ },
+ "question": {
+  "zh": "当自然语言成为编程语言，人类还需要学习编程吗？",
+  "en": "When natural language becomes a programming language, do humans still need to learn to code?"
+ },
+ "background": {
+  "zh": "2025 年 6 月，安德烈·卡帕西在 Y Combinator 的 AI 创业学校上提出：软件正在第三次改变。代码是 1.0，神经网络权重是 2.0，而用英语写的提示词，正在成为 3.0。如果“会说话”就能“写程序”，那么花几年学编程还值得吗？人的技能、创造力和判断，又会被放到哪里？这节课只看三段原声，一起想清楚。"
+ },
+ "goals": [
+  {
+   "k": {
+    "zh": "AI",
+    "en": "AI"
+   },
+   "v": {
+    "zh": "分清软件 1.0 / 2.0 / 3.0",
+    "en": "Tell Software 1.0 / 2.0 / 3.0 apart"
+   }
+  },
+  {
+   "k": {
+    "zh": "英语",
+    "en": "English"
+   },
+   "v": {
+    "zh": "5 个关于程序员、自然语言、自主与协作的原声表达",
+    "en": "5 real expressions on programmers, natural language, autonomy and collaboration"
+   }
+  },
+  {
+   "k": {
+    "zh": "思考",
+    "en": "Think"
+   },
+   "v": {
+    "zh": "技术如何重新定义“人的能力”",
+    "en": "How technology redefines human ability"
+   }
+  }
+ ],
+ "transcriptNote": {
+  "zh": "英文据 YouTube 自动生成的英文字幕整理（清理式逐字：删去 uh/um、口误重复；修正明显的识别错误，如 GUIs、AlexNet、AIs）。中文为 aiai 学院译文。时间戳由字幕时间轴推算，误差约 ±1 秒；只摘录三段用于教学，完整内容请看原视频。",
+  "en": "English cleaned from YouTube’s auto-generated captions (clean verbatim: fillers and false starts removed; obvious ASR errors fixed, e.g. GUIs, AlexNet, AIs). Chinese: translated by AIAI. Timestamps derived from the caption timeline (≈ ±1 s). Three excerpts only, for teaching; watch the full talk on YouTube."
+ },
+ "segments": [
+  {
+   "id": "A",
+   "title": {
+    "zh": "片段 A · 软件的三个版本",
+    "en": "Segment A · Three versions of software"
+   },
+   "start": 91.68,
+   "end": 213.6,
+   "sentences": [
+    {
+     "id": "A01",
+     "start": 91.68,
+     "end": 101.42,
+     "en": "A few years ago, I kind of observed that software was kind of changing, and there was kind of like a new type of software around, and I called this Software 2.0 at the time.",
+     "zh": "几年前我注意到，软件正在发生变化——出现了一种新型的软件，我当时把它叫作“软件 2.0”。"
+    },
+    {
+     "id": "A02",
+     "start": 101.42,
+     "end": 106.12,
+     "en": "And the idea here was that Software 1.0 is the code you write for the computer.",
+     "zh": "当时的想法是：软件 1.0，就是你为计算机写的代码。"
+    },
+    {
+     "id": "A03",
+     "start": 106.12,
+     "end": 110.9,
+     "en": "Software 2.0 are basically neural networks, and in particular the weights of a neural network.",
+     "zh": "软件 2.0 基本上就是神经网络，具体说，是神经网络的权重。"
+    },
+    {
+     "id": "A04",
+     "start": 110.9,
+     "end": 120.88,
+     "en": "And you're not writing this code directly; you are more kind of like tuning the data sets, and then you're running an optimizer to create the parameters of this neural net.",
+     "zh": "这种代码不是你直接写出来的；你更多是在调整数据集，然后运行优化器，生成这个神经网络的参数。"
+    },
+    {
+     "id": "A05",
+     "start": 120.88,
+     "end": 126.1,
+     "en": "And I think at the time, neural nets were kind of seen as just a different kind of classifier, like a decision tree or something like that.",
+     "zh": "我记得那时候，神经网络只被看作另一种分类器，跟决策树之类差不多。"
+    },
+    {
+     "id": "A06",
+     "start": 126.1,
+     "end": 130.89,
+     "en": "And so I think this framing was a lot more appropriate.",
+     "zh": "所以我认为，“软件 2.0”这个框架要贴切得多。"
+    },
+    {
+     "id": "A07",
+     "start": 130.89,
+     "end": 135.54,
+     "en": "And now actually what we have is kind of like an equivalent of GitHub in the realm of Software 2.0.",
+     "zh": "而现在，在软件 2.0 的领域里，我们已经有了相当于 GitHub 的东西。"
+    },
+    {
+     "id": "A08",
+     "start": 135.54,
+     "end": 140.72,
+     "en": "And I think the Hugging Face is basically equivalent of GitHub in Software 2.0.",
+     "zh": "我认为 Hugging Face 基本上就是软件 2.0 世界里的 GitHub。"
+    },
+    {
+     "id": "A09",
+     "start": 140.72,
+     "end": 144.11,
+     "en": "And there's also Model Atlas, and you can visualize all the code written there.",
+     "zh": "还有 Model Atlas，你可以把那里“写”出来的所有代码可视化。"
+    },
+    {
+     "id": "A10",
+     "start": 144.11,
+     "end": 151.73,
+     "en": "In case you're curious, by the way, the giant circle, the point in the middle, these are the parameters of Flux, the image generator.",
+     "zh": "顺便说一句，如果你好奇：中间那个大圆点，是图像生成模型 Flux 的参数。"
+    },
+    {
+     "id": "A11",
+     "start": 151.73,
+     "end": 160.48,
+     "en": "And so anytime someone tunes on top of a Flux model, you basically create a git commit in this space, and you create a different kind of image generator.",
+     "zh": "每当有人在 Flux 模型之上做微调，就相当于在这个空间里提交了一次 git commit，造出一个不同的图像生成器。"
+    },
+    {
+     "id": "A12",
+     "start": 160.48,
+     "end": 165.4,
+     "en": "So basically what we have is: Software 1.0 is the computer code that programs a computer.",
+     "zh": "所以基本上：软件 1.0 是给计算机编程的计算机代码。"
+    },
+    {
+     "id": "A13",
+     "start": 165.4,
+     "end": 169.25,
+     "en": "Software 2.0 are the weights which program neural networks.",
+     "zh": "软件 2.0 是给神经网络编程的权重。"
+    },
+    {
+     "id": "A14",
+     "start": 169.25,
+     "end": 173.52,
+     "en": "And here's an example of AlexNet image recognizer neural network.",
+     "zh": "这里举的例子是 AlexNet，一个图像识别神经网络。"
+    },
+    {
+     "id": "A15",
+     "start": 173.52,
+     "end": 182.85,
+     "en": "Now, so far all of the neural networks that we've been familiar with until recently were kind of like fixed-function computers: image to categories, or something like that.",
+     "zh": "到最近为止，我们熟悉的神经网络都像是“固定功能”的计算机：输入图片，输出类别，诸如此类。"
+    },
+    {
+     "id": "A16",
+     "start": 182.85,
+     "end": 190.69,
+     "en": "And I think what's changed, and I think is a quite fundamental change, is that neural networks became programmable with large language models.",
+     "zh": "而我认为变化在于——这是相当根本的变化——有了大语言模型，神经网络变得可以编程了。"
+    },
+    {
+     "id": "A17",
+     "start": 190.69,
+     "end": 195.68,
+     "en": "And so I see this as quite new, unique. It's a new kind of a computer.",
+     "zh": "所以我把它看作一种全新的、独特的东西：一种新型计算机。"
+    },
+    {
+     "id": "A18",
+     "start": 195.68,
+     "end": 200.47,
+     "en": "And so in my mind it's worth giving it a new designation of Software 3.0.",
+     "zh": "因此在我看来，它值得一个新名字：软件 3.0。"
+    },
+    {
+     "id": "A19",
+     "start": 200.47,
+     "end": 205.68,
+     "en": "And basically your prompts are now programs that program the LLM.",
+     "zh": "简单说，你的提示词，现在就是给大语言模型编程的程序。"
+    },
+    {
+     "id": "A20",
+     "start": 205.68,
+     "end": 209.57,
+     "en": "And remarkably, these prompts are written in English.",
+     "zh": "而且了不起的是，这些提示词是用英语写的。"
+    },
+    {
+     "id": "A21",
+     "start": 209.57,
+     "end": 213.6,
+     "en": "So it's kind of a very interesting programming language.",
+     "zh": "所以这是一种非常有意思的编程语言。"
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "title": {
+    "zh": "片段 B · AI 生成，人来验证",
+    "en": "Segment B · AI generates, humans verify"
+   },
+   "start": 1327.76,
+   "end": 1400.11,
+   "sentences": [
+    {
+     "id": "B01",
+     "start": 1327.76,
+     "end": 1334.24,
+     "en": "So, one thing I want to stress with a lot of these LLM apps, that I'm not sure gets as much attention as it should, is:",
+     "zh": "关于这些大模型应用，有一点我想强调，我觉得它没有得到应有的重视："
+    },
+    {
+     "id": "B02",
+     "start": 1334.24,
+     "end": 1341.24,
+     "en": "we're now kind of like cooperating with AIs, and usually they are doing the generation and we as humans are doing the verification.",
+     "zh": "我们现在算是在和 AI 协作——通常是它们负责生成，我们人类负责验证。"
+    },
+    {
+     "id": "B03",
+     "start": 1341.24,
+     "end": 1346.36,
+     "en": "It is in our interest to make this loop go as fast as possible. So, we're getting a lot of work done.",
+     "zh": "让这个循环转得越快越好，对我们有利——这样才能完成大量工作。"
+    },
+    {
+     "id": "B04",
+     "start": 1346.36,
+     "end": 1349.7,
+     "en": "There are two major ways that I think this can be done.",
+     "zh": "我认为有两种主要的做法。"
+    },
+    {
+     "id": "B05",
+     "start": 1349.7,
+     "end": 1352.49,
+     "en": "Number one, you can speed up verification a lot.",
+     "zh": "第一，你可以大大加快验证。"
+    },
+    {
+     "id": "B06",
+     "start": 1352.49,
+     "end": 1360.44,
+     "en": "And I think GUIs, for example, are extremely important to this, because a GUI utilizes your computer vision GPU in all of our head.",
+     "zh": "比如图形界面（GUI）在这里就极其重要，因为图形界面调用的是我们每个人脑袋里的“视觉 GPU”。"
+    },
+    {
+     "id": "B07",
+     "start": 1360.44,
+     "end": 1367.44,
+     "en": "Reading text is effortful and it's not fun, but looking at stuff is fun, and it's just kind of like a highway to your brain.",
+     "zh": "读文字很费力，也不好玩；但看东西是有趣的，它就像一条通往大脑的高速公路。"
+    },
+    {
+     "id": "B08",
+     "start": 1367.44,
+     "end": 1373.06,
+     "en": "So, I think GUIs are very useful for auditing systems, and visual representations in general.",
+     "zh": "所以我认为，图形界面——以及一般意义上的可视化呈现——非常适合用来审查系统。"
+    },
+    {
+     "id": "B09",
+     "start": 1373.06,
+     "end": 1377.37,
+     "en": "And number two, I would say, is we have to keep the AI on the leash.",
+     "zh": "第二，我会说，我们必须把 AI 拴住。"
+    },
+    {
+     "id": "B10",
+     "start": 1377.37,
+     "end": 1386.33,
+     "en": "I think a lot of people are getting way over excited with AI agents, and it's not useful to me to get a diff of 10,000 lines of code to my repo.",
+     "zh": "我觉得很多人对 AI 智能体过度兴奋了。对我来说，一下子往我的代码库里塞一万行改动，并没有用。"
+    },
+    {
+     "id": "B11",
+     "start": 1386.33,
+     "end": 1388.6,
+     "en": "I'm still the bottleneck, right?",
+     "zh": "瓶颈仍然是我，对吧？"
+    },
+    {
+     "id": "B12",
+     "start": 1388.6,
+     "end": 1393.76,
+     "en": "Even though that 10,000 lines come out instantly, I have to make sure that this thing is not introducing bugs,",
+     "zh": "就算那一万行代码瞬间就生成了，我也得确认它没有引入错误，"
+    },
+    {
+     "id": "B13",
+     "start": 1393.76,
+     "end": 1400.11,
+     "en": "and that it's doing the correct thing, right? And that there's no security issues and so on.",
+     "zh": "确认它做的是对的事，对吧？还要确认没有安全问题，等等。"
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "title": {
+    "zh": "片段 C · 钢铁侠战衣与“人人都是程序员”",
+    "en": "Segment C · The Iron Man suit, and “everyone is a programmer”"
+   },
+   "start": 1653.88,
+   "end": 1775.2,
+   "sentences": [
+    {
+     "id": "C01",
+     "start": 1653.88,
+     "end": 1658.09,
+     "en": "When I see things like “oh, 2025 is the year of agents,” I get very concerned.",
+     "zh": "当我看到“2025 是智能体之年”这类说法时，我非常担心。"
+    },
+    {
+     "id": "C02",
+     "start": 1658.09,
+     "end": 1664.55,
+     "en": "And I kind of feel like, you know, this is the decade of agents, and this is going to be quite some time.",
+     "zh": "我更觉得，这是“智能体的十年”，会需要相当长的时间。"
+    },
+    {
+     "id": "C03",
+     "start": 1664.55,
+     "end": 1670.62,
+     "en": "We need humans in the loop. We need to do this carefully. This is software. Let's be serious here.",
+     "zh": "我们需要人在回路中。我们需要谨慎行事。这是软件，我们要认真对待。"
+    },
+    {
+     "id": "C04",
+     "start": 1670.62,
+     "end": 1675.22,
+     "en": "One more kind of analogy that I always think through is the Iron Man suit.",
+     "zh": "还有一个我经常琢磨的类比：钢铁侠战衣。"
+    },
+    {
+     "id": "C05",
+     "start": 1675.22,
+     "end": 1683.56,
+     "en": "I always love Iron Man. I think it's so correct in a bunch of ways with respect to technology and how it will play out.",
+     "zh": "我一直很喜欢钢铁侠。我觉得它在很多方面都说对了技术会如何发展。"
+    },
+    {
+     "id": "C06",
+     "start": 1683.56,
+     "end": 1689.7,
+     "en": "And what I love about the Iron Man suit is that it's both an augmentation — Tony Stark can drive it — and it's also an agent.",
+     "zh": "我喜欢钢铁侠战衣的地方在于：它既是一种增强——托尼·斯塔克可以驾驶它——又是一个智能体。"
+    },
+    {
+     "id": "C07",
+     "start": 1689.7,
+     "end": 1694.99,
+     "en": "And in some of the movies, the Iron Man suit is quite autonomous and can fly around and find Tony and all this kind of stuff.",
+     "zh": "在某些电影里，战衣相当自主，能自己飞来飞去、去找托尼，诸如此类。"
+    },
+    {
+     "id": "C08",
+     "start": 1694.99,
+     "end": 1701.95,
+     "en": "And so this is the autonomy slider: we can build augmentations or we can build agents, and we kind of want to do a bit of both.",
+     "zh": "这就是“自主滑杆”：我们可以造增强工具，也可以造智能体，而我们大概两者都想要一点。"
+    },
+    {
+     "id": "C09",
+     "start": 1701.95,
+     "end": 1712.76,
+     "en": "But at this stage, I would say, working with fallible LLMs and so on, I would say, you know, it's less Iron Man robots and more Iron Man suits that you want to build.",
+     "zh": "但在现阶段，面对会犯错的大模型，我会说：你要造的，与其说是钢铁侠机器人，不如说是钢铁侠战衣。"
+    },
+    {
+     "id": "C10",
+     "start": 1712.76,
+     "end": 1718.2,
+     "en": "It's less like building flashy demos of autonomous agents and more building partial autonomy products.",
+     "zh": "少做花哨的自主智能体演示，多做“部分自主”的产品。"
+    },
+    {
+     "id": "C11",
+     "start": 1718.2,
+     "end": 1727.17,
+     "en": "And these products have custom GUIs and UI/UX, and this is done so that the generation–verification loop of the human is very, very fast.",
+     "zh": "这些产品有定制的图形界面和交互设计，目的是让人的“生成—验证”循环非常非常快。"
+    },
+    {
+     "id": "C12",
+     "start": 1727.17,
+     "end": 1731.55,
+     "en": "But we are not losing the sight of the fact that it is in principle possible to automate this work.",
+     "zh": "但我们也没有忘记：原则上，这些工作是可以被自动化的。"
+    },
+    {
+     "id": "C13",
+     "start": 1731.55,
+     "end": 1733.94,
+     "en": "And there should be an autonomy slider in your product.",
+     "zh": "你的产品里应该有一个自主滑杆。"
+    },
+    {
+     "id": "C14",
+     "start": 1733.94,
+     "end": 1741.28,
+     "en": "And you should be thinking about how you can slide that autonomy slider and make your product more autonomous over time.",
+     "zh": "你应该思考如何推动这个滑杆，让产品随着时间推移变得更自主。"
+    },
+    {
+     "id": "C15",
+     "start": 1741.28,
+     "end": 1744.83,
+     "en": "But this is kind of how I think: there's lots of opportunities in these kinds of products.",
+     "zh": "这就是我的想法：这类产品里有大量机会。"
+    },
+    {
+     "id": "C16",
+     "start": 1744.83,
+     "end": 1749.84,
+     "en": "I want to now switch gears a little bit and talk about one other dimension that I think is very unique.",
+     "zh": "现在我想稍微换个方向，谈另一个我认为非常独特的维度。"
+    },
+    {
+     "id": "C17",
+     "start": 1749.84,
+     "end": 1758.77,
+     "en": "Not only is there a new type of programming language that allows for autonomy in software, but also, as I mentioned, it's programmed in English, which is this natural interface.",
+     "zh": "这不仅是一种让软件具备自主性的新型编程语言；而且如我所说，它是用英语来编程的——这是一种自然的界面。"
+    },
+    {
+     "id": "C18",
+     "start": 1758.77,
+     "end": 1763.2,
+     "en": "And suddenly everyone is a programmer, because everyone speaks natural language like English.",
+     "zh": "于是，突然之间人人都是程序员，因为人人都会说英语这样的自然语言。"
+    },
+    {
+     "id": "C19",
+     "start": 1763.2,
+     "end": 1767.62,
+     "en": "So this is extremely bullish and very interesting to me, and also completely unprecedented.",
+     "zh": "所以我对此极其看好，觉得非常有意思，而且这完全是前所未有的。"
+    },
+    {
+     "id": "C20",
+     "start": 1767.62,
+     "end": 1773.46,
+     "en": "I would say it used to be the case that you need to spend five to 10 years studying something to be able to do something in software.",
+     "zh": "我会说，过去你需要花五到十年学习，才能在软件上做成点什么。"
+    },
+    {
+     "id": "C21",
+     "start": 1773.46,
+     "end": 1775.2,
+     "en": "This is not the case anymore.",
+     "zh": "现在不是这样了。"
+    }
+   ]
+  }
+ ],
+ "expressions": [
+  {
+   "id": "e1",
+   "sid": "A20",
+   "phrase": "written in English",
+   "snippet": "And remarkably, these prompts are written in English.",
+   "zh": "用英语写成——这里指：给 AI 的“程序”（提示词）直接用自然语言写。",
+   "keys": [
+    "prompt — 提示词；给 AI 的指令",
+    "be written in + 语言 — 用……写成",
+    "a programming language — 编程语言"
+   ],
+   "collocations": [
+    "write / refine a prompt",
+    "in plain English 用大白话",
+    "a very interesting programming language"
+   ],
+   "context": {
+    "zh": "他在定义软件 3.0：大模型时代，“程序”可以是一段英文提示词。"
+   },
+   "example": {
+    "en": "Our first analysis plan was written in plain English; the AI turned it into R code, and we still checked every line.",
+    "zh": "我们第一版分析计划是用大白话写的；AI 把它转成了 R 代码，我们仍然逐行核对。"
+   },
+   "at": {
+    "sid": "A20",
+    "t": 205.68,
+    "label": "3:25"
+   }
+  },
+  {
+   "id": "e2",
+   "sid": "B02",
+   "phrase": "doing the generation … doing the verification",
+   "snippet": "they are doing the generation and we as humans are doing the verification.",
+   "zh": "它们负责生成，我们负责验证——人机分工的一句话概括。",
+   "keys": [
+    "generation — 生成",
+    "verification — 验证、核实",
+    "cooperate with — 与……协作"
+   ],
+   "collocations": [
+    "cooperating with AIs",
+    "speed up verification",
+    "the generation–verification loop"
+   ],
+   "context": {
+    "zh": "他强调：人机协作的关键是让“AI 生成—人验证”的循环转得更快。"
+   },
+   "example": {
+    "en": "In our lab, the model does the generation and we do the verification: every extracted value is checked against the source.",
+    "zh": "在我们课题组，模型负责生成，我们负责验证：每个提取出来的数值都要对照原始资料核查。"
+   },
+   "at": {
+    "sid": "B02",
+    "t": 1334.24,
+    "label": "22:14"
+   }
+  },
+  {
+   "id": "e3",
+   "sid": "B09",
+   "phrase": "keep the AI on the leash",
+   "snippet": "we have to keep the AI on the leash.",
+   "zh": "把 AI 拴住——不让它一次走太远，保持人的控制。",
+   "keys": [
+    "leash — 牵狗绳",
+    "keep sb/sth on a (short) leash — 严加管束",
+    "bottleneck — 瓶颈"
+   ],
+   "collocations": [
+    "keep … on a short / tight leash",
+    "I'm still the bottleneck",
+    "humans in the loop 人在回路中"
+   ],
+   "context": {
+    "zh": "他说一下子收到一万行改动没有用，因为人要逐一核对，人才是瓶颈。"
+   },
+   "example": {
+    "en": "For anything a patient will read, we keep the AI on a short leash: it drafts, a clinician signs.",
+    "zh": "凡是患者会读到的内容，我们都把 AI 拴得很紧：它起草，医生签字。"
+   },
+   "at": {
+    "sid": "B09",
+    "t": 1373.06,
+    "label": "22:53"
+   }
+  },
+  {
+   "id": "e4",
+   "sid": "C10",
+   "phrase": "partial autonomy · autonomy slider",
+   "snippet": "It's less like building flashy demos of autonomous agents and more building partial autonomy products.",
+   "zh": "部分自主；自主滑杆——自主程度不是开/关，而是可以逐步调节的刻度。",
+   "keys": [
+    "autonomy — 自主性",
+    "autonomous — 自主的",
+    "partial — 部分的"
+   ],
+   "collocations": [
+    "an autonomy slider",
+    "slide the autonomy slider",
+    "more autonomous over time"
+   ],
+   "context": {
+    "zh": "用钢铁侠战衣作比：现阶段更应做“人驾驶 + 部分自主”的产品。"
+   },
+   "example": {
+    "en": "Think of it as an autonomy slider: at first the tool only suggests; later it may act on its own.",
+    "zh": "把它想成一个自主滑杆：一开始工具只提建议，以后也许能自己动手。"
+   },
+   "at": {
+    "sid": "C10",
+    "t": 1712.76,
+    "label": "28:32"
+   }
+  },
+  {
+   "id": "e5",
+   "sid": "C18",
+   "phrase": "everyone is a programmer",
+   "snippet": "And suddenly everyone is a programmer, because everyone speaks natural language like English.",
+   "zh": "人人都是程序员——因为人人都会说自然语言。",
+   "keys": [
+    "programmer — 程序员",
+    "natural language — 自然语言（相对于编程语言）",
+    "unprecedented — 前所未有的"
+   ],
+   "collocations": [
+    "speak natural language",
+    "a natural interface",
+    "completely unprecedented"
+   ],
+   "context": {
+    "zh": "他认为门槛的降低“前所未有”：过去要学 5–10 年，现在不必了。"
+   },
+   "example": {
+    "en": "If everyone is a programmer, what makes a good one? Probably knowing what to ask for, and how to check the answer.",
+    "zh": "如果人人都是程序员，那什么是好的程序员？大概是知道该要什么，以及怎么检查答案。"
+   },
+   "at": {
+    "sid": "C18",
+    "t": 1758.77,
+    "label": "29:18"
+   }
+  }
+ ],
+ "ideas": [
+  {
+   "id": "i1",
+   "front": {
+    "zh": "提示词，就是程序。",
+    "en": "Prompts are programs."
+   },
+   "label": "speaker",
+   "meaning": {
+    "zh": "软件 1.0：人写代码；软件 2.0：用数据训练出权重；软件 3.0：用自然语言给大模型“编程”。三者会长期并存，各有长短。"
+   },
+   "quote": {
+    "en": "And basically your prompts are now programs that program the LLM.",
+    "zh": "简单说，你的提示词，现在就是给大语言模型编程的程序。"
+   },
+   "at": {
+    "sid": "A19",
+    "t": 200.47,
+    "label": "3:20"
+   },
+   "example": {
+    "zh": "算个平均分：在 Excel 里写公式是 1.0；手机拍照认出花名的 App 是 2.0；对 ChatGPT 说“把这份成绩单按班级汇总成表”是 3.0。"
+   }
+  },
+  {
+   "id": "i2",
+   "front": {
+    "zh": "造钢铁侠战衣，而不是钢铁侠机器人。",
+    "en": "Build Iron Man suits, not Iron Man robots."
+   },
+   "label": "speaker",
+   "meaning": {
+    "zh": "自主程度是一根滑杆，一端是“人驾驶的增强”，另一端是“自己飞的智能体”。大模型仍会犯错，所以现在应做“部分自主”产品：AI 生成、人快速验证，并把 AI 拴住，再慢慢把滑杆往右推。"
+   },
+   "quote": {
+    "en": "it's less Iron Man robots and more Iron Man suits that you want to build.",
+    "zh": "你要造的，与其说是钢铁侠机器人，不如说是钢铁侠战衣。"
+   },
+   "at": {
+    "sid": "C09",
+    "t": 1701.95,
+    "label": "28:21"
+   },
+   "example": {
+    "zh": "汽车：车道保持辅助 → 自动泊车 → 完全自动驾驶。每往右一格，人要放手多少，取决于出错的代价。"
+   }
+  },
+  {
+   "id": "i3",
+   "front": {
+    "zh": "会说话 ≠ 会编程：价值正在从“写”移向“想清楚”和“验证”。",
+    "en": "Speaking ≠ engineering: value is moving from writing to specifying and verifying."
+   },
+   "label": "analysis",
+   "meaning": {
+    "zh": "卡帕西说门槛降低“前所未有”。课程的分析是：写出第一版变容易了，但说清楚要什么、判断结果对不对，仍然是人的功夫——这正是他自己说的“我仍然是瓶颈”。这一点业界尚无共识。"
+   },
+   "quote": {
+    "en": "And suddenly everyone is a programmer, because everyone speaks natural language like English.",
+    "zh": "于是，突然之间人人都是程序员，因为人人都会说英语这样的自然语言。"
+   },
+   "at": {
+    "sid": "C18",
+    "t": 1758.77,
+    "label": "29:18"
+   },
+   "example": {
+    "zh": "人人都能用手机拍照，但好照片仍取决于构图和眼光。工具抹平了“按快门”，没有抹平“看见”。"
+   }
+  }
+ ],
+ "labels": {
+  "speaker": {
+   "zh": "讲者原意",
+   "en": "Speaker’s view"
+  },
+  "analysis": {
+   "zh": "课程分析",
+   "en": "Our analysis"
+  },
+  "open": {
+   "zh": "尚无共识",
+   "en": "No consensus"
+  }
+ },
+ "claims": [
+  {
+   "id": "k1",
+   "said": {
+    "en": "suddenly everyone is a programmer",
+    "zh": "突然之间人人都是程序员"
+   },
+   "at": {
+    "sid": "C18",
+    "t": 1758.77,
+    "label": "29:18"
+   },
+   "kind": {
+    "zh": "预测 + 价值判断",
+    "en": "Prediction + value judgement"
+   },
+   "support": {
+    "zh": "用自然语言写代码已很普遍：2025 年 Stack Overflow 调查中，84% 的受访者在用或打算用 AI 工具，51% 的专业开发者每天使用。"
+   },
+   "counter": {
+    "zh": "同一调查里，约 72% 的人说“氛围编程”不是自己职业工作的一部分；66% 最大的困扰是 AI 给的方案“差不多对，但不完全对”。Dijkstra 早在 EWD 667 中就警告：自然语言的“自然”，恰恰让无意义的陈述不容易被发现。"
+   },
+   "judge": {
+    "zh": "区分两件事：“能让程序跑起来”和“能判断程序对不对”。前者门槛确实降了，后者没有。"
+   },
+   "evidence": [
+    {
+     "src": "so25",
+     "zh": "84% 在用或计划用 AI 工具；专业开发者 50.6% 每天使用；46% 不信任 AI 输出的准确性，信任者 33%；66% 遇到“差不多对，但不完全对”；“氛围编程”是职业工作一部分的约 15%（Yes 11.9% + emphatically 0.4% + somewhat 2.8%），No 72.2%。"
+    },
+    {
+     "src": "ewd667",
+     "zh": "原文：“the ‘naturalness’ with which we use our native tongues boils down to the ease with which we can use them for making statements the nonsense of which is not obvious.”（我们使用母语的“自然”，归根到底是能轻易说出一些荒谬却不显眼的话。——aiai 译文）"
+    }
+   ]
+  },
+  {
+   "id": "k2",
+   "said": {
+    "en": "I'm still the bottleneck",
+    "zh": "瓶颈仍然是我"
+   },
+   "at": {
+    "sid": "B11",
+    "t": 1386.33,
+    "label": "23:06"
+   },
+   "kind": {
+    "zh": "经验判断（有部分证据）",
+    "en": "Experience-based judgement (partly supported)"
+   },
+   "support": {
+    "zh": "METR 2025 年随机对照试验：16 位资深开源开发者、246 个真实任务，允许用 AI 时反而多花 19% 的时间；他们事前预计会快 24%，事后仍以为快了 20%。"
+   },
+   "counter": {
+    "zh": "METR 2026 年 2 月更新：工具进步后，开发者很可能已经被提速，但因选择偏倚，新数据只是“很弱的证据”（回访者估计 −18%，95% 区间 −38% 至 +9%）。"
+   },
+   "judge": {
+    "zh": "看测量方式：是真实计时，还是自我感觉？看任务：是需要严格审查的高标准代码，还是一次性原型？"
+   },
+   "evidence": [
+    {
+     "src": "metr25",
+     "zh": "2025 年 2–6 月数据；主要工具 Cursor Pro + Claude 3.5/3.7 Sonnet；作者明确表示不能据此推断“AI 不能加速大多数开发者”。"
+    },
+    {
+     "src": "metr26",
+     "zh": "新研究 57 名开发者、800+ 任务；30%–50% 的人因不愿在无 AI 条件下工作而不提交部分任务，估计值可能偏低。"
+    }
+   ]
+  },
+  {
+   "id": "k3",
+   "said": {
+    "en": "this is the decade of agents",
+    "zh": "这是智能体的十年"
+   },
+   "at": {
+    "sid": "C02",
+    "t": 1658.09,
+    "label": "27:38"
+   },
+   "kind": {
+    "zh": "预测",
+    "en": "Prediction"
+   },
+   "support": {
+    "zh": "2025 年 Stack Overflow 调查：约 52% 的开发者不用智能体或只用简单 AI 工具，37.9% 表示不打算用；87% 担心智能体信息的准确性。四个月后他在 Dwarkesh 访谈里重申：业内存在“过度预测”。"
+   },
+   "counter": {
+    "zh": "更乐观的声音：Sam Altman 在 2025 年 1 月写道，“在 2025 年，我们可能会看到第一批 AI 智能体‘加入劳动力队伍’”。"
+   },
+   "judge": {
+    "zh": "预测要落到可检验的指标和时间点上：例如“多少比例的任务可以无人值守地完成”，而不是“年”或“十年”这样的口号。"
+   },
+   "evidence": [
+    {
+     "src": "so25",
+     "zh": "智能体使用：每天 14.1%、每周 9%、偶尔 7.8%；只用补全模式 13.8%；不打算 37.9%。"
+    },
+    {
+     "src": "dwarkesh",
+     "zh": "卡帕西原话：“I was triggered by that because there’s some over-prediction going on in the industry. In my mind, this is more accurately described as the decade of agents.”"
+    },
+    {
+     "src": "altman",
+     "zh": "原文：“We believe that, in 2025, we may see the first AI agents ‘join the workforce’ and materially change the output of companies.”"
+    }
+   ]
+  }
+ ],
+ "debate": {
+  "q": {
+   "zh": "如果计算机能听懂人话，“学编程”还算一种值得花几年去学的能力吗？",
+   "en": "If computers understand plain language, is coding still worth years of study?"
+  },
+  "pro": {
+   "zh": "值得：编程训练的是精确思考和拆解问题。你说不清楚，AI 也做不对；你看不懂，就无法验证。",
+   "en": "Yes: coding trains precise thinking. Unclear asks give wrong results; what you cannot read, you cannot verify."
+  },
+  "con": {
+   "zh": "未必：就像不再人人学打字机维修，重要的是会提问、会判断。把几年时间花在领域知识和审美上，回报可能更高。",
+   "en": "Not necessarily: what matters is asking and judging well. Years spent on domain knowledge and taste may pay off more."
+  }
+ },
+ "reflect": {
+  "english": {
+   "prompt": {
+    "en": "Describe one task in your work or study where you would keep the AI on the leash. Why?",
+    "zh": "用英语写 2–3 句：你的工作或学习中，哪件事你会“把 AI 拴住”？为什么？"
+   },
+   "starters": [
+    "In my work, the AI can do the generation, but …",
+    "I would keep the AI on a short leash when …",
+    "The bottleneck is still me, because …"
+   ]
+  },
+  "philosophy": {
+   "zh": "如果一项技能可以被机器轻松完成，它对人的价值是消失了，还是转移到了别处？举一个你亲身经历的例子。",
+   "en": "If a machine can easily do a skill, does its value to humans disappear, or move elsewhere?"
+  },
+  "prompt": {
+   "title": {
+    "zh": "把这节课变成你自己的练习",
+    "en": "Turn this lesson into your own practice"
+   },
+   "text": "You are my tutor. I just watched Andrej Karpathy's talk \"Software Is Changing (Again)\" (Y Combinator, 2025).\n1) Explain Software 1.0, 2.0 and 3.0 with one example from my field: [your field].\n2) Give me one small task I could do in plain English with an AI, and list three things I must check myself before trusting the result.\n3) Ask me two questions to test whether I really understood \"generation vs. verification\".\nKeep it short. Answer in English first, then a Chinese summary."
+  },
+  "quiz": [
+   {
+    "q": {
+     "zh": "按卡帕西的划分，“神经网络的权重”属于哪一种软件？"
+    },
+    "options": [
+     {
+      "zh": "软件 1.0"
+     },
+     {
+      "zh": "软件 2.0"
+     },
+     {
+      "zh": "软件 3.0"
+     }
+    ],
+    "answer": 1,
+    "why": {
+     "zh": "他说：“Software 2.0 are the weights which program neural networks.”（2:45 左右）。1.0 是人写的代码，3.0 是给大模型的提示词。"
+    }
+   },
+   {
+    "q": {
+     "zh": "他所说的“keep the AI on the leash”，最接近哪种做法？"
+    },
+    "options": [
+     {
+      "zh": "禁止使用 AI 智能体"
+     },
+     {
+      "zh": "一次只让 AI 做人能快速核对的小块工作"
+     },
+     {
+      "zh": "让 AI 自己检查自己的代码"
+     }
+    ],
+    "answer": 1,
+    "why": {
+     "zh": "他反对的是“一下子收到一万行改动”，因为人要验证、人是瓶颈；不是反对 AI 本身。"
+    }
+   },
+   {
+    "q": {
+     "zh": "“Iron Man suits, not Iron Man robots”想表达什么？"
+    },
+    "options": [
+     {
+      "zh": "现阶段做人能驾驶的部分自主产品，并逐步提高自主度"
+     },
+     {
+      "zh": "机器人永远不可能自主"
+     },
+     {
+      "zh": "产品应该一步做到完全自主"
+     }
+    ],
+    "answer": 0,
+    "why": {
+     "zh": "他说战衣既是增强也是智能体；现阶段大模型会犯错，所以做“部分自主”产品，并把自主滑杆慢慢往右推。"
+    }
+   }
+  ]
+ },
+ "medical": {
+  "title": {
+   "zh": "编辑点评 · 对医学研究意味着什么"
+  },
+  "text": {
+   "zh": "把这节课搬到急诊与研究：AI 可以起草病历摘要、提取文献数据（生成），但诊断、医嘱和患者沟通需要医生签字（验证）。滑杆位置取决于出错代价：整理参考文献可以放手多一点；影响用药的内容，要把 AI 拴得很紧。这是课程的类比，不是临床指南。"
+  },
+  "author": {
+   "zh": "aiai 学院编辑（一位急诊外科医生）"
+  },
+  "points": [
+   {
+    "zh": "把这节课搬到急诊与研究：AI 可以起草病历摘要、提取文献数据（生成），但诊断、医嘱和患者沟通需要医生签字（验证）。"
+   },
+   {
+    "zh": "滑杆放在哪里，取决于出错的代价：整理参考文献可以放手多一点；影响用药的内容，要把 AI 拴得很紧。"
+   },
+   {
+    "zh": "写论文、做分析时，让 AI 先写分析计划、找漏洞，再由你逐步核对，比让它直接给出“显著结果”安全得多。"
+   },
+   {
+    "zh": "这是课程的类比，不是临床指南。"
+   }
+  ]
+ },
+ "sources": [
+  "video",
+  "yclib",
+  "tweet23",
+  "sw2",
+  "dwarkesh",
+  "metr25",
+  "metr26",
+  "so25",
+  "ewd667",
+  "altman"
+ ],
+ "sourceMap": {
+  "video": {
+   "title": "Andrej Karpathy: Software Is Changing (Again) — Y Combinator (YouTube)",
+   "url": "https://www.youtube.com/watch?v=LCEmiRjPEtQ",
+   "note": {
+    "zh": "官方上传：Y Combinator 频道，2025-06-19（UTC）；演讲于 2025-06-17 在旧金山 AI Startup School；时长 39:31",
+    "en": "Official upload: Y Combinator channel, 2025-06-19 (UTC); keynote delivered 2025-06-17 at AI Startup School, San Francisco; 39:31"
+   }
+  },
+  "yclib": {
+   "title": "YC Library · Andrej Karpathy: Software Is Changing (Again)",
+   "url": "https://www.ycombinator.com/library/MW-andrej-karpathy-software-is-changing-again"
+  },
+  "sw2": {
+   "title": "Andrej Karpathy, “Software 2.0”, Medium, 2017-11-11",
+   "url": "https://karpathy.medium.com/software-2-0-a64152b37c35"
+  },
+  "dwarkesh": {
+   "title": "Dwarkesh Podcast: Andrej Karpathy — AGI is still a decade away (2025-10-17)",
+   "url": "https://www.dwarkesh.com/p/andrej-karpathy"
+  },
+  "metr25": {
+   "title": "METR (2025-07-10): Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+   "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/"
+  },
+  "metr26": {
+   "title": "METR (2026-02-24): We are Changing our Developer Productivity Experiment Design",
+   "url": "https://metr.org/blog/2026-02-24-uplift-update/"
+  },
+  "so25": {
+   "title": "Stack Overflow Developer Survey 2025 · AI",
+   "url": "https://survey.stackoverflow.co/2025/ai"
+  },
+  "ewd667": {
+   "title": "E. W. Dijkstra, EWD 667 “On the foolishness of ‘natural language programming’”",
+   "url": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html"
+  },
+  "altman": {
+   "title": "Sam Altman, “Reflections” (blog, 2025-01)",
+   "url": "https://blog.samaltman.com/reflections"
+  },
+  "tweet23": {
+   "title": "Andrej Karpathy on X: “The hottest new programming language is English” (2023-01-24)",
+   "url": "https://x.com/karpathy/status/1617979122625712128"
+  }
+ },
+ "further": [
+  {
+   "title": "Andrej Karpathy, “Software 2.0” (2017)",
+   "url": "https://karpathy.medium.com/software-2-0-a64152b37c35",
+   "zh": "“软件 2.0”这个说法的出处。"
+  },
+  {
+   "title": "Dwarkesh Podcast × Andrej Karpathy (2025-10)",
+   "url": "https://www.youtube.com/watch?v=lXUZvyajciY",
+   "zh": "2 小时 26 分的长访谈，讲智能体为何还需要十年。"
+  },
+  {
+   "title": "E. W. Dijkstra, EWD 667",
+   "url": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html",
+   "zh": "一页纸的经典反方：自然语言编程的“愚蠢”。"
+  }
+ ],
+ "editor": {
+  "zh": "aiai 学院编辑 · 原视频版权归 Y Combinator；本页仅摘录三段用于教学",
+  "en": "AIAI Academy · Video © Y Combinator; three short excerpts quoted for teaching"
+ },
+ "revisions": [
+  {
+   "v": "1.0.0",
+   "date": "2026-11-02",
+   "note": {
+    "zh": "首版（预览）",
+    "en": "First version (preview)"
+   }
+  },
+  {
+   "v": "1.1.0",
+   "date": "2026-11-02",
+   "note": {
+    "zh": "改为分页课件结构（5 章，一章一屏，← / → 翻页）；新增事实核查台、坏提示→好提示、课堂讨论、其余内容转述",
+    "en": "Paged courseware layout (5 chapters, one per screen, arrow-key paging); fact-check desk, prompt pairs, discussion, rest-of-talk summary"
+   }
+  }
+ ],
+ "layout": "deck",
+ "cover": {
+  "series": {
+   "zh": "AI VOICES · AI 大师访谈与思想课",
+   "en": "Watch in English. Think in depth. Learn with AI."
+  },
+  "issue": {
+   "zh": "第 1 期",
+   "no": "AI VOICES 001"
+  },
+  "theme": {
+   "zh": "本期主题：AI 与编程"
+  },
+  "extra": {
+   "zh": "附事实核查"
+  },
+  "titleLines": [
+   "当自然语言成为编程语言，",
+   "人类还需要[学习编程]吗？"
+  ],
+  "who": {
+   "zh": "前特斯拉 AI 总监、OpenAI 创始成员安德烈·卡帕西，在 Y Combinator 的 AI 创业学校讲“软件正在第三次改变”。"
+  },
+  "dateline": {
+   "zh": "演讲：2025 年 6 月 17 日（YC AI Startup School，旧金山）｜上传：2025 年 6 月 19 日（Y Combinator 官方 YouTube 频道）"
+  },
+  "image": {
+   "src": "https://i.ytimg.com/vi/LCEmiRjPEtQ/maxresdefault.jpg",
+   "fallback": "https://i.ytimg.com/vi/LCEmiRjPEtQ/hqdefault.jpg",
+   "alt": "YouTube 视频封面：Andrej Karpathy: Software Is Changing (Again)",
+   "credit": {
+    "zh": "Y Combinator 官方 YouTube 视频封面（直接引用 YouTube 图片地址），不是 AI 生成。"
+   }
+  },
+  "honesty": {
+   "zh": "这是 2025 年 6 月的演讲，不是本周新闻。选它，是因为它提出的问题到今天仍没有定论。"
+  },
+  "background": {
+   "zh": "他把软件分成三代：人写的代码是 1.0，神经网络的权重是 2.0，用英语写给大模型的提示词是 3.0。"
+  },
+  "facts": [
+   {
+    "n": "39:31",
+    "zh": "全片长度"
+   },
+   {
+    "n": "3 段",
+    "zh": "本课只选三段连续原声，约 5 分钟"
+   },
+   {
+    "n": "5 个",
+    "zh": "原声英语表达"
+   }
+  ]
+ },
+ "chapters": [
+  {
+   "no": 1,
+   "zh": "一个问题",
+   "en": "THE QUESTION"
+  },
+  {
+   "no": 2,
+   "zh": "现场视频",
+   "en": "WATCH & LISTEN",
+   "h2": "三段原声：软件正在第三次改变",
+   "dek": "先看原视频。点右边文稿里任意一句，视频就跳到那里播放。"
+  },
+  {
+   "no": 3,
+   "zh": "三个大想法",
+   "en": "THREE BIG IDEAS",
+   "h2": "提示词就是程序，但方向盘还在人手里",
+   "dek": "点一下卡片（或按回车）翻到背面，看他的原话和一个马上能懂的例子。"
+  },
+  {
+   "no": 4,
+   "zh": "事实核查台",
+   "en": "THINK & VERIFY",
+   "h2": "网上说的 vs 他原话说的",
+   "dek": "我们把关于这场演讲的常见说法，逐条对照原视频字幕。点标签，只看某一类；点时间，回到原声。"
+  },
+  {
+   "no": 5,
+   "zh": "课堂与医学视角",
+   "en": "REFLECT & PRACTICE",
+   "h2": "动手练：把坏提示改成好提示",
+   "dek": "点一下每个“坏提示”，看看怎么改，以及为什么这样改更好。"
+  }
+ ],
+ "glossary": {
+  "2": [
+   {
+    "t": "LLM（大语言模型）",
+    "d": "ChatGPT 这类能读写文字的 AI。"
+   },
+   {
+    "t": "提示词",
+    "d": "你写给 AI 的问题或指令。"
+   },
+   {
+    "t": "权重",
+    "d": "神经网络训练出来的一大堆数字，相当于它“学到的东西”。"
+   }
+  ],
+  "3": [
+   {
+    "t": "智能体（agent）",
+    "d": "能自己连续做多步操作的 AI。"
+   },
+   {
+    "t": "部分自主",
+    "d": "AI 做一部分，人把关一部分。"
+   },
+   {
+    "t": "自主滑杆",
+    "d": "决定“AI 自己做多少”的那根调节杆。"
+   }
+  ],
+  "4": [
+   {
+    "t": "随机对照试验",
+    "d": "把人随机分组再比较，是判断因果最可靠的方法之一。"
+   }
+  ]
+ },
+ "rest": {
+  "title": {
+   "zh": "视频没播完的部分：他还讲了什么"
+  },
+  "note": {
+   "zh": "据 YouTube 字幕整理的简短转述（不是逐字引文）；点时间可从该处观看完整视频。"
+  },
+  "items": [
+   {
+    "at": {
+     "t": 340.8,
+     "label": "5:40",
+     "raw": true
+    },
+    "zh": "三种编程方式会长期并存。他对在座学生说：最好三种都熟练，因为各有长短。"
+   },
+   {
+    "at": {
+     "t": 394.64,
+     "label": "6:34",
+     "raw": true
+    },
+    "zh": "大模型像“公用事业”（像电一样按量付费），也有点像“晶圆厂”，但最像一种新的“操作系统”。"
+   },
+   {
+    "at": {
+     "t": 846.48,
+     "label": "14:06",
+     "raw": true
+    },
+    "zh": "它们就像 1960 年代的计算机：昂贵、集中，靠“分时”共享——但这一次，先用上的是普通人，而不是政府和大公司。"
+   },
+   {
+    "at": {
+     "t": 979.36,
+     "label": "16:19",
+     "raw": true
+    },
+    "zh": "大模型的“心理”：能力参差不齐，会坚持“9.11 比 9.9 大”；会编造；还像得了“顺行性遗忘”，不会像新同事那样把经验沉淀下来。"
+   },
+   {
+    "at": {
+     "t": 1109.28,
+     "label": "18:29",
+     "raw": true
+    },
+    "zh": "机会在“部分自主”的应用，比如编程工具 Cursor、搜索工具 Perplexity：替你管理上下文、调度多个模型、提供方便核对的界面和一根“自主滑杆”。"
+   },
+   {
+    "at": {
+     "t": 1948.16,
+     "label": "32:28",
+     "raw": true
+    },
+    "zh": "他用“氛围编程”做了 MenuGen（拍菜单、生成菜品图）。代码几小时就写好，登录、支付、部署却花了一周——这些都不是代码，而是在浏览器里点来点去。"
+   },
+   {
+    "at": {
+     "t": 2059.84,
+     "label": "34:19",
+     "raw": true
+    },
+    "zh": "要为 AI 智能体修路：像网站给爬虫写 robots.txt 一样，给大模型写 llms.txt；文档改成 markdown，把“点击这里”换成智能体能执行的命令。"
+   },
+   {
+    "at": {
+     "t": 2350.88,
+     "label": "39:10",
+     "raw": true
+    },
+    "zh": "结尾：未来十年左右，我们会把自主滑杆从左往右慢慢推。"
+   }
+  ]
+ },
+ "ideaLabels": {
+  "speaker": {
+   "zh": "讲者原意",
+   "d": "他在视频里明确这样说。"
+  },
+  "analysis": {
+   "zh": "课程分析",
+   "d": "我们根据他的话做的推论，不是他的原话。"
+  },
+  "open": {
+   "zh": "尚无共识",
+   "d": "专家之间仍在争论，证据还不够。"
+  }
+ },
+ "contrast": {
+  "title": {
+   "zh": "钢铁侠战衣 vs 钢铁侠机器人"
+  },
+  "left": {
+   "k": "战衣（增强）",
+   "zh": "人穿着、人驾驶。AI 负责生成，人负责快速验证。他说：现阶段应该多造这一种。"
+  },
+  "right": {
+   "k": "机器人（全自动智能体）",
+   "zh": "自己飞、自己做决定。演示很炫，但大模型仍会犯错；他认为这要花“十年”而不是“一年”。"
+  },
+  "at": {
+   "sid": "C09",
+   "t": 1701.95,
+   "label": "28:21"
+  },
+  "note": {
+   "zh": "“战衣 / 机器人”“自主滑杆”是卡帕西本人的比喻（28:15–28:31）；左右两栏的归纳是课程分析。"
+  },
+  "image": {
+   "src": "../assets/voices/voices001-autonomy-sliderv1.1.webp",
+   "alt": "一只手放在一根滑杆上，左端是手套，右端是无人机",
+   "cap": {
+    "zh": "自主滑杆：左边是“人来驾驶”，右边是“AI 自己飞”。"
+   }
+  }
+ },
+ "factcheck": {
+  "stamp": {
+   "en": "FACT CHECK",
+   "zh": "事实核查"
+  },
+  "filters": [
+   {
+    "id": "all",
+    "zh": "全部"
+   },
+   {
+    "id": "ok",
+    "zh": "准确"
+   },
+   {
+    "id": "off",
+    "zh": "有出入"
+   },
+   {
+    "id": "view",
+    "zh": "预测与观点"
+   },
+   {
+    "id": "open",
+    "zh": "尚无共识"
+   },
+   {
+    "id": "miss",
+    "zh": "被漏掉"
+   }
+  ],
+  "items": [
+   {
+    "tag": "ok",
+    "said": {
+     "zh": "“卡帕西说：提示词就是新的程序。”"
+    },
+    "orig": {
+     "zh": "“your prompts are now programs that program the LLM”——你的提示词，现在就是给大模型编程的程序。紧接着他说：这些提示词是用英语写的。"
+    },
+    "at": [
+     {
+      "sid": "A19",
+      "t": 200.47,
+      "label": "3:20"
+     },
+     {
+      "sid": "A20",
+      "t": 205.68,
+      "label": "3:25"
+     }
+    ]
+   },
+   {
+    "tag": "off",
+    "sub": "出处",
+    "said": {
+     "zh": "“‘英语是最热门的新编程语言’是他在这场演讲里说的。”"
+    },
+    "orig": {
+     "zh": "这句话出自他 2023 年 1 月 24 日的一条推文：“The hottest new programming language is English”。这场演讲里他的说法是：提示词用英语写，“所以这是一种非常有意思的编程语言”。"
+    },
+    "at": [
+     {
+      "sid": "A21",
+      "t": 209.57,
+      "label": "3:29"
+     }
+    ],
+    "src": "tweet23"
+   },
+   {
+    "tag": "off",
+    "sub": "结论",
+    "said": {
+     "zh": "“他说人人都是程序员了，所以不用再学编程。”"
+    },
+    "orig": {
+     "zh": "他确实说“突然之间人人都是程序员”，还说过去要学 5–10 年才能做软件，“现在不是这样了”。但同一场演讲开头，他对在座学生说：三种编程方式“最好都熟练”。“不用学编程”是转述者加的结论。"
+    },
+    "at": [
+     {
+      "sid": "C18",
+      "t": 1758.77,
+      "label": "29:18"
+     },
+     {
+      "sid": "C20",
+      "t": 1767.62,
+      "label": "29:27"
+     },
+     {
+      "t": 345.6,
+      "label": "5:45",
+      "raw": true
+     }
+    ]
+   },
+   {
+    "tag": "off",
+    "sub": "时间",
+    "said": {
+     "zh": "“‘软件 2.0’是这次演讲新提出的概念。”"
+    },
+    "orig": {
+     "zh": "他开头就说“几年前”自己把神经网络叫作软件 2.0——出处是他 2017 年 11 月的文章《Software 2.0》。这次新提出的是“软件 3.0”。"
+    },
+    "at": [
+     {
+      "sid": "A01",
+      "t": 91.68,
+      "label": "1:31"
+     },
+     {
+      "sid": "A18",
+      "t": 195.68,
+      "label": "3:15"
+     }
+    ],
+    "src": "sw2"
+   },
+   {
+    "tag": "view",
+    "said": {
+     "zh": "“2025 年是智能体之年。”"
+    },
+    "orig": {
+     "zh": "他恰恰对这种说法“很担心”，认为这是“智能体的十年”。注意：“十年”也是他的预测，不是事实。"
+    },
+    "at": [
+     {
+      "sid": "C01",
+      "t": 1653.88,
+      "label": "27:33"
+     },
+     {
+      "sid": "C02",
+      "t": 1658.09,
+      "label": "27:38"
+     }
+    ]
+   },
+   {
+    "tag": "view",
+    "sub": "类比",
+    "said": {
+     "zh": "“大模型就是新的操作系统。”"
+    },
+    "orig": {
+     "zh": "这是他的类比：大模型“有点像”一种新的操作系统；他同时也拿它比作公用事业和晶圆厂。类比帮助理解，但不是定义。"
+    },
+    "at": [
+     {
+      "t": 611.2,
+      "label": "10:11",
+      "raw": true
+     }
+    ]
+   },
+   {
+    "tag": "open",
+    "said": {
+     "zh": "“有了 AI，程序员的效率大幅提升。”"
+    },
+    "orig": {
+     "zh": "演讲里没有给出数字。他说的是“瓶颈仍然是我”——一万行代码瞬间生成，人还得一行行确认没有漏洞。研究结果也不一致（见下方证据）。"
+    },
+    "at": [
+     {
+      "sid": "B11",
+      "t": 1386.33,
+      "label": "23:06"
+     }
+    ]
+   },
+   {
+    "tag": "miss",
+    "said": {
+     "zh": "转述里常常没提"
+    },
+    "orig": {
+     "zh": "人要留在回路里：AI 负责生成，人负责验证；要“把 AI 拴住”；他自己用 AI 写代码时，总是一小块一小块地改。"
+    },
+    "at": [
+     {
+      "sid": "B02",
+      "t": 1334.24,
+      "label": "22:14"
+     },
+     {
+      "sid": "B09",
+      "t": 1373.06,
+      "label": "22:53"
+     },
+     {
+      "t": 1439.84,
+      "label": "23:59",
+      "raw": true
+     }
+    ]
+   },
+   {
+    "tag": "miss",
+    "said": {
+     "zh": "转述里常常没提"
+    },
+    "orig": {
+     "zh": "他用氛围编程做 MenuGen，写代码只花几个小时；真正花了一周的是登录、支付、部署——这些都不是代码。"
+    },
+    "at": [
+     {
+      "t": 1948.16,
+      "label": "32:28",
+      "raw": true
+     }
+    ]
+   }
+  ],
+  "evidenceTitle": {
+   "zh": "证据细节：AI 写代码，到底让人快了多少？"
+  },
+  "takeaway": {
+   "zh": "原话大多被准确引用；出错的是出处被搬家、预测被当成事实、“人人能编程”被延伸成“不用学编程”。转述最容易丢的，是限定条件。"
+  }
+ },
+ "practice": {
+  "pairs": [
+   {
+    "bad": "帮我做一个网站。",
+    "good": "我想做一个记录每天读书页数的单页网站，只用 HTML 和 JavaScript，数据存在浏览器里。先列出你的方案和文件结构，等我确认后再写代码。",
+    "why": "具体、分小步、先计划后执行——相当于把 AI “拴住”，每一步你都看得懂、验得了。"
+   },
+   {
+    "bad": "代码报错了，帮我修一下。",
+    "good": "这是完整报错信息和相关的 20 行代码。我预期它输出 X，实际输出 Y。请先解释原因，只改必要的几行，并告诉我怎么验证修好了。",
+    "why": "AI 负责生成，你负责验证。给出证据和预期，并要求它说明如何验证。"
+   },
+   {
+    "bad": "帮我做个统计分析，结果要显著。",
+    "good": "按我预先写好的分析计划（附后）用 R 做两组比较。每一步加注释，列出检验的前提条件和检查方法；不要改变分析计划，结果不显著就如实报告。",
+    "why": "别让 AI 替你下结论。说清楚“要什么”和“不许做什么”，比会写代码更重要。"
+   }
+  ]
+ },
+ "discussion": [
+  {
+   "zh": "如果一项技能可以被机器轻松完成，它对人的价值是消失了，还是转移到了别处？举一个你亲身经历的例子。"
+  },
+  {
+   "zh": "如果只能用一句英文提示词，让 AI 帮你完成今天的一项工作，你会怎么写？结果出来后，哪一步你一定要亲自核对？"
+  }
+ ],
+ "closing": {
+  "line": {
+   "zh": "会说话，让写程序变容易；想清楚、去验证，仍然是人的功夫。"
+  },
+  "homework": {
+   "zh": "今天的作业：用一句自然语言让 AI 帮你做一件小事，然后写下你亲手验证过的 3 件事。"
+  },
+  "image": {
+   "src": "../assets/voices/voices001-verify-deskv1.1.webp",
+   "alt": "书桌上的笔记本电脑和写满勾选的清单"
+  }
+ },
+ "aiImageNote": {
+  "zh": "第 3 章“自主滑杆”和第 5 章“书桌”两张插图为 AI 生成示意图；封面为 YouTube 官方视频封面。没有使用任何 AI 生成的讲者肖像。"
+ }
+}
