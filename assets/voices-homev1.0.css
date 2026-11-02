@@ -37,3 +37,20 @@
 .vh-empty{color:#6b6257}
 @media (min-width:1100px){.vh-list{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
 @media (max-width:520px){.vh-body{padding:16px 16px 18px}.vh-body h3{font-size:1.08rem}}
+
+/* Film picker: one horizontal, touch-scrollable row with a centered selection. */
+.vh-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:24px}
+.vh-hint{font-size:.82rem;color:#6b6257}
+.vh-buttons{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.vh-buttons button{width:44px;height:44px;border:1px solid #b9c9bf;border-radius:50%;background:#17332c;color:#fff;font-size:1.3rem;cursor:pointer}
+.vh-buttons button:disabled{opacity:.3;cursor:default}
+.vh-count{font:700 .85rem/1 ui-monospace,monospace;color:#17332c;min-width:45px;text-align:center}
+.vh-list{display:flex;gap:24px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:15%;padding:20px 15% 28px;margin:0 -1px 8px;align-items:stretch;scrollbar-width:thin;scrollbar-color:#a0763a #e9e4d9}
+.vh-card{flex:0 0 100%;min-width:0;scroll-snap-align:center;opacity:.65;transform:scale(.95);transition:transform .25s,opacity .25s,box-shadow .25s}
+.vh-card.is-selected{opacity:1;transform:scale(1);box-shadow:0 12px 32px #17332c20;border-color:#a0763a}
+.vh-card:hover{transform:scale(.97)}
+.vh-card.is-selected:hover{transform:scale(1)}
+.vh-list:focus-visible,.vh-buttons button:focus-visible{outline:3px solid #1f7a72;outline-offset:4px}
+@media(min-width:900px){.vh-list{padding-inline:22%;scroll-padding-inline:22%}}
+@media(max-width:520px){.vh-list{gap:12px;padding-inline:7%;scroll-padding-inline:7%}.vh-controls{gap:8px}.vh-hint{max-width:14ch;line-height:1.6}.vh-buttons{gap:8px}}
+@media(prefers-reduced-motion:reduce){.vh-card{transition:none}}
