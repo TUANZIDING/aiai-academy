@@ -484,3 +484,8 @@ html{scroll-padding-top:0}
   .vx-ch.on:not(.vx-cover-ch){display:flex;flex-direction:column;justify-content:center}
   .vx-ch.on:not(.vx-cover-ch)>*{width:100%}
 }
+/* tall desktop screens: let the wide chapters (cover, video, three ideas) grow so the
+   16:9 player / cover / cards fill the extra height instead of leaving bands; ≤ ~900px tall stays 1200px */
+@media (min-width:1280px) and (min-height:960px){
+  .vx-ch .vx-wide{max-width:clamp(1200px,(100svh - 560px) * 2.4,min(1560px,100vw - 64px))}
+}
