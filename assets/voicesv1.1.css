@@ -247,7 +247,7 @@ html{scroll-padding-top:0}
 
 /* deck: one chapter visible; hidden chapters stay rendered off-screen so the YouTube iframe keeps its state */
 .vx-deck{position:relative}
-.vx-ch{border-top:0;background:transparent!important;padding:clamp(32px,6vh,64px) 24px clamp(40px,7vh,72px);min-height:calc(100svh - var(--vx-top) - var(--vx-pager) - 2px)}
+.vx-ch{border-top:0;background:transparent!important;padding:clamp(32px,6vh,64px) 24px clamp(40px,7vh,72px);min-height:calc(100svh - var(--vx-top) - var(--vx-pager) - 3px)}
 .vx-ch:not(.on){position:absolute;left:-200vw;top:0;width:100%;visibility:hidden;height:0;min-height:0;overflow:hidden;padding:0}
 .vx-ch.on{animation:vxIn .45s var(--vx-ease)}
 @keyframes vxIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -471,3 +471,16 @@ html{scroll-padding-top:0}
 @media (max-width:400px){.vx-brand span i{display:none}}
 @media (prefers-reduced-motion:reduce){.vx-ch.on{animation:none}}
 @media print{.vx-top,.vx-pager,.vx-ctl,.vx-toast{display:none}.vx-ch:not(.on){position:static;visibility:visible;height:auto;overflow:visible;padding:40px 0}}
+
+/* =================== v1.1.2 · no blank band below chapters =================== */
+/* The deck's scroll height must equal the visible chapter's box: clip any overflow that
+   transforms (3D flip cards, entrance animation), off-screen hidden chapters or embeds
+   would otherwise add to the document height. overflow:clip keeps the sticky player working. */
+.vx-deck{overflow:hidden}
+@supports (overflow:clip){.vx-deck{overflow:clip;overflow-clip-margin:24px}}
+.vx-ch:not(.on){position:fixed;top:0;left:-200vw;contain:strict}
+/* desktop: a chapter shorter than the screen sits vertically centred between top bar and pager */
+@media (min-width:901px){
+  .vx-ch.on:not(.vx-cover-ch){display:flex;flex-direction:column;justify-content:center}
+  .vx-ch.on:not(.vx-cover-ch)>*{width:100%}
+}
