@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="assets/shelfv1.0.css?v=1.1">
 <link rel="stylesheet" href="assets/lessons-catalogv1.0.css?v=1.3">
 <link rel="stylesheet" href="assets/micro-hallv1.0.css?v=1.0.1">
-<link rel="stylesheet" href="assets/news-homev1.0.css?v=1.0">
+<link rel="stylesheet" href="assets/voices-homev1.0.css?v=1.0">
 <style>.brand .aiai-mark{height:38px;width:auto;display:block}.w-brand .aiai-mark{height:34px;width:auto;display:block}.w-brand .aiai-sub{display:flex;flex-direction:column;line-height:1.2;font-size:.92rem}.w-brand .aiai-sub small,.brand small{display:block;font-size:.6rem;letter-spacing:.2em;font-weight:500;opacity:.7}</style>
 </head>
 <body>
@@ -80,7 +80,7 @@
     <a href="#micro">微观馆</a>
     <a href="#camp">训练营</a>
     <a href="#frontier">前沿观察</a>
-    <a href="#news">新闻课</a>
+    <a href="#voices" class="nav-voices">AI VOICES</a>
     <details class="nav-more"><summary>更多</summary><div class="menu">
       <a href="#concepts">战术词典</a>
       <a href="#gear">装备库</a>
@@ -319,20 +319,14 @@
   <button type="button" class="lc-more" id="frMore" hidden></button>
 </section>
 
-<section id="news" class="section news-home" aria-labelledby="newsH">
-  <p class="eyebrow"><span class="jn">12</span><span class="ek">NEWS PLAYBOOK</span></p>
-  <p class="nh-lower"><span class="nh-live"><i aria-hidden="true"></i>LIVE</span><span>AI 前沿新闻战术课 · AI NEWS PLAYBOOK</span></p>
-  <h2 id="newsH">新闻刷到了，<em>先核对再转发。</em></h2>
-  <p class="nh-en" lang="en">Saw the headline? Verify before you forward.</p>
-  <p class="sub">每期挑一条 AI 前沿新闻：回到原文，分清事件日期和传播日期，用证据裁判矩阵给每句话判类，再练一招、带回急诊和临床。6 章 · 中英双语 · 投屏可用。</p>
-  <div class="nh-list" id="newsList" aria-live="polite"><p class="nh-empty">正在加载新闻课……</p></div>
-  <nav class="nh-x" aria-label="新闻课相关栏目">
-    <span>接着练 Keep training：</span>
-    <a href="#frontier">11 前沿观察 · 精读证据</a>
-    <a href="#camp">10 训练营 · 练招式</a>
-    <a href="#gallery">05 作品馆 · 证据审阅作品</a>
-    <a href="#lessons">08 课件馆 · 投屏课件</a>
-  </nav>
+<section id="voices" class="section voices-home" aria-labelledby="voicesH">
+  <span id="news" class="vh-alias" aria-hidden="true"></span>
+  <p class="eyebrow"><span class="jn">12</span><span class="ek">AI VOICES</span></p>
+  <p class="vh-kick">AI VOICES · AI 大师访谈与思想课</p>
+  <h2 id="voicesH">听 AI 大师亲口说，<em>再自己想清楚。</em></h2>
+  <p class="vh-slogan" lang="en">Watch in English. Think in depth. Learn with AI.</p>
+  <p class="sub">每期选一段 AI 领域重要人物的英文原声，围绕一个问题：看原视频、学几句地道表达，再核对网上的说法，最后留给自己一道思考题。</p>
+  <div class="vh-list" id="voicesList" aria-live="polite"><p class="vh-empty">正在加载 AI VOICES……</p></div>
 </section>
 
 <section id="library" class="section">
@@ -425,7 +419,7 @@
 <script src="assets/lessons-catalogv1.0.js?v=1.3" defer></script>
 <script src="assets/micro-hallv1.0.js?v=1.0.1" defer></script>
 <script src="assets/frontierv1.0.js?v=1.2" defer></script>
-<script src="assets/news-homev1.0.js?v=1.0.1" defer></script>
+<script src="assets/voices-homev1.0.js?v=1.0" defer></script>
 <script src="assets/shelfv1.0.js?v=1.3" defer></script>
 <script>document.addEventListener("click",e=>{const d=document.querySelector(".nav-more[open]");if(d&&(!d.contains(e.target)||e.target.closest(".menu a")))d.removeAttribute("open")});</script>
 </body>

@@ -19,7 +19,38 @@
    "data": "data/voices/voices-001v1.1.json",
    "thumb": "https://i.ytimg.com/vi/LCEmiRjPEtQ/maxresdefault.jpg",
    "status": "preview",
-   "verifiedAt": "2026-11-02"
+   "verifiedAt": "2026-11-02",
+   "speakerZh": "安德烈·卡帕西",
+   "minutes": {
+    "zh": "约 25 分钟",
+    "note": "含约 5 分钟英文原声"
+   },
+   "level": {
+    "zh": "入门",
+    "en": "Beginner"
+   },
+   "dims": [
+    "AI",
+    "English",
+    "Philosophy"
+   ]
+  }
+ ],
+ "also": [
+  {
+   "kind": "news",
+   "label": "新闻课 · 第 1 期",
+   "title": "智能体 AI 读病历，找免疫治疗副作用",
+   "source": "Nature Cancer",
+   "href": "news/news-001v1.0.html",
+   "thumb": "assets/news/news-001-thumbv1.0.webp",
+   "thumbNote": "AI 生成插图",
+   "meta": "6 章 · 中英双语",
+   "dims": [
+    "AI",
+    "English",
+    "Evidence"
+   ]
   }
  ]
 }

@@ -24,7 +24,7 @@
   let loopAB = null, endedOnce = false, onlySegs = true, round = 2, shadowFor = -1, shadowTimer = null;
 
   fetch(src, { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(render).catch(err => {
-    app.innerHTML = `<div class="vx-err"><p>课程数据加载失败（${esc(err.message)}）。Lesson data failed to load.</p><p><a href="../index.html">← aiai 人工智能学院</a></p></div>`;
+    app.innerHTML = `<div class="vx-err"><p>课程数据加载失败（${esc(err.message)}）。Lesson data failed to load.</p><p><a href="../index.html#voices">← aiai 人工智能学院</a></p></div>`;
   });
 
   function setLang(l, save) {
@@ -50,7 +50,7 @@
     const head = `
 <header class="vx-top" id="vxTop">
   <div class="vx-bar">
-    <a class="vx-brand" href="../index.html" aria-label="aiai 人工智能学院 首页"><img src="../assets/aiai-wordmarkv1.0.webp" alt="aiai" width="51" height="22"><span>AI VOICES<i>${esc(C.issue.zh)}</i></span></a>
+    <a class="vx-brand" href="../index.html#voices" aria-label="aiai 人工智能学院 首页"><img src="../assets/aiai-wordmarkv1.0.webp" alt="aiai" width="51" height="22"><span>AI VOICES<i>${esc(C.issue.zh)}</i></span></a>
     <nav class="vx-tabs" aria-label="章节 Chapters">${CH.map((c, i) => `<a href="#ch${c.no}" data-go="${i}"><b>${c.no}</b><span>${esc(c.zh)}</span></a>`).join('')}</nav>
   </div>
   <div class="vx-prog" aria-hidden="true"><i id="vxBar"></i></div>
@@ -276,7 +276,7 @@
 
     const pager = `
 <nav class="vx-pager" aria-label="翻页 Pager">
-  <a class="vx-home" href="../index.html">← 学习中心</a>
+  <a class="vx-home" href="../index.html#voices">← 学习中心</a>
   <p class="vx-hint">AI VOICES｜${esc(C.issue.zh)} · 按 ← / → 翻章节</p>
   <div class="vx-pg">
     <button type="button" id="vxPrev" aria-label="上一章 Previous chapter">‹ <span>上一章</span></button>
