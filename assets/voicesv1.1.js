@@ -118,6 +118,7 @@
       <div class="vx-player-col" id="vxPlayerCol">
         <div class="vx-frame" id="vxFrame">
           <div id="vxPlayer"></div>
+          <button type="button" class="vx-fsx" id="vxFsx" aria-label="退出全屏 Exit fullscreen">✕ 退出全屏</button>
           <button type="button" class="vx-poster" id="vxPoster" aria-label="播放 Play"><img src="${esc(V.thumbFallback)}" alt="" referrerpolicy="no-referrer"><span class="pl" aria-hidden="true"></span><span class="st" id="vxPState">正在连接 YouTube…</span></button>
         </div>
         <div class="vx-ctl" role="toolbar" aria-label="播放控制 Player controls">
@@ -384,9 +385,12 @@
       if (loopAB) { loopAB = null; $('#vxLoop').setAttribute('aria-pressed', 'false'); toast('已取消循环'); return; }
       const s = SENT[active >= 0 ? active : 0]; setLoop(s); seek(s.start, true);
     });
+    const exitFs = () => { const x = document.exitFullscreen || document.webkitExitFullscreen; if (document.fullscreenElement || document.webkitFullscreenElement) x && x.call(document); };
+    $('#vxFsx').addEventListener('click', exitFs);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') exitFs(); });
     $('#vxFull').addEventListener('click', () => {
       const f = $('#vxFrame'); const req = f.requestFullscreen || f.webkitRequestFullscreen;
-      if (document.fullscreenElement) document.exitFullscreen(); else if (req) req.call(f); else toast('请使用播放器自带的全屏按钮');
+      if (document.fullscreenElement || document.webkitFullscreenElement) exitFs(); else if (req) req.call(f); else toast('请使用播放器自带的全屏按钮');
     });
     $('#vxOnly').addEventListener('change', e => onlySegs = e.target.checked);
     $$('[data-round]').forEach(b => b.addEventListener('click', () => setRound(+b.dataset.round)));

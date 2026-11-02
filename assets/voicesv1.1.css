@@ -420,6 +420,10 @@ html{scroll-padding-top:0}
 .vx-hw{margin:0 0 26px;color:var(--vx-ink2)}
 .vx-slogan{text-align:center;font:italic 400 .95rem/1.5 var(--vx-en);color:var(--vx-muted);margin:36px 0 0}
 
+/* exit-fullscreen button: only visible while the frame is fullscreen */
+.vx-fsx{display:none;position:absolute;top:14px;right:14px;z-index:5;border:0;border-radius:999px;background:rgba(20,33,61,.82);color:#fff;padding:8px 14px;font-size:.85rem;cursor:pointer}
+.vx-frame:fullscreen .vx-fsx,.vx-frame:-webkit-full-screen .vx-fsx{display:block}
+
 /* bottom pager (always reachable) */
 .vx-pager{position:fixed;left:0;right:0;bottom:0;z-index:50;height:calc(var(--vx-pager) + env(safe-area-inset-bottom));padding:0 20px env(safe-area-inset-bottom);display:flex;align-items:center;gap:16px;background:rgba(251,250,247,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--vx-line)}
 .vx-home{font-size:.82rem;color:var(--vx-muted);text-decoration:none;white-space:nowrap}
@@ -464,5 +468,6 @@ html{scroll-padding-top:0}
   .vx-pg button{min-width:48px;font-size:1.1rem}
   .vx-legend div{grid-template-columns:1fr}
 }
+@media (max-width:400px){.vx-brand span i{display:none}}
 @media (prefers-reduced-motion:reduce){.vx-ch.on{animation:none}}
 @media print{.vx-top,.vx-pager,.vx-ctl,.vx-toast{display:none}.vx-ch:not(.on){position:static;visibility:visible;height:auto;overflow:visible;padding:40px 0}}
