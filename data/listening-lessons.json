@@ -1,0 +1,1197 @@
+[
+  {
+    "id": 1,
+    "title": "智能背后的共同原理",
+    "speaker": "约书亚·本吉奥",
+    "speakerEn": "Yoshua Bengio",
+    "duration": 84,
+    "video": "/media/listening/clip-1.mp4",
+    "poster": "/media/listening/clip-1.jpg",
+    "sourceStart": 225.57999999999998,
+    "sourceEnd": 309.56,
+    "sourceFile": "Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "source": "https://commons.wikimedia.org/wiki/File:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "subtitleSource": "https://commons.wikimedia.org/wiki/TimedText:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv.en.srt",
+    "license": "CC BY-SA 3.0 NL",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/",
+    "credit": "VPRO · The Mind of the Universe",
+    "date": "2015–2017 年项目访谈（2017 年公开）",
+    "changes": "选段剪辑、压缩、字幕断句及中文翻译：aiai 学院；视频片段及双语字幕按 CC BY-SA 3.0 NL 发布。",
+    "person": "bengio",
+    "cues": [
+      {
+        "start": 0,
+        "end": 7.56,
+        "speaker": "本吉奥",
+        "en": "But my main quest is to understand the principles that underlie intelligence.",
+        "zh": "我的主要追求，是理解智能背后的基本原理。",
+        "sourceCue": 43
+      },
+      {
+        "start": 7.56,
+        "end": 17.34,
+        "speaker": "本吉奥",
+        "en": "And I believe that this happens through learning, that intelligent behavior arises in nature and in the computers that we're building through learning.",
+        "zh": "我相信，智能是通过学习形成的；自然界中的智能行为，以及我们正在建造的计算机中的智能行为，都源于学习。",
+        "sourceCue": 44,
+        "sourceCues": [
+          44,
+          45
+        ]
+      },
+      {
+        "start": 17.34,
+        "end": 25.34,
+        "speaker": "本吉奥",
+        "en": "The machine, the animal, the human becomes intelligent because it learns.",
+        "zh": "机器、动物和人，都是因为学习而变得聪明。",
+        "sourceCue": 46
+      },
+      {
+        "start": 25.34,
+        "end": 35.72,
+        "speaker": "本吉奥",
+        "en": "And understanding the underlying principles is like understanding the laws of aerodynamics for building airplanes, right?",
+        "zh": "理解这些基本原理，就像为了制造飞机而理解空气动力学定律一样，对吧？",
+        "sourceCue": 47,
+        "sourceCues": [
+          47,
+          48
+        ]
+      },
+      {
+        "start": 35.72,
+        "end": 46.04,
+        "speaker": "本吉奥",
+        "en": "So I and others in my field are trying to figure out what is the equivalent of the laws of aerodynamics but for intelligence.",
+        "zh": "所以，我和这个领域的其他研究者，正试图找出与空气动力学定律相当的规律，只不过，这次针对的是智能。",
+        "sourceCue": 49,
+        "sourceCues": [
+          49,
+          50
+        ]
+      },
+      {
+        "start": 46.04,
+        "end": 61.32,
+        "speaker": "本吉奥",
+        "en": "So that's the quest, and we are taking inspiration from brains, we're taking inspiration from a lot of our experiments that we're doing with computers trying to learn from data.",
+        "zh": "这就是我们的追求。我们从大脑中寻找灵感，也从许多让计算机尝试从数据中学习的实验中寻找灵感。",
+        "sourceCue": 51,
+        "sourceCues": [
+          51,
+          52
+        ]
+      },
+      {
+        "start": 61.32,
+        "end": 73.5,
+        "speaker": "本吉奥",
+        "en": "We're taking inspiration from other disciplines, from physics, from psychology, neuroscience.",
+        "zh": "我们还从其他学科中汲取灵感，例如物理学、心理学和神经科学。",
+        "sourceCue": 53
+      },
+      {
+        "start": 73.5,
+        "end": 83.98,
+        "speaker": "本吉奥",
+        "en": "And other fields, even electrical engineering, of course statistics, I mean, it's a very multi-disciplinary area.",
+        "zh": "还有其他领域，甚至包括电气工程，当然也包括统计学。我的意思是，这是一个非常跨学科的领域。",
+        "sourceCue": 54
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "深度学习究竟深在哪里",
+    "speaker": "约书亚·本吉奥",
+    "speakerEn": "Yoshua Bengio",
+    "duration": 83.16,
+    "video": "/media/listening/clip-2.mp4",
+    "poster": "/media/listening/clip-2.jpg",
+    "sourceStart": 321.23,
+    "sourceEnd": 404.38,
+    "sourceFile": "Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "source": "https://commons.wikimedia.org/wiki/File:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "subtitleSource": "https://commons.wikimedia.org/wiki/TimedText:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv.en.srt",
+    "license": "CC BY-SA 3.0 NL",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/",
+    "credit": "VPRO · The Mind of the Universe",
+    "date": "2015–2017 年项目访谈（2017 年公开）",
+    "changes": "选段剪辑、压缩、字幕断句及中文翻译：aiai 学院；视频片段及双语字幕按 CC BY-SA 3.0 NL 发布。",
+    "person": "bengio",
+    "cues": [
+      {
+        "start": 0,
+        "end": 9.14,
+        "speaker": "本吉奥",
+        "en": "But one of the big mysteries about how brains manage to do what they do, is what scientists have called for many decades the question of credit assignment.",
+        "zh": "关于大脑如何完成它所做的事情，其中一个重大谜题，就是科学家几十年来所说的‘信用分配’问题。",
+        "sourceCue": 57,
+        "sourceCues": [
+          57,
+          58
+        ]
+      },
+      {
+        "start": 9.14,
+        "end": 17.75,
+        "speaker": "本吉奥",
+        "en": "That is, how do neurons in the middle of your brain, hidden somewhere, get to know how they should change.",
+        "zh": "也就是：藏在大脑深处的神经元，怎么知道自己应该怎样改变？",
+        "sourceCue": 59
+      },
+      {
+        "start": 17.75,
+        "end": 24.14,
+        "speaker": "本吉奥",
+        "en": "What they should be doing that will be useful for the whole collective, that is, the brain.",
+        "zh": "它们应该做什么，才有利于整个集体，也就是整个大脑？",
+        "sourceCue": 60
+      },
+      {
+        "start": 24.14,
+        "end": 32.2,
+        "speaker": "本吉奥",
+        "en": "And we don't know how brains do it, we now have algorithms that do a pretty good job at it.",
+        "zh": "我们还不知道大脑是怎么做到的，但现在已经有算法能相当不错地解决这个问题。",
+        "sourceCue": 61
+      },
+      {
+        "start": 32.2,
+        "end": 40.12,
+        "speaker": "本吉奥",
+        "en": "They have their limitations but one of the things I'm trying to do is to better understand this credit assignment question.",
+        "zh": "这些算法也有局限。而我正在努力做的一件事，就是更好地理解这个信用分配问题。",
+        "sourceCue": 62,
+        "sourceCues": [
+          62,
+          63
+        ]
+      },
+      {
+        "start": 40.12,
+        "end": 47.81,
+        "speaker": "本吉奥",
+        "en": "And it's crucial for deep learning, because deep learning is about having many levels of neurons talking to each other.",
+        "zh": "它对深度学习至关重要，因为深度学习涉及多个层级的神经元相互交流。",
+        "sourceCue": 64
+      },
+      {
+        "start": 47.81,
+        "end": 54.12,
+        "speaker": "本吉奥",
+        "en": "So that's why we call them deep, there are many layers of neurons. That's what gives them their power.",
+        "zh": "所以我们称之为‘深度’：它有许多层神经元。这正是它能力强大的原因。",
+        "sourceCue": 65
+      },
+      {
+        "start": 54.12,
+        "end": 62.44,
+        "speaker": "本吉奥",
+        "en": "But the challenge is, how do we train them, how do they learn? And it gets harder the more layers you have.",
+        "zh": "但挑战在于，我们如何训练它们？它们如何学习？层数越多，这件事就越困难。",
+        "sourceCue": 66
+      },
+      {
+        "start": 62.44,
+        "end": 69.67,
+        "speaker": "本吉奥",
+        "en": "So, in the 80s people found how to train networks with a single, hidden layer.",
+        "zh": "在20世纪80年代，人们找到了训练只有一个隐藏层的网络的方法。",
+        "sourceCue": 67
+      },
+      {
+        "start": 69.67,
+        "end": 74.66,
+        "speaker": "本吉奥",
+        "en": "So just not very deep, but they were already able to do interesting things.",
+        "zh": "这类网络并不很深，但已经能做一些有意思的事情。",
+        "sourceCue": 68
+      },
+      {
+        "start": 74.66,
+        "end": 82.59,
+        "speaker": "本吉奥",
+        "en": "And about ten years ago we started discovering ways to train much deeper networks, and that's what led to this current revolution called deep learning.",
+        "zh": "大约十年前，我们开始发现训练深得多的网络的方法，这就促成了当时这场被称为深度学习的革命。",
+        "sourceCue": 69,
+        "sourceCues": [
+          69,
+          70
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "预测 AI 未来，也要承认不知道",
+    "speaker": "约书亚·本吉奥",
+    "speakerEn": "Yoshua Bengio",
+    "duration": 76.04,
+    "video": "/media/listening/clip-3.mp4",
+    "poster": "/media/listening/clip-3.jpg",
+    "sourceStart": 678.8,
+    "sourceEnd": 754.8399999999999,
+    "sourceFile": "Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "source": "https://commons.wikimedia.org/wiki/File:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "subtitleSource": "https://commons.wikimedia.org/wiki/TimedText:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv.en.srt",
+    "license": "CC BY-SA 3.0 NL",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/",
+    "credit": "VPRO · The Mind of the Universe",
+    "date": "2015–2017 年项目访谈（2017 年公开）",
+    "changes": "选段剪辑、压缩、字幕断句及中文翻译：aiai 学院；视频片段及双语字幕按 CC BY-SA 3.0 NL 发布。",
+    "person": "bengio",
+    "cues": [
+      {
+        "start": 0,
+        "end": 6.26,
+        "speaker": "采访者",
+        "en": "And are they right?",
+        "zh": "那么，他们的判断是对的吗？",
+        "sourceCue": 122
+      },
+      {
+        "start": 6.3,
+        "end": 11.56,
+        "speaker": "本吉奥",
+        "en": "Yeah, they are. Of course, I don't have a crystal ball.",
+        "zh": "是的，他们是这样。当然，我没有能预知未来的水晶球。",
+        "sourceCue": 123
+      },
+      {
+        "start": 11.56,
+        "end": 26.3,
+        "speaker": "本吉奥",
+        "en": "So there are a lot of research questions which remain unsolved, and it might take just a couple of years or decades to solve them, we don't know. But even if, say, scientific research on the topic stopped right now.",
+        "zh": "所以，仍有很多研究问题没有解决。解决它们可能只需几年，也可能要几十年，我们并不知道。但即使这个领域的科学研究现在就停止，",
+        "sourceCue": 124,
+        "sourceCues": [
+          124,
+          125
+        ]
+      },
+      {
+        "start": 26.32,
+        "end": 40.33,
+        "speaker": "本吉奥",
+        "en": "And you took the current state of the art in terms of the science, and you just applied it, right, collecting lots of data sets because these algorithms need a lot of data.",
+        "zh": "只采用当前科学上的最先进成果，然后去应用它们，收集大量数据集，因为这些算法需要大量数据。",
+        "sourceCue": 126,
+        "sourceCues": [
+          126,
+          127
+        ]
+      },
+      {
+        "start": 40.33,
+        "end": 45.55,
+        "speaker": "本吉奥",
+        "en": "Just applying the current science would already have a huge impact on society.",
+        "zh": "仅仅应用现有科学成果，就已经会对社会产生巨大影响。",
+        "sourceCue": 128
+      },
+      {
+        "start": 45.55,
+        "end": 51.68,
+        "speaker": "本吉奥",
+        "en": "So I don't think they're making a very risky bet,",
+        "zh": "所以，我不认为他们下的是一个风险很大的赌注。",
+        "sourceCue": 129
+      },
+      {
+        "start": 51.68,
+        "end": 57.08,
+        "speaker": "本吉奥",
+        "en": "but it could be even better because we could actually approach human level intelligence.",
+        "zh": "但结果还可能更好，因为我们也许真的能接近人类水平的智能。",
+        "sourceCue": 130
+      },
+      {
+        "start": 57.08,
+        "end": 59.13,
+        "speaker": "采访者",
+        "en": "You know that or you think so?",
+        "zh": "你是知道这一点，还是这么认为？",
+        "sourceCue": 131
+      },
+      {
+        "start": 59.13,
+        "end": 60.15,
+        "speaker": "本吉奥",
+        "en": "We could.",
+        "zh": "我是说，我们有可能做到。",
+        "sourceCue": 132
+      },
+      {
+        "start": 60.15,
+        "end": 76.04,
+        "speaker": "本吉奥",
+        "en": "I think that we'll have other challenges to deal with and some of them we currently know are in front of us, others we probably will discover when we get there.",
+        "zh": "我认为，我们还会面临其他挑战。有些挑战，我们现在就知道在前面等着；还有一些，我们大概只有走到那一步才会发现。",
+        "sourceCue": 133,
+        "sourceCues": [
+          133,
+          134
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "关注越多，越要保护深度思考",
+    "speaker": "约书亚·本吉奥",
+    "speakerEn": "Yoshua Bengio",
+    "duration": 74.92,
+    "video": "/media/listening/clip-4.mp4",
+    "poster": "/media/listening/clip-4.jpg",
+    "sourceStart": 782.6899999999999,
+    "sourceEnd": 857.6099999999999,
+    "sourceFile": "Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "source": "https://commons.wikimedia.org/wiki/File:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "subtitleSource": "https://commons.wikimedia.org/wiki/TimedText:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv.en.srt",
+    "license": "CC BY-SA 3.0 NL",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/",
+    "credit": "VPRO · The Mind of the Universe",
+    "date": "2015–2017 年项目访谈（2017 年公开）",
+    "changes": "选段剪辑、压缩、字幕断句及中文翻译：aiai 学院；视频片段及双语字幕按 CC BY-SA 3.0 NL 发布。",
+    "person": "bengio",
+    "cues": [
+      {
+        "start": 0,
+        "end": 8.78,
+        "speaker": "本吉奥",
+        "en": "So initially it's exhilarating to have all this attention, and it's great to have all this recognition.",
+        "zh": "一开始，受到这么多关注令人兴奋；获得这些认可也很好。",
+        "sourceCue": 145
+      },
+      {
+        "start": 8.78,
+        "end": 19.16,
+        "speaker": "本吉奥",
+        "en": "And also, its great to attract really the best minds that are coming here for doing PhD's and things like that.",
+        "zh": "而且，能吸引真正出色的人才来这里读博士等，也是非常好的事情。",
+        "sourceCue": 146
+      },
+      {
+        "start": 19.16,
+        "end": 28.16,
+        "speaker": "本吉奥",
+        "en": "It's absolutely great. But sometimes I feel that it's been too much, that I don't deserve that much attention.",
+        "zh": "这当然很棒。但有时候，我觉得关注有些过多了，我不值得这么多关注。",
+        "sourceCue": 147
+      },
+      {
+        "start": 28.16,
+        "end": 44.89,
+        "speaker": "本吉奥",
+        "en": "And that all these interactions with media and so on are taking time away from my research and I have to find the right balance here.",
+        "zh": "而与媒体等各方的互动，占用了我的研究时间。我必须在这里找到合适的平衡。",
+        "sourceCue": 148,
+        "sourceCues": [
+          148,
+          149
+        ]
+      },
+      {
+        "start": 44.89,
+        "end": 57.4,
+        "speaker": "本吉奥",
+        "en": "I think It is really important to continue to explain what we're doing so that more people can learn about it and take advantage of it, or become researchers themselves in this area.",
+        "zh": "我认为，持续向人们解释我们在做什么非常重要，这样更多人才能了解它，利用它，或者自己成为这个领域的研究者。",
+        "sourceCue": 150,
+        "sourceCues": [
+          150,
+          151
+        ]
+      },
+      {
+        "start": 57.4,
+        "end": 64.9,
+        "speaker": "本吉奥",
+        "en": "But I need to also focus on my main strength which is not speaking to journalists.",
+        "zh": "但我也需要专注于自己的主要长处，而我的长处并不是和记者交谈。",
+        "sourceCue": 152
+      },
+      {
+        "start": 64.94,
+        "end": 74.4,
+        "speaker": "本吉奥",
+        "en": "My main strength is to come up with new ideas, crazy schemes, and interacting with students to build new things.",
+        "zh": "我的主要长处是想出新点子、大胆的方案，并与学生交流，一起创造新东西。",
+        "sourceCue": 153
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "十次尝试九次失败，研究为何仍前进",
+    "speaker": "约书亚·本吉奥",
+    "speakerEn": "Yoshua Bengio",
+    "duration": 92.28,
+    "video": "/media/listening/clip-5.mp4",
+    "poster": "/media/listening/clip-5.jpg",
+    "sourceStart": 860.7,
+    "sourceEnd": 952.9599999999999,
+    "sourceFile": "Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "source": "https://commons.wikimedia.org/wiki/File:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "subtitleSource": "https://commons.wikimedia.org/wiki/TimedText:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv.en.srt",
+    "license": "CC BY-SA 3.0 NL",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/",
+    "credit": "VPRO · The Mind of the Universe",
+    "date": "2015–2017 年项目访谈（2017 年公开）",
+    "changes": "选段剪辑、压缩、字幕断句及中文翻译：aiai 学院；视频片段及双语字幕按 CC BY-SA 3.0 NL 发布。",
+    "person": "bengio",
+    "cues": [
+      {
+        "start": 0,
+        "end": 13.18,
+        "speaker": "本吉奥",
+        "en": "Well, of course, science is an exploration. And I'm often wrong.",
+        "zh": "当然，科学就是探索。而我也经常出错。",
+        "sourceCue": 155
+      },
+      {
+        "start": 13.26,
+        "end": 18.48,
+        "speaker": "本吉奥",
+        "en": "I propose ten things, nine of which end up not working.",
+        "zh": "我提出十个想法，其中九个最后都行不通。",
+        "sourceCue": 156
+      },
+      {
+        "start": 18.48,
+        "end": 30.98,
+        "speaker": "本吉奥",
+        "en": "But we make progress, so I get frequent positive feedback that tells me that we're moving in the right direction.",
+        "zh": "但我们确实在进步，所以我经常得到正面反馈，告诉我我们正在朝正确的方向前进。",
+        "sourceCue": 157
+      },
+      {
+        "start": 31,
+        "end": 33.16,
+        "speaker": "采访者",
+        "en": "If you're right enough to go on.",
+        "zh": "只要你做对的次数足够，就能继续下去。",
+        "sourceCue": 158
+      },
+      {
+        "start": 33.68,
+        "end": 45.86,
+        "speaker": "本吉奥",
+        "en": "Yes, yes, yes and these days because the number of people working on this has grown really fast, the rate at which advances come is incredible.",
+        "zh": "是的，是的。而且如今，因为从事这项工作的人数增长得很快，新进展出现的速度惊人。",
+        "sourceCue": 159,
+        "sourceCues": [
+          159,
+          160
+        ]
+      },
+      {
+        "start": 45.86,
+        "end": 54.12,
+        "speaker": "本吉奥",
+        "en": "The speed of progress in this field has greatly accelerated and mostly because there are more people doing it.",
+        "zh": "这个领域的进步速度大幅加快，主要是因为有更多人在做这件事。",
+        "sourceCue": 161
+      },
+      {
+        "start": 54.12,
+        "end": 57.69,
+        "speaker": "采访者",
+        "en": "And this is also reflected in what the companies do with it.",
+        "zh": "这也反映在企业的行动上。",
+        "sourceCue": 162
+      },
+      {
+        "start": 57.69,
+        "end": 64.4,
+        "speaker": "本吉奥",
+        "en": "Yes, so companies are investing a lot in basic research in this field which is unusual.",
+        "zh": "是的。企业正在这个领域的基础研究上投入大量资金，这很不寻常。",
+        "sourceCue": 163
+      },
+      {
+        "start": 64.4,
+        "end": 74.6,
+        "speaker": "本吉奥",
+        "en": "Typically companies would invest in applied research where they take existing algorithms and try to make them use them for products.",
+        "zh": "通常，企业会投资应用研究，也就是采用已有的算法，尝试把它们用于产品。",
+        "sourceCue": 164,
+        "sourceCues": [
+          164,
+          165
+        ]
+      },
+      {
+        "start": 74.6,
+        "end": 80.36,
+        "speaker": "本吉奥",
+        "en": "But right now there's a big war between these big IT companies to attract talent.",
+        "zh": "但现在，这些大型信息技术公司之间，正为吸引人才展开激烈竞争。",
+        "sourceCue": 166
+      },
+      {
+        "start": 80.36,
+        "end": 92.26,
+        "speaker": "本吉奥",
+        "en": "And also they understand that the potential impact, the potential benefit of future research is probably even greater than what we have already achieved.",
+        "zh": "而且，它们也认识到了潜在影响：未来研究可能带来的收益，很可能比我们已经取得的成果还要大。",
+        "sourceCue": 167,
+        "sourceCues": [
+          167,
+          168
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "学习与编程，有什么不同",
+    "speaker": "约书亚·本吉奥",
+    "speakerEn": "Yoshua Bengio",
+    "duration": 61.04,
+    "video": "/media/listening/clip-6.mp4",
+    "poster": "/media/listening/clip-6.jpg",
+    "sourceStart": 1946.41,
+    "sourceEnd": 2007.43,
+    "sourceFile": "Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "source": "https://commons.wikimedia.org/wiki/File:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "subtitleSource": "https://commons.wikimedia.org/wiki/TimedText:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv.en.srt",
+    "license": "CC BY-SA 3.0 NL",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/",
+    "credit": "VPRO · The Mind of the Universe",
+    "date": "2015–2017 年项目访谈（2017 年公开）",
+    "changes": "选段剪辑、压缩、字幕断句及中文翻译：aiai 学院；视频片段及双语字幕按 CC BY-SA 3.0 NL 发布。",
+    "person": "bengio",
+    "cues": [
+      {
+        "start": 0.08,
+        "end": 3.53,
+        "speaker": "本吉奥",
+        "en": "Okay. So there's an interesting connection between learning and programming.",
+        "zh": "好。学习与编程之间，有一种有趣的联系。",
+        "sourceCue": 336
+      },
+      {
+        "start": 3.53,
+        "end": 10.83,
+        "speaker": "本吉奥",
+        "en": "So the traditional way of putting knowledge into computers, Is to write a program that essentially contains all our knowledge.",
+        "zh": "把知识放进计算机的传统方式，是编写一个程序，把我们的知识基本都包含在里面。",
+        "sourceCue": 337,
+        "sourceCues": [
+          337,
+          338
+        ]
+      },
+      {
+        "start": 10.83,
+        "end": 20.87,
+        "speaker": "本吉奥",
+        "en": "And step by step you tell the computer, if this happens you do this, and then you do that, and then you do that, and then this happens you do that, and so on and so on. That's what a program is.",
+        "zh": "你一步一步地告诉计算机：如果发生这件事，你就这样做，然后那样做，再那样做，如果又发生另一件事，就再这样做，如此等等。这就是程序。",
+        "sourceCue": 339,
+        "sourceCues": [
+          339,
+          340
+        ]
+      },
+      {
+        "start": 20.87,
+        "end": 29.79,
+        "speaker": "本吉奥",
+        "en": "But when we allow the computer to learn we also program it, but the program that is there is different.",
+        "zh": "但是，当我们让计算机学习时，我们也在给它编程，只是其中的程序不同了。",
+        "sourceCue": 341
+      },
+      {
+        "start": 29.79,
+        "end": 34.07,
+        "speaker": "本吉奥",
+        "en": "It’s not a program that contains the knowledge we want a computer to have.",
+        "zh": "它不再是一个包含我们希望计算机掌握的知识的程序。",
+        "sourceCue": 342
+      },
+      {
+        "start": 34.07,
+        "end": 39.23,
+        "speaker": "本吉奥",
+        "en": "We don't program the computer with the knowledge of doors and cars and images and sounds.",
+        "zh": "我们不会把关于门、汽车、图像和声音的知识直接编进计算机。",
+        "sourceCue": 343
+      },
+      {
+        "start": 39.23,
+        "end": 54.63,
+        "speaker": "本吉奥",
+        "en": "We program the computer with the ability to learn and then the computer experiences. You know, images, or videos, or sounds, or texts and learns the knowledge from those experiences.",
+        "zh": "我们赋予计算机学习的能力，然后让计算机去经历，比如图像、视频、声音或文本，再从这些经历中学到知识。",
+        "sourceCue": 344,
+        "sourceCues": [
+          344,
+          345
+        ]
+      },
+      {
+        "start": 54.66,
+        "end": 60.75,
+        "speaker": "本吉奥",
+        "en": "So you can think of the learning program as a meta program and we have something like that in our brain.",
+        "zh": "因此，你可以把学习程序看作一种元程序，而我们的大脑中也有类似的东西。",
+        "sourceCue": 346
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "智能就是做出有助于目标的决策",
+    "speaker": "约书亚·本吉奥",
+    "speakerEn": "Yoshua Bengio",
+    "duration": 101.08,
+    "video": "/media/listening/clip-7.mp4",
+    "poster": "/media/listening/clip-7.jpg",
+    "sourceStart": 1506.88,
+    "sourceEnd": 1607.96,
+    "sourceFile": "Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "source": "https://commons.wikimedia.org/wiki/File:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "subtitleSource": "https://commons.wikimedia.org/wiki/TimedText:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv.en.srt",
+    "license": "CC BY-SA 3.0 NL",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/",
+    "credit": "VPRO · The Mind of the Universe",
+    "date": "2015–2017 年项目访谈（2017 年公开）",
+    "changes": "选段剪辑、压缩、字幕断句及中文翻译：aiai 学院；视频片段及双语字幕按 CC BY-SA 3.0 NL 发布。",
+    "person": "bengio",
+    "cues": [
+      {
+        "start": 0.04,
+        "end": 2.77,
+        "speaker": "本吉奥",
+        "en": "Okay. Okay, so what is intelligence?",
+        "zh": "好，什么是智能？",
+        "sourceCue": 257
+      },
+      {
+        "start": 2.77,
+        "end": 18.42,
+        "speaker": "本吉奥",
+        "en": "That's a good question and I don't think that there's a consensus but in my area of research people generally, understand intelligence as the ability to take good decisions. And what good decisions.",
+        "zh": "这是个好问题，我也不认为大家已经达成共识。但在我所在的研究领域，人们通常，把智能理解为做出好决策的能力。那么，什么是好决策？",
+        "sourceCue": 258,
+        "sourceCues": [
+          258,
+          259
+        ]
+      },
+      {
+        "start": 18.42,
+        "end": 18.94,
+        "speaker": "采访者",
+        "en": "What's good?",
+        "zh": "什么叫‘好’？",
+        "sourceCue": 260
+      },
+      {
+        "start": 19.12,
+        "end": 20.89,
+        "speaker": "本吉奥",
+        "en": "Good for me. Right?",
+        "zh": "对我有利，对吧？",
+        "sourceCue": 261
+      },
+      {
+        "start": 21.12,
+        "end": 21.78,
+        "speaker": "采访者",
+        "en": "Okay.",
+        "zh": "好。",
+        "sourceCue": 262
+      },
+      {
+        "start": 21.78,
+        "end": 38.84,
+        "speaker": "本吉奥",
+        "en": "Good in the sense that they allow me to achieve my goals, to, If I was a animal to survive my predators, to find food, to find mates. And for humans good might be achieving social status, or being happy, or whatever.",
+        "zh": "‘好’的意思是，它们让我实现目标。如果我是一只动物，就是躲过捕食者，找到食物、找到伴侣。对于人类，‘好’可能意味着获得社会地位，或感到幸福，或其他事情。",
+        "sourceCue": 263,
+        "sourceCues": [
+          263,
+          264
+        ]
+      },
+      {
+        "start": 38.84,
+        "end": 42.32,
+        "speaker": "本吉奥",
+        "en": "It's hidden in your mind. What is it that's good for you.",
+        "zh": "它藏在你的头脑里：究竟什么对你是好的？",
+        "sourceCue": 265
+      },
+      {
+        "start": 42.32,
+        "end": 55.83,
+        "speaker": "本吉奥",
+        "en": "But somehow we are striving to take decisions that are good for us and, in order to do that, it's very clear that we need some form of knowledge.",
+        "zh": "不管怎样，我们都在努力做出对自己有利的决策。而要做到这一点，显然，我们需要某种知识。",
+        "sourceCue": 266,
+        "sourceCues": [
+          266,
+          267
+        ]
+      },
+      {
+        "start": 55.83,
+        "end": 63.6,
+        "speaker": "本吉奥",
+        "en": "So, even a mouse that's choosing to go left or right in a maze is using knowledge,",
+        "zh": "所以，即使一只老鼠在迷宫里选择向左还是向右，它也在使用知识。",
+        "sourceCue": 268
+      },
+      {
+        "start": 63.6,
+        "end": 70.08,
+        "speaker": "本吉奥",
+        "en": "and that kind of knowledge is not necessarily the kind of knowledge you find in the book, right?",
+        "zh": "这种知识，不一定是你能在书中找到的那种知识，对吧？",
+        "sourceCue": 269
+      },
+      {
+        "start": 70.11,
+        "end": 72.6,
+        "speaker": "本吉奥",
+        "en": "A mouse cannot read a book, cannot write a book,",
+        "zh": "老鼠不能读书，也不能写书。",
+        "sourceCue": 270
+      },
+      {
+        "start": 72.6,
+        "end": 88.78,
+        "speaker": "本吉奥",
+        "en": "but in the mouse's brain there is knowledge about how to control the mouses' body in order to survive in order to find food and so on. So the mouse is actually very intelligent in the context of the life of a mouse.",
+        "zh": "但在老鼠的大脑里，确实有关于如何控制身体、如何生存、如何寻找，食物等方面的知识。因此，在老鼠的生活情境里，老鼠其实非常聪明。",
+        "sourceCue": 271,
+        "sourceCues": [
+          271,
+          272
+        ]
+      },
+      {
+        "start": 88.81,
+        "end": 95.72,
+        "speaker": "本吉奥",
+        "en": "If you were suddenly teleported in a mouse, you would probably find it difficult to do the right things.",
+        "zh": "如果你突然被传送进一只老鼠的身体里，你很可能会觉得，做对事情很困难。",
+        "sourceCue": 273
+      },
+      {
+        "start": 95.72,
+        "end": 101.08,
+        "speaker": "本吉奥",
+        "en": "So intelligence is about taking right decisions, and it requires knowledge.",
+        "zh": "所以，智能涉及做出正确决策，而这需要知识。",
+        "sourceCue": 274
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "学习不是背答案，而是举一反三",
+    "speaker": "约书亚·本吉奥",
+    "speakerEn": "Yoshua Bengio",
+    "duration": 127.68,
+    "video": "/media/listening/clip-8.mp4",
+    "poster": "/media/listening/clip-8.jpg",
+    "sourceStart": 1670.3500000000001,
+    "sourceEnd": 1798.02,
+    "sourceFile": "Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "source": "https://commons.wikimedia.org/wiki/File:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv",
+    "subtitleSource": "https://commons.wikimedia.org/wiki/TimedText:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv.en.srt",
+    "license": "CC BY-SA 3.0 NL",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/",
+    "credit": "VPRO · The Mind of the Universe",
+    "date": "2015–2017 年项目访谈（2017 年公开）",
+    "changes": "选段剪辑、压缩、字幕断句及中文翻译：aiai 学院；视频片段及双语字幕按 CC BY-SA 3.0 NL 发布。",
+    "person": "bengio",
+    "cues": [
+      {
+        "start": 0,
+        "end": 11.26,
+        "speaker": "本吉奥",
+        "en": "Yes, my definition of learning is not the kind of learning that people think about when they're in school and listening to a teacher. Learning is something we do all the time.",
+        "zh": "是的。我对学习的定义，并不是人们想到的那种坐在学校里，听老师讲课的学习。学习是我们一直都在做的事情。",
+        "sourceCue": 287,
+        "sourceCues": [
+          287,
+          288
+        ]
+      },
+      {
+        "start": 11.26,
+        "end": 19.55,
+        "speaker": "本吉奥",
+        "en": "Our brain is changing all the time in response to what we're seeing, experiencing. And it's an adaptation.",
+        "zh": "我们的大脑会随着所见、所经历的一切不断改变。这是一种适应。",
+        "sourceCue": 289
+      },
+      {
+        "start": 19.55,
+        "end": 28.46,
+        "speaker": "本吉奥",
+        "en": "And we are not just storing in our brain our experiences, it's not learning by heart, that's easy,",
+        "zh": "我们不只是把经历储存在大脑里。学习不等于死记硬背，后者很容易。",
+        "sourceCue": 290
+      },
+      {
+        "start": 28.46,
+        "end": 32.94,
+        "speaker": "本吉奥",
+        "en": "a file in a computer is like learning by heart. You can store facts.",
+        "zh": "计算机中的一个文件，就像死记硬背一样：你可以把事实存进去。",
+        "sourceCue": 291
+      },
+      {
+        "start": 32.98,
+        "end": 38.22,
+        "speaker": "本吉奥",
+        "en": "But that's trivial, that's not what learning really is about.",
+        "zh": "但那很简单，并不是学习真正的含义。",
+        "sourceCue": 292
+      },
+      {
+        "start": 38.22,
+        "end": 53.41,
+        "speaker": "本吉奥",
+        "en": "Learning is about integrating the information we are getting through experience into some more abstract form that allows us to take good decisions. That allow us to predict what will happen next.",
+        "zh": "学习，是把我们通过经验获得的信息整合成某种更抽象的形式，使我们能够做出好的决策，预测接下来会发生什么，",
+        "sourceCue": 293,
+        "sourceCues": [
+          293,
+          294
+        ]
+      },
+      {
+        "start": 53.41,
+        "end": 62.34,
+        "speaker": "本吉奥",
+        "en": "That allow us to understand the connections between things we've seen. So, that's what learning is really about.",
+        "zh": "理解我们见过的事物之间的联系。这才是学习真正的含义。",
+        "sourceCue": 295
+      },
+      {
+        "start": 62.34,
+        "end": 66.75,
+        "speaker": "本吉奥",
+        "en": "In my field, we talk about the notion of generalization.",
+        "zh": "在我所在的领域，我们会谈到‘泛化’这个概念。",
+        "sourceCue": 296
+      },
+      {
+        "start": 66.75,
+        "end": 75.97,
+        "speaker": "本吉奥",
+        "en": "So, the machine can generalize from things it has seen and learned from, to new situations.",
+        "zh": "机器能够从它见过并学过的东西，推广到新的情境。",
+        "sourceCue": 297
+      },
+      {
+        "start": 75.97,
+        "end": 79.38,
+        "speaker": "本吉奥",
+        "en": "That's the kind of learning we talk about in my field.",
+        "zh": "这就是我们这个领域所说的学习。",
+        "sourceCue": 298
+      },
+      {
+        "start": 79.38,
+        "end": 96.59,
+        "speaker": "本吉奥",
+        "en": "And the way we typically do it in machines and how we think it's happening in the brain is that it's a slow, gradual process. Each time you live an experience, one second of your life, there's gonna be some changes in your brain.",
+        "zh": "我们在机器中通常采用的方式，以及我们认为大脑中发生的过程，都是缓慢的，渐进的过程。每当你有一段经历，生活过去一秒钟，你的大脑都会发生一些改变。",
+        "sourceCue": 299,
+        "sourceCues": [
+          299,
+          300
+        ]
+      },
+      {
+        "start": 96.59,
+        "end": 107.78,
+        "speaker": "本吉奥",
+        "en": "Small changes. So it's like your whole system is gradually shifting towards what would make it take better decisions.",
+        "zh": "小小的改变。就像整个系统逐渐调整，让自己能够做出更好的决策。",
+        "sourceCue": 301
+      },
+      {
+        "start": 107.78,
+        "end": 110.17,
+        "speaker": "本吉奥",
+        "en": "So that's how you get to be intelligent, right?",
+        "zh": "所以，这就是你变得聪明的方式，对吧？",
+        "sourceCue": 302
+      },
+      {
+        "start": 110.17,
+        "end": 127.33,
+        "speaker": "本吉奥",
+        "en": "Because you learn, meaning you changed the way you perceive and act, so that next time you would see something, you will have some experience similar to what happened before, you would act better or you would predict better what would have happened.",
+        "zh": "因为你在学习，也就是改变自己感知与行动的方式。这样，下次你再看到某件事，再经历与过去相似的情况时，你就会采取更好的行动，或者更准确地预测会发生什么。",
+        "sourceCue": 303,
+        "sourceCues": [
+          303,
+          304,
+          305
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "AI 怎样学会听懂语气",
+    "speaker": "冯雁",
+    "speakerEn": "Pascale Fung",
+    "duration": 88.16,
+    "video": "/media/listening/clip-9.mp4",
+    "poster": "/media/listening/clip-9.jpg",
+    "sourceStart": 496.73,
+    "sourceEnd": 584.88,
+    "sourceFile": "Pascale_Fung_on_building_robots_with_empathy-VPRO-The_Mind_of_the_Universe.ogv",
+    "source": "https://commons.wikimedia.org/wiki/File:Pascale_Fung_on_building_robots_with_empathy-VPRO-The_Mind_of_the_Universe.ogv",
+    "subtitleSource": "https://commons.wikimedia.org/wiki/TimedText:Pascale_Fung_on_building_robots_with_empathy-VPRO-The_Mind_of_the_Universe.ogv.en.srt",
+    "license": "CC BY-SA 3.0 NL",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/",
+    "credit": "VPRO · The Mind of the Universe",
+    "date": "2016-04-15",
+    "changes": "选段剪辑、压缩、字幕断句及中文翻译：aiai 学院；视频片段及双语字幕按 CC BY-SA 3.0 NL 发布。",
+    "person": "fung",
+    "cues": [
+      {
+        "start": 0,
+        "end": 6.8,
+        "speaker": "冯雁",
+        "en": "So the tone of voice is important. We use tone of voice in our way of expressing our meaning a lot.",
+        "zh": "因此，语调很重要。我们经常用语调来表达自己的意思。",
+        "sourceCue": 89
+      },
+      {
+        "start": 6.8,
+        "end": 9.36,
+        "speaker": "采访者",
+        "en": "But how do you teach a robot to do that?",
+        "zh": "但你怎么教机器人这样做呢？",
+        "sourceCue": 90
+      },
+      {
+        "start": 9.38,
+        "end": 16.32,
+        "speaker": "冯雁",
+        "en": "So again the difference is we teach the robot to listen, again, to different kind of tone of voice.",
+        "zh": "区别还是在于，我们教机器人去听，去听不同类型的语调。",
+        "sourceCue": 91
+      },
+      {
+        "start": 16.69,
+        "end": 26.6,
+        "speaker": "冯雁",
+        "en": "We show a robot examples of the same sentences in angry voice, happy voice, and nervous voice, and frustrated voice.",
+        "zh": "我们向机器人展示同一句话用生气、开心、紧张和沮丧的声音说出来的例子。",
+        "sourceCue": 92
+      },
+      {
+        "start": 26.88,
+        "end": 37.69,
+        "speaker": "冯雁",
+        "en": "We tell the robot \"Look this is the kind of voice that expresses anger, this is the kind of voice that expresses frustration\" and the robot learns.",
+        "zh": "我们告诉机器人：‘看，这种声音表达的是愤怒，这种声音表达的是沮丧。’然后机器人就会学习。",
+        "sourceCue": 93,
+        "sourceCues": [
+          93,
+          94
+        ]
+      },
+      {
+        "start": 37.69,
+        "end": 39.59,
+        "speaker": "采访者",
+        "en": "Somehow we learned that as children.",
+        "zh": "我们小时候也是以某种方式学会这些的。",
+        "sourceCue": 95
+      },
+      {
+        "start": 39.59,
+        "end": 42.97,
+        "speaker": "冯雁",
+        "en": "Yes we did, we do as children.",
+        "zh": "是的，我们小时候就是这样学的。",
+        "sourceCue": 96
+      },
+      {
+        "start": 44.37,
+        "end": 48.87,
+        "speaker": "采访者 / 冯雁",
+        "en": "How does the robot learn that? So children have multiple sensor input, right?",
+        "zh": "机器人是怎么学会的？ 孩子有多种感官输入，对吧？",
+        "sourceCue": 98
+      },
+      {
+        "start": 49.03,
+        "end": 55.28,
+        "speaker": "冯雁",
+        "en": "Children perceive the world not just by what people are saying, how they are saying, but they also look at things.",
+        "zh": "孩子感知世界，不只是听人们说什么、怎么说，他们还会观察事物。",
+        "sourceCue": 99
+      },
+      {
+        "start": 55.28,
+        "end": 61.76,
+        "speaker": "冯雁",
+        "en": "So right now we are working towards enabling robots to have multiple sensory input as well.",
+        "zh": "所以，我们现在也在努力让机器人拥有多种感官输入。",
+        "sourceCue": 100
+      },
+      {
+        "start": 61.76,
+        "end": 78.68,
+        "speaker": "冯雁",
+        "en": "So the robot now learns from the speech you're saying, what you're saying, but also learns from how you're saying it. We also enable the robot to look at your facial expression when you say it so that enable the robot to learn better.",
+        "zh": "机器人现在不仅从你的话语、从你说的内容中学习，也从你表达的方式中学习。我们还让机器人观察你的面部表情，观察你说话时的表情，这样机器人就能学得更好。",
+        "sourceCue": 101,
+        "sourceCues": [
+          101,
+          102,
+          103
+        ]
+      },
+      {
+        "start": 78.68,
+        "end": 84.22,
+        "speaker": "采访者",
+        "en": "As a child you learn by experience, a robot learns by experience?",
+        "zh": "孩子通过经验学习，机器人也通过经验学习吗？",
+        "sourceCue": 104
+      },
+      {
+        "start": 84.22,
+        "end": 88.15,
+        "speaker": "冯雁",
+        "en": "Yes.",
+        "zh": "是的。",
+        "sourceCue": 105
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "照护中的 AI 为什么需要共情",
+    "speaker": "冯雁",
+    "speakerEn": "Pascale Fung",
+    "duration": 82.44,
+    "video": "/media/listening/clip-10.mp4",
+    "poster": "/media/listening/clip-10.jpg",
+    "sourceStart": 202.03,
+    "sourceEnd": 284.47,
+    "sourceFile": "Pascale_Fung_on_building_robots_with_empathy-VPRO-The_Mind_of_the_Universe.ogv",
+    "source": "https://commons.wikimedia.org/wiki/File:Pascale_Fung_on_building_robots_with_empathy-VPRO-The_Mind_of_the_Universe.ogv",
+    "subtitleSource": "https://commons.wikimedia.org/wiki/TimedText:Pascale_Fung_on_building_robots_with_empathy-VPRO-The_Mind_of_the_Universe.ogv.en.srt",
+    "license": "CC BY-SA 3.0 NL",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/",
+    "credit": "VPRO · The Mind of the Universe",
+    "date": "2016-04-15",
+    "changes": "选段剪辑、压缩、字幕断句及中文翻译：aiai 学院；视频片段及双语字幕按 CC BY-SA 3.0 NL 发布。",
+    "person": "fung",
+    "cues": [
+      {
+        "start": 0.08,
+        "end": 3.36,
+        "speaker": "冯雁",
+        "en": "So that they can work with us better. They can help us better.",
+        "zh": "这样，它们才能更好地与我们合作，更好地帮助我们。",
+        "sourceCue": 37
+      },
+      {
+        "start": 3.36,
+        "end": 14.33,
+        "speaker": "冯雁",
+        "en": "If they need to take care of us, take care of our children, our elderly, they really need to understand our true intent and emotion in order to take care of us. Say if you go to the hospital",
+        "zh": "如果它们要照顾我们，照顾孩子或老人，就确实需要理解我们的真实意图和情绪，才能照顾好我们。比如，你去了医院，",
+        "sourceCue": 38,
+        "sourceCues": [
+          38,
+          39
+        ]
+      },
+      {
+        "start": 14.33,
+        "end": 33.87,
+        "speaker": "冯雁",
+        "en": "there's a nurse and what a nurse does is not just to take your temperature and look at your vital signs but also talk to you and see how you are doing and whether you need comforting, whether you need water, whether you need medicine at this point in time, so that requires emotional intelligence and it requires empathy.",
+        "zh": "那里有一位护士。护士所做的，不只是测量体温、查看生命体征，还会与你交谈，看看你的情况如何，是否需要安慰，是否需要喝水，或者此刻是否需要药物。这需要情绪智能，也需要共情。",
+        "sourceCue": 40,
+        "sourceCues": [
+          40,
+          41,
+          42
+        ]
+      },
+      {
+        "start": 33.87,
+        "end": 40.91,
+        "speaker": "采访者",
+        "en": "Is it because they are becoming closer to us or because there is a difference of environment?",
+        "zh": "这是因为它们越来越贴近我们，还是因为环境有所不同？",
+        "sourceCue": 43
+      },
+      {
+        "start": 40.93,
+        "end": 48.66,
+        "speaker": "冯雁",
+        "en": "Yes the robots are coming more into our lives, into our daily lives and there will be more robots around us.",
+        "zh": "是的，机器人正越来越多地进入我们的生活、进入日常生活。我们身边会有更多机器人。",
+        "sourceCue": 44
+      },
+      {
+        "start": 48.66,
+        "end": 54.75,
+        "speaker": "冯雁",
+        "en": "If they don't have emotional intelligence they are more likely to make mistakes and even hurt us.",
+        "zh": "如果它们不具备情绪智能，就更容易犯错，甚至伤害我们。",
+        "sourceCue": 45
+      },
+      {
+        "start": 54.75,
+        "end": 57.39,
+        "speaker": "采访者",
+        "en": "There are a lot of different kinds of emotions.",
+        "zh": "情绪有很多不同的种类。",
+        "sourceCue": 46
+      },
+      {
+        "start": 57.39,
+        "end": 60.79,
+        "speaker": "采访者",
+        "en": "What kind of emotions should they express or should they at least recognize?",
+        "zh": "它们应该表达什么样的情绪？或者至少应该识别哪些情绪？",
+        "sourceCue": 47
+      },
+      {
+        "start": 62.32,
+        "end": 77.54,
+        "speaker": "冯雁",
+        "en": "For example the very first thing we're working on for robots to recognize includes whether the human is happy, angry, sad, or frustrated or hesitating or even sense of humor.",
+        "zh": "例如，我们最先研究让机器人识别的内容包括：人是否，开心、生气、悲伤、沮丧，或犹豫，甚至还包括幽默感。",
+        "sourceCue": 48,
+        "sourceCues": [
+          48,
+          49
+        ]
+      },
+      {
+        "start": 77.54,
+        "end": 81.66,
+        "speaker": "冯雁",
+        "en": "One of my students is working on recognizing sense of humor.",
+        "zh": "我的一名学生就在研究识别幽默感。",
+        "sourceCue": 50
+      }
+    ]
+  }
+]

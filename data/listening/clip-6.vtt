@@ -1,0 +1,44 @@
+WEBVTT
+
+NOTE VPRO · The Mind of the Universe | CC BY-SA 3.0 NL | https://commons.wikimedia.org/wiki/File:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv
+NOTE 选段剪辑、压缩、字幕断句及中文翻译：aiai 学院；视频片段及双语字幕按 CC BY-SA 3.0 NL 发布。
+
+1
+00:00:00.080 --> 00:00:03.530
+本吉奥: Okay. So there's an interesting connection between learning and programming.
+好。学习与编程之间，有一种有趣的联系。
+
+2
+00:00:03.530 --> 00:00:10.830
+本吉奥: So the traditional way of putting knowledge into computers, Is to write a program that essentially contains all our knowledge.
+把知识放进计算机的传统方式，是编写一个程序，把我们的知识基本都包含在里面。
+
+3
+00:00:10.830 --> 00:00:20.870
+本吉奥: And step by step you tell the computer, if this happens you do this, and then you do that, and then you do that, and then this happens you do that, and so on and so on. That's what a program is.
+你一步一步地告诉计算机：如果发生这件事，你就这样做，然后那样做，再那样做，如果又发生另一件事，就再这样做，如此等等。这就是程序。
+
+4
+00:00:20.870 --> 00:00:29.790
+本吉奥: But when we allow the computer to learn we also program it, but the program that is there is different.
+但是，当我们让计算机学习时，我们也在给它编程，只是其中的程序不同了。
+
+5
+00:00:29.790 --> 00:00:34.070
+本吉奥: It’s not a program that contains the knowledge we want a computer to have.
+它不再是一个包含我们希望计算机掌握的知识的程序。
+
+6
+00:00:34.070 --> 00:00:39.230
+本吉奥: We don't program the computer with the knowledge of doors and cars and images and sounds.
+我们不会把关于门、汽车、图像和声音的知识直接编进计算机。
+
+7
+00:00:39.230 --> 00:00:54.630
+本吉奥: We program the computer with the ability to learn and then the computer experiences. You know, images, or videos, or sounds, or texts and learns the knowledge from those experiences.
+我们赋予计算机学习的能力，然后让计算机去经历，比如图像、视频、声音或文本，再从这些经历中学到知识。
+
+8
+00:00:54.660 --> 00:01:00.750
+本吉奥: So you can think of the learning program as a meta program and we have something like that in our brain.
+因此，你可以把学习程序看作一种元程序，而我们的大脑中也有类似的东西。

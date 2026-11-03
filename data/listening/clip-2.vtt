@@ -1,0 +1,59 @@
+WEBVTT
+
+NOTE VPRO · The Mind of the Universe | CC BY-SA 3.0 NL | https://commons.wikimedia.org/wiki/File:Yoshua_Bengio_on_intelligent_machines-VPRO-The_Mind_of_the_Universe.ogv
+NOTE 选段剪辑、压缩、字幕断句及中文翻译：aiai 学院；视频片段及双语字幕按 CC BY-SA 3.0 NL 发布。
+
+1
+00:00:00.000 --> 00:00:09.140
+本吉奥: But one of the big mysteries about how brains manage to do what they do, is what scientists have called for many decades the question of credit assignment.
+关于大脑如何完成它所做的事情，其中一个重大谜题，就是科学家几十年来所说的‘信用分配’问题。
+
+2
+00:00:09.140 --> 00:00:17.750
+本吉奥: That is, how do neurons in the middle of your brain, hidden somewhere, get to know how they should change.
+也就是：藏在大脑深处的神经元，怎么知道自己应该怎样改变？
+
+3
+00:00:17.750 --> 00:00:24.140
+本吉奥: What they should be doing that will be useful for the whole collective, that is, the brain.
+它们应该做什么，才有利于整个集体，也就是整个大脑？
+
+4
+00:00:24.140 --> 00:00:32.200
+本吉奥: And we don't know how brains do it, we now have algorithms that do a pretty good job at it.
+我们还不知道大脑是怎么做到的，但现在已经有算法能相当不错地解决这个问题。
+
+5
+00:00:32.200 --> 00:00:40.120
+本吉奥: They have their limitations but one of the things I'm trying to do is to better understand this credit assignment question.
+这些算法也有局限。而我正在努力做的一件事，就是更好地理解这个信用分配问题。
+
+6
+00:00:40.120 --> 00:00:47.810
+本吉奥: And it's crucial for deep learning, because deep learning is about having many levels of neurons talking to each other.
+它对深度学习至关重要，因为深度学习涉及多个层级的神经元相互交流。
+
+7
+00:00:47.810 --> 00:00:54.120
+本吉奥: So that's why we call them deep, there are many layers of neurons. That's what gives them their power.
+所以我们称之为‘深度’：它有许多层神经元。这正是它能力强大的原因。
+
+8
+00:00:54.120 --> 00:01:02.440
+本吉奥: But the challenge is, how do we train them, how do they learn? And it gets harder the more layers you have.
+但挑战在于，我们如何训练它们？它们如何学习？层数越多，这件事就越困难。
+
+9
+00:01:02.440 --> 00:01:09.670
+本吉奥: So, in the 80s people found how to train networks with a single, hidden layer.
+在20世纪80年代，人们找到了训练只有一个隐藏层的网络的方法。
+
+10
+00:01:09.670 --> 00:01:14.660
+本吉奥: So just not very deep, but they were already able to do interesting things.
+这类网络并不很深，但已经能做一些有意思的事情。
+
+11
+00:01:14.660 --> 00:01:22.590
+本吉奥: And about ten years ago we started discovering ways to train much deeper networks, and that's what led to this current revolution called deep learning.
+大约十年前，我们开始发现训练深得多的网络的方法，这就促成了当时这场被称为深度学习的革命。

@@ -1,75 +1,37 @@
-'use strict';
-(async () => {
-  const response = await fetch('../data/listening-clips.json');
-  if (!response.ok) throw Error('选片数据加载失败');
-  const {items} = await response.json();
-  const $ = id => document.getElementById(id);
-  const studyMode = new URLSearchParams(location.search).has('study');
-  let version = 0;
-  let widgetsPromise;
-  function widgets() {
-    if (window.twttr?.widgets) return Promise.resolve(window.twttr.widgets);
-    if (!widgetsPromise) widgetsPromise = new Promise((resolve, reject) => {
-      const script = document.createElement('script');
-      const timer = setTimeout(() => reject(Error('timeout')), 15000);
-      script.src = 'https://platform.twitter.com/widgets.js';
-      script.onload = () => {clearTimeout(timer); window.twttr?.widgets ? resolve(window.twttr.widgets) : reject(Error('unavailable'));};
-      script.onerror = () => {clearTimeout(timer); reject(Error('unavailable'));};
-      document.head.append(script);
-    }).catch(error => {widgetsPromise = null; throw error;});
-    return widgetsPromise;
-  }
-  async function embed(x, currentVersion) {
-    const player = $('player');
-    const slot = document.createElement('div');
-    const status = document.createElement('p');
-    status.className = 'load-status';
-    status.setAttribute('role','status');
-    status.textContent = '正在加载当前视频…';
-    const fallback = document.createElement('a');
-    fallback.href = x.url; fallback.target = '_blank'; fallback.rel = 'noopener noreferrer';
-    fallback.textContent = '无法播放？在 X 打开当前视频 ↗';
-    player.replaceChildren(status, slot, fallback);
-    try {
-      const api = await widgets();
-      if (currentVersion !== version) return;
-      let timer;
-      const result = await Promise.race([
-        api.createTweet(x.id, slot, {conversation:'none', dnt:true, align:'center'}),
-        new Promise((_,reject) => {timer=setTimeout(()=>reject(Error('timeout')),15000);})
-      ]).finally(()=>clearTimeout(timer));
-      if (currentVersion !== version) return;
-      if (!result) throw Error('unavailable');
-      status.remove();
-    } catch (error) {
-      if (currentVersion !== version) return;
-      status.textContent = 'X 播放器未能加载。可重试，或在 X 打开这段视频。';
-      const retry = document.createElement('button');
-      retry.className = 'load'; retry.textContent = '重试当前视频';
-      retry.onclick = () => embed(x, ++version);
-      slot.replaceChildren(retry);
-    }
-  }
-  function show(i) {
-    const x = items[i];
-    const duration = Math.floor(x.duration/60)+':'+String(x.duration%60).padStart(2,'0');
-    document.querySelectorAll('.film').forEach((button,j)=>button.setAttribute('aria-pressed',String(j===i)));
-    $('selectedLesson').textContent = x.speaker+' · '+x.title+' · '+duration;
-    $('studyLink').href = '?study='+(i+1)+'#clip-'+(i+1);
-    $('studyLink').setAttribute('aria-label','开始学习：'+x.speaker+' · '+x.title);
-    $('title').textContent = x.title;
-    $('meta').textContent = x.speaker+' · '+duration+' · X 发布 '+x.date;
-    $('focus').textContent = x.focus;
-    $('question').textContent = x.question;
-    $('words').textContent = '练习词汇：'+x.words;
-    if(studyMode) {document.querySelector('h1').textContent=x.speaker+' · '+x.title;document.title=x.title+' · AI 原声学习 | aiai';}
-    history.replaceState(null,'',location.pathname+location.search+'#clip-'+(i+1));
-    embed(x, ++version);
-  }
-  if(studyMode){document.body.classList.add('study-mode');const back=document.querySelector('header a');back.href='listening'+location.hash;back.textContent='← 返回选片';}
-  document.querySelectorAll('.film').forEach(button=>button.onclick=()=>show(Number(button.dataset.index)));
-  $('prev').onclick=()=>$('shelf').scrollBy({left:-254,behavior:'smooth'});
-  $('next').onclick=()=>$('shelf').scrollBy({left:254,behavior:'smooth'});
-  const initial = Number(new URLSearchParams(location.search).get('study') || location.hash.replace('#clip-',''))-1;
-  show(Number.isInteger(initial)&&initial>=0&&initial<items.length?initial:0);
-})().catch(()=>{document.getElementById('player').textContent='选片暂时无法加载，请刷新页面。';});
+(()=>{'use strict';
+const $=s=>document.querySelector(s),v=$('#video'),box=$('#lines');
+let lessons=[],lesson,cues=[],buttons=[],active=-1,loop=false,auto=false,loopIndex=0,lastTime=0,frame=0,handled=-1;
+const fmt=t=>Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0');
+const find=t=>cues.findIndex(c=>t>=c.start&&t<c.end);
+function play(){v.play().catch(()=>{});}
+function seek(i){if(!cues[i])return;if(v.readyState===0){const expected=lesson.id;v.addEventListener('loadedmetadata',()=>{if(lesson.id===expected)seek(i)},{once:true});return}handled=-1;loopIndex=i;v.currentTime=cues[i].start;lastTime=v.currentTime;sync();play()}
+function highlight(i){if(active===i)return;active=i;buttons.forEach((b,k)=>{b.classList.toggle('on',k===i);if(k===i)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current')});if(i>=0){const b=buttons[i];box.scrollTo({top:Math.max(0,b.offsetTop-box.clientHeight/3),behavior:'auto'})}}
+function sync(){const t=v.currentTime;$('#time').textContent=fmt(t)+' / '+fmt(lesson?.duration||0);if(!cues.length)return;
+ if(loop&&t>=cues[loopIndex].end&&!v.seeking){const ended=v.ended;v.currentTime=cues[loopIndex].start;lastTime=v.currentTime;highlight(loopIndex);if(ended)play();return}
+ let i=find(t);if(auto&&!loop&&!v.paused&&!v.seeking&&t-lastTime<1){const crossed=cues.findIndex((c,k)=>k!==handled&&lastTime<c.end&&t>=c.end);if(crossed>=0){handled=crossed;v.pause();i=crossed}}
+ lastTime=t;if(auto&&v.paused&&handled>=0&&Math.abs(t-cues[handled].end)<.25)i=handled;highlight(i);
+}
+function poll(){sync();if(!v.paused)frame=requestAnimationFrame(poll)}
+v.addEventListener('play',()=>{cancelAnimationFrame(frame);poll()});
+['timeupdate','pause','loadedmetadata','seeked','ended'].forEach(e=>v.addEventListener(e,sync));
+v.addEventListener('seeking',()=>{lastTime=v.currentTime;handled=-1;const i=find(v.currentTime);if(loop&&i>=0)loopIndex=i;highlight(i)});
+v.addEventListener('error',()=>$('#error').hidden=false);
+$('#retry').onclick=()=>{const t=v.currentTime;$('#error').hidden=true;v.load();v.addEventListener('loadedmetadata',()=>{v.currentTime=t;play()},{once:true})};
+$('#speed').onchange=e=>v.playbackRate=Number(e.target.value);
+$('#loop').onclick=e=>{loop=!loop;loopIndex=active<0?0:active;e.currentTarget.setAttribute('aria-pressed',String(loop));if(loop)seek(loopIndex)};
+$('#autopause').onclick=e=>{auto=!auto;handled=-1;e.currentTarget.setAttribute('aria-pressed',String(auto))};
+document.querySelectorAll('[data-language]').forEach(b=>b.onclick=()=>{$('#panel').dataset.lang=b.dataset.language;document.querySelectorAll('[data-language]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)))});
+function sourceLink(label,url){const a=document.createElement('a');a.textContent=label;a.href=url;a.target='_blank';a.rel='noopener';return a}
+function select(id,push=false){const next=lessons.find(x=>x.id===id)||lessons[0];id=next.id;v.pause();cancelAnimationFrame(frame);lesson=next;cues=next.cues;active=-1;handled=-1;lastTime=0;loop=false;$('#loop').setAttribute('aria-pressed','false');$('#error').hidden=true;
+ $('#title').textContent=next.title;$('#meta').textContent=next.speaker+' · '+next.speakerEn+' · '+fmt(next.duration)+' · '+next.id+' / 10';document.title=next.title+' · 逐句精听 | aiai';$('#credit').textContent=next.credit+' · '+next.date+' · 经典访谈选段';
+ const p=$('#provenance');p.replaceChildren();const detail=document.createElement('p');detail.textContent=next.changes;p.append(detail,sourceLink('原始视频与署名',next.source),document.createTextNode(' · '),sourceLink(next.license,next.licenseUrl));const note=document.createElement('p');note.textContent='英文以项目公开字幕为底稿，结合原片语音识别复核；中文为逐句翻译。片段时间轴从零开始。';p.append(note,sourceLink('原始英文字幕',next.subtitleSource),document.createTextNode(' · '),sourceLink('双语字幕下载','../data/listening/clip-'+id+'.vtt'));
+ box.replaceChildren();buttons=cues.map((c,i)=>{const b=document.createElement('button');b.className='cue';b.dataset.index=i;for(const [cl,txt] of [['stamp',fmt(c.start)+' · '+c.speaker],['en',c.en],['zh',c.zh]]){const s=document.createElement('span');s.className=cl;s.textContent=txt;b.append(s)}b.onclick=()=>seek(i);box.append(b);return b});box.scrollTop=0;
+ v.poster=next.poster;v.src=next.video;v.playbackRate=Number($('#speed').value);v.load();$('#time').textContent='0:00 / '+fmt(next.duration);
+ document.querySelectorAll('.film').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.id)===id)));
+ if(push){const u=new URL(location.href);u.searchParams.set('study',id);u.hash='clip-'+id;history.pushState(null,'',u);document.body.classList.add('study')}
+}
+function urlId(){return Number(new URL(location.href).searchParams.get('study')||location.hash.match(/clip-(\d+)/)?.[1]||1)}
+$('#prev').onclick=()=>$('#films').scrollBy({left:-520,behavior:'smooth'});$('#next').onclick=()=>$('#films').scrollBy({left:520,behavior:'smooth'});
+window.addEventListener('popstate',()=>{document.body.classList.toggle('study',new URL(location.href).searchParams.has('study'));select(urlId())});
+fetch('../data/listening-lessons.json?v=3').then(r=>{if(!r.ok)throw Error('load');return r.json()}).then(data=>{lessons=data;data.forEach(x=>{const b=document.createElement('button');b.className='film';b.dataset.id=x.id;b.setAttribute('aria-pressed','false');const img=document.createElement('img');img.src=x.poster;img.alt='';img.loading='lazy';const info=document.createElement('span');info.className='info';const a=document.createElement('small');a.textContent=String(x.id).padStart(2,'0')+' / 10 · '+fmt(x.duration);const title=document.createElement('strong');title.textContent=x.title;const s=document.createElement('small');s.textContent=x.speaker+' · '+x.speakerEn;info.append(a,title,s);b.append(img,info);b.onclick=()=>select(x.id,true);$('#films').append(b)});document.body.classList.toggle('study',new URL(location.href).searchParams.has('study'));select(urlId());document.querySelector('.film[aria-pressed=true]')?.scrollIntoView({block:'nearest',inline:'center'})}).catch(()=>{$('#loadError').hidden=false;$('#title').textContent='课程暂时无法加载'});
+})();
