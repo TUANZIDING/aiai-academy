@@ -1,0 +1,4 @@
+{
+ "id":"demo-hello-01", "title":"你好，小机器人", "titleEn":"Hello, little robot!", "label":"功能示范", "illustration":"hello.png", "source":"原创对话及 AI 生成插画；合成配音", "license":"机器人：Piper Northern English Male，训练语料 OpenSLR 83（CC BY-SA 4.0）；团子：Piper Cori，模型卡注明公有领域语料。", "roles":[{"id":"tuanzi","name":"团子","nameEn":"Tuanzi","avatar":"hello.png","position":"23% 70%"},{"id":"robot","name":"小机器人","nameEn":"Robot","avatar":"hello.png","position":"67% 70%"}],
+ "lines":[{"role":"tuanzi","en":"Hello, little robot!","zh":"你好，小机器人！","audio":"audio/1.mp3"},{"role":"robot","en":"Hi, Tuanzi! How are you?","zh":"嗨，团子！你好吗？","audio":"audio/2.mp3"},{"role":"tuanzi","en":"I’m happy. Let’s play!","zh":"我很开心。我们一起玩吧！","audio":"audio/3.mp3"},{"role":"robot","en":"Look! Is this your bag?","zh":"看！这是你的包吗？","audio":"audio/4.mp3"},{"role":"tuanzi","en":"Yes, it is. Thank you!","zh":"是的，谢谢你！","audio":"audio/5.mp3"},{"role":"robot","en":"You’re welcome. Let’s go!","zh":"不客气。我们走吧！","audio":"audio/6.mp3"}]
+}

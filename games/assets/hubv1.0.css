@@ -146,3 +146,15 @@ a{color:var(--orange)}
   .app[data-game=blaster] .view.play>*{grid-column:1;grid-row:auto}
   .app[data-game=blaster] .view.play .actions{grid-template-columns:repeat(4,1fr)}
 }
+/* 乐园首页：英语学习区与游戏区并列 */
+.brand .logo{font-family:system-ui,sans-serif;background:#fef1d7;color:#ca6736;border-color:#ddac67;box-shadow:0 3px 0 #c78a50}
+.zone-nav{gap:10px;margin-bottom:20px}.zone-nav a{padding:10px 18px;transition:transform .18s,box-shadow .18s}.zone-nav a:hover{transform:translateY(-2px);box-shadow:0 5px 0 var(--line)}
+#zone-english .zone-head{grid-template-columns:1.05fr 1fr;background:linear-gradient(120deg,#fff,#f7fcf4)}
+#zone-english .zone-head img{order:0;aspect-ratio:16/10}
+#zone-english .zone-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none}
+#zone-english .tcard{text-decoration:none;display:flex;flex-direction:column;border:1px solid #e9eddf;min-height:210px}
+#zone-english .tcard .art{height:110px;background:#e5f5e8}
+#zone-english .tcard p{flex:1}#zone-english .play-tag{color:#168162}
+.listening-art{background:linear-gradient(135deg,#e7f5ee,#fdf3dc)!important}.headphone{font-size:52px;line-height:1}.art-label{position:absolute;bottom:9px;right:12px;letter-spacing:.1em;font-size:.58rem;font-weight:800;color:#568476}
+@media(max-width:860px){#zone-english .zone-head{grid-template-columns:1fr}#zone-english .zone-head img{aspect-ratio:16/9}}
+@media(max-width:420px){#zone-english .zone-grid{gap:10px}#zone-english .tcard{min-height:190px}#zone-english .tcard .art{height:88px}.headphone{font-size:40px}.brand small{letter-spacing:.12em}}

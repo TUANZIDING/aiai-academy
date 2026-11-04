@@ -1,0 +1,1686 @@
+{
+  "source": "https://nce.hoothin.com/static/data.json",
+  "checked": "2026-11-04",
+  "books": [
+    {
+      "book": 1,
+      "directory": "https://nce.hoothin.com/book.html#NCE1",
+      "lessons": [
+        {
+          "start": 1,
+          "end": 2,
+          "title": "Excuse Me",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/001%26002%EF%BC%8DExcuse%20Me"
+        },
+        {
+          "start": 3,
+          "end": 4,
+          "title": "Sorry, Sir.",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/003%26004%EF%BC%8DSorry%2C%20Sir."
+        },
+        {
+          "start": 5,
+          "end": 6,
+          "title": "Nice to Meet You.",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/005%26006%EF%BC%8DNice%20to%20Meet%20You."
+        },
+        {
+          "start": 7,
+          "end": 8,
+          "title": "Are You a Teacher",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/007%26008%EF%BC%8DAre%20You%20a%20Teacher"
+        },
+        {
+          "start": 9,
+          "end": 10,
+          "title": "How Are You Today",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/009%26010%EF%BC%8DHow%20Are%20You%20Today"
+        },
+        {
+          "start": 11,
+          "end": 12,
+          "title": "Is This Your Shirt",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/011%26012%EF%BC%8DIs%20This%20Your%20Shirt"
+        },
+        {
+          "start": 13,
+          "end": 14,
+          "title": "A New Dress",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/013%26014%EF%BC%8DA%20New%20Dress"
+        },
+        {
+          "start": 15,
+          "end": 16,
+          "title": "Your Passports, Please.",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/015%26016%EF%BC%8DYour%20Passports%2C%20Please."
+        },
+        {
+          "start": 17,
+          "end": 18,
+          "title": "How do you do",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/017%26018%EF%BC%8DHow%20do%20you%20do"
+        },
+        {
+          "start": 19,
+          "end": 20,
+          "title": "Tired and Thirsty",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/019%26020%EF%BC%8DTired%20and%20Thirsty"
+        },
+        {
+          "start": 21,
+          "end": 22,
+          "title": "Which Book",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/021%26022%EF%BC%8DWhich%20Book"
+        },
+        {
+          "start": 23,
+          "end": 24,
+          "title": "Which Glasses",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/023%26024%EF%BC%8DWhich%20Glasses"
+        },
+        {
+          "start": 25,
+          "end": 26,
+          "title": "Mrs. Smith's Kitchen",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/025%26026%EF%BC%8DMrs.%20Smith's%20Kitchen"
+        },
+        {
+          "start": 27,
+          "end": 28,
+          "title": "Mrs. Smith's Living Room",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/027%26028%EF%BC%8DMrs.%20Smith's%20Living%20Room"
+        },
+        {
+          "start": 29,
+          "end": 30,
+          "title": "Come In, Amy.",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/029%26030%EF%BC%8DCome%20In%2C%20Amy."
+        },
+        {
+          "start": 31,
+          "end": 32,
+          "title": "Where's Sally",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/031%26032%EF%BC%8DWhere's%20Sally"
+        },
+        {
+          "start": 33,
+          "end": 34,
+          "title": "A Fine Day",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/033%26034%EF%BC%8DA%20Fine%20Day"
+        },
+        {
+          "start": 35,
+          "end": 36,
+          "title": "Our Village",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/035%26036%EF%BC%8DOur%20Village"
+        },
+        {
+          "start": 37,
+          "end": 38,
+          "title": "Making a Bookcase",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/037%26038%EF%BC%8DMaking%20a%20Bookcase"
+        },
+        {
+          "start": 39,
+          "end": 40,
+          "title": "Don't Drop It",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/039%26040%EF%BC%8DDon't%20Drop%20It"
+        },
+        {
+          "start": 41,
+          "end": 42,
+          "title": "Penny's Bag",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/041%26042%EF%BC%8DPenny's%20Bag"
+        },
+        {
+          "start": 43,
+          "end": 44,
+          "title": "Hurry Up",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/043%26044%EF%BC%8DHurry%20Up"
+        },
+        {
+          "start": 45,
+          "end": 46,
+          "title": "The Boss's Letter",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/045%26046%EF%BC%8DThe%20Boss's%20Letter"
+        },
+        {
+          "start": 47,
+          "end": 48,
+          "title": "A Cup of Coffee",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/047%26048%EF%BC%8DA%20Cup%20of%20Coffee"
+        },
+        {
+          "start": 49,
+          "end": 50,
+          "title": "At the Butcher's",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/049%26050%EF%BC%8DAt%20the%20Butcher's"
+        },
+        {
+          "start": 51,
+          "end": 52,
+          "title": "A Pleasant Climate",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/051%26052%EF%BC%8DA%20Pleasant%20Climate"
+        },
+        {
+          "start": 53,
+          "end": 54,
+          "title": "An Interesting Climate",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/053%26054%EF%BC%8DAn%20Interesting%20Climate"
+        },
+        {
+          "start": 55,
+          "end": 56,
+          "title": "The Sawyer Family",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/055%26056%EF%BC%8DThe%20Sawyer%20Family"
+        },
+        {
+          "start": 57,
+          "end": 58,
+          "title": "An Unusual Day",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/057%26058%EF%BC%8DAn%20Unusual%20Day"
+        },
+        {
+          "start": 59,
+          "end": 60,
+          "title": "Is That All",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/059%26060%EF%BC%8DIs%20That%20All"
+        },
+        {
+          "start": 61,
+          "end": 62,
+          "title": "A Bad Cold",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/061%26062%EF%BC%8DA%20Bad%20Cold"
+        },
+        {
+          "start": 63,
+          "end": 64,
+          "title": "Thank You, Doctor.",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/063%26064%EF%BC%8DThank%20You%2C%20Doctor."
+        },
+        {
+          "start": 65,
+          "end": 66,
+          "title": "Not a Baby",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/065%26066%EF%BC%8DNot%20a%20Baby"
+        },
+        {
+          "start": 67,
+          "end": 68,
+          "title": "The Weekend",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/067%26068%EF%BC%8DThe%20Weekend"
+        },
+        {
+          "start": 69,
+          "end": 70,
+          "title": "The Car Race",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/069%26070%EF%BC%8DThe%20Car%20Race"
+        },
+        {
+          "start": 71,
+          "end": 72,
+          "title": "He's Awful",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/071%26072%EF%BC%8DHe's%20Awful"
+        },
+        {
+          "start": 73,
+          "end": 74,
+          "title": "The Way to King Street",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/073%26074%EF%BC%8DThe%20Way%20to%20King%20Street"
+        },
+        {
+          "start": 75,
+          "end": 76,
+          "title": "Uncomfortable Shoes",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/075%26076%EF%BC%8DUncomfortable%20Shoes"
+        },
+        {
+          "start": 77,
+          "end": 78,
+          "title": "Terrible Toothache",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/077%26078%EF%BC%8DTerrible%20Toothache"
+        },
+        {
+          "start": 79,
+          "end": 80,
+          "title": "Carol's Shopping List",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/079%26080%EF%BC%8DCarol's%20Shopping%20List"
+        },
+        {
+          "start": 81,
+          "end": 82,
+          "title": "Roast Beef and Potatoes",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/081%26082%EF%BC%8DRoast%20Beef%20and%20Potatoes"
+        },
+        {
+          "start": 83,
+          "end": 84,
+          "title": "Going on Holiday",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/083%26084%EF%BC%8DGoing%20on%20Holiday"
+        },
+        {
+          "start": 85,
+          "end": 86,
+          "title": "Paris in the Spring.",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/085%26086%EF%BC%8DParis%20in%20the%20Spring."
+        },
+        {
+          "start": 87,
+          "end": 88,
+          "title": "A Car Crash",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/087%26088%EF%BC%8DA%20Car%20Crash"
+        },
+        {
+          "start": 89,
+          "end": 90,
+          "title": "For Sale",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/089%26090%EF%BC%8DFor%20Sale"
+        },
+        {
+          "start": 91,
+          "end": 92,
+          "title": "Poor Ian",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/091%26092%EF%BC%8DPoor%20Ian"
+        },
+        {
+          "start": 93,
+          "end": 94,
+          "title": "Our New Neighbour",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/093%26094%EF%BC%8DOur%20New%20Neighbour"
+        },
+        {
+          "start": 95,
+          "end": 96,
+          "title": "Tickets, Please.",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/095%26096%EF%BC%8DTickets%2C%20Please."
+        },
+        {
+          "start": 97,
+          "end": 98,
+          "title": "A Small Blue Case",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/097%26098%EF%BC%8DA%20Small%20Blue%20Case"
+        },
+        {
+          "start": 99,
+          "end": 100,
+          "title": "Ow",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/099%26100%EF%BC%8DOw"
+        },
+        {
+          "start": 101,
+          "end": 102,
+          "title": "A Card From Jimmy",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/101%26102%EF%BC%8DA%20Card%20From%20Jimmy"
+        },
+        {
+          "start": 103,
+          "end": 104,
+          "title": "The French Test",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/103%26104%EF%BC%8DThe%20French%20Test"
+        },
+        {
+          "start": 105,
+          "end": 106,
+          "title": "Full of Mistakes",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/105%26106%EF%BC%8DFull%20of%20Mistakes"
+        },
+        {
+          "start": 107,
+          "end": 108,
+          "title": "It's Too Small.",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/107%26108%EF%BC%8DIt's%20Too%20Small."
+        },
+        {
+          "start": 109,
+          "end": 110,
+          "title": "A Good Idea",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/109%26110%EF%BC%8DA%20Good%20Idea"
+        },
+        {
+          "start": 111,
+          "end": 112,
+          "title": "The Most Expensive Model",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/111%26112%EF%BC%8DThe%20Most%20Expensive%20Model"
+        },
+        {
+          "start": 113,
+          "end": 114,
+          "title": "Small Change",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/113%26114%EF%BC%8DSmall%20Change"
+        },
+        {
+          "start": 115,
+          "end": 116,
+          "title": "Knock, Knock",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/115%26116%EF%BC%8DKnock%2C%20Knock"
+        },
+        {
+          "start": 117,
+          "end": 118,
+          "title": "Tommy's Breakfast",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/117%26118%EF%BC%8DTommy's%20Breakfast"
+        },
+        {
+          "start": 119,
+          "end": 120,
+          "title": "A True Story",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/119%26120%EF%BC%8DA%20True%20Story"
+        },
+        {
+          "start": 121,
+          "end": 122,
+          "title": "The Man in a Hat",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/121%26122%EF%BC%8DThe%20Man%20in%20a%20Hat"
+        },
+        {
+          "start": 123,
+          "end": 124,
+          "title": "A Trip to Australia",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/123%26124%EF%BC%8DA%20Trip%20to%20Australia"
+        },
+        {
+          "start": 125,
+          "end": 126,
+          "title": "Tea for Two",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/125%26126%EF%BC%8DTea%20for%20Two"
+        },
+        {
+          "start": 127,
+          "end": 128,
+          "title": "A Famous Actress",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/127%26128%EF%BC%8DA%20Famous%20Actress"
+        },
+        {
+          "start": 129,
+          "end": 130,
+          "title": "Seventy Miles an Hour",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/129%26130%EF%BC%8DSeventy%20Miles%20an%20Hour"
+        },
+        {
+          "start": 131,
+          "end": 132,
+          "title": "Don't be So Sure",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/131%26132%EF%BC%8DDon't%20be%20So%20Sure"
+        },
+        {
+          "start": 133,
+          "end": 134,
+          "title": "Sensational News",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/133%26134%EF%BC%8DSensational%20News"
+        },
+        {
+          "start": 135,
+          "end": 136,
+          "title": "The Latest Report",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/135%26136%EF%BC%8DThe%20Latest%20Report"
+        },
+        {
+          "start": 137,
+          "end": 138,
+          "title": "A Pleasant Dream",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/137%26138%EF%BC%8DA%20Pleasant%20Dream"
+        },
+        {
+          "start": 139,
+          "end": 140,
+          "title": "Is That You, John",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/139%26140%EF%BC%8DIs%20That%20You%2C%20John"
+        },
+        {
+          "start": 141,
+          "end": 142,
+          "title": "Sally's First Train Ride",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/141%26142%EF%BC%8DSally's%20First%20Train%20Ride"
+        },
+        {
+          "start": 143,
+          "end": 144,
+          "title": "A Walk Through the Woods",
+          "url": "https://nce.hoothin.com/lesson.html#NCE1/143%26144%EF%BC%8DA%20Walk%20Through%20the%20Woods"
+        }
+      ]
+    },
+    {
+      "book": 2,
+      "directory": "https://nce.hoothin.com/book.html#NCE2",
+      "lessons": [
+        {
+          "start": 1,
+          "end": 1,
+          "title": "A Private Conversation",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/01%EF%BC%8DA%20Private%20Conversation"
+        },
+        {
+          "start": 2,
+          "end": 2,
+          "title": "Breakfast or Lunch",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/02%EF%BC%8DBreakfast%20or%20Lunch"
+        },
+        {
+          "start": 3,
+          "end": 3,
+          "title": "Please Send Me a Card",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/03%EF%BC%8DPlease%20Send%20Me%20a%20Card"
+        },
+        {
+          "start": 4,
+          "end": 4,
+          "title": "An Exciting Trip",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/04%EF%BC%8DAn%20Exciting%20Trip"
+        },
+        {
+          "start": 5,
+          "end": 5,
+          "title": "No Wrong Numbers",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/05%EF%BC%8DNo%20Wrong%20Numbers"
+        },
+        {
+          "start": 6,
+          "end": 6,
+          "title": "Percy Buttons",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/06%EF%BC%8DPercy%20Buttons"
+        },
+        {
+          "start": 7,
+          "end": 7,
+          "title": "Too Late",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/07%EF%BC%8DToo%20Late"
+        },
+        {
+          "start": 8,
+          "end": 8,
+          "title": "The Best and the Worst",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/08%EF%BC%8DThe%20Best%20and%20the%20Worst"
+        },
+        {
+          "start": 9,
+          "end": 9,
+          "title": "A Cold Welcome",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/09%EF%BC%8DA%20Cold%20Welcome"
+        },
+        {
+          "start": 10,
+          "end": 10,
+          "title": "Not for Jazz",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/10%EF%BC%8DNot%20for%20Jazz"
+        },
+        {
+          "start": 11,
+          "end": 11,
+          "title": "One Good Turn Deserves Another",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/11%EF%BC%8DOne%20Good%20Turn%20Deserves%20Another"
+        },
+        {
+          "start": 12,
+          "end": 12,
+          "title": "Goodbye and Good Luck",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/12%EF%BC%8DGoodbye%20and%20Good%20Luck"
+        },
+        {
+          "start": 13,
+          "end": 13,
+          "title": "The Greenwood Boys",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/13%EF%BC%8DThe%20Greenwood%20Boys"
+        },
+        {
+          "start": 14,
+          "end": 14,
+          "title": "Do You Speak English",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/14%EF%BC%8DDo%20You%20Speak%20English"
+        },
+        {
+          "start": 15,
+          "end": 15,
+          "title": "Good News",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/15%EF%BC%8DGood%20News"
+        },
+        {
+          "start": 16,
+          "end": 16,
+          "title": "A Polite Request",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/16%EF%BC%8DA%20Polite%20Request"
+        },
+        {
+          "start": 17,
+          "end": 17,
+          "title": "Always Young",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/17%EF%BC%8DAlways%20Young"
+        },
+        {
+          "start": 18,
+          "end": 18,
+          "title": "He Often does This",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/18%EF%BC%8DHe%20Often%20does%20This"
+        },
+        {
+          "start": 19,
+          "end": 19,
+          "title": "Sold Out",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/19%EF%BC%8DSold%20Out"
+        },
+        {
+          "start": 20,
+          "end": 20,
+          "title": "One Man in a Boat",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/20%EF%BC%8DOne%20Man%20in%20a%20Boat"
+        },
+        {
+          "start": 21,
+          "end": 21,
+          "title": "Mad or Not",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/21%EF%BC%8DMad%20or%20Not"
+        },
+        {
+          "start": 22,
+          "end": 22,
+          "title": "A Glass Envelope",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/22%EF%BC%8DA%20Glass%20Envelope"
+        },
+        {
+          "start": 23,
+          "end": 23,
+          "title": "A New House",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/23%EF%BC%8DA%20New%20House"
+        },
+        {
+          "start": 24,
+          "end": 24,
+          "title": "It Could be Worse",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/24%EF%BC%8DIt%20Could%20be%20Worse"
+        },
+        {
+          "start": 25,
+          "end": 25,
+          "title": "Do the English Speak English",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/25%EF%BC%8DDo%20the%20English%20Speak%20English"
+        },
+        {
+          "start": 26,
+          "end": 26,
+          "title": "The Best Art Critics",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/26%EF%BC%8DThe%20Best%20Art%20Critics"
+        },
+        {
+          "start": 27,
+          "end": 27,
+          "title": "A Wet Night",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/27%EF%BC%8DA%20Wet%20Night"
+        },
+        {
+          "start": 28,
+          "end": 28,
+          "title": "No Parking",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/28%EF%BC%8DNo%20Parking"
+        },
+        {
+          "start": 29,
+          "end": 29,
+          "title": "Taxi",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/29%EF%BC%8DTaxi"
+        },
+        {
+          "start": 30,
+          "end": 30,
+          "title": "Football or Polo",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/30%EF%BC%8DFootball%20or%20Polo"
+        },
+        {
+          "start": 31,
+          "end": 31,
+          "title": "Success Story",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/31%EF%BC%8DSuccess%20Story"
+        },
+        {
+          "start": 32,
+          "end": 32,
+          "title": "Shopping Made Easy",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/32%EF%BC%8DShopping%20Made%20Easy"
+        },
+        {
+          "start": 33,
+          "end": 33,
+          "title": "Out of the Darkness",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/33%EF%BC%8DOut%20of%20the%20Darkness"
+        },
+        {
+          "start": 34,
+          "end": 34,
+          "title": "Quick Work",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/34%EF%BC%8DQuick%20Work"
+        },
+        {
+          "start": 35,
+          "end": 35,
+          "title": "Stop Thief",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/35%EF%BC%8DStop%20Thief"
+        },
+        {
+          "start": 36,
+          "end": 36,
+          "title": "Across the Channel",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/36%EF%BC%8DAcross%20the%20Channel"
+        },
+        {
+          "start": 37,
+          "end": 37,
+          "title": "The Olympic Games",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/37%EF%BC%8DThe%20Olympic%20Games"
+        },
+        {
+          "start": 38,
+          "end": 38,
+          "title": "Everything Except the Weather",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/38%EF%BC%8DEverything%20Except%20the%20Weather"
+        },
+        {
+          "start": 39,
+          "end": 39,
+          "title": "Am I All Right",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/39%EF%BC%8DAm%20I%20All%20Right"
+        },
+        {
+          "start": 40,
+          "end": 40,
+          "title": "Food and Talk",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/40%EF%BC%8DFood%20and%20Talk"
+        },
+        {
+          "start": 41,
+          "end": 41,
+          "title": "Do You Call That a Hat",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/41%EF%BC%8DDo%20You%20Call%20That%20a%20Hat"
+        },
+        {
+          "start": 42,
+          "end": 42,
+          "title": "Not Very Musical",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/42%EF%BC%8DNot%20Very%20Musical"
+        },
+        {
+          "start": 43,
+          "end": 43,
+          "title": "Over the South Pole",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/43%EF%BC%8DOver%20the%20South%20Pole"
+        },
+        {
+          "start": 44,
+          "end": 44,
+          "title": "Through the Forest",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/44%EF%BC%8DThrough%20the%20Forest"
+        },
+        {
+          "start": 45,
+          "end": 45,
+          "title": "A Clear Conscience",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/45%EF%BC%8DA%20Clear%20Conscience"
+        },
+        {
+          "start": 46,
+          "end": 46,
+          "title": "Expensive and Uncomfortable",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/46%EF%BC%8DExpensive%20and%20Uncomfortable"
+        },
+        {
+          "start": 47,
+          "end": 47,
+          "title": "A Thirsty Ghost",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/47%EF%BC%8DA%20Thirsty%20Ghost"
+        },
+        {
+          "start": 48,
+          "end": 48,
+          "title": "Did You Want to Tell Me Something",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/48%EF%BC%8DDid%20You%20Want%20to%20Tell%20Me%20Something"
+        },
+        {
+          "start": 49,
+          "end": 49,
+          "title": "The End of a Dream",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/49%EF%BC%8DThe%20End%20of%20a%20Dream"
+        },
+        {
+          "start": 50,
+          "end": 50,
+          "title": "Taken for a Ride",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/50%EF%BC%8DTaken%20for%20a%20Ride"
+        },
+        {
+          "start": 51,
+          "end": 51,
+          "title": "Reward for Virtue",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/51%EF%BC%8DReward%20for%20Virtue"
+        },
+        {
+          "start": 52,
+          "end": 52,
+          "title": "A Pretty Carpet",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/52%EF%BC%8DA%20Pretty%20Carpet"
+        },
+        {
+          "start": 53,
+          "end": 53,
+          "title": "Hot Snake",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/53%EF%BC%8DHot%20Snake"
+        },
+        {
+          "start": 54,
+          "end": 54,
+          "title": "Sticky Fingers",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/54%EF%BC%8DSticky%20Fingers"
+        },
+        {
+          "start": 55,
+          "end": 55,
+          "title": "Not a Gold Mine",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/55%EF%BC%8DNot%20a%20Gold%20Mine"
+        },
+        {
+          "start": 56,
+          "end": 56,
+          "title": "Faster Than Sound",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/56%EF%BC%8DFaster%20Than%20Sound"
+        },
+        {
+          "start": 57,
+          "end": 57,
+          "title": "Can I Help You, Madam",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/57%EF%BC%8DCan%20I%20Help%20You%2C%20Madam"
+        },
+        {
+          "start": 58,
+          "end": 58,
+          "title": "A Blessing in Disguise",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/58%EF%BC%8DA%20Blessing%20in%20Disguise"
+        },
+        {
+          "start": 59,
+          "end": 59,
+          "title": "In or Out",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/59%EF%BC%8DIn%20or%20Out"
+        },
+        {
+          "start": 60,
+          "end": 60,
+          "title": "The Future",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/60%EF%BC%8DThe%20Future"
+        },
+        {
+          "start": 61,
+          "end": 61,
+          "title": "Trouble with the Hubble",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/61%EF%BC%8DTrouble%20with%20the%20Hubble"
+        },
+        {
+          "start": 62,
+          "end": 62,
+          "title": "After the Fire",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/62%EF%BC%8DAfter%20the%20Fire"
+        },
+        {
+          "start": 63,
+          "end": 63,
+          "title": "She Was Not Amused",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/63%EF%BC%8DShe%20Was%20Not%20Amused"
+        },
+        {
+          "start": 64,
+          "end": 64,
+          "title": "The Channel Tunnel",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/64%EF%BC%8DThe%20Channel%20Tunnel"
+        },
+        {
+          "start": 65,
+          "end": 65,
+          "title": "Jumbo Versus the Police",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/65%EF%BC%8DJumbo%20Versus%20the%20Police"
+        },
+        {
+          "start": 66,
+          "end": 66,
+          "title": "Sweet as Honey",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/66%EF%BC%8DSweet%20as%20Honey"
+        },
+        {
+          "start": 67,
+          "end": 67,
+          "title": "Volcanoes",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/67%EF%BC%8DVolcanoes"
+        },
+        {
+          "start": 68,
+          "end": 68,
+          "title": "Persistent",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/68%EF%BC%8DPersistent"
+        },
+        {
+          "start": 69,
+          "end": 69,
+          "title": "But not Murder",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/69%EF%BC%8DBut%20not%20Murder"
+        },
+        {
+          "start": 70,
+          "end": 70,
+          "title": "Red for Danger",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/70%EF%BC%8DRed%20for%20Danger"
+        },
+        {
+          "start": 71,
+          "end": 71,
+          "title": "A Famous Clock",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/71%EF%BC%8DA%20Famous%20Clock"
+        },
+        {
+          "start": 72,
+          "end": 72,
+          "title": "A Car Called Bluebird",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/72%EF%BC%8DA%20Car%20Called%20Bluebird"
+        },
+        {
+          "start": 73,
+          "end": 73,
+          "title": "The Record-Holder",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/73%EF%BC%8DThe%20Record-Holder"
+        },
+        {
+          "start": 74,
+          "end": 74,
+          "title": "Out of the Limelight",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/74%EF%BC%8DOut%20of%20the%20Limelight"
+        },
+        {
+          "start": 75,
+          "end": 75,
+          "title": "SOS",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/75%EF%BC%8DSOS"
+        },
+        {
+          "start": 76,
+          "end": 76,
+          "title": "April Fools' Day",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/76%EF%BC%8DApril%20Fools'%20Day"
+        },
+        {
+          "start": 77,
+          "end": 77,
+          "title": "A Successful Operation",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/77%EF%BC%8DA%20Successful%20Operation"
+        },
+        {
+          "start": 78,
+          "end": 78,
+          "title": "The Last One",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/78%EF%BC%8DThe%20Last%20One"
+        },
+        {
+          "start": 79,
+          "end": 79,
+          "title": "By Air",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/79%EF%BC%8DBy%20Air"
+        },
+        {
+          "start": 80,
+          "end": 80,
+          "title": "The Crystal Palace",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/80%EF%BC%8DThe%20Crystal%20Palace"
+        },
+        {
+          "start": 81,
+          "end": 81,
+          "title": "Escape",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/81%EF%BC%8DEscape"
+        },
+        {
+          "start": 82,
+          "end": 82,
+          "title": "Monster or Fish",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/82%EF%BC%8DMonster%20or%20Fish"
+        },
+        {
+          "start": 83,
+          "end": 83,
+          "title": "After the Elections",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/83%EF%BC%8DAfter%20the%20Elections"
+        },
+        {
+          "start": 84,
+          "end": 84,
+          "title": "On Strike",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/84%EF%BC%8DOn%20Strike"
+        },
+        {
+          "start": 85,
+          "end": 85,
+          "title": "Never Too Old To Learn",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/85%EF%BC%8DNever%20Too%20Old%20To%20Learn"
+        },
+        {
+          "start": 86,
+          "end": 86,
+          "title": "Out of Control",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/86%EF%BC%8DOut%20of%20Control"
+        },
+        {
+          "start": 87,
+          "end": 87,
+          "title": "A Perfect Alibi",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/87%EF%BC%8DA%20Perfect%20Alibi"
+        },
+        {
+          "start": 88,
+          "end": 88,
+          "title": "Trapped in a Mine",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/88%EF%BC%8DTrapped%20in%20a%20Mine"
+        },
+        {
+          "start": 89,
+          "end": 89,
+          "title": "A Slip of the Tongue",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/89%EF%BC%8DA%20Slip%20of%20the%20Tongue"
+        },
+        {
+          "start": 90,
+          "end": 90,
+          "title": "What's for Supper",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/90%EF%BC%8DWhat's%20for%20Supper"
+        },
+        {
+          "start": 91,
+          "end": 91,
+          "title": "Three Men in a Basket",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/91%EF%BC%8DThree%20Men%20in%20a%20Basket"
+        },
+        {
+          "start": 92,
+          "end": 92,
+          "title": "Asking for Trouble",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/92%EF%BC%8DAsking%20for%20Trouble"
+        },
+        {
+          "start": 93,
+          "end": 93,
+          "title": "A Noble Gift",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/93%EF%BC%8DA%20Noble%20Gift"
+        },
+        {
+          "start": 94,
+          "end": 94,
+          "title": "Future Champions",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/94%EF%BC%8DFuture%20Champions"
+        },
+        {
+          "start": 95,
+          "end": 95,
+          "title": "A Fantasy",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/95%EF%BC%8DA%20Fantasy"
+        },
+        {
+          "start": 96,
+          "end": 96,
+          "title": "The Dead Return",
+          "url": "https://nce.hoothin.com/lesson.html#NCE2/96%EF%BC%8DThe%20Dead%20Return"
+        }
+      ]
+    },
+    {
+      "book": 3,
+      "directory": "https://nce.hoothin.com/book.html#NCE3",
+      "lessons": [
+        {
+          "start": 1,
+          "end": 1,
+          "title": "A Puma at Large",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/01%EF%BC%8DA%20Puma%20at%20Large"
+        },
+        {
+          "start": 2,
+          "end": 2,
+          "title": "Thirteen Equals One",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/02%EF%BC%8DThirteen%20Equals%20One"
+        },
+        {
+          "start": 3,
+          "end": 3,
+          "title": "An Unknown Goddess",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/03%EF%BC%8DAn%20Unknown%20Goddess"
+        },
+        {
+          "start": 4,
+          "end": 4,
+          "title": "The Double Life of Alfred Bloggs",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/04%EF%BC%8DThe%20Double%20Life%20of%20Alfred%20Bloggs"
+        },
+        {
+          "start": 5,
+          "end": 5,
+          "title": "The Facts",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/05%EF%BC%8DThe%20Facts"
+        },
+        {
+          "start": 6,
+          "end": 6,
+          "title": "Smash-and-Grab",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/06%EF%BC%8DSmash-and-Grab"
+        },
+        {
+          "start": 7,
+          "end": 7,
+          "title": "Mutilated Ladies",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/07%EF%BC%8DMutilated%20Ladies"
+        },
+        {
+          "start": 8,
+          "end": 8,
+          "title": "A Famous Monastery",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/08%EF%BC%8DA%20Famous%20Monastery"
+        },
+        {
+          "start": 9,
+          "end": 9,
+          "title": "Flying Cats",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/09%EF%BC%8DFlying%20Cats"
+        },
+        {
+          "start": 10,
+          "end": 10,
+          "title": "The Loss of the Titanic",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/10%EF%BC%8DThe%20Loss%20of%20the%20Titanic"
+        },
+        {
+          "start": 11,
+          "end": 11,
+          "title": "Not Guilty",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/11%EF%BC%8DNot%20Guilty"
+        },
+        {
+          "start": 12,
+          "end": 12,
+          "title": "Life on a Desert Island",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/12%EF%BC%8DLife%20on%20a%20Desert%20Island"
+        },
+        {
+          "start": 13,
+          "end": 13,
+          "title": "It's Only Me",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/13%EF%BC%8DIt's%20Only%20Me"
+        },
+        {
+          "start": 14,
+          "end": 14,
+          "title": "A Noble Gangster",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/14%EF%BC%8DA%20Noble%20Gangster"
+        },
+        {
+          "start": 15,
+          "end": 15,
+          "title": "Fifty Pence Worth of Trouble",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/15%EF%BC%8DFifty%20Pence%20Worth%20of%20Trouble"
+        },
+        {
+          "start": 16,
+          "end": 16,
+          "title": "Mary Had a Little Lamb",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/16%EF%BC%8DMary%20Had%20a%20Little%20Lamb"
+        },
+        {
+          "start": 17,
+          "end": 17,
+          "title": "The Longest Suspension Bridge in the World",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/17%EF%BC%8DThe%20Longest%20Suspension%20Bridge%20in%20the%20World"
+        },
+        {
+          "start": 18,
+          "end": 18,
+          "title": "Electric Currents in Modern Art",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/18%EF%BC%8DElectric%20Currents%20in%20Modern%20Art"
+        },
+        {
+          "start": 19,
+          "end": 19,
+          "title": "A Very Dear Cat",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/19%EF%BC%8DA%20Very%20Dear%20Cat"
+        },
+        {
+          "start": 20,
+          "end": 20,
+          "title": "Pioneer Pilots",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/20%EF%BC%8DPioneer%20Pilots"
+        },
+        {
+          "start": 21,
+          "end": 21,
+          "title": "Daniel Mendoza",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/21%EF%BC%8DDaniel%20Mendoza"
+        },
+        {
+          "start": 22,
+          "end": 22,
+          "title": "By Heart",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/22%EF%BC%8DBy%20Heart"
+        },
+        {
+          "start": 23,
+          "end": 23,
+          "title": "One Man's Meat is Another Man's Poison",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/23%EF%BC%8DOne%20Man's%20Meat%20is%20Another%20Man's%20Poison"
+        },
+        {
+          "start": 24,
+          "end": 24,
+          "title": "A Skeleton in the Cupboard",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/24%EF%BC%8DA%20Skeleton%20in%20the%20Cupboard"
+        },
+        {
+          "start": 25,
+          "end": 25,
+          "title": "The Cutty Sark",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/25%EF%BC%8DThe%20Cutty%20Sark"
+        },
+        {
+          "start": 26,
+          "end": 26,
+          "title": "Wanted a Large Biscuit Tin",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/26%EF%BC%8DWanted%20a%20Large%20Biscuit%20Tin"
+        },
+        {
+          "start": 27,
+          "end": 27,
+          "title": "Nothing to Sell and Nothing to Buy",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/27%EF%BC%8DNothing%20to%20Sell%20and%20Nothing%20to%20Buy"
+        },
+        {
+          "start": 28,
+          "end": 28,
+          "title": "Five Pounds Too Dear",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/28%EF%BC%8DFive%20Pounds%20Too%20Dear"
+        },
+        {
+          "start": 29,
+          "end": 29,
+          "title": "Funny or Not",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/29%EF%BC%8DFunny%20or%20Not"
+        },
+        {
+          "start": 30,
+          "end": 30,
+          "title": "The Death of a Ghost",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/30%EF%BC%8DThe%20Death%20of%20a%20Ghost"
+        },
+        {
+          "start": 31,
+          "end": 31,
+          "title": "A Lovable Eccentric",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/31%EF%BC%8DA%20Lovable%20Eccentric"
+        },
+        {
+          "start": 32,
+          "end": 32,
+          "title": "A Lost Ship",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/32%EF%BC%8DA%20Lost%20Ship"
+        },
+        {
+          "start": 33,
+          "end": 33,
+          "title": "A Day to Remember",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/33%EF%BC%8DA%20Day%20to%20Remember"
+        },
+        {
+          "start": 34,
+          "end": 34,
+          "title": "A Happy Discovery",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/34%EF%BC%8DA%20Happy%20Discovery"
+        },
+        {
+          "start": 35,
+          "end": 35,
+          "title": "Justice was Done",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/35%EF%BC%8DJustice%20was%20Done"
+        },
+        {
+          "start": 36,
+          "end": 36,
+          "title": "A Chance in a Million",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/36%EF%BC%8DA%20Chance%20in%20a%20Million"
+        },
+        {
+          "start": 37,
+          "end": 37,
+          "title": "The Westhaven Express",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/37%EF%BC%8DThe%20Westhaven%20Express"
+        },
+        {
+          "start": 38,
+          "end": 38,
+          "title": "The First Calendar",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/38%EF%BC%8DThe%20First%20Calendar"
+        },
+        {
+          "start": 39,
+          "end": 39,
+          "title": "Nothing to Worry About",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/39%EF%BC%8DNothing%20to%20Worry%20About"
+        },
+        {
+          "start": 40,
+          "end": 40,
+          "title": "Who's Who",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/40%EF%BC%8DWho's%20Who"
+        },
+        {
+          "start": 41,
+          "end": 41,
+          "title": "Illusions of Pastoral Peace",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/41%EF%BC%8DIllusions%20of%20Pastoral%20Peace"
+        },
+        {
+          "start": 42,
+          "end": 42,
+          "title": "Modern Cavemen",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/42%EF%BC%8DModern%20Cavemen"
+        },
+        {
+          "start": 43,
+          "end": 43,
+          "title": "Fully Insured",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/43%EF%BC%8DFully%20Insured"
+        },
+        {
+          "start": 44,
+          "end": 44,
+          "title": "Speed and Comfort",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/44%EF%BC%8DSpeed%20and%20Comfort"
+        },
+        {
+          "start": 45,
+          "end": 45,
+          "title": "The Power of the Press",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/45%EF%BC%8DThe%20Power%20of%20the%20Press"
+        },
+        {
+          "start": 46,
+          "end": 46,
+          "title": "Do It Yourself",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/46%EF%BC%8DDo%20It%20Yourself"
+        },
+        {
+          "start": 47,
+          "end": 47,
+          "title": "Too High a Price",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/47%EF%BC%8DToo%20High%20a%20Price"
+        },
+        {
+          "start": 48,
+          "end": 48,
+          "title": "The Silent Village",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/48%EF%BC%8DThe%20Silent%20Village"
+        },
+        {
+          "start": 49,
+          "end": 49,
+          "title": "The Ideal Servant",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/49%EF%BC%8DThe%20Ideal%20Servant"
+        },
+        {
+          "start": 50,
+          "end": 50,
+          "title": "New Year Resolutions",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/50%EF%BC%8DNew%20Year%20Resolutions"
+        },
+        {
+          "start": 51,
+          "end": 51,
+          "title": "Predicting the Future",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/51%EF%BC%8DPredicting%20the%20Future"
+        },
+        {
+          "start": 52,
+          "end": 52,
+          "title": "Mud is Mud",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/52%EF%BC%8DMud%20is%20Mud"
+        },
+        {
+          "start": 53,
+          "end": 53,
+          "title": "In the Public Interest",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/53%EF%BC%8DIn%20the%20Public%20Interest"
+        },
+        {
+          "start": 54,
+          "end": 54,
+          "title": "Instinct or Cleverness",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/54%EF%BC%8DInstinct%20or%20Cleverness"
+        },
+        {
+          "start": 55,
+          "end": 55,
+          "title": "From the Earth Greetings",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/55%EF%BC%8DFrom%20the%20Earth%20Greetings"
+        },
+        {
+          "start": 56,
+          "end": 56,
+          "title": "Our Neighbour, the River",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/56%EF%BC%8DOur%20Neighbour%2C%20the%20River"
+        },
+        {
+          "start": 57,
+          "end": 57,
+          "title": "Back in the Old Country",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/57%EF%BC%8DBack%20in%20the%20Old%20Country"
+        },
+        {
+          "start": 58,
+          "end": 58,
+          "title": "A Spot of Bother",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/58%EF%BC%8DA%20Spot%20of%20Bother"
+        },
+        {
+          "start": 59,
+          "end": 59,
+          "title": "Collecting",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/59%EF%BC%8DCollecting"
+        },
+        {
+          "start": 60,
+          "end": 60,
+          "title": "Too Early and Too Late",
+          "url": "https://nce.hoothin.com/lesson.html#NCE3/60%EF%BC%8DToo%20Early%20and%20Too%20Late"
+        }
+      ]
+    },
+    {
+      "book": 4,
+      "directory": "https://nce.hoothin.com/book.html#NCE4",
+      "lessons": [
+        {
+          "start": 1,
+          "end": 1,
+          "title": "Finding Fossil Man",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/01%EF%BC%8DFinding%20Fossil%20Man"
+        },
+        {
+          "start": 2,
+          "end": 2,
+          "title": "Spare That Spider",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/02%EF%BC%8DSpare%20That%20Spider"
+        },
+        {
+          "start": 3,
+          "end": 3,
+          "title": "Matterhorn Man",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/03%EF%BC%8DMatterhorn%20Man"
+        },
+        {
+          "start": 4,
+          "end": 4,
+          "title": "Seeing Hands",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/04%EF%BC%8DSeeing%20Hands"
+        },
+        {
+          "start": 5,
+          "end": 5,
+          "title": "Youth",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/05%EF%BC%8DYouth"
+        },
+        {
+          "start": 6,
+          "end": 6,
+          "title": "The Sporting Spirit",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/06%EF%BC%8DThe%20Sporting%20Spirit"
+        },
+        {
+          "start": 7,
+          "end": 7,
+          "title": "Bats",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/07%EF%BC%8DBats"
+        },
+        {
+          "start": 8,
+          "end": 8,
+          "title": "Trading Standards",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/08%EF%BC%8DTrading%20Standards"
+        },
+        {
+          "start": 9,
+          "end": 9,
+          "title": "Royal Espionage",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/09%EF%BC%8DRoyal%20Espionage"
+        },
+        {
+          "start": 10,
+          "end": 10,
+          "title": "Silicon Valley",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/10%EF%BC%8DSilicon%20Valley"
+        },
+        {
+          "start": 11,
+          "end": 11,
+          "title": "How to Grow Old",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/11%EF%BC%8DHow%20to%20Grow%20Old"
+        },
+        {
+          "start": 12,
+          "end": 12,
+          "title": "Banks and Their Customers",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/12%EF%BC%8DBanks%20and%20Their%20Customers"
+        },
+        {
+          "start": 13,
+          "end": 13,
+          "title": "The Search for Oil",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/13%EF%BC%8DThe%20Search%20for%20Oil"
+        },
+        {
+          "start": 14,
+          "end": 14,
+          "title": "The Butterfly Effect",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/14%EF%BC%8DThe%20Butterfly%20Effect"
+        },
+        {
+          "start": 15,
+          "end": 15,
+          "title": "Secrecy in Industry",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/15%EF%BC%8DSecrecy%20in%20Industry"
+        },
+        {
+          "start": 16,
+          "end": 16,
+          "title": "The Modern City",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/16%EF%BC%8DThe%20Modern%20City"
+        },
+        {
+          "start": 17,
+          "end": 17,
+          "title": "A Man-made Disease",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/17%EF%BC%8DA%20Man-made%20Disease"
+        },
+        {
+          "start": 18,
+          "end": 18,
+          "title": "Porpoises",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/18%EF%BC%8DPorpoises"
+        },
+        {
+          "start": 19,
+          "end": 19,
+          "title": "The Stuff of Dreams",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/19%EF%BC%8DThe%20Stuff%20of%20Dreams"
+        },
+        {
+          "start": 20,
+          "end": 20,
+          "title": "Snake Poison",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/20%EF%BC%8DSnake%20Poison"
+        },
+        {
+          "start": 21,
+          "end": 21,
+          "title": "William S. Hart and the Early Western Film",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/21%EF%BC%8DWilliam%20S.%20Hart%20and%20the%20Early%20Western%20Film"
+        },
+        {
+          "start": 22,
+          "end": 22,
+          "title": "Knowledge and Progress",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/22%EF%BC%8DKnowledge%20and%20Progress"
+        },
+        {
+          "start": 23,
+          "end": 23,
+          "title": "Bird Flight",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/23%EF%BC%8DBird%20Flight"
+        },
+        {
+          "start": 24,
+          "end": 24,
+          "title": "Beauty",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/24%EF%BC%8DBeauty"
+        },
+        {
+          "start": 25,
+          "end": 25,
+          "title": "Non-Auditory Effects of Noise",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/25%EF%BC%8DNon-Auditory%20Effects%20of%20Noise"
+        },
+        {
+          "start": 26,
+          "end": 26,
+          "title": "The Past Life of the Earth",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/26%EF%BC%8DThe%20Past%20Life%20of%20the%20Earth"
+        },
+        {
+          "start": 27,
+          "end": 27,
+          "title": "The vasa",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/27%EF%BC%8DThe%20vasa"
+        },
+        {
+          "start": 28,
+          "end": 28,
+          "title": "Patients and Doctors",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/28%EF%BC%8DPatients%20and%20Doctors"
+        },
+        {
+          "start": 29,
+          "end": 29,
+          "title": "The Hovercraft",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/29%EF%BC%8DThe%20Hovercraft"
+        },
+        {
+          "start": 30,
+          "end": 30,
+          "title": "Exploring the Sea-Floor",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/30%EF%BC%8DExploring%20the%20Sea-Floor"
+        },
+        {
+          "start": 31,
+          "end": 31,
+          "title": "The Sculptor Speaks",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/31%EF%BC%8DThe%20Sculptor%20Speaks"
+        },
+        {
+          "start": 32,
+          "end": 32,
+          "title": "Galileo Reborn",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/32%EF%BC%8DGalileo%20Reborn"
+        },
+        {
+          "start": 33,
+          "end": 33,
+          "title": "Education",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/33%EF%BC%8DEducation"
+        },
+        {
+          "start": 34,
+          "end": 34,
+          "title": "Adolescence",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/34%EF%BC%8DAdolescence"
+        },
+        {
+          "start": 35,
+          "end": 35,
+          "title": "Space Odyssey",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/35%EF%BC%8DSpace%20Odyssey"
+        },
+        {
+          "start": 36,
+          "end": 36,
+          "title": "The Cost of Government",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/36%EF%BC%8DThe%20Cost%20of%20Government"
+        },
+        {
+          "start": 37,
+          "end": 37,
+          "title": "The Process of Ageing",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/37%EF%BC%8DThe%20Process%20of%20Ageing"
+        },
+        {
+          "start": 38,
+          "end": 38,
+          "title": "Water and the Traveller",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/38%EF%BC%8DWater%20and%20the%20Traveller"
+        },
+        {
+          "start": 39,
+          "end": 39,
+          "title": "What Every Writer Wants",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/39%EF%BC%8DWhat%20Every%20Writer%20Wants"
+        },
+        {
+          "start": 40,
+          "end": 40,
+          "title": "Waves",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/40%EF%BC%8DWaves"
+        },
+        {
+          "start": 41,
+          "end": 41,
+          "title": "Training Elephants",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/41%EF%BC%8DTraining%20Elephants"
+        },
+        {
+          "start": 42,
+          "end": 42,
+          "title": "Recording an Earthquake",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/42%EF%BC%8DRecording%20an%20Earthquake"
+        },
+        {
+          "start": 43,
+          "end": 43,
+          "title": "Are There Strangers in Space",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/43%EF%BC%8DAre%20There%20Strangers%20in%20Space"
+        },
+        {
+          "start": 44,
+          "end": 44,
+          "title": "Patterns of Culture",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/44%EF%BC%8DPatterns%20of%20Culture"
+        },
+        {
+          "start": 45,
+          "end": 45,
+          "title": "Of Men and Galaxies",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/45%EF%BC%8DOf%20Men%20and%20Galaxies"
+        },
+        {
+          "start": 46,
+          "end": 46,
+          "title": "Hobbies",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/46%EF%BC%8DHobbies"
+        },
+        {
+          "start": 47,
+          "end": 47,
+          "title": "The Great Escape",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/47%EF%BC%8DThe%20Great%20Escape"
+        },
+        {
+          "start": 48,
+          "end": 48,
+          "title": "Planning a Share Portfolio",
+          "url": "https://nce.hoothin.com/lesson.html#NCE4/48%EF%BC%8DPlanning%20a%20Share%20Portfolio"
+        }
+      ]
+    }
+  ]
+}
