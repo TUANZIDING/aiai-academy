@@ -1,16 +1,17 @@
 (() => {
   const root = document.documentElement;
   const w = document.getElementById('welcome');
-  const KEY = 'tz-welcome-seen';
+  const KEY = 'tz-welcome-seen-20261104';
   const seen = () => { try { return sessionStorage.getItem(KEY) === '1'; } catch (e) { return false; } };
   const deep = location.hash && location.hash !== '#top' && location.hash !== '#welcome';
-  function open() { w.hidden = false; w.classList.remove('leaving'); root.classList.add('w-open'); startNet(); document.getElementById('wEnter').focus(); }
+  let closeTimer;
+  function open() { clearTimeout(closeTimer); w.hidden = false; w.classList.remove('leaving'); root.classList.add('w-open'); startNet(); document.getElementById('wEnter').focus(); }
   function close() {
     try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
     w.classList.add('leaving'); root.classList.remove('w-open');
-    setTimeout(() => { w.hidden = true; stopNet(); }, 550);
+    clearTimeout(closeTimer); closeTimer = setTimeout(() => { w.hidden = true; stopNet(); }, 550);
   }
-  document.getElementById('wEnter').onclick = close;
+  addEventListener('message', e => { if(e.origin !== location.origin || e.source !== document.getElementById('wEnter').contentWindow || e.data?.type !== 'aiai-home-enter') return; const hash=e.data.hash; if(!['#academy','#playbook','#gallery','#micro','#top'].includes(hash)) return; close(); location.hash=hash; document.querySelector(hash)?.scrollIntoView(); });
   document.getElementById('reWelcome').onclick = open;
   w.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   if (deep || seen()) { w.hidden = true; } else { root.classList.add('w-open'); }

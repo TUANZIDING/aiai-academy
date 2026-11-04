@@ -18,46 +18,11 @@
 <link rel="stylesheet" href="assets/micro-hallv1.0.css?v=1.0.1">
 <link rel="stylesheet" href="assets/voices-homev1.0.css?v=1.3.0">
 <style>.brand .aiai-mark{height:38px;width:auto;display:block}.w-brand .aiai-mark{height:34px;width:auto;display:block}.w-brand .aiai-sub{display:flex;flex-direction:column;line-height:1.2;font-size:.92rem}.w-brand .aiai-sub small,.brand small{display:block;font-size:.6rem;letter-spacing:.2em;font-weight:500;opacity:.7}</style>
+<style>html.w-open .music-ctl,html.w-open body>.fb-ball,html.w-open body>.fb-trail{display:none}</style>
 </head>
 <body>
 <a class="skip" href="#main">跳到主要内容</a>
-<div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-labelledby="wName">
-  <div class="w-bg" aria-hidden="true"></div>
-  <header class="w-top">
-    <span class="w-brand"><img class="aiai-mark" src="assets/aiai-wordmarkv1.0.webp" alt="aiai"><span class="aiai-sub">人工智能学院<small>AI × ART ACADEMY</small></span></span>
-    <button class="w-music" data-music-toggle aria-pressed="false"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span data-music-status>热血钢琴 · Unity</span></button>
-  </header>
-  <div class="w-inner">
-    <div class="w-left">
-      <p class="w-eyebrow">WELCOME · 欢迎来到我的 AI 课堂</p>
-      <div class="w-id">
-        <span class="w-mono" aria-hidden="true">丁</span>
-        <div><h1 id="wName">丁海祥</h1><p class="w-en">Haixiang (Bruce) Ding, MD</p></div>
-      </div>
-      <p class="w-role">急诊创伤外科医生 · 苏州大学临床医学博士在读 · 两个孩子的爸爸</p>
-      <p class="w-intro">我把抢救室里的团队协作、球场上的战术板，带进 AI 课堂：<b>人做决定，AI 跑路线。</b></p>
-      <ul class="w-chips" aria-label="课程特色">
-        <li><i class="c1"></i>橄榄球战术板</li>
-        <li><i class="c2"></i>创伤救治顺序</li>
-        <li><i class="c3"></i>AI 实战作品</li>
-      </ul>
-      <p class="w-aud">讲给医生、护士、科研人员、年轻父母和社会工作者</p>
-      <div class="w-cta">
-        <button class="w-enter" id="wEnter">进入课程 <span aria-hidden="true">→</span></button>
-        <a class="w-link" href="https://github.com/TUANZIDING" target="_blank" rel="noopener">我的 GitHub ↗</a>
-      </div>
-    </div>
-  </div>
-  <aside class="w-play" aria-label="今日战术">
-    <p>今日战术 · PLAY 01</p>
-    <svg viewBox="0 0 220 70" aria-hidden="true">
-      <path class="w-route" d="M14 52 C50 52 60 18 104 18 S160 52 206 22"/>
-      <circle cx="14" cy="52" r="6"/><circle cx="104" cy="18" r="6"/><circle cx="206" cy="22" r="6"/>
-    </svg>
-    <ol><li>先问</li><li>再核对</li><li>最后构建</li></ol>
-  </aside>
-  <p class="w-credit">背景音乐：“Unity” Kevin MacLeod (incompetech.com) · CC BY 4.0</p>
-</div>
+<div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-label="aiai 人工智能学院欢迎页"><iframe id="wEnter" src="welcome/" title="aiai 人工智能学院 · 从一个问题出发" style="display:block;width:100%;height:100%;border:0"></iframe></div>
 
 <div class="music-ctl" id="musicCtl" data-music>
   <audio id="bgm" data-src="assets/music/unity-pianov1.0.mp3" loop preload="none"></audio>
@@ -91,7 +56,7 @@
       <a href="#about">关于</a>
     </div></details>
   </nav>
-  <button class="btn ghost" id="reWelcome" title="回到欢迎页">关于我</button>
+  <button class="btn ghost" id="reWelcome" title="回到欢迎页">学院首页</button>
   <button class="btn ghost" id="projector" aria-pressed="false" title="线下投屏时放大字号">投屏模式</button>
 </header>
 
@@ -411,7 +376,7 @@
   <p class="muted">背景音乐：“Unity” Kevin MacLeod (<a href="https://incompetech.com" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
 </footer>
 <script src="assets/appv1.0.js?v=3.2"></script>
-<script src="assets/welcomev1.0.js?v=2.0.1"></script>
+<script src="assets/welcomev1.0.js?v=20261104-home"></script>
 <script src="assets/campv1.0.js?v=3.0.1" defer></script>
 <script src="assets/cursorv1.0.js?v=2.0.1" defer></script>
 <script src="assets/home-v3v1.0.js?v=3.0.1" defer></script>
