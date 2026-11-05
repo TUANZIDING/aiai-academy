@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#060a12">
+<title>Loop 与 Graph：只签最后一步 · aiai 人工智能学院</title>
+<meta name="description" content="aiai 人工智能学院互动讲解：AI 智能体的 loop 与 graph。检查要能失败、数着东西停、删掉不传东西的箭头、失败只退一个单元、按撤销难度开闸——人只签最后一步。">
+<link rel="preload" href="../assets/aiai-wordmarkv1.0.webp" as="image">
+<link rel="prefetch" href="media/loop-graph-hoodie/a01.webp">
+<link rel="stylesheet" href="../assets/loopgraph-enginev1.0.css?v=2.0">
+</head>
+<body>
+<div id="stage">
+  <canvas id="amb"></canvas>
+  <div id="atmos"></div>
+  <div id="views"></div>
+
+  <header id="top">
+    <a href="../index.html#lessons" title="回到 aiai 课件馆"><img class="wm" src="../assets/aiai-wordmarkv1.0.webp" alt="aiai"></a>
+    <div class="brand">人工智能学院 · <b>Agent Playbook</b></div>
+    <div class="sep"></div>
+    <div class="chap"><i>00</i>只签最后一步</div>
+    <div class="sp"></div>
+    <button class="tb" id="bToc">目录<kbd>T</kbd></button>
+    <button class="tb" id="bSubs">字幕 双语<kbd>S</kbd></button>
+    <button class="tb" id="bMode">自动讲解<kbd>P</kbd></button>
+    <button class="tb" id="bMusic" title="背景音乐 M">♪</button>
+    <button class="tb" id="bFs" title="全屏 F">⛶</button>
+  </header>
+
+  <div id="subs" data-m="both"><div class="pill"><div class="zh"></div><div class="en"></div></div></div>
+  <div id="dots"></div>
+  <div id="ruler">
+    <div class="field"><div class="base"></div><div class="fill"></div><div class="ball"></div></div>
+    <div class="nav"><button id="bPrev" title="上一句 ←">‹</button><button id="bPause" title="暂停 / 继续 空格">Ⅱ</button><button id="bNext" title="下一句 →">›</button></div>
+  </div>
+  <div id="card"><div class="no">00</div><div class="k"></div><div class="t"></div></div>
+  <div id="pz"></div>
+  <nav id="toc" class="gone" aria-label="章节"></nav>
+
+  <div id="endc" class="gone">
+    <h3>讲完了 · 你只做一个决定</h3>
+    <p>原文：Hoodie @HoodieFade_，X，2026-11-04 · <a href="https://x.com/HoodieFade_/status/2117959235690524883" target="_blank" rel="noopener">打开原文 ↗</a></p>
+    <div style="display:flex;gap:18px"><button class="bigb" id="again">从头再看</button><a class="bigb pri" href="../index.html#lessons" style="text-decoration:none">回课件馆</a></div>
+  </div>
+
+  <div id="start" class="ov">
+    <div class="in">
+      <img class="wm" src="../assets/aiai-wordmarkv1.0.webp" alt="aiai 人工智能学院">
+      <h1>Loop 与 Graph<br><em>只签最后一步</em></h1>
+      <div class="en">LOOPS &amp; GRAPHS · STOP BEING THE SLOWEST NODE IN YOUR AGENT SYSTEM</div>
+      <div class="lead">你的 AI 智能体能连干几个小时，你却还在盯每一步。从 Bun 的 11 天讲起：检查要能失败、数着东西停、删掉不传东西的箭头、失败只退一个单元、按撤销难度开闸。用骨折手术打比方，原创动画，穿插原文配图。</div>
+      <div class="btns"><button class="bigb pri" id="goAuto">▶ 自动讲解</button><button class="bigb" id="goSelf">我自己讲</button></div>
+      <div class="meta"><span id="from"></span><br>约 15 分钟 · 中文配音（合成）· 双语字幕<br><span class="keys">← → 翻句 · 空格 暂停 · P 自己讲 · S 字幕 · T 目录 · M 音乐 · F 全屏</span><br>
+        原文：Hoodie <a href="https://x.com/HoodieFade_/status/2117959235690524883" target="_blank" rel="noopener">@HoodieFade_ · X · 2026-11-04</a> · 原文图版权归原作者 · 动画为 aiai 原创</div>
+    </div>
+  </div>
+  <div id="vign"></div>
+  <div id="grain"></div>
+</div>
+<div id="rot"><div class="ph"></div><div>横过来看更好：这是一块 16:9 的讲台</div><button id="rotOk">继续竖屏观看</button></div>
+<script src="loop-graph-datav2.2.js?v=2.2"></script>
+<script src="../assets/loopgraph-viewsv1.2.js?v=1.2"></script>
+<script src="../assets/loopgraph-enginev1.0.js?v=1.0.1"></script>
+</body>
+</html>
