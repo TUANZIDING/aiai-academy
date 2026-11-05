@@ -221,7 +221,8 @@ body:not(.live) #top,body:not(.live) #subs,body:not(.live) #main,body:not(.live)
       <button type="button" class="btn ic" id="btnPlay" aria-label="暂停">❚❚</button>
       <button type="button" class="btn ic" id="btnNext" aria-label="下一句">›</button>
       <button type="button" class="btn" id="btnSub">中</button>
-      <button type="button" class="btn" id="btnTts" title="本机朗读，默认关。不克隆任何人声">朗读</button>
+      <button type="button" class="btn on" id="btnNarr" title="旁白默认开，音色 zh-CN-YunyangNeural。关掉后不再播 mp3。">旁白</button>
+      <button type="button" class="btn" id="btnTts" title="本机语音只在旁白关掉之后才播，不克隆任何人声">本机</button>
       <button type="button" class="btn" id="btnScript" title="本章讲稿">讲稿</button>
     </div>
   </header>
@@ -513,7 +514,7 @@ body:not(.live) #top,body:not(.live) #subs,body:not(.live) #main,body:not(.live)
         <button type="button" class="btn go big" id="btnAuto">▶ 自动讲解</button>
         <button type="button" class="btn big" id="btnSelf">我自己讲</button>
       </div>
-      <p class="ssub">Enter 自动讲解 · 空格暂停 / 继续 · P 自己讲 · 约 17 分钟 · 中文字幕</p>
+      <p class="ssub">Enter 自动讲解 · 空格暂停 / 继续 · P 自己讲 · 约 17 分钟 · 旁白已配</p>
     </div>
     <p class="sauth">资料：观点文章 @HoodieFade_（内容创作者，X，2026-11-04）· Anthropic 约 75 万行 Rust · Bun 复盘原 Zig 535,496 行 · 官方口径核对日 2026-11-05。31→17 分钟为作者举例，不是实测。</p>
     <span class="aib">示意</span>

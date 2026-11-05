@@ -872,7 +872,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const $ = id => document.getElementById(id);
 const TOTAL = CHAPTERS.reduce((n, c) => n + c.lines.length, 0);
 const state = {
-  mode: 'gate', sub: 'zh', playing: false, tts: false, ci: 0, li: 0, done: false, timer: 0,
+  mode: 'gate', sub: 'zh', playing: false, narr: true, tts: false, ci: 0, li: 0, done: false, timer: 0,
   forget: false, seenTouched: false, ctx: 'shared', ctxTouched: false, form: 'chain', formTouched: false,
   quad: 'q4', quadTouched: false, cuts: new Set(), miss: new Set(), ev: {}, tasks: {}, quiz: {},
   failOpen: null, failTouched: false, sel: null, selKey: null, dragId: null
@@ -970,6 +970,53 @@ function stopSpeech() {
   speakToken++;
   if (window.speechSynthesis) window.speechSynthesis.cancel();
 }
+let audio = null;
+let audioToken = 0;
+const HOLD_MS = 320;
+function audioSrc(ci, li) {
+  const id = CHAPTERS[ci].id;
+  return 'media/loop-graph-audio/' + id + '/' + String(li).padStart(3, '0') + '.mp3';
+}
+function stopAudio() {
+  audioToken++;
+  clearTimeout(state.hold);
+  if (!audio) return;
+  audio.onended = null;
+  audio.onerror = null;
+  audio.pause();
+  audio = null;
+}
+function playLineAudio(onend) {
+  const token = ++audioToken;
+  clearTimeout(state.hold);
+  if (audio) {
+    audio.onended = null;
+    audio.onerror = null;
+    audio.pause();
+  }
+  const a = new Audio(audioSrc(state.ci, state.li));
+  audio = a;
+  const advance = () => {
+    if (token !== audioToken || !state.playing || state.mode !== 'auto' || !state.narr) return;
+    state.hold = setTimeout(() => {
+      if (token === audioToken && state.playing && state.mode === 'auto' && state.narr) onend?.();
+    }, HOLD_MS);
+  };
+  a.onended = advance;
+  a.onerror = () => {
+    if (token !== audioToken) return;
+    state.timer = setTimeout(() => {
+      if (token === audioToken && state.playing && state.mode === 'auto') onend?.();
+    }, dur(lineAt()));
+  };
+  const pending = a.play();
+  if (pending && pending.catch) pending.catch(() => {
+    if (token !== audioToken) return;
+    state.timer = setTimeout(() => {
+      if (token === audioToken && state.playing && state.mode === 'auto') onend?.();
+    }, dur(lineAt()));
+  });
+}
 function speak(text, onend) {
   if (!window.speechSynthesis) { onend?.(); return; }
   const token = ++speakToken;
@@ -991,15 +1038,19 @@ function speak(text, onend) {
 }
 function schedule() {
   clearTimeout(state.timer);
+  clearTimeout(state.hold);
   if (!state.playing || state.mode !== 'auto' || state.done) return;
   const line = lineAt();
+  if (state.narr) { playLineAudio(() => step(1)); return; }
   if (state.tts && window.speechSynthesis) { speak(line.zh, () => step(1)); return; }
   state.timer = setTimeout(() => step(1), dur(line));
 }
 function pause() {
   state.playing = false;
   clearTimeout(state.timer);
+  clearTimeout(state.hold);
   stopSpeech();
+  if (audio && !audio.paused) audio.pause();
   renderChrome();
 }
 function resume() {
@@ -1008,7 +1059,11 @@ function resume() {
   state.playing = true;
   state.done = false;
   $('toast').hidden = true;
-  schedule();
+  if (state.narr && audio && !audio.ended && audio.paused && audio.currentTime > 0) {
+    const pending = audio.play();
+    if (pending && pending.catch) pending.catch(() => schedule());
+  } else if (state.narr && audio && audio.ended) step(1);
+  else schedule();
   renderChrome();
 }
 function start(mode) {
@@ -1035,7 +1090,9 @@ function go(ci, li) {
   state.done = false;
   $('toast').hidden = true;
   clearTimeout(state.timer);
+  clearTimeout(state.hold);
   stopSpeech();
+  stopAudio();
   const stage = $('stage');
   if (stage) stage.dataset.mood = ch.id;
   document.querySelectorAll('.panel').forEach(p => p.classList.toggle('on', p.dataset.ch === ch.id));
@@ -1084,7 +1141,7 @@ function restart() {
 function toggleMode() {
   if (state.mode === 'gate' || state.mode === 'auto') {
     if (state.mode === 'gate') start('self');
-    else { state.mode = 'self'; pause(); }
+    else { state.mode = 'self'; stopAudio(); pause(); }
     return;
   }
   resume();
@@ -1112,7 +1169,9 @@ function renderChrome() {
   $('capZh').textContent = state.mode === 'gate' ? '' : (state.sub === 'en' ? line.en : (showZh ? line.zh : ''));
   $('capEn').textContent = (state.mode !== 'gate' && state.sub === 'both') ? line.en : '';
   $('btnSub').textContent = { zh: '中', en: 'EN', both: '双语', off: '关' }[state.sub];
-  $('btnTts').textContent = state.tts ? '朗读开' : '朗读';
+  $('btnNarr').textContent = state.narr ? '旁白' : '旁白关';
+  $('btnNarr').classList.toggle('on', state.narr);
+  $('btnTts').textContent = state.tts ? '本机开' : '本机';
   $('btnTts').classList.toggle('on', state.tts);
   $('btnMode').textContent = state.mode === 'self' ? '自讲' : '自动';
   $('btnMode').classList.toggle('on', state.mode !== 'self');
@@ -1364,14 +1423,22 @@ function bind() {
     $('scriptOv').classList.add('hide');
     go(state.ci, +b.dataset.li);
   };
+  $('btnNarr').onclick = () => {
+    state.narr = !state.narr;
+    if (state.narr) { state.tts = false; stopSpeech(); }
+    else stopAudio();
+    if (state.playing && state.mode === 'auto') schedule();
+    renderChrome();
+  };
   $('btnTts').onclick = () => {
     if (!window.speechSynthesis) return;
     state.tts = !state.tts;
-    if (state.playing && state.mode === 'auto') { stopSpeech(); clearTimeout(state.timer); schedule(); }
+    if (state.tts) { state.narr = false; stopAudio(); stopSpeech(); }
     else stopSpeech();
+    if (state.playing && state.mode === 'auto') schedule();
     renderChrome();
   };
-  if (!window.speechSynthesis) { $('btnTts').disabled = true; $('btnTts').textContent = '本机朗读不可用'; }
+  if (!window.speechSynthesis) { $('btnTts').disabled = true; $('btnTts').title = '这台浏览器没有本机语音'; }
   $('forget').addEventListener('change', e => { state.forget = e.target.checked; state.seenTouched = true; renderSeen(); });
   $('layers').onclick = e => {
     const b = e.target.closest('button');
