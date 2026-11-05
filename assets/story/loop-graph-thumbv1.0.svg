@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <radialGradient id="g" cx="78%" cy="55%" r="65%">
+      <stop offset="0" stop-color="#12384a"/>
+      <stop offset="1" stop-color="#04070b"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="#04070b"/>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <g stroke="#56dcff" stroke-opacity="0.16" fill="none">
+    <path d="M0 70H800M0 530H800" stroke-width="2"/>
+    <path d="M90 0V600M210 0V600M330 0V600M450 0V600M570 0V600M690 0V600"/>
+  </g>
+  <text x="64" y="230" font-family="Arial,sans-serif" font-size="26" letter-spacing="7" fill="#56dcff">LOOPS &amp; GRAPHS</text>
+  <text x="64" y="330" font-family="Arial,sans-serif" font-size="78" font-weight="700" fill="#ffffff">LOOP</text>
+  <text x="318" y="322" font-family="Arial,sans-serif" font-size="58" fill="#56dcff">与</text>
+  <text x="390" y="330" font-family="Arial,sans-serif" font-size="78" font-weight="700" fill="#ffffff">GRAPH</text>
+  <rect x="64" y="390" width="248" height="62" rx="14" fill="#ffbb55"/>
+  <text x="188" y="430" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" fill="#1a1205">▶ 自动讲解</text>
+  <rect x="330" y="390" width="200" height="62" rx="14" fill="none" stroke="#56dcff" stroke-width="3"/>
+  <text x="430" y="430" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" fill="#eef3f8">我自己讲</text>
+</svg>

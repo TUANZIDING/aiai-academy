@@ -9,6 +9,7 @@
   ];
   const HIS = 'https://hark.site/s/263c1fe8-4cbe-45de-81ef-4c687d5b9a99?hark_region=us';
   const ITEMS = [
+    { t: 'basic', kind: 'AI 智能体 · 互动讲解', title: 'Loop 与 Graph：只签最后一步', d: '用骨折手术打比方，从 Bun 的 11 天讲起：检查要能失败、两轮无新发现就停、删掉不传变量的箭头、失败只退一个单元、按撤销难度开闸。原创动画 + 原文配图，中文配音、双语字幕。', date: '2026-11-05', img: 'assets/story/loop-graph-thumbv2.0.svg', href: 'lessons/loop-graph-playbookv2.2.html', go: '开始讲解' },
     { t: 'sci', kind: '细胞生物学 · 交互漫游', title: '外泌体与细胞外囊泡漫游：从多囊体出芽到超速离心', d: '两幕 11 站：EV 家族、内吞、多囊体出芽、货物装载、释放、体液漂流、摄取，再进实验室看差速超速离心、分离方法比较和鉴定；配 EV 生命周期动画、离心沉降与 NTA 粒径分布示意，每站一个科研/临床联系。', date: '2026-11-01', img: 'assets/exosome/exosome-herov1.0.webp', href: 'lessons/exosome-explorerv1.0.html', go: '开始漫游' },
     { t: 'sci', kind: '神经生物学 · 交互漫游', title: '神经元漫游：顺着信号从胞体走到突触', d: '镜头按信号走向停 8 站：胞体、尼氏体、高尔基体、线粒体、轴丘、髓鞘与郎飞结、末梢、突触；实时膜电位曲线和跳跃式传导动画（示意），每站附一个临床联系。', date: '2026-11-01', img: 'assets/neuron/neuron-herov1.0.webp', href: 'lessons/neuron-explorerv1.0.html', go: '开始漫游' },
     { t: 'sci', kind: '生物学 · 交互漫游', title: '动物细胞漫游：镜头飞进细胞核、线粒体和溶酶体', d: '自动镜头依次放大 8 个细胞结构，每站一张中文讲解卡，配教科书典型数值（pH、Ca²⁺、尺寸）和 3 个课堂问题，适合投屏讲给学生和孩子。', date: '2026-11-01', img: 'assets/cell/cell-herov1.0.webp', href: 'lessons/cell-explorerv1.0.html', go: '开始漫游' },

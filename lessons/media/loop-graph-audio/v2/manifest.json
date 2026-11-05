@@ -1,0 +1,49 @@
+{
+ "voice": "zh-CN-YunyangNeural",
+ "rate": "-5%",
+ "generated_at": "2026-11-05 CST (UTC+08:00)",
+ "tool": "edge-tts 7.3.1",
+ "note": "New or changed lines for loop-graph v2.0; unchanged lines reuse ../<chapter>/NNN.mp3 from PR #2.",
+ "lines": [
+  {
+   "file": "open-reg.mp3",
+   "zh": "Bun 复盘还写了：合并前测试 100% 通过、一个没跳过；合并后发现 19 个回归，都已修好。所以行数我们只说「约」。"
+  },
+  {
+   "file": "02-try.mp3",
+   "zh": "现在轮到你：点一张证据卡，看它该落在哪一级。"
+  },
+  {
+   "file": "05-fig.mp3",
+   "zh": "回头看时间轴：同样四步，墙钟时间从 31 分钟降到 17 分钟，少了将近一半。"
+  },
+  {
+   "file": "quiz-in.mp3",
+   "zh": "三道小题。点选答案，马上告诉你对错和理由。"
+  },
+  {
+   "file": "quiz-back.mp3",
+   "zh": "答错了，可以点「回看」，跳回对应的章节。"
+  },
+  {
+   "file": "hw-in.mp3",
+   "zh": "课后作业：挑一个你每周都在跑的 AI 流程。"
+  },
+  {
+   "file": "hw-1.mp3",
+   "zh": "第一，给它的终点写一个程序能判失败的检查。"
+  },
+  {
+   "file": "hw-2.mp3",
+   "zh": "第二，把流程画成图，给每条箭头写上变量名，说不出的就删掉。"
+  },
+  {
+   "file": "hw-3.mp3",
+   "zh": "第三，标出撤销成本最高的那一步，只在那里签字。"
+  },
+  {
+   "file": "src-3.mp3",
+   "zh": "原文：Hoodie，@HoodieFade_，2026 年 11 月 4 日发在 X 上。关键数字已对照 Bun 和 Anthropic 的官方文章核对。"
+  }
+ ]
+}
