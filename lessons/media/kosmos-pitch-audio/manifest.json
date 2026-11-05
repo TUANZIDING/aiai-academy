@@ -1,0 +1,1018 @@
+{
+ "voice": "zh-CN-YunyangNeural",
+ "rate": "-5%",
+ "tool": "edge-tts 7.3.1 via ttsv1.py",
+ "generated_at": "2026-11-05 (CST)",
+ "total_sec": 713.3,
+ "lines": 112,
+ "chapters": [
+  {
+   "id": "open",
+   "no": "00",
+   "title": "湿实验之前，先把账算清",
+   "lines": [
+    {
+     "view": "cover",
+     "b": "c1",
+     "zh": "做科研的人都知道，最贵的往往不是试剂，而是做了三个月，才发现方向不对。",
+     "file": "open/cover-c1.mp3",
+     "bytes": 43056,
+     "sec": 7.18
+    },
+    {
+     "view": "cover",
+     "b": "c2",
+     "zh": "今天介绍一套科研流程：Kosmos-lite 科研闭环。",
+     "file": "open/cover-c2.mp3",
+     "bytes": 28224,
+     "sec": 4.7
+    },
+    {
+     "view": "cover",
+     "b": "c3",
+     "zh": "一句话概括：AI 负责跑腿，人只签关键几步；每一步留痕、可核查。",
+     "file": "open/cover-c3.mp3",
+     "bytes": 40896,
+     "sec": 6.82
+    },
+    {
+     "view": "cover",
+     "b": "c4",
+     "zh": "我用外科手术来打比方，十几分钟，最后只请您做一个决定。",
+     "file": "open/cover-c4.mp3",
+     "bytes": 32688,
+     "sec": 5.45
+    }
+   ]
+  },
+  {
+   "id": "pain",
+   "no": "01",
+   "title": "三个月的 WB 白做了",
+   "lines": [
+    {
+     "view": "pain",
+     "b": "p1",
+     "zh": "先说一个很多课题组都见过的场景：一组 Western blot，做了整整三个月。",
+     "file": "pain/pain-p1.mp3",
+     "bytes": 40176,
+     "sec": 6.7
+    },
+    {
+     "view": "pain",
+     "b": "p2",
+     "zh": "回头一看，第一，没设好对照，结果没法解释。",
+     "file": "pain/pain-p2.mp3",
+     "bytes": 26496,
+     "sec": 4.42
+    },
+    {
+     "view": "pain",
+     "b": "p3",
+     "zh": "第二，试剂早就过期了，没有人注意到。",
+     "file": "pain/pain-p3.mp3",
+     "bytes": 22608,
+     "sec": 3.77
+    },
+    {
+     "view": "pain",
+     "b": "p4",
+     "zh": "第三，方案中途改过，可记录里找不到是谁、什么时候、为什么改的。",
+     "file": "pain/pain-p4.mp3",
+     "bytes": 37440,
+     "sec": 6.24
+    },
+    {
+     "view": "pain",
+     "b": "p5",
+     "zh": "账面上损失的是经费，背后是学生的时间，最深处是诚信风险。",
+     "file": "pain/pain-p5.mp3",
+     "bytes": 37440,
+     "sec": 6.24
+    },
+    {
+     "view": "pain",
+     "b": "p6",
+     "zh": "这些错误单拎出来都不难发现，难的是在动手之前，有人系统地查一遍。",
+     "file": "pain/pain-p6.mp3",
+     "bytes": 37152,
+     "sec": 6.19
+    },
+    {
+     "view": "pain",
+     "b": "p7",
+     "zh": "外科早就有这一套：术前讨论、器械清点、手术记录。在科研里，这一环常常是空的。",
+     "file": "pain/pain-p7.mp3",
+     "bytes": 51696,
+     "sec": 8.62
+    }
+   ]
+  },
+  {
+   "id": "case",
+   "no": "02",
+   "title": "一个真实课题：先省下一笔湿实验",
+   "lines": [
+    {
+     "view": "caseq",
+     "b": "q1",
+     "zh": "讲一个我们最近真实跑过的课题。做了匿名处理，不提具体基因。",
+     "file": "case/caseq-q1.mp3",
+     "bytes": 38448,
+     "sec": 6.41
+    },
+    {
+     "view": "caseq",
+     "b": "q2",
+     "zh": "这是一个卵巢癌靶点课题。设想是：A 调控 B，B 再推动肿瘤表型，构成一条轴。",
+     "file": "case/caseq-q2.mp3",
+     "bytes": 48384,
+     "sec": 8.06
+    },
+    {
+     "view": "caseq",
+     "b": "q3",
+     "zh": "按常规路线，下一步就该买敲低、过表达和回复实验的试剂，开始湿实验。",
+     "file": "case/caseq-q3.mp3",
+     "bytes": 44208,
+     "sec": 7.37
+    },
+    {
+     "view": "caseq",
+     "b": "q4",
+     "zh": "我们先停了一下：在花钱之前，让干实验把这条轴查一遍。",
+     "file": "case/caseq-q4.mp3",
+     "bytes": 32688,
+     "sec": 5.45
+    },
+    {
+     "view": "rounds",
+     "b": "r1",
+     "zh": "干实验一共跑了四轮。",
+     "file": "case/rounds-r1.mp3",
+     "bytes": 15984,
+     "sec": 2.66
+    },
+    {
+     "view": "rounds",
+     "b": "r2",
+     "zh": "第一轮，文献：多个来源检索，看这条轴有没有直接证据。",
+     "file": "case/rounds-r2.mp3",
+     "bytes": 32544,
+     "sec": 5.42
+    },
+    {
+     "view": "rounds",
+     "b": "r3",
+     "zh": "第二轮，公开的 bulk 转录组数据：看 A 和 B 在肿瘤样本里，是不是同升同降。",
+     "file": "case/rounds-r3.mp3",
+     "bytes": 44208,
+     "sec": 7.37
+    },
+    {
+     "view": "rounds",
+     "b": "r4",
+     "zh": "第三轮，公开的蛋白组数据：在蛋白层面再看一次。",
+     "file": "case/rounds-r4.mp3",
+     "bytes": 29952,
+     "sec": 4.99
+    },
+    {
+     "view": "rounds",
+     "b": "r5",
+     "zh": "第四轮，公开的单细胞数据：看它们是不是出现在同一类细胞里。",
+     "file": "case/rounds-r5.mp3",
+     "bytes": 32688,
+     "sec": 5.45
+    },
+    {
+     "view": "rounds",
+     "b": "r6",
+     "zh": "每一轮都预设了阳性和阴性对照，先确认分析方法本身能看出已知的关系。",
+     "file": "case/rounds-r6.mp3",
+     "bytes": 43344,
+     "sec": 7.22
+    },
+    {
+     "view": "rounds",
+     "b": "r7",
+     "zh": "结论是：四轮都没有看到这条轴所需要的正向共调控。",
+     "file": "case/rounds-r7.mp3",
+     "bytes": 30960,
+     "sec": 5.16
+    },
+    {
+     "view": "rounds",
+     "b": "r8",
+     "zh": "所有检索式、数据编号、分析脚本和输出，都留在证据日志里，事后谁都可以复查。",
+     "file": "case/rounds-r8.mp3",
+     "bytes": 45936,
+     "sec": 7.66
+    },
+    {
+     "view": "decision",
+     "b": "d1",
+     "zh": "这不等于这条轴一定是错的。公开数据里没看到，不代表机制不存在。",
+     "file": "case/decision-d1.mp3",
+     "bytes": 41472,
+     "sec": 6.91
+    },
+    {
+     "view": "decision",
+     "b": "d2",
+     "zh": "所以决定不是砍掉课题，而是：先暂停整条轴的全套实验。",
+     "file": "case/decision-d2.mp3",
+     "bytes": 34848,
+     "sec": 5.81
+    },
+    {
+     "view": "decision",
+     "b": "d3",
+     "zh": "先做最便宜的一步：确认这个蛋白，在我们自己的细胞里确实有内源表达。",
+     "file": "case/decision-d3.mp3",
+     "bytes": 38304,
+     "sec": 6.38
+    },
+    {
+     "view": "decision",
+     "b": "d4",
+     "zh": "这一步过了，再买敲低和回复实验的试剂；过不了，就换方向。",
+     "file": "case/decision-d4.mp3",
+     "bytes": 36288,
+     "sec": 6.05
+    },
+    {
+     "view": "decision",
+     "b": "d5",
+     "zh": "干实验先帮我省下了一笔湿实验的钱，也省下了几个月。",
+     "file": "case/decision-d5.mp3",
+     "bytes": 29520,
+     "sec": 4.92
+    },
+    {
+     "view": "decision",
+     "b": "d6",
+     "zh": "就像急诊里的一张 CT：它不替你开刀，但会告诉你，这一刀先别急着开。",
+     "file": "case/decision-d6.mp3",
+     "bytes": 41328,
+     "sec": 6.89
+    }
+   ]
+  },
+  {
+   "id": "position",
+   "no": "03",
+   "title": "它和自动化实验室不一样",
+   "lines": [
+    {
+     "view": "autolab",
+     "b": "a1",
+     "zh": "2026 年 11 月，Nature 发表了 AutoDNA：一个 AI 原生的自动化生物分子实验室。",
+     "file": "position/autolab-a1.mp3",
+     "bytes": 45360,
+     "sec": 7.56
+    },
+    {
+     "view": "autolab",
+     "b": "a2",
+     "zh": "它让 AI 调度二十多类仪器、一万一千多个步骤，人主要只做补充试剂、耗材这类硬件维护。",
+     "file": "position/autolab-a2.mp3",
+     "bytes": 51264,
+     "sec": 8.54
+    },
+    {
+     "view": "autolab",
+     "b": "a3",
+     "zh": "它自动化的是「手」：用机器人把实验做出来。",
+     "file": "position/autolab-a3.mp3",
+     "bytes": 25200,
+     "sec": 4.2
+    },
+    {
+     "view": "autolab",
+     "b": "a4",
+     "zh": "Kosmos-lite 管的是「决策和证据」：做不做、怎么做、做完能说什么。",
+     "file": "position/autolab-a4.mp3",
+     "bytes": 36576,
+     "sec": 6.1
+    },
+    {
+     "view": "autolab",
+     "b": "a5",
+     "zh": "它不需要任何硬件，普通实验室明天就能用。两者不是替代关系，可以互补。",
+     "file": "position/autolab-a5.mp3",
+     "bytes": 42912,
+     "sec": 7.15
+    }
+   ]
+  },
+  {
+   "id": "map",
+   "no": "04",
+   "title": "七步总览",
+   "lines": [
+    {
+     "view": "poster",
+     "b": "m1",
+     "zh": "整套流程一共七步，这张图是全貌。",
+     "file": "map/poster-m1.mp3",
+     "bytes": 22608,
+     "sec": 3.77
+    },
+    {
+     "view": "poster",
+     "b": "m2",
+     "zh": "左边是 AI 编码助手，比如 Codex，在划定的边界内执行；右边是作者，做关键决定，亲手做实验。",
+     "file": "map/poster-m2.mp3",
+     "bytes": 59904,
+     "sec": 9.98
+    },
+    {
+     "view": "poster",
+     "b": "m3",
+     "zh": "从课题配置，到干实验、假设表、分阶段设计、SOP、湿实验，最后打成证据包。",
+     "file": "map/poster-m3.mp3",
+     "bytes": 49104,
+     "sec": 8.18
+    },
+    {
+     "view": "poster",
+     "b": "m4",
+     "zh": "接下来一步一步讲，每一步都对应外科里的一条老规矩。",
+     "file": "map/poster-m4.mp3",
+     "bytes": 29952,
+     "sec": 4.99
+    }
+   ]
+  },
+  {
+   "id": "s1",
+   "no": "05",
+   "title": "① 课题门 = 术前知情同意",
+   "lines": [
+    {
+     "view": "g1",
+     "b": "g1",
+     "zh": "第一步，课题配置：研究问题、模型、干预、读出、预算，写进同一份配置文件。",
+     "file": "s1/g1-g1.mp3",
+     "bytes": 47376,
+     "sec": 7.9
+    },
+    {
+     "view": "g1",
+     "b": "g2",
+     "zh": "然后过 G1 课题门：作者本人确认之后，AI 才能开始干活。",
+     "file": "s1/g1-g2.mp3",
+     "bytes": 34416,
+     "sec": 5.74
+    },
+    {
+     "view": "g1",
+     "b": "g3",
+     "zh": "确认时，系统给这份文件算一个 SHA-256 指纹，和确认记录绑在一起。",
+     "file": "s1/g1-g3.mp3",
+     "bytes": 41472,
+     "sec": 6.91
+    },
+    {
+     "view": "g1",
+     "b": "g4",
+     "zh": "文件改一个字，指纹就变，之前的确认自动失效，必须重新确认。",
+     "file": "s1/g1-g4.mp3",
+     "bytes": 37296,
+     "sec": 6.22
+    },
+    {
+     "view": "g1",
+     "b": "g5",
+     "zh": "这就像术前知情同意：术式变了，同意书就得重签，不能拿旧的那张顶着。",
+     "file": "s1/g1-g5.mp3",
+     "bytes": 40176,
+     "sec": 6.7
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "no": "06",
+   "title": "② 干实验循环 = 术前影像与检验",
+   "lines": [
+    {
+     "view": "dryloop",
+     "b": "l1",
+     "zh": "第二步，干实验循环，这是 AI 跑腿最多的地方。",
+     "file": "s2/dryloop-l1.mp3",
+     "bytes": 27504,
+     "sec": 4.58
+    },
+    {
+     "view": "dryloop",
+     "b": "l2",
+     "zh": "它做三件事：多源检索文献，下载公开数据，在本地电脑上做分析。",
+     "file": "s2/dryloop-l2.mp3",
+     "bytes": 39024,
+     "sec": 6.5
+    },
+    {
+     "view": "dryloop",
+     "b": "l3",
+     "zh": "所有发现都汇进一个世界模型文件，它是这个课题唯一的「真值」。",
+     "file": "s2/dryloop-l3.mp3",
+     "bytes": 35568,
+     "sec": 5.93
+    },
+    {
+     "view": "dryloop",
+     "b": "l4",
+     "zh": "每条证据进日志时都要贴标签：是事实、是关联，还是推测。",
+     "file": "s2/dryloop-l4.mp3",
+     "bytes": 37152,
+     "sec": 6.19
+    },
+    {
+     "view": "dryloop",
+     "b": "l5",
+     "zh": "分析前先设好阳性和阴性对照：方法连已知答案都找不出来，结果就不算数。",
+     "file": "s2/dryloop-l5.mp3",
+     "bytes": 42048,
+     "sec": 7.01
+    },
+    {
+     "view": "dryloop",
+     "b": "l5b",
+     "zh": "需要时也可以调用付费的科研智能体服务，比如 Edison；但每一次花费，都要作者先授权。",
+     "file": "s2/dryloop-l5b.mp3",
+     "bytes": 48384,
+     "sec": 8.06
+    },
+    {
+     "view": "dryloop",
+     "b": "l6",
+     "zh": "这就是术前的影像和检验：先看清楚，再决定要不要上台。",
+     "file": "s2/dryloop-l6.mp3",
+     "bytes": 32688,
+     "sec": 5.45
+    }
+   ]
+  },
+  {
+   "id": "s34",
+   "no": "07",
+   "title": "③④ 鉴别诊断与分期手术",
+   "lines": [
+    {
+     "view": "hypo",
+     "b": "h1",
+     "zh": "第三步，假设表。每个假设只有三种状态：支持、削弱、已淘汰。",
+     "file": "s34/hypo-h1.mp3",
+     "bytes": 41616,
+     "sec": 6.94
+    },
+    {
+     "view": "hypo",
+     "b": "h2",
+     "zh": "被淘汰的假设不删除，留在表里，写清楚是被哪条证据淘汰的。",
+     "file": "s34/hypo-h2.mp3",
+     "bytes": 36720,
+     "sec": 6.12
+    },
+    {
+     "view": "hypo",
+     "b": "h3",
+     "zh": "这就是鉴别诊断清单：排除了什么、凭什么排除，下一位医生一看就懂。",
+     "file": "s34/hypo-h3.mp3",
+     "bytes": 38160,
+     "sec": 6.36
+    },
+    {
+     "view": "stages",
+     "b": "t1",
+     "zh": "第四步，分阶段设计：先体外快筛，再原代细胞复证，最后才是体内验证。",
+     "file": "s34/stages-t1.mp3",
+     "bytes": 42768,
+     "sec": 7.13
+    },
+    {
+     "view": "stages",
+     "b": "t2",
+     "zh": "每个阶段都设好进入下一阶段的门槛：前一关不过，后面的钱就不花。",
+     "file": "s34/stages-t2.mp3",
+     "bytes": 36576,
+     "sec": 6.1
+    },
+    {
+     "view": "stages",
+     "b": "t3",
+     "zh": "同时先写一份干稿：假如结果出来，图怎么放、话怎么说，提前想清楚。",
+     "file": "s34/stages-t3.mp3",
+     "bytes": 40464,
+     "sec": 6.74
+    },
+    {
+     "view": "stages",
+     "b": "t4",
+     "zh": "就像创伤外科的损伤控制：先做最小、最快、最能说明问题的那一步。",
+     "file": "s34/stages-t4.mp3",
+     "bytes": 39456,
+     "sec": 6.58
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "no": "08",
+   "title": "⑤ 结构化 SOP = 模拟手术与器械清点",
+   "lines": [
+    {
+     "view": "sop",
+     "b": "o1",
+     "zh": "第五步是这个版本新加的：结构化 SOP。实验步骤不再是一段文字，而是一张能被检查的表。",
+     "file": "s5/sop-o1.mp3",
+     "bytes": 52128,
+     "sec": 8.69
+    },
+    {
+     "view": "sop",
+     "b": "o2",
+     "zh": "第一，干跑，等于模拟手术：在纸面上，把每一管、每一孔都走一遍。",
+     "file": "s5/sop-o2.mp3",
+     "bytes": 40752,
+     "sec": 6.79
+    },
+    {
+     "view": "sop",
+     "b": "o3",
+     "zh": "读数前还没加样、漏了无模板对照 NTC、加热时没盖盖子，都能在动手前查出来。",
+     "file": "s5/sop-o3.mp3",
+     "bytes": 47952,
+     "sec": 7.99
+    },
+    {
+     "view": "sop",
+     "b": "o4",
+     "zh": "第二，用量清单，等于器械清点：每种试剂够用、不足、过期还是缺失，一目了然。",
+     "file": "s5/sop-o4.mp3",
+     "bytes": 49104,
+     "sec": 8.18
+    },
+    {
+     "view": "sop",
+     "b": "o5",
+     "zh": "第三，SOP 冻结，等于术式确定：批准之后不临时改；要改，就写理由、重新冻结。",
+     "file": "s5/sop-o5.mp3",
+     "bytes": 48240,
+     "sec": 8.04
+    },
+    {
+     "view": "sop",
+     "b": "o6",
+     "zh": "第四，隐性细节提示：那些老师傅只在口头上提醒的细节，提前列出来。",
+     "file": "s5/sop-o6.mp3",
+     "bytes": 40176,
+     "sec": 6.7
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "no": "09",
+   "title": "⑥ 湿实验 = 术中冰冻与手术记录",
+   "lines": [
+    {
+     "view": "wet",
+     "b": "w1",
+     "zh": "第六步，湿实验。这一步由作者亲手做，AI 不碰仪器。",
+     "file": "s6/wet-w1.mp3",
+     "bytes": 35856,
+     "sec": 5.98
+    },
+    {
+     "view": "wet",
+     "b": "w2",
+     "zh": "做完，把仪器导出的原始文件交回来，先过质控：比如 qPCR 的 NTC、复孔差异、内参稳不稳。",
+     "file": "s6/wet-w2.mp3",
+     "bytes": 57024,
+     "sec": 9.5
+    },
+    {
+     "view": "wet",
+     "b": "w3",
+     "zh": "这就像术中冰冻：先确认这块组织能不能下结论，再往下走。",
+     "file": "s6/wet-w3.mp3",
+     "bytes": 33120,
+     "sec": 5.52
+    },
+    {
+     "view": "wet",
+     "b": "w4",
+     "zh": "质控通过后，用 lock-wet 封存原始数据：哈希记录在案，之后再改，能被检出。",
+     "file": "s6/wet-w4.mp3",
+     "bytes": 43632,
+     "sec": 7.27
+    },
+    {
+     "view": "wet",
+     "b": "w5",
+     "zh": "这就是手术记录的封存：写完就不再回头补改。",
+     "file": "s6/wet-w5.mp3",
+     "bytes": 27936,
+     "sec": 4.66
+    },
+    {
+     "view": "outcomes",
+     "b": "u1",
+     "zh": "结果只分三类：阳性、信息性阴性、技术失败。",
+     "file": "s6/outcomes-u1.mp3",
+     "bytes": 29088,
+     "sec": 4.85
+    },
+    {
+     "view": "outcomes",
+     "b": "u2",
+     "zh": "信息性阴性，是对照都正常、方法可靠，只是没看到效应。它也是结果，也值得记录。",
+     "file": "s6/outcomes-u2.mp3",
+     "bytes": 50832,
+     "sec": 8.47
+    },
+    {
+     "view": "outcomes",
+     "b": "u3",
+     "zh": "技术失败，是对照没过。它不能当成阴性结果来写，只能重做。",
+     "file": "s6/outcomes-u3.mp3",
+     "bytes": 39312,
+     "sec": 6.55
+    },
+    {
+     "view": "outcomes",
+     "b": "u4",
+     "zh": "把这两种分开，就能少很多「做不出来」的糊涂账。",
+     "file": "s6/outcomes-u4.mp3",
+     "bytes": 25776,
+     "sec": 4.3
+    }
+   ]
+  },
+  {
+   "id": "s7",
+   "no": "10",
+   "title": "⑦ 证据包 = 病理报告",
+   "lines": [
+    {
+     "view": "pack",
+     "b": "k1",
+     "zh": "第七步，下结论之前，还有两道门：等效门和措辞门。",
+     "file": "s7/pack-k1.mp3",
+     "bytes": 31392,
+     "sec": 5.23
+    },
+    {
+     "view": "pack",
+     "b": "k2",
+     "zh": "最常见的错误是：P 大于 0.05，「无显著差异」，于是写成「两种方法一致」。",
+     "file": "s7/pack-k2.mp3",
+     "bytes": 42192,
+     "sec": 7.03
+    },
+    {
+     "view": "pack",
+     "b": "k3",
+     "zh": "可「无显著差异」不等于「一致」。要说等效，得事先登记等效界值，再看差值的置信区间是否落在界值之内。",
+     "file": "s7/pack-k3.mp3",
+     "bytes": 60768,
+     "sec": 10.13
+    },
+    {
+     "view": "pack",
+     "b": "k4",
+     "zh": "就像病理报告：不确定，就写不确定，不能为了好看写成确定。",
+     "file": "s7/pack-k4.mp3",
+     "bytes": 35568,
+     "sec": 5.93
+    },
+    {
+     "view": "pack",
+     "b": "k5",
+     "zh": "最后，用 export-pack 打成证据包；别人用 verify-pack，可以逐个文件核对。",
+     "file": "s7/pack-k5.mp3",
+     "bytes": 40176,
+     "sec": 6.7
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "no": "11",
+   "title": "花钱和对外，逐项授权",
+   "lines": [
+    {
+     "view": "spend",
+     "b": "x1",
+     "zh": "贯穿七步的，还有一条底线规则：G-spend 和 G-external，逐项授权。",
+     "file": "gate/spend-x1.mp3",
+     "bytes": 38592,
+     "sec": 6.43
+    },
+    {
+     "view": "spend",
+     "b": "x2",
+     "zh": "凡是花钱的，比如消耗 Edison 积分；凡是对外的，比如上传数据、推送 Git、发邮件——",
+     "file": "gate/spend-x2.mp3",
+     "bytes": 48096,
+     "sec": 8.02
+    },
+    {
+     "view": "spend",
+     "b": "x3",
+     "zh": "AI 都必须停下来，等作者一项一项签字。",
+     "file": "gate/spend-x3.mp3",
+     "bytes": 26064,
+     "sec": 4.34
+    },
+    {
+     "view": "spend",
+     "b": "x3b",
+     "zh": "每一次批准都记进日志：谁、什么时候、批准了哪一项。",
+     "file": "gate/spend-x3b.mp3",
+     "bytes": 31536,
+     "sec": 5.26
+    },
+    {
+     "view": "spend",
+     "b": "x4",
+     "zh": "这就是主刀签字：助手可以把一切准备好，但下刀那一下，写的是主刀的名字。",
+     "file": "gate/spend-x4.mp3",
+     "bytes": 41760,
+     "sec": 6.96
+    }
+   ]
+  },
+  {
+   "id": "demo",
+   "no": "12",
+   "title": "三个现场：动手之前就被拦下",
+   "lines": [
+    {
+     "view": "demodry",
+     "b": "e1",
+     "zh": "下面看三个现场。屏幕上的输出，是按真实检查项改写的示意，数据是虚构的。",
+     "file": "demo/demodry-e1.mp3",
+     "bytes": 47088,
+     "sec": 7.85
+    },
+    {
+     "view": "demodry",
+     "b": "e2",
+     "zh": "第一个：一份 qPCR 方案，先干跑一遍。",
+     "file": "demo/demodry-e2.mp3",
+     "bytes": 24336,
+     "sec": 4.06
+    },
+    {
+     "view": "demodry",
+     "b": "e3",
+     "zh": "红色报错：第七步读数时，A3 孔里还没有加样本。",
+     "file": "demo/demodry-e3.mp3",
+     "bytes": 30240,
+     "sec": 5.04
+    },
+    {
+     "view": "demodry",
+     "b": "e4",
+     "zh": "第二条：方案要求的无模板对照 NTC，整块板上一个都没有。",
+     "file": "demo/demodry-e4.mp3",
+     "bytes": 33552,
+     "sec": 5.59
+    },
+    {
+     "view": "demodry",
+     "b": "e5",
+     "zh": "还有一条警告：95 度加热那一步，管子是开着盖的。",
+     "file": "demo/demodry-e5.mp3",
+     "bytes": 28800,
+     "sec": 4.8
+    },
+    {
+     "view": "demodry",
+     "b": "e5b",
+     "zh": "改完再干跑一遍，全部通过，这份方案才能进入冻结。",
+     "file": "demo/demodry-e5b.mp3",
+     "bytes": 31536,
+     "sec": 5.26
+    },
+    {
+     "view": "demodry",
+     "b": "e6",
+     "zh": "这三处，平时要等结果出来，甚至审稿人问起，才会被发现。",
+     "file": "demo/demodry-e6.mp3",
+     "bytes": 33696,
+     "sec": 5.62
+    },
+    {
+     "view": "demobom",
+     "b": "f1",
+     "zh": "第二个：用量清单，和实验室的库存表对一下。",
+     "file": "demo/demobom-f1.mp3",
+     "bytes": 26928,
+     "sec": 4.49
+    },
+    {
+     "view": "demobom",
+     "b": "f2",
+     "zh": "按样本数、复孔、重复次数，再加百分之十的死体积余量，算出每种试剂要多少。",
+     "file": "demo/demobom-f2.mp3",
+     "bytes": 47520,
+     "sec": 7.92
+    },
+    {
+     "view": "demobom",
+     "b": "f3",
+     "zh": "一条引物不够了，标 SHORT；一盒反转录试剂过期了，标 EXPIRED。",
+     "file": "demo/demobom-f3.mp3",
+     "bytes": 37584,
+     "sec": 6.26
+    },
+    {
+     "view": "demobom",
+     "b": "f4",
+     "zh": "注意，它只报告，不下单。要不要买、买多少，由作者逐项同意。",
+     "file": "demo/demobom-f4.mp3",
+     "bytes": 40752,
+     "sec": 6.79
+    },
+    {
+     "view": "demoword",
+     "b": "n1",
+     "zh": "第三个：写稿。有人写下：「无显著差异，说明两种方法一致」。",
+     "file": "demo/demoword-n1.mp3",
+     "bytes": 38304,
+     "sec": 6.38
+    },
+    {
+     "view": "demoword",
+     "b": "n2",
+     "zh": "稿件检查直接拦下：没有事先登记的等效界值，也没有等效判定，这句话进不了投稿稿。",
+     "file": "demo/demoword-n2.mp3",
+     "bytes": 47088,
+     "sec": 7.85
+    },
+    {
+     "view": "demoword",
+     "b": "n3",
+     "zh": "建议改成：「两种方法的均值差，落在事先设定的界值之内」，并给出置信区间。",
+     "file": "demo/demoword-n3.mp3",
+     "bytes": 42912,
+     "sec": 7.15
+    },
+    {
+     "view": "demoword",
+     "b": "n4",
+     "zh": "一句话的差别，往往就是审稿意见里一大段的差别。",
+     "file": "demo/demoword-n4.mp3",
+     "bytes": 29232,
+     "sec": 4.87
+    }
+   ]
+  },
+  {
+   "id": "limits",
+   "no": "13",
+   "title": "诚实的边界",
+   "lines": [
+    {
+     "view": "limits",
+     "b": "i1",
+     "zh": "也要说清楚，它做不到什么。",
+     "file": "limits/limits-i1.mp3",
+     "bytes": 17280,
+     "sec": 2.88
+    },
+    {
+     "view": "limits",
+     "b": "i2",
+     "zh": "它不控制仪器，也不替你做实验；湿实验永远是人来做。",
+     "file": "limits/limits-i2.mp3",
+     "bytes": 34848,
+     "sec": 5.81
+    },
+    {
+     "view": "limits",
+     "b": "i3",
+     "zh": "哈希是本地的自述记录：能发现事后被改过，但不能证明时间先后，也不能证明是谁签的。",
+     "file": "limits/limits-i3.mp3",
+     "bytes": 49248,
+     "sec": 8.21
+    },
+    {
+     "view": "limits",
+     "b": "i4",
+     "zh": "目前的验证，是本地 AI 验证加上 AI 独立复核，还没有真实课题组的长期使用数据。",
+     "file": "limits/limits-i4.mp3",
+     "bytes": 48384,
+     "sec": 8.06
+    },
+    {
+     "view": "limits",
+     "b": "i5",
+     "zh": "所以，我们正在招募第一批真实试点。",
+     "file": "limits/limits-i5.mp3",
+     "bytes": 22176,
+     "sec": 3.7
+    }
+   ]
+  },
+  {
+   "id": "who",
+   "no": "14",
+   "title": "谁能得到什么",
+   "lines": [
+    {
+     "view": "who",
+     "b": "j1",
+     "zh": "对科研处：每个课题都有可核查的证据包；花钱和对外动作都要授权；申报之前，可以先做一次可行性评估。",
+     "file": "who/who-j1.mp3",
+     "bytes": 60336,
+     "sec": 10.06
+    },
+    {
+     "view": "who",
+     "b": "j2",
+     "zh": "对 PI 和导师：动手前查漏，提前出用量清单，带学生也有了一套统一的标准。",
+     "file": "who/who-j2.mp3",
+     "bytes": 44496,
+     "sec": 7.42
+    },
+    {
+     "view": "who",
+     "b": "j3",
+     "zh": "对临床医生：没有自己的实验室也能开始，先用公开数据找方向，再决定要不要做湿实验。",
+     "file": "who/who-j3.mp3",
+     "bytes": 46656,
+     "sec": 7.78
+    },
+    {
+     "view": "who",
+     "b": "j4",
+     "zh": "三类人看的是同一份证据包，只是各自关心的那一页不同。",
+     "file": "who/who-j4.mp3",
+     "bytes": 31536,
+     "sec": 5.26
+    }
+   ]
+  },
+  {
+   "id": "offer",
+   "no": "15",
+   "title": "拿一个课题来试点",
+   "lines": [
+    {
+     "view": "offer",
+     "b": "z1",
+     "zh": "最后，只请您做一个决定：拿一个正在犹豫要不要做湿实验的课题，来试点。",
+     "file": "offer/offer-z1.mp3",
+     "bytes": 38880,
+     "sec": 6.48
+    },
+    {
+     "view": "offer",
+     "b": "z2",
+     "zh": "可以是半天工作坊，现场把一个课题的干实验跑一遍。",
+     "file": "offer/offer-z2.mp3",
+     "bytes": 30960,
+     "sec": 5.16
+    },
+    {
+     "view": "offer",
+     "b": "z3",
+     "zh": "可以是四到六周的课题试点陪跑，从课题门一直走到证据包。",
+     "file": "offer/offer-z3.mp3",
+     "bytes": 34416,
+     "sec": 5.74
+    },
+    {
+     "view": "offer",
+     "b": "z4",
+     "zh": "也可以是院内部署与带教：在本地运行，数据不出院。",
+     "file": "offer/offer-z4.mp3",
+     "bytes": 30240,
+     "sec": 5.04
+    },
+    {
+     "view": "offer",
+     "b": "z4b",
+     "zh": "试点结束时，您手里会有一份完整的证据包，和一个清楚的决定：做、缓做，还是换方向。",
+     "file": "offer/offer-z4b.mp3",
+     "bytes": 48672,
+     "sec": 8.11
+    },
+    {
+     "view": "offer",
+     "b": "z5",
+     "zh": "湿实验之前，先把账算清。谢谢。",
+     "file": "offer/offer-z5.mp3",
+     "bytes": 24192,
+     "sec": 4.03
+    }
+   ]
+  }
+ ]
+}
