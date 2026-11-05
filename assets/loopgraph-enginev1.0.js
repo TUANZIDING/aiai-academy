@@ -170,7 +170,7 @@ function show(ci, bi, li, opts = {}) {
 }
 function next(auto) {
   const i = flatIdx(st.ci, st.bi, st.li);
-  if (i >= FLAT.length - 1) { stopVoice(); st.playing = false; $('#endc').classList.remove('gone'); return; }
+  if (i >= FLAT.length - 1) { stopVoice(); st.playing = false; $('#endc').classList.remove('gone'); syncPause(); return; }
   const n = FLAT[i + 1]; show(n.ci, n.bi, n.li, { extra: n.bi !== st.bi && n.ci === st.ci ? 500 : 0 });
 }
 function prev() { const i = flatIdx(st.ci, st.bi, st.li); if (i > 0) { const p = FLAT[i - 1]; show(p.ci, p.bi, p.li, { noCard: true }); } }
@@ -178,19 +178,25 @@ function jump(ci, bi, li) { $('#toc').classList.add('gone'); if (!st.started) be
 function pauseToggle() {
   if (st.mode !== 'auto') return next();
   st.playing = !st.playing;
-  $('#pz').textContent = st.playing ? '▶ 继续' : 'Ⅱ 已暂停'; $('#pz').classList.add('on'); setTimeout(() => $('#pz').classList.remove('on'), 900);
+  syncPause();
   if (st.playing) speak(0); else stopVoice();
+}
+function syncPause() {
+  const paused = st.mode === 'auto' && !st.playing && st.started;
+  $('#bPause').textContent = st.mode === 'auto' && st.playing ? 'Ⅱ' : '▶';
+  $('#bPause').title = st.mode === 'auto' ? (st.playing ? '暂停 空格' : '继续 空格') : '下一句 空格';
+  $('#pz').textContent = 'Ⅱ 已暂停 · 空格继续'; $('#pz').classList.toggle('on', paused && $('#endc').classList.contains('gone'));
 }
 function setMode(m) {
   st.mode = m; setModeBtn();
   if (m === 'self') { st.playing = false; stopVoice(); } else { st.playing = true; speak(200); }
-  duck(false);
+  duck(false); syncPause();
 }
 function begin(mode, ci) {
   st.started = true; $('#start').classList.add('gone');
   st.mode = mode; st.playing = mode === 'auto'; setModeBtn();
   if (st.music && mode === 'auto') { music.play().catch(() => {}); }
-  duck(false);
+  duck(false); syncPause();
   show(ci || 0, 0, 0);
 }
 
@@ -215,6 +221,7 @@ function boot() {
   $('#bPause').onclick = pauseToggle;
   $('#again').onclick = () => jump(0, 0, 0);
   $('#rotOk').onclick = () => { st.portraitOk = true; fit(); };
+  document.addEventListener('click', e => { const bt = e.target.closest && e.target.closest('button'); if (bt) setTimeout(() => bt.blur(), 0); }, true);
   addEventListener('click', e => { if (!toc.contains(e.target) && e.target.id !== 'bToc') toc.classList.add('gone'); });
   addEventListener('keydown', e => {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
