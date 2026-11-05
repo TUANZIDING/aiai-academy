@@ -878,6 +878,7 @@ const state = {
   failOpen: null, failTouched: false, sel: null, selKey: null, dragId: null
 };
 let lastCh = null;
+let shownCh = null;
 let speakToken = 0;
 
 const LAYERS = [
@@ -1006,7 +1007,7 @@ function resume() {
   state.mode = 'auto';
   state.playing = true;
   state.done = false;
-  $('doneNote').hidden = true;
+  $('toast').hidden = true;
   schedule();
   renderChrome();
 }
@@ -1015,18 +1016,33 @@ function start(mode) {
   state.playing = mode === 'auto';
   state.done = false;
   document.body.classList.add('live');
-  $('doneNote').hidden = true;
+  $('toast').hidden = true;
   go(state.ci, state.li);
 }
+function flashChapter(ch) {
+  const card = $('chapcard');
+  if (!card) return;
+  $('chapNum').textContent = ch.id === 'open' ? '00' : ch.id;
+  $('chapName').textContent = ch.title;
+  card.classList.remove('go');
+  void card.offsetWidth;
+  card.classList.add('go');
+}
 function go(ci, li) {
+  const ch = CHAPTERS[ci];
   state.ci = ci;
   state.li = li;
   state.done = false;
-  $('doneNote').hidden = true;
-  $('btnRestart').hidden = true;
+  $('toast').hidden = true;
   clearTimeout(state.timer);
   stopSpeech();
-  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('on', p.dataset.ch === CHAPTERS[ci].id));
+  const stage = $('stage');
+  if (stage) stage.dataset.mood = ch.id;
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('on', p.dataset.ch === ch.id));
+  if (shownCh !== ch.id) {
+    shownCh = ch.id;
+    flashChapter(ch);
+  }
   renderChrome();
   syncDemos();
   if (state.playing && state.mode === 'auto') schedule();
@@ -1042,8 +1058,7 @@ function step(dir) {
       state.playing = false;
       clearTimeout(state.timer);
       stopSpeech();
-      $('doneNote').hidden = false;
-      $('btnRestart').hidden = false;
+      $('toast').hidden = false;
       renderChrome();
       return;
     }
@@ -1056,6 +1071,7 @@ function step(dir) {
   go(ci, li);
 }
 function restart() {
+  shownCh = null;
   state.ci = 0;
   state.li = 0;
   state.done = false;
@@ -1080,30 +1096,31 @@ function cycleSub() {
 function renderChrome() {
   const ch = CHAPTERS[state.ci];
   const line = lineAt();
-  const label = ch.id === 'open' ? '开场' : ch.id;
-  $('chTitle').textContent = state.mode === 'gate' ? 'Loop 与 Graph' : (label + ' · ' + ch.title);
-  $('chSub').textContent = state.mode === 'gate' ? '只批准最后一档' : (label + '  ·  ' + (state.li + 1) + ' / ' + ch.lines.length);
-  $('pos').textContent = state.mode === 'gate' ? '未开始' : (flatIndex() + ' / ' + TOTAL);
-  $('bar').style.width = state.mode === 'gate' ? '0%' : ((flatIndex() / TOTAL * 100) + '%');
-  document.querySelectorAll('#toc button').forEach((b, i) => b.setAttribute('aria-current', i === state.ci ? 'true' : 'false'));
-  const cap = $('cap');
-  cap.classList.toggle('off', state.sub === 'off');
+  const label = ch.id === 'open' ? '片头' : ch.id;
+  $('chap').textContent = state.mode === 'gate' ? '片头' : (label + ' · ' + ch.title);
+  document.querySelectorAll('#toc button').forEach((b, i) => {
+    b.setAttribute('aria-current', String(i === state.ci && state.mode !== 'gate'));
+    const fill = b.querySelector('b');
+    if (!fill) return;
+    if (state.mode === 'gate' || i > state.ci) fill.style.width = '0';
+    else if (i < state.ci) fill.style.width = '100%';
+    else fill.style.width = ((state.li + 1) / CHAPTERS[i].lines.length * 100) + '%';
+  });
+  const cap = $('subs');
+  cap.classList.toggle('off', state.sub === 'off' || state.mode === 'gate');
   const showZh = state.sub === 'zh' || state.sub === 'both';
-  const showEn = state.sub === 'en' || state.sub === 'both';
   $('capZh').textContent = state.mode === 'gate' ? '' : (state.sub === 'en' ? line.en : (showZh ? line.zh : ''));
-  $('capEn').textContent = state.mode === 'gate' ? '' : (state.sub === 'both' ? line.en : '');
-  if (!showEn && state.sub !== 'en') $('capEn').textContent = '';
-  const subName = { zh: '中文', en: '英文', both: '双语', off: '关' }[state.sub];
-  $('btnSub').textContent = '字幕：' + subName;
-  $('btnTts').textContent = '本机朗读：' + (state.tts ? '开' : '关');
+  $('capEn').textContent = (state.mode !== 'gate' && state.sub === 'both') ? line.en : '';
+  $('btnSub').textContent = { zh: '中', en: 'EN', both: '双语', off: '关' }[state.sub];
+  $('btnTts').textContent = state.tts ? '朗读开' : '朗读';
   $('btnTts').classList.toggle('on', state.tts);
-  $('btnMode').textContent = state.mode === 'gate' ? '我自己讲' : (state.mode === 'auto' ? '模式：自动讲解' : '模式：我自己讲');
-  $('btnMode').classList.toggle('on', state.mode === 'self');
-  if (state.mode === 'gate') $('btnPlay').textContent = '▶ 自动讲解';
-  else if (state.done) $('btnPlay').textContent = '从头再讲';
-  else if (state.mode === 'self') $('btnPlay').textContent = '改为自动';
-  else $('btnPlay').textContent = state.playing ? '暂停' : '继续';
-  $('btnRestart').hidden = !state.done;
+  $('btnMode').textContent = state.mode === 'self' ? '自讲' : '自动';
+  $('btnMode').classList.toggle('on', state.mode !== 'self');
+  if (state.done) $('btnPlay').textContent = '↺';
+  else if (state.mode === 'self') $('btnPlay').textContent = '▶';
+  else $('btnPlay').textContent = state.playing ? '⏸' : '▶';
+  $('btnPlay').setAttribute('aria-label', state.playing && !state.done ? '暂停' : '继续');
+  $('toast').hidden = state.mode === 'gate' || !state.done;
 }
 function markBeats() {
   const ch = CHAPTERS[state.ci];
@@ -1311,7 +1328,7 @@ function answerQuiz(btn) {
   box.querySelector('.why').innerHTML = (pick === q.a ? '对。' : '这档不对。') + esc(q.why) + ` <a href="#ch-${q.ch}" data-jump="${q.ch}">回到 ${q.ch} 章</a>`;
 }
 function bind() {
-  $('toc').innerHTML = CHAPTERS.map((c, i) => `<button type="button" data-i="${i}"><em>${c.id === 'open' ? '开场' : c.id}</em><span>${esc(c.title)}</span></button>`).join('');
+  $('toc').innerHTML = CHAPTERS.map((c, i) => `<button type="button" data-i="${i}" aria-label="${esc(c.id === 'open' ? '开场' : c.id)} ${esc(c.title)}"><i><b></b></i></button>`).join('');
   $('toc').onclick = e => {
     const b = e.target.closest('button');
     if (!b) return;
@@ -1331,6 +1348,22 @@ function bind() {
   $('btnMode').onclick = toggleMode;
   $('btnSub').onclick = cycleSub;
   $('btnRestart').onclick = restart;
+  $('btnScript').onclick = () => {
+    if (state.mode === 'gate') return;
+    const ch = CHAPTERS[state.ci];
+    const label = ch.id === 'open' ? '片头' : ch.id;
+    $('scriptTitle').textContent = label + ' · ' + ch.title;
+    $('scriptLines').innerHTML = ch.lines.map((l, i) => `<li><button type="button" data-li="${i}">${esc(l.zh)}</button></li>`).join('');
+    $('scriptOv').classList.remove('hide');
+    if (state.playing) pause();
+  };
+  $('scriptClose').onclick = () => $('scriptOv').classList.add('hide');
+  $('scriptLines').onclick = e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    $('scriptOv').classList.add('hide');
+    go(state.ci, +b.dataset.li);
+  };
   $('btnTts').onclick = () => {
     if (!window.speechSynthesis) return;
     state.tts = !state.tts;
