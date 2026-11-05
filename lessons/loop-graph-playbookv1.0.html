@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loop 与 Graph：只批准最后一档 · aiai 学院</title>
+<meta name="description" content="丁海祥 · aiai 学院课件：用球场比喻讲清 loop 与 graph。AI 自己检查、并行干活，人只批准不可逆的最后一档。">
+<style>
+:root{
+  --cream:#fbf7ef;--ink:#1d2430;--muted:#5b6573;--orange:#d9600b;--teal:#2f8f9d;--green:#2f6f5e;
+  --line:#eadfcd;--card:#fffdf8;--turf:#1d5a3a;--gold:#a86b12;--night:#14213d;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--cream);display:flex;flex-direction:column;overflow:hidden}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:var(--teal)}
+.top{flex:none;display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(255,253,248,.92);border-bottom:1px solid var(--line);z-index:6}
+.home{text-decoration:none;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.85rem;font-weight:700}
+.home:hover{color:var(--ink)}
+.brand{display:flex;flex-direction:column;min-width:0}
+.brand b{font-size:.98rem;letter-spacing:.01em}
+.brand small{color:var(--muted);font-size:.75rem}
+.prog{flex:1;height:6px;background:#efe6d6;border-radius:99px;overflow:hidden;min-width:48px}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--teal));transition:width .25s}
+.top .meta{font-variant-numeric:tabular-nums;font-size:.78rem;color:var(--muted);white-space:nowrap}
+.shell{flex:1;min-height:0;display:grid;grid-template-columns:212px 1fr;position:relative}
+.toc{border-right:1px solid var(--line);overflow:auto;padding:8px;background:#fffaf3}
+.toc button{display:flex;gap:8px;width:100%;text-align:left;border:0;background:transparent;border-radius:10px;padding:7px 8px;color:var(--muted)}
+.toc button em{font-style:normal;font-weight:800;color:var(--orange);width:2.1em;flex:none;font-variant-numeric:tabular-nums}
+.toc button span{font-size:.82rem;line-height:1.35}
+.toc button[aria-current="true"]{background:#fff;box-shadow:inset 0 0 0 1px var(--line);color:var(--ink)}
+.toc button[aria-current="true"] span{font-weight:700}
+.stage{overflow:auto;padding:22px 22px 28px;min-width:0}
+.panel{display:none;max-width:980px;margin:0 auto}
+.panel.on{display:block}
+.kicker{margin:0 0 6px;color:var(--orange);font-weight:800;letter-spacing:.16em;font-size:.78rem}
+h1,h2{font-family:Georgia,"Songti SC","Noto Serif SC",serif;letter-spacing:-.02em;margin:0 0 8px}
+h1{font-size:clamp(2rem,4vw,3.1rem);line-height:1.12}
+h2{font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.25}
+.lede{color:var(--muted);margin:0 0 16px;line-height:1.65}
+.grid{display:grid;gap:12px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 14px 12px}
+.card b{display:block;margin-bottom:4px}
+.card p,.card li{margin:0;color:var(--muted);line-height:1.55;font-size:.94rem}
+.num{font-family:Georgia,serif;font-size:1.8rem;color:var(--orange);line-height:1}
+.hot{box-shadow:0 0 0 2px var(--orange);background:#fff6ee}
+.panel [data-beats]{opacity:.4;transition:opacity .25s}
+.panel [data-beats].seen,.panel [data-beats].hot{opacity:1}
+.seen{opacity:1}
+.dim{opacity:.45}
+.turf{background:linear-gradient(180deg,#246b45,#1d5a3a);color:#f4f7f2;border-radius:18px;padding:16px;border:0}
+.turf p{color:#e4efe7}
+.field-lines{background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.18) 0 2px,transparent 2px 56px)}
+.bins{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.bin{min-height:120px;border-radius:14px;border:1.5px dashed #d9cbb6;background:#fff;padding:8px}
+.bin header{font-size:.82rem;font-weight:800;margin-bottom:6px}
+.bin.strong header{color:var(--green)}
+.bin.medium header{color:var(--teal)}
+.bin.weak header{color:var(--gold)}
+.bin.noise header{color:var(--orange)}
+.bin.over{background:#fff6ee;border-color:var(--orange)}
+.tray{display:flex;flex-wrap:wrap;gap:8px;min-height:46px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 10px;font-size:.9rem;line-height:1.35}
+.chip.sel{outline:2px solid var(--teal)}
+.chip.ok{background:#e7f4ef;border-color:#b7d8cc}
+.chip.bad{background:#fde8d6;border-color:#f0c09a}
+.chip small{display:block;color:var(--muted);font-size:.75rem}
+.rowbtns{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.rowbtns button,.dock button,.gate .go button,.mini{border-radius:999px;border:1px solid var(--line);background:#fff;padding:8px 14px;font-weight:700}
+.rowbtns button[aria-pressed="true"],.dock button.on{background:var(--night);color:#fff;border-color:var(--night)}
+.go button.primary,.dock button.primary{background:var(--orange);color:#fff;border-color:var(--orange)}
+.score{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.88rem}
+.pipe{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0}
+.node{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;min-width:96px}
+.node b{display:block}
+.node span{color:var(--muted);font-size:.78rem}
+.edge{border-radius:12px;border:1px dashed var(--orange);background:#fff6ee;padding:8px 10px;max-width:150px;text-align:left;line-height:1.35}
+.edge em{font-style:normal;display:block;color:var(--muted);font-size:.75rem}
+.edge.keep{border-style:solid;border-color:var(--teal);background:#f3fbfb}
+.edge.cut{opacity:.4;text-decoration:line-through}
+.clock{font-family:Georgia,serif;font-size:clamp(2.4rem,6vw,4rem);line-height:.95;margin:0}
+.clock small{font-size:.95rem;color:var(--muted);font-family:-apple-system,sans-serif}
+.note{font-size:.82rem;color:var(--muted);line-height:1.55;margin:8px 0 0}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #efe6d8;vertical-align:top;line-height:1.5}
+th{font-size:.82rem;color:var(--muted);font-weight:700}
+tr.pick{cursor:pointer}
+tr.pick.on{background:#fff6ee}
+tr.bad td:first-child{color:var(--orange)}
+.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.lane{border-radius:16px;padding:12px;background:#fff;border:1px solid var(--line);min-height:150px}
+.lane.shut{background:#1d2430;color:#f4efe6;border-color:#1d2430}
+.lane.shut p{color:#d9d0c4}
+.slider{width:100%;accent-color:var(--orange)}
+.quiz .q{margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.quiz .opts{display:grid;gap:6px}
+.quiz .opts button{text-align:left;border-radius:12px;border:1px solid var(--line);background:#fff;padding:8px 10px}
+.quiz .opts button.ok{border-color:var(--green);background:#e7f4ef}
+.quiz .opts button.bad{border-color:var(--orange);background:#fde8d6}
+.why{margin:8px 0 0;font-size:.9rem;line-height:1.55}
+.take{display:grid;gap:8px}
+.take li{list-style:none;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0}
+.take{padding:0;margin:0}
+.kit{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:10px 0}
+.kit li{list-style:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:.88rem}
+.log{background:#111;color:#d7f5df;border-radius:14px;padding:12px 14px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.55;white-space:pre-wrap}
+.log .pay{color:#ffb089}
+.switch{display:inline-flex;align-items:center;gap:8px;font-weight:700}
+.cap{flex:none;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end;padding:10px 14px 8px;background:#fff;border-top:1px solid var(--line);min-height:84px}
+.cap p{margin:0;font-size:1.05rem;line-height:1.55}
+.cap .en{color:var(--muted);font-size:.9rem;margin-top:2px}
+.cap.off p{visibility:hidden}
+.dock{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:0 14px 12px;background:#fff}
+.dock .sp{flex:1}
+.srcfoot{max-width:980px;margin:18px auto 0;color:var(--muted);font-size:.8rem;line-height:1.6}
+.gate{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;padding:24px;background-color:var(--cream);background-image:repeating-linear-gradient(90deg,rgba(29,90,58,.09) 0 2px,transparent 2px 72px)}
+body.live .gate{display:none}
+.gate .box{max-width:720px;text-align:center}
+.gate h1{font-size:clamp(2.6rem,7vw,4.6rem);margin:8px 0}
+.gate .sub{font-size:1.15rem;line-height:1.6;margin:0 0 18px}
+.gate .go{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.keys{margin-top:16px;color:var(--muted);font-size:.88rem}
+.three-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.three-meta span{background:rgba(255,255,255,.12);border-radius:999px;padding:6px 10px;font-size:.85rem}
+.formbox{min-height:120px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.formbox .n{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:8px 10px;font-weight:700}
+.arrow{color:var(--orange);font-weight:800}
+.review{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.review div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px;font-size:.85rem;line-height:1.45}
+.review.shared div{background:#fff6ee}
+.endbanner{margin-top:10px;padding:10px 12px;border-radius:12px;background:#e7f4ef;color:var(--green);font-weight:700}
+@media (max-width:860px){
+  body{overflow:auto}
+  .shell{grid-template-columns:1fr;overflow:visible}
+  .toc{display:flex;gap:4px;overflow:auto;border-right:0;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:3}
+  .toc button{width:auto;white-space:nowrap}
+  .toc button span{display:none}
+  .toc button[aria-current="true"] span{display:inline}
+  .g3,.g4,.bins,.lanes,.review{grid-template-columns:1fr 1fr}
+  .g2{grid-template-columns:1fr}
+  .stage{padding:16px 12px 20px}
+}
+@media (max-width:560px){
+  .g3,.g4,.bins,.lanes,.review{grid-template-columns:1fr}
+  .top .meta{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="home" href="../index.html#lessons">← 课件馆</a>
+  <div class="brand"><b id="chTitle">Loop 与 Graph</b><small id="chSub">只批准最后一档</small></div>
+  <div class="prog" aria-hidden="true"><i id="bar"></i></div>
+  <div class="meta" id="pos">0 / 0</div>
+</header>
+<div class="shell">
+  <nav class="toc" id="toc" aria-label="章节"></nav>
+  <main class="stage" id="stage">
+    <section class="panel on" id="p-open" data-ch="open">
+      <p class="kicker">开场</p>
+      <h2>只批准最后一档</h2>
+      <p class="lede">盯每一步，和只签不可逆的那一档，中间隔着三层。</p>
+      <div class="turf field-lines">
+        <div class="grid g3">
+          <div class="card" data-beats="loop"><b>Loop · 循环</b><p>一档进攻后的即时回看与纠错。</p></div>
+          <div class="card" data-beats="graph"><b>Graph · 图</b><p>整场战术板：谁跑位、谁掩护、何时同时推进。</p></div>
+          <div class="card" data-beats="gate"><b>闸门</b><p>达阵前的挑战旗。不可逆的那一档，人举牌签字。</p></div>
+        </div>
+        <div class="three-meta" data-beats="words two">
+          <span>能说「不」的检查</span><span>互不等待的小块</span>
+        </div>
+      </div>
+      <div class="grid g3" style="margin-top:12px">
+        <article class="card" data-beats="bun a"><p class="num">约 75 万</p><b>行 Rust</b><p>Anthropic 5 月 28 日发布文：11 天，从第一次提交到合并。</p></article>
+        <article class="card" data-beats="pct"><p class="num">99.8%</p><b>传得最多的数</b><p>原有测试还能通过的比例。我们只把它当成流传口径。</p></article>
+        <article class="card" data-beats="b reg"><p class="num">535,496</p><b>行原 Zig</b><p>Bun 官方 7 月复盘：5 月 3 日到 14 日。合并后 19 个回归，都已修好。所以只说「约」。</p></article>
+      </div>
+    </section>
+
+    <section class="panel" id="p-01" data-ch="01">
+      <p class="kicker">01</p>
+      <h2>少一层，就多一次你下场</h2>
+      <p class="lede">点掉一层，看你要亲自下场做什么。再点一次，把这一层装回去。</p>
+      <div class="grid g3" id="layers"></div>
+      <p class="note" id="layerNote"></p>
+      <blockquote class="card" data-beats="quote" style="margin-top:12px">loop 让一块工作在没有你的情况下也能做对；graph 决定有哪些块、什么顺序、在哪里由人签字。</blockquote>
+      <p data-beats="most">多数人只做了第一个，跳过了第二个，所以只能坐着批准每一步。</p>
+    </section>
+
+    <section class="panel" id="p-02" data-ch="02">
+      <p class="kicker">02</p>
+      <h2>回看要能吹停</h2>
+      <p class="lede">点一张证据卡，再点它该去的等级。也可以直接拖。</p>
+      <p class="score" id="evScore"></p>
+      <div class="tray" id="evTray" aria-label="证据卡"></div>
+      <div class="bins" id="evBins"></div>
+      <p class="note" data-beats="silence empty loop">没有报错，只说明没人报告。把沉默当成功的 loop，会把同一个错重复到预算用完。</p>
+      <p data-beats="rule"><b>先写检查，再写任务。</b></p>
+    </section>
+
+    <section class="panel" id="p-03" data-ch="03">
+      <p class="kicker">03</p>
+      <h2>两轮没有新码数就收工</h2>
+      <p class="lede">seen 里要记下被否掉的发现。打开开关，看同一条死胡同怎么把预算磨完。</p>
+      <label class="switch"><input type="checkbox" id="forget"> 忘掉已拒绝项</label>
+      <div class="log" id="seenLog" aria-live="polite"></div>
+      <ul class="kit" id="kit">
+        <li data-beats="five a">说「完成」的测试</li>
+        <li data-beats="five a">轮数上限</li>
+        <li data-beats="five a">预算</li>
+        <li data-beats="five b">对以前尝试的记忆</li>
+        <li data-beats="b board">卡住时会被叫醒的人</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="p-04" data-ch="04">
+      <p class="kicker">04</p>
+      <h2>单次进攻再漂亮，也赢不了整场</h2>
+      <div class="grid g4" data-beats="green">
+        <div class="card"><b>步骤 1</b><p>绿灯</p></div>
+        <div class="card"><b>步骤 2</b><p>绿灯</p></div>
+        <div class="card"><b>步骤 3</b><p>绿灯</p></div>
+        <div class="card"><b>整趟</b><p>又慢又错</p></div>
+      </div>
+      <p data-beats="cant">这一档也许根本不该存在。五步里有三步，本可以同时推进。</p>
+      <p data-beats="between"><b>问题在步骤之间。这是 graph 的活。</b></p>
+    </section>
+
+    <section class="panel" id="p-05" data-ch="05">
+      <p class="kicker">05</p>
+      <h2>说不出传什么球，就删这条边</h2>
+      <p class="lede">点没有变量的箭头。说得出变量的，留着。</p>
+      <p class="clock" id="clock">31 <small>分钟</small></p>
+      <p class="note" id="clockNote"></p>
+      <div class="pipe" id="pipe"></div>
+      <p class="note">31 → 17 是作者举例，用来说明关键路径，不是实测成绩。没多花一个 token，少的是没必要的等待。</p>
+    </section>
+
+    <section class="panel" id="p-06" data-ch="06">
+      <p class="kicker">06</p>
+      <h2>四行写清一个位置</h2>
+      <article class="card" data-beats="name io fail swap">
+        <b>source researcher · 找来源的研究员</b>
+        <p>任务：每个论点找一个一手来源。</p>
+        <p>输入：主题和来源类型。输出：论点、链接、原句。</p>
+        <p>失败时报：找不到一手来源。</p>
+        <p>合同固定了，换模型、换提示词、换工具，下游都不会坏。</p>
+      </article>
+      <p data-beats="ask model code">要判断、决定、评估或总结吗？要，就用模型。不要，就写代码。</p>
+      <p class="score" id="taskScore"></p>
+      <div class="tray" id="taskTray"></div>
+      <div class="bins" id="taskBins"></div>
+    </section>
+
+    <section class="panel" id="p-07" data-ch="07">
+      <p class="kicker">07</p>
+      <h2>四种阵型拼完整场</h2>
+      <div class="rowbtns" id="forms" role="tablist"></div>
+      <div class="formbox" id="formBox"></div>
+      <div class="rowbtns" style="margin-top:12px">
+        <button type="button" id="ctxShared" aria-pressed="true">共享窗口</button>
+        <button type="button" id="ctxIndep" aria-pressed="false">独立隔间</button>
+      </div>
+      <div class="review" id="reviews"></div>
+      <p class="note" id="ctxNote"></p>
+    </section>
+
+    <section class="panel" id="p-08" data-ch="08">
+      <p class="kicker">08</p>
+      <h2>纠错在位置内，调度在位置间</h2>
+      <div class="grid g2">
+        <article class="card" data-beats="in"><b>Loop · 位置内</b><p>产出、检查、纠正，直到这一档变绿。</p></article>
+        <article class="card" data-beats="graph"><b>Graph · 位置间</b><p>拆分、合并、退回、谁来举牌批准。</p></article>
+        <article class="card" data-beats="gonly"><b>只有 graph</b><p>很快产出一大堆没检查过的东西。</p></article>
+        <article class="card" data-beats="lonly"><b>只有 loop</b><p>一个很棒的步骤，待在设计糟糕的流程里。</p></article>
+      </div>
+      <p data-beats="both" style="margin-top:12px"><b>两样都要：人做决定，AI 跑路线。</b></p>
+    </section>
+
+    <section class="panel" id="p-09" data-ch="09">
+      <p class="kicker">09</p>
+      <h2>谁画战术板：看频率与撤销成本</h2>
+      <div class="grid g3">
+        <article class="card" data-beats="cc ccnum"><b>Claude Code</b><p>模型为每次运行写编排脚本。文档：默认最多 16 个代理同时跑，每次运行最多 1,000 个。</p></article>
+        <article class="card" data-beats="codex"><b>Codex</b><p>配置文件里定义代理角色。模型可以单独设，沙箱跟着主会话走。</p></article>
+        <article class="card" data-beats="lg"><b>LangGraph 1.0</b><p>图只写一次，能从检查点重放。2025 年 10 月发布。</p></article>
+      </div>
+      <p class="lede" style="margin-top:12px">点一个场景。</p>
+      <div class="grid g2" id="quads"></div>
+      <p data-beats="trap loss fix">每周从零重画一次，上一次学到的规则带不过来。图固定下来，规则才会一周比一周多。</p>
+      <p class="note" data-beats="oss bun lic">三个项目都是开源的：Bun（MIT，现以 Rust 为主）、LangGraph（MIT）、Codex（Apache 2.0）。许可以各仓库页为准。</p>
+    </section>
+
+    <section class="panel" id="p-10" data-ch="10">
+      <p class="kicker">10</p>
+      <h2>只退那一档，别整队重跑</h2>
+      <p class="lede">点一行，看这一档失败时球场上该怎么处理。</p>
+      <table>
+        <thead><tr><th>出了什么事</th><th>事先定好的处理</th></tr></thead>
+        <tbody id="failRows"></tbody>
+      </table>
+    </section>
+
+    <section class="panel" id="p-11" data-ch="11">
+      <p class="kicker">11</p>
+      <h2>按撤销难度开三道闸</h2>
+      <p class="lede">置信度是模型给自己打的分。拖阈值：能被调低的只有分数线。关闭的车道没有数字可调。</p>
+      <label>置信度阈值 <b id="thVal">80</b>
+        <input class="slider" id="th" type="range" min="0" max="100" value="80">
+      </label>
+      <div class="lanes" id="lanes" style="margin-top:12px"></div>
+      <ol data-beats="order last">
+        <li>先测试</li>
+        <li>再看这次运行的历史</li>
+        <li>再看这个节点被回滚过几次</li>
+        <li>然后才是评审代理</li>
+        <li>模型自己的说法放最后</li>
+      </ol>
+      <p data-beats="flag">达阵前的挑战旗：大家停下来核对，人举了牌，才落球。</p>
+    </section>
+
+    <section class="panel" id="p-12" data-ch="12">
+      <p class="kicker">12</p>
+      <h2>你只做一个决定</h2>
+      <p data-beats="one acts">每次运行一个决定，落在错误无法撤销的那个点上：批准合并、选哪些修复上线、签下迁移。</p>
+      <ol class="take" id="takes">
+        <li data-beats="t1">一，检查要能失败：程序能判错的才算数。</li>
+        <li data-beats="t2">二，数着东西停：两轮没有新发现就停，被拒的也要记住。</li>
+        <li data-beats="t3">三，测试每条箭头：说不出传什么变量，就删掉。</li>
+        <li data-beats="t4">四，失败只退那一个单元，再把原因写成规则。</li>
+        <li data-beats="t5">五，按撤销难度开闸，不可逆的那一步由人签字。</li>
+      </ol>
+      <h2 style="margin-top:18px;font-size:1.35rem">八道小题</h2>
+      <div class="quiz" id="quiz"></div>
+      <div class="card" data-beats="src1 src2 src3">
+        <b>来源与勘误</b>
+        <p>Bun 行数有两种口径：约 75 万行 Rust 来自 Anthropic；535,496 行是原 Zig 代码。</p>
+        <p>31 到 17 分钟是作者举例，不是实测。Codex 沙箱和 LangGraph 年份按官方文档更正。</p>
+        <p>观点文章：@HoodieFade_ · Loops &amp; Graphs · X · 2026-11-04。交互参考 oioi；风格对齐 aiai playbook。</p>
+      </div>
+      <p data-beats="close"><b>人之所以只批准最后一档，是因为前面每一档都能自己说「不」。</b></p>
+    </section>
+    <p class="srcfoot">来源：@HoodieFade_ · Loops &amp; Graphs · X · 2026-11-04。核对日 2026-11-05：Bun 行数两种口径（Anthropic 约 75 万行 Rust；Bun 复盘原 Zig 535,496 行，合并后 19 个回归已修）。31→17 分钟为作者举例，不是实测。本机朗读只用浏览器自带语音，不克隆任何人声。</p>
+    <p class="endbanner" id="doneNote" hidden>这一档讲完了。可以回任何一章再看，或从头再讲。</p>
+  </main>
+  <div class="gate" id="gate">
+    <div class="box">
+      <p class="kicker">aiai 学院 · 课件馆</p>
+      <h1>LOOP 与 GRAPH</h1>
+      <p class="sub">让 AI 自己检查、并行干活，人只批准最后一档</p>
+      <div class="go">
+        <button class="primary" type="button" id="btnAuto">▶ 自动讲解</button>
+        <button type="button" id="btnSelf">我自己讲</button>
+      </div>
+      <p class="keys">空格：自动讲解时暂停 / 继续，自己讲时下一句 · ← → 步进 · P 自己讲 · S 字幕（中 / 英 / 双语 / 关）</p>
+    </div>
+  </div>
+</div>
+<div class="cap" id="cap">
+  <div>
+    <p id="capZh" aria-live="polite"></p>
+    <p class="en" id="capEn"></p>
+  </div>
+</div>
+<div class="dock">
+  <button type="button" id="btnPrev">上一句</button>
+  <button type="button" class="primary" id="btnPlay">暂停</button>
+  <button type="button" id="btnNext">下一句</button>
+  <button type="button" id="btnMode">我自己讲</button>
+  <button type="button" id="btnSub">字幕：中文</button>
+  <button type="button" id="btnTts">本机朗读：关</button>
+  <span class="sp"></span>
+  <button type="button" id="btnRestart" hidden>从头再讲</button>
+</div>
+<script src="loop-graph-playbookv1.0.js"></script>
+</body>
+</html>

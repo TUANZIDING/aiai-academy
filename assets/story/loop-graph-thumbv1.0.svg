@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <rect width="800" height="600" fill="#fbf7ef"/>
+  <rect x="36" y="36" width="728" height="528" rx="28" fill="#1d5a3a"/>
+  <g stroke="#ffffff" stroke-opacity="0.55" fill="none">
+    <path d="M70 92h660M70 508h660" stroke-width="3"/>
+    <path d="M150 92v416M280 92v416M400 92v416M520 92v416M650 92v416" stroke-width="2" stroke-opacity="0.35"/>
+  </g>
+  <rect x="78" y="150" width="200" height="150" rx="16" fill="#fbf7ef"/>
+  <rect x="300" y="150" width="200" height="150" rx="16" fill="#fff4e8"/>
+  <rect x="522" y="150" width="200" height="150" rx="16" fill="#e7f5f6"/>
+  <text x="178" y="220" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#1d2430">Harness</text>
+  <text x="178" y="258" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#5b6573">场地规则</text>
+  <text x="400" y="220" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#d9600b">Loop</text>
+  <text x="400" y="258" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#5b6573">即时回看</text>
+  <text x="622" y="220" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#2f8f9d">Graph</text>
+  <text x="622" y="258" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#5b6573">整场战术板</text>
+  <path d="M78 390h78v86h-30l-9 32-9-32H78z" fill="#fbf7ef" stroke="#d9600b" stroke-width="4"/>
+  <text x="180" y="430" font-family="Georgia,serif" font-size="28" fill="#fbf7ef">LAST DOWN</text>
+  <text x="180" y="468" font-family="Georgia,serif" font-size="18" fill="#d7e8dc">人只批准最后一档</text>
+</svg>
