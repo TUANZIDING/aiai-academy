@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" role="img">
+  <title>教学用的假想结果卡片</title>
+  <desc>教学示例，不是搜索截图，也不是论文证据。DOI 是故意无效的示例号。</desc>
+  <rect width="960" height="460" rx="28" fill="#f6f1e7"/>
+  <rect x="48" y="36" width="864" height="388" rx="20" fill="#fffaf3" stroke="#0e2744" stroke-width="3"/>
+  <rect x="48" y="36" width="864" height="64" rx="20" fill="#9a6700"/>
+  <rect x="48" y="80" width="864" height="20" fill="#9a6700"/>
+  <text x="72" y="78" fill="#fffaf3" font-size="26" font-family="WenQuanYi Micro Hei, Microsoft YaHei, sans-serif">教学示例 · 不是搜索截图 · 不是论文证据</text>
+  <g font-family="WenQuanYi Micro Hei, Microsoft YaHei, sans-serif" font-size="26" fill="#1c1915">
+    <text x="80" y="160">题名　【示例】一篇并不存在的论文</text>
+    <text x="80" y="210">作者　【示例作者】</text>
+    <text x="80" y="260">年份　【不代表真实发表年】</text>
+    <text x="80" y="310">DOI　10.0000/example.not.real</text>
+    <text x="80" y="370" fill="#0f766e" font-size="24">下一步：用题名或 DOI 回到数据库。查不到就丢掉。</text>
+  </g>
+  <text x="80" y="400" fill="#0f766e" font-size="20" font-family="WenQuanYi Micro Hei, Microsoft YaHei, sans-serif">教学整理</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 340" role="img">
+  <title>五个数据源各回答一类问题</title>
+  <desc>教学整理。一个目标对应一个主源。中文核心不在这五个源里。</desc>
+  <rect width="1100" height="340" rx="28" fill="#f6f1e7"/>
+  <g font-family="WenQuanYi Micro Hei, Microsoft YaHei, sans-serif">
+    <rect x="24" y="24" width="200" height="130" rx="16" fill="#0e2744"/>
+    <text x="40" y="78" fill="#8ee0d6" font-size="20">摸清方向</text>
+    <text x="40" y="118" fill="#f6f1e7" font-size="28" font-weight="700">OpenAlex</text>
+    <rect x="240" y="24" width="270" height="130" rx="16" fill="#0e2744"/>
+    <text x="256" y="78" fill="#8ee0d6" font-size="20">沿引用找</text>
+    <text x="256" y="118" fill="#f6f1e7" font-size="26" font-weight="700">Semantic Scholar</text>
+    <rect x="526" y="24" width="200" height="130" rx="16" fill="#9a6700"/>
+    <text x="542" y="78" fill="#fff6e4" font-size="20">补漏</text>
+    <text x="542" y="118" fill="#fffaf3" font-size="28" font-weight="700">SerpApi</text>
+    <rect x="742" y="24" width="334" height="130" rx="16" fill="#fff6e4" stroke="#9a6700" stroke-width="3"/>
+    <text x="762" y="78" fill="#9a6700" font-size="20">中文核心</text>
+    <text x="762" y="118" fill="#6d4a09" font-size="28" font-weight="700">五个都不够</text>
+    <rect x="24" y="180" width="250" height="110" rx="16" fill="#0f766e"/>
+    <text x="44" y="226" fill="#e5f4f1" font-size="20">生物医学题录</text>
+    <text x="44" y="264" fill="#ffffff" font-size="28" font-weight="700">PubMed</text>
+    <rect x="290" y="180" width="250" height="110" rx="16" fill="#0f766e"/>
+    <text x="310" y="226" fill="#e5f4f1" font-size="20">新预印本</text>
+    <text x="310" y="264" fill="#ffffff" font-size="28" font-weight="700">arXiv</text>
+    <text x="560" y="230" fill="#5c5348" font-size="22">盲区写在旁边的正文里。</text>
+    <text x="560" y="268" fill="#0f766e" font-size="22">价格可能变化。核对日 2026-11-08。</text>
+    <text x="900" y="320" fill="#0f766e" font-size="18">教学整理</text>
+  </g>
+</svg>
