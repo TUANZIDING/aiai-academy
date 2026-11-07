@@ -269,7 +269,7 @@ test("local assets exist and original screenshots are absent", () => {
   const html = readCourse("index.html");
   const refs = [...html.matchAll(/(?:src|href)="([^"]+)"/g)].map((match) => match[1]);
   for (const ref of refs) {
-    if (/^(https?:|mailto:|#)/.test(ref)) continue;
+    if (/^(https?:|mailto:|#|data:)/.test(ref)) continue;
     const file = path.resolve(course, ref.split("#")[0].split("?")[0]);
     assert.ok(existsSync(file), ref);
   }

@@ -28,8 +28,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 img { max-width: 100%; height: auto; }
-a { color: var(--teal-ink); }
+a { color: var(--teal-ink); overflow-wrap: anywhere; }
 a:hover { color: var(--navy); }
+code { overflow-wrap: anywhere; }
+.shell, main, .slide { min-width: 0; max-width: 100%; }
 :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
 .skip {
   position: absolute;
@@ -263,10 +265,10 @@ body.is-teaching .slide.is-current {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  width: min(96vw, calc((100vh - 5.6rem) * 16 / 9));
-  height: min(calc(96vw * 9 / 16), calc(100vh - 5.6rem));
-  margin: 0.6rem auto 0;
-  padding: clamp(1rem, 2.4vw, 2.4rem) clamp(1.1rem, 3vw, 3rem);
+  width: min(100vw, calc((100vh - 3.6rem) * 16 / 9));
+  height: min(calc(100vw * 9 / 16), calc(100vh - 3.6rem));
+  margin: 0 auto;
+  padding: 0.65rem 1.15rem 0.35rem;
   overflow: auto;
   color: #f6f1e7;
   background: transparent;
@@ -274,11 +276,25 @@ body.is-teaching .slide.is-current {
 body.is-teaching .slide h1,
 body.is-teaching .slide h2,
 body.is-teaching .pull { color: #f6f1e7; }
-body.is-teaching .slide h1 { font-size: clamp(2.1rem, 4.5vw, 3.6rem); max-width: 14em; }
-body.is-teaching .slide h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+body.is-teaching .slide h1 { font-size: clamp(1.85rem, 3.5vw, 3rem); max-width: 14em; margin-bottom: 0.25rem; }
+body.is-teaching .slide h2 { font-size: clamp(1.45rem, 2.5vw, 2.15rem); margin-bottom: 0.3rem; }
 body.is-teaching .slide p,
 body.is-teaching .slide li,
-body.is-teaching .slide label { font-size: clamp(1.05rem, 1.8vw, 1.45rem); line-height: 1.45; }
+body.is-teaching .slide label { font-size: clamp(0.98rem, 1.4vw, 1.2rem); line-height: 1.34; margin: 0.18rem 0; }
+body.is-teaching .lede { font-size: clamp(1.02rem, 1.5vw, 1.28rem); }
+body.is-teaching .pull { font-size: clamp(1.3rem, 2.2vw, 1.85rem); margin: 0.35rem 0; }
+body.is-teaching ul, body.is-teaching ol { margin: 0.15rem 0; }
+body.is-teaching .case-list a { padding: 0.12rem 0; grid-template-columns: 2.4rem 1fr; line-height: 1.3; }
+body.is-teaching fieldset { padding: 0.22rem 0.6rem 0.32rem; margin: 0.08rem 0; }
+body.is-teaching #s-quiz.is-current {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.8rem;
+  align-content: center;
+}
+body.is-teaching #s-quiz.is-current > .kicker,
+body.is-teaching #s-quiz.is-current > h2 { grid-column: 1 / -1; }
+body.is-teaching pre { font-size: 0.76rem; line-height: 1.32; padding: 0.45rem 0.65rem; }
 body.is-teaching .kicker,
 body.is-teaching .src,
 body.is-teaching figcaption { color: #d5ebe7; font-size: 0.95rem; }
@@ -288,9 +304,9 @@ body.is-teaching figure {
   border: 0;
   box-shadow: none;
   padding: 0;
-  margin: 0.4rem 0;
+  margin: 0.15rem 0;
 }
-body.is-teaching .slide img { max-height: 34vh; width: auto; max-width: 100%; align-self: flex-start; background: #f6f1e7; border-radius: 12px; }
+body.is-teaching .slide img { max-height: 22vh; width: auto; max-width: 100%; align-self: center; background: #f6f1e7; border-radius: 12px; }
 body.is-teaching blockquote,
 body.is-teaching fieldset,
 body.is-teaching .note,
@@ -298,8 +314,8 @@ body.is-teaching .warn-box { background: rgba(255, 255, 255, 0.06); color: #f6f1
 body.is-teaching .tag { background: rgba(142, 224, 214, 0.16); color: #b7f3ea; }
 body.is-teaching .tag.warn { background: rgba(251, 191, 36, 0.16); color: #f6d48a; }
 body.is-teaching pre {
-  font-size: clamp(0.82rem, 1.25vw, 1rem);
-  line-height: 1.45;
+  font-size: 0.76rem;
+  line-height: 1.32;
   max-height: none;
 }
 body.is-teaching #teach-bar {
@@ -364,4 +380,46 @@ body.is-teaching #blackout {
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
+}
+@media (max-width: 880px) {
+  body.is-teaching .slide.is-current {
+    width: 100vw;
+    height: calc(100vh - 3.6rem);
+  }
+  body.is-teaching .slide img { max-height: 22vh; }
+}
+@media (max-width: 700px) {
+  body.is-teaching #s-quiz.is-current { display: flex; }
+}
+@media (max-width: 700px) {
+  body.is-teaching .quiz { padding: 0.15rem 0.45rem 0.2rem; }
+  body.is-teaching .quiz label { margin: 0; }
+}
+@media (max-height: 520px) {
+  body.is-teaching .slide.is-current { height: calc(100vh - 2.5rem); }
+  body.is-teaching #teach-bar { padding: 0.2rem 0.45rem; }
+  body.is-teaching .slide h1 { font-size: 1.25rem; }
+  body.is-teaching .slide h2 { font-size: 1.05rem; margin-bottom: 0.1rem; }
+  body.is-teaching .slide p,
+  body.is-teaching .slide li,
+  body.is-teaching .slide label { font-size: 0.8rem; line-height: 1.22; }
+  body.is-teaching .kicker { display: none; }
+  body.is-teaching figcaption { font-size: 0.72rem; line-height: 1.2; }
+  body.is-teaching .slide img { max-height: 14vh; }
+  body.is-teaching pre { font-size: 0.64rem; line-height: 1.22; }
+  body.is-teaching fieldset { padding: 0.08rem 0.4rem 0.15rem; }
+  body.is-teaching fieldset label { display: inline-block; margin: 0 0.55rem 0.05rem 0; }
+  body.is-teaching .quiz label { display: block; font-size: 0.76rem; }
+  body.is-teaching .copy,
+  body.is-teaching form button { padding: 0.15rem 0.6rem; font-size: 0.8rem; }
+  body.is-teaching .quiz legend,
+  body.is-teaching .quiz summary { font-size: 0.74rem; line-height: 1.2; }
+}
+@media (max-height: 520px) and (min-width: 700px) {
+  body.is-teaching #source-form,
+  body.is-teaching #route-form { display: grid; grid-template-columns: 1.3fr 1fr; gap: 0.25rem 0.6rem; align-items: start; }
+  body.is-teaching #source-form button,
+  body.is-teaching #source-form .status,
+  body.is-teaching #route-form button,
+  body.is-teaching #route-form .status { grid-column: 1 / -1; }
 }
