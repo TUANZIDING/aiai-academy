@@ -248,7 +248,7 @@ test("html contains the readable lesson without remote dependencies", () => {
   assert.match(html, /值得复核/);
   assert.match(html, /10\.0000\/example\.not\.real/);
   const scripts = [...html.matchAll(/<script[^>]+src="([^"]+)"/g)].map((match) => match[1]);
-  assert.deepEqual(scripts, ["assets/js/rules.js", "assets/js/course.js"]);
+  assert.deepEqual(scripts, ["assets/vendor/three.r170.js", "assets/js/rules.js", "assets/js/diagrams.js", "assets/js/course.js"]);
 });
 
 test("course script does not collect keys or call the network", () => {

@@ -29,6 +29,7 @@
     if (body.classList.contains("is-teaching") && all[index]) {
       history.replaceState(null, "", `#${all[index].id}`);
     }
+    if (window.LiteratureDiagrams) window.LiteratureDiagrams.sync();
   }
 
   function setBlack(on) {
@@ -53,6 +54,7 @@
     if (document.fullscreenElement && document.exitFullscreen) {
       document.exitFullscreen().catch(() => {});
     }
+    if (window.LiteratureDiagrams) window.LiteratureDiagrams.sync();
   }
 
   async function requestFullscreen() {
@@ -89,19 +91,22 @@
 
   function trapTab(event) {
     if (event.key !== "Tab" || !body.classList.contains("is-teaching")) return;
-    const buttons = [...document.querySelectorAll("#teach-bar button")];
+    const slide = document.querySelector("main .slide.is-current");
+    const extra = slide ? [...slide.querySelectorAll(".diagram, .diagram button")] : [];
+    const buttons = [...document.querySelectorAll("#teach-bar button"), ...extra];
     if (!buttons.length) return;
     const first = buttons[0];
     const last = buttons[buttons.length - 1];
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
-    } else if (!document.getElementById("teach-bar").contains(document.activeElement)) {
+    const index = buttons.indexOf(document.activeElement);
+    if (index === -1) {
       event.preventDefault();
       (event.shiftKey ? last : first).focus();
+    } else if (event.shiftKey && index === 0) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && index === buttons.length - 1) {
+      event.preventDefault();
+      first.focus();
     }
   }
 
@@ -116,6 +121,7 @@
   document.addEventListener("keydown", (event) => {
     trapTab(event);
     if (!body.classList.contains("is-teaching")) return;
+    if (event.target && event.target.closest && event.target.closest(".diagram")) return;
     if (event.target && (event.target.closest("input, textarea"))) return;
     const watched = ["ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End", "Escape", " ", "b", "B", "f", "F"];
     if (!watched.includes(event.key)) return;

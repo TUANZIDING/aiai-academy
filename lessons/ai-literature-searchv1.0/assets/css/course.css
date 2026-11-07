@@ -381,6 +381,88 @@ body.is-teaching #blackout {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+.diagram { margin: 1.2rem 0 0.6rem; }
+.diagram-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+.diagram-stage {
+  position: relative;
+  min-height: 520px;
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    radial-gradient(90% 70% at 50% 0%, rgba(255, 250, 243, 0.2), transparent 55%),
+    linear-gradient(180deg, #f7f1e6, #e7dcc8);
+}
+.diagram-view, .diagram-fallback, .diagram-still { position: absolute; inset: 0; }
+.diagram-view canvas { width: 100%; height: 100%; display: block; }
+.diagram-fallback { display: flex; align-items: center; justify-content: center; padding: 0.6rem; }
+.diagram-fallback img { width: 100%; height: 100%; object-fit: contain; }
+.diagram.is-live .diagram-fallback, .diagram-still[hidden] { display: none; }
+.diagram-still { width: 100%; height: 100%; object-fit: contain; background: transparent; }
+.diagram-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.2rem 0.1rem;
+}
+.diagram-kicker { margin: 0; color: var(--teal-ink); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; }
+.diagram-panel h3 { margin: 0; color: var(--navy); font-size: 1.35rem; line-height: 1.3; }
+.diagram-panel p { margin: 0; font-size: 1rem; line-height: 1.55; }
+.diagram-controls { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.diagram-controls button, .diagram .ghost { padding: 0.35rem 0.7rem; font-size: 0.92rem; }
+.diagram-keys { color: var(--muted); font-size: 0.82rem; }
+.diagram.is-static .diagram-view { visibility: hidden; }
+.diagram.is-static .diagram-fallback { display: flex; }
+
+body.is-teaching .slide.is-current:has(.diagram) { justify-content: stretch; }
+body.is-teaching .diagram { flex: 1; min-height: 0; margin: 0; display: flex; flex-direction: column; }
+body.is-teaching .diagram-layout {
+  flex: 1;
+  min-height: 0;
+  grid-template-columns: minmax(0, 1.7fr) minmax(15rem, 0.78fr);
+  gap: 0.7rem;
+}
+body.is-teaching .diagram-stage {
+  min-height: 0;
+  height: 100%;
+  background:
+    radial-gradient(80% 60% at 50% 18%, #24507a, transparent 60%),
+    #102845;
+}
+body.is-teaching .diagram-panel h3,
+body.is-teaching .diagram-panel p,
+body.is-teaching .diagram-kicker { color: #f6f1e7; }
+body.is-teaching .diagram-kicker { color: #9ee6dc; }
+body.is-teaching .diagram-fallback img,
+body.is-teaching .diagram-still,
+body.is-teaching .diagram-view canvas {
+  max-height: none;
+  width: 100%;
+  height: 100%;
+  align-self: stretch;
+  object-fit: contain;
+  background: transparent;
+}
+body.is-teaching .diagram figcaption { margin: 0.25rem 0 0; }
+
+@media (max-width: 880px) {
+  .diagram-layout, body.is-teaching .diagram-layout { grid-template-columns: 1fr; }
+  .diagram-stage { min-height: 280px; }
+  body.is-teaching .diagram-stage { height: 38vh; min-height: 200px; }
+}
+@media print {
+  .diagram-layout { display: block !important; }
+  .diagram-view, .diagram-still, .diagram-controls, .diagram .ghost, .diagram-keys { display: none !important; }
+  .diagram-fallback, .diagram.is-live .diagram-fallback { display: flex !important; position: static !important; }
+  .diagram-stage { min-height: 0 !important; height: auto !important; background: #fff !important; }
+  .diagram-fallback img { max-height: 360px !important; }
+}
 @media (max-width: 880px) {
   body.is-teaching .slide.is-current {
     width: 100vw;

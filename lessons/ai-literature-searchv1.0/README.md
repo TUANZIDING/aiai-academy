@@ -1,5 +1,13 @@
 # AI 文献检索课
 
+立体图使用 Three.js r170（MIT）。构建离线单文件：
+
+```bash
+node build-standalone.mjs standalone.html
+```
+
+生成的 HTML 可以双击用 `file://` 打开，不需要网络、安装或本地服务器。复制按钮在 `file://` 下若失败，页面会选中文字。
+
 图文自学和 16:9 授课共用 `index.html`。命题是：搜不到，不等于不存在。
 
 ## 打开

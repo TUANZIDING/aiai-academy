@@ -83,12 +83,31 @@
       <section class="slide" id="s-routes">
         <p class="kicker">双路线</p>
         <h2>两条路都要在终点核验</h2>
-        <figure>
-          <img src="assets/images/fig-routes.svg" alt="教学图：路线甲是已经接入论文库的 Agent，路线乙是自己把 API 接到 Agent。两条箭头汇合到同一句：都要核验，搜不到不等于不存在。">
-          <figcaption>教学整理。路线没有高下，只有你愿不愿意自己管密钥。作者演示过的工具名写在下一页，本课没有复现那些界面。</figcaption>
+        <figure class="diagram" data-diagram="routes" tabindex="0">
+          <div class="diagram-layout">
+            <div class="diagram-stage">
+              <div class="diagram-view" data-diagram-view></div>
+              <div class="diagram-fallback">
+                <img src="assets/images/fig-routes.svg" alt="教学图：路线甲是已经接入论文库的 Agent，路线乙是自己把 API 接到 Agent。两条箭头汇合到同一句：都要核验，搜不到不等于不存在。">
+              </div>
+            </div>
+            <div class="diagram-panel">
+              <p class="diagram-kicker">教学整理 · 立体分支</p>
+              <h3 data-diagram-title>汇合之后才谈空白</h3>
+              <p data-diagram-copy>两条分支在这里相遇。搜不到，不等于不存在。下一步都是回到数据库核对，并用你已知的哨兵文献查漏。</p>
+              <div class="diagram-controls" role="group" aria-label="选择一条路线">
+                <button type="button" data-select="a">路线甲</button>
+                <button type="button" data-select="b">路线乙</button>
+                <button type="button" data-select="join" aria-pressed="true">汇合核验</button>
+              </div>
+              <button type="button" class="ghost" data-static>看静态图</button>
+              <p class="diagram-keys">图获得焦点时，左右方向键切换。授课翻页请把焦点放回底部工具条。</p>
+            </div>
+          </div>
+          <figcaption>教学整理。路线没有高下，只有你愿不愿意自己管密钥。作者演示过的工具名写在下一页，本课没有复现那些界面。立体图用 Three.js r170 绘制，失败时仍显示这张静态图。</figcaption>
         </figure>
-        <p><span class="tag">原文观点</span>作者按自己的使用难度排列：已接入论文库的 YILA，第一次接 API 用 Grok Bot，习惯本地 Agent 再用 Codex 或 WorkBuddy。YILA 当时接入了 Google Scholar、Semantic Scholar、arXiv 和 Google 专利。这是作者当时的说法。</p>
-        <p><span class="tag warn">待核验</span>当前产品是否仍然接入这些库、按钮长什么样、几分钟能不能做出网页，本课都没有复测。界面会变。</p>
+        <p class="teach-quiet"><span class="tag">原文观点</span>作者按自己的使用难度排列：已接入论文库的 YILA，第一次接 API 用 Grok Bot，习惯本地 Agent 再用 Codex 或 WorkBuddy。YILA 当时接入了 Google Scholar、Semantic Scholar、arXiv 和 Google 专利。这是作者当时的说法。</p>
+        <p class="teach-quiet"><span class="tag warn">待核验</span>当前产品是否仍然接入这些库、按钮长什么样、几分钟能不能做出网页，本课都没有复测。界面会变。</p>
       </section>
 
       <section class="slide" id="s-route-pick">
@@ -179,11 +198,32 @@
       <section class="slide" id="s-matrix">
         <p class="kicker">五个数据源</p>
         <h2>一个问题，一个主源</h2>
-        <figure>
-          <img src="assets/images/fig-matrix.svg" alt="教学矩阵：摸清方向用 OpenAlex，沿引用用 Semantic Scholar，补漏用 SerpApi，生物医学用 PubMed，预印本用 arXiv。中文核心五个都不够。">
-          <figcaption>教学整理。格子里是主源，不是「五个一起搜就完整」。盲区和价格写在后面两页，核对日 2026-11-08，可能变化。</figcaption>
+        <figure class="diagram" data-diagram="sources" tabindex="0">
+          <div class="diagram-layout">
+            <div class="diagram-stage">
+              <div class="diagram-view" data-diagram-view></div>
+              <div class="diagram-fallback">
+                <img src="assets/images/fig-matrix.svg" alt="教学矩阵：摸清方向用 OpenAlex，沿引用用 Semantic Scholar，补漏用 SerpApi，生物医学用 PubMed，预印本用 arXiv。中文核心五个都不够。">
+              </div>
+            </div>
+            <div class="diagram-panel">
+              <p class="diagram-kicker">教学整理 · 分工，不是互引</p>
+              <h3 data-diagram-title>OpenAlex · 摸清方向</h3>
+              <p data-diagram-copy>分工是摸清一个方向、做筛选。节点一样大，因为这张图不表示收录数量，也不是论文互相引用。它覆盖不了中文核心。</p>
+              <div class="diagram-controls" role="group" aria-label="选择一个数据源">
+                <button type="button" data-select="openalex" aria-pressed="true">OpenAlex</button>
+                <button type="button" data-select="s2">Semantic Scholar</button>
+                <button type="button" data-select="serpapi">SerpApi</button>
+                <button type="button" data-select="pubmed">PubMed</button>
+                <button type="button" data-select="arxiv">arXiv</button>
+                <button type="button" data-select="zh">中文核心</button>
+              </div>
+              <button type="button" class="ghost" data-static>看静态图</button>
+            </div>
+          </div>
+          <figcaption>教学整理。连线表示功能分工，不是引用网络，节点大小也不表示收录量。盲区和价格写在后面两页，核对日 2026-11-08，可能变化。立体图不可用时显示静态矩阵。</figcaption>
         </figure>
-        <ul>
+        <ul class="teach-quiet">
           <li><b>OpenAlex</b>：摸清方向、做筛选。盲区是中文核心，语义搜索更贵更慢。</li>
           <li><b>Semantic Scholar</b>：已有核心论文，沿引用链找。无密钥是共享池，不是你个人的 1000 次每秒。</li>
           <li><b>SerpApi</b>：补 Google Scholar 那一类结果。它是第三方。snippet 不是摘要。</li>
@@ -252,11 +292,30 @@
       <section class="slide" id="s-layers">
         <p class="kicker">信息不是全文</p>
         <h2>题录、摘要、全文分开拿</h2>
-        <figure>
-          <img src="assets/images/fig-layers.svg" alt="三层示意图：题录、摘要、全文。旁边的 snippet 被标成不是摘要。">
-          <figcaption>教学整理。SerpApi 的 <code>num</code> 是 1 到 20，默认 10。示例里的 snippet 是结果页片段。Google Scholar 帮助页写明：多数摘要免费，阅读全文可能需要订阅。</figcaption>
+        <figure class="diagram" data-diagram="layers" tabindex="0">
+          <div class="diagram-layout">
+            <div class="diagram-stage">
+              <div class="diagram-view" data-diagram-view></div>
+              <div class="diagram-fallback">
+                <img src="assets/images/fig-layers.svg" alt="三层示意图：题录、摘要、全文。旁边的 snippet 被标成不是摘要。">
+              </div>
+            </div>
+            <div class="diagram-panel">
+              <p class="diagram-kicker">教学整理 · 三层厚度</p>
+              <h3 data-diagram-title>1 · 题录</h3>
+              <p data-diagram-copy>题名、作者、年份、出处、DOI。有一条题录，只说明工具返回了这条记录，不等于你读过论文。</p>
+              <div class="diagram-controls" role="group" aria-label="选择一层信息">
+                <button type="button" data-select="record" aria-pressed="true">题录</button>
+                <button type="button" data-select="abstract">摘要</button>
+                <button type="button" data-select="full">全文</button>
+                <button type="button" data-select="snippet">snippet</button>
+              </div>
+              <button type="button" class="ghost" data-static>看静态图</button>
+            </div>
+          </div>
+          <figcaption>教学整理。SerpApi 的 <code>num</code> 是 1 到 20，默认 10。示例里的 snippet 是结果页片段。Google Scholar 帮助页写明：多数摘要免费，阅读全文可能需要订阅。snippet 在立体图里不与摘要相连。</figcaption>
         </figure>
-        <p><span class="tag">官方核对</span>第三方 API 不授予付费全文的访问权或转载权。arXiv 上能打开 PDF，也不等于可以把文件再镜像出去。</p>
+        <p class="teach-quiet"><span class="tag">官方核对</span>第三方 API 不授予付费全文的访问权或转载权。arXiv 上能打开 PDF，也不等于可以把文件再镜像出去。</p>
         <p class="src"><a href="https://scholar.google.com/intl/en/scholar/help.html" target="_blank" rel="noopener noreferrer">Google Scholar 帮助</a> · <a href="https://serpapi.com/google-scholar-api" target="_blank" rel="noopener noreferrer">snippet 字段</a></p>
       </section>
 
@@ -277,11 +336,32 @@
       <section class="slide" id="s-verify">
         <p class="kicker">检索之后</p>
         <h2>用哨兵文献检查漏检</h2>
-        <figure>
-          <img src="assets/images/fig-verify.svg" alt="六步核验：查存在、对年份、用哨兵文献查漏、去重、记录检索式和日期、检查时间窗。第三步用琥珀色标出。">
-          <figcaption>教学整理。哨兵文献是你开学前就知道的那几篇。它们没出现，说明这条检索不完整，不是这个方向没有文献。</figcaption>
+        <figure class="diagram" data-diagram="verify" tabindex="0">
+          <div class="diagram-layout">
+            <div class="diagram-stage">
+              <div class="diagram-view" data-diagram-view></div>
+              <div class="diagram-fallback">
+                <img src="assets/images/fig-verify.svg" alt="六步核验：查存在、对年份、用哨兵文献查漏、去重、记录检索式和日期、检查时间窗。第三步用琥珀色标出。">
+              </div>
+            </div>
+            <div class="diagram-panel">
+              <p class="diagram-kicker">教学整理 · 六级台阶</p>
+              <h3 data-diagram-title>3 · 哨兵文献</h3>
+              <p data-diagram-copy>把你本来就知道的重要论文当作哨兵。它们没出现，说明这条检索不完整，不是这个方向没有文献。这一级被抬高，因为最容易被忽略。</p>
+              <div class="diagram-controls" role="group" aria-label="选择核验步骤">
+                <button type="button" data-select="s1">1</button>
+                <button type="button" data-select="s2">2</button>
+                <button type="button" data-select="s3" aria-pressed="true">3 哨兵</button>
+                <button type="button" data-select="s4">4</button>
+                <button type="button" data-select="s5">5</button>
+                <button type="button" data-select="s6">6</button>
+              </div>
+              <button type="button" class="ghost" data-static>看静态图</button>
+            </div>
+          </div>
+          <figcaption>教学整理。哨兵文献是你开学前就知道的那几篇。它们没出现，说明这条检索不完整，不是这个方向没有文献。立体图把这一级做得更高。</figcaption>
         </figure>
-        <ol>
+        <ol class="teach-quiet">
           <li>抽几条，用 DOI 或题名回到数据库。</li>
           <li>期刊和年份另核。分区要写版本和学科。</li>
           <li>哨兵文献缺失，就扩大来源或改检索式。</li>
@@ -413,7 +493,7 @@ API 文档：https://developers.openalex.org
     </main>
   </div>
   <footer class="footer">
-    <p>静态页面。不收集密钥，不做在线检索，不设置账号。授课时方向键翻页，B 黑屏，F 尝试全屏，Esc 先退出黑屏、再退出授课。全屏失败时仍用普通窗口。</p>
+    <p>静态页面。不收集密钥，不做在线检索，不设置账号。授课时方向键翻页，B 黑屏，F 尝试全屏，Esc 先退出黑屏、再退出授课。全屏失败时仍用普通窗口。立体图使用 Three.js r170（MIT，Copyright 2010–2024 three.js authors）。用 file:// 打开时，复制可能失败，页面会选中文字供手动复制。</p>
   </footer>
   <div id="teach-bar">
     <button type="button" id="teach-prev">上一页</button>
@@ -427,7 +507,9 @@ API 文档：https://developers.openalex.org
   <div id="blackout" hidden>
     <p>黑屏，按 B 或点按恢复，按 Esc 回到授课画面。</p>
   </div>
+  <script src="assets/vendor/three.r170.js"></script>
   <script src="assets/js/rules.js"></script>
+  <script src="assets/js/diagrams.js"></script>
   <script src="assets/js/course.js"></script>
 </body>
 </html>

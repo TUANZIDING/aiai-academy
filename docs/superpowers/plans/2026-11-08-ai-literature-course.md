@@ -203,3 +203,17 @@ ZIP 根目录就是课程文件：`index.html`、`README.md`、`assets/**`。不
 对照规格第 5–8 节：误区、双路线、五案例、五源、三层、安全、核验、模板、四题、授课按键、无脚本、打印、目录、ZIP 和测试都有对应任务。计划里没有 TBD。`recommendRoute` 的 `want` 值、`recommendSources` 的枚举、`teachKey` 的 action 名、复制文案在 Task 1 与 Task 2 中一致。HTML 不另写一套讲稿，授课视图复用 `.slide`。
 
 未把在线检索、账号、语音放进任何任务。原图不进入 Task 3 的文件清单。
+
+## 增补：Three.js 教学图与单文件（已批准，不再询问）
+
+在 `cursor/ai-literature-course-a27e` 上继续。不合并、不部署、不改 PR2。
+
+- [ ] 规格第 10 节已写入。立体图只表达路线分支、数据源分工、三层信息和核验台阶。
+- [ ] `assets/vendor/three.r170.js` 是 Three.js r170 的真实打包，文件头保留 MIT 与版本。
+- [ ] `assets/js/diagrams.js` 创建唯一 `WebGLRenderer`，像素比不超过 1.5，离屏与非当前授课页停止循环，上下文丢失时回到 SVG。
+- [ ] 四张图的 HTML 保留原 SVG 作为降级，并加上说明与按钮。授课舞台用网格把画面铺开。
+- [ ] `build-standalone.mjs` 生成内嵌全部资源的单文件。测试检查其中没有外链脚本、样式、图片，且含 `WebGLRenderer` 与课文。
+- [ ] 用浏览器打开 `file://` 且上下文离线：确认有像素输出、降级图、按钮交互、桌面/手机/授课不裁切、打印可见静态图、控制台无未处理错误、没有 http 请求。
+- [ ] 原有 `node --test` 与新增测试都通过。单文件和次要 ZIP 放到 `/opt/cursor/artifacts/`。
+
+自审：正文、模板、测验和来源句子不删。五源图不编码收录数量。单文件与多文件课用同一套 DOM 标记。授课方向键在图内优先切换图解，焦点离开图后仍翻页。
