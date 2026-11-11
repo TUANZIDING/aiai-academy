@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050b18">
+<meta name="robots" content="noindex,nofollow">
+<title>选题，不再靠拍脑袋 · Kosmos-lite 科研工作流 · aiai 人工智能学院</title>
+<meta name="description" content="aiai 人工智能学院互动讲解：写给科主任的 30 分钟。让每个课题在湿实验之前，先做一次“术前评估”。AI 跑腿，人只签关键几步，每一步留痕、可核查。">
+<link rel="preload" href="../assets/aiai-wordmarkv1.0.webp" as="image">
+<link rel="preload" href="media/kosmos-pitch/v3/kc3-coverv3.0.webp" as="image">
+<link rel="prefetch" href="media/kosmos-pitch/v3/kc3-meetingv3.0.webp">
+<link rel="prefetch" href="media/kosmos-pitch/v3/kc3-networkv3.0.webp">
+<link rel="prefetch" href="media/kosmos-pitch/v3/kc3-orv3.0.webp">
+<link rel="prefetch" href="media/kosmos-pitch/v3/kc3-topiccardv3.0.webp">
+<link rel="prefetch" href="media/kosmos-pitch/v3/kc3-benchv3.0.webp">
+<link rel="prefetch" href="media/kosmos-pitch/v3/kc3-reviewv3.0.webp">
+<link rel="prefetch" href="media/kosmos-pitch/v3/kc3-archivev3.0.webp">
+<link rel="prefetch" href="media/kosmos-pitch/v3/kc3-closev3.0.webp">
+<link rel="stylesheet" href="../assets/loopgraph-enginev1.0.css?v=3.0">
+<link rel="stylesheet" href="../assets/kosmos-pitch-viewsv3.0.css?v=3.0">
+</head>
+<body>
+<div id="stage">
+  <canvas id="amb"></canvas>
+  <div id="atmos"></div>
+  <div id="views"></div>
+
+  <header id="top">
+    <a href="../index.html" title="aiai 人工智能学院"><img class="wm" src="../assets/aiai-wordmarkv1.0.webp" alt="aiai"></a>
+    <div class="brand">人工智能学院 · <b>给科主任</b></div>
+    <div class="sep"></div>
+    <div class="chap"><i>00</i>选题，不再靠拍脑袋</div>
+    <div class="sp"></div>
+    <button class="tb" id="bToc">目录<kbd>T</kbd></button>
+    <button class="tb" id="bSubs">字幕 双语<kbd>S</kbd></button>
+    <button class="tb" id="bMode">自动讲解<kbd>P</kbd></button>
+    <button class="tb" id="bFs" title="全屏 F">⛶</button>
+  </header>
+
+  <div id="subs" data-m="both"><div class="pill"><div class="zh"></div><div class="en"></div></div></div>
+  <div id="dots"></div>
+  <div id="ruler">
+    <div class="field"><div class="base"></div><div class="fill"></div><div class="ball"></div></div>
+    <div class="nav"><button id="bPrev" title="上一句 ←">‹</button><button id="bPause" title="暂停 / 继续 空格">Ⅱ</button><button id="bNext" title="下一句 →">›</button></div>
+  </div>
+  <div id="credit">aiai 人工智能学院 · 丁医生的医学笔记</div>
+  <div id="card" role="button" aria-label="继续"><div class="no">00</div><div class="k"></div><div class="t"></div><div class="rule"></div><div class="go">点击 或 按 <kbd>→</kbd> / <kbd>空格</kbd> 继续 <small>CLICK TO CONTINUE</small></div></div>
+  <div id="pz"></div>
+  <nav id="toc" class="gone" aria-label="章节"></nav>
+
+  <div id="endc" class="gone">
+    <h3>讲完了 · 您只做一个决定</h3>
+    <p class="who">选一个课题来试点</p>
+    <p>半天工作坊 · 4–6 周试点 · 院内部署与带教　|　代码开源（MIT）免费，我们提供落地服务</p>
+    <div style="display:flex;gap:18px"><button class="bigb" id="again">从头再看</button></div>
+    <p style="font-size:18px;color:var(--dim2)">aiai 人工智能学院 · 丁医生的医学笔记 · 演示章节为示意，数据虚构</p>
+  </div>
+
+  <div id="start" class="ov">
+    <div class="in">
+      <img class="wm" src="../assets/aiai-wordmarkv1.0.webp" alt="aiai 人工智能学院">
+      <h1>选题，<br><em>不再靠拍脑袋</em></h1>
+      <div class="en">TOPIC SELECTION, NO LONGER BY GUT FEELING · FOR DEPARTMENT CHIEFS</div>
+      <div class="lead">让每个课题在湿实验之前，先做一次“术前评估”。AI 跑腿，人只签关键几步，每一步留痕、可核查。</div>
+      <div class="btns"><button class="bigb pri" id="goAuto">▶ 自动讲解</button><button class="bigb" id="goSelf">我自己讲</button></div>
+      <div class="meta"><span id="from"></span><br>约 30 分钟 · 中文配音（合成）· 双语字幕 · 章节卡点击继续<br><span class="keys">← → 翻句 · 空格 暂停 · P 自己讲 · S 字幕 · T 目录 · F 全屏</span><br>
+        aiai 人工智能学院 · 丁医生的医学笔记</div>
+    </div>
+  </div>
+  <div id="vign"></div>
+  <div id="grain"></div>
+</div>
+<div id="msubs"><div class="mc"></div><div class="mz">点 ▶ 开始自动讲解，或点 › 自己翻页</div><div class="me">Tap ▶ for narration, or › to step through yourself.</div><div class="mn"><button id="mPrev" aria-label="上一句">‹</button><button id="mPause" aria-label="播放/暂停">▶</button><button id="mNext" aria-label="下一句">›</button></div></div>
+<div id="rot"><div class="ph"></div><div>横过来看更好：这是一块 16:9 的讲台</div><button id="rotOk">继续竖屏观看</button></div>
+<script src="kosmos-pitch-datav3.0.js?v=3.0"></script>
+<script src="../assets/kosmos-pitch-viewsv3.0.js?v=3.0"></script>
+<script src="../assets/loopgraph-enginev1.3.js?v=1.3"></script>
+</body>
+</html>
