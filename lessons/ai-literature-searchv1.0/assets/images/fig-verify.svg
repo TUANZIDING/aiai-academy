@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+  <title>检索之后的六步核验</title>
+  <desc>教学整理。第三步用你已知的哨兵文献检查漏检。</desc>
+  <rect width="960" height="430" rx="28" fill="#f6f1e7"/>
+  <g font-family="WenQuanYi Micro Hei, Microsoft YaHei, sans-serif">
+    <rect x="30" y="36" width="290" height="88" rx="14" fill="#fffaf3" stroke="#e3d7c6"/>
+    <text x="48" y="88" fill="#0e2744" font-size="24">1 回到数据库查存在</text>
+    <rect x="336" y="36" width="290" height="88" rx="14" fill="#fffaf3" stroke="#e3d7c6"/>
+    <text x="354" y="88" fill="#0e2744" font-size="24">2 核对期刊和年份</text>
+    <rect x="642" y="36" width="288" height="88" rx="14" fill="#fff6e4" stroke="#9a6700" stroke-width="3"/>
+    <text x="660" y="74" fill="#9a6700" font-size="24">3 哨兵文献</text>
+    <text x="660" y="104" fill="#9a6700" font-size="20">没出现就是漏检</text>
+    <rect x="30" y="146" width="290" height="88" rx="14" fill="#fffaf3" stroke="#e3d7c6"/>
+    <text x="48" y="198" fill="#0e2744" font-size="24">4 预印本和出版版去重</text>
+    <rect x="336" y="146" width="290" height="88" rx="14" fill="#fffaf3" stroke="#e3d7c6"/>
+    <text x="354" y="198" fill="#0e2744" font-size="24">5 记下检索式和日期</text>
+    <rect x="642" y="146" width="288" height="88" rx="14" fill="#fffaf3" stroke="#e3d7c6"/>
+    <text x="660" y="184" fill="#0e2744" font-size="24">6 检查时间窗</text>
+    <text x="660" y="214" fill="#0e2744" font-size="20">是否切掉奠基文献</text>
+    <text x="30" y="300" fill="#0e2744" font-size="32" font-weight="700">先证明找全了没有，再谈空白</text>
+    <text x="30" y="360" fill="#0f766e" font-size="22">教学整理 · 哨兵文献是你本来就知道的那几篇</text>
+    <text x="30" y="400" fill="#5c5348" font-size="20">分区必须另查版本和学科，截图上的 Q1 不是固定属性。</text>
+  </g>
+</svg>

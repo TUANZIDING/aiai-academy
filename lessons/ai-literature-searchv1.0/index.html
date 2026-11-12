@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>搜不到，不等于不存在 · AI 文献检索课</title>
+  <meta name="description" content="图文自学与 16:9 授课共用一份内容。核心误区、双路线、五个作者演示案例、五个数据源、题录摘要全文、密钥与核验。">
+  <link rel="stylesheet" href="assets/css/course.css">
+</head>
+<body>
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="mast">
+    <a href="../../index.html#lessons">← 课件馆</a>
+    <div class="mast-actions">
+      <span>兔老师 @DrRabbitAI · 核对日 2026-11-08 北京时间</span>
+      <button type="button" id="enter-teach">进入授课</button>
+    </div>
+  </header>
+  <div class="shell">
+    <details class="toc">
+      <summary>章节目录</summary>
+      <nav class="toc-links" aria-label="章节">
+        <a href="#s-open">开场</a>
+        <a href="#s-goals">学习目标</a>
+        <a href="#s-myth">核心误区</a>
+        <a href="#s-routes">双路线</a>
+        <a href="#s-route-pick">怎么选路线</a>
+        <a href="#s-cases-map">五个案例</a>
+        <a href="#s-case-proposal">立项依据</a>
+        <a href="#s-case-empirical">中英文实证</a>
+        <a href="#s-case-clinical">临床</a>
+        <a href="#s-case-classic">经典文献</a>
+        <a href="#s-case-patent">专利</a>
+        <a href="#s-matrix">五个数据源</a>
+        <a href="#s-picker">本地选型</a>
+        <a href="#s-prices">费用与限速</a>
+        <a href="#s-price-others">其余四源</a>
+        <a href="#s-layers">题录摘要全文</a>
+        <a href="#s-security">密钥安全</a>
+        <a href="#s-verify">检索后核验</a>
+        <a href="#s-templates">教学模板</a>
+        <a href="#s-author-prompts">作者原提示词</a>
+        <a href="#s-quiz">四题自测</a>
+        <a href="#s-sources">来源与版权</a>
+      </nav>
+    </details>
+    <main id="content">
+      <section class="slide" id="s-open">
+        <p class="kicker">文献检索课 · 一套内容，两种看法</p>
+        <h1>搜不到，不等于不存在</h1>
+        <p class="lede">工具没覆盖到的论文，仍然放在数据库里。这节课教你分辨覆盖、选路线、读懂结果，并在公开场合不泄露密钥。</p>
+        <figure>
+          <img src="assets/images/fig-hero.svg" alt="教学图：一次检索只返回 12 条，旁边仍有中文核心、时间窗外的奠基论文和付费全文。底部写着搜不到不等于不存在。">
+          <figcaption>教学整理。左栏是这次工具交出的条数，右栏是它根本没碰到的文献。条数少，是覆盖的信号，不是学科的结论。图不是检索截图。</figcaption>
+        </figure>
+        <p class="teach-quiet">阅读页用暖白底。点「进入授课」后，同一批章节变成深蓝 16:9 大字，不另写一份讲稿。手机上先读，教室里再投屏。</p>
+        <p class="src teach-quiet">来源作者兔老师，X <a href="https://x.com/DrRabbitAI" target="_blank" rel="noopener noreferrer">@DrRabbitAI</a>。原帖 <a href="https://x.com/DrRabbitAI/status/2117952642593017862" target="_blank" rel="noopener noreferrer">2026-11-04 20:10 北京时间</a>。本页是教学整理，不是原文全文。</p>
+      </section>
+
+      <section class="slide" id="s-goals">
+        <p class="kicker">学完能做的五件事</p>
+        <h2>先会判断，再谈工具</h2>
+        <ol>
+          <li>看见「只有十几篇」时，先怀疑工具，不先宣布研究空白。</li>
+          <li>在两条路线里选一条：用现成的论文库 Agent，或自己接 API。</li>
+          <li>把五个作者演示当成提问样本，而不是已核对的文献目录。</li>
+          <li>按目标选一个主数据源，并说出它的盲区。</li>
+          <li>核验存在性和漏检；密钥不进网页、仓库和聊天。</li>
+        </ol>
+        <p>文中三种标签不要混读：<span class="tag">原文观点</span><span class="tag">官方核对</span><span class="tag">教学补充</span>。收费和收录旁边都写着核对日 2026-11-08，数字以后会变。</p>
+      </section>
+
+      <section class="slide" id="s-myth">
+        <p class="kicker">核心误区</p>
+        <h2>结果少，最危险的是错觉</h2>
+        <p class="pull">这个方向的论文就这么几篇。</p>
+        <p><span class="tag">原文观点</span>很多开源检索技能只连接少数免费来源，例如预印本平台，或用不带密钥的接口，搜几次就被限流。你看到十几篇，容易以为题目没人做。</p>
+        <p><span class="tag">教学补充</span>开题时被问「这篇你怎么没看」，缺的常常是你本来就知道、却没被这次检索打中的哨兵文献。换源、改检索式、做漏检检查，比再写一段更华丽的提示词有用。</p>
+        <div class="warn-box">少结果不能证明空白。它只证明：这个工具、这条检索式、这一次，覆盖到的很少。</div>
+      </section>
+
+      <section class="slide" id="s-routes">
+        <p class="kicker">双路线</p>
+        <h2>两条路都要在终点核验</h2>
+        <figure class="diagram" data-diagram="routes" tabindex="0">
+          <div class="diagram-layout">
+            <div class="diagram-stage">
+              <div class="diagram-view" data-diagram-view></div>
+              <div class="diagram-fallback">
+                <img src="assets/images/fig-routes.svg" alt="教学图：路线甲是已经接入论文库的 Agent，路线乙是自己把 API 接到 Agent。两条箭头汇合到同一句：都要核验，搜不到不等于不存在。">
+              </div>
+            </div>
+            <div class="diagram-panel">
+              <p class="diagram-kicker">教学整理 · 立体分支</p>
+              <h3 data-diagram-title>汇合之后才谈空白</h3>
+              <p data-diagram-copy>两条分支在这里相遇。搜不到，不等于不存在。下一步都是回到数据库核对，并用你已知的哨兵文献查漏。</p>
+              <div class="diagram-controls" role="group" aria-label="选择一条路线">
+                <button type="button" data-select="a">路线甲</button>
+                <button type="button" data-select="b">路线乙</button>
+                <button type="button" data-select="join" aria-pressed="true">汇合核验</button>
+              </div>
+              <button type="button" class="ghost" data-static>看静态图</button>
+              <p class="diagram-keys">图获得焦点时，左右方向键切换。授课翻页请把焦点放回底部工具条。</p>
+            </div>
+          </div>
+          <figcaption>教学整理。路线没有高下，只有你愿不愿意自己管密钥。作者演示过的工具名写在下一页，本课没有复现那些界面。立体图用 Three.js r170 绘制，失败时仍显示这张静态图。</figcaption>
+        </figure>
+        <p class="teach-quiet"><span class="tag">原文观点</span>作者按自己的使用难度排列：已接入论文库的 YILA，第一次接 API 用 Grok Bot，习惯本地 Agent 再用 Codex 或 WorkBuddy。YILA 当时接入了 Google Scholar、Semantic Scholar、arXiv 和 Google 专利。这是作者当时的说法。</p>
+        <p class="teach-quiet"><span class="tag warn">待核验</span>当前产品是否仍然接入这些库、按钮长什么样、几分钟能不能做出网页，本课都没有复测。界面会变。</p>
+      </section>
+
+      <section class="slide" id="s-route-pick">
+        <p class="kicker">本地规则 · 不是模型推荐</p>
+        <h2>先回答你愿不愿意管密钥</h2>
+        <form id="route-form">
+          <fieldset>
+            <legend>你打算怎么用</legend>
+            <label><input type="radio" name="want" value="no"> 不想自己管密钥，打开就能搜</label>
+            <label><input type="radio" name="want" value="first-api"> 第一次自己接 API</label>
+            <label><input type="radio" name="want" value="local"> 习惯在本地 Agent 里写脚本</label>
+          </fieldset>
+          <button type="submit">按规则显示路线</button>
+          <p id="route-result" class="status" role="status"></p>
+        </form>
+        <div class="table-wrap">
+          <table>
+            <caption>规则表与脚本使用同一套编号。没有脚本时，对着表自己选。</caption>
+            <thead><tr><th>规则</th><th>你的情况</th><th>路线</th><th>作者演示里的工具</th></tr></thead>
+            <tbody>
+              <tr><td>T-agent</td><td>不想配置</td><td>已接入论文库的 Agent</td><td>YILA</td></tr>
+              <tr><td>T-grok</td><td>第一次接 API</td><td>自己接 API</td><td>Grok Bot</td></tr>
+              <tr><td>T-local</td><td>本地 Agent</td><td>自己接 API</td><td>Codex 或 WorkBuddy</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="slide" id="s-cases-map">
+        <p class="kicker">五个案例 · 作者演示 · 未独立复现</p>
+        <h2>看提问，不把结果当结论</h2>
+        <figure>
+          <img src="assets/images/fig-case-card.svg" alt="教学示例卡片，不是搜索截图。题名是一篇并不存在的论文，DOI 为 10.0000/example.not.real。">
+          <figcaption>教学整理。卡片上的 DOI <code>10.0000/example.not.real</code> 是故意无效的示例。真实论文名只出现在「作者当时写过、本课没打开」的名单里，不放进伪造的结果页。</figcaption>
+        </figure>
+        <ul class="case-list">
+          <li><a href="#s-case-proposal"><b>01</b><span>立项依据：边界提醒比硬凑文献有用</span></a></li>
+          <li><a href="#s-case-empirical"><b>02</b><span>中英文实证：分区不是论文的固定属性</span></a></li>
+          <li><a href="#s-case-clinical"><b>03</b><span>临床：时间窗会切掉奠基试验</span></a></li>
+          <li><a href="#s-case-classic"><b>04</b><span>经典：先给阅读路径</span></a></li>
+          <li><a href="#s-case-patent"><b>05</b><span>专利：不是法律意见</span></a></li>
+        </ul>
+      </section>
+
+      <section class="slide" id="s-case-proposal">
+        <p class="kicker">案例 01 · 作者演示 · 未独立复现</p>
+        <h2>立项依据：先听边界</h2>
+        <p><span class="tag">教学补充</span>这个案例要练的判断是：去重后的候选池，加上「哪些文献不能直接拿来支撑中国议题」，比塞满相关标题更有用。</p>
+        <blockquote>我在申报一个省社科课题，题目是「人工智能赋能高校思政课实践教学的机制研究」。请按现状、影响机制、实践路径检索文献，用来写立项依据。</blockquote>
+        <p><span class="tag">原文观点</span>作者称工具查了万方、OpenAlex 和 Google Scholar，去重后留下 57 篇，并提醒英文文献里直接研究中国思政课的很少，适合当作国际参照。57 这个数字不是本课的调查结果。</p>
+        <p>你该核对：抽几条回数据库查存在；英文文献是否真的只适合做参照；Excel 候选池有没有把预印本和出版版算成两篇。</p>
+      </section>
+
+      <section class="slide" id="s-case-empirical">
+        <p class="kicker">案例 02 · 作者演示 · 未独立复现</p>
+        <h2>实证表上的分区会过期</h2>
+        <p><span class="tag">教学补充</span>要练的判断是：截图里的 JCR 分区必须另注版本和学科，不能写成那篇论文的固定属性。</p>
+        <blockquote>检索关于「短视频使用与大学生睡眠质量」的中英文实证研究，中英文分开列，优先高质量期刊。</blockquote>
+        <p><span class="tag">原文观点</span>作者称结果分成中英文两表，并提醒现有研究多讲成瘾或问题性使用，而不是普通使用时长。作者还写过 Frontiers in Psychology 为 Q1、Acta Psychologica 为 Q2。</p>
+        <div class="warn-box">样本量、期刊分区和论文是否真实存在，本课都没有复核。分区一换版本或学科就会变。</div>
+      </section>
+
+      <section class="slide" id="s-case-clinical">
+        <p class="kicker">案例 03 · 作者演示 · 未独立复现</p>
+        <h2>时间窗会把奠基试验留在外面</h2>
+        <p><span class="tag">教学补充</span>要练的判断是：相对时间「近 5 年」会切掉更早、但仍然是基础的试验。临床检索结果不是诊疗建议。</p>
+        <blockquote>查找 SGLT2 抑制剂治疗心力衰竭的研究，优先随机对照试验、系统综述和指南。</blockquote>
+        <p><span class="tag">原文观点</span>作者点名 DELIVER、EMPULSE、一份 ESC 指南更新，并提醒 DAPA-HF、EMPEROR 落在他使用的五年窗之外。这些年份和分区，本课没有逐篇打开。</p>
+        <p>你该核对：时间窗是否适合这个临床问题；指南是不是你要的版本；任何一条都要回到 PubMed 或出版社，而不是停在聊天记录里。</p>
+      </section>
+
+      <section class="slide" id="s-case-classic">
+        <p class="kicker">案例 04 · 作者演示 · 未独立复现</p>
+        <h2>新方向先要一条阅读路径</h2>
+        <p><span class="tag">教学补充</span>要练的判断是：概念奠基、一条理论线索、再加近期研究，比一份长书单更容易进门。「如果只读三篇」是教学策略，篇目仍要核对是否存在。</p>
+        <blockquote>刚转到公共管理，想了解「社区韧性」。先给奠基文献，再补近几年的研究。</blockquote>
+        <p><span class="tag">原文观点</span>作者给出的路径是概念奠基、社会资本与协同治理、中国情境，并点名 Norris 等人和 Aldrich 与 Meyer。原文里的 2007、2014 等年份，本课没有独立核对。</p>
+      </section>
+
+      <section class="slide" id="s-case-patent">
+        <p class="kicker">案例 05 · 作者演示 · 未独立复现</p>
+        <h2>专利名单不是法律意见</h2>
+        <p><span class="tag">教学补充</span>要练的判断是：「值得跟踪的申请人」不是按件数排名。同族没核全。这不能当作侵权风险判断（FTO），也不构成法律意见。</p>
+        <blockquote>检索钙钛矿太阳能电池封装的专利，按技术路线整理，并说明每类解决什么问题。</blockquote>
+        <p><span class="tag">原文观点</span>作者称结果分成 9 条技术路线，并列出一批申请人。其中把宁德时代放在「国外」。这条地域分类值得复核，本课不把它写成事实。9 条路线和机构名单都未独立复现。</p>
+      </section>
+
+      <section class="slide" id="s-matrix">
+        <p class="kicker">五个数据源</p>
+        <h2>一个问题，一个主源</h2>
+        <figure class="diagram" data-diagram="sources" tabindex="0">
+          <div class="diagram-layout">
+            <div class="diagram-stage">
+              <div class="diagram-view" data-diagram-view></div>
+              <div class="diagram-fallback">
+                <img src="assets/images/fig-matrix.svg" alt="教学矩阵：摸清方向用 OpenAlex，沿引用用 Semantic Scholar，补漏用 SerpApi，生物医学用 PubMed，预印本用 arXiv。中文核心五个都不够。">
+              </div>
+            </div>
+            <div class="diagram-panel">
+              <p class="diagram-kicker">教学整理 · 分工，不是互引</p>
+              <h3 data-diagram-title>OpenAlex · 摸清方向</h3>
+              <p data-diagram-copy>分工是摸清一个方向、做筛选。节点一样大，因为这张图不表示收录数量，也不是论文互相引用。它覆盖不了中文核心。</p>
+              <div class="diagram-controls" role="group" aria-label="选择一个数据源">
+                <button type="button" data-select="openalex" aria-pressed="true">OpenAlex</button>
+                <button type="button" data-select="s2">Semantic Scholar</button>
+                <button type="button" data-select="serpapi">SerpApi</button>
+                <button type="button" data-select="pubmed">PubMed</button>
+                <button type="button" data-select="arxiv">arXiv</button>
+                <button type="button" data-select="zh">中文核心</button>
+              </div>
+              <button type="button" class="ghost" data-static>看静态图</button>
+            </div>
+          </div>
+          <figcaption>教学整理。连线表示功能分工，不是引用网络，节点大小也不表示收录量。盲区和价格写在后面两页，核对日 2026-11-08，可能变化。立体图不可用时显示静态矩阵。</figcaption>
+        </figure>
+        <ul class="teach-quiet">
+          <li><b>OpenAlex</b>：摸清方向、做筛选。盲区是中文核心，语义搜索更贵更慢。</li>
+          <li><b>Semantic Scholar</b>：已有核心论文，沿引用链找。无密钥是共享池，不是你个人的 1000 次每秒。</li>
+          <li><b>SerpApi</b>：补 Google Scholar 那一类结果。它是第三方。snippet 不是摘要。</li>
+          <li><b>PubMed</b>：生物医学题录和摘要。它本身不是全文库。</li>
+          <li><b>arXiv</b>：物理、数学、计算机等预印本。全文可读，不等于可以转载。</li>
+        </ul>
+      </section>
+
+      <section class="slide" id="s-picker">
+        <p class="kicker">本地规则 R-overview 到 R-preprint</p>
+        <h2>选数据源，不叫模型替你选</h2>
+        <form id="source-form">
+          <fieldset>
+            <legend>你现在要解决什么</legend>
+            <label><input type="radio" name="goal" value="overview"> 摸清一个方向，或做筛选统计</label>
+            <label><input type="radio" name="goal" value="citations"> 从几篇核心论文沿引用找</label>
+            <label><input type="radio" name="goal" value="gap"> 用 Google Scholar 那类结果补漏</label>
+            <label><input type="radio" name="goal" value="biomed"> 生物医学的题录和摘要</label>
+            <label><input type="radio" name="goal" value="preprint"> 看最新预印本</label>
+          </fieldset>
+          <fieldset>
+            <legend>语言范围</legend>
+            <label><input type="radio" name="lang" value="any"> 不特别要求中文核心</label>
+            <label><input type="radio" name="lang" value="zh-core"> 需要中文核心或学位论文</label>
+          </fieldset>
+          <fieldset>
+            <legend>预算</legend>
+            <label><input type="radio" name="budget" value="free"> 先用免费档</label>
+            <label><input type="radio" name="budget" value="paid-ok"> 可以接受第三方付费档</label>
+          </fieldset>
+          <button type="submit">按规则给出主源</button>
+          <p id="source-result" class="status" role="status"></p>
+        </form>
+        <p class="src teach-quiet">预算只改变提醒，不改变主源。中文核心会标成「五个来源不够」，主源仍作补充。知网、万方是原文建议的去处，本课不核对其收录量。</p>
+      </section>
+
+      <section class="slide" id="s-prices">
+        <p class="kicker">官方核对 · 2026-11-08 · 可能变化</p>
+        <h2>OpenAlex 的 1 美元不是网站点击</h2>
+        <ul>
+          <li>每账户每天 1 美元免费额度，UTC 零点重置，也就是北京时间 08:00。</li>
+          <li>单篇查询免费。筛选约 0.0001 美元一次，基础搜索约 0.001 美元一次，下载 PDF 约 0.01 美元一次。</li>
+          <li>1 美元约 1000 次基础 API 搜索，不等于在网站上点 1000 下。rerank 搜索约 500 次。</li>
+          <li>按单价心算，不是账单：20 次基础搜索 + 200 次筛选 + 50 次单篇 = 0.04 美元。</li>
+          <li>新免费账户的第一美元，花费上限是每 5 分钟 0.10 美元。2026-11-03 之前的账户不适用。这不是注册后干等就自动解除。</li>
+        </ul>
+        <p><span class="tag">官方核对</span>一般限速：无 key 10 RPS，免费 key 30 RPS，语义搜索 1 RPS。10 和 30 不覆盖所有重型查询。每页最多 100 条。</p>
+        <p><span class="tag warn">待核验</span>原文写过不带 key 时日额度只剩十分之一。限速页这次没有这句话，不当成事实。</p>
+        <p class="src">这一节的来源：<a href="https://developers.openalex.org/access/pricing/" target="_blank" rel="noopener noreferrer">定价</a>、<a href="https://developers.openalex.org/access/example-costs/" target="_blank" rel="noopener noreferrer">示例成本</a>、<a href="https://developers.openalex.org/how-to-use-the-api/rate-limits-and-authentication" target="_blank" rel="noopener noreferrer">限速</a>、<a href="https://developers.openalex.org/how-to-use-the-api/pricing" target="_blank" rel="noopener noreferrer">语料口径</a>。</p>
+      </section>
+
+      <section class="slide" id="s-price-others">
+        <p class="kicker">官方核对 · 可能变化</p>
+        <h2>其余四个源，各有一条硬边界</h2>
+        <ul>
+          <li><b>语料</b>：核心作品 3 亿多。截至 2026 年 9 月，默认约 3.27 亿，<code>corpus=all</code> 约 4.76 亿。作品不等于期刊论文。全文缓存是 7000 多万篇开放获取 PDF，另有 TEI。原文的 6000 多万已与现文档不同。元数据 CC0 不等于 PDF 可自由转载。</li>
+          <li><b>Semantic Scholar</b>：介绍页写 2.14 亿篇、24.9 亿条引用、7900 万作者，不是实时总数。无密钥用户共享每秒 1000 次。有 key 的入门限速是 1 RPS。摘要因版权缺失、关键词最多 1000 条，本次未核到端点文档，待核验。TLDR 只算原文观点。</li>
+          <li><b>SerpApi</b>：免费档 0 美元、每月 250 次成功检索、每小时 50 次。入门档每月 25 美元、1000 次、每小时 200 次。第三方，不是 Google 官方 API。失败和缓存不计次。原文「没用完就清零」不能扩大到所有余额。</li>
+          <li><b>PubMed</b>：4000 多万条题录和摘要，不含期刊全文。E-utilities 限速这次没核成，不写死数字。</li>
+          <li><b>arXiv</b>：至少 3 秒一次、同一时间一个连接。转载要版权人许可。</li>
+        </ul>
+        <p><span class="tag warn">待核验</span>原文里的 1.7 亿摘要、1.3 亿开放获取、590 万中文，本次没有独立计数。language 字段不能当成中文核心覆盖率。</p>
+        <p class="src">来源：<a href="https://developers.openalex.org/download-all-data/content" target="_blank" rel="noopener noreferrer">OpenAlex 全文说明</a>、<a href="https://www.semanticscholar.org/product/api" target="_blank" rel="noopener noreferrer">Semantic Scholar API</a>、<a href="https://serpapi.com/pricing" target="_blank" rel="noopener noreferrer">SerpApi 定价</a>、<a href="https://serpapi.com/google-scholar-api" target="_blank" rel="noopener noreferrer">Scholar 字段</a>、<a href="https://pubmed.ncbi.nlm.nih.gov/about/" target="_blank" rel="noopener noreferrer">PubMed 简介</a>、<a href="https://info.arxiv.org/help/api/tou.html" target="_blank" rel="noopener noreferrer">arXiv 条款</a>。</p>
+      </section>
+
+      <section class="slide" id="s-layers">
+        <p class="kicker">信息不是全文</p>
+        <h2>题录、摘要、全文分开拿</h2>
+        <figure class="diagram" data-diagram="layers" tabindex="0">
+          <div class="diagram-layout">
+            <div class="diagram-stage">
+              <div class="diagram-view" data-diagram-view></div>
+              <div class="diagram-fallback">
+                <img src="assets/images/fig-layers.svg" alt="三层示意图：题录、摘要、全文。旁边的 snippet 被标成不是摘要。">
+              </div>
+            </div>
+            <div class="diagram-panel">
+              <p class="diagram-kicker">教学整理 · 三层厚度</p>
+              <h3 data-diagram-title>1 · 题录</h3>
+              <p data-diagram-copy>题名、作者、年份、出处、DOI。有一条题录，只说明工具返回了这条记录，不等于你读过论文。</p>
+              <div class="diagram-controls" role="group" aria-label="选择一层信息">
+                <button type="button" data-select="record" aria-pressed="true">题录</button>
+                <button type="button" data-select="abstract">摘要</button>
+                <button type="button" data-select="full">全文</button>
+                <button type="button" data-select="snippet">snippet</button>
+              </div>
+              <button type="button" class="ghost" data-static>看静态图</button>
+            </div>
+          </div>
+          <figcaption>教学整理。SerpApi 的 <code>num</code> 是 1 到 20，默认 10。示例里的 snippet 是结果页片段。Google Scholar 帮助页写明：多数摘要免费，阅读全文可能需要订阅。snippet 在立体图里不与摘要相连。</figcaption>
+        </figure>
+        <p class="teach-quiet"><span class="tag">官方核对</span>第三方 API 不授予付费全文的访问权或转载权。arXiv 上能打开 PDF，也不等于可以把文件再镜像出去。</p>
+        <p class="src"><a href="https://scholar.google.com/intl/en/scholar/help.html" target="_blank" rel="noopener noreferrer">Google Scholar 帮助</a> · <a href="https://serpapi.com/google-scholar-api" target="_blank" rel="noopener noreferrer">snippet 字段</a></p>
+      </section>
+
+      <section class="slide" id="s-security">
+        <p class="kicker">接入与安全</p>
+        <h2>密钥不进公开网页</h2>
+        <ul>
+          <li>API key 能花掉你的额度。不要写进 HTML、仓库、截图或聊天记录。</li>
+          <li>工具若有专门的密钥框，就用那个框。作者描述 Grok Bot 会这样保存，并称 Bot 本身看不到。那是原文观点，界面可能已变。</li>
+          <li>没有密钥框时，写入项目里的 <code>.env</code>，变量名用占位符 <code>OPENALEX_API_KEY</code>，并要求 Agent 不要打开、打印或复述这个文件。</li>
+          <li>Codex 演示里出现过「你把 key 发来」。本课改写这条：不要粘进对话。</li>
+          <li>WorkBuddy 在作者课上与 Codex 同类：文档交给它，密钥放本地。本课没有复测。</li>
+        </ul>
+        <div class="note">本页没有密码框，没有会提交的表单，脚本不联网，也不把输入写进浏览器存储。下面的模板只含占位符。</div>
+        <p class="src">文档入口：<a href="https://developers.openalex.org" target="_blank" rel="noopener noreferrer">OpenAlex</a>、<a href="https://api.semanticscholar.org" target="_blank" rel="noopener noreferrer">Semantic Scholar</a>、<a href="https://www.ncbi.nlm.nih.gov/books/NBK25497/" target="_blank" rel="noopener noreferrer">PubMed E-utilities</a>、<a href="https://info.arxiv.org/help/api/" target="_blank" rel="noopener noreferrer">arXiv API</a>。PubMed 限速页这次没有核成，链接只供你自己查。</p>
+      </section>
+
+      <section class="slide" id="s-verify">
+        <p class="kicker">检索之后</p>
+        <h2>用哨兵文献检查漏检</h2>
+        <figure class="diagram" data-diagram="verify" tabindex="0">
+          <div class="diagram-layout">
+            <div class="diagram-stage">
+              <div class="diagram-view" data-diagram-view></div>
+              <div class="diagram-fallback">
+                <img src="assets/images/fig-verify.svg" alt="六步核验：查存在、对年份、用哨兵文献查漏、去重、记录检索式和日期、检查时间窗。第三步用琥珀色标出。">
+              </div>
+            </div>
+            <div class="diagram-panel">
+              <p class="diagram-kicker">教学整理 · 六级台阶</p>
+              <h3 data-diagram-title>3 · 哨兵文献</h3>
+              <p data-diagram-copy>把你本来就知道的重要论文当作哨兵。它们没出现，说明这条检索不完整，不是这个方向没有文献。这一级被抬高，因为最容易被忽略。</p>
+              <div class="diagram-controls" role="group" aria-label="选择核验步骤">
+                <button type="button" data-select="s1">1</button>
+                <button type="button" data-select="s2">2</button>
+                <button type="button" data-select="s3" aria-pressed="true">3 哨兵</button>
+                <button type="button" data-select="s4">4</button>
+                <button type="button" data-select="s5">5</button>
+                <button type="button" data-select="s6">6</button>
+              </div>
+              <button type="button" class="ghost" data-static>看静态图</button>
+            </div>
+          </div>
+          <figcaption>教学整理。哨兵文献是你开学前就知道的那几篇。它们没出现，说明这条检索不完整，不是这个方向没有文献。立体图把这一级做得更高。</figcaption>
+        </figure>
+        <ol class="teach-quiet">
+          <li>抽几条，用 DOI 或题名回到数据库。</li>
+          <li>期刊和年份另核。分区要写版本和学科。</li>
+          <li>哨兵文献缺失，就扩大来源或改检索式。</li>
+          <li>预印本、出版版、机构库版本要去重。</li>
+          <li>记下检索式、数据源和绝对日期。作者示例里的「近 5 年」只留在历史演示。</li>
+          <li>问一句：时间窗是否切掉了奠基文献。</li>
+        </ol>
+      </section>
+
+      <section class="slide" id="s-templates">
+        <p class="kicker">拿去改的模板</p>
+        <h2>练习必须写绝对日期</h2>
+        <p class="teach-quiet">复制成功会显示：已复制到剪贴板。内容只留在你的设备上。复制失败会显示：复制失败。文字已选中，请使用 Ctrl+C 或长按复制。密钥不会被上传。</p>
+        <p class="teach-quiet"><span class="tag">教学补充</span>下面这份要求主题、中英文同义词、文献类型、起止日期、点名的数据源和纳排标准。无法确认就写「未确认」，不要编造 DOI。</p>
+        <button type="button" class="copy" data-copy-for="tpl-teaching">复制教学模板</button>
+        <p class="status" data-status-for="tpl-teaching" role="status"></p>
+        <pre id="tpl-teaching">请检索文献，并只依据检索结果回答。无法确认的字段写“未确认”，不要编造 DOI、作者或期刊分区。
+
+主题：【填写】
+中文同义词：【填写】
+英文同义词：【填写】
+文献类型：【期刊论文 / 预印本 / 综述 / 指南 / 专利】
+起始日期：【YYYY-MM-DD】
+截止日期：【YYYY-MM-DD】
+数据源：【从 OpenAlex、Semantic Scholar、SerpApi、PubMed、arXiv 里点名；中文核心另说明知网或万方】
+纳入标准：【填写】
+排除标准：【填写】
+
+对每条结果输出：题名、作者、年份、来源、DOI、你用来定位证据的原句位置、开放获取链接或“未见合法全文链接”。
+最后列出：检索式、检索日期、可能的漏检（时间窗之外的奠基文献、中文核心、付费全文）。</pre>
+      </section>
+
+      <section class="slide" id="s-author-prompts">
+        <p class="kicker">历史演示 · 保留原文的「近 5 年」</p>
+        <h2>作者原话只作对照</h2>
+        <p>投影上不铺开五段长提示词。阅读和打印能看到全文。过几年再读，「近 5 年」的边界会变。</p>
+        <button type="button" class="copy" data-copy-for="tpl-author-cases">复制五段历史提示词</button>
+        <p class="status" data-status-for="tpl-author-cases" role="status"></p>
+        <button type="button" class="copy" data-copy-for="tpl-author-safety">复制安全接入提示词</button>
+        <p class="status" data-status-for="tpl-author-safety" role="status"></p>
+        <div class="teach-quiet">
+          <pre id="tpl-author-cases">【历史演示】下面五段是作者原提示词，保留「近 5 年」。过几年再读，「近 5 年」的边界会变。你自己的练习用教学模板，填写绝对日期。
+
+场景一，立项依据：
+我在申报一个省社科课题，题目是"人工智能赋能高校思政课实践教学的机制研究"。请按"现状、影响机制、实践路径"三个研究内容，分别检索近 5 年中英文代表性文献，用来写立项依据。
+
+场景二，中英文实证：
+帮我检索近 5 年关于"短视频使用与大学生睡眠质量"的中英文实证研究，中文和英文各列出代表性文献，优先高质量期刊。
+
+场景三，临床进展：
+查找近 5 年 SGLT2 抑制剂治疗心力衰竭的研究进展，优先随机对照试验、系统综述和指南，按"疗效、安全性、适用人群"分类整理。
+
+场景四，经典文献：
+我是刚转到公共管理方向的研究生，想了解"社区韧性"这个概念。请先给我奠基性的经典文献，再补近几年的代表性研究，帮我建立这个领域的基本脉络。
+
+场景五，专利：
+我在做钙钛矿太阳能电池封装方向的研究，想了解这项技术的专利布局。请检索近 5 年中国和全球的相关专利，按技术路线分类整理，列出主要申请人，并说明每类专利主要解决什么问题。</pre>
+          <pre id="tpl-author-safety">我想让你通过 OpenAlex API 帮我检索论文。
+API 文档：https://developers.openalex.org
+我的 API key 已经放在当前文件夹的 .env 文件里，变量名是 OPENALEX_API_KEY。
+请写一个检索脚本，从环境变量读取 key。不要打开、打印或在回复中显示这个 key。
+写好后，用“【你的关键词】”测试一次，返回前 20 篇论文的：
+标题、作者、年份、期刊、被引次数和 DOI。</pre>
+        </div>
+      </section>
+
+      <section class="slide" id="s-quiz">
+        <p class="kicker">解释性自测 · 成绩不上传</p>
+        <h2>四题，可以改选再试</h2>
+        <fieldset class="quiz" data-quiz="q-blank">
+          <legend>只返回十几篇，能否证明这个方向几乎没人做？</legend>
+          <label><input type="radio" name="q-blank" value="yes-blank"> 能。结果少就是研究空白。</label>
+          <label><input type="radio" name="q-blank" value="no-blank"> 不能。覆盖不足会被误认成空白。</label>
+          <p class="status" data-quiz-live role="status"></p>
+          <details>
+            <summary>看解释</summary>
+            <p>只返回十几篇，说明这个工具这条检索式这次覆盖到的结果少。它不能证明该方向没有文献。开源技能常常只连了少数免费来源，或在无密钥时被限流。下一步是换数据源、核对检索式，并用你已经知道的哨兵文献检查有没有漏检。</p>
+          </details>
+        </fieldset>
+        <fieldset class="quiz" data-quiz="q-snippet">
+          <legend>SerpApi 结果里的 snippet 是不是完整摘要？</legend>
+          <label><input type="radio" name="q-snippet" value="is-abstract"> 是。片段就是摘要。</label>
+          <label><input type="radio" name="q-snippet" value="not-abstract"> 不是。片段、摘要、全文是三层。</label>
+          <p class="status" data-quiz-live role="status"></p>
+          <details>
+            <summary>看解释</summary>
+            <p>Google Scholar 经 SerpApi 返回的 snippet 是结果页上的片段。SerpApi 文档把 num 限制在 1 到 20、默认 10，并在示例里使用 snippet 字段。片段不是完整摘要，检索结果也不是全文。核对日 2026-11-08。</p>
+          </details>
+        </fieldset>
+        <fieldset class="quiz" data-quiz="q-rights">
+          <legend>搜到一条结果，是否就有全文的下载权或转载权？</legend>
+          <label><input type="radio" name="q-rights" value="grants"> 有。能搜到就能保存和转发。</label>
+          <label><input type="radio" name="q-rights" value="no-grant"> 没有。检索不产生这两项权利。</label>
+          <p class="status" data-quiz-live role="status"></p>
+          <details>
+            <summary>看解释</summary>
+            <p>搜到一条题录，只说明工具返回了这条记录。Google Scholar 帮助页写明：多数文章摘要可免费看，阅读全文可能需要订阅。arXiv 使用条款要求转载预印本须得到版权人许可，并建议链接到摘要页。第三方 API 不授予付费全文的访问权或转载权。</p>
+          </details>
+        </fieldset>
+        <fieldset class="quiz" data-quiz="q-key">
+          <legend>为了方便同学，可以把 API key 写进公开课件 HTML 吗？</legend>
+          <label><input type="radio" name="q-key" value="ok-html"> 可以，只要页面不显眼。</label>
+          <label><input type="radio" name="q-key" value="never-html"> 不可以。公开 HTML 不能放密钥。</label>
+          <p class="status" data-quiz-live role="status"></p>
+          <details>
+            <summary>看解释</summary>
+            <p>API key 可以消耗你的账户额度，不能写进公开 HTML、仓库、截图或聊天记录。本课模板只使用占位符 OPENALEX_API_KEY。页面不提供密钥输入框，也不把任何输入发送到服务器。</p>
+          </details>
+        </fieldset>
+      </section>
+
+      <section class="slide" id="s-sources">
+        <p class="kicker">来源、版权、没核验的部分</p>
+        <h2>本页不冒充授权转载</h2>
+        <p>原文作者是兔老师（X @DrRabbitAI）。原帖见下方链接。链接和署名不是转载许可。公开页没有收录原文全文，也没有原帖图片和课堂照片。图是本课绘制的教学整理。</p>
+        <p>官方文档以 2026-11-08（Asia/Shanghai）核对。价格、收录和限速可能变化。五个案例的篇数、样本量、分区、论文年份、9 条专利路线和申请人地域，都不是独立结论。</p>
+        <ul class="src">
+          <li><a href="https://developers.openalex.org/access/pricing/" target="_blank" rel="noopener noreferrer">OpenAlex 定价</a></li>
+          <li><a href="https://developers.openalex.org/access/example-costs/" target="_blank" rel="noopener noreferrer">OpenAlex 示例成本</a></li>
+          <li><a href="https://developers.openalex.org/how-to-use-the-api/rate-limits-and-authentication" target="_blank" rel="noopener noreferrer">OpenAlex 限速</a></li>
+          <li><a href="https://developers.openalex.org/how-to-use-the-api/pricing" target="_blank" rel="noopener noreferrer">OpenAlex 语料口径</a></li>
+          <li><a href="https://developers.openalex.org/download-all-data/content" target="_blank" rel="noopener noreferrer">OpenAlex 全文与下载</a></li>
+          <li><a href="https://www.semanticscholar.org/product/api" target="_blank" rel="noopener noreferrer">Semantic Scholar API 介绍</a></li>
+          <li><a href="https://serpapi.com/pricing" target="_blank" rel="noopener noreferrer">SerpApi 定价</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/about/" target="_blank" rel="noopener noreferrer">PubMed 关于页面</a></li>
+          <li><a href="https://info.arxiv.org/help/api/tou.html" target="_blank" rel="noopener noreferrer">arXiv API 使用条款</a></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  <footer class="footer">
+    <p>静态页面。不收集密钥，不做在线检索，不设置账号。授课时方向键翻页，B 黑屏，F 尝试全屏，Esc 先退出黑屏、再退出授课。全屏失败时仍用普通窗口。立体图使用 Three.js r170（MIT，Copyright 2010–2024 three.js authors）。用 file:// 打开时，复制可能失败，页面会选中文字供手动复制。</p>
+  </footer>
+  <div id="teach-bar">
+    <button type="button" id="teach-prev">上一页</button>
+    <button type="button" id="teach-next">下一页</button>
+    <span id="page-no">第 1 / 1 页</span>
+    <button type="button" id="teach-black" aria-pressed="false">黑屏</button>
+    <button type="button" id="teach-full">全屏</button>
+    <button type="button" id="teach-exit">退出</button>
+    <span id="teach-status" role="status"></span>
+  </div>
+  <div id="blackout" hidden>
+    <p>黑屏，按 B 或点按恢复，按 Esc 回到授课画面。</p>
+  </div>
+  <script src="assets/vendor/three.r170.js"></script>
+  <script src="assets/js/rules.js"></script>
+  <script src="assets/js/diagrams.js"></script>
+  <script src="assets/js/course.js"></script>
+</body>
+</html>
