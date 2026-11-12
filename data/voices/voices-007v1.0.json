@@ -72,7 +72,7 @@
  },
  "goals": [],
  "transcriptNote": {
-  "zh": "英文为原声逐句转写（faster-whisper 语音识别，对照画面内嵌英文字幕人工校对）；中文以画面内嵌中文字幕为底本（OCR 提取），少量校订使之与原声一致。时间轴按字幕出现时间对齐，误差约 ±0.5 秒；口语中的停顿与重复保留。",
+  "zh": "英文为原声逐句转写（faster-whisper 语音识别，对照画面内嵌英文字幕人工校对）；中文以画面内嵌中文字幕为底本（OCR 提取），少量校订使之与原声一致。时间轴按字幕出现时间对齐，误差约 ±0.5 秒；口语中的停顿与重复保留。方括号 [ ] 内是剪辑字幕补出的词（原声含混）。",
   "en": "English: speech recognition checked against the burned-in captions. Chinese: from the clip’s burned-in subtitles, lightly corrected."
  },
  "segments": [
@@ -546,21 +546,21 @@
      "start": 40.6,
      "end": 42.2,
      "en": "But I'm getting old, Dr. Lyon.",
-     "zh": "\"可是我老了，Lyon 医生。"
+     "zh": "“可是我老了，Lyon 医生。"
     },
     {
      "id": "B005",
      "start": 42.2,
      "end": 44.2,
      "en": "I'm 58.",
-     "zh": "我 58 岁了。"
+     "zh": "我 58 岁了。”"
     },
     {
      "id": "B006",
      "start": 44.2,
      "end": 50.4,
      "en": "When people get old, they put on weight, they lose muscle, we get weaker, we get frailer.",
-     "zh": "\"人老了就会发胖，肌肉流失，变得更弱、更虚。"
+     "zh": "“人老了就会发胖，肌肉流失，变得更弱、更虚。"
     },
     {
      "id": "B007",
@@ -679,7 +679,7 @@
      "start": 139.2,
      "end": 142.2,
      "en": "What do I mean by that? I say, \"Steven, this is stressful.",
-     "zh": "什么意思呢？我说：\"Steven，这压力很大。"
+     "zh": "什么意思呢？我说：“Steven，这压力很大。"
     },
     {
      "id": "B024",
@@ -1383,8 +1383,8 @@
      "id": "D013",
      "start": 74.8,
      "end": 79.2,
-     "en": "But protein is what is going to maintain hunger.",
-     "zh": "但蛋白质才是起维持作用的关键。（原声听作 hunger，视频内嵌字幕校作 muscle）"
+     "en": "But protein is what is going to maintain [muscle].",
+     "zh": "但蛋白质才是维持肌肉的关键。"
     },
     {
      "id": "D014",
@@ -1552,7 +1552,7 @@
      "start": 204.0,
      "end": 207.0,
      "en": "I have a five pound weight vest.",
-     "zh": "我有一件5磅的负重背心，，"
+     "zh": "我有一件 5 磅的负重背心，"
     },
     {
      "id": "D038",
@@ -1664,7 +1664,7 @@
      "start": 282.4,
      "end": 287.0,
      "en": "When you exercise based on intensity and duration, you release myokines.",
-     "zh": "当你运动时，根据强度和时长，会释放\"肌肉因子”（myokines）。"
+     "zh": "当你运动时，根据强度和时长，会释放“肌肉因子”（myokines）。"
     },
     {
      "id": "D054",
@@ -2221,7 +2221,7 @@
     "en": ""
    },
    {
-    "zh": "重症蛋白质目标不是越高越好。ESPEN 重症指南建议逐步递增至约 1.3 g/kg/日 蛋白当量（推荐等级 0）；2023 年修订版指出，高剂量蛋白的随机试验并未证实额外获益，急性肾损伤患者甚至可能有害。播客里的 1.6–2.2 g/kg 是健康训练人群的思路，不能直接搬到 ICU。",
+    "zh": "重症蛋白质目标不是越高越好。ESPEN 重症指南建议逐步递增至约 1.3 g/kg/日 蛋白当量；EFFORT Protein 随机试验（1301 名机械通气患者）中，≥2.2 g/kg/日 对比 ≤1.2 g/kg/日 没有改善出院或 60 天死亡，急性肾损伤亚组甚至提示可能有害。播客里的 1.6–2.2 g/kg 是健康训练人群的思路，不能直接搬到 ICU。",
     "en": ""
    },
    {
@@ -2254,7 +2254,8 @@
   "pedersen",
   "ewgsop2",
   "puthucheary",
-  "espen"
+  "espen",
+  "effort"
  ],
  "sourceMap": {
   "video": {
@@ -2339,6 +2340,10 @@
   "espen": {
    "title": "Singer P, et al. Clin Nutr 2019 · ESPEN 重症营养指南（PMID 30348463）",
    "url": "https://pubmed.ncbi.nlm.nih.gov/30348463/"
+  },
+  "effort": {
+   "title": "Heyland DK, et al. Lancet 2023 · EFFORT Protein：重症高剂量蛋白随机试验（PMID 36708732）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36708732/"
   }
  },
  "further": [
@@ -2685,7 +2690,7 @@
      "en": ""
     },
     "orig": {
-     "zh": "剂量反应 Meta 分析（15 项研究）显示每周组数越多、增肌越多，每周 ≥10 组优于更少组数。20 组作为上限主要是经验做法，研究没有确定“最佳上限”。",
+     "zh": "剂量反应 Meta 回归（15 项研究、34 个训练组）显示：每周组数越多，肌肉增长越多（每多 1 组约多 0.37%）；按 <5、5–9、≥10 组分层时，≥10 组只呈“趋势性”优势（P=0.074）。“10 组起步”有一定依据，“20 组上限”主要是经验做法，研究没有确定最佳上限。",
      "en": ""
     },
     "at": [
@@ -2960,7 +2965,7 @@
       "label": "第4集 3:24"
      }
     ],
-    "src": ""
+    "src": "video"
    }
   ],
   "evidenceTitle": {
