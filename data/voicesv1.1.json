@@ -179,6 +179,36 @@
         "English",
         "Philosophy"
       ]
+    },
+    {
+      "no": "AI VOICES 007",
+      "num": 7,
+      "speaker": "Dr Gabrielle Lyon",
+      "speakerZh": "× Steven Bartlett",
+      "title": "The Diary Of A CEO · The Anti-Obesity Doctor",
+      "question": {
+        "zh": "骨骼肌，真的是“长寿器官”吗？",
+        "en": "Is skeletal muscle really an \"organ of longevity\"?"
+      },
+      "href": "voices/voices-007v1.0.html",
+      "data": "data/voices/voices-007v1.0.json",
+      "thumb": "assets/voices/voices007-coverv1.0.webp",
+      "thumbNote": "视频截图 · The Diary Of A CEO",
+      "status": "preview",
+      "verifiedAt": "2026-11-12",
+      "minutes": {
+        "zh": "约 40 分钟",
+        "note": "四集原声与中英逐句同步"
+      },
+      "level": {
+        "zh": "进阶",
+        "en": "Intermediate"
+      },
+      "dims": [
+        "English",
+        "Evidence",
+        "Medicine"
+      ]
     }
   ],
   "also": []

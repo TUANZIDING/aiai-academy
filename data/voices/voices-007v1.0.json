@@ -1,0 +1,3024 @@
+{
+ "schema": "aiai-voices/1.0",
+ "no": "AI VOICES 007",
+ "num": 7,
+ "version": "1.0.0",
+ "verifiedAt": "2026-11-12",
+ "publishedAt": null,
+ "speaker": {
+  "name": "Dr Gabrielle Lyon",
+  "zh": "加布丽埃勒·莱昂 医生",
+  "role": {
+   "zh": "医生，Muscle-Centric Medicine 创始人，《Forever Strong》作者；对谈主持人 Steven Bartlett",
+   "en": ""
+  }
+ },
+ "talk": {
+  "title": "The Diary Of A CEO · The Anti-Obesity Doctor",
+  "event": "The Diary Of A CEO 播客 · 主持人 Steven Bartlett",
+  "deliveredOn": "2024-09-26",
+  "uploadedOn": "2024-09-26",
+  "duration": "4 段剪辑，共约 23 分钟（原节目 1 小时 53 分）"
+ },
+ "video": {
+  "provider": "hls",
+  "url": "https://www.youtube.com/watch?v=2j3T4oYJPfI",
+  "channel": "The Diary Of A CEO",
+  "channelUrl": "https://www.youtube.com/@TheDiaryOfACEO",
+  "official": false,
+  "hlsLib": "../assets/hlsv1.5.17.min.js",
+  "parts": [
+   {
+    "id": "p1",
+    "src": "../media/v/voices-007-p1/index.m3u8",
+    "poster": "../media/v/voices-007-p1/poster.webp",
+    "dur": 336.8
+   },
+   {
+    "id": "p2",
+    "src": "../media/v/voices-007-p2/index.m3u8",
+    "poster": "../media/v/voices-007-p2/poster.webp",
+    "dur": 352.6
+   },
+   {
+    "id": "p3",
+    "src": "../media/v/voices-007-p3/index.m3u8",
+    "poster": "../media/v/voices-007-p3/poster.webp",
+    "dur": 344.6
+   },
+   {
+    "id": "p4",
+    "src": "../media/v/voices-007-p4/index.m3u8",
+    "poster": "../media/v/voices-007-p4/poster.webp",
+    "dur": 353.4
+   }
+  ],
+  "playNote": {
+   "zh": "画面底部已内嵌中英字幕（剪辑者制作）。右侧文稿与原声逐句同步：点任一句即可跳转、可循环本句；盲听时请只看视频、收起文稿。"
+  },
+  "credit": {
+   "zh": "视频片段剪辑自 The Diary Of A CEO（主持 Steven Bartlett）2024-09-26 播出的 Dr Gabrielle Lyon 访谈；画面字幕为剪辑者制作。aiai 学院仅作非商业学习预览，版权归原节目所有。"
+  },
+  "thumb": "../assets/voices/voices007-coverv1.0.webp",
+  "thumbFallback": "../assets/voices/voices007-coverv1.0.webp"
+ },
+ "question": {
+  "zh": "骨骼肌，真的是“长寿器官”吗？",
+  "en": "Is skeletal muscle really an \"organ of longevity\"?"
+ },
+ "background": {
+  "zh": "一位强调“以肌肉为中心”的医生，四段对谈讲力量、衰老、久坐、蛋白质与肌肉因子。我们逐句听原声，再把每个说法放回证据里核对。",
+  "en": ""
+ },
+ "goals": [],
+ "transcriptNote": {
+  "zh": "英文为原声逐句转写（faster-whisper 语音识别，对照画面内嵌英文字幕人工校对）；中文以画面内嵌中文字幕为底本（OCR 提取），少量校订使之与原声一致。时间轴按字幕出现时间对齐，误差约 ±0.5 秒；口语中的停顿与重复保留。",
+  "en": "English: speech recognition checked against the burned-in captions. Chinese: from the clip’s burned-in subtitles, lightly corrected."
+ },
+ "segments": [
+  {
+   "id": "A",
+   "short": "第1集",
+   "part": "p1",
+   "title": {
+    "zh": "第 1 集 · 什么才算强壮的身体",
+    "en": ""
+   },
+   "start": 0,
+   "end": 336.8,
+   "sentences": [
+    {
+     "id": "A001",
+     "start": 0,
+     "end": 8.0,
+     "en": "When you say you can't have a strong body unless you have a strong mind, how are you defining and how do you define a strong body?",
+     "zh": "你说没有强大的内心，就不可能有强壮的身体，那你怎么定义“强壮的身体”？"
+    },
+    {
+     "id": "A002",
+     "start": 8.0,
+     "end": 13.0,
+     "en": "You should be able to be physically capable in whatever it is that you want. Should you be able to do a pull-up?",
+     "zh": "你应该在自己想做的任何事情上，身体都能胜任。你应该能做一个引体向上吗？"
+    },
+    {
+     "id": "A003",
+     "start": 13.0,
+     "end": 16.8,
+     "en": "Probably. Should you be able to do at least 10 push-ups?",
+     "zh": "大概应该。至少能做10个俯卧撑吗？"
+    },
+    {
+     "id": "A004",
+     "start": 16.8,
+     "end": 22.6,
+     "en": "Yes. Is that number different for everybody? Yes.",
+     "zh": "能。这个数字因人而异吗？"
+    },
+    {
+     "id": "A005",
+     "start": 22.6,
+     "end": 36.8,
+     "en": "If I asked you to please run a mile, could you do it and do it well? I think being and having physical sovereignty and being able to be in control of your body and to be strong and not require someone to help you with things.",
+     "zh": "如果我让你跑一英里，你能跑下来，而且跑得不错吗？我认为要拥有“身体自主权”，能掌控自己的身体，足够强壮，做事不需要别人帮忙。"
+    },
+    {
+     "id": "A006",
+     "start": 36.8,
+     "end": 47.8,
+     "en": "I mean, granted, you probably couldn't lift a car by yourself, or a bed. But this becomes extremely important for our aging population and for where we are now.",
+     "zh": "当然，你大概没法一个人抬起一辆车，或者一张床，但这一点对我们的老龄化人口、对我们当下的处境都极其重要。"
+    },
+    {
+     "id": "A007",
+     "start": 47.8,
+     "end": 53.8,
+     "en": "What do I mean by this? We are becoming increasingly weak as a society.",
+     "zh": "我这话是什么意思？我们整个社会正变得越来越虚弱。"
+    },
+    {
+     "id": "A008",
+     "start": 53.8,
+     "end": 58.2,
+     "en": "The majority of individuals are moving towards obesity.",
+     "zh": "大多数人正在走向肥胖。"
+    },
+    {
+     "id": "A009",
+     "start": 58.2,
+     "end": 62.2,
+     "en": "Children are becoming more and more obese.",
+     "zh": "孩子们也越来越胖。"
+    },
+    {
+     "id": "A010",
+     "start": 62.2,
+     "end": 68.6,
+     "en": "Are they strong? Are they as strong as they could be from a physical perspective? I would say no.",
+     "zh": "他们强壮吗？从身体角度看，他们达到应有的强壮程度了吗？我会说没有。"
+    },
+    {
+     "id": "A011",
+     "start": 68.6,
+     "end": 81.2,
+     "en": "And again, you can choose a marker of goals to hit, which I recommend that everyone does, whether it's squat, deadlift, you name it, run,",
+     "zh": "再说一次，你可以选一个要达成的目标指标，我建议每个人都这么做，无论是深蹲、硬拉，还是别的什么，比如跑步。"
+    },
+    {
+     "id": "A012",
+     "start": 81.2,
+     "end": 86.4,
+     "en": "but you have to be able to have accountability for your physicality.",
+     "zh": "但你必须对自己的身体状况负起责任。"
+    },
+    {
+     "id": "A013",
+     "start": 86.4,
+     "end": 97.2,
+     "en": "If you were going to be giving me goals to hit, and I don't necessarily mean like 10 reps, whatever, but just the types of goals that I should be aiming at to have a strong body,",
+     "zh": "如果你要给我定几个目标，对吧？我不是指“做10次”这种，而是为了拥有强壮的身体，我应该瞄准哪类目标，"
+    },
+    {
+     "id": "A014",
+     "start": 97.2,
+     "end": 98.6,
+     "en": "what are those types of goals?",
+     "zh": "都有哪些类型的目标？"
+    },
+    {
+     "id": "A015",
+     "start": 98.6,
+     "end": 106.4,
+     "en": "So you mentioned squatting there, you mentioned maybe being able to pull myself up, being able to run. Are these the kind of goals that you would give to me?",
+     "zh": "你刚才提到了深蹲，还提到了能把自己拉上去（引体向上），还有跑步。你会给我定这类目标吗？"
+    },
+    {
+     "id": "A016",
+     "start": 106.4,
+     "end": 109.6,
+     "en": "So say a 30, 40 year old, what kind of goals would you be aiming at?",
+     "zh": "比如一个三四十岁的人，你会让他瞄准什么目标？"
+    },
+    {
+     "id": "A017",
+     "start": 109.6,
+     "end": 111.8,
+     "en": "And are the goals different if I'm 50 and 60?",
+     "zh": "如果我五六十岁了，目标会不一样吗？"
+    },
+    {
+     "id": "A018",
+     "start": 111.8,
+     "end": 123.0,
+     "en": "They are. You should, at a minimum, and I'll give you an example, you should at a minimum be training three days a week with weights, doing resistance training.",
+     "zh": "是的。你应该至少——我给你举个例子——你至少应该每周练 3 天，用器械做抗阻训练。"
+    },
+    {
+     "id": "A019",
+     "start": 123.0,
+     "end": 126.8,
+     "en": "You've had many... you just had my friend Mike Israetel on.",
+     "zh": "你请过很多嘉宾……你刚请过我的朋友 Mike Israetel。"
+    },
+    {
+     "id": "A020",
+     "start": 126.8,
+     "end": 129.0,
+     "en": "I mean, that guy, he is jacked.",
+     "zh": "那家伙肌肉超级发达。"
+    },
+    {
+     "id": "A021",
+     "start": 129.0,
+     "end": 134.6,
+     "en": "He could probably lift you with one hand and me with a pinky and he would be going all over the place.",
+     "zh": "他大概一只手就能把你举起来，一根小指就能把我举起来，还能扛着到处跑。"
+    },
+    {
+     "id": "A022",
+     "start": 134.6,
+     "end": 143.6,
+     "en": "You should be training your muscles from a strength and or hypertrophy standpoint, three days a week. Okay, so is that everyone?",
+     "zh": "你应该从力量和/或增肌的角度训练你的肌肉，每周3天。好，这适用于所有人吗？"
+    },
+    {
+     "id": "A023",
+     "start": 143.6,
+     "end": 148.2,
+     "en": "Yes. Everyone regardless of age?",
+     "zh": "是的。不论年龄，所有人？"
+    },
+    {
+     "id": "A024",
+     "start": 148.2,
+     "end": 154.6,
+     "en": "Yes, yes. That part is regardless of age. Three... Listen, could you get it done in two days a week, which is the recommendation?",
+     "zh": "对，对。这一点和年龄无关。三天……听着，每周 2 天能做到吗？这是官方推荐。"
+    },
+    {
+     "id": "A025",
+     "start": 154.6,
+     "end": 161.4,
+     "en": "The current recommendation for activity is 150 minutes of moderate to vigorous activity and two days a week of resistance training.",
+     "zh": "目前的运动推荐是每周150分钟中高强度运动，加上每周2天抗阻训练。"
+    },
+    {
+     "id": "A026",
+     "start": 161.4,
+     "end": 165.0,
+     "en": "Is that going to be enough to keep you walking around?",
+     "zh": "这足够让你还能走来走去吗？"
+    },
+    {
+     "id": "A027",
+     "start": 165.0,
+     "end": 173.8,
+     "en": "Yes. Is that going to be enough to evolve your body to manage and mitigate aging?",
+     "zh": "够。但它足够让你的身体进化、应对并延缓衰老吗？"
+    },
+    {
+     "id": "A028",
+     "start": 173.8,
+     "end": 180.4,
+     "en": "No, it is not. We have to call ourselves to a higher standard three to four days a week.",
+     "zh": "不够。我们必须对自己提出更高的标准。每周三到四天。"
+    },
+    {
+     "id": "A029",
+     "start": 180.4,
+     "end": 181.4,
+     "en": "Four? You've added a day.",
+     "zh": "四天？你多加了一天。"
+    },
+    {
+     "id": "A030",
+     "start": 181.4,
+     "end": 183.0,
+     "en": "Okay, well, I was going to say three.",
+     "zh": "好吧，我本来想说三天，"
+    },
+    {
+     "id": "A031",
+     "start": 183.0,
+     "end": 190.4,
+     "en": "I was going easy on you. Okay, so three days a week you should be doing... and I only train... I do resistance training three days a week. I might throw a fourth day in there.",
+     "zh": "是想对你手下留情。每周应该练三天……我自己也只……我每周做 3 天抗阻训练，有时会加第四天。"
+    },
+    {
+     "id": "A032",
+     "start": 190.4,
+     "end": 192.2,
+     "en": "For anyone that doesn't know what resistance training is?",
+     "zh": "给不了解抗阻训练的人解释一下？"
+    },
+    {
+     "id": "A033",
+     "start": 192.2,
+     "end": 207.8,
+     "en": "Moving your body or a load against resistance. So it would be, for example, taking a weight and moving that through space, whether it is a squat",
+     "zh": "就是让你的身体或一个负荷对抗阻力去移动。比如说，拿起一个重物，让它在空间中移动，不管是深蹲"
+    },
+    {
+     "id": "A034",
+     "start": 207.8,
+     "end": 209.8,
+     "en": "or a bench press.",
+     "zh": "还是卧推。"
+    },
+    {
+     "id": "A035",
+     "start": 209.8,
+     "end": 217.2,
+     "en": "These are all resistance training, moving against a resistance of some load. It could be body weight. It could be a band.",
+     "zh": "这些都是抗阻训练：对抗某种负荷的阻力去运动。可以是自身体重，也可以是弹力带。"
+    },
+    {
+     "id": "A036",
+     "start": 217.2,
+     "end": 225.2,
+     "en": "Three days a week, everybody. I mean, I'm okay with two days a week, but in an ideal world, it should be three days a week.",
+     "zh": "每周三天，人人都要。我是说，每周2天我也能接受，但理想情况下应该是3天。"
+    },
+    {
+     "id": "A037",
+     "start": 225.2,
+     "end": 231.2,
+     "en": "My recommendation is you train for muscle hypertrophy, which is muscle growth.",
+     "zh": "我的建议是以增肌为目标来训练，也就是让肌肉生长。"
+    },
+    {
+     "id": "A038",
+     "start": 231.2,
+     "end": 235.6,
+     "en": "10 to 20 sets per muscle group a week.",
+     "zh": "每个肌群每周10 到20 组。"
+    },
+    {
+     "id": "A039",
+     "start": 235.6,
+     "end": 237.6,
+     "en": "You can break that up.",
+     "zh": "你可以把它拆分到不同训练日。"
+    },
+    {
+     "id": "A040",
+     "start": 237.6,
+     "end": 244.2,
+     "en": "So I would say you could do a upper body, lower body split.",
+     "zh": "我会说，你可以做上下肢分化训练。"
+    },
+    {
+     "id": "A041",
+     "start": 244.2,
+     "end": 250.0,
+     "en": "You could do a push pull, like a bench press or a back row.",
+     "zh": "也可以做推拉分化，比如卧推或者划船，"
+    },
+    {
+     "id": "A042",
+     "start": 250.0,
+     "end": 253.2,
+     "en": "So back and chest.",
+     "zh": "也就是练背和胸。"
+    },
+    {
+     "id": "A043",
+     "start": 253.2,
+     "end": 260.2,
+     "en": "You could do full body training, which I think is the best for people. Compound movements like a squat or a deadlift.",
+     "zh": "你也可以做全身训练，我觉得这对大多数人是最好的。像深蹲、硬拉这样的复合动作。"
+    },
+    {
+     "id": "A044",
+     "start": 260.2,
+     "end": 265.4,
+     "en": "This is full body. You should be doing some kind of movement.",
+     "zh": "这就是全身训练。你总得做点运动，"
+    },
+    {
+     "id": "A045",
+     "start": 265.4,
+     "end": 277.8,
+     "en": "But, Steven, if someone said... like my dad, before I came on this podcast, he FaceTimed me, he lives in Ecuador, and he was doing resistance bands with bicep curls. I'm okay with that.",
+     "zh": "但是 Steven，如果有人说——比如我爸——我来上这期播客之前，他跟我视频通话，他住在厄瓜多尔，正在用弹力带做二头弯举。我觉得这样也可以。"
+    },
+    {
+     "id": "A046",
+     "start": 277.8,
+     "end": 284.4,
+     "en": "If you want to do that, and that's how you're going to do your upper body or your arms, fine.",
+     "zh": "如果你想这么做，用这种方式来练上肢或手臂，没问题。"
+    },
+    {
+     "id": "A047",
+     "start": 284.4,
+     "end": 289.8,
+     "en": "So it could be chest, back, you know, glutes, legs.",
+     "zh": "所以可以是胸、背，还有臀、腿。"
+    },
+    {
+     "id": "A048",
+     "start": 289.8,
+     "end": 291.6,
+     "en": "Why should I be doing three days a week?",
+     "zh": "我为什么要每周练3天?"
+    },
+    {
+     "id": "A049",
+     "start": 291.6,
+     "end": 293.0,
+     "en": "What am I going to get out of that?",
+     "zh": "我能从中得到什么？"
+    },
+    {
+     "id": "A050",
+     "start": 293.0,
+     "end": 294.8,
+     "en": "Make the case to me.",
+     "zh": "说服我吧。"
+    },
+    {
+     "id": "A051",
+     "start": 294.8,
+     "end": 298.2,
+     "en": "Number one, you are never going to regret being stronger.",
+     "zh": "第一，你永远不会后悔自己变得更强壮。"
+    },
+    {
+     "id": "A052",
+     "start": 298.2,
+     "end": 299.8,
+     "en": "Period. End of story.",
+     "zh": "就这么简单，没有别的。"
+    },
+    {
+     "id": "A053",
+     "start": 299.8,
+     "end": 302.6,
+     "en": "You need to be physically strong.",
+     "zh": "你需要身体强壮。"
+    },
+    {
+     "id": "A054",
+     "start": 302.6,
+     "end": 305.6,
+     "en": "Skeletal muscle is the organ of longevity.",
+     "zh": "骨骼肌是长寿器官。"
+    },
+    {
+     "id": "A055",
+     "start": 305.6,
+     "end": 311.4,
+     "en": "It is not just about looking good in a bathing suit. It helps. It's so great.",
+     "zh": "它不只是为了好看—穿泳装好看当然有帮助，也很棒。"
+    },
+    {
+     "id": "A056",
+     "start": 311.4,
+     "end": 321.0,
+     "en": "Your friend who is getting her hair blown out and doing all these other things, put her in some training. And listen, it's probably going to be a killer.",
+     "zh": "嗯，你那位天天去做头发、忙那些事的朋友，让她去练一练，听着，她很可能会练得超厉害。"
+    },
+    {
+     "id": "A057",
+     "start": 321.0,
+     "end": 324.4,
+     "en": "Skeletal muscle is your primary site for glucose metabolism.",
+     "zh": "骨骼肌是葡萄糖代谢的主要场所，"
+    },
+    {
+     "id": "A058",
+     "start": 324.4,
+     "end": 327.2,
+     "en": "Fatty acid metabolism. It is your glucose sink.",
+     "zh": "也是脂肪酸代谢的主要场所；它是你的“血糖蓄水池”。"
+    },
+    {
+     "id": "A059",
+     "start": 327.2,
+     "end": 335.6,
+     "en": "If you decide that you want to eat carbohydrates and you care about metabolic health, you have to have skeletal muscle.",
+     "zh": "如果你想吃碳水化合物，又在乎代谢健康，你就必须拥有骨骼肌。"
+    },
+    {
+     "id": "A060",
+     "start": 335.6,
+     "end": 336.8,
+     "en": "You're not convinced yet, are you?",
+     "zh": "你还没被说服，对吧？"
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "short": "第2集",
+   "part": "p2",
+   "title": {
+    "zh": "第 2 集 · 身体铠甲与衰老迷思",
+    "en": ""
+   },
+   "start": 0,
+   "end": 352.6,
+   "sentences": [
+    {
+     "id": "B001",
+     "start": 0,
+     "end": 13.2,
+     "en": "I'm listening. Okay, well, you're kind of like maybe convinced that you think skeletal muscle is important, but if I told you that this is your body armor, that if you are in the top one third",
+     "zh": "我在听。好吧，你大概有点相信骨骼肌很重要了，但如果我告诉你，这是你的“身体铠甲”—如果你的力量排在前三分之一，"
+    },
+    {
+     "id": "B002",
+     "start": 13.2,
+     "end": 30.4,
+     "en": "of strength compared to if you are in the lower one third of strength, those that are in the lower one third for strength, have a 50% greater risk of dying from nearly anything.",
+     "zh": "和排在后三分之一的人相比，死于几乎任何原因的风险要高出50%"
+    },
+    {
+     "id": "B003",
+     "start": 30.4,
+     "end": 40.6,
+     "en": "If you are in the lower one third of strength, you have a roughly 50% chance of dying from all cause mortality.",
+     "zh": "如果你的力量处在后三分之一，你的全因死亡风险大约要高出 50%"
+    },
+    {
+     "id": "B004",
+     "start": 40.6,
+     "end": 42.2,
+     "en": "But I'm getting old, Dr. Lyon.",
+     "zh": "\"可是我老了，Lyon 医生。"
+    },
+    {
+     "id": "B005",
+     "start": 42.2,
+     "end": 44.2,
+     "en": "I'm 58.",
+     "zh": "我 58 岁了。"
+    },
+    {
+     "id": "B006",
+     "start": 44.2,
+     "end": 50.4,
+     "en": "When people get old, they put on weight, they lose muscle, we get weaker, we get frailer.",
+     "zh": "\"人老了就会发胖，肌肉流失，变得更弱、更虚。"
+    },
+    {
+     "id": "B007",
+     "start": 50.4,
+     "end": 52.6,
+     "en": "This is what, this is just the nature of life.",
+     "zh": "这就是人生的常态。"
+    },
+    {
+     "id": "B008",
+     "start": 52.6,
+     "end": 57.8,
+     "en": "Don't fight life. The first thing that I would say is congratulations, making it to 58, well done, sir.",
+     "zh": "别跟命运较劲。“我首先会说：恭喜你活到了 58岁。干得好，先生。"
+    },
+    {
+     "id": "B009",
+     "start": 57.8,
+     "end": 60.0,
+     "en": "And then I would say that is totally not true.",
+     "zh": "然后我会说：这完全不对。"
+    },
+    {
+     "id": "B010",
+     "start": 60.0,
+     "end": 63.0,
+     "en": "That is not what we see in the literature.",
+     "zh": "文献里看到的根本不是这样。"
+    },
+    {
+     "id": "B011",
+     "start": 63.0,
+     "end": 71.4,
+     "en": "Anyone at any time can get stronger and put on muscle. Anyone at any time can get stronger and put on muscle.",
+     "zh": "任何人在任何时候都能变得更强壮、长出肌肉。（重复强调）"
+    },
+    {
+     "id": "B012",
+     "start": 71.4,
+     "end": 72.4,
+     "en": "Do you know what it is, yeah?",
+     "zh": "你知道为什么吗？嗯。"
+    },
+    {
+     "id": "B013",
+     "start": 72.4,
+     "end": 82.8,
+     "en": "Part of the reason why I think people don't believe that is because we look at our parents, and our parents looked at their parents, and their parents looked at their parents, and our parents",
+     "zh": "我觉得人们不相信这一点，部分原因是我们看着自己的父母，而我们的父母看着他们的父母，他们的父母又看着上一辈，我们的父母"
+    },
+    {
+     "id": "B014",
+     "start": 82.8,
+     "end": 92.8,
+     "en": "are like a case study of what we should expect. They set the expectation. And when a lot of us look up at our parents, we see people that maybe have had a little bit of weight added.",
+     "zh": "就像一个案例，告诉我们自己会变成什么样。他们设定了预期。很多人看自己的父母时，看到的是体重涨了一些的人，"
+    },
+    {
+     "id": "B015",
+     "start": 92.8,
+     "end": 97.0,
+     "en": "Maybe our dads have a bit of a pot belly because of all the beer they've been drinking or whatever.",
+     "zh": "也许我们的爸爸有点啤酒肚，因为喝了太多啤酒之类的。"
+    },
+    {
+     "id": "B016",
+     "start": 97.0,
+     "end": 100.0,
+     "en": "Maybe they walk a little bit slower, they can't run, they're out of breath.",
+     "zh": "对。也许他们走得慢了一点，跑不动，气喘吁吁。"
+    },
+    {
+     "id": "B017",
+     "start": 100.0,
+     "end": 105.0,
+     "en": "So we kind of just assume that that is normal and that's what we should expect of ourselves.",
+     "zh": "于是我们就默认这很正常，自己将来也会这样。"
+    },
+    {
+     "id": "B018",
+     "start": 105.0,
+     "end": 107.0,
+     "en": "And I think I did that.",
+     "zh": "我想我也是这样。"
+    },
+    {
+     "id": "B019",
+     "start": 107.0,
+     "end": 118.2,
+     "en": "I looked at my dad who he's on a bit of a health journey at the moment, but before he was on a health journey, I did kind of, I think at some point in my mind I conceded, maybe that's just what like genetics do.",
+     "zh": "我看着我爸，他现在正在努力改善健康，但在那之前，我心里某个时刻确实认命了，觉得也许这就是基因决定的。"
+    },
+    {
+     "id": "B020",
+     "start": 118.2,
+     "end": 123.0,
+     "en": "They just give you a pot belly, they slow you down, you lose your muscle, you get weak.",
+     "zh": "基因就是让你长啤酒肚、让你变慢、让你掉肌肉、变虚弱。"
+    },
+    {
+     "id": "B021",
+     "start": 123.0,
+     "end": 133.8,
+     "en": "The funny thing about humans is when we hear and see things over and over again, we believe them to be true, whether they are or they're not.",
+     "zh": "人类有个很有意思的地方：一件事听多了、看多了，我们就会信以为真，不管它是真是假。"
+    },
+    {
+     "id": "B022",
+     "start": 133.8,
+     "end": 139.2,
+     "en": "Humans are funny creatures in that they experience repetition as truth.",
+     "zh": "人类是很奇妙的生物，会把重复当成真理。"
+    },
+    {
+     "id": "B023",
+     "start": 139.2,
+     "end": 142.2,
+     "en": "What do I mean by that? I say, \"Steven, this is stressful.",
+     "zh": "什么意思呢？我说：\"Steven，这压力很大。"
+    },
+    {
+     "id": "B024",
+     "start": 142.2,
+     "end": 150.0,
+     "en": "This is stressful. Fight or flight is the only way.\" And then you go, \"You know what, Gabrielle? Fight or flight is the only way.\" That's all I've ever heard.",
+     "zh": "这压力很大。战斗或逃跑是唯一的反应。”然后你就会说：“你知道吗，Gabrielle？战斗或逃跑就是唯一的反应。”因为我从来只听过这个说法。"
+    },
+    {
+     "id": "B025",
+     "start": 150.0,
+     "end": 163.4,
+     "en": "We see our parents age and we believe that that's just the way that it is. But I can show you many individuals that are aging well and strong.",
+     "zh": "我们看着父母变老，就以为事情本来就是这样。但我可以给你看那些老得健康、老得强壮的人。"
+    },
+    {
+     "id": "B026",
+     "start": 163.4,
+     "end": 166.8,
+     "en": "Both of my parents are incredibly fit.",
+     "zh": "我父母两人身体都非常好。"
+    },
+    {
+     "id": "B027",
+     "start": 166.8,
+     "end": 170.2,
+     "en": "Is that genetic? Maybe I picked my parents well.",
+     "zh": "是遗传吗？也许是我父母选得好。"
+    },
+    {
+     "id": "B028",
+     "start": 170.2,
+     "end": 186.4,
+     "en": "But what I will say is that the traditional framework of aging is in part the way that it is because we have divorced the idea of skeletal muscle from health.",
+     "zh": "但我想说的是，我们对衰老的认知框架之所以是现在这样，部分原因是我们把骨骼肌和健康割裂开了。"
+    },
+    {
+     "id": "B029",
+     "start": 186.4,
+     "end": 188.6,
+     "en": "The bros got it right.",
+     "zh": "“健身男们说对了。"
+    },
+    {
+     "id": "B030",
+     "start": 188.6,
+     "end": 200.0,
+     "en": "You need to be jacked, you need to be tan, and if you're not jacked and tanned... resistance training is only for the bros.\"",
+     "zh": "你得练得壮、晒得黑，要是你不壮不黑……抗阻训练只属于那些健身男。”"
+    },
+    {
+     "id": "B031",
+     "start": 200.0,
+     "end": 202.2,
+     "en": "Nothing could be further from the truth.",
+     "zh": "这真是大错特错。"
+    },
+    {
+     "id": "B032",
+     "start": 202.2,
+     "end": 213.2,
+     "en": "And because of that thought process, we have divorced skeletal muscle health from overall health and wellness and longevity.",
+     "zh": "正因为这种思维方式，我们把骨骼肌健康与整体健康、幸福和长寿割裂开了。"
+    },
+    {
+     "id": "B033",
+     "start": 213.2,
+     "end": 225.8,
+     "en": "If I, as a trained geriatrician, were to say, and by the way, I did seven years of nutritional science training as well, if I were to tell you what is the one most important thing to take you through life,",
+     "zh": "如果我作为一名老年医学专科医生——顺便说一句，我还接受过 7 年的营养科学训练——让我告诉你，最重要的一件事能伴你走完一生，"
+    },
+    {
+     "id": "B034",
+     "start": 225.8,
+     "end": 226.8,
+     "en": "Do you know what I would say?",
+     "zh": "你知道我会说什么吗？"
+    },
+    {
+     "id": "B035",
+     "start": 226.8,
+     "end": 230.4,
+     "en": "Probably muscle. That's right.",
+     "zh": "大概是肌肉。没错。"
+    },
+    {
+     "id": "B036",
+     "start": 230.4,
+     "end": 238.0,
+     "en": "Hands down across the board, the weaker you are, the less muscle mass you have, the greater chances you will die.",
+     "zh": "毫无疑问，全面来看，你越弱、肌肉量越少，死亡的几率就越大。"
+    },
+    {
+     "id": "B037",
+     "start": 238.0,
+     "end": 245.8,
+     "en": "So in terms of cardio, do you think muscle mass is more important than cardiovascular exercise as you age?",
+     "zh": "那说到有氧，你觉得随着年龄增长，肌肉量比有氧运动更重要吗？"
+    },
+    {
+     "id": "B038",
+     "start": 245.8,
+     "end": 257.4,
+     "en": "You're putting me in the hot seat, and I would say both we know are important. But again, both are very important.",
+     "zh": "你这是在为难我。我会说，我们知道两者都很重要。再说一遍，两者都非常重要。"
+    },
+    {
+     "id": "B039",
+     "start": 257.4,
+     "end": 265.6,
+     "en": "But there is no replacement for resistance training and muscle mass. There is none.",
+     "zh": "但抗阻训练和肌肉量是无可替代的。没有任何东西能替代。"
+    },
+    {
+     "id": "B040",
+     "start": 265.6,
+     "end": 268.4,
+     "en": "You will not get the same stimulus.",
+     "zh": "你得不到同样的刺激，"
+    },
+    {
+     "id": "B041",
+     "start": 268.4,
+     "end": 274.4,
+     "en": "by doing cardiovascular activity. And you mentioned your parents or your dad.",
+     "zh": "靠有氧运动做不到。你刚提到你的父母，或者说你爸爸。"
+    },
+    {
+     "id": "B042",
+     "start": 274.4,
+     "end": 285.6,
+     "en": "You see, and we see collectively our aging population shrink, right? They become thinner and scrawny and more sarcopenic.",
+     "zh": "你会看到，我们都会看到，老年人群在“缩水”，对吧？他们变得更瘦、更干，肌少症越来越重。"
+    },
+    {
+     "id": "B043",
+     "start": 285.6,
+     "end": 287.6,
+     "en": "We see this happen.",
+     "zh": "我们亲眼看到这种情况。"
+    },
+    {
+     "id": "B044",
+     "start": 287.6,
+     "end": 289.4,
+     "en": "There is a transition of fiber types.",
+     "zh": "肌纤维类型会发生转变。"
+    },
+    {
+     "id": "B045",
+     "start": 289.4,
+     "end": 295.6,
+     "en": "There's different fiber types and they transition from type two fiber types to type one.",
+     "zh": "肌纤维有不同类型，会从 II 型转变为 I 型。"
+    },
+    {
+     "id": "B046",
+     "start": 295.6,
+     "end": 303.2,
+     "en": "What is that? Type two are the big bulky fibers that you train for hypertrophy, strength and hypertrophy for.",
+     "zh": "那是什么？II 型是粗大的肌纤维，就是你做增肌、力量训练时练的那种。"
+    },
+    {
+     "id": "B047",
+     "start": 303.2,
+     "end": 313.8,
+     "en": "There is a transition that happens if you are not constantly fertilizing these muscles through strength and hypertrophy training through resistance exercise.",
+     "zh": "如果你不持续通过力量和增肌训练、通过抗阻运动来“滋养”这些肌肉，就会发生这种转变。"
+    },
+    {
+     "id": "B048",
+     "start": 313.8,
+     "end": 326.6,
+     "en": "If an individual is solely focused on cardiovascular activity, this will not maintain in a meaningful way these type two or bigger bulky muscle fibers.",
+     "zh": "如果一个人只做有氧运动，就无法真正有效地维持这些 II 型、也就是更粗大的肌纤维。"
+    },
+    {
+     "id": "B049",
+     "start": 326.6,
+     "end": 333.4,
+     "en": "When you lose skeletal muscle mass, you also see a change in metabolic health.",
+     "zh": "当你流失骨骼肌，代谢健康也会随之改变。"
+    },
+    {
+     "id": "B050",
+     "start": 333.4,
+     "end": 336.8,
+     "en": "Muscle is the primary site for glucose disposal.",
+     "zh": "肌肉是处理葡萄糖的主要场所，"
+    },
+    {
+     "id": "B051",
+     "start": 336.8,
+     "end": 342.2,
+     "en": "It is the primary site for fatty acid oxidation.",
+     "zh": "也是脂肪酸氧化的主要场所。"
+    },
+    {
+     "id": "B052",
+     "start": 342.2,
+     "end": 352.6,
+     "en": "When you lose skeletal muscle, you see an increase in blood sugar, insulin, type 2 diabetes.",
+     "zh": "骨骼肌一流失，你就会看到血糖、胰岛素升高，2型糖尿病增加。"
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "short": "第3集",
+   "part": "p3",
+   "title": {
+    "zh": "第 3 集 · 久坐、代谢与自主能力",
+    "en": ""
+   },
+   "start": 0,
+   "end": 344.6,
+   "sentences": [
+    {
+     "id": "C001",
+     "start": 0,
+     "end": 13.4,
+     "en": "Skeletal muscle is what allows us to buffer the foods that we eat. So if I'm eating lots of sugar and carbs, for example, and I've got lots of muscle, then the sugar in the carbs is going to be basically stored in",
+     "zh": "骨骼肌让我们能够“缓冲”吃进去的食物。那如果我吃了很多糖和碳水，比如说——而我肌肉很多，那这些糖和碳水基本上就会储存在"
+    },
+    {
+     "id": "C002",
+     "start": 13.4,
+     "end": 17.0,
+     "en": "my muscle. But if I don't have any muscle, then where is it going to go?",
+     "zh": "我的肌肉里。可如果我没什么肌肉，它们会去哪儿？"
+    },
+    {
+     "id": "C003",
+     "start": 17.0,
+     "end": 18.6,
+     "en": "Exactly.",
+     "zh": "没错。"
+    },
+    {
+     "id": "C004",
+     "start": 18.6,
+     "end": 25.0,
+     "en": "Liver, fat, you are going to become increasingly unhealthy unless you are training.",
+     "zh": "肝脏、脂肪。除非你坚持训练，否则你会越来越不健康。"
+    },
+    {
+     "id": "C005",
+     "start": 25.0,
+     "end": 30.2,
+     "en": "So if I have more muscle, does that mean I can eat more carbs and there'll be less of a consequence?",
+     "zh": "那如果我肌肉更多，是不是就能多吃点碳水，而且后果更小？"
+    },
+    {
+     "id": "C006",
+     "start": 30.2,
+     "end": 37.8,
+     "en": "Likely, yes. Especially if you are training and you have healthy skeletal muscle, skeletal muscle can be marbled.",
+     "zh": "很可能是的。特别是你在训练、骨骼肌很健康的话。骨骼肌也会像“雪花牛肉”一样长出大理石花纹。"
+    },
+    {
+     "id": "C007",
+     "start": 37.8,
+     "end": 43.0,
+     "en": "You can get an increase in myosteatosis, which is fat infiltration",
+     "zh": "你可能出现肌内脂肪变性增加，也就是脂肪浸润到"
+    },
+    {
+     "id": "C008",
+     "start": 43.0,
+     "end": 50.4,
+     "en": "in skeletal muscle. In order for skeletal muscle... There is no such thing as a healthy sedentary person.",
+     "zh": "骨骼肌里。要让骨骼肌……根本不存在“健康的久坐者”这回事。"
+    },
+    {
+     "id": "C009",
+     "start": 50.4,
+     "end": 58.8,
+     "en": "You will look in the literature and you will see people say, oh, healthy sedentary. There is no such thing as a healthy sedentary person.",
+     "zh": "你翻文献会看到有人说“健康的久坐者”。根本没有健康的久坐者。"
+    },
+    {
+     "id": "C010",
+     "start": 58.8,
+     "end": 62.6,
+     "en": "What do I mean by that? There was some wonderful work out of Yale.",
+     "zh": "什么意思呢？耶鲁大学有一项很棒的研究。"
+    },
+    {
+     "id": "C011",
+     "start": 62.6,
+     "end": 77.6,
+     "en": "They looked at 18-year-old college students that were considered lean and healthy, put them in a timeframe of inactivity and they became insulin resistant.",
+     "zh": "他们找来一些18 岁、被认为又瘦又健康的大学生，让他们一段时间不活动，结果他们出现了胰岛素抵抗。"
+    },
+    {
+     "id": "C012",
+     "start": 77.6,
+     "end": 85.8,
+     "en": "They had skeletal muscle insulin resistance even though there were no outward signs of obesity or fat.",
+     "zh": "他们出现了骨骼肌胰岛素抵抗，尽管外表上看不出任何肥胖或发胖的迹象。"
+    },
+    {
+     "id": "C013",
+     "start": 85.8,
+     "end": 88.6,
+     "en": "If you are inactive,",
+     "zh": "如果你不活动，"
+    },
+    {
+     "id": "C014",
+     "start": 88.6,
+     "end": 94.2,
+     "en": "you will not be turning over your glycogen stores, which is the stored form of carbohydrates.",
+     "zh": "你的糖原储备就得不到周转，糖原就是碳水化合物的储存形式。"
+    },
+    {
+     "id": "C015",
+     "start": 94.2,
+     "end": 97.0,
+     "en": "You will begin to build up byproducts.",
+     "zh": "你会开始堆积代谢副产物，"
+    },
+    {
+     "id": "C016",
+     "start": 97.0,
+     "end": 107.8,
+     "en": "Your skeletal muscle will be increasingly more unhealthy over time. You cannot get out of doing resistance type exercises.",
+     "zh": "你的骨骼肌会随着时间推移越来越不健康。抗阻类运动，你逃不掉。"
+    },
+    {
+     "id": "C017",
+     "start": 107.8,
+     "end": 112.8,
+     "en": "To be clear, you do not have to be doing a one-rep max.",
+     "zh": "需要说明的是，你不必去挑战极限重量（1RM）。"
+    },
+    {
+     "id": "C018",
+     "start": 112.8,
+     "end": 116.4,
+     "en": "You could simply start by bodyweight resistance training.",
+     "zh": "你可以简单地从自重抗阻训练开始。"
+    },
+    {
+     "id": "C019",
+     "start": 116.4,
+     "end": 125.0,
+     "en": "It could be yoga, it could be bands, but at some point you will have to stimulate that tissue in a meaningful way to age well.",
+     "zh": "可以是瑜伽，也可以是弹力带。但到了某个阶段，你必须给肌肉组织真正有效的刺激，才能健康地老去。"
+    },
+    {
+     "id": "C020",
+     "start": 125.0,
+     "end": 137.4,
+     "en": "How many people are meeting the activity guidelines at the moment and how many people aren't? Roughly. Six to eight percent are meeting the resistance training guidelines. Six to eight percent.",
+     "zh": "目前有多少人达到了运动指南的要求，多少人没达到？大概说说。只有 6% 到 8% 的人达到了抗阻训练指南的要求。6% 到 8%。"
+    },
+    {
+     "id": "C021",
+     "start": 137.4,
+     "end": 140.0,
+     "en": "Yes, sir.",
+     "zh": "6% 到 8%？是的，先生。"
+    },
+    {
+     "id": "C022",
+     "start": 140.0,
+     "end": 142.6,
+     "en": "Just if you were to look at resistance training guidelines.",
+     "zh": "这还只是看抗阻训练指南。"
+    },
+    {
+     "id": "C023",
+     "start": 142.6,
+     "end": 147.8,
+     "en": "Now, 50 percent of Americans don't even work out.",
+     "zh": "现在，50%的美国人根本不锻炼。"
+    },
+    {
+     "id": "C024",
+     "start": 147.8,
+     "end": 154.8,
+     "en": "Over 70, roughly 75 percent do not meet both recommendations.",
+     "zh": "70岁以上的人，大约75%两项推荐都达不到。"
+    },
+    {
+     "id": "C025",
+     "start": 154.8,
+     "end": 159.8,
+     "en": "The majority of individuals are sedentary individuals.",
+     "zh": "大多数人都是久坐不动的人。"
+    },
+    {
+     "id": "C026",
+     "start": 159.8,
+     "end": 171.2,
+     "en": "It's interesting because people will then say, \"Well, these stats are all bad, but our life expectancy seems to have gone up year over year.\" Well, I mean, I think it's had a little bit of a blip recently because",
+     "zh": "有意思的是，人们接着会说：“这些数据是都挺糟，可我们的预期寿命好像一年比一年高。”嗯，我是说，最近因为新冠"
+    },
+    {
+     "id": "C027",
+     "start": 171.2,
+     "end": 176.0,
+     "en": "of COVID, but it's typically going up and to the right, our life expectancy. So we must be doing something right?",
+     "zh": "有点波动，但我们的预期寿命总体一直在往上走。所以我们肯定做对了什么吧？"
+    },
+    {
+     "id": "C028",
+     "start": 176.0,
+     "end": 181.2,
+     "en": "Is it about life expectancy or is it about quality?",
+     "zh": "关键是寿命长短，还是生活质量？"
+    },
+    {
+     "id": "C029",
+     "start": 181.2,
+     "end": 192.6,
+     "en": "Could we keep someone alive on bed rest? Probably. Would one say that that would be a good quality of life?",
+     "zh": "我们能让一个人卧床活着吗？大概能。可有谁会说那是高质量的生活？"
+    },
+    {
+     "id": "C030",
+     "start": 192.6,
+     "end": 199.0,
+     "en": "You cannot have a high quality life without high quality muscle.",
+     "zh": "没有高质量的肌肉，就不可能有高质量的生活。"
+    },
+    {
+     "id": "C031",
+     "start": 199.0,
+     "end": 206.0,
+     "en": "More specifically, people care about autonomy.",
+     "zh": "更具体地说，人们在乎的是自主能力。"
+    },
+    {
+     "id": "C032",
+     "start": 206.0,
+     "end": 211.2,
+     "en": "Can you imagine if you couldn't physically get your groceries?",
+     "zh": "你能想象自己连买菜都拎不动吗？"
+    },
+    {
+     "id": "C033",
+     "start": 211.2,
+     "end": 213.4,
+     "en": "You are young. We are young.",
+     "zh": "你还年轻。我们都还年轻。"
+    },
+    {
+     "id": "C034",
+     "start": 213.4,
+     "end": 219.8,
+     "en": "We take for granted the physical capacity that one has.",
+     "zh": "我们把自己拥有的身体能力当成理所当然。"
+    },
+    {
+     "id": "C035",
+     "start": 219.8,
+     "end": 221.8,
+     "en": "That is a gift.",
+     "zh": "那是一份礼物。"
+    },
+    {
+     "id": "C036",
+     "start": 221.8,
+     "end": 232.0,
+     "en": "It is a skill that must be continuously pushed, or the trajectory of aging is exactly what we see.",
+     "zh": "也是一项必须不断锤炼的技能，否则衰老的轨迹就会是我们看到的那样。"
+    },
+    {
+     "id": "C037",
+     "start": 232.0,
+     "end": 237.4,
+     "en": "People get to a point where they can no longer lift their suitcase.",
+     "zh": "人们会到一个地步，再也没法把行李箱"
+    },
+    {
+     "id": "C038",
+     "start": 237.4,
+     "end": 239.8,
+     "en": "On an airplane, overhead. Do you see that?",
+     "zh": "举到飞机的行李架上。你见过吧？"
+    },
+    {
+     "id": "C039",
+     "start": 239.8,
+     "end": 245.4,
+     "en": "Yeah. People struggle to get their bag on the belt to go through security.",
+     "zh": "见过。人们连把包放上安检传送带都很吃力。"
+    },
+    {
+     "id": "C040",
+     "start": 245.4,
+     "end": 248.8,
+     "en": "Is that normal? That is not normal.",
+     "zh": "这正常吗？这不正常。"
+    },
+    {
+     "id": "C041",
+     "start": 248.8,
+     "end": 260.6,
+     "en": "How do we know this? Are there other sort of societies where they just age better than us, and they've got 60-year-olds being able to lift their bags over their head? I mean, I can tell you from",
+     "zh": "我们怎么知道的？有没有哪些社会的人就是比我们老得更好？比如他们60 岁的人还能把包举过头顶？我可以讲讲"
+    },
+    {
+     "id": "C042",
+     "start": 260.6,
+     "end": 266.4,
+     "en": "my father's community in Ecuador, my dad is 74.",
+     "zh": "我父亲在厄瓜多尔的社区。我爸74岁了。"
+    },
+    {
+     "id": "C043",
+     "start": 266.4,
+     "end": 273.0,
+     "en": "If something is a three-hour walk or less, he'll walk it.",
+     "zh": "只要是步行3小时以内的路，他都走着去。"
+    },
+    {
+     "id": "C044",
+     "start": 273.0,
+     "end": 275.6,
+     "en": "I definitely don't like to go visit him, as you can imagine.",
+     "zh": "你可以想象，我真不太想去看他。"
+    },
+    {
+     "id": "C045",
+     "start": 275.6,
+     "end": 280.6,
+     "en": "It's a lot of walking. They are extremely physically active.",
+     "zh": "要走很多路。他们的身体活动量非常大。"
+    },
+    {
+     "id": "C046",
+     "start": 280.6,
+     "end": 297.4,
+     "en": "They seem to age well. And I think that you will find pockets of individuals who do things that are very physically active throughout their lifespan, which will allow them to maintain a muscle span,",
+     "zh": "他们似乎老得很好。我认为你会发现，有些人群一辈子都在做体力活动很多的事情，这能让他们维持“肌肉寿命”（muscle span），"
+    },
+    {
+     "id": "C047",
+     "start": 297.4,
+     "end": 300.6,
+     "en": "which is the time in which they have quality skeletal muscle.",
+     "zh": "也就是拥有优质骨骼肌的那段时间。"
+    },
+    {
+     "id": "C048",
+     "start": 300.6,
+     "end": 304.6,
+     "en": "I will also say we control our environment.",
+     "zh": "我还想说，环境是我们自己掌控的。"
+    },
+    {
+     "id": "C049",
+     "start": 304.6,
+     "end": 308.2,
+     "en": "Everything can be easy for us if we choose.",
+     "zh": "只要我们愿意，一切都可以很轻松。"
+    },
+    {
+     "id": "C050",
+     "start": 308.2,
+     "end": 310.0,
+     "en": "You can take the escalator, you can take the elevator.",
+     "zh": "你可以坐扶梯，可以坐电梯，"
+    },
+    {
+     "id": "C051",
+     "start": 310.0,
+     "end": 312.8,
+     "en": "You can get in the car. You can do all of these things.",
+     "zh": "可以开车，这些你都可以做。"
+    },
+    {
+     "id": "C052",
+     "start": 312.8,
+     "end": 321.0,
+     "en": "Inoculating yourself against muscle aging takes effort, but it has to be done.",
+     "zh": "给自己“接种疫苗”对抗肌肉衰老需要付出努力，但必须去做。"
+    },
+    {
+     "id": "C053",
+     "start": 321.0,
+     "end": 339.6,
+     "en": "Each time someone has a choice to either do it physically themselves or to take the easy way, each time an individual continues to take the easy way, the predictable decline will... It's like putting another coin in the bank,",
+     "zh": "每当一个人面临选择：是自己动手动脚，还是走捷径——每次一个人继续选择捷径，可预见的衰退就会……这就像又往银行里存了一枚硬币，"
+    },
+    {
+     "id": "C054",
+     "start": 339.6,
+     "end": 343.4,
+     "en": "but maybe that bank is being spent on something worthless.",
+     "zh": "但这笔钱却被花在了毫无价值的东西上。"
+    },
+    {
+     "id": "C055",
+     "start": 343.4,
+     "end": 344.6,
+     "en": "That's exactly what happened.",
+     "zh": "事情正是这样。"
+    }
+   ]
+  },
+  {
+   "id": "D",
+   "short": "第4集",
+   "part": "p4",
+   "title": {
+    "zh": "第 4 集 · 蛋白质、日常负重与肌肉因子",
+    "en": ""
+   },
+   "start": 0,
+   "end": 353.4,
+   "sentences": [
+    {
+     "id": "D001",
+     "start": 0,
+     "end": 4.6,
+     "en": "Do diets work? Do you ever put someone on a diet?",
+     "zh": "节食有用吗？你会让人节食吗？"
+    },
+    {
+     "id": "D002",
+     "start": 4.6,
+     "end": 6.8,
+     "en": "If they're over-consuming calories, yeah.",
+     "zh": "如果他们热量摄入过多，会的。"
+    },
+    {
+     "id": "D003",
+     "start": 6.8,
+     "end": 8.4,
+     "en": "And what does that look like?",
+     "zh": "那具体是什么样的？"
+    },
+    {
+     "id": "D004",
+     "start": 8.4,
+     "end": 12.6,
+     "en": "For us, I mean, we've been doing this for a very long time.",
+     "zh": "对我们来说，我们做这件事已经很久了。"
+    },
+    {
+     "id": "D005",
+     "start": 12.6,
+     "end": 24.6,
+     "en": "We... the first thing that we decide is dietary protein, which unfortunately seems to be the most controversial macronutrient, which, by the way, you looked at me crazy, and you're absolutely right. Why would any macronutrient",
+     "zh": "我们首先确定的是膳食蛋白质，可惜它似乎是争议最大的宏量营养素。顺便说一句—你用一种“这也太离谱了”的眼神看我，你完全没错。为什么一种宏量营养素"
+    },
+    {
+     "id": "D006",
+     "start": 24.6,
+     "end": 32.6,
+     "en": "be controversial? But dietary protein, again, it wasn't like this until the influx of social media.",
+     "zh": "会有争议？但膳食蛋白质，在社交媒体大量涌现之前并不是这样的。"
+    },
+    {
+     "id": "D007",
+     "start": 32.6,
+     "end": 34.0,
+     "en": "And what do I mean by that?",
+     "zh": "我这话什么意思？"
+    },
+    {
+     "id": "D008",
+     "start": 34.0,
+     "end": 44.4,
+     "en": "Dietary protein, it just seems as if there's always a reason why people are trying to remove it from the diet, which seems somewhat ridiculous and counterintuitive.",
+     "zh": "膳食蛋白质——似乎人们总能找到理由把它从饮食里去掉，这有点荒谬，也违反常识。"
+    },
+    {
+     "id": "D009",
+     "start": 44.4,
+     "end": 52.8,
+     "en": "The first thing that we do is we recognize that dietary protein is what the foundation of any solid nutrition plan should be built on.",
+     "zh": "我们做的第一件事，就是认识到膳食蛋白质是任何靠谱的营养方案的基础。"
+    },
+    {
+     "id": "D010",
+     "start": 52.8,
+     "end": 57.6,
+     "en": "And that is 0.7 to 1 gram per pound of ideal body weight.",
+     "zh": "也就是每磅理想体重0.7到1克（约每公斤1.6-2.2克）。"
+    },
+    {
+     "id": "D011",
+     "start": 57.6,
+     "end": 64.0,
+     "en": "If you eat high nutrient dense foods like animal products, you could probably go to the lower end of 0.7.",
+     "zh": "如果你吃的是动物性食物这类营养密度高的食物，大概可以取下限，0.7克。"
+    },
+    {
+     "id": "D012",
+     "start": 64.0,
+     "end": 74.8,
+     "en": "If you are someone who does not eat any kind of animal product, you're probably going to be closer to one gram per pound of ideal body weight, of whatever that source of protein is.",
+     "zh": "如果你完全不吃任何动物性食物，那可能要更接近每磅理想体重1克，不管蛋白质来源是什么。"
+    },
+    {
+     "id": "D013",
+     "start": 74.8,
+     "end": 79.2,
+     "en": "But protein is what is going to maintain hunger.",
+     "zh": "但蛋白质才是起维持作用的关键。（原声听作 hunger，视频内嵌字幕校作 muscle）"
+    },
+    {
+     "id": "D014",
+     "start": 79.2,
+     "end": 85.6,
+     "en": "You know, dietary protein does cause an increase in GLP... GLP-1 in the body.",
+     "zh": "你知道，膳食蛋白质确实会让体内的 GLP……GLP-1 升高。"
+    },
+    {
+     "id": "D015",
+     "start": 85.6,
+     "end": 88.8,
+     "en": "And people will talk about that, although it's only meal to meal.",
+     "zh": "人们会谈到这一点，虽然这种作用只在每餐之间。"
+    },
+    {
+     "id": "D016",
+     "start": 88.8,
+     "end": 101.2,
+     "en": "Which is... so, you know, you have these GLP-1 agonists, which improve satiation. So like Ozempic is a GLP-1 agonist, which makes you less hungry. Yes. Dietary protein in part works on that same kind of mechanism,",
+     "zh": "也就是说，有一类 GLP-1受体激动剂，能增强饱腹感。比如 Ozempic（司美格鲁肽）就是 GLP-1激动剂，让你没那么饿。对。膳食蛋白质在一定程度上也是通过类似的机制起作用。"
+    },
+    {
+     "id": "D017",
+     "start": 101.2,
+     "end": 103.6,
+     "en": "also releases GLP-1.",
+     "zh": "也会促进 GLP-1 释放。"
+    },
+    {
+     "id": "D018",
+     "start": 103.6,
+     "end": 104.6,
+     "en": "Which makes me less hungry.",
+     "zh": "所以会让我没那么饿？"
+    },
+    {
+     "id": "D019",
+     "start": 104.6,
+     "end": 107.6,
+     "en": "Yes. Okay. Improve your... improve your satiation.",
+     "zh": "对。好。它会增强你的饱腹感。"
+    },
+    {
+     "id": "D020",
+     "start": 107.6,
+     "end": 115.6,
+     "en": "Dietary protein, we know, can help regulate hunger, can also maintain blood sugar, right,",
+     "zh": "我们知道，膳食蛋白质有助于调节饥饿感，还能帮助维持血糖，对吧？"
+    },
+    {
+     "id": "D021",
+     "start": 115.6,
+     "end": 126.8,
+     "en": "if you have carbohydrates in check. Not a very efficient way, but your body can generate glucose from dietary protein. A lot of people associate protein with, like, bodybuilders and stuff like that. I know, it's such a mistake.",
+     "zh": "前提是你控制好碳水。虽然效率不高，但身体可以用膳食蛋白质生成葡萄糖。很多人一提蛋白质就想到健美运动员之类的。我知道，这是个大误区。"
+    },
+    {
+     "id": "D022",
+     "start": 126.8,
+     "end": 132.2,
+     "en": "It's a mistake because as individuals age, they need...",
+     "zh": "因为随着年龄增长，人们需要"
+    },
+    {
+     "id": "D023",
+     "start": 132.2,
+     "end": 136.2,
+     "en": "double the minimum recommendation to prevent a deficiency.",
+     "zh": "预防缺乏所需最低推荐量的两倍。"
+    },
+    {
+     "id": "D024",
+     "start": 136.2,
+     "end": 148.8,
+     "en": "The current recommendation is 0.8 grams per kilogram, or 0.37 grams per pound. If someone was 115 pounds, their dietary protein recommendation would be 45 grams.",
+     "zh": "目前的推荐量是每公斤体重0.8克，也就是每磅0.37克。如果一个人体重115磅（约52公斤），蛋白质推荐量就是45克。"
+    },
+    {
+     "id": "D025",
+     "start": 148.8,
+     "end": 152.0,
+     "en": "That would be the minimum to prevent a deficiency.",
+     "zh": "这只是预防缺乏的最低量。"
+    },
+    {
+     "id": "D026",
+     "start": 152.0,
+     "end": 160.6,
+     "en": "As individuals age, they require more dietary protein because skeletal muscle becomes what we call anabolically resistant.",
+     "zh": "随着年龄增长，人需要更多膳食蛋白质，因为骨骼肌会出现所谓的“合成代谢抵抗”。"
+    },
+    {
+     "id": "D027",
+     "start": 160.6,
+     "end": 170.2,
+     "en": "It means it becomes less efficient at utilizing dietary protein if you were to eat the way you did maybe in your teens and twenties.",
+     "zh": "意思是，如果你还像十几、二十几岁时那样吃，它利用膳食蛋白质的效率会变低。"
+    },
+    {
+     "id": "D028",
+     "start": 170.2,
+     "end": 172.4,
+     "en": "Your body at that time is extremely anabolic.",
+     "zh": "那时候身体的合成代谢非常旺盛。"
+    },
+    {
+     "id": "D029",
+     "start": 172.4,
+     "end": 176.0,
+     "en": "Are there small parts of your protocol that people can implement?",
+     "zh": "你的方案里有没有一些小细节是大家可以照着做的？"
+    },
+    {
+     "id": "D030",
+     "start": 176.0,
+     "end": 178.2,
+     "en": "You talk there about not sitting.",
+     "zh": "你刚才说到少坐，"
+    },
+    {
+     "id": "D031",
+     "start": 178.2,
+     "end": 179.6,
+     "en": "You said weighted vest.",
+     "zh": "还提到了负重背心。"
+    },
+    {
+     "id": "D032",
+     "start": 179.6,
+     "end": 186.4,
+     "en": "Yeah. Is there anything else that we can do that might help us build muscle mass without having to go to the gym?",
+     "zh": "对。还有没有别的办法，能帮我们不去健身房也能增加肌肉量？"
+    },
+    {
+     "id": "D033",
+     "start": 186.4,
+     "end": 188.4,
+     "en": "Yes. What are the key things you think about that?",
+     "zh": "有。你觉得关键有哪些？"
+    },
+    {
+     "id": "D034",
+     "start": 188.4,
+     "end": 195.0,
+     "en": "If you can take a call walking or rucking, you can load up weight.",
+     "zh": "如果你能边走路或负重徒步（rucking）边打电话，还可以加上负重。"
+    },
+    {
+     "id": "D035",
+     "start": 195.0,
+     "end": 199.6,
+     "en": "It is extremely easy to do and you can do it slowly.",
+     "zh": "这极其容易做到，而且可以循序渐进。"
+    },
+    {
+     "id": "D036",
+     "start": 199.6,
+     "end": 204.0,
+     "en": "Whether you start with, you could start with seven pounds.",
+     "zh": "你可以从7磅（约3公斤）开始。"
+    },
+    {
+     "id": "D037",
+     "start": 204.0,
+     "end": 207.0,
+     "en": "I have a five pound weight vest.",
+     "zh": "我有一件5磅的负重背心，，"
+    },
+    {
+     "id": "D038",
+     "start": 207.0,
+     "end": 213.0,
+     "en": "I have a seven pound weight vest, 20, and then from there you can load up weight, so you can build up over time.",
+     "zh": "还有一件7磅、一件20磅的，然后你可以慢慢加重，随着时间逐步增加。"
+    },
+    {
+     "id": "D039",
+     "start": 213.0,
+     "end": 215.8,
+     "en": "People should be doing that.",
+     "zh": "大家都应该这么做。"
+    },
+    {
+     "id": "D040",
+     "start": 215.8,
+     "end": 218.0,
+     "en": "It is effective and easy.",
+     "zh": "有效又简单。"
+    },
+    {
+     "id": "D041",
+     "start": 218.0,
+     "end": 219.8,
+     "en": "Everyone can do that. People are taking calls.",
+     "zh": "人人都能做到。大家都要打电话。"
+    },
+    {
+     "id": "D042",
+     "start": 219.8,
+     "end": 221.8,
+     "en": "You don't have to do a Zoom call.",
+     "zh": "你不一定非要开Zoom 视频会议。"
+    },
+    {
+     "id": "D043",
+     "start": 221.8,
+     "end": 225.4,
+     "en": "Why not get on the phone, get moving.",
+     "zh": "为什么不拿起电话，动起来呢？"
+    },
+    {
+     "id": "D044",
+     "start": 225.4,
+     "end": 236.2,
+     "en": "The human body will like to sit, right, as opposed to being forced to move, but you become... It's almost like a rote activity.",
+     "zh": "人的身体天生喜欢坐着，对吧？而不是被迫动起来，但你会……这几乎成了一种机械的惯性。"
+    },
+    {
+     "id": "D045",
+     "start": 236.2,
+     "end": 242.0,
+     "en": "If you are someone who is sedentary, it becomes easier to become sedentary and stay sedentary.",
+     "zh": "如果你习惯久坐，就更容易一直坐下去、维持久坐。"
+    },
+    {
+     "id": "D046",
+     "start": 242.0,
+     "end": 244.4,
+     "en": "It requires friction to change.",
+     "zh": "改变需要克服阻力。"
+    },
+    {
+     "id": "D047",
+     "start": 244.4,
+     "end": 255.8,
+     "en": "You can mitigate some of that friction by incorporating movement into your life. For example, walking with a weighted vest, easy. Training with your kids.",
+     "zh": "你可以通过把运动融入日常生活，来减少一部分阻力。比如穿着负重背心走路—很简单。跟孩子一起锻炼。"
+    },
+    {
+     "id": "D048",
+     "start": 255.8,
+     "end": 260.2,
+     "en": "People will say, I don't have time, I'm so busy. Pick up your kids after school.",
+     "zh": "有人会说：“我没时间，我太忙了。“那就放学去接孩子。"
+    },
+    {
+     "id": "D049",
+     "start": 260.2,
+     "end": 267.8,
+     "en": "We, instead of going to play video games, we do a push-up challenge or a dance party.",
+     "zh": "我们不去打电子游戏，而是来个俯卧撑挑战，或者开个舞会。"
+    },
+    {
+     "id": "D050",
+     "start": 267.8,
+     "end": 273.0,
+     "en": "One thing that we didn't talk about is how skeletal muscle mass functions as an endocrine organ.",
+     "zh": "有一点我们还没谈到：骨骼肌还是一个内分泌器官。"
+    },
+    {
+     "id": "D051",
+     "start": 273.0,
+     "end": 274.0,
+     "en": "What's an endocrine organ?",
+     "zh": "什么是内分泌器官？"
+    },
+    {
+     "id": "D052",
+     "start": 274.0,
+     "end": 282.4,
+     "en": "An endocrine organ is something that produces hormones that act systemically, locally, and it's an inter-organ connection.",
+     "zh": "内分泌器官就是能分泌激素的器官，这些激素可以作用于全身、作用于局部，还能在器官之间建立联系。"
+    },
+    {
+     "id": "D053",
+     "start": 282.4,
+     "end": 287.0,
+     "en": "When you exercise based on intensity and duration, you release myokines.",
+     "zh": "当你运动时，根据强度和时长，会释放\"肌肉因子”（myokines）。"
+    },
+    {
+     "id": "D054",
+     "start": 287.0,
+     "end": 297.0,
+     "en": "Myokines like interleukin 6 or interleukin 15. These are what people typically think of as cytokines that are released from inflammatory cells or macrophages.",
+     "zh": "比如白细胞介素-6 或白细胞介素-15。人们通常认为这些是由炎症细胞或巨噬细胞释放的细胞因子。"
+    },
+    {
+     "id": "D055",
+     "start": 297.0,
+     "end": 309.8,
+     "en": "But when you contract skeletal muscle in a meaningful way, based on the intensity and duration, you release myokines from skeletal muscle that interface with your brain. They affect mood,",
+     "zh": "但当你根据强度和时长、真正有效地收缩骨骼肌时，骨骼肌就会释放肌肉因子，与你的大脑互动。它们影响情绪，"
+    },
+    {
+     "id": "D056",
+     "start": 309.8,
+     "end": 311.8,
+     "en": "they affect neurogenesis.",
+     "zh": "影响神经发生。"
+    },
+    {
+     "id": "D057",
+     "start": 311.8,
+     "end": 314.0,
+     "en": "It also affects your liver and your kidney.",
+     "zh": "它们也会影响肝脏和肾脏。"
+    },
+    {
+     "id": "D058",
+     "start": 314.0,
+     "end": 316.6,
+     "en": "There's this inter-organ cross talk.",
+     "zh": "这就是器官间的“对话”。"
+    },
+    {
+     "id": "D059",
+     "start": 316.6,
+     "end": 327.8,
+     "en": "We talked about skeletal muscle, about how important it is from a metabolic perspective, as a body armor perspective, but also as this endocrine organ that can affect mood because of",
+     "zh": "我们之前谈到骨骼肌，说它从代谢角度有多重要，作为身体铠甲有多重要，它还是一个内分泌器官，因为它释放的物质，"
+    },
+    {
+     "id": "D060",
+     "start": 327.8,
+     "end": 330.6,
+     "en": "the components that it's releasing.",
+     "zh": "能够影响情绪。"
+    },
+    {
+     "id": "D061",
+     "start": 330.6,
+     "end": 332.4,
+     "en": "And that is fascinating.",
+     "zh": "这非常奇妙。"
+    },
+    {
+     "id": "D062",
+     "start": 332.4,
+     "end": 345.6,
+     "en": "It can counterbalance inflammation based on the activity, duration, and intensity. So that explains why if I've not been moving, I don't feel as good in terms of motivation and",
+     "zh": "它能抵消炎症，具体取决于运动的时长和强度。这就解释了为什么，如果我一直不动，我的动力就会变差，"
+    },
+    {
+     "id": "D063",
+     "start": 345.6,
+     "end": 350.6,
+     "en": "I feel more fatigued when I've done less exercise over a long period of time? I mean, yes.",
+     "zh": "而且长期运动少的时候，我会觉得更疲惫。没错。"
+    },
+    {
+     "id": "D064",
+     "start": 350.6,
+     "end": 353.4,
+     "en": "And it doesn't take much to maintain what you have.",
+     "zh": "而且维持现有的肌肉，并不需要花太多力气。"
+    }
+   ]
+  }
+ ],
+ "expressions": [
+  {
+   "id": "007-e0",
+   "phrase": "physical sovereignty",
+   "zh": "身体自主权：不依赖他人完成日常体力活",
+   "sid": "A005",
+   "at": {
+    "t": 22.6,
+    "label": "第1集 0:22"
+   },
+   "snippet": "If I asked you to please run a mile, could you do it and do it well? I think being and having physical sovereignty and being able to be in control of your body and to be strong and not require someone to help you with things.",
+   "keys": [
+    "sovereignty 主权、自主",
+    "physical 身体的"
+   ],
+   "collocations": [
+    "have physical sovereignty",
+    "maintain your independence"
+   ],
+   "context": {
+    "zh": "她用它定义“强壮的身体”：能掌控自己的身体、做事不求人。",
+    "en": ""
+   },
+   "example": {
+    "en": "Strength training protects my physical sovereignty as I age.",
+    "zh": "力量训练让我在变老时仍能保有身体自主权。"
+   }
+  },
+  {
+   "id": "007-e1",
+   "phrase": "resistance training",
+   "zh": "抗阻训练",
+   "sid": "A033",
+   "at": {
+    "t": 192.2,
+    "label": "第1集 3:12"
+   },
+   "snippet": "Moving your body or a load against resistance. So it would be, for example, taking a weight and moving that through space, whether it is a squat",
+   "keys": [
+    "resistance 阻力",
+    "load 负荷"
+   ],
+   "collocations": [
+    "do resistance training",
+    "bodyweight resistance training",
+    "resistance bands"
+   ],
+   "context": {
+    "zh": "她的定义：让身体或负荷对抗阻力运动——自重、弹力带、器械都算。",
+    "en": ""
+   },
+   "example": {
+    "en": "I do resistance training twice a week with bands.",
+    "zh": "我每周用弹力带做两次抗阻训练。"
+   }
+  },
+  {
+   "id": "007-e2",
+   "phrase": "all-cause mortality",
+   "zh": "全因死亡（率）",
+   "sid": "B003",
+   "at": {
+    "t": 30.4,
+    "label": "第2集 0:30"
+   },
+   "snippet": "If you are in the lower one third of strength, you have a roughly 50% chance of dying from all cause mortality.",
+   "keys": [
+    "all-cause 任何原因的",
+    "mortality 死亡率"
+   ],
+   "collocations": [
+    "risk of all-cause mortality",
+    "reduce all-cause mortality"
+   ],
+   "context": {
+    "zh": "流行病学术语，指任何原因导致的死亡；常与 hazard ratio（风险比）一起出现。",
+    "en": ""
+   },
+   "example": {
+    "en": "Low grip strength is associated with higher all-cause mortality.",
+    "zh": "握力低与全因死亡率升高相关。"
+   }
+  },
+  {
+   "id": "007-e3",
+   "phrase": "there is no replacement for",
+   "zh": "……是无可替代的",
+   "sid": "B039",
+   "at": {
+    "t": 257.4,
+    "label": "第2集 4:17"
+   },
+   "snippet": "But there is no replacement for resistance training and muscle mass. There is none.",
+   "keys": [
+    "replacement 替代品"
+   ],
+   "collocations": [
+    "there is no replacement for practice",
+    "no substitute for"
+   ],
+   "context": {
+    "zh": "用于强调某事无法被别的东西代替；她用来说明有氧不能替代抗阻训练。",
+    "en": ""
+   },
+   "example": {
+    "en": "There is no replacement for seeing the patient yourself.",
+    "zh": "亲自查看病人是无可替代的。"
+   }
+  },
+  {
+   "id": "007-e4",
+   "phrase": "anabolic resistance",
+   "zh": "合成代谢抵抗",
+   "sid": "D026",
+   "at": {
+    "t": 152.0,
+    "label": "第4集 2:32"
+   },
+   "snippet": "As individuals age, they require more dietary protein because skeletal muscle becomes what we call anabolically resistant.",
+   "keys": [
+    "anabolic 合成代谢的",
+    "resistant 有抵抗的"
+   ],
+   "collocations": [
+    "age-related anabolic resistance",
+    "overcome anabolic resistance"
+   ],
+   "context": {
+    "zh": "老年肌肉对蛋白质和训练刺激的合成反应变弱，需要更大剂量刺激。",
+    "en": ""
+   },
+   "example": {
+    "en": "Older adults may need more protein per meal because of anabolic resistance.",
+    "zh": "由于合成代谢抵抗，老年人每餐可能需要更多蛋白质。"
+   }
+  },
+  {
+   "id": "007-e5",
+   "phrase": "inoculate yourself against",
+   "zh": "给自己“打预防针”对抗……",
+   "sid": "C052",
+   "at": {
+    "t": 312.8,
+    "label": "第3集 5:12"
+   },
+   "snippet": "Inoculating yourself against muscle aging takes effort, but it has to be done.",
+   "keys": [
+    "inoculate 接种；预防"
+   ],
+   "collocations": [
+    "inoculate yourself against misinformation",
+    "inoculate against decline"
+   ],
+   "context": {
+    "zh": "借用疫苗比喻：提前付出努力，预防将来的衰退。",
+    "en": ""
+   },
+   "example": {
+    "en": "Daily walks help inoculate yourself against a sedentary routine.",
+    "zh": "每天散步能帮你对久坐习惯“打预防针”。"
+   }
+  }
+ ],
+ "ideas": [
+  {
+   "id": "i1",
+   "front": {
+    "zh": "肌肉不只关乎外形，它是代谢器官",
+    "en": "Muscle is a metabolic organ."
+   },
+   "label": "speaker",
+   "quoteLabel": "她说：",
+   "quote": {
+    "en": "Skeletal muscle is your primary site for glucose metabolism.",
+    "zh": "骨骼肌是葡萄糖代谢的主要场所，"
+   },
+   "meaning": {
+    "zh": "胰岛素刺激下约 80% 的葡萄糖摄取在骨骼肌完成。肌量少、肌肉“不活动”，血糖就更难被处理——这把“练肌肉”从审美问题变成代谢问题。但“肌肉多就能随便吃碳水”是过度推论。",
+    "en": ""
+   },
+   "example": {
+    "zh": "门诊遇到久坐、腰围大、空腹血糖偏高的人：除了饮食建议，也把每周 2 次抗阻训练写进处方。",
+    "en": ""
+   },
+   "at": {
+    "sid": "A057",
+    "t": 321.0,
+    "label": "第1集 5:21"
+   }
+  },
+  {
+   "id": "i2",
+   "front": {
+    "zh": "任何年龄都可以开始变强",
+    "en": "You can get stronger at any age."
+   },
+   "label": "speaker",
+   "quoteLabel": "她说：",
+   "quote": {
+    "en": "Anyone at any time can get stronger and put on muscle. Anyone at any time can get stronger and put on muscle.",
+    "zh": "任何人在任何时候都能变得更强壮、长出肌肉。（重复强调）"
+   },
+   "meaning": {
+    "zh": "“父母老了就那样”是一种被反复看到而形成的预期。90 岁的人做 8 周高强度训练，力量也能显著提高。关键是起点评估与循序渐进，而不是年龄本身。",
+    "en": ""
+   },
+   "example": {
+    "zh": "把“我老了，练不动”改写成一个可检验的小目标：4 周内从椅子坐站 5 次缩短到更少秒数。",
+    "en": ""
+   },
+   "at": {
+    "sid": "B011",
+    "t": 63.0,
+    "label": "第2集 1:03"
+   }
+  },
+  {
+   "id": "i3",
+   "front": {
+    "zh": "她的标准高于指南：要分清证据与个人方案",
+    "en": "Her targets go beyond the guidelines."
+   },
+   "label": "analysis",
+   "quoteLabel": "主题依据 · 原声",
+   "quote": {
+    "en": "No, it is not. We have to call ourselves to a higher standard three to four days a week.",
+    "zh": "不够。我们必须对自己提出更高的标准。每周三到四天。"
+   },
+   "meaning": {
+    "zh": "指南是“至少 2 天抗阻 + 150 分钟活动”；她主张 3–4 天、蛋白 1.6–2.2 g/kg。证据显示训练量比频率更关键，蛋白获益在约 1.6 g/kg 附近趋平。积极方案可以参考，但要说清它超出了共识。",
+    "en": ""
+   },
+   "example": {
+    "zh": "给病人或家人建议时，先给指南底线，再根据年龄、肾功能、训练基础决定是否加码。",
+    "en": ""
+   },
+   "at": {
+    "sid": "A028",
+    "t": 173.8,
+    "label": "第1集 2:53"
+   }
+  }
+ ],
+ "labels": {
+  "speaker": {
+   "zh": "讲者原意",
+   "en": "Speaker’s view"
+  },
+  "analysis": {
+   "zh": "课程分析",
+   "en": "Our analysis"
+  },
+  "open": {
+   "zh": "尚无共识",
+   "en": "No consensus"
+  }
+ },
+ "claims": [
+  {
+   "said": {
+    "en": "of strength compared to if you are in the lower one third of strength, those that are in the lower one third for strength, have a 50% greater risk of dying from nearly anything.",
+    "zh": "力量后三分之一者全因死亡风险高约 50%"
+   },
+   "at": {
+    "sid": "B002",
+    "t": 13.2,
+    "label": "第2集 0:13"
+   },
+   "kind": {
+    "zh": "观察性队列的关联（握力、膝伸力量与死亡）。"
+   },
+   "support": {
+    "zh": "38 项队列 Meta 分析：高握力 HR 0.69；膝伸力量高者 HR 0.86。PURE（17 国约 14 万人）：握力每下降 5 kg，全因死亡 HR 1.16。"
+   },
+   "counter": {
+    "zh": "力量低可能是疾病、营养不良或衰弱的“结果”而非原因（反向因果）；观察研究不能证明提高力量就能等比例降低死亡。"
+   },
+   "judge": {
+    "zh": "把它读作“握力是很好的风险指标”，再看随机试验：抗阻训练能改善力量和功能，但“延长寿命”的随机证据有限。"
+   },
+   "evidence": [
+    {
+     "zh": "García-Hermoso 2018：HR 0.69（0.64–0.74）。",
+     "src": "garcia"
+    },
+    {
+     "zh": "Leong 2015：每 5 kg HR 1.16（1.13–1.20）。",
+     "src": "leong"
+    }
+   ]
+  },
+  {
+   "said": {
+    "en": "And that is 0.7 to 1 gram per pound of ideal body weight.",
+    "zh": "蛋白质每磅理想体重 0.7–1 克"
+   },
+   "at": {
+    "sid": "D010",
+    "t": 52.8,
+    "label": "第4集 0:52"
+   },
+   "kind": {
+    "zh": "个人临床方案，高于官方推荐。"
+   },
+   "support": {
+    "zh": "老年人存在合成代谢抵抗（Moore 2015）；做抗阻训练者约 1.6 g/kg/日 时增肌获益达到平台（Morton 2018）。"
+   },
+   "counter": {
+    "zh": "PROT-AGE 对健康老年人的建议是 1.0–1.2 g/kg；超过约 1.6 g/kg 未见额外增肌；肾功能受损者需个体化。"
+   },
+   "judge": {
+    "zh": "先确认人群（年龄、训练、肾功能），再选区间：普通老年人 1.0–1.2，训练人群可到 ~1.6，2.2 属于上限而非必需。"
+   },
+   "evidence": [
+    {
+     "zh": "PROT-AGE：1.0–1.2 g/kg/日。",
+     "src": "protage"
+    },
+    {
+     "zh": "Morton 2018：>1.62 g/kg/日 无进一步获益。",
+     "src": "morton"
+    }
+   ]
+  },
+  {
+   "said": {
+    "en": "How many people are meeting the activity guidelines at the moment and how many people aren't? Roughly. Six to eight percent are meeting the resistance training guidelines. Six to eight percent.",
+    "zh": "只有 6%–8% 的人达到抗阻训练指南"
+   },
+   "at": {
+    "sid": "C020",
+    "t": 125.0,
+    "label": "第3集 2:05"
+   },
+   "kind": {
+    "zh": "人群统计数字，可以直接查官方数据。"
+   },
+   "support": {
+    "zh": "方向正确：达标率确实低，且随年龄下降。"
+   },
+   "counter": {
+    "zh": "CDC 2020：31.0% 的美国成人达到肌力训练指南；6.8% 是“只达到肌力训练、未达有氧”的比例。"
+   },
+   "judge": {
+    "zh": "听到具体百分比时，问三件事：哪个国家、哪一年、分母是谁。"
+   },
+   "evidence": [
+    {
+     "zh": "NCHS Data Brief 443（2020 NHIS）。",
+     "src": "cdc"
+    }
+   ]
+  }
+ ],
+ "debate": {
+  "q": {
+   "zh": "给普通中年人的建议，应该按指南底线，还是按她更高的标准？",
+   "en": ""
+  },
+  "pro": {
+   "zh": "按指南底线：每周 2 天抗阻 + 150 分钟活动，更容易坚持，证据也最扎实。",
+   "en": "Start with the guideline minimum: it is evidence-based and easier to keep."
+  },
+  "con": {
+   "zh": "按更高标准：大多数人远未达标，目标定高一点反而能对抗“随年龄变弱”的默认轨迹。",
+   "en": "Aim higher: most people fall short, and a higher bar fights the default decline."
+  }
+ },
+ "reflect": {
+  "english": {
+   "prompt": {
+    "zh": "用两三句英语说明：你会为自己（或一位家人）设定什么力量目标？怎么检验进步？",
+    "en": "What strength goal would you set for yourself or a family member, and how will you check progress?"
+   },
+   "starters": [
+    "My first strength goal is …",
+    "I will train … days a week by …",
+    "I will know it is working when …"
+   ]
+  },
+  "prompt": {
+   "title": {
+    "zh": "继续和 AI 练英语",
+    "en": ""
+   },
+   "text": "Act as my English tutor. I studied a 2024 The Diary Of A CEO interview in which Dr Gabrielle Lyon talks about skeletal muscle, strength training and protein. Ask me one question at a time about how I would explain these ideas to a patient or a family member in [your context]. Help me separate evidence, association and opinion. Correct my English after each answer. Do not invent quotations, numbers or studies. End with a short Chinese summary."
+  },
+  "quiz": [
+   {
+    "q": {
+     "zh": "“力量后三分之一的人死亡风险高约 50%”最准确的理解是？",
+     "en": ""
+    },
+    "options": [
+     {
+      "zh": "练强壮就一定能把死亡风险降一半"
+     },
+     {
+      "zh": "观察研究中低力量与更高死亡风险相关"
+     },
+     {
+      "zh": "低力量的人有一半会死于全因死亡"
+     }
+    ],
+    "answer": 1,
+    "why": {
+     "zh": "这是队列研究中的关联（HR 约 0.69），不能直接推出因果或“50% 的机会死亡”。",
+     "en": ""
+    }
+   },
+   {
+    "q": {
+     "zh": "总训练量相同时，每周练 2 天还是 3 天对增肌影响如何？",
+     "en": ""
+    },
+    "options": [
+     {
+      "zh": "3 天一定明显更好"
+     },
+     {
+      "zh": "差别不显著，可按个人偏好安排"
+     },
+     {
+      "zh": "2 天几乎无效"
+     }
+    ],
+    "answer": 1,
+    "why": {
+     "zh": "Schoenfeld 2019 Meta 分析：频率在等量训练时不显著影响增肌。",
+     "en": ""
+    }
+   },
+   {
+    "q": {
+     "zh": "健康老年人的蛋白质摄入，PROT-AGE 共识建议大约是？",
+     "en": ""
+    },
+    "options": [
+     {
+      "zh": "0.8 g/kg/日 就够"
+     },
+     {
+      "zh": "1.0–1.2 g/kg/日，活跃或患病者更高"
+     },
+     {
+      "zh": "人人至少 2.2 g/kg/日"
+     }
+    ],
+    "answer": 1,
+    "why": {
+     "zh": "0.8 g/kg 是预防缺乏的 RDA；PROT-AGE 建议老年人 1.0–1.2 g/kg，活跃或患病者 ≥1.2 g/kg。",
+     "en": ""
+    }
+   }
+  ]
+ },
+ "medical": {
+  "title": {
+   "zh": "医学视角 · 从播客到临床",
+   "en": ""
+  },
+  "author": {
+   "zh": "aiai 学院 · AI 辅助整理，医生审阅前请勿作为诊疗依据",
+   "en": ""
+  },
+  "points": [
+   {
+    "zh": "肌少症先看“力量”。EWGSOP2 共识把低肌力作为肌少症的核心特征，再用肌量/肌质确认、用躯体功能分级。门诊一只握力计、一次 5 次坐站测试，就是把本期“力量是风险指标”落地的最低成本做法。",
+    "en": ""
+   },
+   {
+    "zh": "急危重症的肌肉流失来得极快。一项前瞻性研究中，63 名 ICU 患者第 10 天股直肌横截面积平均下降 17.7%，多器官衰竭者下降更明显。创伤、脓毒症、长时间机械通气的患者，肌肉是需要被“保护”的器官：早期活动、康复介入和营养评估应尽早开始。",
+    "en": ""
+   },
+   {
+    "zh": "重症蛋白质目标不是越高越好。ESPEN 重症指南建议逐步递增至约 1.3 g/kg/日 蛋白当量（推荐等级 0）；2023 年修订版指出，高剂量蛋白的随机试验并未证实额外获益，急性肾损伤患者甚至可能有害。播客里的 1.6–2.2 g/kg 是健康训练人群的思路，不能直接搬到 ICU。",
+    "en": ""
+   },
+   {
+    "zh": "卧床本身就是“代谢打击”。健康年轻人卧床 1 周即可出现胰岛素敏感性下降约 29%、瘦体重减少约 1.4 kg。骨折、术后或住院老人，每多躺一天都在消耗肌肉储备；能下地时尽早下地，不能下地时做床旁抗阻与呼吸训练。",
+    "en": ""
+   },
+   {
+    "zh": "抗阻训练处方要个体化。对老年人、骨质疏松或术后患者，从自重、弹力带和坐站练习开始，循序增加负荷；高强度训练需评估心血管风险、骨折风险和关节情况，并在指导下进行。",
+    "en": ""
+   }
+  ]
+ },
+ "sources": [
+  "video",
+  "apple",
+  "garcia",
+  "leong",
+  "who",
+  "cdc",
+  "schoenfeld17",
+  "schoenfeld19",
+  "fiatarone",
+  "defronzo",
+  "nilwik",
+  "dirks",
+  "protage",
+  "morton",
+  "moore",
+  "belza",
+  "pedersen",
+  "ewgsop2",
+  "puthucheary",
+  "espen"
+ ],
+ "sourceMap": {
+  "video": {
+   "title": "The Diary Of A CEO · The Anti-Obesity Doctor（Gabrielle Lyon，2024-09-26，YouTube 官方完整节目）",
+   "url": "https://www.youtube.com/watch?v=2j3T4oYJPfI",
+   "note": {
+    "zh": "本课 4 段视频是第三方“肌肉精华剪辑”（含画面内嵌中英字幕），取自这期节目；完整语境请看原节目。"
+   }
+  },
+  "apple": {
+   "title": "Apple Podcasts · The Diary Of A CEO 节目页（含简介与章节）",
+   "url": "https://podcasts.apple.com/us/podcast/the-anti-obesity-doctor-if-you-dont-exercise-this-is/id1291423644?i=1000670745250"
+  },
+  "garcia": {
+   "title": "García-Hermoso A, et al. Arch Phys Med Rehabil 2018 · 肌力与全因死亡 Meta 分析（PMID 29425700）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/29425700/"
+  },
+  "leong": {
+   "title": "Leong DP, et al. Lancet 2015 · PURE 研究：握力的预后价值（PMID 25982160）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25982160/"
+  },
+  "who": {
+   "title": "Bull FC, et al. Br J Sports Med 2020 · WHO 身体活动与久坐行为指南（PMID 33239350）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33239350/"
+  },
+  "cdc": {
+   "title": "CDC NCHS Data Brief No. 443 · 2020 年美国成人达到有氧与肌力训练指南的比例",
+   "url": "https://www.cdc.gov/nchs/products/databriefs/db443.htm"
+  },
+  "schoenfeld17": {
+   "title": "Schoenfeld BJ, et al. J Sports Sci 2017 · 每周训练组数与增肌的剂量反应（PMID 27433992）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27433992/"
+  },
+  "schoenfeld19": {
+   "title": "Schoenfeld BJ, et al. J Sports Sci 2019 · 训练频率与增肌 Meta 分析（PMID 30558493）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30558493/"
+  },
+  "fiatarone": {
+   "title": "Fiatarone MA, et al. JAMA 1990 · 90 岁老人高强度力量训练（PMID 2342214）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/2342214/"
+  },
+  "defronzo": {
+   "title": "DeFronzo RA, Tripathy D. Diabetes Care 2009 · 骨骼肌胰岛素抵抗（PMID 19875544）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19875544/"
+  },
+  "nilwik": {
+   "title": "Nilwik R, et al. Exp Gerontol 2013 · 衰老性肌量下降主要来自 II 型纤维变小（PMID 23425621）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23425621/"
+  },
+  "dirks": {
+   "title": "Dirks ML, et al. Diabetes 2016 · 一周卧床致肌萎缩与胰岛素抵抗（PMID 27358494）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27358494/"
+  },
+  "protage": {
+   "title": "Bauer J, et al. JAMDA 2013 · PROT-AGE 老年人蛋白质摄入建议（PMID 23867520）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23867520/"
+  },
+  "morton": {
+   "title": "Morton RW, et al. Br J Sports Med 2018 · 蛋白补充与抗阻训练 Meta 分析（PMID 28698222）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28698222/"
+  },
+  "moore": {
+   "title": "Moore DR, et al. J Gerontol A 2015 · 老年人每餐需要更高相对蛋白量（PMID 25056502）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25056502/"
+  },
+  "belza": {
+   "title": "Belza A, et al. Am J Clin Nutr 2013 · 蛋白质剂量依赖地提高 GLP-1 与饱腹感（PMID 23466396）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23466396/"
+  },
+  "pedersen": {
+   "title": "Pedersen BK, Febbraio MA. Nat Rev Endocrinol 2012 · 骨骼肌作为分泌器官（PMID 22473333）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22473333/"
+  },
+  "ewgsop2": {
+   "title": "Cruz-Jentoft AJ, et al. Age Ageing 2019 · EWGSOP2 肌少症共识（PMID 30312372）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30312372/"
+  },
+  "puthucheary": {
+   "title": "Puthucheary ZA, et al. JAMA 2013 · 危重症急性骨骼肌消耗（PMID 24108501）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/24108501/"
+  },
+  "espen": {
+   "title": "Singer P, et al. Clin Nutr 2019 · ESPEN 重症营养指南（PMID 30348463）",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30348463/"
+  }
+ },
+ "further": [
+  {
+   "title": "EWGSOP2 · 肌少症修订版欧洲共识",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30312372/",
+   "zh": "临床筛查与诊断流程"
+  },
+  {
+   "title": "WHO 2020 身体活动与久坐行为指南",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33239350/",
+   "zh": "官方推荐底线"
+  },
+  {
+   "title": "The Diary Of A CEO · 完整原节目",
+   "url": "https://www.youtube.com/watch?v=2j3T4oYJPfI",
+   "zh": "回到完整语境"
+  }
+ ],
+ "editor": {
+  "zh": "aiai 学院整理的双语文稿、事实核查与练习；视频为第三方剪辑片段，仅作非商业学习预览。课程与讲者、节目方无隶属或背书关系；内容不构成医疗建议。",
+  "en": ""
+ },
+ "revisions": [
+  {
+   "v": "1.0.0",
+   "date": "2026-11-12",
+   "note": {
+    "zh": "预览版：四集自托管 HLS 视频、逐句中英同步文稿、15 条事实核查与医学视角。",
+    "en": ""
+   }
+  }
+ ],
+ "layout": "deck",
+ "cover": {
+  "series": {
+   "zh": "AI VOICES · AI 大师访谈与思想课",
+   "en": "Watch in English. Think in depth. Learn with AI."
+  },
+  "issue": {
+   "zh": "第 7 期",
+   "no": "AI VOICES 007"
+  },
+  "theme": {
+   "zh": "本期主题：肌肉、衰老与证据"
+  },
+  "extra": {
+   "zh": "四集原声 · 中英逐句同步"
+  },
+  "titleLines": [
+   "骨骼肌，",
+   "真的是",
+   "[长寿器官]吗？"
+  ],
+  "who": {
+   "zh": "Steven Bartlett 对谈 Dr Gabrielle Lyon：力量、衰老、久坐与蛋白质。听她怎么说，再看证据说到哪里。"
+  },
+  "dateline": {
+   "zh": "访谈：2024-09-26 · The Diary Of A CEO｜课程整理：2026-11-12（预览版）"
+  },
+  "image": {
+   "src": "../assets/voices/voices007-coverv1.0.webp",
+   "fallback": "../assets/voices/voices007-coverv1.0.webp",
+   "alt": "Steven Bartlett 与 Dr Gabrielle Lyon 在 The Diary Of A CEO 录制现场对谈",
+   "credit": {
+    "zh": "视频截图 · 取自第三方剪辑片段；原节目 © The Diary Of A CEO。"
+   }
+  },
+  "honesty": {
+   "zh": "这是 2024 年 9 月的播客内容，不是最新研究。讲者是有观点的临床医生，她的部分建议高于官方指南；本课不构成医疗建议。"
+  },
+  "background": {
+   "zh": "先逐集听原声，再在第 4 章把每个说法分成：证据支持 / 关联·部分成立 / 观点·推测。"
+  },
+  "facts": [
+   {
+    "n": "4 集",
+    "zh": "精华剪辑 · 共约 23 分钟"
+   },
+   {
+    "n": "231 句",
+    "zh": "中英逐句同步文稿"
+   },
+   {
+    "n": "15 条",
+    "zh": "事实核查，附 PubMed 来源"
+   }
+  ]
+ },
+ "chapters": [
+  {
+   "no": 1,
+   "zh": "一个问题",
+   "en": "THE QUESTION"
+  },
+  {
+   "no": 2,
+   "zh": "原声与逐句文稿",
+   "en": "WATCH & LISTEN",
+   "h2": "四集原声：力量、衰老、代谢与蛋白质",
+   "dek": "左边看视频（画面已有内嵌中英字幕），右边看随原声高亮的逐句文稿。点任一句跳转回听，可切换中英显示。"
+  },
+  {
+   "no": 3,
+   "zh": "三个大想法",
+   "en": "THREE BIG IDEAS",
+   "h2": "把访谈变成可以检验的观点",
+   "dek": "翻开卡片：看她的原话、课程解读，以及一个可以落到生活或临床的例子。"
+  },
+  {
+   "no": 4,
+   "zh": "事实核查台",
+   "en": "THINK & VERIFY",
+   "h2": "说过什么，证据说到哪里",
+   "dek": "每个说法都标为：证据支持 / 关联·部分成立 / 观点·推测，并附可点开的 PubMed 或官方来源。"
+  },
+  {
+   "no": 5,
+   "zh": "课堂与医学视角",
+   "en": "REFLECT & PRACTICE",
+   "h2": "动手练：从听懂到会表达",
+   "dek": "先改写三个“坏提示”，再做小测和英语练笔；最后读医学视角，把播客放回临床语境。"
+  }
+ ],
+ "glossary": {
+  "2": [
+   {
+    "t": "resistance training",
+    "d": "抗阻训练"
+   },
+   {
+    "t": "hypertrophy",
+    "d": "肌肥大／增肌"
+   },
+   {
+    "t": "sarcopenia",
+    "d": "肌少症"
+   }
+  ],
+  "4": [
+   {
+    "t": "HR",
+    "d": "风险比（hazard ratio）"
+   },
+   {
+    "t": "RDA",
+    "d": "推荐膳食供给量"
+   },
+   {
+    "t": "Meta 分析",
+    "d": "合并多项研究的统计分析"
+   }
+  ]
+ },
+ "rest": {
+  "title": {
+   "zh": "回到完整节目",
+   "en": ""
+  },
+  "note": {
+   "zh": "这四段是剪辑精华，问答顺序与原节目不完全一致。想了解完整语境，请看 The Diary Of A CEO 原节目（约 1 小时 53 分）。",
+   "en": ""
+  },
+  "items": [
+   {
+    "at": {
+     "sid": "A001",
+     "t": 0,
+     "label": "第1集 0:00"
+    },
+    "zh": "第 1 集 · 什么才算强壮的身体"
+   },
+   {
+    "at": {
+     "sid": "B001",
+     "t": 0,
+     "label": "第2集 0:00"
+    },
+    "zh": "第 2 集 · 身体铠甲与衰老迷思"
+   },
+   {
+    "at": {
+     "sid": "C001",
+     "t": 0,
+     "label": "第3集 0:00"
+    },
+    "zh": "第 3 集 · 久坐、代谢与自主能力"
+   },
+   {
+    "at": {
+     "sid": "D001",
+     "t": 0,
+     "label": "第4集 0:00"
+    },
+    "zh": "第 4 集 · 蛋白质、日常负重与肌肉因子"
+   }
+  ]
+ },
+ "ideaLabels": {
+  "speaker": {
+   "zh": "讲者观点",
+   "d": "对访谈内容的有来源概括，附原声时间点。"
+  },
+  "analysis": {
+   "zh": "课程分析",
+   "d": "结合文献的解读与应用，不是讲者原话。"
+  },
+  "open": {
+   "zh": "待检验",
+   "d": "超出现有共识，需要更多证据。"
+  }
+ },
+ "contrast": {
+  "title": {
+   "zh": "“健康的久坐者”存在吗？",
+   "en": ""
+  },
+  "left": {
+   "k": "她的说法",
+   "zh": "没有健康的久坐者：不活动，肌肉就会出现胰岛素抵抗，哪怕外表很瘦。"
+  },
+  "right": {
+   "k": "证据能说到哪",
+   "zh": "健康年轻人卧床 1 周，胰岛素敏感性下降约 29%。久坐是群体层面的风险因素，不是对个人的诊断。"
+  },
+  "at": {
+   "sid": "C009",
+   "t": 50.4,
+   "label": "第3集 0:50"
+  },
+  "note": {
+   "zh": "左栏转述讲者观点，右栏为课程核对（Dirks 2016）。",
+   "en": ""
+  },
+  "image": {
+   "src": "../assets/voices/voices007-evidence-ladderv1.0.svg",
+   "alt": "证据阶梯示意图：观点、关联、证据支持三级",
+   "cap": {
+    "zh": "同一句话，先问它站在哪一级证据上。",
+    "en": ""
+   },
+   "credit": "课程原创示意图"
+  }
+ },
+ "factcheck": {
+  "stamp": {
+   "en": "THINK & VERIFY",
+   "zh": "来源与判断"
+  },
+  "filters": [
+   {
+    "id": "all",
+    "zh": "全部"
+   },
+   {
+    "id": "ok",
+    "zh": "证据支持"
+   },
+   {
+    "id": "open",
+    "zh": "关联·部分成立"
+   },
+   {
+    "id": "view",
+    "zh": "观点·推测"
+   }
+  ],
+  "items": [
+   {
+    "tag": "open",
+    "sub": "方向一致 · 表述需更正",
+    "said": {
+     "zh": "“力量处在后三分之一的人，几乎任何原因的死亡风险高约 50%。”她随后又说成“有约 50% 的机会死于全因死亡”。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "Meta 分析（38 项队列、约 190 万人）显示：握力较高者全因死亡风险 HR 0.69（95% CI 0.64–0.74），换算后低握力组风险约高 45%，与“约 50%”量级相近。但这是观察性关联，不等于“练强就能把风险降一半”；“50% 的机会死亡”是口误式表述，正确说法是“风险高约 50%”。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "B002",
+      "t": 13.2,
+      "label": "第2集 0:13"
+     },
+     {
+      "sid": "B003",
+      "t": 30.4,
+      "label": "第2集 0:30"
+     }
+    ],
+    "src": "garcia"
+   },
+   {
+    "tag": "ok",
+    "sub": "",
+    "said": {
+     "zh": "现行推荐是每周 150 分钟中高强度活动，加每周 2 天抗阻训练。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "与 WHO 2020 指南一致：成人每周 150–300 分钟中等强度（或 75–150 分钟高强度）有氧活动，并每周至少 2 天进行涉及主要肌群的肌力训练。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "A025",
+      "t": 154.6,
+      "label": "第1集 2:34"
+     }
+    ],
+    "src": "who"
+   },
+   {
+    "tag": "view",
+    "sub": "高于指南 · 个人建议",
+    "said": {
+     "zh": "每个人、不论年龄，都应每周做 3 天（甚至 3–4 天）抗阻训练。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "这是她的个人标准，高于指南的“至少 2 天”。Meta 分析显示：总训练量相同时，频率高低对增肌没有显著差异（Schoenfeld 2019）。3 天可以是方便凑够训练量的安排，不是证据要求。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "A028",
+      "t": 173.8,
+      "label": "第1集 2:53"
+     },
+     {
+      "sid": "A036",
+      "t": 217.2,
+      "label": "第1集 3:37"
+     }
+    ],
+    "src": "schoenfeld19"
+   },
+   {
+    "tag": "ok",
+    "sub": "下限有证据 · 上限为经验值",
+    "said": {
+     "zh": "以增肌为目标，每个肌群每周 10–20 组。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "剂量反应 Meta 分析（15 项研究）显示每周组数越多、增肌越多，每周 ≥10 组优于更少组数。20 组作为上限主要是经验做法，研究没有确定“最佳上限”。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "A038",
+      "t": 231.2,
+      "label": "第1集 3:51"
+     }
+    ],
+    "src": "schoenfeld17"
+   },
+   {
+    "tag": "ok",
+    "sub": "",
+    "said": {
+     "zh": "任何人在任何时候都能变得更强壮、长出肌肉。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "经典研究：10 名平均 90 岁的养老院老人做 8 周高强度抗阻训练，完成者力量平均提高 174%，大腿中段肌肉面积增加 9%。样本很小，且需在评估与监督下进行；“任何人”应理解为“绝大多数人都能从训练中获益”。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "B011",
+      "t": 63.0,
+      "label": "第2集 1:03"
+     }
+    ],
+    "src": "fiatarone"
+   },
+   {
+    "tag": "ok",
+    "sub": "",
+    "said": {
+     "zh": "骨骼肌是葡萄糖处置（代谢）的主要场所。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "在高胰岛素–正常血糖钳夹条件下，约 80% 的葡萄糖摄取发生在骨骼肌（DeFronzo & Tripathy 2009）。注意这是胰岛素刺激状态下的数据，餐后葡萄糖还会大量进入肝脏等组织。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "A057",
+      "t": 321.0,
+      "label": "第1集 5:21"
+     },
+     {
+      "sid": "B050",
+      "t": 333.4,
+      "label": "第2集 5:33"
+     }
+    ],
+    "src": "defronzo"
+   },
+   {
+    "tag": "open",
+    "sub": "部分成立",
+    "said": {
+     "zh": "不训练时，肌纤维会从 II 型转变为 I 型；只做有氧无法维持 II 型纤维。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "研究更一致的发现是：衰老相关的肌量下降主要来自 II 型纤维变小（老年人 II 型纤维小 29%），而长期抗阻训练能增大 II 型纤维（Nilwik 2013）。“纤维类型转变”有研究支持但幅度与机制仍有争议；“有氧完全无法维持”属于强化表述。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "B045",
+      "t": 289.4,
+      "label": "第2集 4:49"
+     },
+     {
+      "sid": "B048",
+      "t": 313.8,
+      "label": "第2集 5:13"
+     }
+    ],
+    "src": "nilwik"
+   },
+   {
+    "tag": "open",
+    "sub": "现象有证据 · 出处未核实",
+    "said": {
+     "zh": "耶鲁的研究：18 岁、精瘦健康的大学生一段时间不活动后，出现了骨骼肌胰岛素抵抗。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "我们没能核实她所说的具体“耶鲁研究”。但同类现象有直接证据：10 名健康年轻男性严格卧床 1 周，全身胰岛素敏感性下降约 29%，瘦体重减少约 1.4 kg（Dirks 2016，马斯特里赫特大学）。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "C010",
+      "t": 58.8,
+      "label": "第3集 0:58"
+     },
+     {
+      "sid": "C011",
+      "t": 62.6,
+      "label": "第3集 1:02"
+     }
+    ],
+    "src": "dirks"
+   },
+   {
+    "tag": "view",
+    "sub": "数据与官方统计不符",
+    "said": {
+     "zh": "只有 6%–8% 的人达到抗阻训练指南；70 岁以上约 75% 两项都达不到。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "CDC 2020 年全国健康访谈调查：美国成人 31.0% 达到肌力训练指南，24.2% 两项都达到，“只达到肌力训练”的是 6.8%（她的 6%–8% 可能把这个数当成了总数）。65 岁及以上男性 15.3%、女性 10.8% 两项都达到，即约 85%–89% 达不到，比她说的 75% 更差。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "C020",
+      "t": 125.0,
+      "label": "第3集 2:05"
+     },
+     {
+      "sid": "C024",
+      "t": 147.8,
+      "label": "第3集 2:27"
+     }
+    ],
+    "src": "cdc"
+   },
+   {
+    "tag": "ok",
+    "sub": "",
+    "said": {
+     "zh": "随年龄增长，骨骼肌会出现“合成代谢抵抗”，同样的蛋白质刺激效果变弱。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "回顾分析显示：老年男性（约 71 岁）每餐需要约 0.40 g/kg 蛋白质才能让肌原纤维蛋白合成达到平台，年轻男性约 0.24 g/kg（Moore 2015）。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "D026",
+      "t": 152.0,
+      "label": "第4集 2:32"
+     }
+    ],
+    "src": "moore"
+   },
+   {
+    "tag": "view",
+    "sub": "高于共识",
+    "said": {
+     "zh": "蛋白质应按每磅理想体重 0.7–1 克（约每公斤 1.6–2.2 克）；老年人需要“预防缺乏最低量的两倍”。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "RDA 0.8 g/kg 是预防缺乏的量，这点她说得对（她举例 115 磅≈45 g，按公式约 42 g）。但 PROT-AGE 共识建议健康老年人 1.0–1.2 g/kg/日、活跃或患病者 ≥1.2 g/kg；对做抗阻训练的人，Meta 分析显示超过约 1.6 g/kg/日后增肌获益不再增加（Morton 2018）。她的区间位于研究上限，属于积极的个人方案；慢性肾病患者须遵医嘱。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "D010",
+      "t": 52.8,
+      "label": "第4集 0:52"
+     },
+     {
+      "sid": "D023",
+      "t": 132.2,
+      "label": "第4集 2:12"
+     }
+    ],
+    "src": "protage"
+   },
+   {
+    "tag": "open",
+    "sub": "短期作用 · 类比夸大",
+    "said": {
+     "zh": "膳食蛋白质会升高 GLP-1、增强饱腹感，作用机制和 Ozempic 类似。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "随机交叉试验显示蛋白质能剂量依赖地提高餐后 GLP-1、PYY 和饱腹感（Belza 2013）。但这是餐与餐之间的短时变化（她自己也提到 meal to meal），强度远不能与药物级 GLP-1 受体激动剂相比，“类似 Ozempic”只是类比。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "D016",
+      "t": 88.8,
+      "label": "第4集 1:28"
+     },
+     {
+      "sid": "D015",
+      "t": 85.6,
+      "label": "第4集 1:25"
+     }
+    ],
+    "src": "belza"
+   },
+   {
+    "tag": "open",
+    "sub": "基础机制有证据 · 情绪作用多为初步",
+    "said": {
+     "zh": "骨骼肌是内分泌器官，收缩时释放 IL-6、IL-15 等肌肉因子，影响大脑、情绪、神经发生和肝肾。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "“肌肉是分泌器官、运动时释放 IL-6 等肌肉因子”有充分证据（Pedersen & Febbraio 2012）。但肌肉因子对人类情绪和神经发生的作用，目前主要来自动物和机制研究，人体因果证据仍有限。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "D050",
+      "t": 267.8,
+      "label": "第4集 4:27"
+     },
+     {
+      "sid": "D056",
+      "t": 309.8,
+      "label": "第4集 5:09"
+     }
+    ],
+    "src": "pedersen"
+   },
+   {
+    "tag": "view",
+    "sub": "观点 · 修辞",
+    "said": {
+     "zh": "骨骼肌是“长寿器官”；世上没有“健康的久坐者”。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "这是有力的立场性表述，不是可直接检验的科学命题。可以说“肌力低与死亡风险升高相关、久坐与代谢风险相关”，但个体健康还取决于很多其他因素。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "A054",
+      "t": 302.6,
+      "label": "第1集 5:02"
+     },
+     {
+      "sid": "C009",
+      "t": 50.4,
+      "label": "第3集 0:50"
+     }
+    ],
+    "src": "video"
+   },
+   {
+    "tag": "view",
+    "sub": "缺少直接证据",
+    "said": {
+     "zh": "边打电话边穿负重背心走路（从 5–7 磅起），就能帮助增加肌肉量。",
+     "en": ""
+    },
+    "orig": {
+     "zh": "增加日常活动有益，这一点没有争议；但我们没有找到“穿负重背心步行能显著增加肌肉量”的直接试验证据。可以把它当作“减少久坐”的生活技巧，而不是增肌方案。",
+     "en": ""
+    },
+    "at": [
+     {
+      "sid": "D034",
+      "t": 188.4,
+      "label": "第4集 3:08"
+     },
+     {
+      "sid": "D037",
+      "t": 204.0,
+      "label": "第4集 3:24"
+     }
+    ],
+    "src": ""
+   }
+  ],
+  "evidenceTitle": {
+   "zh": "深读三组：数字从哪里来",
+   "en": ""
+  },
+  "takeaway": {
+   "zh": "“有出处”不等于“普遍成立”：观察性关联要警惕反向因果，个人方案要和指南区分，具体百分比要追问国家、年份和分母。"
+  }
+ },
+ "practice": {
+  "pairs": [
+   {
+    "bad": "告诉我每天该吃多少蛋白质。",
+    "good": "我 45 岁、体重 70 kg、肾功能正常、每周力量训练 2 次。请分别给出 RDA、PROT-AGE 共识和运动营养研究的建议范围，注明各自适用人群和证据来源。",
+    "why": "个人情况和“按哪套标准”决定答案；要求列来源，才能核对。"
+   },
+   {
+    "bad": "力量训练能让人多活几年吗？直接说是或不是。",
+    "good": "请区分：观察性研究中肌力与死亡的关联、随机试验中抗阻训练对功能的效果。各给一项研究（作者、年份、PMID）并说明局限。",
+    "why": "把“因果”和“关联”分开问，避免一句话的过度结论。"
+   },
+   {
+    "bad": "给我爸（75 岁）安排一个每周练 4 天的增肌计划。",
+    "good": "我父亲 75 岁，有高血压和骨质疏松。请列出开始抗阻训练前需要医生评估的项目，以及一个从自重和弹力带起步、每周 2 次的保守方案。",
+    "why": "老年人先评估安全，再循序渐进；AI 不能代替医生面诊。"
+   }
+  ]
+ },
+ "discussion": [
+  {
+   "zh": "“肌力低与死亡风险高相关”，可能有哪些反向因果？怎样设计研究才能更接近因果？"
+  },
+  {
+   "zh": "在你的科室或家庭里，哪一个最小的改变（比如住院老人早下床、每天坐站练习）最值得先做？"
+  }
+ ],
+ "closing": {
+  "line": {
+   "zh": "把“练肌肉”从审美，改写成可测量的健康目标。",
+   "en": ""
+  },
+  "homework": {
+   "zh": "本周测一次自己或家人的握力或 5 次坐站时间，记下数字，4 周后再测一次。",
+   "en": ""
+  },
+  "image": {
+   "src": "../assets/voices/evidence-notes.svg",
+   "alt": "观察、推断、待核实三栏学习笔记",
+   "credit": "课程原创示意图"
+  }
+ },
+ "aiImageNote": {
+  "zh": "封面为视频截图；示意图为课程原创 SVG。",
+  "en": ""
+ },
+ "learningMode": "transcript",
+ "blindPrompt": "先不看文稿听第 1 集前两分钟：她给“强壮的身体”定了哪几个可以测量的目标？",
+ "syncedParaphrase": false,
+ "captionLanguage": "en"
+}

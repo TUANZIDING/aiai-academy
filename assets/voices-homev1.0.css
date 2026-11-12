@@ -30,6 +30,7 @@
 .vh-dims li.d-english{border-color:rgba(232,100,27,.45);color:#c24f0f}
 .vh-dims li.d-philosophy{border-color:rgba(122,90,168,.45);color:#6a4c97}
 .vh-dims li.d-evidence{border-color:rgba(21,128,61,.4);color:#15803d}
+.vh-dims li.d-medicine{border-color:rgba(163,38,47,.35);color:#a3262f}
 .vh-go{margin-top:auto;padding-top:6px;font-weight:800;font-size:.88rem;color:#14213d}
 .vh-card:hover .vh-go{color:#e8641b}
 .vh-card.minor{background:#f6f3ec}

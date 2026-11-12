@@ -2,15 +2,15 @@
 (() => {
   const box = document.getElementById('voicesList'); if (!box) return;
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const DIM = { AI: 'AI', English: 'English', Philosophy: 'Philosophy', Evidence: 'Evidence' };
+  const DIM = { AI: 'AI', English: 'English', Philosophy: 'Philosophy', Evidence: 'Evidence', Medicine: 'Medicine' };
   const dims = a => `<ul class="vh-dims" aria-label="学习维度">${(a || []).map(k => `<li class="d-${esc(String(k).toLowerCase())}">${esc(DIM[k] || k)}</li>`).join('')}</ul>`;
   const fixHash = () => {
     const h = location.hash; if (h !== '#voices' && h !== '#news') return;
     const go = () => document.getElementById('voices').scrollIntoView(); go(); setTimeout(go, 700); setTimeout(go, 1600);
   };
-  fetch('data/voicesv1.1.json?v=1.4.0').then(r => r.json()).then(d => {
+  fetch('data/voicesv1.1.json?v=1.5.0').then(r => r.json()).then(d => {
     const eps = [...d.episodes].sort((a, b) => b.num - a.num).map(e => `<article class="vh-card">
-      <a class="vh-cover" href="${esc(e.href)}" tabindex="-1" aria-hidden="true"><img src="${esc(e.thumb)}" alt="" loading="lazy" referrerpolicy="no-referrer" width="640" height="360" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace('maxresdefault','hqdefault')}"><span class="vh-tag">${esc(e.no)}</span><span class="vh-note">YouTube 视频封面</span></a>
+      <a class="vh-cover" href="${esc(e.href)}" tabindex="-1" aria-hidden="true"><img src="${esc(e.thumb)}" alt="" loading="lazy" referrerpolicy="no-referrer" width="640" height="360" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace('maxresdefault','hqdefault')}"><span class="vh-tag">${esc(e.no)}</span><span class="vh-note">${esc(e.thumbNote || 'YouTube 视频封面')}</span></a>
       <div class="vh-body">
         <p class="vh-who">${esc(e.speaker)}<span>${esc(e.speakerZh || '')}</span></p>
         <h3><a href="${esc(e.href)}">${esc(e.question.zh)}</a></h3>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 670" role="img" aria-label="证据阶梯：观点·推测、关联·部分成立、证据支持">
+  <rect width="1200" height="670" fill="#fbfaf7"/>
+  <g font-family="-apple-system,'PingFang SC','Noto Sans CJK SC','Microsoft YaHei',sans-serif">
+    <text x="80" y="92" font-size="34" font-weight="700" fill="#14213d">同一句话，站在哪一级？</text>
+    <text x="80" y="134" font-size="22" fill="#566074">Evidence ladder · 课程原创示意图</text>
+    <!-- steps -->
+    <rect x="80" y="470" width="1040" height="120" rx="18" fill="#eceff6"/>
+    <rect x="300" y="340" width="820" height="120" rx="18" fill="#fff" stroke="#d9d2c4" stroke-width="2" stroke-dasharray="10 8"/>
+    <rect x="520" y="210" width="600" height="120" rx="18" fill="#e8f4ee"/>
+    <text x="112" y="525" font-size="30" font-weight="700" fill="#2b3754">观点 · 推测</text>
+    <text x="112" y="565" font-size="21" fill="#566074">“没有健康的久坐者” · “负重背心能增肌”</text>
+    <text x="332" y="395" font-size="30" font-weight="700" fill="#2b3754">关联 · 部分成立</text>
+    <text x="332" y="435" font-size="21" fill="#566074">低肌力 ↔ 死亡风险高（观察性，HR≈0.69）</text>
+    <text x="552" y="265" font-size="30" font-weight="700" fill="#1f6b47">证据支持</text>
+    <text x="552" y="305" font-size="21" fill="#2b3754">90 岁也能练强 · 肌肉处理约 80% 胰岛素刺激的葡萄糖</text>
+    <path d="M1040 170 L1040 120" stroke="#e8641b" stroke-width="6" stroke-linecap="round"/>
+    <path d="M1022 138 L1040 116 L1058 138" fill="none" stroke="#e8641b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1070" y="140" font-size="20" fill="#a8430b">证据更强</text>
+  </g>
+</svg>
