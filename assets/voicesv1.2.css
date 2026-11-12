@@ -21,6 +21,7 @@ a{color:var(--vx-ink);text-decoration-color:rgba(20,33,61,.35);text-underline-of
 a:hover{text-decoration-color:var(--vx-accent)}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--vx-accent);outline-offset:3px;border-radius:6px}
+h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
 .vx-skip{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 14px;border-radius:8px;z-index:60}
 .vx-skip:focus{left:12px}
 .vx-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
