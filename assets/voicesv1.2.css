@@ -502,3 +502,5 @@ html{scroll-padding-top:0}
 .vx-s .tm{font-variant-numeric:tabular-nums}
 ::selection{background:var(--vx-hl);color:var(--vx-ink)}
 .vx-tx{scrollbar-width:thin;scrollbar-color:var(--vx-line2) transparent}
+
+.vx-ico{display:inline-block;vertical-align:-2px;margin-right:2px}

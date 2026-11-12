@@ -133,7 +133,7 @@
           <span class="vx-grp${HLS ? ' vx-partgrp' : ''}"><span>${HLS ? '分集' : '片段'}</span>${D.segments.map(g => `<button type="button" class="vx-chip" data-seg="${g.id}"${HLS ? ` aria-pressed="false" title="${esc(g.title.zh)}"` : ''}>${esc(HLS ? (g.short || g.id) : g.id)}</button>`).join('')}</span>
           <span class="vx-grp" role="group" aria-label="速度 Speed"><span>速度</span>${[0.75, 1, 1.25].map(r => `<button type="button" class="vx-chip" data-rate="${r}" aria-pressed="${r === 1}">${r}×</button>`).join('')}</span>
           <button type="button" class="vx-chip" id="vxLoop" aria-pressed="false">${D.syncedParaphrase ? '⟲ 循环这段' : guide ? '⟲ 循环本段' : '⟲ 循环本句'}</button>
-          <button type="button" class="vx-chip" id="vxFull">⛶ 全屏</button>
+          <button type="button" class="vx-chip" id="vxFull"><svg class="vx-ico" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/></svg> 全屏</button>
         </div>
         <p class="vx-note">${HLS ? esc(V.playNote.zh) : '逐句听力：视频内默认请求英文 CC 字幕；可在 ⚙ → Subtitles/字幕 中切换。若听到配音，请在 Audio track/音轨 中选择 Original/原始英语。盲听时可关闭 CC。'}</p>
         <p class="vx-cap">${HLS ? esc(V.credit.zh) : `<b>${esc(D.speaker.name)}</b> ${esc(D.speaker.role.zh)} · 视频由 ${esc(V.channel)} ${V.official === false ? '上传（非官方频道）' : '官方上传'}；${guide ? '旁侧内容为 aiai 学院原创导读。' : '中文为 aiai 学院译文。'}`}<span class="vx-now" id="vxNow" aria-live="polite"></span></p>
@@ -214,8 +214,8 @@
     <div class="vx-filters" role="group" aria-label="按类别筛选 Filter">${F.filters.map(f => `<button type="button" data-f="${f.id}" aria-pressed="${f.id === 'all'}">${esc(f.zh)}<i>${f.id === 'all' ? F.items.length : F.items.filter(x => x.tag === f.id).length}</i></button>`).join('')}</div>
     <ul class="vx-facts-list" id="vxFacts">${F.items.map(it => `<li data-tag="${it.tag}">
       <p class="tg"><span class="vx-tag t-${it.tag}">${esc(TAG[it.tag])}</span>${it.sub ? `<span class="sub">${esc(it.sub)}</span>` : ''}</p>
-      <div class="rows"><p><b>${guide ? '辨析命题' : '流传说法'}</b><span>${esc(it.said.zh)}</span></p>
-      <p><b>${guide ? '核对与分析' : '原话'}</b><span>${esc(it.orig.zh)} <span class="tss">${it.at.map(tsBtn).join(' ')}</span>${it.src ? ` <a href="${esc(S[it.src].url)}" target="_blank" rel="noopener" class="srcl">出处 ↗</a>` : ''}</span></p></div>
+      <div class="rows"><p><b>${HLS ? '她说' : guide ? '辨析命题' : '流传说法'}</b><span>${esc(it.said.zh)}</span></p>
+      <p><b>${HLS ? '证据核对' : guide ? '核对与分析' : '原话'}</b><span>${esc(it.orig.zh)} <span class="tss">${it.at.map(tsBtn).join(' ')}</span>${it.src ? ` <a href="${esc(S[it.src].url)}" target="_blank" rel="noopener" class="srcl">出处 ↗</a>` : ''}</span></p></div>
     </li>`).join('')}</ul>
     <p class="vx-empty" id="vxEmpty" hidden>这一类暂时没有条目。</p>
     <details class="vx-fold vx-evi" ${D.claims.length ? '' : 'hidden'}><summary><b>${esc(F.evidenceTitle.zh)}</b><span>调查与研究数据 · ${D.claims.length} 组</span></summary>
