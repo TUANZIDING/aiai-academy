@@ -1,4 +1,15 @@
-# 图片授权与署名表 v1.0
+# 图片说明与授权署名表 v1.0
+
+本仓库的图片分两类，许可不同：
+
+| 类别 | 位置 | 数量 | 来源 | 许可 |
+|---|---|---|---|---|
+| 文献原图 | `图片/文献原图/fig-*.webp` | 17 | 转载自 CC BY 4.0 开放获取论文，内容未改 | 仍按各自原论文的 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)，版权归原作者，**不属于**本仓库的非商业许可 |
+| AI 示意图 | `图片/示意图/schem-*.webp` | 12 | 作者用 AI 生成的原理示意图，非实验数据 | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)，商业用途需事先联系作者获得授权合作 |
+
+`-sm.webp` 是网页用缩略图。元数据：`图片/文献原图/文献原图说明v1.0.json`（出处、原文图注、许可核验记录）、`图片/示意图/示意图标注v1.1.json`（标注坐标与说明）。
+
+## 文献原图署名表
 
 核验日期：2026-11-13。所有图片均为 CC BY 4.0，逐篇核验（PMC OA S3 元数据 license_code、文章 JATS XML `<license>`、Europe PMC license 字段，三处一致）。未裁剪，仅转换为 WebP；标注“缩放”者宽度压到 1600 px。
 
@@ -61,8 +72,12 @@
 
 ## AI 示意图（12 张）
 
-`schem-*.webp` 由 AI 生成，标注“AI 示意图 · 非实验数据”，仅帮助理解原理，不是实验数据，也不是对上表任何文献图片的改编。它们与本仓库其他文字、数据一样按 CC BY 4.0 发布。
+`图片/示意图/schem-*.webp` 由 AI 生成，标注“AI 示意图 · 非实验数据”，仅帮助理解原理，不是实验数据，也不是对上表任何文献图片的改编。它们与本仓库作者撰写的文字、数据一样按 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) 发布；商业用途需事先联系作者获得授权合作（<https://tuanziding.github.io/#contact>）。
 
 ## Licensing note (English)
 
-The 17 `fig-*.webp` files are reproduced, unchanged in content (format converted to WebP and downsized), from CC BY 4.0 open-access articles. They remain the work of their original authors under their original CC BY 4.0 licences and are **not** covered by this repository's CC BY 4.0 / MIT licensing; reuse them with the attribution line given in the table above. The 12 `schem-*.webp` files are AI-generated explanatory schematics, not experimental data.
+The 17 `图片/文献原图/fig-*.webp` files are reproduced, unchanged in content (format converted to WebP and downsized), from CC BY 4.0 open-access articles. They remain the work of their original authors under their original CC BY 4.0 licences and are **not** covered by this repository's non-commercial licensing (CC BY-NC 4.0 for content, PolyForm Noncommercial 1.0.0 for code); reuse them with the attribution line given in the table above. The 12 `图片/示意图/schem-*.webp` files are AI-generated explanatory schematics, not experimental data; they are the author's work under CC BY-NC 4.0, and commercial use requires prior permission (contact: https://tuanziding.github.io/#contact).
+
+---
+
+本文件为 aiai-academy.com 副本；页面中图片路径为 `assets/ev-guide/figures/`。完整仓库与许可全文：<https://github.com/TUANZIDING/ev-isolation-guide>（`文档/图片说明v1.0.md`、`LICENSE`、`LICENSES/`）。
