@@ -40,7 +40,13 @@
           'Real lower-leg anatomy in 12 dissection layers, a cross-section at the fracture plane, an AO-calibrated healing timeline from day 0 to one year, compartment syndrome, and a 10-question quiz.'],
       tags: ['12 层解剖 Layers', 'AO 时间轴 Timeline', '骨筋膜室 Compartment', '测验 Quiz'],
       img: 'assets/fracture/fracture-herov1.0.webp', alt: '胫骨干骨折愈合 3D 课件截图：小腿肌肉、血管与骨折处血肿', href: 'lessons/fracture-healing/fracture-healingv0.4.html' },
-    // To add BodyVista later: a second track:'clinical' card here (no feat), status:'live', img + href.
+    { id: 'cads-ct', track: 'clinical', status: 'live', color: '#4fd1e8', badge: 'CT · v1.1', go: '打开课件 Open courseware',
+      kind: ['影像解剖 · 医学生 / 规培医生', 'Imaging anatomy · students & residents'], title: ['CADS 全身 CT 交互解剖阅片', 'CADS Interactive Whole-body CT Anatomy'],
+      d: ['真实创伤 CT，109 个彩色结构，横断 / 冠状 / 矢状 / 3D 四窗联动，悬停显示中英拉丁名，配 6 个教学导览和找结构测验。',
+          'A real trauma CT with 109 colour-coded structures, linked axial / coronal / sagittal / 3D views, zh/EN/Latin names on hover, six guided stops and a find-the-structure quiz.'],
+      tags: ['真实 CT Real CT', '109 结构 Structures', '中英拉丁 zh/EN/Lat', 'GitHub 开源 Open source'],
+      img: 'assets/cads/cads-ct-herov1.0.webp', alt: 'CADS 全身 CT 阅片器截图：冠状面与矢状面彩色结构标注及中文名称', href: 'lessons/cads-ct-teaching/cads-ct-teachingv1.1.html' },
+    // To add BodyVista later: another track:'clinical' card here (no feat), status:'live', img + href.
     { id: 'dna', track: 'micro', status: 'soon', color: '#38e0c6',
       kind: ['分子生物学', 'Molecular biology'], title: ['DNA 双螺旋与复制', 'DNA double helix & replication'],
       d: ['碱基配对、双螺旋的几何结构，以及复制叉上的解旋酶和 DNA 聚合酶。',
