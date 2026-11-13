@@ -9,7 +9,7 @@
       intro: ['显微镜下的世界：细胞、分子与囊泡，全屏自动漫游', 'The world under the microscope: cells, molecules and vesicles as full-screen guided tours.'] },
     { id: 'macro', zh: '宏观馆', en: 'MACRO', sub: ['人体解剖与临床', 'Anatomy & clinical'], color: '#ff6b5e',
       imgs: ['assets/fracture/fracture-herov1.0.webp'],
-      intro: ['肉眼解剖到临床决策：可旋转、可逐层剥离的 3D 人体与创伤课件', 'From gross anatomy to clinical decisions: 3D body and trauma courseware you can rotate and dissect layer by layer.'] }
+      intro: ['肉眼解剖到临床决策：可旋转、可逐层剥离的 3D 人体与创伤课件，以及真实 CT 交互阅片', 'From gross anatomy to clinical decisions: 3D body and trauma courseware you can rotate and dissect layer by layer, plus interactive real-CT reading.'] }
   ];
   const KEY = 'aiai-medhall-door';
   const HALL = [
@@ -45,6 +45,12 @@
           'Real lower-leg anatomy in 12 dissection layers, a cross-section at the fracture plane, an AO-calibrated healing timeline from day 0 to one year, compartment syndrome, and a 10-question quiz.'],
       tags: ['12 层解剖 Layers', 'AO 时间轴 Timeline', '骨筋膜室 Compartment', '测验 Quiz'],
       img: 'assets/fracture/fracture-herov1.0.webp', alt: '胫骨干骨折愈合 3D 课件截图：小腿肌肉、血管与骨折处血肿', href: 'lessons/fracture-healing/fracture-healingv0.4.html' },
+    { id: 'cads-ct', track: 'macro', status: 'live', color: '#4fd1e8', feat: true, badge: 'CT · v1.1', go: '打开课件 Open courseware',
+      kind: ['影像解剖 · 医学生 / 规培医生', 'Imaging anatomy · students & residents'], title: ['CADS 全身 CT 交互解剖阅片', 'CADS Interactive Whole-body CT Anatomy'],
+      d: ['真实创伤 CT，109 个彩色结构，横断 / 冠状 / 矢状 / 3D 四窗联动，悬停显示中英拉丁名，配 6 个教学导览和找结构测验。',
+          'A real trauma CT with 109 colour-coded structures, linked axial / coronal / sagittal / 3D views, zh/EN/Latin names on hover, six guided stops and a find-the-structure quiz.'],
+      tags: ['真实 CT Real CT', '109 结构 Structures', '中英拉丁 zh/EN/Lat', 'GitHub 开源 Open source'],
+      img: 'assets/cads/cads-ct-herov1.0.webp', alt: 'CADS 全身 CT 阅片器截图：冠状面与矢状面彩色结构标注及中文名称', href: 'lessons/cads-ct-teaching/cads-ct-teachingv1.1.html' },
     { id: 'bodyvista', track: 'macro', status: 'soon', color: '#ff8a3d', glyph: 'body',
       kind: ['系统解剖 · 3D', 'Systemic anatomy · 3D'], title: ['3D 解剖馆 · 全身系统解剖（BodyVista）', '3D anatomy hall · whole-body systems (BodyVista)'],
       d: ['BodyVista 全身模型：按系统点亮骨骼、肌肉、血管与神经，可旋转、可逐层剥离。',
