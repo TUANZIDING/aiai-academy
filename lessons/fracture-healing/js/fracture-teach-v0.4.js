@@ -124,7 +124,7 @@ export const QUIZ = [
 
 export const UI = {
   zh: {
-    title: '胫骨干骨折愈合', sub: 'AO 42-A3 · 3D 时间漫游', brand: '← aiai 学院 · 医学教学馆',
+    title: '胫骨干骨折愈合', sub: 'AO 42-A3 · 3D 时间漫游', brand: '← aiai 学院 · 宏观馆',
     tabs: ['时间轴', '细胞与分子', '一期 vs 二期', '影像对照', '临床决策', '测验'],
     tour: '▶ 导览', tourStop: '■ 停止', src: '来源与说明', lang: 'EN',
     tg: { cut: '剖面', peri: '骨膜', cells: '细胞', vessels: '血管', soft: '软组织', labels: '标注' },
@@ -144,7 +144,7 @@ export const UI = {
     close: '关闭', aoNow: 'AO 术后处理 · 当前与下一步', aoNone: '—', histo: '组织学示意', fullH: '全长 X 线（由 3D 几何投影，示意）'
   },
   en: {
-    title: 'Tibial Shaft Fracture Healing', sub: 'AO 42-A3 · 3D time explorer', brand: '← aiai Academy · Medical Teaching Hall',
+    title: 'Tibial Shaft Fracture Healing', sub: 'AO 42-A3 · 3D time explorer', brand: '← aiai Academy · Macro Hall',
     tabs: ['Timeline', 'Cells & signals', 'Primary vs secondary', 'Imaging', 'Clinical', 'Quiz'],
     tour: '▶ Tour', tourStop: '■ Stop', src: 'Sources', lang: '中文',
     tg: { cut: 'Section', peri: 'Periosteum', cells: 'Cells', vessels: 'Vessels', soft: 'Soft tissue', labels: 'Labels' },
