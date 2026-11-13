@@ -1,4 +1,4 @@
-/* EV 提取方法指南 v1.0 — 推荐器、流程步进、质控清单（localStorage）、章节导航高亮。无外部依赖。 */
+/* EV 提取方法指南 v1.1 — 推荐器、流程步进、质控清单（localStorage）、章节导航高亮。无外部依赖。 */
 (() => {
   'use strict';
   document.documentElement.classList.add('js');
@@ -148,6 +148,73 @@
   window.addEventListener('scroll', () => {
     if (ret !== null && Math.abs(window.scrollY - ret) < 40) { back.hidden = true; ret = null; }
   }, { passive: true });
+
+
+
+  /* ---------- v1.1 keep schematic label chips inside the image ---------- */
+  const fitPins = box => {
+    const b = box.getBoundingClientRect(); if (!b.width) return;
+    box.querySelectorAll('.pin span').forEach(s => {
+      s.style.marginLeft = ''; s.style.marginTop = '';
+      if (getComputedStyle(s).display === 'none') return;
+      const r = s.getBoundingClientRect();
+      if (r.right > b.right - 3) s.style.marginLeft = (b.right - 3 - r.right) + 'px';
+      else if (r.left < b.left + 3) s.style.marginLeft = (b.left + 3 - r.left) + 'px';
+      if (r.bottom > b.bottom - 2) s.style.marginTop = (b.bottom - 2 - r.bottom) + 'px';
+      else if (r.top < b.top + 2) s.style.marginTop = (b.top + 2 - r.top) + 'px';
+    });
+  };
+  const sboxes = $$('.simg');
+  if (sboxes.length) {
+    const runAll = () => sboxes.forEach(fitPins);
+    if ('ResizeObserver' in window) { const ro = new ResizeObserver(ents => ents.forEach(e => fitPins(e.target))); sboxes.forEach(s => ro.observe(s)); }
+    else window.addEventListener('resize', runAll);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(runAll);
+    runAll();
+  }
+
+  /* ---------- v1.1 lightbox ---------- */
+  const lb = $('#lb');
+  if (lb && typeof lb.showModal === 'function') {
+    const img = $('#lbImg'); let opener = null;
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a[data-lb]');
+      if (!a) return;
+      e.preventDefault();
+      const fig = a.closest('figure');
+      const t = fig.querySelector('.ft');
+      const badge = fig.querySelector('.fbadge');
+      const attr = fig.querySelector('.attr');
+      img.removeAttribute('src');
+      img.width = +a.dataset.w || 0; img.height = +a.dataset.h || 0;
+      img.src = a.getAttribute('href');
+      img.alt = (a.querySelector('img') || {}).alt || '';
+      $('#lbTitle').textContent = t ? t.textContent : '';
+      $('#lbBadge').innerHTML = badge ? badge.outerHTML : '';
+      $('#lbAttr').innerHTML = attr ? attr.outerHTML : (fig.classList.contains('schem') ? '<p class="attr">AI 生成示意图，仅帮助理解原理，非实验数据。</p>' : '');
+      opener = a;
+      lb.showModal();
+      $('#lbClose').focus();
+    });
+    $('#lbClose').addEventListener('click', () => lb.close());
+    lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+    lb.addEventListener('close', () => { img.removeAttribute('src'); if (opener) opener.focus(); opener = null; });
+  }
+
+  /* ---------- v1.1 sample filter for real figures ---------- */
+  const ftabs = $$('.ftab');
+  if (ftabs.length) {
+    const figs = $$('.rfig'), groups = $$('.rgroup');
+    const apply = f => {
+      ftabs.forEach(b => b.setAttribute('aria-pressed', b.dataset.f === f ? 'true' : 'false'));
+      figs.forEach(el => { const s = el.dataset.samples.split(' '); el.hidden = !(f === 'all' || s.includes('all') || s.includes(f)); });
+      let any = false;
+      groups.forEach(g => { const vis = g.querySelectorAll('.rfig:not([hidden])').length; g.hidden = vis === 0; if (vis) any = true;
+        const sm = g.querySelector('h3 small'); if (sm) sm.textContent = vis + ' 张'; });
+      $('#fEmpty').hidden = any;
+    };
+    ftabs.forEach(b => b.addEventListener('click', () => apply(b.dataset.f)));
+  }
 
   /* ---------- print ---------- */
   const pb = $('#printBtn');

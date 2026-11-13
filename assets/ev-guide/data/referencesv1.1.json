@@ -2544,5 +2544,174 @@
   "fulltext_read": true,
   "date_verified": "2026-11-13",
   "evidence_basis": "PMC open-access full text (PMC BioC API)"
+ },
+ {
+  "ref_id": "holcar2020",
+  "number": 46,
+  "authors": [
+   "Holcar M",
+   "Ferdin J",
+   "Sitar S",
+   "Tušek-Žnidarič M",
+   "Dolžan V",
+   "Plemenitaš A",
+   "Žagar E",
+   "Lenassi M"
+  ],
+  "title": "Enrichment of plasma extracellular vesicles for reliable quantification of their size and concentration for biomarker discovery",
+  "journal": "Scientific reports",
+  "journal_abbrev": "Sci Rep",
+  "year": 2020,
+  "volume": "10",
+  "issue": "1",
+  "pages": "21346",
+  "doi": "10.1038/s41598-020-78422-y",
+  "pmid": "33288809",
+  "pmcid": "PMC7721811",
+  "verified_via": [
+   "PubMed E-utilities esummary (PMID 33288809)",
+   "Crossref REST API (DOI 10.1038/s41598-020-78422-y)",
+   "PMC OA S3 metadata (PMC7721811, license CC BY)"
+  ],
+  "crossref_check": {
+   "title": "Enrichment of plasma extracellular vesicles for reliable quantification of their size and concentration for biomarker discovery",
+   "first_author": "Holcar",
+   "title_match": true
+  },
+  "url": "https://doi.org/10.1038/s41598-020-78422-y",
+  "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33288809/",
+  "fulltext_read": false,
+  "date_verified": "2026-11-13",
+  "evidence_basis": "Figure source only (v1.1): cited as the origin of a reproduced CC BY 4.0 figure; not used to support any text claim",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "added_in": "v1.1.0"
+ },
+ {
+  "ref_id": "musante2020",
+  "number": 47,
+  "authors": [
+   "Musante L",
+   "Bontha SV",
+   "La Salvia S",
+   "Fernandez-Piñeros A",
+   "Lannigan J",
+   "Le TH",
+   "Mas V",
+   "Erdbrügger U"
+  ],
+  "title": "Rigorous characterization of urinary extracellular vesicles (uEVs) in the low centrifugation pellet - a neglected source for uEVs",
+  "journal": "Scientific reports",
+  "journal_abbrev": "Sci Rep",
+  "year": 2020,
+  "volume": "10",
+  "issue": "1",
+  "pages": "3701",
+  "doi": "10.1038/s41598-020-60619-w",
+  "pmid": "32111925",
+  "pmcid": "PMC7048852",
+  "verified_via": [
+   "PubMed E-utilities esummary (PMID 32111925)",
+   "Crossref REST API (DOI 10.1038/s41598-020-60619-w)",
+   "PMC OA S3 metadata (PMC7048852, license CC BY)"
+  ],
+  "crossref_check": {
+   "title": "Rigorous characterization of urinary extracellular vesicles (uEVs) in the low centrifugation pellet - a neglected source for uEVs",
+   "first_author": "Musante",
+   "title_match": true
+  },
+  "url": "https://doi.org/10.1038/s41598-020-60619-w",
+  "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32111925/",
+  "fulltext_read": false,
+  "date_verified": "2026-11-13",
+  "evidence_basis": "Figure source only (v1.1): cited as the origin of a reproduced CC BY 4.0 figure; not used to support any text claim",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "added_in": "v1.1.0"
+ },
+ {
+  "ref_id": "emelyanov2020",
+  "number": 48,
+  "authors": [
+   "Emelyanov A",
+   "Shtam T",
+   "Kamyshinsky R",
+   "Garaeva L",
+   "Verlov N",
+   "Miliukhina I",
+   "Kudrevatykh A",
+   "Gavrilov G",
+   "Zabrodskaya Y",
+   "Pchelina S",
+   "Konevega A"
+  ],
+  "title": "Cryo-electron microscopy of extracellular vesicles from cerebrospinal fluid",
+  "journal": "PloS one",
+  "journal_abbrev": "PLoS One",
+  "year": 2020,
+  "volume": "15",
+  "issue": "1",
+  "pages": "e0227949",
+  "doi": "10.1371/journal.pone.0227949",
+  "pmid": "31999742",
+  "pmcid": "PMC6991974",
+  "verified_via": [
+   "PubMed E-utilities esummary (PMID 31999742)",
+   "Crossref REST API (DOI 10.1371/journal.pone.0227949)",
+   "PMC OA S3 metadata (PMC6991974, license CC BY)"
+  ],
+  "crossref_check": {
+   "title": "Cryo-electron microscopy of extracellular vesicles from cerebrospinal fluid",
+   "first_author": "Emelyanov",
+   "title_match": true
+  },
+  "url": "https://doi.org/10.1371/journal.pone.0227949",
+  "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31999742/",
+  "fulltext_read": false,
+  "date_verified": "2026-11-13",
+  "evidence_basis": "Figure source only (v1.1): cited as the origin of a reproduced CC BY 4.0 figure; not used to support any text claim",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "added_in": "v1.1.0"
+ },
+ {
+  "ref_id": "palanisamy2010",
+  "number": 49,
+  "authors": [
+   "Palanisamy V",
+   "Sharma S",
+   "Deshpande A",
+   "Zhou H",
+   "Gimzewski J",
+   "Wong DT"
+  ],
+  "title": "Nanostructural and transcriptomic analyses of human saliva derived exosomes",
+  "journal": "PloS one",
+  "journal_abbrev": "PLoS One",
+  "year": 2010,
+  "volume": "5",
+  "issue": "1",
+  "pages": "e8577",
+  "doi": "10.1371/journal.pone.0008577",
+  "pmid": "20052414",
+  "pmcid": "PMC2797607",
+  "verified_via": [
+   "PubMed E-utilities esummary (PMID 20052414)",
+   "Crossref REST API (DOI 10.1371/journal.pone.0008577)",
+   "PMC OA S3 metadata (PMC2797607, license CC BY)"
+  ],
+  "crossref_check": {
+   "title": "Nanostructural and Transcriptomic Analyses of Human Saliva Derived Exosomes",
+   "first_author": "Palanisamy",
+   "title_match": true
+  },
+  "url": "https://doi.org/10.1371/journal.pone.0008577",
+  "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20052414/",
+  "fulltext_read": false,
+  "date_verified": "2026-11-13",
+  "evidence_basis": "Figure source only (v1.1): cited as the origin of a reproduced CC BY 4.0 figure; not used to support any text claim",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "added_in": "v1.1.0"
  }
 ]
