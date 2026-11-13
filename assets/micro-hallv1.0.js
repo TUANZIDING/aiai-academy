@@ -20,6 +20,12 @@
           'Two acts, 11 stops: from MVB budding and cargo loading to ultracentrifugation, separation and characterization, with MISEV2023 notes and references.'],
       tags: ['MVB · ESCRT', '超速离心 UC', 'MISEV2023'],
       img: 'assets/exosome/exosome-herov1.0.webp', href: 'lessons/exosome-explorerv1.0.html' },
+    { id: 'ev-guide', status: 'live', color: '#ff8a3d', badge: '互动指南 · GUIDE', go: '打开指南 Open guide',
+      kind: ['方法学指南 · 互动工具', 'Methods guide · interactive'], title: ['EV 提取方法指南', 'EV isolation methods guide'],
+      d: ['外泌体漫游的姊妹篇：七种提取方法、方案推荐器、MISEV2023 质控清单和 45 篇核验文献。',
+          'Companion to the EV explorer: seven isolation methods, a route recommender, a MISEV2023 QC checklist and 45 verified references (in Chinese).'],
+      tags: ['方案推荐器 Recommender', '质控 QC', 'MISEV2023'],
+      img: 'assets/ev-guide/ev-herov1.0.webp', href: 'lessons/ev-isolation-guidev1.0.html' },
     { id: 'dna', status: 'soon', color: '#38e0c6',
       kind: ['分子生物学', 'Molecular biology'], title: ['DNA 双螺旋与复制', 'DNA double helix & replication'],
       d: ['碱基配对、双螺旋的几何结构，以及复制叉上的解旋酶和 DNA 聚合酶。',
@@ -42,9 +48,10 @@
     return `<svg class="mh-helix" viewBox="0 0 160 200" aria-hidden="true">${rungs}</svg>`;
   };
   const live = MICRO.filter(m => m.status === 'live');
-  const stops = live.reduce((a, m) => a + (m.stops || 0), 0);
+  const tours = live.filter(m => m.stops);
+  const stops = tours.reduce((a, m) => a + (m.stops || 0), 0);
   const sc = document.getElementById('microStats');
-  if (sc) sc.innerHTML = `<li><b>${live.length}</b>场漫游 TOURS</li><li><b>${stops}</b>站 STOPS</li><li><b>${MICRO.length - live.length}</b>即将上线 SOON</li>`;
+  if (sc) sc.innerHTML = `<li><b>${tours.length}</b>场漫游 TOURS</li><li><b>${stops}</b>站 STOPS</li><li><b>${MICRO.length - live.length}</b>即将上线 SOON</li>`;
   grid.innerHTML = MICRO.map(m => {
     const head = `<span class="mh-kind">${esc(m.kind[0])}<i>${esc(m.kind[1])}</i></span>
       <h3>${esc(m.title[0])}<small lang="en">${esc(m.title[1])}</small></h3>
@@ -55,9 +62,9 @@
         <div class="mh-txt">${head}<div class="mh-go"><span>筹备中 In the works</span></div></div></div>`;
     }
     return `<a class="mh-card" href="${m.href}" style="--mc:${m.color}">
-      <div class="mh-pic"><img src="${m.img}" alt="${esc(m.title[0])}漫游示意图（AI 生成）" loading="lazy" width="1000" height="1000"><span class="mh-badge">${m.stops} 站 · STOPS</span></div>
+      <div class="mh-pic"><img src="${m.img}" alt="${esc(m.title[0])}${m.stops ? '漫游' : ''}示意图（AI 生成）" loading="lazy" width="1000" height="1000"><span class="mh-badge">${m.badge ? esc(m.badge) : m.stops + ' 站 · STOPS'}</span></div>
       <div class="mh-txt">${head}
         <div class="mh-tags">${(m.tags || []).map(t => `<i>${esc(t)}</i>`).join('')}</div>
-        <div class="mh-go"><span>开始漫游 Explore</span><b aria-hidden="true">→</b></div></div></a>`;
+        <div class="mh-go"><span>${m.go ? esc(m.go) : '开始漫游 Explore'}</span><b aria-hidden="true">→</b></div></div></a>`;
   }).join('');
 })();
