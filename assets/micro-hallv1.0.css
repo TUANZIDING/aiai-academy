@@ -1,4 +1,4 @@
-/* 微观馆 · Cells & Molecules v1.0 — homepage section (football / OiOi theme: turf stripe, jersey number, scoreboard) */
+/* 医学教学馆 · Medical Teaching Hall (was 微观馆 · Cells & Molecules v1.0) — homepage section 09 (football / OiOi theme: turf stripe, jersey number, scoreboard) */
 .micro .mh-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:26px}
 .micro .mh-top h2{margin-bottom:.15em}
 .micro .mh-top h2 em{font-style:normal;color:var(--orange)}
@@ -40,4 +40,12 @@ a.mh-card:hover .mh-go b{background:var(--orange);transform:translateX(3px)}
 .mh-jump i{font-style:normal;color:var(--orange)}
 @media (max-width:1080px){.mh-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mh-card,.mh-card.soon{grid-column:span 1}.mh-card.soon{flex-direction:column}.mh-card.soon .mh-pic{flex:none;min-height:150px}}
 @media (max-width:640px){.mh-grid{grid-template-columns:1fr}.micro .stats{display:flex!important;flex-wrap:nowrap;width:100%;justify-content:space-between;padding:8px}.micro .stats li{flex:1;padding:6px 4px;font-size:.6rem;letter-spacing:.06em;border-right:1px solid #2c2c2c}.micro .stats li:last-child{border-right:0}.micro .stats b{font-size:1.45rem;padding:2px 6px}}
+/* v1.1 医学教学馆: track chips (reuse .lc-chips) + wide featured card (reuses the horizontal .soon layout) */
+.micro .mh-chips{margin:0 0 18px}
+.micro .mh-chips .mh-chip-en{font-size:.78em;font-weight:500;opacity:.7;margin-left:6px}
+#medhall{position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none}
+.mh-card.feat{grid-column:span 4;flex-direction:row}
+.mh-card.feat .mh-pic{flex:0 0 50%;aspect-ratio:auto;min-height:260px}
+@media (max-width:1080px){.mh-card.feat{grid-column:1/-1}}
+@media (max-width:640px){.mh-card.feat{flex-direction:column}.mh-card.feat .mh-pic{flex:none;aspect-ratio:16/10;min-height:0}.micro .mh-chips .mh-chip-en{display:none}.micro .mh-chips{flex-wrap:wrap;overflow:visible;gap:6px}.micro .mh-chips button{padding:8px 12px;font-size:.92rem}}
 @media (prefers-reduced-motion:reduce){.mh-helix{animation:none}.mh-card,.mh-pic img{transition:none}}

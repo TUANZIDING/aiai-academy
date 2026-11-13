@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="assets/videosv1.0.css?v=1.0">
 <link rel="stylesheet" href="assets/shelfv1.0.css?v=1.1">
 <link rel="stylesheet" href="assets/lessons-catalogv1.0.css?v=1.3">
-<link rel="stylesheet" href="assets/micro-hallv1.0.css?v=1.0.1">
+<link rel="stylesheet" href="assets/micro-hallv1.0.css?v=1.1.0">
 <link rel="stylesheet" href="assets/voices-homev1.0.css?v=1.4.0">
 <style>.brand .aiai-mark{height:38px;width:auto;display:block}.w-brand .aiai-mark{height:34px;width:auto;display:block}.w-brand .aiai-sub{display:flex;flex-direction:column;line-height:1.2;font-size:.92rem}.w-brand .aiai-sub small,.brand small{display:block;font-size:.6rem;letter-spacing:.2em;font-weight:500;opacity:.7}</style>
 <style>html.w-open .music-ctl,html.w-open body>.fb-ball,html.w-open body>.fb-trail{display:none}</style>
@@ -42,7 +42,7 @@
     <a href="#games">游戏馆</a>
     <a href="#videos">放映厅</a>
     <a href="#lessons">课件馆</a>
-    <a href="#micro">微观馆</a>
+    <a href="#micro">医学教学馆</a>
     <a href="#camp">训练营</a>
     <a href="#frontier">前沿观察</a>
     <a href="#voices" class="nav-voices">AI VOICES</a>
@@ -227,7 +227,7 @@
     <p class="lc-kick">LESSONS / 课件馆</p>
     <h2 class="lc-h">把 AI 用对，<em>把过程讲清。</em></h2>
     <p class="lc-lede">围绕医院、实验室和家里的具体问题，用投屏课件、实战案例和可复制提示词，把每一步讲清楚、练得会。面向医生、护士、科研人员、年轻父母和社会工作者。</p>
-    <a class="mh-jump" href="#micro"><i>●</i>细胞与分子漫游已单独成馆：微观馆 Cells &amp; Molecules →</a>
+    <a class="mh-jump" href="#micro"><i>●</i>细胞分子漫游与 3D 解剖课件已单独成馆：医学教学馆 Medical Teaching Hall →</a>
     <hr class="lc-rule">
     <h3 class="lc-find">找到想学的课件主题</h3>
     <div class="lc-chips" role="group" aria-label="课件主题"></div>
@@ -237,17 +237,19 @@
   </div>
 </section>
 
-<section id="micro" class="section micro">
+<section id="micro" class="section micro" aria-labelledby="medhallH">
+  <span id="medhall" aria-hidden="true"></span>
   <div class="mh-top">
     <div>
-      <p class="eyebrow"><span class="jn">09</span><span class="ek">MICRO HALL · CELLS &amp; MOLECULES</span></p>
-      <h2>微观馆 · <em>Cells &amp; Molecules</em></h2>
-      <p class="sub">生物医学 · 细胞与分子。把显微镜下的世界做成可以自动漫游的大画面：图像占满屏幕，讲解按需打开，中英对照，适合投屏上课，也适合孩子自己点着看。<span class="en" lang="en">Biomedicine · cells and molecules — full-screen guided tours with explanations on demand, in Chinese and English.</span></p>
+      <p class="eyebrow"><span class="jn">09</span><span class="ek">MEDICAL TEACHING HALL</span></p>
+      <h2 id="medhallH">医学教学馆 · <em>Medical Teaching Hall</em></h2>
+      <p class="sub">两个分区：微观 · 细胞与分子，把显微镜下的世界做成自动漫游的大画面；解剖与临床，用可旋转的 3D 模型讲解剖层次和临床决策。中英对照，适合投屏上课，也适合自己点着学。<span class="en" lang="en">Two tracks: cells &amp; molecules as full-screen guided tours, and anatomy &amp; clinical as interactive 3D courseware, in Chinese and English.</span></p>
     </div>
-    <ul class="stats" id="microStats" aria-label="微观馆数据"></ul>
+    <ul class="stats" id="microStats" aria-label="医学教学馆数据"></ul>
   </div>
-  <div class="mh-grid" id="microGrid"></div>
-  <noscript><p><a href="lessons/cell-explorerv1.0.html">动物细胞漫游</a> · <a href="lessons/neuron-explorerv1.0.html">神经元漫游</a> · <a href="lessons/exosome-explorerv1.0.html">外泌体与细胞外囊泡漫游</a> · <a href="lessons/ev-isolation-guidev1.0.html">EV 提取方法指南</a></p></noscript>
+  <div class="lc-chips mh-chips" role="group" aria-label="医学教学馆分区" id="medChips"></div>
+  <div class="mh-grid" id="microGrid" aria-live="polite"></div>
+  <noscript><p><a href="lessons/cell-explorerv1.0.html">动物细胞漫游</a> · <a href="lessons/neuron-explorerv1.0.html">神经元漫游</a> · <a href="lessons/exosome-explorerv1.0.html">外泌体与细胞外囊泡漫游</a> · <a href="lessons/ev-isolation-guidev1.0.html">EV 提取方法指南</a> · <a href="lessons/fracture-healing/fracture-healingv0.4.html">胫骨干骨折愈合 · 3D 解剖与 AO 时间轴</a></p></noscript>
 </section>
 
 <section id="camp" class="section camp">
@@ -383,7 +385,7 @@
 <script src="assets/hlsv1.5.17.min.js" defer></script>
 <script src="assets/videosv1.0.js?v=1.0" defer></script>
 <script src="assets/lessons-catalogv1.0.js?v=1.8" defer></script>
-<script src="assets/micro-hallv1.0.js?v=1.0.2" defer></script>
+<script src="assets/med-hallv1.0.js?v=1.0.0" defer></script>
 <script src="assets/frontierv1.0.js?v=1.2" defer></script>
 <script src="assets/voices-homev1.0.js?v=1.5.0" defer></script>
 <script src="assets/shelfv1.0.js?v=1.3" defer></script>
