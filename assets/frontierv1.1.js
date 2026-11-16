@@ -41,7 +41,7 @@
   $('#frNext').onclick = () => L().scrollBy({ left: step() });
   L().addEventListener('scroll', railBtns, { passive: true }); addEventListener('resize', railBtns);
   L().setAttribute('tabindex', '0'); L().setAttribute('aria-label', '前沿观察列表，左右滑动选择');
-  fetch('data/frontierv1.0.json?v=1.4').then(r => r.json()).then(d => {
+  fetch('data/frontierv1.0.json?v=1.5').then(r => r.json()).then(d => {
     D = d; render();
     if (location.hash === '#frontier') { const go = () => $('#frontier').scrollIntoView(); go(); setTimeout(go, 700); setTimeout(go, 1600); }
   }).catch(() => { $('#frList').innerHTML = '<p class="sub">加载失败，请刷新页面。</p>'; });

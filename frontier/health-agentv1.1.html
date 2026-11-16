@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>前沿观察 03 · 谷歌个人健康智能体 PHA 精读 | aiai 学院</title>
+<meta name="description" content="aiai 学院前沿观察：Nature 论文「个人健康智能体 PHA」精读，谷歌如何用统筹者加三个专科智能体回答健康问题，以及它还缺哪些证据。">
+<link rel="icon" href="../assets/aiai-wordmarkv1.0.webp">
+<style>
+:root{
+  --paper:#faf8f3;--ink:#1d1d1f;--muted:#5c5c63;--line:rgba(29,29,31,.14);
+  --navy:#1b3a73;--navy-d:#121f3d;--orange:#e8673a;--blue:#2f6fd6;--green:#1e7a55;--red:#b5461f;
+  --serif:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.75,.2,1);--tap:44px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans)}
+a{color:var(--blue)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section[id]{scroll-margin-top:110px}
+main>section[id]:last-of-type{min-height:calc(100vh - 230px)}
+
+/* 顶部：返回 + 章节导航 + 解释开关 */
+.nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
+.nav__in{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:14px;min-height:56px}
+.brand{font-family:var(--serif);font-weight:900;font-size:17px;text-decoration:none;color:var(--ink);white-space:nowrap}
+.links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
+.links::-webkit-scrollbar{display:none}
+.links a{font-size:14px;text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:6px;white-space:nowrap}
+.links a b{font-family:var(--mono);font-weight:400;margin-right:4px}
+.links a.on{background:var(--ink);color:var(--paper)}
+.mode{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;flex:none}
+.mode button{border:0;background:none;font:500 13px var(--sans);padding:6px 12px;cursor:pointer;color:var(--ink);min-height:34px}
+.mode button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.prog{position:absolute;left:0;bottom:-3px;height:3px;background:var(--orange);width:0}
+body[data-mode="plain"] .explain{display:none}
+
+/* 章节报头 */
+.bar{display:flex;align-items:center;gap:10px;border-top:3px solid var(--ink);padding-top:8px;margin:56px 0 14px;flex-wrap:wrap}
+.bar b{font-size:13px;background:var(--ink);color:var(--paper);padding:3px 10px}
+.bar span{font-size:13px;color:var(--muted)}
+.bar i{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:12px;color:var(--muted)}
+h2{font-family:var(--serif);font-weight:900;font-size:clamp(24px,3.4vw,34px);line-height:1.3;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 22px;max-width:60ch}
+
+/* 头图：图左 + 标题卡右 */
+.herosplit{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:stretch}
+.herosplit figure{margin:0;align-self:center}
+.herosplit figure img{border-radius:14px;box-shadow:0 14px 34px rgba(18,31,61,.14);width:100%;height:auto}
+figcaption{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6}
+.herocard{background:var(--navy-d);color:#f5f5f7;border-radius:14px;padding:clamp(22px,3.4vw,40px);display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:#ffb38f;margin:0 0 10px}
+.herocard h1{font-family:var(--serif);font-weight:900;font-size:clamp(26px,3.1vw,34px);line-height:1.3;text-wrap:balance;margin:0 0 16px}
+.herocard h1 em{font-style:normal;color:#ffb38f;display:block}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.meta span{padding:2px 11px;border-radius:999px;background:rgba(245,245,247,.1);border:1px solid rgba(245,245,247,.28);font-size:12.5px;color:rgba(245,245,247,.88)}
+.meta .ok{background:#e3f1ea;border-color:#b5dcc8;color:#1e6e52;font-weight:600}
+.meta .warn{background:#fff4e2;border-color:#f0d3a2;color:#8a5a12;font-weight:600}
+.herocard small{display:block;color:rgba(245,245,247,.6);font-size:12px;margin-top:16px}
+
+.lede{margin-top:24px}
+.one{font-family:var(--serif);font-weight:700;font-size:clamp(17px,2vw,20px);line-height:1.8;background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:16px 20px;margin:0}
+.one b{background:linear-gradient(transparent 62%,rgba(232,103,58,.28) 0)}
+.prose p{margin:0 0 14px}
+.prose strong{background:linear-gradient(transparent 62%,rgba(232,103,58,.28) 0)}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.key{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.key .k{font-family:var(--mono);font-size:12px;color:var(--orange)}
+.key h3{margin:2px 0 4px;font-size:16px}
+.key p{margin:0;font-size:14px;color:var(--muted)}
+
+.explain{background:#fff;border-left:4px solid var(--orange);border-radius:8px;padding:14px 18px;margin:18px 0}
+.explain h3{margin:0 0 6px;font-size:15px}
+.explain p,.explain dd{margin:0;font-size:14px;line-height:1.75}
+.explain dl{display:grid;gap:8px;margin:0}
+.explain dt{font-weight:700;font-size:14px}
+
+/* 面板 / 卡片 */
+.panel,.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px}
+.panel h3{margin:0 0 4px;font-size:17px}
+.card p{margin:0}
+.card ul{padding-left:1.2em;margin:8px 0 0}
+.card li{margin:6px 0}
+.note{font-size:12px;color:var(--muted);margin:8px 0 0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid .card{margin:0}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;padding:1px 9px;border-radius:6px;margin-bottom:6px}
+.t-fact{background:#e3f1ea;color:#1e6e52}.t-link{background:#e6eefb;color:#2a5aa8}.t-guess{background:#fbeee0;color:#9a5a14}
+.gap li b{color:var(--red)}
+
+/* 深色类比块（沿用模板 .med） */
+.med{background:var(--navy-d);color:#f3efe6;border-radius:14px;padding:22px 24px;margin:0 0 16px}
+.med p{margin:0}
+.med b{color:#ffb38f}
+.mdt{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.mdt div{background:rgba(245,245,247,.08);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.65}
+
+/* 数字卡 */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 16px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;position:relative}
+.stat::before{content:"";position:absolute;left:18px;top:-1px;width:40px;height:4px;background:var(--orange);border-radius:0 0 4px 4px}
+.stat .v{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:900;color:var(--navy);line-height:1.15}
+.stat .l{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.6}
+
+/* 流程 */
+.pipe{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch;margin:0 0 16px}
+.pipe .st{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14.5px;line-height:1.7}
+.pipe .st b{display:block;font-size:15px;margin-bottom:4px}
+.pipe .st .n{font-family:var(--serif);font-size:24px;color:var(--navy);font-weight:900;display:block}
+.pipe .ar{align-self:center;color:var(--orange);font-size:22px}
+
+/* 条形图 */
+.chart{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px;overflow:hidden}
+.chart h4{margin:0 0 12px;font-size:16px}
+.hbar{display:grid;grid-template-columns:150px 1fr 76px;gap:10px;align-items:center;margin:8px 0;font-size:14px}
+.hbar.b3{grid-template-columns:168px 1fr 80px}
+.hbar i{display:block;height:18px;border-radius:6px;background:var(--orange)}
+.hbar i.lo{min-width:14px;background:var(--navy)}
+.hbar i.mid{background:#c9a06a}
+.hbar span:last-child{font-family:var(--mono);font-weight:700;text-align:right}
+/* 森林图 */
+.hrrow{display:grid;grid-template-columns:190px 1fr 170px;gap:10px;align-items:center;font-size:13.5px;margin:4px 0}
+.axis{position:relative;height:22px;border-left:1px dashed #9aa}
+.hrrow>span:last-child{position:relative;background:#fff;white-space:nowrap;padding-left:8px;font-family:var(--mono);font-size:12.5px}
+.axis .ci{position:absolute;top:10px;height:2px;background:var(--ink)}
+.axis .pt{position:absolute;top:5px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#1f7a72}
+.axis.gold .pt{background:var(--orange)}
+/* 漏斗（rfd4） */
+.efunnel{display:grid;grid-template-columns:1fr;gap:8px}
+.fn{display:grid;grid-template-columns:200px 1fr;gap:10px;align-items:center;font-size:14px}
+.fn b{display:block;background:var(--navy);color:#fff;border-radius:6px;padding:6px 10px;font-weight:700;white-space:nowrap;min-width:max-content}
+.fn b.warn{background:var(--orange);color:var(--ink)}
+
+/* 两只时钟 */
+.twoclock{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 16px}
+.clk{border-radius:14px;padding:16px 18px}
+.clk.age{background:#fdf1e2;border:1px solid #f1d0a4}
+.clk.sur{background:#e6eefb;border:1px solid #b9cdef}
+.clk h4{margin:0 0 6px;font-size:16px}
+.clk p{margin:0}
+
+/* 视频 */
+.vid{position:relative;border-radius:14px;overflow:hidden;background:var(--navy-d);margin:0 0 10px}
+.vid button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;aspect-ratio:16/9;border:0;background:radial-gradient(120% 90% at 30% 20%,#2a4a8a,var(--navy-d));color:#f5f5f7;font:inherit;cursor:pointer;padding:16px;text-align:center}
+.vid button b{font-size:2.4rem;width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center}
+.vid button small{color:rgba(245,245,247,.7);font-size:12px}
+.vid iframe{display:block;width:100%;height:640px;border:0;background:#fff}
+.vlink{font-size:14px;color:var(--muted);margin:0}
+
+/* SVG 图 */
+.svgbox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 12px;margin:0 0 8px}
+.svgbox svg{display:block;width:100%;height:auto}
+.svgbox svg text{font-family:var(--sans)}
+
+/* 表格 */
+.tblwrap{overflow-x:auto;margin:0 0 16px;border:1px solid var(--line);border-radius:14px;background:#fff}
+table.mini{width:100%;border-collapse:collapse;font-size:14px}
+table.mini th,table.mini td{padding:10px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.mini tr:last-child td{border-bottom:0}
+table.mini th{background:var(--ink);color:var(--paper);font-weight:600}
+table.mini td:first-child{font-weight:700;white-space:nowrap;min-width:max-content}
+
+/* 提示词 */
+.prompt{position:relative;background:#fff;border:1.5px dashed var(--ink);border-radius:12px;padding:16px 18px;white-space:pre-wrap;font-size:14.5px;line-height:1.75;margin:0}
+.copy{position:absolute;top:10px;right:10px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:999px;padding:4px 14px;font:500 13px var(--sans);cursor:pointer;min-height:32px}
+
+.srcp{font-size:14px;color:var(--muted);line-height:1.9;margin:0}
+.srcp a{word-break:break-word}
+footer{border-top:3px solid var(--ink);margin-top:50px;padding:18px 0 60px;font-size:13px;color:var(--muted)}
+
+/* 滚动出现 */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .herosplit{grid-template-columns:1fr}
+  .grid,.twoclock,.mdt{grid-template-columns:1fr}
+  .keys,.stats{grid-template-columns:1fr 1fr}
+  .pipe{grid-template-columns:1fr}.pipe .ar{transform:rotate(90deg);justify-self:center}
+  .brand{display:none}
+}
+@media (max-width:560px){
+  .keys,.stats{grid-template-columns:1fr}
+  .hbar,.hbar.b3{grid-template-columns:110px 1fr 62px;font-size:13px}
+  .hrrow{grid-template-columns:1fr;gap:2px}
+  .fn{grid-template-columns:1fr;gap:2px}
+  .vid iframe{height:560px}
+  table.mini td:first-child{white-space:normal;min-width:5.5em}
+  .mode button{padding:6px 9px;font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body data-mode="explain">
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="../#frontier">← aiai 前沿</a>
+    <nav class="links" aria-label="本期章节">
+      <a href="#ch1"><b>1</b>速读</a><a href="#ch2"><b>2</b>原帖</a><a href="#ch3"><b>3</b>问题</a><a href="#ch4"><b>4</b>结构</a><a href="#ch5"><b>5</b>数字</a><a href="#ch6"><b>6</b>缺口</a><a href="#ch7"><b>7</b>临床</a><a href="#ch8"><b>8</b>练习</a><a href="#ch9"><b>9</b>来源</a>
+    </nav>
+    <div class="mode" role="group" aria-label="解释模式">
+      <button type="button" data-set="plain" aria-pressed="false">不要解释</button>
+      <button type="button" data-set="explain" aria-pressed="true">给我解释</button>
+    </div>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<main class="wrap">
+
+<!-- 第 1 章 -->
+<section id="ch1">
+  <div class="bar"><b>速读</b><span>aiai 学院 · 前沿观察 03</span><i>第 1 章</i></div>
+  <div class="herosplit">
+    <figure class="rv"><img src="../assets/frontier/health-agentv1.0.webp" alt="水彩示意：一位主治医生坐在圆桌主位，三位专科成员分别拿着数据图表、化验管和书、盆栽，前景一位戴手表的人收到一张汇总纸条" width="1400" height="764"><figcaption>示意图（AI 生成）：主位是“统筹者”，三位分别代表数据分析、健康知识、健康教练，前景的人只收到一份汇总回答。不是论文原图。</figcaption></figure>
+    <div class="herocard rv">
+      <p class="eyebrow">FRONTIER WATCH 03 / 前沿观察</p>
+      <h1>谷歌的个人健康智能体，<em>是按“会诊”的样子搭起来的。</em></h1>
+      <div class="meta"><span>AI 智能体</span><span>可穿戴与个人健康</span><span>Nature · 2026-10-21 在线发表 · 开放获取</span><span class="ok">同行评审 · Nature · 评估研究（非临床结局试验）</span></div>
+    </div>
+  </div>
+  <div class="lede rv">
+    <p class="one">结论先说：Google 团队发现，让一个大模型同时“算数据、讲医学、做教练”顾此失彼，于是拆成三个专科智能体，再由一个统筹者派活、汇总、反思。在 11 项评测、7000 多条标注、1350 小时人工评估里，这套多智能体系统整体好于单个智能体。但它证明的是“对话质量更好”，<b>不是“用了更健康”</b>，而且每轮回答要等 3 分多钟。</p>
+  </div>
+</section>
+
+<!-- 第 2 章 -->
+<section id="ch2">
+  <div class="bar"><b>原帖</b><span>作者 LinkedIn</span><i>第 2 章</i></div>
+  <h2>先看作者的原帖</h2>
+  <div class="vid rv" id="vid"><button type="button" id="vidBtn" aria-label="加载 LinkedIn 原帖" data-src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7518727232744263680" data-title="A. Ali Heydari 在 LinkedIn 发布的 PHA 论文原帖"><b>▶</b><span>点击加载第一作者在 LinkedIn 的原帖</span><small>内容由 LinkedIn 提供；如果加载后无法显示，请点下方链接到 LinkedIn 查看</small></button></div>
+  <p class="vlink">作者：A. Ali Heydari（Google，论文共同第一作者）。<a href="https://www.linkedin.com/posts/hey-ali_the-anatomy-of-a-personal-health-agent-activity-7518727232744263680-LsO7" target="_blank" rel="noopener">到 LinkedIn 观看原帖 ↗</a></p>
+</section>
+
+<!-- 第 3 章 -->
+<section id="ch3">
+  <div class="bar"><b>问题</b><span>用户需求调查</span><i>第 3 章</i></div>
+  <h2>它要解决什么问题</h2>
+  <div class="card rv"><p>研究者先做了一轮“用户需求调查”：整理 1,370 条来自搜索引擎和健康论坛的提问、555 名用户的健康目标问卷，再开一场 14 位设计和工程专家的工作坊。归纳出普通人找 AI 问健康的 <b>4 类场景</b>：</p>
+  <ul>
+    <li><b>一般健康知识</b>：比如“高强度间歇训练有什么利弊？”</li>
+    <li><b>解读个人数据</b>：比如“上个月走的步数怎么影响我的静息心率？”</li>
+    <li><b>健康生活建议</b>：比如“想提高睡眠分，几点睡比较好？”</li>
+    <li><b>症状评估</b>：比如“嗓子痒、吞咽不舒服，可能是什么？”</li>
+  </ul></div>
+  <div class="card rv"><span class="tag t-fact">关键判断</span><p>这四类需要的能力互相拉扯：解读数据要精确计算、能写代码；当教练要开放、有同理心的对话；讲知识和症状要有事实依据。论文原话的意思是：<b>一个“大一统”的模型很难同时兼顾这几种目标</b>，所以改用模块化的多智能体。</p></div>
+  <aside class="explain rv">
+    <h3>为什么要拆开</h3>
+    <p>算数据、当教练、讲医学知识，要的本事不一样，一个模型很难同时都做好。所以论文把它们拆给不同的智能体去做。</p>
+  </aside>
+</section>
+
+<!-- 第 4 章 -->
+<section id="ch4">
+  <div class="bar"><b>结构</b><span>论文正文与图 1、图 5</span><i>第 4 章</i></div>
+  <h2>它是怎么搭的：一个统筹者 + 三个专科</h2>
+  <div class="svgbox rv"><svg viewBox="0 0 760 360" role="img" aria-label="PHA 结构示意：用户提问进入统筹者，统筹者派活给数据科学、健康领域专家、健康教练三个智能体，结果经反思后汇总成一份回答">
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#a0763a"/></marker></defs>
+    <rect x="20" y="140" width="130" height="70" rx="12" fill="#f1ede3" stroke="#17332c" stroke-opacity=".25"/>
+    <text x="85" y="170" text-anchor="middle" font-size="15" font-weight="700" fill="#17332c">用户提问</text>
+    <text x="85" y="192" text-anchor="middle" font-size="12" fill="#5b6472">手表数据 + 化验单</text>
+    <line x1="150" y1="175" x2="208" y2="175" stroke="#a0763a" stroke-width="2" marker-end="url(#ar)"/>
+    <rect x="212" y="120" width="160" height="110" rx="14" fill="#17332c"/>
+    <text x="292" y="156" text-anchor="middle" font-size="16" font-weight="700" fill="#e8c98a">统筹者</text>
+    <text x="292" y="180" text-anchor="middle" font-size="12" fill="#f3ead7">理解需求 · 派活</text>
+    <text x="292" y="199" text-anchor="middle" font-size="12" fill="#f3ead7">反思 · 汇总 · 记忆</text>
+    <path d="M372 150 C420 120 430 70 470 62" fill="none" stroke="#a0763a" stroke-width="2" marker-end="url(#ar)"/>
+    <line x1="372" y1="175" x2="468" y2="175" stroke="#a0763a" stroke-width="2" marker-end="url(#ar)"/>
+    <path d="M372 200 C420 230 430 280 470 288" fill="none" stroke="#a0763a" stroke-width="2" marker-end="url(#ar)"/>
+    <rect x="472" y="30" width="190" height="64" rx="12" fill="#e6eefb" stroke="#2a5aa8" stroke-opacity=".35"/>
+    <text x="567" y="56" text-anchor="middle" font-size="14" font-weight="700" fill="#2a5aa8">数据科学智能体</text>
+    <text x="567" y="78" text-anchor="middle" font-size="12" fill="#17332c">先写分析计划，再写代码算</text>
+    <rect x="472" y="143" width="190" height="64" rx="12" fill="#e3f1ea" stroke="#1e6e52" stroke-opacity=".35"/>
+    <text x="567" y="169" text-anchor="middle" font-size="14" font-weight="700" fill="#1e6e52">健康领域专家智能体</text>
+    <text x="567" y="191" text-anchor="middle" font-size="12" fill="#17332c">查文献、NCBI，结合化验</text>
+    <rect x="472" y="256" width="190" height="64" rx="12" fill="#fbeee0" stroke="#9a5a14" stroke-opacity=".35"/>
+    <text x="567" y="282" text-anchor="middle" font-size="14" font-weight="700" fill="#9a5a14">健康教练智能体</text>
+    <text x="567" y="304" text-anchor="middle" font-size="12" fill="#17332c">动机式访谈，定目标</text>
+    <path d="M662 62 C720 70 735 150 735 175 C735 200 720 280 662 288" fill="none" stroke="#17332c" stroke-opacity=".35" stroke-width="2" stroke-dasharray="5 5"/>
+    <text x="742" y="180" text-anchor="end" font-size="11" fill="#5b6472" transform="rotate(90 742 180)">结果回到统筹者</text>
+    <text x="292" y="262" text-anchor="middle" font-size="12" fill="#5b6472">↓ 反思后合成一份回答</text>
+    <text x="292" y="290" text-anchor="middle" font-size="12" fill="#5b6472">底座：Gemini 2.0 系列（Flash/Pro）</text>
+  </svg></div>
+  <p class="note">图为本站根据论文正文和图 1、图 5 自绘的简化示意，不是论文原图。</p>
+  <div class="med rv" style="margin-top:16px"><p><b>打个比方：这就是急诊的“首诊负责 + 会诊”。</b>病人只面对一位主治（统筹者），主治判断要请哪些科、把问题拆给谁、收回意见后再整合成一个处理方案；病人不需要分别听三个科各说一遍。</p>
+    <div class="mdt"><div><b>统筹者 ≈ 首诊主治</b><br>拆问题、派会诊、对结果负责并汇总。</div><div><b>数据科学 ≈ 检验/影像科</b><br>把原始数据变成准确的数字和趋势。</div><div><b>领域专家 ≈ 专科会诊</b><br>结合指南和文献解释这些数字意味着什么。</div><div><b>健康教练 ≈ 随访护士/康复师</b><br>把建议落成病人做得到的小目标。</div></div></div>
+  <p class="note">术语：“迭代反思”指统筹者把各专科的结果交给彼此再看一遍，例如教练会先看数据智能体算出来的睡眠，而不是再问用户“上周睡了多久”。</p>
+  <aside class="explain rv">
+    <h3>什么叫“迭代反思”？</h3>
+    <p>统筹者把各个专科的结果交给彼此再看一遍。比如教练先看数据智能体算好的睡眠，不再回头问用户“上周睡了多久”。</p>
+  </aside>
+</section>
+
+<!-- 第 5 章 -->
+<section id="ch5">
+  <div class="bar"><b>数字</b><span>论文评测结果</span><i>第 5 章</i></div>
+  <h2>关键数字</h2>
+  <div class="stats rv">
+    <div class="stat"><div class="v">11 项</div><div class="l">评测任务，7000 多条标注、1350 小时人工评估（用户 651 小时、专家 699 小时）。</div></div>
+    <div class="stat"><div class="v">1,165 人</div><div class="l">WEAR-ME 研究的真实数据：Fitbit 可穿戴数据 + 血液化验 + 问卷，作为评测底座。</div></div>
+    <div class="stat"><div class="v">6.5 次</div><div class="l">每轮回答平均调用大模型次数，耗时 205.3 秒；单智能体 PHIA 为 3.0 次、36.4 秒。</div></div>
+  </div>
+  <div class="chart rv"><h4>专家盲评：哪套系统整体质量最好（各系统被评为第一的比例）</h4>
+    <div class="hbar b3"><span>多智能体 PHA</span><i style="width:100%"></i><span>66.7%</span></div>
+    <div class="hbar b3"><span>并行多智能体</span><i class="mid" style="width:31%"></i><span>20.7%</span></div>
+    <div class="hbar b3"><span>单智能体 PHIA</span><i class="lo" style="width:18.9%"></i><span>12.6%</span></div>
+    <p class="note">3 位健康专家评估真实对话记录。论文原文称 PHA 被选为第一的比例“大约是 PHIA 的五倍”（66.7% vs 12.6%）。作者在 LinkedIn 上说的“专家偏好高 5 倍”，在论文里对应的应是这个排名比例。专家给的整体质量分：PHA 72.8%、并行 64.3%、PHIA 54.4%。</p></div>
+  <div class="chart rv"><h4>普通用户：把哪套系统排第一（45 名用户，真实多轮对话）</h4>
+    <div class="hbar b3"><span>多智能体 PHA</span><i style="width:100%"></i><span>46.7%</span></div>
+    <div class="hbar b3"><span>并行多智能体</span><i class="mid" style="width:61.9%"></i><span>28.9%</span></div>
+    <div class="hbar b3"><span>单智能体 PHIA</span><i class="lo" style="width:52.2%"></i><span>24.4%</span></div>
+    <p class="note">普通用户之间的差距明显小于专家。论文的解释是：专家能看出普通用户不容易察觉、但对安全和长期效果很重要的差别。</p></div>
+  <div class="chart rv"><h4>代价：每轮回答的平均等待时间（秒）</h4>
+    <div class="hbar b3"><span>单智能体 PHIA</span><i class="lo" style="width:14.9%"></i><span>36.4 s</span></div>
+    <div class="hbar b3"><span>多智能体 PHA</span><i style="width:84%"></i><span>205.3 s</span></div>
+    <div class="hbar b3"><span>并行多智能体</span><i class="mid" style="width:100%"></i><span>244.4 s</span></div>
+    <p class="note">按需派活的 PHA 比“三个专科一起上”的并行方案更省，但仍是单智能体的 5 倍多时间。数据来自论文 Methods「Computational cost」。</p></div>
+  <aside class="explain rv">
+    <h3>“高 5 倍”到底指什么</h3>
+    <p>指专家把 PHA 排第一的比例（66.7%）大约是单智能体 PHIA（12.6%）的五倍，是排名比例，不是质量分。专家给的质量分是 PHA 72.8%、PHIA 54.4%。</p>
+  </aside>
+  <div class="card rv"><span class="tag t-fact">三个专科各自的成绩（对比同一底座的基础 Gemini）</span><ul>
+    <li><b>数据科学</b>：分析计划评分 75.6% vs 53.7%；代码一次通过率 75.5% vs 58.4%，最多 5 轮自我纠错后到 79.0%。</li>
+    <li><b>领域专家</b>：2000 多道专科考试选择题准确率 83.6% vs 81.8%；2,000 个真实症状病例的鉴别诊断，首位诊断准确率 46.1%，比此前最好的诊断对话智能体高 4.7 个百分点。</li>
+    <li><b>临床摘要</b>：5 位临床医生盲评 30 名参与者的多模态健康摘要，被评为“有用/很有用”的 65% vs 30%。</li>
+    <li><b>健康教练</b>：31 名用户盲法、顺序平衡的对比中，6 个主题里 5 个更受偏好（胜率 61%–71%）；唯一落后的是“进度跟踪”。3 位教练专家复评时优势更大。</li>
+  </ul></div>
+  <div class="card rv"><span class="tag t-guess">医生要看的一行</span><p>临床医生对这些健康摘要做了安全审查：83% 无或仅有极小潜在危害，<b>15% 有轻度潜在危害，2% 有中到重度潜在危害</b>。论文自己也把这一点列为需要重视的问题。</p></div>
+</section>
+
+<!-- 第 6 章 -->
+<section id="ch6">
+  <div class="bar"><b>缺口</b><span>来自论文讨论部分</span><i>第 6 章</i></div>
+  <h2>冷静看：证据还差什么</h2>
+  <div class="tblwrap rv"><table class="mini">
+    <tr><th>问题</th><th>具体情况（来自论文讨论部分）</th></tr>
+    <tr><td>证明了什么</td><td>只证明了<b>对话质量和短期任务效果</b>，没有证明能持续改变行为，也没有证明能改善长期健康结局。这需要多次随访、长期使用的研究。</td></tr>
+    <tr><td>评审员是 AI</td><td>部分评测用大模型当“自动评分员”，它会受回答顺序、格式、长度和来源影响，需要不断用人类盲评交叉核对。</td></tr>
+    <tr><td>只有 Fitbit</td><td>WEAR-ME 数据以 Fitbit 为主，换其他设备是否同样有效未知。病历数据也只用到了血液化验。</td></tr>
+    <tr><td>“代入角色”偏差</td><td>真人测试者是按 WEAR-ME 人物档案去“扮演”提问的，不是为自己的健康提问，偏差无法完全消除。</td></tr>
+    <tr><td>人群不够广</td><td>需要在不同设备、语言、读写水平和人群中评估，特别是老年人和残障人士。中文场景没有测试。</td></tr>
+    <tr><td>慢、贵</td><td>每轮 6.5 次模型调用、205.3 秒，资源有限的场景难以推广。</td></tr>
+    <tr><td>定位与利益</td><td>论文明确说它是面向消费者健康的研究原型，不是诊断或分诊系统，不应替代专业诊疗。多数作者是或曾是 Alphabet 员工。</td></tr>
+  </table></div>
+  <aside class="explain rv">
+    <h3>“对话更好” ≠ “更健康”</h3>
+    <p>这项研究比的是回答质量和短期任务。用了它会不会真的改变习惯、让人更健康，还要靠长期随访的研究来回答。</p>
+  </aside>
+</section>
+
+<!-- 第 7 章 -->
+<section id="ch7">
+  <div class="bar"><b>临床</b><span>事实 · 联想 · 设想</span><i>第 7 章</i></div>
+  <h2>对我们医生意味着什么</h2>
+  <div class="grid rv">
+    <div class="card"><span class="tag t-fact">事实</span><p>拆分角色 + 统筹汇总，在这项评测里让专家明显更满意；三个专科各自也在对应任务上好于同底座的单模型。代码已开源（Apache 2.0），可以拿来复现。</p></div>
+    <div class="card"><span class="tag t-link">合理联想</span><p>多智能体的好处和代价都和医院会诊很像：分工让每个环节更专业，但交接多了，<b>时间更长、责任链更长</b>。设计院内 AI 流程时，也要先回答“谁是首诊、谁签字”。</p></div>
+    <div class="card"><span class="tag t-guess">我的设想</span><p>急诊带教可以借这个结构练“会诊单”：让学员把一个复杂病例拆成数据、知识、宣教三份任务，再自己当统筹者汇总。这是教学用法设想，未经验证。</p></div>
+    <div class="card"><span class="tag t-guess">证据缺口</span><p>没有中文、没有国内设备、没有老年和急危重症人群；最关键的“是否改善健康结局、是否延误就医”还没有前瞻性研究。症状评估这块，论文自己也说不能给出诊断。</p></div>
+  </div>
+  <div class="card rv" style="margin-top:14px"><span class="tag t-link">延伸学习</span><p>训练营里的智能体课程可以接着看：<a href="../lessons/camp-a8v1.0.html">多智能体协作：一个 AI 不够，就组一支队</a> · <a href="../lessons/rcm-paperv1.0.html">论文精读：谁派活，谁负责到底（RCM）</a>。</p></div>
+  <div class="card rv"><span class="tag t-link">只有作者帖子提到</span><p>作者在 LinkedIn 说，这项研究是 Google Health 应用里 Google Health Coach 的基础。论文正文没有写这一点，这里只作为作者本人的说法。</p></div>
+</section>
+
+<!-- 第 8 章 -->
+<section id="ch8">
+  <div class="bar"><b>练习</b><span>课堂练习</span><i>第 8 章</i></div>
+  <h2>课堂练习：用“会诊单”拆一个多智能体系统</h2>
+  <div class="prompt rv" id="p1"><button class="copy" type="button" data-for="p1">复制</button>你是医学 AI 课程的带教老师。请帮我精读一篇“多智能体”医疗 AI 论文：
+【粘贴论文摘要或全文】
+请按急诊“首诊负责 + 会诊”的思路回答：
+1. 谁是“首诊主治”（统筹者）？它负责哪些决定？
+2. 有哪几个“会诊科室”（子智能体）？每个的输入、输出、用到的工具是什么？
+3. 和单个模型相比，评测用了哪些对照、多少人、谁来评（用户、专家还是 AI 评分员）？
+4. 多出来的代价是什么（调用次数、等待时间、出错的交接点）？
+5. 证明的是“回答更好”还是“病人更健康”？还缺哪种研究？
+要求：数字只能来自原文，并标注出处的图表或章节；原文没写的写“未报告”，不要推测。</div>
+</section>
+
+<!-- 第 9 章 -->
+<section id="ch9">
+  <div class="bar"><b>来源</b><span>原始出处</span><i>第 9 章</i></div>
+  <h2>来源</h2>
+  <p class="srcp">原始来源：Heydari AA, Gu K, Srinivas V, et al. The anatomy of a personal health agent. <i>Nature</i> (2026), 2026-10-21 在线发表. <a href="https://doi.org/10.1038/s41586-026-11161-8" target="_blank" rel="noopener">DOI: 10.1038/s41586-026-11161-8 ↗</a>（开放获取）· <a href="https://github.com/Google-Health/consumer-health-research/tree/main/personal_health_agent" target="_blank" rel="noopener">开源代码 ↗</a> · <a href="https://www.linkedin.com/posts/hey-ali_the-anatomy-of-a-personal-health-agent-activity-7518727232744263680-LsO7" target="_blank" rel="noopener">作者 LinkedIn 原帖 ↗</a>。本页是 aiai 学院的中文解读，数字以原文为准；“合理联想”“我的设想”属个人观点，不构成医疗建议。</p>
+</section>
+
+<footer>丁海祥 · aiai 学院前沿观察 · 2026-11-01</footer>
+</main>
+
+<script>
+(function(){
+  var $ = function(id){return document.getElementById(id)};
+
+  // 解释开关
+  document.querySelectorAll(".mode button").forEach(function(b){
+    b.addEventListener("click",function(){
+      document.body.dataset.mode=b.dataset.set;
+      document.querySelectorAll(".mode button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+    });
+  });
+
+  // 阅读进度 + 章节高亮
+  var prog=$("prog");
+  addEventListener("scroll",function(){
+    var h=document.documentElement; prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+  },{passive:true});
+  var navA={}; document.querySelectorAll(".links a").forEach(function(a){navA[a.getAttribute("href").slice(1)]=a});
+  // 章节高亮：取顶部已越过导航下方的最后一章；滚到页底时高亮最后一章
+  var secs=[].slice.call(document.querySelectorAll("main>section[id]")), cur=null, tick=false;
+  function spyUpd(){
+    tick=false; var h=document.documentElement, id=secs[0].id;
+    secs.forEach(function(s){if(s.getBoundingClientRect().top<=150)id=s.id});
+    if(h.scrollTop+h.clientHeight>=h.scrollHeight-4)id=secs[secs.length-1].id;
+    if(id===cur)return; cur=id;
+    for(var k in navA)navA[k].classList.toggle("on",k===id);
+    var a=navA[id]; if(a&&innerWidth<860)a.parentNode.scrollTo({left:a.offsetLeft-60,behavior:"smooth"});
+  }
+  addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(spyUpd)}},{passive:true});
+  addEventListener("resize",spyUpd); spyUpd();
+  if("IntersectionObserver" in window){
+    // 滚动出现
+    var rv=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target);}
+    })},{threshold:.15});
+    document.querySelectorAll(".rv").forEach(function(el){rv.observe(el)});
+  } else { document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in")}); }
+
+  // 复制提示词
+  document.querySelectorAll(".copy").forEach(function(b){b.onclick=function(){
+    var t=$(b.dataset.for).innerText.replace(/^复制\s*|^已复制\s*/,"");
+    var done=function(){b.textContent="已复制";setTimeout(function(){b.textContent="复制"},1800)};
+    try{navigator.clipboard.writeText(t).then(done,done)}catch(e){done()}
+  }});
+
+  // 视频：点击才加载 LinkedIn 嵌入
+  var vb=$("vidBtn");
+  if(vb){vb.onclick=function(){$("vid").innerHTML='<iframe src="'+vb.dataset.src+'" title="'+vb.dataset.title+'" allowfullscreen loading="lazy"></iframe>'}}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>前沿观察 02 · 一张自拍读出两只健康时钟 | aiai 学院</title>
+<meta name="description" content="aiai 学院前沿观察：Lancet Digital Health 论文 FAHR-Face 精读，人脸照片估算生物年龄和癌症患者生存风险。">
+<link rel="icon" href="../assets/aiai-wordmarkv1.0.webp">
+<style>
+:root{
+  --paper:#faf8f3;--ink:#1d1d1f;--muted:#5c5c63;--line:rgba(29,29,31,.14);
+  --navy:#1b3a73;--navy-d:#121f3d;--orange:#e8673a;--blue:#2f6fd6;--green:#1e7a55;--red:#b5461f;
+  --serif:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.75,.2,1);--tap:44px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans)}
+a{color:var(--blue)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section[id]{scroll-margin-top:110px}
+main>section[id]:last-of-type{min-height:calc(100vh - 230px)}
+
+/* 顶部：返回 + 章节导航 + 解释开关 */
+.nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
+.nav__in{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:14px;min-height:56px}
+.brand{font-family:var(--serif);font-weight:900;font-size:17px;text-decoration:none;color:var(--ink);white-space:nowrap}
+.links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
+.links::-webkit-scrollbar{display:none}
+.links a{font-size:14px;text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:6px;white-space:nowrap}
+.links a b{font-family:var(--mono);font-weight:400;margin-right:4px}
+.links a.on{background:var(--ink);color:var(--paper)}
+.mode{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;flex:none}
+.mode button{border:0;background:none;font:500 13px var(--sans);padding:6px 12px;cursor:pointer;color:var(--ink);min-height:34px}
+.mode button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.prog{position:absolute;left:0;bottom:-3px;height:3px;background:var(--orange);width:0}
+body[data-mode="plain"] .explain{display:none}
+
+/* 章节报头 */
+.bar{display:flex;align-items:center;gap:10px;border-top:3px solid var(--ink);padding-top:8px;margin:56px 0 14px;flex-wrap:wrap}
+.bar b{font-size:13px;background:var(--ink);color:var(--paper);padding:3px 10px}
+.bar span{font-size:13px;color:var(--muted)}
+.bar i{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:12px;color:var(--muted)}
+h2{font-family:var(--serif);font-weight:900;font-size:clamp(24px,3.4vw,34px);line-height:1.3;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 22px;max-width:60ch}
+
+/* 头图：图左 + 标题卡右 */
+.herosplit{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:stretch}
+.herosplit figure{margin:0;align-self:center}
+.herosplit figure img{border-radius:14px;box-shadow:0 14px 34px rgba(18,31,61,.14);width:100%;height:auto}
+figcaption{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6}
+.herocard{background:var(--navy-d);color:#f5f5f7;border-radius:14px;padding:clamp(22px,3.4vw,40px);display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:#ffb38f;margin:0 0 10px}
+.herocard h1{font-family:var(--serif);font-weight:900;font-size:clamp(26px,3.1vw,34px);line-height:1.3;text-wrap:balance;margin:0 0 16px}
+.herocard h1 em{font-style:normal;color:#ffb38f;display:block}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.meta span{padding:2px 11px;border-radius:999px;background:rgba(245,245,247,.1);border:1px solid rgba(245,245,247,.28);font-size:12.5px;color:rgba(245,245,247,.88)}
+.meta .ok{background:#e3f1ea;border-color:#b5dcc8;color:#1e6e52;font-weight:600}
+.meta .warn{background:#fff4e2;border-color:#f0d3a2;color:#8a5a12;font-weight:600}
+.herocard small{display:block;color:rgba(245,245,247,.6);font-size:12px;margin-top:16px}
+
+.lede{margin-top:24px}
+.one{font-family:var(--serif);font-weight:700;font-size:clamp(17px,2vw,20px);line-height:1.8;background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:16px 20px;margin:0}
+.one b{background:linear-gradient(transparent 62%,rgba(232,103,58,.28) 0)}
+.prose p{margin:0 0 14px}
+.prose strong{background:linear-gradient(transparent 62%,rgba(232,103,58,.28) 0)}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.key{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.key .k{font-family:var(--mono);font-size:12px;color:var(--orange)}
+.key h3{margin:2px 0 4px;font-size:16px}
+.key p{margin:0;font-size:14px;color:var(--muted)}
+
+.explain{background:#fff;border-left:4px solid var(--orange);border-radius:8px;padding:14px 18px;margin:18px 0}
+.explain h3{margin:0 0 6px;font-size:15px}
+.explain p,.explain dd{margin:0;font-size:14px;line-height:1.75}
+.explain dl{display:grid;gap:8px;margin:0}
+.explain dt{font-weight:700;font-size:14px}
+
+/* 面板 / 卡片 */
+.panel,.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px}
+.panel h3{margin:0 0 4px;font-size:17px}
+.card p{margin:0}
+.card ul{padding-left:1.2em;margin:8px 0 0}
+.card li{margin:6px 0}
+.note{font-size:12px;color:var(--muted);margin:8px 0 0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid .card{margin:0}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;padding:1px 9px;border-radius:6px;margin-bottom:6px}
+.t-fact{background:#e3f1ea;color:#1e6e52}.t-link{background:#e6eefb;color:#2a5aa8}.t-guess{background:#fbeee0;color:#9a5a14}
+.gap li b{color:var(--red)}
+
+/* 深色类比块（沿用模板 .med） */
+.med{background:var(--navy-d);color:#f3efe6;border-radius:14px;padding:22px 24px;margin:0 0 16px}
+.med p{margin:0}
+.med b{color:#ffb38f}
+.mdt{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.mdt div{background:rgba(245,245,247,.08);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.65}
+
+/* 数字卡 */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 16px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;position:relative}
+.stat::before{content:"";position:absolute;left:18px;top:-1px;width:40px;height:4px;background:var(--orange);border-radius:0 0 4px 4px}
+.stat .v{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:900;color:var(--navy);line-height:1.15}
+.stat .l{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.6}
+
+/* 流程 */
+.pipe{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch;margin:0 0 16px}
+.pipe .st{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14.5px;line-height:1.7}
+.pipe .st b{display:block;font-size:15px;margin-bottom:4px}
+.pipe .st .n{font-family:var(--serif);font-size:24px;color:var(--navy);font-weight:900;display:block}
+.pipe .ar{align-self:center;color:var(--orange);font-size:22px}
+
+/* 条形图 */
+.chart{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px;overflow:hidden}
+.chart h4{margin:0 0 12px;font-size:16px}
+.hbar{display:grid;grid-template-columns:150px 1fr 76px;gap:10px;align-items:center;margin:8px 0;font-size:14px}
+.hbar.b3{grid-template-columns:168px 1fr 80px}
+.hbar i{display:block;height:18px;border-radius:6px;background:var(--orange)}
+.hbar i.lo{min-width:14px;background:var(--navy)}
+.hbar i.mid{background:#c9a06a}
+.hbar span:last-child{font-family:var(--mono);font-weight:700;text-align:right}
+/* 森林图 */
+.hrrow{display:grid;grid-template-columns:190px 1fr 170px;gap:10px;align-items:center;font-size:13.5px;margin:4px 0}
+.axis{position:relative;height:22px;border-left:1px dashed #9aa}
+.hrrow>span:last-child{position:relative;background:#fff;white-space:nowrap;padding-left:8px;font-family:var(--mono);font-size:12.5px}
+.axis .ci{position:absolute;top:10px;height:2px;background:var(--ink)}
+.axis .pt{position:absolute;top:5px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#1f7a72}
+.axis.gold .pt{background:var(--orange)}
+/* 漏斗（rfd4） */
+.efunnel{display:grid;grid-template-columns:1fr;gap:8px}
+.fn{display:grid;grid-template-columns:200px 1fr;gap:10px;align-items:center;font-size:14px}
+.fn b{display:block;background:var(--navy);color:#fff;border-radius:6px;padding:6px 10px;font-weight:700;white-space:nowrap;min-width:max-content}
+.fn b.warn{background:var(--orange);color:var(--ink)}
+
+/* 两只时钟 */
+.twoclock{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 16px}
+.clk{border-radius:14px;padding:16px 18px}
+.clk.age{background:#fdf1e2;border:1px solid #f1d0a4}
+.clk.sur{background:#e6eefb;border:1px solid #b9cdef}
+.clk h4{margin:0 0 6px;font-size:16px}
+.clk p{margin:0}
+
+/* 视频 */
+.vid{position:relative;border-radius:14px;overflow:hidden;background:var(--navy-d);margin:0 0 10px}
+.vid button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;aspect-ratio:16/9;border:0;background:radial-gradient(120% 90% at 30% 20%,#2a4a8a,var(--navy-d));color:#f5f5f7;font:inherit;cursor:pointer;padding:16px;text-align:center}
+.vid button b{font-size:2.4rem;width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center}
+.vid button small{color:rgba(245,245,247,.7);font-size:12px}
+.vid iframe{display:block;width:100%;height:640px;border:0;background:#fff}
+.vlink{font-size:14px;color:var(--muted);margin:0}
+
+/* SVG 图 */
+.svgbox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 12px;margin:0 0 8px}
+.svgbox svg{display:block;width:100%;height:auto}
+.svgbox svg text{font-family:var(--sans)}
+
+/* 表格 */
+.tblwrap{overflow-x:auto;margin:0 0 16px;border:1px solid var(--line);border-radius:14px;background:#fff}
+table.mini{width:100%;border-collapse:collapse;font-size:14px}
+table.mini th,table.mini td{padding:10px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.mini tr:last-child td{border-bottom:0}
+table.mini th{background:var(--ink);color:var(--paper);font-weight:600}
+table.mini td:first-child{font-weight:700;white-space:nowrap;min-width:max-content}
+
+/* 提示词 */
+.prompt{position:relative;background:#fff;border:1.5px dashed var(--ink);border-radius:12px;padding:16px 18px;white-space:pre-wrap;font-size:14.5px;line-height:1.75;margin:0}
+.copy{position:absolute;top:10px;right:10px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:999px;padding:4px 14px;font:500 13px var(--sans);cursor:pointer;min-height:32px}
+
+.srcp{font-size:14px;color:var(--muted);line-height:1.9;margin:0}
+.srcp a{word-break:break-word}
+footer{border-top:3px solid var(--ink);margin-top:50px;padding:18px 0 60px;font-size:13px;color:var(--muted)}
+
+/* 滚动出现 */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .herosplit{grid-template-columns:1fr}
+  .grid,.twoclock,.mdt{grid-template-columns:1fr}
+  .keys,.stats{grid-template-columns:1fr 1fr}
+  .pipe{grid-template-columns:1fr}.pipe .ar{transform:rotate(90deg);justify-self:center}
+  .brand{display:none}
+}
+@media (max-width:560px){
+  .keys,.stats{grid-template-columns:1fr}
+  .hbar,.hbar.b3{grid-template-columns:110px 1fr 62px;font-size:13px}
+  .hrrow{grid-template-columns:1fr;gap:2px}
+  .fn{grid-template-columns:1fr;gap:2px}
+  .vid iframe{height:560px}
+  table.mini td:first-child{white-space:normal;min-width:5.5em}
+  .mode button{padding:6px 9px;font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body data-mode="explain">
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="../#frontier">← aiai 前沿</a>
+    <nav class="links" aria-label="本期章节">
+      <a href="#ch1"><b>1</b>速读</a><a href="#ch2"><b>2</b>视频</a><a href="#ch3"><b>3</b>背景</a><a href="#ch4"><b>4</b>方法</a><a href="#ch5"><b>5</b>数字</a><a href="#ch6"><b>6</b>时钟</a><a href="#ch7"><b>7</b>缺口</a><a href="#ch8"><b>8</b>临床</a><a href="#ch9"><b>9</b>练习</a><a href="#ch10"><b>10</b>来源</a>
+    </nav>
+    <div class="mode" role="group" aria-label="解释模式">
+      <button type="button" data-set="plain" aria-pressed="false">不要解释</button>
+      <button type="button" data-set="explain" aria-pressed="true">给我解释</button>
+    </div>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<main class="wrap">
+
+<!-- 第 1 章 -->
+<section id="ch1">
+  <div class="bar"><b>速读</b><span>aiai 学院 · 前沿观察 02</span><i>第 1 章</i></div>
+  <div class="herosplit">
+    <figure class="rv"><img src="../assets/frontier/face-agev1.0.webp" alt="水彩人脸示意：额头、颞部、鼻唇沟为橙色，眼下和鼻梁为青色" width="1400" height="764"><figcaption>示意图（AI 生成）：橙色是“面龄模型”主要看的区域，青色是“生存模型”主要看的区域。不是论文原图，也不是真实患者。</figcaption></figure>
+    <div class="herocard rv">
+      <p class="eyebrow">FRONTIER WATCH 02 / 前沿观察</p>
+      <h1>一张自拍，<em>能读出两只不同的“健康时钟”。</em></h1>
+      <div class="meta"><span>肿瘤与预后</span><span>AI 生物标志物</span><span>The Lancet Digital Health · 2026-10-19 在线发表</span><span class="ok">同行评审 · 回顾性模型开发与验证</span></div>
+    </div>
+  </div>
+  <div class="lede rv">
+    <p class="one">一句话：哈佛 Mass General Brigham 团队用 4000 多万张人脸照片训练了一个人脸“基础模型” FAHR-Face，再分别微调成两个工具：一个估算“看上去的生物年龄”，一个直接预测癌症患者的死亡风险。两者在 4.3 万名放疗患者中都和生存显著相关，而且看的是脸上不同的地方。</p>
+  </div>
+</section>
+
+<!-- 第 2 章 -->
+<section id="ch2">
+  <div class="bar"><b>视频</b><span>作者 LinkedIn</span><i>第 2 章</i></div>
+  <h2>先看作者的视频</h2>
+  <div class="vid rv" id="vid"><button type="button" id="vidBtn" aria-label="加载 LinkedIn 视频" data-src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7518087057429331968" data-title="Fridolin Haugg 在 LinkedIn 发布的 FAHR-Face 视频"><b>▶</b><span>点击加载作者在 LinkedIn 发布的视频</span><small>视频由 LinkedIn 提供；如果加载后无法播放，请点下方链接到 LinkedIn 观看</small></button></div>
+  <p class="vlink">作者：Fridolin Haugg（哈佛医学院博士生，论文共同第一作者）。<a href="https://www.linkedin.com/feed/update/urn:li:activity:7518087057429331968" target="_blank" rel="noopener">在 LinkedIn 打开原帖 ↗</a></p>
+</section>
+
+<!-- 第 3 章 -->
+<section id="ch3">
+  <div class="bar"><b>背景</b><span>希波克拉底面容 · FaceAge</span><i>第 3 章</i></div>
+  <h2>它在问一个很老的问题</h2>
+  <div class="card rv"><p>医生向来会“看脸色”。约公元前 400 年，希波克拉底在《预后》里描述过濒死面容：鼻尖锐、眼窝凹陷、颞部塌陷，后世叫它 <b>Hippocratic facies</b>。肿瘤科医生决定是否给老年患者上高强度放化疗时，也会参考“这个人看起来扛不扛得住”。问题在于，这种判断<b>主观、难以复现、没法量化</b>。这项研究想做的，就是把这道“看一眼”变成一个可测量的数字。</p></div>
+  <div class="card rv"><span class="tag t-link">背景</span><p>同一团队 2025 年在同一期刊发表过 FaceAge 模型，主要基于 60 岁以上、以白人为主的人群。这次的 FAHR-Face 是升级版：换成“基础模型”路线，覆盖全年龄段，并新增一个直接预测生存的模型。</p></div>
+  <aside class="explain rv">
+    <h3>这项研究想干什么</h3>
+    <p>医生“看一眼觉得这人扛不扛得住”的判断很主观。研究想把它变成一个能测量、能复现的数字。</p>
+  </aside>
+</section>
+
+<!-- 第 4 章 -->
+<section id="ch4">
+  <div class="bar"><b>方法</b><span>预训练 → 微调 → 检验</span><i>第 4 章</i></div>
+  <h2>它是怎么做的</h2>
+  <div class="pipe rv">
+    <div class="st"><b>① 预训练</b><span class="n">4000 万+</span>张网络公开人脸（WebFace42M），没有健康标签。用“遮住一部分、让模型补全”的掩码自编码器自学人脸结构。</div>
+    <span class="ar">→</span>
+    <div class="st"><b>② 两路微调</b><span class="n">2 个模型</span>面龄模型：10 个公开年龄数据集，约 74 万张照片，按年龄段均衡。生存模型：哈佛放疗患者 34,363 张照片。</div>
+    <span class="ar">→</span>
+    <div class="st"><b>③ 检验</b><span class="n">3 个队列</span>哈佛放疗队列 38,183 人（生存模型留出 3,820 人测试），荷兰 Maastro 独立队列 4,892 人做外部验证。</div>
+  </div>
+  <div class="med rv"><p>打个比方：<b>先让一个实习生看 4000 万张脸</b>，不告诉他任何病情，只练“认脸”的基本功；然后才拿几万份带随访结果的病历，教他两门专科：“猜年龄”和“猜预后”。基本功扎实，专科就不需要海量病历也能学好，这正是“基础模型”的意义。</p></div>
+  <p class="note">术语：面龄偏差（FAD）= 模型估的年龄 − 实际年龄，正数代表“看起来比实际老”。aHR = 校正年龄、性别、种族、癌种、治疗意图、治疗年份和放疗技术后的风险比。</p>
+  <aside class="explain rv">
+    <h3>这一章的两个词</h3>
+    <dl>
+      <dt>面龄偏差（FAD）</dt><dd>模型估出来的年龄减去真实年龄。是正数，就是“看起来比实际老”。</dd>
+      <dt>aHR</dt><dd>把年龄、性别、种族、癌种、治疗意图、治疗年份和放疗技术这些因素都校正掉之后的风险比。</dd>
+    </dl>
+  </aside>
+</section>
+
+<!-- 第 5 章 -->
+<section id="ch5">
+  <div class="bar"><b>数字</b><span>论文表 1、表 2 和图 4</span><i>第 5 章</i></div>
+  <h2>关键数字</h2>
+  <div class="stats rv">
+    <div class="stat"><div class="v">5.1 岁</div><div class="l">面龄模型在公开数据集上的平均误差。从零训练的同结构模型是 6.92 岁。</div></div>
+    <div class="stat"><div class="v">0.72</div><div class="l">生存模型的总体 C 指数。不用基础模型、从零训练是 0.66。</div></div>
+    <div class="stat"><div class="v">3.23 倍</div><div class="l">生存分最高组和最低组相比的校正死亡风险。</div></div>
+  </div>
+  <div class="chart rv"><h4>90 天内死亡比例：生存分最高 vs 最低（哈佛测试集）</h4>
+    <div class="hbar"><span>生存分 0.9–1.0</span><i style="width:100%"></i><span>52.5%</span></div>
+    <div class="hbar"><span>生存分 0.0–0.1</span><i class="lo" style="width:4%"></i><span>2.1%</span></div>
+    <p class="note">64/122 人 vs 20/975 人。对照：面龄偏差 &gt;20 岁的人 90 天死亡 21.3%（226/1060），≤ −10 岁的人 6.4%（270/4195）。</p></div>
+  <div class="chart rv"><h4>风险比一览（圆点为 aHR，横线为 95% 置信区间，竖线为 1）</h4>
+    <div class="hrrow"><span>面龄偏差每 +10 岁（哈佛）</span><div class="axis gold" style="border-left:none;background:linear-gradient(90deg,transparent calc(7.1% - 1px),#9aa calc(7.1% - 1px),#9aa calc(7.1% + 1px),transparent calc(7.1% + 1px))"><span class="ci" style="left:11.4%;width:1.4%"></span><span class="pt" style="left:12.1%"></span></div><span>aHR 1.14 (1.12–1.16)</span></div>
+    <div class="hrrow"><span>面龄偏差 ≥5 岁 vs &lt;5 岁</span><div class="axis gold" style="border-left:none;background:linear-gradient(90deg,transparent calc(7.1% - 1px),#9aa calc(7.1% - 1px),#9aa calc(7.1% + 1px),transparent calc(7.1% + 1px))"><span class="ci" style="left:13.2%;width:3.2%"></span><span class="pt" style="left:14.6%"></span></div><span>aHR 1.21 (1.17–1.26)</span></div>
+    <div class="hrrow"><span>面龄偏差每 +10 岁（荷兰）</span><div class="axis gold" style="border-left:none;background:linear-gradient(90deg,transparent calc(7.1% - 1px),#9aa calc(7.1% - 1px),#9aa calc(7.1% + 1px),transparent calc(7.1% + 1px))"><span class="ci" style="left:9.3%;width:5.0%"></span><span class="pt" style="left:11.8%"></span></div><span>aHR 1.13 (1.06–1.20)</span></div>
+    <div class="hrrow"><span>生存分每 +0.1（哈佛）</span><div class="axis" style="border-left:none;background:linear-gradient(90deg,transparent calc(7.1% - 1px),#9aa calc(7.1% - 1px),#9aa calc(7.1% + 1px),transparent calc(7.1% + 1px))"><span class="ci" style="left:12.1%;width:2.1%"></span><span class="pt" style="left:13.2%"></span></div><span>aHR 1.17 (1.14–1.20)</span></div>
+    <div class="hrrow"><span>生存分每 +0.1（荷兰）</span><div class="axis" style="border-left:none;background:linear-gradient(90deg,transparent calc(7.1% - 1px),#9aa calc(7.1% - 1px),#9aa calc(7.1% + 1px),transparent calc(7.1% + 1px))"><span class="ci" style="left:9.3%;width:1.8%"></span><span class="pt" style="left:10.4%"></span></div><span>aHR 1.09 (1.06–1.11)</span></div>
+    <div class="hrrow"><span>生存分 ≥0.75 vs &lt;0.25</span><div class="axis" style="border-left:none;background:linear-gradient(90deg,transparent calc(7.1% - 1px),#9aa calc(7.1% - 1px),#9aa calc(7.1% + 1px),transparent calc(7.1% + 1px))"><span class="ci" style="left:67.9%;width:41.4%"></span><span class="pt" style="left:86.8%"></span></div><span>aHR 3.23 (2.70–3.86)</span></div>
+    <p class="note">橙色为面龄偏差，青色为生存模型。数字全部来自论文表 1、表 2 和图 4。</p></div>
+  <div class="card rv"><span class="tag t-fact">还有这些</span><ul>
+    <li>面龄偏差 ≥5 岁的患者，在 28 种诊断里有 18 种生存显著更差，其余方向一致但未达显著。</li>
+    <li>吸烟和面龄偏差关系最强，呈剂量依赖：现吸 &gt; 已戒 &gt; 从不吸。重度饮酒、药物滥用也让人“显老”。</li>
+    <li>化妆、拍摄角度、光照、表情对面龄估计无统计学差异；做过鼻整形的人平均“老” 1.11 岁。</li>
+    <li>按癌种看生存模型 C 指数，从霍奇金淋巴瘤的 0.53 到 HPV 阳性口咽癌的 0.88，差别很大。</li>
+  </ul></div>
+  <aside class="explain rv">
+    <h3>怎么读这张风险比图</h3>
+    <p>每一行的圆点是校正后的风险比（aHR），横线是 95% 置信区间，竖线代表 1。最下面一行：生存分 ≥0.75 的人和 &lt;0.25 的人相比，aHR 是 3.23。</p>
+  </aside>
+</section>
+
+<!-- 第 6 章 -->
+<section id="ch6">
+  <div class="bar"><b>时钟</b><span>最有意思的发现</span><i>第 6 章</i></div>
+  <h2>最有意思的发现：脸上有两只时钟</h2>
+  <div class="twoclock rv">
+    <div class="clk age"><h4>⏳ 衰老时钟 · 面龄模型</h4><p>主要看<b>鼻唇沟、额头、颞部</b>，40 岁以后越来越看重颞部和额头。反映的是慢慢累积的老化。</p></div>
+    <div class="clk sur"><h4>⚠️ 风险时钟 · 生存模型</h4><p>主要看<b>眼下和鼻梁</b>，各年龄段都一样。和希波克拉底说的“眼窝凹陷、鼻尖锐”位置重合，更像近期的消耗和衰竭。</p></div>
+  </div>
+  <div class="card rv"><p>两个模型共用一个底座，却几乎不重叠：两者分数的相关系数只有 0.22（哈佛）和 0.16（荷兰），特征空间的余弦相似度接近 0。放进同一个 Cox 模型后，两者都仍然独立预测生存，合在一起拟合更好（AIC 26560，低于单用面龄的 26602 和单用生存模型的 26563）。</p>
+  <p style="margin-top:8px">对临床的启发：<b>“看起来老”和“看起来病”是两回事</b>。前者以年为单位，适合追踪；后者更适合判断近期风险。</p></div>
+  <aside class="explain rv">
+    <h3>两只时钟怎么理解</h3>
+    <p>同一个底座训练出两个模型，却盯着脸上不同的位置：一个看老化（鼻唇沟、额头、颞部），一个看近期消耗（眼下、鼻梁）。两个分数彼此关系很弱，放在一起预测生存比单用一个更好。</p>
+  </aside>
+</section>
+
+<!-- 第 7 章 -->
+<section id="ch7">
+  <div class="bar"><b>缺口</b><span>冷静看</span><i>第 7 章</i></div>
+  <h2>冷静看：证据还差什么</h2>
+  <div class="tblwrap rv"><table class="mini">
+    <tr><th>问题</th><th>具体情况</th></tr>
+    <tr><td>研究类型</td><td>回顾性模型开发与验证，不是前瞻性试验。证明的是“相关、能分层”，没证明“用了能让病人获益”。</td></tr>
+    <tr><td>人群单一</td><td>全是放疗患者，来自美国和荷兰的高收入国家中心；哈佛测试集 85.2% 是白人，亚洲人只占 3.0%。</td></tr>
+    <tr><td>没跟医生比</td><td>英国萨里大学 Bober 教授指出：研究没有测量医生自己对体能、一般状况的判断，所以不知道它比医生“看一眼”多给了什么。</td></tr>
+    <tr><td>相对排序，不是个人概率</td><td>模型能把人群按风险排序，但分数没有被校准成“这个人还能活多久”，不能直接用于个体决策。</td></tr>
+    <tr><td>亚组不稳</td><td>校正后，面龄偏差在黑人患者中与生存的关联不显著（生存模型仍显著）；不同癌种的表现差异很大。</td></tr>
+    <tr><td>拍照条件</td><td>论文报告化妆、角度、光照影响不显著，但专家点评认为微笑或光线平均会让估计偏差约 2 岁，个别更多；“用它追踪衰老或生活方式改变”尚未验证。</td></tr>
+    <tr><td>数据与伦理</td><td>预训练数据来自网络人脸库；临床照片经伦理委员会批准豁免知情同意。医院已就该类算法申请美国临时专利。代码在 GitHub 开源，临床数据不公开。</td></tr>
+  </table></div>
+  <aside class="explain rv">
+    <h3>“相关”不等于“有用”</h3>
+    <p>这是回顾已有数据的研究：证明了照片分数和生存相关、能把人按风险排序；还没证明临床上用了它病人会获益，也不能直接告诉某一个人还能活多久。</p>
+  </aside>
+</section>
+
+<!-- 第 8 章 -->
+<section id="ch8">
+  <div class="bar"><b>临床</b><span>事实 · 联想 · 设想</span><i>第 8 章</i></div>
+  <h2>对我们医生意味着什么</h2>
+  <div class="grid rv">
+    <div class="card"><span class="tag t-fact">论文已有结论</span><p>在放疗患者中，一张普通照片可以给出独立于年龄、癌种和治疗方案的预后信息，适合在缺少其他评估工具时辅助分层。</p></div>
+    <div class="card"><span class="tag t-link">合理联想</span><p><b>老年创伤与急诊</b>：衰弱评估（握力、起立行走试验）在急诊很难做，一张照片能否补位？论文没在急诊人群里测试，需要专门验证。</p></div>
+    <div class="card"><span class="tag t-guess">我的设想</span><p><b>颞部与肌肉</b>：面龄模型越到高龄越看重颞部，而颞部凹陷常被视为颞肌和脂肪流失的体征。它和全身肌少症有没有关系？这是值得做的研究问题，目前没有证据。</p></div>
+    <div class="card"><span class="tag t-guess">要守的底线</span><p>人脸属于敏感个人信息（我国《个人信息保护法》把生物识别信息列为敏感信息）。任何院内应用都要先过伦理和数据合规，不能拿病人照片随手上传给 AI。</p></div>
+  </div>
+</section>
+
+<!-- 第 9 章 -->
+<section id="ch9">
+  <div class="bar"><b>练习</b><span>课堂练习</span><i>第 9 章</i></div>
+  <h2>课堂练习：用五个问题读一篇“预测模型”论文</h2>
+  <div class="prompt rv" id="p1"><button class="copy" type="button" data-for="p1">复制</button>你是临床流行病学老师。请按下面 5 个问题，帮我精读这篇预测模型论文：
+【粘贴论文摘要或全文】
+1. 预测的是什么结局？在什么人群里？什么时间点？
+2. 训练集、内部测试集、外部验证集分别多少人？外部验证来自哪里？
+3. 区分度（C 指数或 AUC）和校准度各是多少？有没有报告校准？
+4. 和现有方法比（医生判断、已有评分），多带来了多少信息？
+5. 哪些人群可能不适用？结论能不能直接用于个体决策？
+要求：数字只能来自原文，引用请标注表格或图号；原文没写的写“未报告”，不要推测。</div>
+</section>
+
+<!-- 第 10 章 -->
+<section id="ch10">
+  <div class="bar"><b>来源</b><span>原始出处</span><i>第 10 章</i></div>
+  <h2>来源</h2>
+  <p class="srcp">原始来源：Haugg F, Lee G, et al. Foundation artificial intelligence models for health recognition by use of face photographs (FAHR-Face): a model development and validation study. <i>Lancet Digit Health</i> 2026; 101056. <a href="https://doi.org/10.1016/j.landig.2026.101056" target="_blank" rel="noopener">DOI ↗</a>（开放获取，CC BY-NC-ND 4.0）· <a href="https://www.sciencemediacentre.org/expert-reaction-to-study-testing-an-ai-tool-using-a-face-photograph-to-predict-cancer-survival/" target="_blank" rel="noopener">英国科学媒体中心专家点评 ↗</a> · <a href="https://github.com/AIM-Harvard/FAHR-Face" target="_blank" rel="noopener">开源代码 ↗</a>。本页是 aiai 学院的中文解读，数字以原文为准；“我的设想”部分属个人观点，不构成医疗建议。</p>
+</section>
+
+<footer>丁海祥 · aiai 学院前沿观察 · 2026-11-01</footer>
+</main>
+
+<script>
+(function(){
+  var $ = function(id){return document.getElementById(id)};
+
+  // 解释开关
+  document.querySelectorAll(".mode button").forEach(function(b){
+    b.addEventListener("click",function(){
+      document.body.dataset.mode=b.dataset.set;
+      document.querySelectorAll(".mode button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+    });
+  });
+
+  // 阅读进度 + 章节高亮
+  var prog=$("prog");
+  addEventListener("scroll",function(){
+    var h=document.documentElement; prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+  },{passive:true});
+  var navA={}; document.querySelectorAll(".links a").forEach(function(a){navA[a.getAttribute("href").slice(1)]=a});
+  // 章节高亮：取顶部已越过导航下方的最后一章；滚到页底时高亮最后一章
+  var secs=[].slice.call(document.querySelectorAll("main>section[id]")), cur=null, tick=false;
+  function spyUpd(){
+    tick=false; var h=document.documentElement, id=secs[0].id;
+    secs.forEach(function(s){if(s.getBoundingClientRect().top<=150)id=s.id});
+    if(h.scrollTop+h.clientHeight>=h.scrollHeight-4)id=secs[secs.length-1].id;
+    if(id===cur)return; cur=id;
+    for(var k in navA)navA[k].classList.toggle("on",k===id);
+    var a=navA[id]; if(a&&innerWidth<860)a.parentNode.scrollTo({left:a.offsetLeft-60,behavior:"smooth"});
+  }
+  addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(spyUpd)}},{passive:true});
+  addEventListener("resize",spyUpd); spyUpd();
+  if("IntersectionObserver" in window){
+    // 滚动出现
+    var rv=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target);}
+    })},{threshold:.15});
+    document.querySelectorAll(".rv").forEach(function(el){rv.observe(el)});
+  } else { document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in")}); }
+
+  // 复制提示词
+  document.querySelectorAll(".copy").forEach(function(b){b.onclick=function(){
+    var t=$(b.dataset.for).innerText.replace(/^复制\s*|^已复制\s*/,"");
+    var done=function(){b.textContent="已复制";setTimeout(function(){b.textContent="复制"},1800)};
+    try{navigator.clipboard.writeText(t).then(done,done)}catch(e){done()}
+  }});
+
+  // 视频：点击才加载 LinkedIn 嵌入
+  var vb=$("vidBtn");
+  if(vb){vb.onclick=function(){$("vid").innerHTML='<iframe src="'+vb.dataset.src+'" title="'+vb.dataset.title+'" allowfullscreen loading="lazy"></iframe>'}}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>前沿观察 01 · 手腕肌电读出手指力度 | aiai 学院</title>
+<meta name="description" content="aiai 学院前沿观察：用手腕 18 通道肌电实时判断每根手指的用力轻重。它做了什么、对临床意味着什么、还缺哪些证据。">
+<link rel="icon" href="../assets/aiai-wordmarkv1.0.webp">
+<style>
+:root{
+  --paper:#faf8f3;--ink:#1d1d1f;--muted:#5c5c63;--line:rgba(29,29,31,.14);
+  --navy:#1b3a73;--navy-d:#121f3d;--orange:#e8673a;--blue:#2f6fd6;--green:#1e7a55;--red:#b5461f;
+  --serif:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.75,.2,1);--tap:44px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans)}
+a{color:var(--blue)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section[id]{scroll-margin-top:110px}
+main>section[id]:last-of-type{min-height:calc(100vh - 230px)}
+
+/* 顶部：返回 + 章节导航 + 解释开关 */
+.nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
+.nav__in{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:14px;min-height:56px}
+.brand{font-family:var(--serif);font-weight:900;font-size:17px;text-decoration:none;color:var(--ink);white-space:nowrap}
+.links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
+.links::-webkit-scrollbar{display:none}
+.links a{font-size:14px;text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:6px;white-space:nowrap}
+.links a b{font-family:var(--mono);font-weight:400;margin-right:4px}
+.links a.on{background:var(--ink);color:var(--paper)}
+.mode{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;flex:none}
+.mode button{border:0;background:none;font:500 13px var(--sans);padding:6px 12px;cursor:pointer;color:var(--ink);min-height:34px}
+.mode button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.prog{position:absolute;left:0;bottom:-3px;height:3px;background:var(--orange);width:0}
+body[data-mode="plain"] .explain{display:none}
+
+/* 章节报头 */
+.bar{display:flex;align-items:center;gap:10px;border-top:3px solid var(--ink);padding-top:8px;margin:56px 0 14px;flex-wrap:wrap}
+.bar b{font-size:13px;background:var(--ink);color:var(--paper);padding:3px 10px}
+.bar span{font-size:13px;color:var(--muted)}
+.bar i{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:12px;color:var(--muted)}
+h2{font-family:var(--serif);font-weight:900;font-size:clamp(24px,3.4vw,34px);line-height:1.3;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 22px;max-width:60ch}
+
+/* 头图：图左 + 标题卡右 */
+.herosplit{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:stretch}
+.herosplit figure{margin:0;align-self:center}
+.herosplit figure img{border-radius:14px;box-shadow:0 14px 34px rgba(18,31,61,.14);width:100%;height:auto}
+figcaption{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6}
+.herocard{background:var(--navy-d);color:#f5f5f7;border-radius:14px;padding:clamp(22px,3.4vw,40px);display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:#ffb38f;margin:0 0 10px}
+.herocard h1{font-family:var(--serif);font-weight:900;font-size:clamp(26px,3.1vw,34px);line-height:1.3;text-wrap:balance;margin:0 0 16px}
+.herocard h1 em{font-style:normal;color:#ffb38f;display:block}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.meta span{padding:2px 11px;border-radius:999px;background:rgba(245,245,247,.1);border:1px solid rgba(245,245,247,.28);font-size:12.5px;color:rgba(245,245,247,.88)}
+.meta .ok{background:#e3f1ea;border-color:#b5dcc8;color:#1e6e52;font-weight:600}
+.meta .warn{background:#fff4e2;border-color:#f0d3a2;color:#8a5a12;font-weight:600}
+.herocard small{display:block;color:rgba(245,245,247,.6);font-size:12px;margin-top:16px}
+
+.lede{margin-top:24px}
+.one{font-family:var(--serif);font-weight:700;font-size:clamp(17px,2vw,20px);line-height:1.8;background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:16px 20px;margin:0}
+.one b{background:linear-gradient(transparent 62%,rgba(232,103,58,.28) 0)}
+.prose p{margin:0 0 14px}
+.prose strong{background:linear-gradient(transparent 62%,rgba(232,103,58,.28) 0)}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.key{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.key .k{font-family:var(--mono);font-size:12px;color:var(--orange)}
+.key h3{margin:2px 0 4px;font-size:16px}
+.key p{margin:0;font-size:14px;color:var(--muted)}
+
+.explain{background:#fff;border-left:4px solid var(--orange);border-radius:8px;padding:14px 18px;margin:18px 0}
+.explain h3{margin:0 0 6px;font-size:15px}
+.explain p,.explain dd{margin:0;font-size:14px;line-height:1.75}
+.explain dl{display:grid;gap:8px;margin:0}
+.explain dt{font-weight:700;font-size:14px}
+
+/* 面板 / 卡片 */
+.panel,.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px}
+.panel h3{margin:0 0 4px;font-size:17px}
+.card p{margin:0}
+.card ul{padding-left:1.2em;margin:8px 0 0}
+.card li{margin:6px 0}
+.note{font-size:12px;color:var(--muted);margin:8px 0 0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid .card{margin:0}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;padding:1px 9px;border-radius:6px;margin-bottom:6px}
+.t-fact{background:#e3f1ea;color:#1e6e52}.t-link{background:#e6eefb;color:#2a5aa8}.t-guess{background:#fbeee0;color:#9a5a14}
+.gap li b{color:var(--red)}
+
+/* 深色类比块（沿用模板 .med） */
+.med{background:var(--navy-d);color:#f3efe6;border-radius:14px;padding:22px 24px;margin:0 0 16px}
+.med p{margin:0}
+.med b{color:#ffb38f}
+.mdt{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.mdt div{background:rgba(245,245,247,.08);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.65}
+
+/* 数字卡 */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 16px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;position:relative}
+.stat::before{content:"";position:absolute;left:18px;top:-1px;width:40px;height:4px;background:var(--orange);border-radius:0 0 4px 4px}
+.stat .v{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:900;color:var(--navy);line-height:1.15}
+.stat .l{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.6}
+
+/* 流程 */
+.pipe{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch;margin:0 0 16px}
+.pipe .st{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14.5px;line-height:1.7}
+.pipe .st b{display:block;font-size:15px;margin-bottom:4px}
+.pipe .st .n{font-family:var(--serif);font-size:24px;color:var(--navy);font-weight:900;display:block}
+.pipe .ar{align-self:center;color:var(--orange);font-size:22px}
+
+/* 条形图 */
+.chart{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px;overflow:hidden}
+.chart h4{margin:0 0 12px;font-size:16px}
+.hbar{display:grid;grid-template-columns:150px 1fr 76px;gap:10px;align-items:center;margin:8px 0;font-size:14px}
+.hbar.b3{grid-template-columns:168px 1fr 80px}
+.hbar i{display:block;height:18px;border-radius:6px;background:var(--orange)}
+.hbar i.lo{min-width:14px;background:var(--navy)}
+.hbar i.mid{background:#c9a06a}
+.hbar span:last-child{font-family:var(--mono);font-weight:700;text-align:right}
+/* 森林图 */
+.hrrow{display:grid;grid-template-columns:190px 1fr 170px;gap:10px;align-items:center;font-size:13.5px;margin:4px 0}
+.axis{position:relative;height:22px;border-left:1px dashed #9aa}
+.hrrow>span:last-child{position:relative;background:#fff;white-space:nowrap;padding-left:8px;font-family:var(--mono);font-size:12.5px}
+.axis .ci{position:absolute;top:10px;height:2px;background:var(--ink)}
+.axis .pt{position:absolute;top:5px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#1f7a72}
+.axis.gold .pt{background:var(--orange)}
+/* 漏斗（rfd4） */
+.efunnel{display:grid;grid-template-columns:1fr;gap:8px}
+.fn{display:grid;grid-template-columns:200px 1fr;gap:10px;align-items:center;font-size:14px}
+.fn b{display:block;background:var(--navy);color:#fff;border-radius:6px;padding:6px 10px;font-weight:700;white-space:nowrap;min-width:max-content}
+.fn b.warn{background:var(--orange);color:var(--ink)}
+
+/* 两只时钟 */
+.twoclock{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 16px}
+.clk{border-radius:14px;padding:16px 18px}
+.clk.age{background:#fdf1e2;border:1px solid #f1d0a4}
+.clk.sur{background:#e6eefb;border:1px solid #b9cdef}
+.clk h4{margin:0 0 6px;font-size:16px}
+.clk p{margin:0}
+
+/* 视频 */
+.vid{position:relative;border-radius:14px;overflow:hidden;background:var(--navy-d);margin:0 0 10px}
+.vid button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;aspect-ratio:16/9;border:0;background:radial-gradient(120% 90% at 30% 20%,#2a4a8a,var(--navy-d));color:#f5f5f7;font:inherit;cursor:pointer;padding:16px;text-align:center}
+.vid button b{font-size:2.4rem;width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center}
+.vid button small{color:rgba(245,245,247,.7);font-size:12px}
+.vid iframe{display:block;width:100%;height:640px;border:0;background:#fff}
+.vlink{font-size:14px;color:var(--muted);margin:0}
+
+/* SVG 图 */
+.svgbox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 12px;margin:0 0 8px}
+.svgbox svg{display:block;width:100%;height:auto}
+.svgbox svg text{font-family:var(--sans)}
+
+/* 表格 */
+.tblwrap{overflow-x:auto;margin:0 0 16px;border:1px solid var(--line);border-radius:14px;background:#fff}
+table.mini{width:100%;border-collapse:collapse;font-size:14px}
+table.mini th,table.mini td{padding:10px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.mini tr:last-child td{border-bottom:0}
+table.mini th{background:var(--ink);color:var(--paper);font-weight:600}
+table.mini td:first-child{font-weight:700;white-space:nowrap;min-width:max-content}
+
+/* 提示词 */
+.prompt{position:relative;background:#fff;border:1.5px dashed var(--ink);border-radius:12px;padding:16px 18px;white-space:pre-wrap;font-size:14.5px;line-height:1.75;margin:0}
+.copy{position:absolute;top:10px;right:10px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:999px;padding:4px 14px;font:500 13px var(--sans);cursor:pointer;min-height:32px}
+
+.srcp{font-size:14px;color:var(--muted);line-height:1.9;margin:0}
+.srcp a{word-break:break-word}
+footer{border-top:3px solid var(--ink);margin-top:50px;padding:18px 0 60px;font-size:13px;color:var(--muted)}
+
+/* 滚动出现 */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .herosplit{grid-template-columns:1fr}
+  .grid,.twoclock,.mdt{grid-template-columns:1fr}
+  .keys,.stats{grid-template-columns:1fr 1fr}
+  .pipe{grid-template-columns:1fr}.pipe .ar{transform:rotate(90deg);justify-self:center}
+  .brand{display:none}
+}
+@media (max-width:560px){
+  .keys,.stats{grid-template-columns:1fr}
+  .hbar,.hbar.b3{grid-template-columns:110px 1fr 62px;font-size:13px}
+  .hrrow{grid-template-columns:1fr;gap:2px}
+  .fn{grid-template-columns:1fr;gap:2px}
+  .vid iframe{height:560px}
+  table.mini td:first-child{white-space:normal;min-width:5.5em}
+  .mode button{padding:6px 9px;font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body data-mode="explain">
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="../#frontier">← aiai 前沿</a>
+    <nav class="links" aria-label="本期章节">
+      <a href="#ch1"><b>1</b>速读</a><a href="#ch2"><b>2</b>做法</a><a href="#ch3"><b>3</b>原理</a><a href="#ch4"><b>4</b>临床</a><a href="#ch5"><b>5</b>缺口</a><a href="#ch6"><b>6</b>练习</a><a href="#ch7"><b>7</b>来源</a>
+    </nav>
+    <div class="mode" role="group" aria-label="解释模式">
+      <button type="button" data-set="plain" aria-pressed="false">不要解释</button>
+      <button type="button" data-set="explain" aria-pressed="true">给我解释</button>
+    </div>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<main class="wrap">
+
+<!-- 第 1 章 -->
+<section id="ch1">
+  <div class="bar"><b>速读</b><span>aiai 学院 · 前沿观察 01</span><i>第 1 章</i></div>
+  <div class="herosplit">
+    <figure class="rv"><img src="../assets/frontier/emg-forcev1.0.webp" alt="手腕戴一圈电极，拇指和食指捏住小木块，指尖发光表示用力" width="1400" height="764"><figcaption>示意图（AI 生成），不是原帖的实验画面。</figcaption></figure>
+    <div class="herocard rv">
+      <p class="eyebrow">FRONTIER WATCH 01 / 前沿观察</p>
+      <h1>手腕上的一圈电极，<em>能读出每根手指用了多大力。</em></h1>
+      <div class="meta"><span>神经肌肉与康复</span><span>来源：LinkedIn 帖子 · 2026 年 10 月底</span><span class="warn">公司早期演示 · 未经同行评审</span></div>
+    </div>
+  </div>
+  <div class="lede rv">
+    <p class="one">一句话：Memories.ai 团队在手腕贴了 18 通道表面肌电，实时判断哪几根手指在接触物体、用力是轻还是重。在留出数据上，手指组合加力度档位全部判对的比例是 80% 到 90%。</p>
+    <div class="keys">
+      <div class="key"><span class="k">01 · 传感</span><h3>18 通道</h3><p>手腕一圈双极表面肌电。</p></div>
+      <div class="key"><span class="k">02 · 力度</span><h3>低力 / 高力两档</h3><p>捏、握、按，每个动作分两档。</p></div>
+      <div class="key"><span class="k">03 · 结果</span><h3>80%–90%</h3><p>留出数据上“手指组合 + 力度档位”完全判对。</p></div>
+    </div>
+  </div>
+  <aside class="explain rv">
+    <h3>先记住它的身份</h3>
+    <p>这是公司在社交媒体上分享的早期演示，没有经过同行评审。下面的数字都以原帖为准。</p>
+  </aside>
+</section>
+
+<!-- 第 2 章 -->
+<section id="ch2">
+  <div class="bar"><b>做法</b><span>原帖事实</span><i>第 2 章</i></div>
+  <h2>他们做了什么</h2>
+  <div class="card rv"><span class="tag t-fact">原帖事实</span>
+    <ul>
+      <li>手腕一圈 <b>18 通道双极表面肌电</b>，实时记录肌肉电活动。</li>
+      <li>受试者按屏幕提示做捏、握、按，每个动作分<b>低力 / 高力两档</b>。训练数据只有“一小把”动作。</li>
+      <li>模型同时判断两件事：哪几根手指在接触物体，每根手指用的是哪一档力。</li>
+      <li>留出数据上，“手指组合 + 力度档位”完全判对的比例为 <b>80%–90%</b>。</li>
+      <li>他们的目标是给“物理 AI”（机器人灵巧操作）补上触觉和力的数据。下一步是加入触觉和手部姿态的真实标注，做连续的肌电到力模型。</li>
+    </ul>
+  </div>
+  <aside class="explain rv">
+    <h3>“完全判对”是什么意思？</h3>
+    <p>模型一次要答对两件事：哪几根手指碰到了物体，以及每根手指用的是低力还是高力。两件都对才算对，这样的比例是 80%–90%。</p>
+  </aside>
+</section>
+
+<!-- 第 3 章 -->
+<section id="ch3">
+  <div class="bar"><b>原理</b><span>前臂肌肉与手腕肌电</span><i>第 3 章</i></div>
+  <h2>怎么理解</h2>
+  <div class="med rv"><p>控制手指的屈肌和伸肌，大部分<b>肌腹长在前臂</b>，肌腱一路穿过手腕才到手指。所以在手腕测肌电，就像<b>站在排练厅门口听乐队</b>：看不见谁在演奏，但能听出是哪几件乐器在响、响得多大声。AI 做的事，就是把这一团混在一起的“声音”拆回到每根手指。</p></div>
+</section>
+
+<!-- 第 4 章 -->
+<section id="ch4">
+  <div class="bar"><b>临床</b><span>已有方向 · 合理联想 · 设想</span><i>第 4 章</i></div>
+  <h2>对医生意味着什么</h2>
+  <div class="grid rv">
+    <div class="card"><span class="tag t-link">已有方向</span><p><b>肌电假肢</b>：上肢截肢患者用残肢肌电控制假手，已经临床应用多年。难点一直是“分得清手指、控得住力度”，这类解码思路正好对口。</p></div>
+    <div class="card"><span class="tag t-link">合理联想</span><p><b>手外伤与卒中康复</b>：如果能稳定量化每根手指的出力，康复评估就能从“握力计一个总数”细化到“哪根手指、哪种动作没恢复”。</p></div>
+    <div class="card"><span class="tag t-guess">我的设想</span><p><b>肌肉损伤研究</b>：前臂肌肉受伤或接受放疗后，肌电和力量之间的关系会不会变？这可以作为一个无创的功能读数，还需要专门设计实验验证。</p></div>
+    <div class="card"><span class="tag t-guess">评论区提问</span><p><b>沟通辅助</b>：只剩少数手指能动的患者，能不能用“哪根手指 + 多大力”的组合来选字母？目前只是设想。</p></div>
+  </div>
+  <aside class="explain rv">
+    <h3>标签怎么读</h3>
+    <p>“已有方向”是临床上已经在用的；“合理联想”是顺着这项技术推出来的可能用途；“我的设想”和“评论区提问”都还只是想法，没有证据。</p>
+  </aside>
+</section>
+
+<!-- 第 5 章 -->
+<section id="ch5">
+  <div class="bar"><b>缺口</b><span>证据评估</span><i>第 5 章</i></div>
+  <h2>证据还差什么</h2>
+  <div class="card gap rv">
+    <ul>
+      <li><b>样本太少</b>：只用了“一小把”动作训练，受试者人数没写。</li>
+      <li><b>只分两档</b>：低力和高力，还不是连续的牛顿数值。连续预测才更有临床价值。</li>
+      <li><b>跨天稳定性未知</b>：第二天重新戴上电极，位置偏几毫米，准确率还剩多少？评论区也有人点出这是真正的考验。</li>
+      <li><b>疲劳与个体差异</b>：肌肉疲劳、出汗、皮下脂肪厚度都会改变信号，每个人可能都要重新校准。</li>
+      <li><b>没有论文</b>：这是社交媒体上的公司进展分享，方法和数据都没有公开，不能当成研究结论引用。</li>
+    </ul>
+  </div>
+  <aside class="explain rv">
+    <h3>一句话总结缺口</h3>
+    <p>样本小、只分两档、换一天戴还准不准不知道，方法和数据也没公开。可以当线索看，不能当研究结论用。</p>
+  </aside>
+</section>
+
+<!-- 第 6 章 -->
+<section id="ch6">
+  <div class="bar"><b>练习</b><span>课堂练习</span><i>第 6 章</i></div>
+  <h2>课堂练习：让 AI 帮你给“前沿新闻”定级</h2>
+  <div class="prompt rv" id="p1"><button class="copy" type="button" data-for="p1">复制</button>你是循证医学老师。下面是一条科技公司在社交媒体上发布的研究进展：
+【粘贴原文】
+请按这个格式回答：
+1. 用两句话说清它做了什么（只用原文信息）。
+2. 证据等级：同行评审论文 / 预印本 / 公司演示 / 新闻转述，选一个并说明理由。
+3. 列出 3 个“还没回答的问题”（样本量、对照、可重复性、真实场景）。
+4. 对临床的意义分三栏：已有证据 / 合理联想 / 纯推测。
+限制：原文没写的数字不要编；不确定的写“需核实”。</div>
+</section>
+
+<!-- 第 7 章 -->
+<section id="ch7">
+  <div class="bar"><b>来源</b><span>原始出处</span><i>第 7 章</i></div>
+  <h2>来源</h2>
+  <p class="srcp">原始来源：Dalton Moore（Memories.ai）在 LinkedIn 的帖子 <a href="https://lnkd.in/p/gbNtr2V7" target="_blank" rel="noopener">查看原帖 ↗</a>。本页是 aiai 学院的解读，数字以原帖为准；临床联想部分属个人观点，不构成医疗建议。</p>
+</section>
+
+<footer>丁海祥 · aiai 学院前沿观察 · 2026-11-01</footer>
+</main>
+
+<script>
+(function(){
+  var $ = function(id){return document.getElementById(id)};
+
+  // 解释开关
+  document.querySelectorAll(".mode button").forEach(function(b){
+    b.addEventListener("click",function(){
+      document.body.dataset.mode=b.dataset.set;
+      document.querySelectorAll(".mode button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+    });
+  });
+
+  // 阅读进度 + 章节高亮
+  var prog=$("prog");
+  addEventListener("scroll",function(){
+    var h=document.documentElement; prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+  },{passive:true});
+  var navA={}; document.querySelectorAll(".links a").forEach(function(a){navA[a.getAttribute("href").slice(1)]=a});
+  // 章节高亮：取顶部已越过导航下方的最后一章；滚到页底时高亮最后一章
+  var secs=[].slice.call(document.querySelectorAll("main>section[id]")), cur=null, tick=false;
+  function spyUpd(){
+    tick=false; var h=document.documentElement, id=secs[0].id;
+    secs.forEach(function(s){if(s.getBoundingClientRect().top<=150)id=s.id});
+    if(h.scrollTop+h.clientHeight>=h.scrollHeight-4)id=secs[secs.length-1].id;
+    if(id===cur)return; cur=id;
+    for(var k in navA)navA[k].classList.toggle("on",k===id);
+    var a=navA[id]; if(a&&innerWidth<860)a.parentNode.scrollTo({left:a.offsetLeft-60,behavior:"smooth"});
+  }
+  addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(spyUpd)}},{passive:true});
+  addEventListener("resize",spyUpd); spyUpd();
+  if("IntersectionObserver" in window){
+    // 滚动出现
+    var rv=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target);}
+    })},{threshold:.15});
+    document.querySelectorAll(".rv").forEach(function(el){rv.observe(el)});
+  } else { document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in")}); }
+
+  // 复制提示词
+  document.querySelectorAll(".copy").forEach(function(b){b.onclick=function(){
+    var t=$(b.dataset.for).innerText.replace(/^复制\s*|^已复制\s*/,"");
+    var done=function(){b.textContent="已复制";setTimeout(function(){b.textContent="复制"},1800)};
+    try{navigator.clipboard.writeText(t).then(done,done)}catch(e){done()}
+  }});
+
+  // 视频：点击才加载 LinkedIn 嵌入
+  var vb=$("vidBtn");
+  if(vb){vb.onclick=function(){$("vid").innerHTML='<iframe src="'+vb.dataset.src+'" title="'+vb.dataset.title+'" allowfullscreen loading="lazy"></iframe>'}}
+})();
+</script>
+</body>
+</html>

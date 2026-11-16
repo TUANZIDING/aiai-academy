@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>前沿观察 04 · RFD4-Proteina 与 AI 从头设计的酶 | aiai 学院</title>
+<meta name="description" content="aiai 学院前沿观察：Baker 实验室与 NVIDIA 的 RFD4-Proteina 预印本精读，计算成功率、实验命中率和证据缺口。">
+<link rel="icon" href="../assets/aiai-wordmarkv1.0.webp">
+<style>
+:root{
+  --paper:#faf8f3;--ink:#1d1d1f;--muted:#5c5c63;--line:rgba(29,29,31,.14);
+  --navy:#1b3a73;--navy-d:#121f3d;--orange:#e8673a;--blue:#2f6fd6;--green:#1e7a55;--red:#b5461f;
+  --serif:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.75,.2,1);--tap:44px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans)}
+a{color:var(--blue)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section[id]{scroll-margin-top:110px}
+main>section[id]:last-of-type{min-height:calc(100vh - 230px)}
+
+/* 顶部：返回 + 章节导航 + 解释开关 */
+.nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
+.nav__in{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:14px;min-height:56px}
+.brand{font-family:var(--serif);font-weight:900;font-size:17px;text-decoration:none;color:var(--ink);white-space:nowrap}
+.links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
+.links::-webkit-scrollbar{display:none}
+.links a{font-size:14px;text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:6px;white-space:nowrap}
+.links a b{font-family:var(--mono);font-weight:400;margin-right:4px}
+.links a.on{background:var(--ink);color:var(--paper)}
+.mode{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;flex:none}
+.mode button{border:0;background:none;font:500 13px var(--sans);padding:6px 12px;cursor:pointer;color:var(--ink);min-height:34px}
+.mode button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.prog{position:absolute;left:0;bottom:-3px;height:3px;background:var(--orange);width:0}
+body[data-mode="plain"] .explain{display:none}
+
+/* 章节报头 */
+.bar{display:flex;align-items:center;gap:10px;border-top:3px solid var(--ink);padding-top:8px;margin:56px 0 14px;flex-wrap:wrap}
+.bar b{font-size:13px;background:var(--ink);color:var(--paper);padding:3px 10px}
+.bar span{font-size:13px;color:var(--muted)}
+.bar i{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:12px;color:var(--muted)}
+h2{font-family:var(--serif);font-weight:900;font-size:clamp(24px,3.4vw,34px);line-height:1.3;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 22px;max-width:60ch}
+
+/* 头图：图左 + 标题卡右 */
+.herosplit{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:stretch}
+.herosplit figure{margin:0;align-self:center}
+.herosplit figure img{border-radius:14px;box-shadow:0 14px 34px rgba(18,31,61,.14);width:100%;height:auto}
+figcaption{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6}
+.herocard{background:var(--navy-d);color:#f5f5f7;border-radius:14px;padding:clamp(22px,3.4vw,40px);display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:#ffb38f;margin:0 0 10px}
+.herocard h1{font-family:var(--serif);font-weight:900;font-size:clamp(26px,3.1vw,34px);line-height:1.3;text-wrap:balance;margin:0 0 16px}
+.herocard h1 em{font-style:normal;color:#ffb38f;display:block}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.meta span{padding:2px 11px;border-radius:999px;background:rgba(245,245,247,.1);border:1px solid rgba(245,245,247,.28);font-size:12.5px;color:rgba(245,245,247,.88)}
+.meta .ok{background:#e3f1ea;border-color:#b5dcc8;color:#1e6e52;font-weight:600}
+.meta .warn{background:#fff4e2;border-color:#f0d3a2;color:#8a5a12;font-weight:600}
+.herocard small{display:block;color:rgba(245,245,247,.6);font-size:12px;margin-top:16px}
+
+.lede{margin-top:24px}
+.one{font-family:var(--serif);font-weight:700;font-size:clamp(17px,2vw,20px);line-height:1.8;background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:16px 20px;margin:0}
+.one b{background:linear-gradient(transparent 62%,rgba(232,103,58,.28) 0)}
+.prose p{margin:0 0 14px}
+.prose strong{background:linear-gradient(transparent 62%,rgba(232,103,58,.28) 0)}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.key{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.key .k{font-family:var(--mono);font-size:12px;color:var(--orange)}
+.key h3{margin:2px 0 4px;font-size:16px}
+.key p{margin:0;font-size:14px;color:var(--muted)}
+
+.explain{background:#fff;border-left:4px solid var(--orange);border-radius:8px;padding:14px 18px;margin:18px 0}
+.explain h3{margin:0 0 6px;font-size:15px}
+.explain p,.explain dd{margin:0;font-size:14px;line-height:1.75}
+.explain dl{display:grid;gap:8px;margin:0}
+.explain dt{font-weight:700;font-size:14px}
+
+/* 面板 / 卡片 */
+.panel,.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px}
+.panel h3{margin:0 0 4px;font-size:17px}
+.card p{margin:0}
+.card ul{padding-left:1.2em;margin:8px 0 0}
+.card li{margin:6px 0}
+.note{font-size:12px;color:var(--muted);margin:8px 0 0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid .card{margin:0}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;padding:1px 9px;border-radius:6px;margin-bottom:6px}
+.t-fact{background:#e3f1ea;color:#1e6e52}.t-link{background:#e6eefb;color:#2a5aa8}.t-guess{background:#fbeee0;color:#9a5a14}
+.gap li b{color:var(--red)}
+
+/* 深色类比块（沿用模板 .med） */
+.med{background:var(--navy-d);color:#f3efe6;border-radius:14px;padding:22px 24px;margin:0 0 16px}
+.med p{margin:0}
+.med b{color:#ffb38f}
+.mdt{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.mdt div{background:rgba(245,245,247,.08);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.65}
+
+/* 数字卡 */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 16px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;position:relative}
+.stat::before{content:"";position:absolute;left:18px;top:-1px;width:40px;height:4px;background:var(--orange);border-radius:0 0 4px 4px}
+.stat .v{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:900;color:var(--navy);line-height:1.15}
+.stat .l{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.6}
+
+/* 流程 */
+.pipe{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch;margin:0 0 16px}
+.pipe .st{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14.5px;line-height:1.7}
+.pipe .st b{display:block;font-size:15px;margin-bottom:4px}
+.pipe .st .n{font-family:var(--serif);font-size:24px;color:var(--navy);font-weight:900;display:block}
+.pipe .ar{align-self:center;color:var(--orange);font-size:22px}
+
+/* 条形图 */
+.chart{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px;overflow:hidden}
+.chart h4{margin:0 0 12px;font-size:16px}
+.hbar{display:grid;grid-template-columns:150px 1fr 76px;gap:10px;align-items:center;margin:8px 0;font-size:14px}
+.hbar.b3{grid-template-columns:168px 1fr 80px}
+.hbar i{display:block;height:18px;border-radius:6px;background:var(--orange)}
+.hbar i.lo{min-width:14px;background:var(--navy)}
+.hbar i.mid{background:#c9a06a}
+.hbar span:last-child{font-family:var(--mono);font-weight:700;text-align:right}
+/* 森林图 */
+.hrrow{display:grid;grid-template-columns:190px 1fr 170px;gap:10px;align-items:center;font-size:13.5px;margin:4px 0}
+.axis{position:relative;height:22px;border-left:1px dashed #9aa}
+.hrrow>span:last-child{position:relative;background:#fff;white-space:nowrap;padding-left:8px;font-family:var(--mono);font-size:12.5px}
+.axis .ci{position:absolute;top:10px;height:2px;background:var(--ink)}
+.axis .pt{position:absolute;top:5px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#1f7a72}
+.axis.gold .pt{background:var(--orange)}
+/* 漏斗（rfd4） */
+.efunnel{display:grid;grid-template-columns:1fr;gap:8px}
+.fn{display:grid;grid-template-columns:200px 1fr;gap:10px;align-items:center;font-size:14px}
+.fn b{display:block;background:var(--navy);color:#fff;border-radius:6px;padding:6px 10px;font-weight:700;white-space:nowrap;min-width:max-content}
+.fn b.warn{background:var(--orange);color:var(--ink)}
+
+/* 两只时钟 */
+.twoclock{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 16px}
+.clk{border-radius:14px;padding:16px 18px}
+.clk.age{background:#fdf1e2;border:1px solid #f1d0a4}
+.clk.sur{background:#e6eefb;border:1px solid #b9cdef}
+.clk h4{margin:0 0 6px;font-size:16px}
+.clk p{margin:0}
+
+/* 视频 */
+.vid{position:relative;border-radius:14px;overflow:hidden;background:var(--navy-d);margin:0 0 10px}
+.vid button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;aspect-ratio:16/9;border:0;background:radial-gradient(120% 90% at 30% 20%,#2a4a8a,var(--navy-d));color:#f5f5f7;font:inherit;cursor:pointer;padding:16px;text-align:center}
+.vid button b{font-size:2.4rem;width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center}
+.vid button small{color:rgba(245,245,247,.7);font-size:12px}
+.vid iframe{display:block;width:100%;height:640px;border:0;background:#fff}
+.vlink{font-size:14px;color:var(--muted);margin:0}
+
+/* SVG 图 */
+.svgbox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 12px;margin:0 0 8px}
+.svgbox svg{display:block;width:100%;height:auto}
+.svgbox svg text{font-family:var(--sans)}
+
+/* 表格 */
+.tblwrap{overflow-x:auto;margin:0 0 16px;border:1px solid var(--line);border-radius:14px;background:#fff}
+table.mini{width:100%;border-collapse:collapse;font-size:14px}
+table.mini th,table.mini td{padding:10px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.mini tr:last-child td{border-bottom:0}
+table.mini th{background:var(--ink);color:var(--paper);font-weight:600}
+table.mini td:first-child{font-weight:700;white-space:nowrap;min-width:max-content}
+
+/* 提示词 */
+.prompt{position:relative;background:#fff;border:1.5px dashed var(--ink);border-radius:12px;padding:16px 18px;white-space:pre-wrap;font-size:14.5px;line-height:1.75;margin:0}
+.copy{position:absolute;top:10px;right:10px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:999px;padding:4px 14px;font:500 13px var(--sans);cursor:pointer;min-height:32px}
+
+.srcp{font-size:14px;color:var(--muted);line-height:1.9;margin:0}
+.srcp a{word-break:break-word}
+footer{border-top:3px solid var(--ink);margin-top:50px;padding:18px 0 60px;font-size:13px;color:var(--muted)}
+
+/* 滚动出现 */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .herosplit{grid-template-columns:1fr}
+  .grid,.twoclock,.mdt{grid-template-columns:1fr}
+  .keys,.stats{grid-template-columns:1fr 1fr}
+  .pipe{grid-template-columns:1fr}.pipe .ar{transform:rotate(90deg);justify-self:center}
+  .brand{display:none}
+}
+@media (max-width:560px){
+  .keys,.stats{grid-template-columns:1fr}
+  .hbar,.hbar.b3{grid-template-columns:110px 1fr 62px;font-size:13px}
+  .hrrow{grid-template-columns:1fr;gap:2px}
+  .fn{grid-template-columns:1fr;gap:2px}
+  .vid iframe{height:560px}
+  table.mini td:first-child{white-space:normal;min-width:5.5em}
+  .mode button{padding:6px 9px;font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body data-mode="explain">
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="../#frontier">← aiai 前沿</a>
+    <nav class="links" aria-label="本期章节">
+      <a href="#ch1"><b>1</b>速读</a><a href="#ch2"><b>2</b>原帖</a><a href="#ch3"><b>3</b>概念</a><a href="#ch4"><b>4</b>计算</a><a href="#ch5"><b>5</b>实验</a><a href="#ch6"><b>6</b>缺口</a><a href="#ch7"><b>7</b>临床</a><a href="#ch8"><b>8</b>练习</a><a href="#ch9"><b>9</b>来源</a>
+    </nav>
+    <div class="mode" role="group" aria-label="解释模式">
+      <button type="button" data-set="plain" aria-pressed="false">不要解释</button>
+      <button type="button" data-set="explain" aria-pressed="true">给我解释</button>
+    </div>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<main class="wrap">
+
+<!-- 第 1 章 -->
+<section id="ch1">
+  <div class="bar"><b>速读</b><span>aiai 学院 · 前沿观察 04</span><i>第 1 章</i></div>
+  <div class="herosplit">
+    <figure class="rv"><img src="../assets/frontier/rfd4-proteinav1.0.webp" alt="水彩示意：左侧散点和虚线轮廓逐步收敛，右侧是一条带状折叠的蛋白质，包住中间发光的小分子，旁边有一个小试剂瓶和滴管" width="1400" height="764"><figcaption>示意图（AI 生成）：从一片“可能性”逐步收敛成一个能把目标分子抱住的新蛋白。不是论文原图，也不是真实结构。</figcaption></figure>
+    <div class="herocard rv">
+      <p class="eyebrow">FRONTIER WATCH 04 / 前沿观察</p>
+      <h1>AI 从头设计的酶，<em>第一次催化了一种艾滋病预防药的关键一步。</em></h1>
+      <div class="meta"><span>AI 与药物研发</span><span>蛋白质设计</span><span>预印本 · 2026-10-21 发布</span><span class="warn">预印本（未经同行评审）+ 开源模型（BSD-3）</span></div>
+    </div>
+  </div>
+  <div class="lede rv">
+    <p class="one">结论先说：Baker 实验室（2024 年诺贝尔化学奖得主 David Baker）和 NVIDIA 合作发布了蛋白质设计模型 RFD4-Proteina。它把序列、结构和周围分子放在同一个“潜空间”里一起生成，并且可以对难题多花算力去“想”。电脑里的成功率和速度都大幅领先；在实验台上，针对艾滋病预防药 lenacapavir 合成中的一步，67 个设计里有 4 个真的有活性，最好的把 79% 的原料转化成了目标产物。<b>这是预印本，还没有同行评审。</b></p>
+  </div>
+</section>
+
+<!-- 第 2 章 -->
+<section id="ch2">
+  <div class="bar"><b>原帖</b><span>共同第一作者 LinkedIn</span><i>第 2 章</i></div>
+  <h2>先看作者的原帖</h2>
+  <div class="vid rv" id="vid"><button type="button" id="vidBtn" aria-label="加载 LinkedIn 原帖" data-src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7518660478877777920" data-title="Kieran Didi 在 LinkedIn 发布的 RFD4-Proteina 原帖"><b>▶</b><span>点击加载共同第一作者在 LinkedIn 的原帖</span><small>内容由 LinkedIn 提供；如果加载后无法显示，请点下方链接到 LinkedIn 查看</small></button></div>
+  <p class="vlink">嵌入的是共同第一作者 Kieran Didi（NVIDIA）的原帖。另一位共同第一作者 Nathaniel Corley（华盛顿大学）的原帖不支持嵌入，可直接打开：<a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7518676461952622592" target="_blank" rel="noopener">到 LinkedIn 观看 Corley 原帖 ↗</a> · <a href="https://www.linkedin.com/posts/kieran-didi_avengers-assemble-1-year-bakerlab-nvidia-activity-7518660478877777920-xQ64" target="_blank" rel="noopener">Didi 原帖 ↗</a></p>
+</section>
+
+<!-- 第 3 章 -->
+<section id="ch3">
+  <div class="bar"><b>概念</b><span>从头设计 · 潜空间 · 思考预算</span><i>第 3 章</i></div>
+  <h2>先说清楚：“从头设计蛋白质”是什么意思</h2>
+  <div class="card rv"><p>我们熟悉的蛋白质——抗体、酶、激素——都是自然界里已经有的。过去要做一个有新功能的蛋白，基本是<b>在天然蛋白上改几个氨基酸</b>。“从头设计（de novo design）”是另一条路：先说清楚“我要一个能抓住某个分子、或者能催化某个反应的东西”，再让模型<b>凭空造出一串自然界不存在的氨基酸序列和它对应的三维结构</b>。</p>
+  <p style="margin-top:8px">对临床的意义不在于“马上能用”，而在于三件事会变便宜变快：<b>药物（尤其是生物药和原料药合成用的酶）、抗体、诊断试剂里的识别分子</b>。</p></div>
+  <div class="card rv"><span class="tag t-fact">这个模型新在哪</span><ul>
+    <li><b>统一的“潜空间”</b>：标准氨基酸、修饰氨基酸、糖、DNA、RNA 都用同一套表示，并用 Rosetta 力场（物理能量）去约束，让生成的原子位置更合乎物理。</li>
+    <li><b>序列和结构一起生成</b>：同时决定“用哪些氨基酸”和“摆成什么形状”，还能同时调整它要结合的那个分子的构象，而不是把对方当成固定不动的石头。</li>
+    <li><b>可以“多想一会儿”</b>：论文把它分成内部反复精修（intrinsic reasoning，类似大模型的“思考预算”）和外部搜索（extrinsic reasoning，用 AlphaFold3、力场等外部工具提前砍掉没希望的路线）。</li>
+  </ul></div>
+  <div class="med rv"><p>打个比方：<b>以前的做法像照着模板裁衣服</b>——先选一个大致合身的版型，再改袖长。RFD4-Proteina 更像一个能边量体、边画版、边考虑布料垂坠的裁缝：顾客（目标分子）站的姿势也允许微调，难做的款式就多花时间打几次样。</p>
+    <div class="mdt"><div><b>intrinsic reasoning（内部反复精修）</b><br>同一步里多算几遍，把细节改到位。论文把算力档位叫 low / medium / high thinking。</div><div><b>extrinsic reasoning（外部搜索）</b><br>生成过程中按阶段检查（界面面积 → 氢键 → AF3 置信度），不合格的半成品提前扔掉。</div></div></div>
+  <aside class="explain rv">
+    <h3>“从头设计”一句话</h3>
+    <p>不是在天然蛋白上改几个氨基酸，而是先说清楚要它做什么，再让模型造出一条自然界没有的序列和对应的三维形状。</p>
+  </aside>
+</section>
+
+<!-- 第 4 章 -->
+<section id="ch4">
+  <div class="bar"><b>计算</b><span>预印本图 2 与正文</span><i>第 4 章</i></div>
+  <h2>它在“电脑里”有多强</h2>
+  <div class="svgbox rv"><svg viewBox="0 0 760 300" role="img" aria-label="四个计算基准上 RFD4-Proteina 与次优模型的聚类通过率对比柱状图">
+    <text x="12" y="22" font-size="13" fill="#5b6472">聚类通过率（clustered pass rate，越高越好）</text>
+    <g font-size="12" fill="#17332c">
+      <text x="12" y="70">蛋白结合</text><text x="12" y="128">小分子结合</text><text x="12" y="186">酶活性位点支架</text><text x="12" y="244">DNA 结合</text>
+    </g>
+    <g>
+      <rect x="130" y="48" width="318" height="20" rx="6" fill="#1f7a72"/><text x="456" y="63" font-size="12" font-weight="700" fill="#17332c">10.6%</text>
+      <rect x="130" y="72" width="177" height="14" rx="5" fill="#c9a06a"/><text x="315" y="84" font-size="11" fill="#5b6472">BindCraft 5.9%</text>
+      <rect x="130" y="106" width="429" height="20" rx="6" fill="#1f7a72"/><text x="567" y="121" font-size="12" font-weight="700" fill="#17332c">14.3%</text>
+      <rect x="130" y="130" width="72" height="14" rx="5" fill="#c9a06a"/><text x="210" y="142" font-size="11" fill="#5b6472">RFD3 2.4%</text>
+      <rect x="130" y="164" width="363" height="20" rx="6" fill="#1f7a72"/><text x="501" y="179" font-size="12" font-weight="700" fill="#17332c">12.1%</text>
+      <rect x="130" y="188" width="171" height="14" rx="5" fill="#c9a06a"/><text x="309" y="200" font-size="11" fill="#5b6472">AlphaProtein-novo 5.7%</text>
+      <rect x="130" y="222" width="105" height="20" rx="6" fill="#1f7a72"/><text x="243" y="237" font-size="12" font-weight="700" fill="#17332c">3.5%</text>
+      <rect x="130" y="246" width="24" height="14" rx="5" fill="#c9a06a"/><text x="162" y="258" font-size="11" fill="#5b6472">BoltzGen 0.8%</text>
+    </g>
+    <g><rect x="560" y="268" width="14" height="10" rx="3" fill="#1f7a72"/><text x="580" y="277" font-size="11" fill="#5b6472">RFD4-Proteina（high thinking）</text>
+      <rect x="130" y="268" width="14" height="10" rx="3" fill="#c9a06a"/><text x="150" y="277" font-size="11" fill="#5b6472">各基准上的次优模型</text></g>
+  </svg></div>
+  <p class="note">本站据预印本图 2 与正文数值自绘，不是论文原图。“聚类通过率”= 每 200 次尝试里，用 AlphaFold3 重新折叠后通过标准、且彼此结构不重复的设计数量占比。小分子结合任务上 77 个靶标全部有通过设计，次优模型是 64 个。</p>
+  <div class="stats rv" style="margin-top:16px">
+    <div class="stat"><div class="v">5.0–10.4 倍</div><div class="l">把 AF3 评估时间也算进去后，每 GPU 小时产出的“通过设计簇”是次优方法的倍数（四个基准）。</div></div>
+    <div class="stat"><div class="v">42 倍</div><div class="l">蛋白结合任务上相对 BindCraft 的生成吞吐量倍数。</div></div>
+    <div class="stat"><div class="v">2,388 → 986</div><div class="l">“多想一会儿”的代价：蛋白结合任务每 GPU 小时的设计数，从 low thinking 降到 high thinking。</div></div>
+  </div>
+  <div class="card rv"><span class="tag t-fact">“思考预算”确实有用，但收益有限</span><p>从 low 到 medium 到 high，聚类通过率：蛋白结合 7.7% → 9.7% → 10.6%，小分子结合 12.1% → 12.6% → 14.3%，酶支架 9.8% → 10.6% → 12.1%，DNA 结合 2.8% → 3.0% → 3.5%。换句话说，多花算力换来的是几个百分点，而吞吐量会掉一半以上。</p></div>
+  <aside class="explain rv">
+    <h3>什么是“聚类通过率”？</h3>
+    <p>每 200 次尝试里，拿 AlphaFold3 重新折叠一遍，既通过标准、彼此结构又不重复的设计占多少。它是电脑里的成绩，不是试管里的。</p>
+  </aside>
+</section>
+
+<!-- 第 5 章 -->
+<section id="ch5">
+  <div class="bar"><b>实验</b><span>预印本湿实验结果</span><i>第 5 章</i></div>
+  <h2>实验台上真正发生了什么</h2>
+  <div class="card rv"><p>这是最值得临床医生看的部分：<b>电脑里的成功率和试管里的成功率不是一回事</b>。下面都是预印本报告的湿实验结果。</p></div>
+  <div class="chart rv"><h4>lenacapavir（艾滋病预防药）合成中的一步：设计一个成酰胺键的酶</h4>
+    <div class="efunnel">
+      <div class="fn"><span>合成基因、下场测试</span><b style="width:100%">67 个设计</b></div>
+      <div class="fn"><span>明显高于背景的活性</span><b class="warn" style="width:12%">4 个</b></div>
+      <div class="fn"><span>最好的一个（设计 52）</span><b style="width:79%">把 79.0% 的 (S)-胺转化成目标酰胺</b></div>
+      <div class="fn"><span>同一个酶对“镜像”原料</span><b class="warn" style="width:8.8%">(R)-胺只有 8.8%</b></div>
+    </div>
+    <p class="note">设计 58：(S) 61.7% vs (R) 14.6%；无酶对照分别是 4.3% 和 6.2%。作为对比，上一代模型 RFD3 做同一任务，72 个设计里一个都没成。作者称这是<b>第一个由 AI 从头设计、能催化原料药合成某一步的酶</b>的概念验证。</p></div>
+  <div class="card rv"><span class="tag t-fact">为什么“选对镜像”很重要</span><p>很多药物分子有左右手之分（对映体），只有一只手有效，另一只可能无效甚至有害。这个设计出来的酶明显偏好需要的 (S) 构型，而且抑制住了水解这个竞争反应——在大量水存在的体系里，这一点并不容易。</p></div>
+  <div class="card rv"><span class="tag t-fact">其他湿实验结果（同一预印本）</span><ul>
+    <li><b>农药降解酶</b>：八残基活性位点，1,000 个设计中 15 个通过计算筛选（同一标准下 RFD3 的 10,000 个一个都没通过）；实测 288 个里 89 个有活性，最好的催化效率 k<sub>cat</sub>/K<sub>M</sub> = 3,600 ± 500 M⁻¹s⁻¹，比上一代设计高 10–1000 倍。</li>
+    <li><b>TrkA 结合蛋白</b>（神经病理性疼痛和神经母细胞瘤的靶点）：188 个设计里 158 个亲和力优于微摩尔级（84%），此前最好的一次活动是 18/60（30%）。</li>
+    <li><b>钙调蛋白</b>：18 个设计里 12 个实现了“只在结合钙时才结合”的构象特异性。</li>
+    <li><b>磷酸化识别</b>：针对组蛋白 H3 尾部的 pS10 和 pT11 两个相邻磷酸化位点，分别得到能区分彼此的结合蛋白。</li>
+    <li><b>糖基化控制</b>：设计出能挡住糖链被继续加工、同时保留末端甘露糖暴露的小蛋白。</li>
+  </ul></div>
+  <aside class="explain rv">
+    <h3>电脑里成功 vs 试管里成功</h3>
+    <p>上一章的通过率是模型给模型打分；这一章是真的合成出来测活性。酶这一项，67 个设计下场测试，4 个有明显活性。</p>
+  </aside>
+</section>
+
+<!-- 第 6 章 -->
+<section id="ch6">
+  <div class="bar"><b>缺口</b><span>冷静看</span><i>第 6 章</i></div>
+  <h2>冷静看：证据还差什么</h2>
+  <div class="tblwrap rv"><table class="mini">
+    <tr><th>问题</th><th>具体情况</th></tr>
+    <tr><td>没有同行评审</td><td>预印本第一页就写着 This preprint has not been peer reviewed（CC BY 4.0）。所有数字都还没有外部审稿人核验过。</td></tr>
+    <tr><td>计算成绩 ≠ 实验成绩</td><td>“成功率提高 5–10 倍”说的是电脑里的通过率。酶那一项真正下场测试的命中率是 <b>4/67</b>，大约 6%。两个数字不能混着讲。</td></tr>
+    <tr><td>评判标准自己定</td><td>“通过”与否由 AlphaFold3 重新折叠后的结构吻合度和置信度判定。这是领域通行做法，但仍是模型评模型。</td></tr>
+    <tr><td>离“药”还很远</td><td>酶只做到了实验室规模的一步反应；结合蛋白只测了亲和力和特异性。没有动物实验、没有安全性、没有规模化生产数据。</td></tr>
+    <tr><td>挑任务</td><td>论文自己说，容易的任务或者目标到很晚才分得清的任务，外部搜索省下的算力抵不上开销。各任务表现差别很大（DNA 结合只有 3.5%）。</td></tr>
+    <tr><td>门槛</td><td>要用得上，需要 NVIDIA GPU 和 CUDA 环境；代码和权重开源（BSD-3，仓库 RosettaCommons/RFD4-Proteina），但普通临床科室不具备验证条件。</td></tr>
+    <tr><td>新闻稿与社交媒体的说法</td><td>“成功率和速度都是 5–10 倍”来自曼彻斯特大学新闻稿与 UW 新闻稿；“某些基准上是次优模型的 3–5 倍、每 GPU 小时常常接近一个数量级”来自作者本人的社交媒体串。这些都已标注来源，不等同于论文结论。</td></tr>
+  </table></div>
+</section>
+
+<!-- 第 7 章 -->
+<section id="ch7">
+  <div class="bar"><b>临床</b><span>事实 · 联想 · 设想</span><i>第 7 章</i></div>
+  <h2>对我们医生意味着什么</h2>
+  <div class="grid rv">
+    <div class="card"><span class="tag t-fact">事实</span><p>从头设计蛋白质的效率在明显提高，并且第一次做到了“设计的酶参与原料药合成”。模型、权重、训练和评测代码都开源。</p></div>
+    <div class="card"><span class="tag t-link">合理联想</span><p>如果这条路走通，受影响最大的是<b>生物药和原料药的制造成本</b>（lenacapavir 之所以被选中，正是因为生产成本限制了它在全球推广），其次是抗体和诊断试剂的研发周期。这是产业层面的联想，不是论文结论。</p></div>
+    <div class="card"><span class="tag t-guess">我的设想</span><p>对临床医生来说，近几年更现实的用处是<b>读懂这类论文</b>：当药企或科研合作方说“AI 设计的分子”，你要能追问“电脑里的通过率还是实验命中率”。这是我的教学判断。</p></div>
+    <div class="card"><span class="tag t-guess">证据缺口</span><p>没有同行评审，没有独立复现，没有体内数据。开源之后谁来复现、能不能在别人的手里得到同样的命中率，是接下来几个月最值得看的事。</p></div>
+  </div>
+  <div class="card rv" style="margin-top:14px"><span class="tag t-link">延伸学习</span><p>模型“多想一会儿”的思路，和训练营里讲的循环与评估是同一回事：<a href="../lessons/camp-a7v1.0.html">循环工程入门：让 AI 自己检查、自己改</a> · <a href="../lessons/camp-a5v1.0.html">智能体完整课：从入门到上线</a>。</p></div>
+</section>
+
+<!-- 第 8 章 -->
+<section id="ch8">
+  <div class="bar"><b>练习</b><span>课堂练习</span><i>第 8 章</i></div>
+  <h2>课堂练习：分清“电脑里成功”和“实验里成功”</h2>
+  <div class="prompt rv" id="p1"><button class="copy" type="button" data-for="p1">复制</button>你是科研方法课的带教老师。我要读一篇 AI 设计分子（蛋白、抗体或小分子）的论文或预印本：
+【粘贴摘要或全文】
+请按下面 6 点整理，并明确区分“计算结果”和“实验结果”：
+1. 这是预印本还是同行评审论文？许可协议和代码是否公开？
+2. 计算上的成功标准是谁定的、用什么工具判定（例如 AlphaFold3 重折叠）？
+3. 计算成功率是多少？和哪个对照方法比？
+4. 真正下场做实验的有多少个设计？有活性的有多少个？最好的那个具体数值是多少？
+5. 新闻稿或作者社交媒体里出现、但原文没有的说法有哪些？
+6. 离临床应用还缺哪几步（体外→体内→安全性→规模化）？
+要求：数字只能来自原文并标注图表编号；原文没写的写“未报告”；press 或社交媒体来源要单独列出。</div>
+</section>
+
+<!-- 第 9 章 -->
+<section id="ch9">
+  <div class="bar"><b>来源</b><span>原始出处</span><i>第 9 章</i></div>
+  <h2>来源</h2>
+  <p class="srcp">原始来源：Corley N, Didi K, Kazman MW, Brent RI, et al. Biomolecular design through latent reasoning with RFD4-Proteina. 预印本，2026-10-21，CC BY 4.0。<a href="https://rfd4-proteina.org/assets/paper/RFD4-Proteina.pdf" target="_blank" rel="noopener">预印本全文 PDF ↗</a> · <a href="https://rfd4-proteina.org" target="_blank" rel="noopener">项目网站 ↗</a> · <a href="https://github.com/RosettaCommons/RFD4-Proteina" target="_blank" rel="noopener">开源代码（BSD-3）↗</a> · <a href="https://huggingface.co/nvidia/RFD4-Proteina" target="_blank" rel="noopener">模型权重 ↗</a> · <a href="https://phys.org/news/2026-10-scientists-ai-enzyme-drug-synthesis.html" target="_blank" rel="noopener">曼彻斯特大学新闻稿（phys.org，2026-10-23）↗</a> · <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7518676461952622592" target="_blank" rel="noopener">作者 Corley 的 LinkedIn 原帖 ↗</a>。本页是 aiai 学院的中文解读，数字以预印本原文为准；“合理联想”“我的设想”属个人观点，不构成医疗建议。</p>
+</section>
+
+<footer>丁海祥 · aiai 学院前沿观察 · 2026-11-01</footer>
+</main>
+
+<script>
+(function(){
+  var $ = function(id){return document.getElementById(id)};
+
+  // 解释开关
+  document.querySelectorAll(".mode button").forEach(function(b){
+    b.addEventListener("click",function(){
+      document.body.dataset.mode=b.dataset.set;
+      document.querySelectorAll(".mode button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+    });
+  });
+
+  // 阅读进度 + 章节高亮
+  var prog=$("prog");
+  addEventListener("scroll",function(){
+    var h=document.documentElement; prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+  },{passive:true});
+  var navA={}; document.querySelectorAll(".links a").forEach(function(a){navA[a.getAttribute("href").slice(1)]=a});
+  // 章节高亮：取顶部已越过导航下方的最后一章；滚到页底时高亮最后一章
+  var secs=[].slice.call(document.querySelectorAll("main>section[id]")), cur=null, tick=false;
+  function spyUpd(){
+    tick=false; var h=document.documentElement, id=secs[0].id;
+    secs.forEach(function(s){if(s.getBoundingClientRect().top<=150)id=s.id});
+    if(h.scrollTop+h.clientHeight>=h.scrollHeight-4)id=secs[secs.length-1].id;
+    if(id===cur)return; cur=id;
+    for(var k in navA)navA[k].classList.toggle("on",k===id);
+    var a=navA[id]; if(a&&innerWidth<860)a.parentNode.scrollTo({left:a.offsetLeft-60,behavior:"smooth"});
+  }
+  addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(spyUpd)}},{passive:true});
+  addEventListener("resize",spyUpd); spyUpd();
+  if("IntersectionObserver" in window){
+    // 滚动出现
+    var rv=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target);}
+    })},{threshold:.15});
+    document.querySelectorAll(".rv").forEach(function(el){rv.observe(el)});
+  } else { document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in")}); }
+
+  // 复制提示词
+  document.querySelectorAll(".copy").forEach(function(b){b.onclick=function(){
+    var t=$(b.dataset.for).innerText.replace(/^复制\s*|^已复制\s*/,"");
+    var done=function(){b.textContent="已复制";setTimeout(function(){b.textContent="复制"},1800)};
+    try{navigator.clipboard.writeText(t).then(done,done)}catch(e){done()}
+  }});
+
+  // 视频：点击才加载 LinkedIn 嵌入
+  var vb=$("vidBtn");
+  if(vb){vb.onclick=function(){$("vid").innerHTML='<iframe src="'+vb.dataset.src+'" title="'+vb.dataset.title+'" allowfullscreen loading="lazy"></iframe>'}}
+})();
+</script>
+</body>
+</html>

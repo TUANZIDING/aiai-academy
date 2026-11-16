@@ -53,7 +53,7 @@
    "level": "预印本（未经同行评审）",
    "date": "2026-11-01",
    "img": "assets/frontier/rfd4-proteina-thumbv1.0.webp",
-   "href": "frontier/rfd4-proteinav1.0.html"
+   "href": "frontier/rfd4-proteinav1.1.html"
   },
   {
    "t": [
@@ -67,7 +67,7 @@
    "level": "同行评审",
    "date": "2026-11-01",
    "img": "assets/frontier/health-agent-thumbv1.0.webp",
-   "href": "frontier/health-agentv1.0.html"
+   "href": "frontier/health-agentv1.1.html"
   },
   {
    "t": [
@@ -81,7 +81,7 @@
    "level": "同行评审",
    "date": "2026-11-01",
    "img": "assets/frontier/face-age-thumbv1.0.webp",
-   "href": "frontier/face-agev1.0.html"
+   "href": "frontier/face-agev1.1.html"
   },
   {
    "t": [
@@ -96,7 +96,7 @@
    "level": "未经同行评审",
    "date": "2026-11-01",
    "img": "assets/frontier/emg-forcev1.0.webp",
-   "href": "frontier/emg-forcev1.0.html"
+   "href": "frontier/emg-forcev1.1.html"
   }
  ]
 }
