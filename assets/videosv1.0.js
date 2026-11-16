@@ -3,7 +3,7 @@
 var root=document.getElementById('reels'); if(!root) return;
 var dlg=document.getElementById('vplayer'), vid=dlg.querySelector('video'), ttl=dlg.querySelector('.vp-title'), sub=dlg.querySelector('.vp-sub'), hls=null, BASE='media/v/';
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-fetch('data/videosv1.0.json?v=1.0').then(function(r){return r.json()}).then(function(d){
+fetch('data/videosv1.0.json?v=1.1').then(function(r){return r.json()}).then(function(d){
   BASE=d.base||BASE; var n=0;
   d.rows.forEach(function(row,i){
     n+=row.items.length;
