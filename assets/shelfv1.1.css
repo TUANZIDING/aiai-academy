@@ -1,0 +1,42 @@
+/* 横滑展馆 + 导航收纳 */
+.shelf-wrap{position:relative;margin-top:18px}
+.shelf-wrap .shelf{display:flex!important;grid-template-columns:none!important;gap:18px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-left:2px;padding:6px 2px 18px;margin:0!important;scrollbar-width:thin;-webkit-overflow-scrolling:touch;align-items:stretch;flex-direction:row!important;flex-wrap:nowrap!important}
+.shelf-wrap .shelf:focus-visible{outline:3px solid var(--orange);outline-offset:4px;border-radius:14px}
+.shelf>*{flex:0 0 var(--sw);align-self:stretch;height:auto!important;max-width:none!important;scroll-snap-align:start;margin:0!important}
+.shelf.w-s{--sw:clamp(230px,22vw,280px)}
+.shelf.w-m{--sw:clamp(260px,27vw,340px)}
+.shelf.w-l{--sw:min(600px,calc(100% - 48px))}
+.shelf.w-l>.lc-card:hover,.gm-zones.shelf>*:hover{transform:none}
+.lc-more[hidden]{display:none!important}
+.shelf.rows2{display:grid!important;grid-auto-flow:column;grid-template-rows:repeat(2,auto);grid-auto-columns:var(--sw)}
+.shelf.rows2>*{flex:none}
+.shelf>.drill,.shelf>p.sub{flex-basis:100%}
+.sh-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;min-height:40px}
+.sh-count{font-size:.8rem;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.sh-btns{display:flex;gap:8px}
+.sh-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card,#fff);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;box-shadow:0 4px 12px rgba(40,30,10,.10);transition:opacity .25s,background .2s,color .2s}
+.sh-btn:hover:not(:disabled){background:var(--ink);color:#fff}
+.sh-btn:disabled{opacity:.3;cursor:default;background:var(--card,#fff);color:var(--ink)}
+.shelf-wrap.no-scroll .sh-btns{display:none}
+/* 训练营：两条赛道改成上下两排，每排横滑 */
+#campTracks.camp-tracks{display:flex;flex-direction:column;gap:30px}
+#campTracks .camp-track{min-width:0}
+#campTracks .camp-list .camp-card{height:100%;display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left}
+#campTracks .camp-list li{display:flex}
+#campTracks .camp-list li>.camp-card{flex:1}
+#campTracks .cc-tag{margin-top:auto}
+/* 导航：主入口一行 + 更多 */
+.nav nav{flex-wrap:nowrap;align-items:center;white-space:nowrap}
+.nav-more{position:relative}
+.nav-more summary{list-style:none;cursor:pointer;color:var(--muted);font-size:.9rem;padding:4px 2px;border-bottom:2px solid transparent}
+.nav-more summary::-webkit-details-marker{display:none}
+.nav-more summary::after{content:" ▾";font-size:.7em}
+.nav-more[open] summary,.nav-more summary:hover{color:var(--ink);border-bottom-color:var(--orange)}
+.nav-more .menu{position:absolute;top:calc(100% + 10px);left:-12px;display:flex;flex-direction:column;gap:2px;min-width:150px;padding:8px;background:#fffdf9;border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 40px rgba(40,30,10,.16);z-index:30}
+.nav-more .menu a{padding:7px 10px!important;border-radius:8px;border-bottom:0!important}
+.nav-more .menu a:hover{background:rgba(0,0,0,.05)}
+@media (max-width:620px){.sh-btns{display:none}.shelf.w-s,.shelf.w-m{--sw:78vw}.shelf.w-l{--sw:calc(100% - 28px)}}
+/* v1.1 修正：医学教学馆卡片不拉伸、末张不被截 */
+#microGrid.shelf{align-items:flex-start}
+#microGrid.shelf>*{min-width:0;box-sizing:border-box}
+.shelf::after{content:"";flex:0 0 2px}
