@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01",
+ "updated": "2026-11-16",
  "topics": [
   {
    "id": "onco",
@@ -27,6 +27,20 @@
   }
  ],
  "items": [
+  {
+   "t": [
+    "device",
+    "drug"
+   ],
+   "no": "05",
+   "kind": "AI×医学 前沿速递 · 第 1 期",
+   "title": "AI 进医院很快，证据跟上了吗？",
+   "d": "FDA 已列出 1614 个 AI 医疗器械，测过患者结局的极少；10 万女性的 MASAI 随机试验；首个进入 III 期的生成式 AI 新药；中国 2027/2030 时间表。可交互图表与核查台。",
+   "level": "综述速递（多源整理）",
+   "date": "2026-11-16",
+   "img": "assets/frontier/ai-med-brief-thumbv1.0.webp",
+   "href": "frontier/ai-med-briefv1.0.html"
+  },
   {
    "t": [
     "drug",

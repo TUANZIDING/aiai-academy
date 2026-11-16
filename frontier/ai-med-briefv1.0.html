@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI×医学 前沿速递 · 第 1 期：AI 进医院很快，证据跟上了吗？ | aiai 学院</title>
+<meta name="description" content="aiai 学院 AI×医学前沿速递第 1 期：FDA 已列出 1614 个 AI 医疗器械，但测过患者结局的极少；10 万女性的 MASAI 随机试验；首个进入 III 期的生成式 AI 药物；中国“人工智能+医疗卫生”时间表。">
+<link rel="icon" href="../assets/aiai-wordmarkv1.0.webp">
+<style>
+:root{
+  --paper:#faf8f3;--ink:#1d1d1f;--muted:#5c5c63;--line:rgba(29,29,31,.14);
+  --navy:#1b3a73;--navy-d:#121f3d;--orange:#e8673a;--blue:#2f6fd6;--green:#1e7a55;--red:#b5461f;
+  --serif:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.75,.2,1);--tap:44px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans)}
+a{color:var(--blue)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section[id]{scroll-margin-top:110px}
+
+/* 顶部：返回 + 章节导航 + 解释开关 */
+.nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
+.nav__in{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:14px;min-height:56px}
+.brand{font-family:var(--serif);font-weight:900;font-size:17px;text-decoration:none;color:var(--ink);white-space:nowrap}
+.links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
+.links::-webkit-scrollbar{display:none}
+.links a{font-size:14px;text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:6px;white-space:nowrap}
+.links a b{font-family:var(--mono);font-weight:400;margin-right:4px}
+.links a.on{background:var(--ink);color:var(--paper)}
+.mode{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;flex:none}
+.mode button{border:0;background:none;font:500 13px var(--sans);padding:6px 12px;cursor:pointer;color:var(--ink);min-height:34px}
+.mode button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.prog{position:absolute;left:0;bottom:-3px;height:3px;background:var(--orange);width:0}
+body[data-mode="plain"] .explain{display:none}
+
+/* 滚动快讯条 */
+.ticker{display:flex;align-items:center;background:var(--navy);color:#fff}
+.ticker__tag{font:500 12px var(--sans);background:var(--orange);color:var(--ink);padding:0 12px;align-self:stretch;display:flex;align-items:center;white-space:nowrap}
+.ticker__win{overflow:hidden;flex:1;min-width:0}
+.ticker__track{display:flex;width:max-content;animation:scroll 46s linear infinite}
+.ticker:hover .ticker__track,.ticker.paused .ticker__track{animation-play-state:paused}
+.ticker__track span{font-size:14px;white-space:nowrap;padding:0 26px;line-height:var(--tap)}
+.ticker__track span::before{content:"■ ";color:var(--orange)}
+.ticker button{min-width:var(--tap);min-height:var(--tap);border:0;border-left:1px solid rgba(255,255,255,.3);background:none;color:#fff;font:500 13px var(--sans);cursor:pointer;padding:0 12px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* 章节报头 */
+.bar{display:flex;align-items:center;gap:10px;border-top:3px solid var(--ink);padding-top:8px;margin:56px 0 14px;flex-wrap:wrap}
+.bar b{font-size:13px;background:var(--ink);color:var(--paper);padding:3px 10px}
+.bar span{font-size:13px;color:var(--muted)}
+.bar i{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:12px;color:var(--muted)}
+h2{font-family:var(--serif);font-weight:900;font-size:clamp(24px,3.4vw,34px);line-height:1.3;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 22px;max-width:60ch}
+
+/* 头图 */
+.hero{position:relative;border-radius:14px;overflow:hidden;min-height:clamp(420px,62vh,600px);display:flex;align-items:flex-end;background:var(--navy-d);color:#f5f5f7}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,31,61,.92) 0%,rgba(18,31,61,.55) 48%,rgba(18,31,61,.05) 80%),linear-gradient(0deg,rgba(18,31,61,.7),transparent 45%)}
+.hero__copy{position:relative;z-index:1;padding:clamp(22px,4vw,48px);max-width:640px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:#ffb38f;margin:0 0 10px}
+.hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(30px,5vw,50px);line-height:1.2;margin:0 0 14px}
+.hero h1 em{font-style:normal;color:#ffb38f}
+.hero p{margin:0 0 10px;color:rgba(245,245,247,.86);font-size:clamp(15px,1.6vw,18px)}
+.hero small{display:block;color:rgba(245,245,247,.6);font-size:12px;margin-top:14px}
+.credit{position:absolute;right:14px;top:14px;z-index:1;font-size:11px;background:rgba(18,31,61,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(245,245,247,.25);padding:2px 8px;border-radius:999px;color:#ddd}
+
+.lede{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;margin-top:28px}
+.prose p{margin:0 0 14px}
+.prose strong{background:linear-gradient(transparent 62%,rgba(232,103,58,.28) 0)}
+.keys{display:grid;gap:12px}
+.key{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.key .k{font-family:var(--mono);font-size:12px;color:var(--orange)}
+.key h3{margin:2px 0 4px;font-size:16px}
+.key p{margin:0;font-size:14px;color:var(--muted)}
+
+.explain{background:#fff;border-left:4px solid var(--orange);border-radius:8px;padding:14px 18px;margin:18px 0}
+.explain h3{margin:0 0 6px;font-size:15px}
+.explain p,.explain dd{margin:0;font-size:14px;line-height:1.75}
+.explain dl{display:grid;gap:8px;margin:0}
+.explain dt{font-weight:700;font-size:14px}
+
+/* 面板 */
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px}
+.panel h3{margin:0 0 4px;font-size:17px}
+.panel .note{font-size:12px;color:var(--muted);margin:8px 0 0}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.btn{font:500 13px var(--sans);border:1.5px solid var(--ink);background:#fff;border-radius:999px;padding:6px 14px;cursor:pointer;min-height:36px}
+.btn.on{background:var(--ink);color:#fff}
+canvas{width:100%;display:block}
+
+/* 证据漏斗：随滚动展开 */
+.funnel{display:grid;gap:8px;margin-top:10px}
+.frow{display:grid;grid-template-columns:150px 1fr 70px;align-items:center;gap:10px;font-size:14px}
+.ftrack{height:26px;background:#f0ede6;border-radius:6px;overflow:hidden}
+.fbar{height:100%;width:0;background:var(--navy);border-radius:6px;transition:width 1.2s var(--ease)}
+.frow:last-child .fbar{background:var(--orange)}
+.frow b{font-family:var(--mono);text-align:right}
+.in .fbar{width:var(--w)}
+
+/* 滚动叙事：左侧粘住，右侧步骤滚动 */
+.scrolly{display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative}
+.stage{position:sticky;top:120px;height:min(70vh,520px);background:var(--navy-d);border-radius:14px;color:#f5f5f7;padding:24px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.stage .big{font-family:var(--serif);font-weight:900;font-size:clamp(40px,7vw,76px);line-height:1;transition:opacity .4s}
+.stage .lab{font-size:15px;color:rgba(245,245,247,.75);margin-top:10px;min-height:3em}
+.dots{display:grid;grid-template-columns:repeat(20,1fr);gap:4px;margin-top:20px}
+.dots i{aspect-ratio:1;border-radius:50%;background:rgba(245,245,247,.18);transition:background .5s,transform .5s}
+.dots i.a{background:#7fa6ff}.dots i.b{background:var(--orange);transform:scale(1.15)}
+.vs2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.vs2 div{background:rgba(245,245,247,.08);border-radius:10px;padding:10px 12px}
+.vs2 small{display:block;color:rgba(245,245,247,.6);font-size:12px}
+.vs2 b{font-family:var(--mono);font-size:22px}
+.steps{padding:10vh 0 20vh}
+.step{min-height:62vh;display:flex;align-items:center}
+.step .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;opacity:.35;transition:opacity .4s,transform .4s;transform:translateY(10px)}
+.step.on .card{opacity:1;transform:none;box-shadow:0 14px 34px rgba(18,31,61,.1)}
+.step .card .k{font-family:var(--mono);font-size:12px;color:var(--orange)}
+.step .card h3{margin:4px 0 6px;font-size:18px}
+.step .card p{margin:0;font-size:15px}
+
+/* 横向滚动时间线 */
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;scrollbar-width:thin}
+.tcard{flex:0 0 min(320px,82%);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;position:relative}
+.tcard::before{content:"";position:absolute;left:18px;top:-1px;width:40px;height:4px;background:var(--orange);border-radius:0 0 4px 4px}
+.tcard time{font-family:var(--mono);font-size:13px;color:var(--navy)}
+.tcard h3{margin:4px 0 6px;font-size:16px}
+.tcard p{margin:0;font-size:14px;color:var(--muted)}
+.tcard.img{padding:0;overflow:hidden;flex-basis:min(380px,88%)}
+.tcard.img::before{display:none}
+.tcard.img img{height:100%;object-fit:cover}
+.railnav{display:flex;gap:8px;justify-content:flex-end}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.split figure{margin:0}
+.split figure img{border-radius:14px;box-shadow:0 14px 34px rgba(18,31,61,.14)}
+figcaption{font-size:12px;color:var(--muted);margin-top:6px}
+.tabs{display:flex;gap:8px;margin-bottom:10px}
+.goal{display:none}.goal.on{display:block}
+.goal ul{margin:0;padding-left:1.2em}.goal li{margin:6px 0}
+
+/* 核查台 */
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.chk{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.chk q{font-family:var(--serif);font-weight:700;font-size:17px;quotes:"“" "”"}
+.chk .why{display:none;font-size:14px;color:var(--muted)}
+.chk.open .why{display:block}
+.chk .stamp{display:none;align-self:flex-start;font-family:var(--serif);font-weight:900;font-size:18px;color:var(--red);border:3px double var(--red);border-radius:6px;padding:0 12px;transform:rotate(-6deg)}
+.chk .stamp.ok{color:var(--green);border-color:var(--green)}
+.chk .stamp.mid{color:#8a5300;border-color:#8a5300}
+.chk.open .stamp{display:inline-block;animation:stamp .35s var(--ease) both}
+@keyframes stamp{from{opacity:0;transform:scale(2) rotate(-14deg)}to{opacity:1;transform:rotate(-6deg)}}
+.cprog{font-size:14px;color:var(--muted)}
+
+.med{background:var(--navy-d);color:#f3efe6;border-radius:14px;padding:22px 24px}
+.med h3{font-family:var(--serif);margin:0 0 10px;font-size:20px}
+.med ol{margin:0;padding-left:1.3em}.med li{margin:8px 0}
+.med b{color:#ffb38f}
+.src{font-size:13px;color:var(--muted);padding-left:1.3em}
+.src li{margin:6px 0}
+footer{border-top:3px solid var(--ink);margin-top:50px;padding:18px 0 60px;font-size:13px;color:var(--muted)}
+
+/* 滚动出现 */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .lede,.split,.scrolly{grid-template-columns:1fr}
+  .stage{top:96px;height:auto;min-height:250px;padding:18px;z-index:2}
+  .stage .lab{font-size:14px}
+  .dots{grid-template-columns:repeat(25,1fr);gap:3px;margin-top:12px}
+  .step{min-height:75vh;align-items:flex-end;padding-bottom:4vh}
+  .checks{grid-template-columns:1fr}
+  .frow{grid-template-columns:110px 1fr 56px;font-size:13px}
+  .brand{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ticker__track{animation:none}.ticker__win{overflow-x:auto}.ticker button{display:none}
+  .rv{opacity:1;transform:none;transition:none}
+  .fbar{transition:none}
+  .chk.open .stamp{animation:none}
+}
+</style>
+</head>
+<body data-mode="explain">
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="../#frontier">← aiai 前沿</a>
+    <nav class="links" aria-label="本期章节">
+      <a href="#ch1"><b>1</b>快讯</a><a href="#ch2"><b>2</b>读图</a><a href="#ch3"><b>3</b>试验</a><a href="#ch4"><b>4</b>新药</a><a href="#ch5"><b>5</b>中国</a><a href="#ch6"><b>6</b>核查</a><a href="#ch7"><b>7</b>临床</a>
+    </nav>
+    <div class="mode" role="group" aria-label="解释模式">
+      <button type="button" data-set="plain" aria-pressed="false">不要解释</button>
+      <button type="button" data-set="explain" aria-pressed="true">给我解释</button>
+    </div>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<div class="ticker" id="ticker">
+  <span class="ticker__tag">数字条</span>
+  <div class="ticker__win"><div class="ticker__track" id="tTrack">
+    <span>FDA 的 AI 医疗器械清单：1614 个（截至 2026-06-29 的决定）</span>
+    <span>2025 年一年新增 335 个，2016 年只有 18 个</span>
+    <span>1357 个已获批 AI 器械里，只有 3 个评估过患者结局</span>
+    <span>MASAI 随机试验：105934 名女性，AI 辅助筛查敏感度 80.5% vs 73.8%</span>
+    <span>rentosertib：生成式 AI 设计的药，2026-09-10 III 期首例入组</span>
+    <span>国家五部门：2030 年基层诊疗智能辅助基本全覆盖</span>
+  </div></div>
+  <button type="button" id="tBtn" aria-pressed="false">暂停</button>
+</div>
+
+<main class="wrap">
+
+<!-- 第 1 章 -->
+<section id="ch1">
+  <div class="bar"><b>快讯</b><span>【aiai 学院 2026-11-16 综合】</span><i>第 1 章</i></div>
+  <div class="hero rv">
+    <img src="../assets/aimed/aimed-herov1.0.webp" alt="傍晚的读片室，两台显示器上是乳腺钼靶和胸部 CT，上方漂浮着像天气图一样的数据层" width="1376" height="768">
+    <span class="credit">AI 生成示意图</span>
+    <div class="hero__copy">
+      <p class="eyebrow">AI × MEDICINE · 前沿速递 第 1 期</p>
+      <h1>AI 进医院很快，<em>证据跟上了吗？</em></h1>
+      <p>批准的 AI 器械越来越多，真正证明“让病人更好”的很少。但第一批大样本随机试验，已经开始交卷。</p>
+      <small>阅读约 8 分钟 · 数据截至 2026-11 · 每条都附原始出处</small>
+    </div>
+  </div>
+
+  <div class="lede">
+    <div class="prose rv">
+      <p>美国 FDA 的公开清单显示，截至 2026 年 6 月底的决定，已有 <strong>1614 个 AI 医疗器械</strong>获准上市，约四分之三属于放射科。仅 2025 年就新增 335 个。</p>
+      <p>可是一项 2026 年发表在 <em>PLOS Digital Health</em> 的系统分析发现：在 1357 个已获批 AI 器械里，<strong>只有 3 个</strong>评估过死亡率、并发症、再入院这类“患者结局”。</p>
+      <p>另一边，瑞典 10 万名女性参与的 MASAI 随机试验在 <em>Lancet</em> 发表最终结果；生成式 AI 设计的抗肺纤维化药 rentosertib 进入 III 期。本期就看这三件事：<strong>数量、证据、落地</strong>。</p>
+    </div>
+    <div class="keys rv">
+      <div class="key"><span class="k">01 · 数量</span><h3>批得越来越快</h3><p>2016 年 18 个，2025 年 335 个。</p></div>
+      <div class="key"><span class="k">02 · 证据</span><h3>结局证据很薄</h3><p>大多数走“和已有器械相当”的 510(k) 通道，不需要新的随机试验。</p></div>
+      <div class="key"><span class="k">03 · 落地</span><h3>真试验开始出现</h3><p>筛查、药物、基层诊疗，都有了可以检验的数据。</p></div>
+    </div>
+  </div>
+  <aside class="explain rv">
+    <h3>什么叫“患者结局”？</h3>
+    <p>不是“AI 看片准不准”，而是“用了 AI 以后，病人是不是活得更久、并发症更少、少住几次院”。前者像考试成绩，后者像毕业后的工作表现。</p>
+  </aside>
+</section>
+
+<!-- 第 2 章 -->
+<section id="ch2">
+  <div class="bar"><b>读图</b><span>FDA 公开清单</span><i>第 2 章</i></div>
+  <h2>一张柱状图，一个漏斗</h2>
+  <p class="sub">柱子是“批了多少”，漏斗是“其中多少真正测过对病人的影响”。</p>
+
+  <div class="panel rv">
+    <h3>FDA 每年新列入的 AI 医疗器械（按最终决定年份）</h3>
+    <div class="ctl"><button class="btn" id="barPlay" type="button">▶ 重新播放</button><button class="btn" id="barLog" type="button">切换：看增长倍数</button></div>
+    <canvas id="bar" height="300" aria-label="2015 到 2025 年 FDA 每年新增 AI 器械数量柱状图"></canvas>
+    <p class="note">数据：FDA AI-Enabled Medical Devices 清单（2026-09-04 版），按 Kent Applied 统计。2026 年上半年已有 181 个。</p>
+  </div>
+
+  <div class="panel rv" id="funnelP">
+    <h3>1357 个已获批 AI 器械，证据一路缩水</h3>
+    <div class="funnel">
+      <div class="frow"><span>已获批器械</span><div class="ftrack"><div class="fbar" style="--w:100%"></div></div><b>1357</b></div>
+      <div class="frow"><span>登记了前瞻性试验</span><div class="ftrack"><div class="fbar" style="--w:2.5%"></div></div><b>34</b></div>
+      <div class="frow"><span>公布了试验结果</span><div class="ftrack"><div class="fbar" style="--w:0.9%"></div></div><b>12</b></div>
+      <div class="frow"><span>评估过患者结局</span><div class="ftrack"><div class="fbar" style="--w:0.4%"></div></div><b>3</b></div>
+    </div>
+    <p class="note">PLOS Digital Health 2026，统计截至 2025-12-05。最后一行为便于看见做了最小宽度处理，实际是 0.2%。</p>
+  </div>
+  <aside class="explain rv">
+    <h3>这一章的两个词</h3>
+    <dl>
+      <dt>510(k)</dt><dd>美国中低风险器械的上市通道：证明“和已经合法上市的某个器械实质等同”即可，通常不要求新的随机对照试验。</dd>
+      <dt>前瞻性试验</dt><dd>先定好方案、再招募病人往后跟踪的研究。比翻旧病历的回顾性研究更可靠。</dd>
+    </dl>
+  </aside>
+</section>
+
+<!-- 第 3 章 滚动叙事 -->
+<section id="ch3">
+  <div class="bar"><b>详报</b><span>Lancet 2026 · Nature Medicine 2026</span><i>第 3 章</i></div>
+  <h2>10 万名女性，一场真正的随机试验</h2>
+  <p class="sub">往下滚动，左边的图会跟着每一步变化。</p>
+
+  <div class="scrolly">
+    <div class="stage" id="stage" aria-live="polite">
+      <div class="big" id="sBig">105,934</div>
+      <div class="lab" id="sLab">名瑞典女性，按 1:1 随机分到“AI 辅助筛查”或“两名放射科医生双读”。</div>
+      <div class="dots" id="dots"></div>
+      <div class="vs2" id="vs2" hidden>
+        <div><small>AI 辅助组</small><b id="vA">—</b></div>
+        <div><small>标准双读组</small><b id="vB">—</b></div>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step" data-s="0"><div class="card"><span class="k">STEP 1 · 谁参加</span><h3>不是回顾，是随机</h3><p>MASAI 试验在 2021-04-12 至 2022-12-07 招募 105,934 名女性。AI 先给每张片子打风险分：低风险的交给 1 名医生读，最高分的交给 2 名医生，并给出可疑区域提示。</p></div></div>
+      <div class="step" data-s="1"><div class="card"><span class="k">STEP 2 · 抓到的癌</span><h3>敏感度 80.5% vs 73.8%</h3><p>AI 辅助组发现了更多癌症（p=0.031），在各年龄段、各乳腺密度里都一致；但对原位癌没有优势。</p></div></div>
+      <div class="step" data-s="2"><div class="card"><span class="k">STEP 3 · 误报</span><h3>特异度都是 98.5%</h3><p>多抓了癌，却没有多叫回健康女性。这一点决定了它能不能在人群筛查里推广。</p></div></div>
+      <div class="step" data-s="3"><div class="card"><span class="k">STEP 4 · 漏掉的癌</span><h3>间期癌 1.55 vs 1.76 每千人</h3><p>“间期癌”是两次筛查之间冒出来的癌，代表上一次漏了。比值 0.88（95% CI 0.65–1.18），达到“不差于”标准，但不能说显著更少。</p></div></div>
+      <div class="step" data-s="4"><div class="card"><span class="k">STEP 5 · 另一项试验</span><h3>西班牙：医生读片量少了 63.6%</h3><p>Nature Medicine 2026 年的配对试验（31,301 名女性）让 AI 把低风险片直接判正常。检出率 7.3 vs 6.3 每千人，但召回率也从 4.8% 升到 5.5%。</p></div></div>
+    </div>
+  </div>
+  <aside class="explain rv">
+    <h3>“不劣效”不等于“更好”</h3>
+    <p>MASAI 事先允许 AI 组的间期癌率最多高 20% 也算合格。Lancet 的评论就指出，置信区间上限 1.18 离这条线不远。所以准确说法是：AI 辅助<strong>不比</strong>双读差，同时多发现了癌、减轻了工作量。</p>
+  </aside>
+</section>
+
+<!-- 第 4 章 横向时间线 -->
+<section id="ch4">
+  <div class="bar"><b>新药</b><span>AI 药物研发</span><i>第 4 章</i></div>
+  <h2>第一个走到 III 期的生成式 AI 新药</h2>
+  <p class="sub">靶点用 AI 找、分子用生成式 AI 设计。左右滑动看它走到哪一步。</p>
+  <div class="railnav"><button class="btn" type="button" data-rail="-1" aria-label="向左">←</button><button class="btn" type="button" data-rail="1" aria-label="向右">→</button></div>
+  <div class="rail" id="rail" tabindex="0" aria-label="rentosertib 时间线">
+    <div class="tcard img"><img src="../assets/aimed/aimed-drugv1.0.webp" alt="实验台上发光的小分子模型和线描的肺" loading="lazy" width="1200" height="896"></div>
+    <div class="tcard"><time>靶点</time><h3>TNIK：AI 选出的纤维化新靶点</h3><p>英矽智能用 PandaOmics 给靶点排序，再用 Chemistry42 生成并优化分子。</p></div>
+    <div class="tcard"><time>2025-06-03</time><h3>IIa 期结果登上 Nature Medicine</h3><p>71 名特发性肺纤维化患者、12 周。60 mg 每日一次组 FVC 平均 +98.4 mL，安慰剂组 −20.3 mL。</p></div>
+    <div class="tcard"><time>要小心</time><h3>小样本，有肝损伤停药</h3><p>高剂量组 18 人中 12 人完成；有 7 人因肝损伤或肝功能异常停药。</p></div>
+    <div class="tcard"><time>2026-07-07</time><h3>III 期启动</h3><p>GENESIS-IPF-3：约 320 人、中国 47 个中心、52 周、随机双盲安慰剂对照。</p></div>
+    <div class="tcard"><time>2026-09-10</time><h3>首例患者给药</h3><p>北京协和医院入组首例，同日上海肺科医院也入组。主要终点：一年里肺功能下降多快。</p></div>
+    <div class="tcard"><time>同期</time><h3>不止一个</h3><p>Generate:Biomedicines 的 GB-0895（重度哮喘）也在 III 期招募。AI 药能否成功，最终仍要看 III 期。</p></div>
+  </div>
+  <aside class="explain rv">
+    <h3>FVC 是什么？</h3>
+    <p>用力肺活量：深吸一口气后能呼出多少。肺纤维化会让它逐年下降，所以“下降得慢”就是疗效，“回升”更少见。</p>
+  </aside>
+</section>
+
+<!-- 第 5 章 中国 -->
+<section id="ch5">
+  <div class="bar"><b>政策</b><span>国家卫健委等五部门 · 江苏</span><i>第 5 章</i></div>
+  <h2>中国的时间表：2027 和 2030</h2>
+  <div class="split">
+    <figure class="rv"><img src="../assets/aimed/aimed-chinav1.0.webp" alt="社区卫生服务中心诊室，全科医生和老年患者，桌上平板显示 AI 助手" loading="lazy" width="1200" height="896"><figcaption>AI 生成示意图</figcaption></figure>
+    <div class="panel rv">
+      <h3>《关于促进和规范“人工智能+医疗卫生”应用发展的实施意见》</h3>
+      <p class="note" style="margin:0 0 10px">2025-11-04 印发，8 个方向、24 项重点任务</p>
+      <div class="tabs"><button class="btn on" type="button" data-goal="g27">到 2027 年</button><button class="btn" type="button" data-goal="g30">到 2030 年</button><button class="btn" type="button" data-goal="gjs">江苏</button></div>
+      <div class="goal on" id="g27"><ul><li>一批卫生健康高质量数据集和可信数据空间</li><li>一批临床专病专科垂直大模型和智能体</li><li>基本建成一批医疗领域国家人工智能应用中试基地（目前全国 7 个）</li></ul></div>
+      <div class="goal" id="g30"><ul><li>基层诊疗智能辅助应用基本全覆盖</li><li>二级以上医院普遍开展影像智能辅助诊断、临床诊疗智能辅助决策</li><li>标准规范体系基本完善</li></ul></div>
+      <div class="goal" id="gjs"><ul><li>2026-10-10 印发省级实施方案</li><li>到 2027 年建成 50 个以上卫生健康高质量数据集</li><li>用“算力券”等方式降低医疗机构算力成本</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 第 6 章 核查台 -->
+<section id="ch6">
+  <div class="bar"><b>核查</b><span>【aiai 核查台】</span><i>第 6 章</i></div>
+  <h2>四条网上说法，逐条盖章</h2>
+  <p class="sub">先自己判断，再点“核查”。</p>
+  <div class="ctl"><span class="cprog" id="cprog">已核查 0/4</span><button class="btn" type="button" id="chkAll">全部翻开</button></div>
+  <div class="checks" id="checks">
+    <div class="chk"><q>FDA 批准的 AI 器械，都证明了能改善病人结局。</q><button class="btn" type="button">核查</button><span class="stamp">不实</span><p class="why">1357 个里只有 3 个评估过患者结局。获批多数依据的是“与已有器械等同”。</p></div>
+    <div class="chk"><q>MASAI 证明 AI 可以取代放射科医生。</q><button class="btn" type="button">核查</button><span class="stamp mid">夸大</span><p class="why">试验里每张片子仍至少有 1 名医生读，AI 是分诊和提示。它证明的是“人+AI”不比双读差。</p></div>
+    <div class="chk"><q>AI 设计的抗纤维化药已经获批上市。</q><button class="btn" type="button">核查</button><span class="stamp">不实</span><p class="why">rentosertib 2026 年 9 月才开始 III 期给药，要跑 52 周。</p></div>
+    <div class="chk"><q>西班牙试验里，AI 让医生少读了六成多的片子。</q><button class="btn" type="button">核查</button><span class="stamp ok">属实</span><p class="why">读片工作量下降 63.6%，检出率更高；代价是召回率从 4.8% 升到 5.5%。</p></div>
+  </div>
+</section>
+
+<!-- 第 7 章 -->
+<section id="ch7">
+  <div class="bar"><b>临床</b><span>给一线医生</span><i>第 7 章</i></div>
+  <h2>看到一个医疗 AI，先问三句</h2>
+  <div class="med rv">
+    <h3>从急诊室看医疗 AI</h3>
+    <ol>
+      <li><b>它测的是准确率，还是患者结局？</b> 读片准不等于少死人。</li>
+      <li><b>有没有前瞻性、最好是随机的验证？</b> 回顾性数据集上的高分，换一家医院常常掉分。</li>
+      <li><b>出错时谁兜底？</b> MASAI 里医生始终在环；“AI 直接判正常”的方案，要看漏诊和召回的代价。</li>
+    </ol>
+    <p style="margin:14px 0 0">一句话：<b>AI 让医生更快，证据决定能不能放手。</b></p>
+  </div>
+
+  <h2 style="margin-top:44px;font-size:22px">来源</h2>
+  <ol class="src">
+    <li>FDA，Artificial Intelligence-Enabled Medical Devices 清单，2026-09-04/09-22 更新，<a href="https://www.fda.gov/medical-devices/digital-health-center-excellence/artificial-intelligence-enabled-medical-devices">fda.gov</a></li>
+    <li>Kent Applied，AI-enabled medical devices on the FDA's list, by specialty and year，2026-10-30，<a href="https://www.kentapplied.com/research/fda-ai-enabled-devices/">kentapplied.com</a></li>
+    <li>Growth, Specialty Distribution, and Regulatory Pathways of AI-Enabled Medical Devices 1995–2026，<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13733602">PMC13733602</a></li>
+    <li>1,357 AI medical devices cleared, 3 actually tested on patient outcomes，PLOS Digital Health 2026，<a href="https://journals.plos.org/digitalhealth/article?id=10.1371%2Fjournal.pdig.0001597">doi:10.1371/journal.pdig.0001597</a></li>
+    <li>Gommers J 等，MASAI 试验间期癌与敏感度/特异度，Lancet 2026;407:505–514，<a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)02464-X/fulltext">thelancet.com</a>；评论 <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(26)00699-9/fulltext">AI-supported mammography screening: measuring benefit</a></li>
+    <li>AI-based triage and decision support in mammography and DBT: a paired, noninferiority trial，Nature Medicine 2026;32:1296–1305，<a href="https://www.nature.com/articles/s41591-026-04277-x">nature.com</a></li>
+    <li>Insilico Medicine，GENESIS-IPF-3 首例给药，2026-09-10，<a href="https://insilico.com/news/isn1009261-insilico-medicine-doses-first-patient-genesis-ipf-3">insilico.com</a>；III 期启动，2026-07-07，<a href="https://insilico.com/news/xmjsn4l091-insilico-initiates-phase-iii-clinical-tr">insilico.com</a></li>
+    <li>World Pharma AI，rentosertib IIa 期数据与停药情况，2026-09-30，<a href="https://www.worldpharma.ai/insights/ai-designed-drug-for-lung-fibrosis-passes-phase-2a-and-enters-phase-3">worldpharma.ai</a></li>
+    <li>State of AI Report 2026，Which AI-assisted medicines have reached Phase 3?，<a href="https://www.stateof.ai/2026-explore/answers/ai-drugs-phase-3">stateof.ai</a></li>
+    <li>国家卫健委等五部门《关于促进和规范“人工智能+医疗卫生”应用发展的实施意见》（国卫办规划发〔2025〕30号），<a href="https://www.nhc.gov.cn/wjw/tia/202609/3d05cad4bf6c490fb3ba7ba7e92096a6.shtml">nhc.gov.cn 提案答复</a></li>
+    <li>广州日报，国家人工智能应用中试基地（医疗领域）广东阶段性成果，2026-10-22，<a href="https://gzdaily.dayoo.com/pc/html/2026-10/22/content_868_916571.htm">gzdaily.dayoo.com</a></li>
+    <li>江苏省卫健委，关于推进江苏省“人工智能+医疗健康”发展实施方案，2026-10-10，<a href="https://wjw.jiangsu.gov.cn/art/2026/10/10/art_93467_11840253.html">wjw.jiangsu.gov.cn</a></li>
+  </ol>
+</section>
+
+<footer>头图与插图为 AI 生成示意图；图表均为本站依据公开资料重绘。本页仅供学习交流，不构成医疗建议。· aiai 学院 · AI×医学前沿速递 第 1 期</footer>
+</main>
+
+<script>
+(function(){
+  var RM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $ = function(id){return document.getElementById(id)};
+
+  // 解释开关
+  document.querySelectorAll(".mode button").forEach(function(b){
+    b.addEventListener("click",function(){
+      document.body.dataset.mode=b.dataset.set;
+      document.querySelectorAll(".mode button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+    });
+  });
+
+  // 快讯条：复制一份实现无缝循环
+  var tr=$("tTrack"); tr.innerHTML+=tr.innerHTML;
+  $("tBtn").addEventListener("click",function(){
+    var t=$("ticker"),p=t.classList.toggle("paused");
+    this.textContent=p?"继续":"暂停"; this.setAttribute("aria-pressed",p);
+  });
+
+  // 阅读进度 + 章节高亮
+  var prog=$("prog");
+  addEventListener("scroll",function(){
+    var h=document.documentElement; prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+  },{passive:true});
+  var navA={}; document.querySelectorAll(".links a").forEach(function(a){navA[a.getAttribute("href").slice(1)]=a});
+  if("IntersectionObserver" in window){
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){for(var k in navA)navA[k].classList.toggle("on",k===e.target.id);var a=navA[e.target.id];if(a&&innerWidth<860)a.parentNode.scrollTo({left:a.offsetLeft-60,behavior:"smooth"});}
+    })},{rootMargin:"-45% 0px -50% 0px"});
+    document.querySelectorAll("main>section[id]").forEach(function(s){spy.observe(s)});
+
+    // 滚动出现
+    var rv=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target);}
+    })},{threshold:.15});
+    document.querySelectorAll(".rv").forEach(function(el){rv.observe(el)});
+  } else { document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in")}); }
+
+  // 柱状图
+  var years=[2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],
+      vals=[6,18,27,65,80,114,129,162,226,235,335], ratio=false, prog0=0, cv=$("bar");
+  function draw(p){
+    var d=devicePixelRatio||1,w=cv.clientWidth,h=300; cv.width=w*d; cv.height=h*d;
+    var c=cv.getContext("2d"); c.setTransform(d,0,0,d,0,0); c.clearRect(0,0,w,h);
+    var L=40,B=36,T=24,bw=(w-L-10)/years.length, max=ratio?60:360;
+    c.strokeStyle="rgba(29,29,31,.12)"; c.fillStyle="#5c5c63"; c.font="12px -apple-system,sans-serif";
+    for(var g=0;g<=4;g++){var y=T+(h-T-B)*g/4;c.beginPath();c.moveTo(L,y);c.lineTo(w-6,y);c.stroke();
+      c.fillText(ratio?Math.round(max*(1-g/4))+"×":Math.round(max*(1-g/4)),2,y+4);}
+    years.forEach(function(yr,i){
+      var v=ratio?vals[i]/vals[0]:vals[i], bh=(h-T-B)*Math.min(v/max,1)*p, x=L+i*bw+bw*.18, y=h-B-bh;
+      c.fillStyle=i===years.length-1?"#e8673a":"#1b3a73"; c.fillRect(x,y,bw*.64,bh);
+      c.fillStyle="#5c5c63"; c.textAlign="center"; c.fillText(String(yr).slice(2)+"年",x+bw*.32,h-B+16);
+      if(p>.98){c.fillStyle="#1d1d1f";c.fillText(ratio?(v.toFixed(v<10?1:0)+"×"):vals[i],x+bw*.32,y-6);}
+      c.textAlign="left";
+    });
+  }
+  function play(){ if(RM){draw(1);return} var t0=null;
+    function f(t){t0=t0||t;var p=Math.min((t-t0)/1200,1);draw(1-Math.pow(1-p,3));if(p<1)requestAnimationFrame(f)} requestAnimationFrame(f); }
+  $("barPlay").onclick=play;
+  $("barLog").onclick=function(){ratio=!ratio;this.classList.toggle("on",ratio);this.textContent=ratio?"切换：看绝对数量":"切换：看增长倍数（相对 2015）";play()};
+  addEventListener("resize",function(){draw(1)});
+  draw(0);
+  if("IntersectionObserver" in window){var bo=new IntersectionObserver(function(es){if(es[0].isIntersecting){play();bo.disconnect()}},{threshold:.4});bo.observe(cv)} else draw(1);
+
+  // 滚动叙事
+  var dots=$("dots"); for(var i=0;i<100;i++)dots.appendChild(document.createElement("i"));
+  var D=dots.children;
+  var S=[
+    {big:"105,934",lab:"名瑞典女性，按 1:1 随机分到“AI 辅助筛查”或“两名放射科医生双读”。",paint:function(){for(var i=0;i<100;i++)D[i].className=i<50?"a":""}},
+    {big:"80.5%",lab:"AI 辅助组的敏感度：每 100 个真实癌症里抓到约 80 个，标准组约 74 个。",vs:["80.5%","73.8%"],paint:function(){for(var i=0;i<100;i++)D[i].className=i<74?"a":(i<81?"b":"")}},
+    {big:"98.5%",lab:"两组特异度相同：没得癌的人，98.5% 都被正确放行。",vs:["98.5%","98.5%"],paint:function(){for(var i=0;i<100;i++)D[i].className=i<98?"a":(i<99?"b":"")}},
+    {big:"0.88",lab:"间期癌比值（95% CI 0.65–1.18）：每千人 1.55 vs 1.76，达到“不劣于”。",vs:["1.55‰","1.76‰"],paint:function(){for(var i=0;i<100;i++)D[i].className=i<16?"b":(i<18?"a":"")}},
+    {big:"−63.6%",lab:"西班牙配对试验：AI 把低风险片判正常后，医生的读片量减少了六成多。",vs:["检出 7.3‰ · 召回 5.5%","检出 6.3‰ · 召回 4.8%"],paint:function(){for(var i=0;i<100;i++)D[i].className=i<36?"a":""}}
+  ];
+  function setS(n){var s=S[n];$("sBig").textContent=s.big;$("sLab").textContent=s.lab;
+    if(s.vs){$("vs2").hidden=false;$("vA").textContent=s.vs[0];$("vB").textContent=s.vs[1]}else $("vs2").hidden=true; s.paint();}
+  setS(0);
+  var steps=document.querySelectorAll(".step");
+  if("IntersectionObserver" in window){
+    var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      steps.forEach(function(x){x.classList.toggle("on",x===e.target)}); setS(+e.target.dataset.s);}})},{rootMargin:"-45% 0px -45% 0px"});
+    steps.forEach(function(s){so.observe(s)});
+  } else steps.forEach(function(s){s.classList.add("on")});
+
+  // 横向时间线按钮
+  document.querySelectorAll("[data-rail]").forEach(function(b){b.onclick=function(){
+    $("rail").scrollBy({left:+b.dataset.rail*340,behavior:RM?"auto":"smooth"})}});
+
+  // 政策标签
+  document.querySelectorAll("[data-goal]").forEach(function(b){b.onclick=function(){
+    document.querySelectorAll("[data-goal]").forEach(function(x){x.classList.toggle("on",x===b)});
+    document.querySelectorAll(".goal").forEach(function(g){g.classList.toggle("on",g.id===b.dataset.goal)});}});
+
+  // 核查台
+  var chks=document.querySelectorAll(".chk");
+  function cnt(){var n=document.querySelectorAll(".chk.open").length;$("cprog").textContent="已核查 "+n+"/"+chks.length}
+  chks.forEach(function(c){c.querySelector("button").onclick=function(){c.classList.add("open");this.remove();cnt()}});
+  $("chkAll").onclick=function(){chks.forEach(function(c){c.classList.add("open");var b=c.querySelector("button");if(b)b.remove()});cnt()};
+})();
+</script>
+</body>
+</html>
