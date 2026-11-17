@@ -9,6 +9,7 @@
   ];
   const HIS = 'https://hark.site/s/263c1fe8-4cbe-45de-81ef-4c687d5b9a99?hark_region=us';
   const ITEMS = [
+    { t: 'basic', kind: 'AI 智能体 · 图文读本', title: 'Loop 与 Graph · 海边读本：只批准最后一步', d: 'Hanako 长文逐节中文讲解：loop 是一个能失败的检查，graph 决定有哪些工作单元；四种节点、纠正边与学习边、只退回一个单元、按爆炸半径开闸。原文配图 + 双语代码卡、医疗类比、速查表和 5 道自测题。', date: '2026-11-17', img: 'lessons/loop-graph-seaside/thumbv1.0.webp', href: 'lessons/loop-graph-seasidev1.0.html', go: '开始阅读' },
     { t: 'sci', kind: '科研工作流 · AI 智能体', title: '用 Codex 做科研：从文献搜索到答辩 PPT', d: '把研究生最常见的四件事拆成可复用的工作流：论文搜索、综述写作、数据分析、答辩 PPT。讲清任务型 Agent 和 Skill 即 SOP，每一步都配可一键复制的提示词与文件夹结构，最后用排序小游戏和 6 道题自测。', date: '2026-11-15', img: 'assets/story/codex-research-thumbv1.0.webp', href: 'lessons/codex-research/codex-researchv0.2.html', go: '开始学习' },
     { t: 'basic', kind: 'AI 智能体 · 互动讲解', title: 'Loop 与 Graph：只签最后一步', d: '用骨折手术打比方，从 Bun 的 11 天讲起：检查要能失败、两轮无新发现就停、删掉不传变量的箭头、失败只退一个单元、按撤销难度开闸。原创动画 + 原文配图，中文配音、双语字幕。', date: '2026-11-05', img: 'assets/story/loop-graph-thumbv2.0.svg', href: 'lessons/loop-graph-playbookv2.2.html', go: '开始讲解' },
     { t: 'sci', kind: '细胞生物学 · 交互漫游', title: '外泌体与细胞外囊泡漫游：从多囊体出芽到超速离心', d: '两幕 11 站：EV 家族、内吞、多囊体出芽、货物装载、释放、体液漂流、摄取，再进实验室看差速超速离心、分离方法比较和鉴定；配 EV 生命周期动画、离心沉降与 NTA 粒径分布示意，每站一个科研/临床联系。', date: '2026-11-01', img: 'assets/exosome/exosome-herov1.0.webp', href: 'lessons/exosome-explorerv1.0.html', go: '开始漫游' },
