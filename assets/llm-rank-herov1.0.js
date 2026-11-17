@@ -143,9 +143,10 @@ export async function initHero(host, models, opts) {
     const placed = [];
     for (const t of tags) {
       v.copy(t.p).project(cam);
-      const x = (v.x * 0.5 + 0.5) * W, y = (-v.y * 0.5 + 0.5) * H;
-      t.el.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) translate(-50%,-100%)';
       if (t.w == null) { t.w = t.el.offsetWidth; t.h = t.el.offsetHeight; }
+      // 横向夹紧，避免窄屏上标签被右/左边缘截断
+      const x = Math.min(Math.max((v.x * 0.5 + 0.5) * W, t.w / 2 + 6), W - t.w / 2 - 6), y = (-v.y * 0.5 + 0.5) * H;
+      t.el.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) translate(-50%,-100%)';
       const box = [x - t.w / 2, y - t.h, x + t.w / 2, y];
       let hide = v.z >= 1;
       if (!hide && t.minor) hide = placed.some((b) => box[0] < b[2] && box[2] > b[0] && box[1] < b[3] && box[3] > b[1]);

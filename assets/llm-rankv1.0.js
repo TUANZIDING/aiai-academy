@@ -296,7 +296,7 @@
       tipEl.style.top = Math.max(8, Math.min(sh - th - 8, y - th - 12)) + 'px';
     }
     onView(hero, function () {
-      var url = new URL('../assets/llm-rank-herov1.0.js?v=1.0', location.href).href;
+      var url = new URL('../assets/llm-rank-herov1.0.js?v=1.1', location.href).href;
       import(url).then(function (mod) { return mod.initHero(host, models, { tip: tip }); }).then(function (r) {
         hero.classList.add('live'); setBadge(r.backend === 'WebGPU' ? 'WebGPU 实时渲染' : 'WebGL2 实时渲染（WebGPU 不可用，自动回退）');
       }).catch(function (e) {
