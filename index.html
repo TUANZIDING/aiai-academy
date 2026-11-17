@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="assets/lessons-catalogv1.0.css?v=1.3">
 <link rel="stylesheet" href="assets/micro-hallv1.0.css?v=1.1.0">
 <link rel="stylesheet" href="assets/voices-homev1.0.css?v=1.4.0">
+<link rel="stylesheet" href="assets/home-polishv1.0.css?v=1.0">
 <style>.brand .aiai-mark{height:38px;width:auto;display:block}.w-brand .aiai-mark{height:34px;width:auto;display:block}.w-brand .aiai-sub{display:flex;flex-direction:column;line-height:1.2;font-size:.92rem}.w-brand .aiai-sub small,.brand small{display:block;font-size:.6rem;letter-spacing:.2em;font-weight:500;opacity:.7}</style>
 <style>html.w-open .music-ctl,html.w-open body>.fb-ball,html.w-open body>.fb-trail{display:none}</style>
 </head>
@@ -36,24 +37,36 @@
     <span>人工智能学院<small>AI × ART ACADEMY</small></span>
   </a>
   <nav aria-label="主导航">
-    <a href="#academy">学院</a>
-    <a href="#playbook">路线</a>
-    <a href="#gallery">作品馆</a>
-    <a href="#games">游戏馆</a>
+    <a href="#playbook">学习路线</a>
+    <a href="#gallery">作品</a>
     <a href="#videos">放映厅</a>
-    <a href="#lessons">课件馆</a>
-    <a href="#micro">医学教学馆</a>
-    <a href="#camp">训练营</a>
+    <a href="#lessons">课件</a>
     <a href="#frontier">前沿观察</a>
     <a href="#voices" class="nav-voices">AI VOICES</a>
-    <details class="nav-more"><summary>更多</summary><div class="menu">
+    <details class="nav-more"><summary><span class="nm-d">更多</span><span class="nm-m">菜单</span></summary><div class="menu">
+      <p class="nm-h nm-only">主入口</p>
+      <a class="nm-only" href="#playbook">学习路线</a>
+      <a class="nm-only" href="#gallery">作品馆</a>
+      <a class="nm-only" href="#videos">放映厅</a>
+      <a class="nm-only" href="#lessons">课件馆</a>
+      <a class="nm-only" href="#frontier">前沿观察</a>
+      <a class="nm-only" href="#voices">AI VOICES</a>
+      <p class="nm-h">学院与场馆</p>
+      <a href="#academy">学院</a>
+      <a href="#recent">最近更新</a>
+      <a href="#games">游戏馆</a>
+      <a href="#micro">医学教学馆</a>
+      <a href="#camp">训练营</a>
+      <p class="nm-h">工具与延伸</p>
       <a href="#concepts">战术词典</a>
       <a href="#gear">装备库</a>
       <a href="#library">延伸学习</a>
-      <a href="#safety">安全边界</a>
       <a href="#toolbox">开源工具箱</a>
       <a href="#mystudy">我的学习</a>
+      <p class="nm-h">边界与关于</p>
+      <a href="#safety">安全边界</a>
       <a href="#about">关于</a>
+      <a href="#site-map">站点地图</a>
     </div></details>
   </nav>
   <button class="btn ghost" id="reWelcome" title="回到欢迎页">学院首页</button>
@@ -154,15 +167,24 @@
   </div>
 </section>
 
+<section id="recent" class="section recent" aria-labelledby="recentH">
+  <div class="box-head">
+    <div><p class="eyebrow"><span class="jn">02</span><span class="ek">LATEST UPDATES</span></p><h2 id="recentH">最近<em>更新</em></h2></div>
+    <p>前沿观察、课件馆和 AI VOICES 里最新的 6 项，按日期从新到旧排；只收有明确日期的内容。</p>
+  </div>
+  <div class="rc-rail" id="recentRail" aria-live="polite"><p class="rc-empty">正在整理最近更新……</p></div>
+  <noscript><p><a href="#frontier">前沿观察</a> · <a href="#lessons">课件馆</a> · <a href="#voices">AI VOICES</a></p></noscript>
+</section>
+
 <section id="playbook" class="section">
-  <p class="eyebrow"><span class="jn">02</span><span class="ek">PLAYBOOK</span></p>
+  <p class="eyebrow"><span class="jn">03</span><span class="ek">PLAYBOOK</span></p>
   <h2>AI 使用策略 · 五档战术路线</h2>
   <p class="sub">像橄榄球推进码数一样，一档一档往前推。点击任一档，作品馆只显示这一档的示范作品。</p>
   <ol class="levels" id="levels"></ol>
 </section>
 
 <section id="concepts" class="section">
-  <p class="eyebrow"><span class="jn">03</span><span class="ek">GLOSSARY</span></p>
+  <p class="eyebrow"><span class="jn">04</span><span class="ek">GLOSSARY</span></p>
   <h2>战术词典 · <span data-n="concepts">23</span> 个必懂 AI 概念</h2>
   <p class="sub">每个概念一句话讲清楚，再配一个橄榄球比喻。按 L0–L4 排列，跟着档位学；点“深入学”跳到好友的完整课件。</p>
   <div class="filters" role="toolbar" aria-label="按档位看概念" id="conceptFilters"></div>
@@ -170,14 +192,14 @@
 </section>
 
 <section id="gear" class="section">
-  <p class="eyebrow"><span class="jn">04</span><span class="ek">GEAR</span></p>
+  <p class="eyebrow"><span class="jn">05</span><span class="ek">GEAR</span></p>
   <h2>装备库 · 常用 AI 工具怎么选</h2>
   <p class="sub">不求全，只列课上真正会用到的。每件装备写清楚：擅长什么、医生怎么用、要小心什么。</p>
   <div class="gear" id="gearGrid"></div>
 </section>
 
 <section id="gallery" class="section">
-  <p class="eyebrow"><span class="jn">05</span><span class="ek">GALLERY</span></p>
+  <p class="eyebrow"><span class="jn">06</span><span class="ek">GALLERY</span></p>
   <p class="lc-kick">GALLERY / 作品馆</p>
   <h2 class="lc-h">作品全部公开，<em>课上就能点开。</em></h2>
   <p class="lc-lede">全部来自我的 GitHub 公开项目：创伤教学、科研工具、智能体治理和亲子创作。带<b>在线演示</b>的课上直接打开，其余是源码和文档。</p>
@@ -190,7 +212,7 @@
 </section>
 
 <section id="games" class="section games">
-  <p class="eyebrow"><span class="jn">06</span><span class="ek">PLAYGROUND</span></p>
+  <p class="eyebrow"><span class="jn">07</span><span class="ek">PLAYGROUND</span></p>
   <h2>团子游戏馆 · <em>11 款小游戏</em></h2>
   <p class="sub">我给 7 岁的儿子和课堂准备的游戏馆：需求、规则和画风由我来定，代码由 AI 编写并跑过自动测试。浏览器直接打开，手机、平板、电脑都能玩，无需注册。</p>
   <div class="gm-hero rv">
@@ -214,7 +236,7 @@
 </section>
 
 <section id="videos" class="section videos">
-  <p class="eyebrow"><span class="jn">07</span><span class="ek">SCREENING ROOM</span></p>
+  <p class="eyebrow"><span class="jn">08</span><span class="ek">SCREENING ROOM</span></p>
   <h2>放映厅 · <em><span data-n="videos">10</span> 部原创视频</em></h2>
   <p class="sub">我和 AI 一起做的视频：脚本、核对和取舍由我来定，画面、配音与字幕由 AI 生成。按主题分三排，左右滑动挑一部，点开就能在这里看。</p>
   <div id="reels"></div>
@@ -222,7 +244,7 @@
 </section>
 
 <section id="lessons" class="section">
-  <p class="eyebrow"><span class="jn">08</span><span class="ek">LESSONS</span></p>
+  <p class="eyebrow"><span class="jn">09</span><span class="ek">LESSONS</span></p>
   <div id="lessonCatalog">
     <p class="lc-kick">LESSONS / 课件馆</p>
     <h2 class="lc-h">把 AI 用对，<em>把过程讲清。</em></h2>
@@ -241,7 +263,7 @@
   <span id="medhall" aria-hidden="true"></span>
   <div class="mh-top">
     <div>
-      <p class="eyebrow"><span class="jn">09</span><span class="ek">MEDICAL TEACHING HALL</span></p>
+      <p class="eyebrow"><span class="jn">10</span><span class="ek">MEDICAL TEACHING HALL</span></p>
       <h2 id="medhallH">医学教学馆 · <em>Medical Teaching Hall</em></h2>
       <p class="sub">两个分区：微观 · 细胞与分子，把显微镜下的世界做成自动漫游的大画面；解剖与临床，用可旋转的 3D 模型和真实 CT 阅片讲解剖层次和临床决策。中英对照，适合投屏上课，也适合自己点着学。<span class="en" lang="en">Two tracks: cells &amp; molecules as full-screen guided tours, and anatomy &amp; clinical as interactive 3D and CT courseware, in Chinese and English.</span></p>
     </div>
@@ -253,7 +275,7 @@
 </section>
 
 <section id="camp" class="section camp">
-  <p class="eyebrow"><span class="jn">10</span><span class="ek">TRAINING CAMP</span></p>
+  <p class="eyebrow"><span class="jn">11</span><span class="ek">TRAINING CAMP</span></p>
   <p class="lc-kick">TRAINING CAMP / 训练营</p>
   <h2 class="lc-h">一堂一个招式，<em>练完就能上场。</em></h2>
   <p class="lc-lede">丁医生原创的 <span data-n="camp">22</span> 堂 AI 战术课：每堂配一个球场比喻、一个急诊或科研里的真实场景、一道课堂练习。10 到 45 分钟一堂，按顺序练，也可以挑着练。</p>
@@ -274,7 +296,7 @@
 </div>
 
 <section id="frontier" class="section">
-  <p class="eyebrow"><span class="jn">11</span><span class="ek">FRONTIER WATCH</span></p>
+  <p class="eyebrow"><span class="jn">12</span><span class="ek">FRONTIER WATCH</span></p>
   <p class="lc-kick">FRONTIER WATCH / 前沿观察</p>
   <h2 class="lc-h">看见新东西，<em>先分清证据再兴奋。</em></h2>
   <p class="lc-lede">医学和 AI 交叉处的新研究、新产品、新演示。每篇都讲清它做了什么、对医生意味着什么、还缺哪些证据，并标出证据等级。</p>
@@ -288,7 +310,7 @@
 
 <section id="voices" class="section voices-home" aria-labelledby="voicesH">
   <span id="news" class="vh-alias" aria-hidden="true"></span>
-  <p class="eyebrow"><span class="jn">12</span><span class="ek">AI VOICES</span></p>
+  <p class="eyebrow"><span class="jn">13</span><span class="ek">AI VOICES</span></p>
   <p class="vh-kick">AI VOICES · AI 大师访谈与思想课</p>
   <h2 id="voicesH">听 AI 大师亲口说，<em>再自己想清楚。</em></h2>
   <p class="vh-slogan" lang="en">Watch in English. Think in depth. Learn with AI.</p>
@@ -298,7 +320,7 @@
 </section>
 
 <section id="library" class="section">
-  <p class="eyebrow"><span class="jn">13</span><span class="ek">FILM ROOM</span></p>
+  <p class="eyebrow"><span class="jn">14</span><span class="ek">FILM ROOM</span></p>
   <h2>延伸学习 · 录像室</h2>
   <p class="sub" id="libCredit"></p>
   <div class="filters" role="toolbar" aria-label="按主题筛选课程" id="libFilters"></div>
@@ -308,7 +330,7 @@
 <section id="safety" class="section safety">
   <div class="sec-art">
   <div>
-  <p class="eyebrow"><span class="jn">14</span><span class="ek">SAFETY</span></p>
+  <p class="eyebrow"><span class="jn">15</span><span class="ek">SAFETY</span></p>
   <h2>AI 可以跑路线，<em>判断留给人。</em></h2>
   <div class="rules">
     <article><span>01</span><h3>患者隐私停在门外</h3><p>任何真实病历、影像、身份信息都不进入公共 AI。公开仓库只放代码与模拟数据。</p></article>
@@ -322,14 +344,14 @@
 </section>
 
 <section id="toolbox" class="section">
-  <p class="eyebrow"><span class="jn">15</span><span class="ek">TOOLBOX</span></p>
+  <p class="eyebrow"><span class="jn">16</span><span class="ek">TOOLBOX</span></p>
   <h2>开源工具箱</h2>
   <p class="sub">我收藏并在用的他人开源项目（fork），课上作为“装备库”介绍，和我自己的作品分开。</p>
   <div class="tools" id="tools"></div>
 </section>
 
 <section id="mystudy" class="section">
-  <p class="eyebrow"><span class="jn">16</span><span class="ek">MY STUDY</span></p>
+  <p class="eyebrow"><span class="jn">17</span><span class="ek">MY STUDY</span></p>
   <h2>我的学习 · 英语</h2>
   <p class="sub">教练自己也在练：正在备考雅思，随时点开接着学。</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:16px;margin-top:18px">
@@ -354,17 +376,29 @@
   </div>
 </section>
 
-<section id="about" class="section about">
+<section id="about" class="section about" aria-labelledby="aboutH">
   <div class="sec-art">
   <figure class="rv"><img src="assets/home/home-coachv1.0.webp?v=3.1" alt="吉祥物团子教练站在球场边挥手" loading="lazy" width="1000" height="750"></figure>
   <div>
-    <p class="eyebrow"><span class="jn">17</span><span class="ek">COACH</span></p>
-    <h2>丁海祥 · Haixiang Ding, MD</h2>
-    <p>急诊创伤外科主治医师，苏州大学临床医学博士在读。研究方向：放射性骨骼肌损伤、骨质疏松。把临床问题、教学经验和开源实践放在同一张战术板上，帮助医护人员从“想学 AI”走到“能用、用对”。</p>
-    <div class="cta">
-      <a class="btn primary" href="https://tuanziding.github.io/" target="_blank" rel="noopener">个人主页 ↗</a>
-      <a class="btn ghost" href="https://github.com/TUANZIDING" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="btn ghost" href="https://github.com/TUANZIDING/aiai-academy/issues/new?title=%E6%88%91%E6%83%B3%E5%AD%A6%EF%BC%9A" target="_blank" rel="noopener">告诉我下一课想学什么 ↗</a>
+    <p class="eyebrow"><span class="jn">18</span><span class="ek">THE PERSON BEHIND IT</span></p>
+    <h2 id="aboutH">做这件事的人<em>。</em></h2>
+    <div class="ab-row">
+      <article class="ab-card rv">
+        <p class="ab-sign" aria-label="丁海祥 · Haixiang Ding, MD"><span class="zh">丁海祥</span><span class="dot" aria-hidden="true">·</span><span class="en">Haixiang Ding, MD</span>
+          <svg class="ab-swash" viewBox="0 0 320 24" aria-hidden="true" preserveAspectRatio="none"><path d="M4 16 C60 4 120 22 180 12 S280 4 316 14"/></svg></p>
+        <p class="ab-role">急诊创伤外科医生 · 医疗 AI 实践者</p>
+        <p class="ab-line">把临床问题、教学经验和开源实践放在同一张战术板上，帮医护人员从“想学 AI”走到“能用、用对”。</p>
+        <div class="cta">
+          <a class="btn primary" href="https://tuanziding.github.io/" target="_blank" rel="noopener">个人主页 ↗</a>
+          <a class="btn ghost" href="https://github.com/TUANZIDING" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+      <a class="ab-ask rv" href="https://github.com/TUANZIDING/aiai-academy/issues/new?title=%E6%88%91%E6%83%B3%E5%AD%A6%EF%BC%9A" target="_blank" rel="noopener">
+        <span class="k">A NOTE TO THE COACH</span>
+        <h3>告诉我，下一课想学什么</h3>
+        <p>在 GitHub 留一句话就够，写下你想学的或卡住的地方。</p>
+        <span class="go">去留言 ↗</span>
+      </a>
     </div>
   </div>
   </div>
@@ -373,9 +407,68 @@
 
 <footer class="foot">
   <div class="endzone" aria-hidden="true"><span>AIAI</span><span>AI × ART ACADEMY</span></div>
+  <div class="ft-grid">
+    <nav class="ft-map" id="site-map" aria-label="站点地图">
+      <div class="ft-col"><h4>学院</h4>
+        <a href="#top">首页</a><a href="#academy">学院</a><a href="#recent">最近更新</a><a href="#playbook">学习路线</a><a href="#concepts">战术词典</a><a href="#gear">装备库</a><a href="#camp">训练营</a><a href="#library">延伸学习</a><a href="welcome/">欢迎页</a>
+      </div>
+      <div class="ft-col"><h4>场馆</h4>
+        <a href="#gallery">作品馆</a><a href="#games">游戏馆</a><a href="games/">游戏馆大厅</a><a href="english-hall/">英语听说馆</a><a href="#videos">放映厅</a><a href="#lessons">课件馆</a><a href="#micro">医学教学馆</a>
+      </div>
+      <div class="ft-col"><h4>前沿观察</h4>
+        <a href="#frontier">前沿观察目录</a>
+        <a href="frontier/ai-med-briefv1.0.html">前沿速递 · 第 1 期</a>
+        <a href="frontier/rfd4-proteinav1.1.html">AI 设计酶 RFD4</a>
+        <a href="frontier/health-agentv1.1.html">个人健康智能体</a>
+        <a href="frontier/face-agev1.1.html">自拍里的健康时钟</a>
+        <a href="frontier/emg-forcev1.1.html">腕部肌电读手指力</a>
+        <a href="news/news-001v1.0.html">AIAI NEWS 001（预览）</a>
+      </div>
+      <div class="ft-col"><h4>AI VOICES</h4>
+        <a href="#voices">AI VOICES 目录</a>
+        <a href="voices/listening.html">短片精听选片室</a>
+        <a href="voices/voices-001v1.1.html">001 卡帕西</a>
+        <a href="voices/voices-002v1.1.html">002 黄仁勋 · 台大</a>
+        <a href="voices/voices-003v1.1.html">003 马斯克</a>
+        <a href="voices/voices-004v1.1.html">004 李飞飞</a>
+        <a href="voices/voices-005v1.1.html">005 黄仁勋 · 斯坦福</a>
+        <a href="voices/voices-006v1.1.html">006 黄仁勋 · 加州理工</a>
+        <a href="voices/voices-007v1.0.html">007 Gabrielle Lyon 访谈</a>
+      </div>
+      <div class="ft-col"><h4>课件</h4>
+        <a href="#lessons">课件馆目录</a>
+        <a href="lessons/codex-research/codex-researchv0.2.html">用 Codex 做科研</a>
+        <a href="lessons/loop-graph-playbookv2.2.html">Loop 与 Graph</a>
+        <a href="lessons/kosmos-lite-coursev1.0.html">Kosmos-lite</a>
+        <a href="lessons/phd-journeyv2.0.html">我的博士申请路线图</a>
+        <details class="ft-more"><summary>更多课件</summary>
+        <a href="lessons/medsci-2dayv1.0.html">两天工作坊课纲</a>
+        <a href="lessons/medsci-onepagev1.0.html">一页纸课纲</a>
+        <a href="lessons/ai-historyv1.0.html">AI 七十年</a>
+        <a href="lessons/ai-judgmentv1.0.html">守住判断</a>
+        <a href="lessons/onco-guidev1.0.html">OnCo 入门</a>
+        <a href="lessons/rcm-paperv1.0.html">RCM 论文精读</a>
+        <a href="lessons/cell-explorerv1.0.html">动物细胞漫游</a>
+        <a href="lessons/neuron-explorerv1.0.html">神经元漫游</a>
+        <a href="lessons/exosome-explorerv1.0.html">外泌体漫游</a>
+        <a href="lessons/ev-isolation-guidev1.0.html">EV 提取指南</a>
+        <a href="lessons/fracture-healing/fracture-healingv0.4.html">胫骨骨折愈合 3D</a>
+        <a href="lessons/cads-ct-teaching/cads-ct-teachingv1.1.html">CADS 全身 CT 阅片</a>
+        </details>
+      </div>
+      <div class="ft-col"><h4>边界与关于</h4>
+        <a href="#safety">安全边界</a><a href="#toolbox">开源工具箱</a><a href="#mystudy">我的学习</a><a href="#about">关于</a><a href="https://tuanziding.github.io/" target="_blank" rel="noopener">个人主页 ↗</a><a href="https://github.com/TUANZIDING" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+    <figure class="ft-qr" id="share-qr">
+      <img src="assets/home/share-qrv1.0.png?v=1.0" alt="aiai-academy.com 网站二维码" width="232" height="232" loading="lazy">
+      <figcaption><b>扫码分享</b><span>把学院分享给同事和朋友</span><a href="assets/home/share-qrv1.0.png?v=1.0" download="aiai-academy-qrv1.0.png">下载二维码 ↓</a></figcaption>
+    </figure>
+  </div>
   <p>aiai 人工智能学院 · Learn AI. Verify Everything. Build for Care.</p>
   <p class="muted" id="updated"></p>
   <p class="muted">背景音乐：“Unity” Kevin MacLeod (<a href="https://incompetech.com" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+  <p class="ft-top"><a href="#top">回到顶部 ↑</a></p>
 </footer>
 <script src="assets/appv1.1.js?v=1.0"></script>
 <script src="assets/welcomev1.0.js?v=20261104-home"></script>
@@ -384,11 +477,12 @@
 <script src="assets/home-v3v1.0.js?v=3.0.1" defer></script>
 <script src="assets/hlsv1.5.17.min.js" defer></script>
 <script src="assets/videosv1.0.js?v=1.1" defer></script>
-<script src="assets/lessons-catalogv1.1.js?v=1.0" defer></script>
+<script src="assets/lessons-catalogv1.2.js?v=1.2" defer></script>
 <script src="assets/med-hallv1.0.js?v=1.1.0" defer></script>
 <script src="assets/frontierv1.1.js?v=1.1" defer></script>
 <script src="assets/voices-homev1.0.js?v=1.5.0" defer></script>
-<script src="assets/shelfv1.1.js?v=1.0" defer></script>
+<script src="assets/recentv1.0.js?v=1.0" defer></script>
+<script src="assets/shelfv1.2.js?v=1.2" defer></script>
 <script>document.addEventListener("click",e=>{const d=document.querySelector(".nav-more[open]");if(d&&(!d.contains(e.target)||e.target.closest(".menu a")))d.removeAttribute("open")});</script>
 </body>
 </html>
