@@ -3,7 +3,7 @@
 var root=document.getElementById('reels'); if(!root) return;
 var dlg=document.getElementById('vplayer'), vid=dlg.querySelector('video'), ttl=dlg.querySelector('.vp-title'), sub=dlg.querySelector('.vp-sub'), hls=null, BASE='media/v/';
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-fetch('data/videosv1.0.json?v=1.2').then(function(r){return r.json()}).then(function(d){
+fetch('data/videosv1.0.json?v=1.3').then(function(r){return r.json()}).then(function(d){
   BASE=d.base||BASE; var n=0;
   var okD=function(x){return typeof x==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(x)};
   /* 每行按 date 倒序（新的在前），同日期保持原顺序；无日期的排最后 */
@@ -16,7 +16,7 @@ fetch('data/videosv1.0.json?v=1.2').then(function(r){return r.json()}).then(func
     var tr=sec.querySelector('.reel-track');
     row.items.forEach(function(it){
       var b=document.createElement('button'); b.className='vcard'+(it.v?' vert':''); b.type='button';
-      b.innerHTML='<span class="vthumb"><img src="'+BASE+it.id+'/poster.webp" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span><span class="vdur">'+esc(it.dur)+'</span>'+(it.tag?'<span class="vtag">'+esc(it.tag)+'</span>':'')+'</span><b>'+esc(it.title)+'</b><small>'+esc(it.sub)+'</small>'+(okD(it.date)?'<time class="vdate" datetime="'+esc(it.date)+'">'+esc(it.date)+'</time>':'');
+      b.innerHTML='<span class="vthumb"><img src="'+BASE+it.id+'/poster.webp" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span><span class="vdur">'+esc(it.dur)+'</span>'+(it.tag?'<span class="vtag">'+esc(it.tag)+'</span>':'')+(okD(it.date)?'<time class="vstamp" datetime="'+esc(it.date)+'"><i>上线</i>'+esc(it.date.replace(/-/g,'.'))+'</time>':'')+'</span><b>'+esc(it.title)+'</b><small>'+esc(it.sub)+'</small>';
       b.onclick=function(){open(it)};
       tr.appendChild(b);
     });

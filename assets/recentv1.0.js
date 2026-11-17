@@ -44,7 +44,7 @@
     </a>`;
   }
 
-  Promise.all([getJSON('data/frontierv1.0.json?v=1.6'), getJSON('data/voicesv1.1.json?v=1.5.0'), getJSON('data/videosv1.0.json?v=1.2')]).then(([fr, vo, vi]) => {
+  Promise.all([getJSON('data/frontierv1.0.json?v=1.6'), getJSON('data/voicesv1.1.json?v=1.5.0'), getJSON('data/videosv1.0.json?v=1.3')]).then(([fr, vo, vi]) => {
     const all = [].concat(fromVideos(vi), fromFrontier(fr), fromLessons(window.AIAI_LESSON_ITEMS), fromVoices(vo));
     const seen = new Set();
     const list = all.map((x, i) => Object.assign(x, { i }))
