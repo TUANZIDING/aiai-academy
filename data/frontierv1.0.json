@@ -29,6 +29,20 @@
  "items": [
   {
    "t": [
+    "agent",
+    "bio"
+   ],
+   "no": "06",
+   "kind": "前沿观察特刊 · 选型榜",
+   "title": "医学科研大模型选型榜 · 2026 年 11 月",
+   "d": "GPT-6 Astra、Claude Fable 5.2、Gemini 4 Carbon 等 18 款当前一代模型，官方自报 / 独立第三方 / 实践者实测三类证据分开；按临床推理、湿实验、文献综述、编码、性价比选型。3D 散点头图与可交互图表。",
+   "level": "综述速递（多源整理）",
+   "date": "2026-11-16",
+   "img": "assets/frontier/llm-medsci-rank-thumbv1.0.webp",
+   "href": "frontier/llm-medsci-rankv1.0.html"
+  },
+  {
+   "t": [
     "device",
     "drug"
    ],

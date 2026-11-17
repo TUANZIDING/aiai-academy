@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>医学科研大模型选型榜 · 2026 年 11 月 | aiai 学院 前沿观察</title>
+<meta name="description" content="aiai 学院特刊：医学科研大模型选型榜（2026-11-16 检索）。GPT-6 Astra、Claude Fable 5.2、Gemini 4 Carbon 等 18 款当前一代模型，官方自报 / 独立第三方 / 实践者实测三类证据分开比较，按临床推理、湿实验、文献综述、编码、性价比选型。">
+<meta name="theme-color" content="#121f3d">
+<link rel="icon" href="../assets/aiai-wordmarkv1.0.webp">
+<link rel="stylesheet" href="../assets/llm-rankv1.0.css?v=1.0">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="../#frontier">← aiai 前沿</a>
+    <nav class="links" aria-label="本期章节">
+      <a href="#usecase"><b>1</b>按用途</a><a href="#verdict"><b>2</b>结论</a><a href="#master"><b>3</b>总表</a><a href="#official"><b>4</b>官方</a><a href="#independent"><b>5</b>独立</a><a href="#practitioner"><b>6</b>实测</a><a href="#limits"><b>7</b>局限</a><a href="#sources"><b>8</b>来源</a>
+    </nav>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<main class="wrap">
+
+<section id="top" class="hero3d" aria-labelledby="h1">
+  <div class="hero3d__copy">
+    <p class="eyebrow">AI × 医学科研 · 前沿观察特刊</p>
+    <h1 id="h1">医学科研大模型选型榜<em> · 2026 年 11 月</em></h1>
+    <p class="hero3d__lede">三款旗舰 <b>GPT-6 Astra</b>、<b>Claude Fable 5.2</b>、<b>Gemini 4 Carbon</b>，连同同代另外 15 款模型。官方自报、独立第三方、实践者实测三类证据分开看——结论仍是没有总冠军。</p>
+    <ul class="hero3d__chips" aria-label="本期概况">
+      <li><b>18</b> 款当前一代模型</li><li><b>3</b> 类证据分开</li><li>检索日 <b>2026-11-16</b></li>
+    </ul>
+  </div>
+  <div class="hero3d__stage" id="stage">
+    <div class="h3d-fallback" id="h3dFallback"><svg class="h3d-svg" viewBox="0 0 760 440" role="img" aria-label="18 款模型：横轴为输出价格（对数），纵轴为 AA Index 的静态示意图"><line x1="78.0" y1="44" x2="78.0" y2="370" class="g"/><text x="78.0" y="396" class="t" text-anchor="middle">$0.5</text><line x1="174.6" y1="44" x2="174.6" y2="370" class="g"/><text x="174.6" y="396" class="t" text-anchor="middle">$1</text><line x1="399.0" y1="44" x2="399.0" y2="370" class="g"/><text x="399.0" y="396" class="t" text-anchor="middle">$5</text><line x1="495.6" y1="44" x2="495.6" y2="370" class="g"/><text x="495.6" y="396" class="t" text-anchor="middle">$10</text><line x1="592.3" y1="44" x2="592.3" y2="370" class="g"/><text x="592.3" y="396" class="t" text-anchor="middle">$20</text><line x1="720.0" y1="44" x2="720.0" y2="370" class="g"/><text x="720.0" y="396" class="t" text-anchor="middle">$50</text><line x1="78" y1="292.3" x2="720" y2="292.3" class="g"/><text x="68" y="298.3" class="t" text-anchor="end">40</text><line x1="78" y1="196.8" x2="720" y2="196.8" class="g"/><text x="68" y="202.8" class="t" text-anchor="end">50</text><line x1="78" y1="101.3" x2="720" y2="101.3" class="g"/><text x="68" y="107.3" class="t" text-anchor="end">60</text><text x="720" y="432" class="t" text-anchor="end">输出价 $/1M（对数）→</text><text x="12" y="28" class="t">AA Index ↑</text><text x="82" y="354" class="t">↓ AA 分未找到</text><circle cx="720.0" cy="129.9" r="13" fill="#2fd3a3" opacity="1.00"><title>GPT-6 Astra · $10 / $50；&gt;272K 提示：$20/$75；缓存 $1 · AA Index 57（max），$6.24/任务</title></circle><text x="728.0" y="113.9" class="n" text-anchor="end">★ GPT-6 Astra</text><circle cx="495.6" cy="149.0" r="9" fill="#2fd3a3" opacity="1.00"><title>GPT-6.1 Sol · $2 / $10；缓存 $0.10；&gt;272K：$4/$15 · AA Index 55（max），$1.27/任务</title></circle><circle cx="495.6" cy="219.4" r="9" fill="#2fd3a3" opacity="0.45"><title>GPT-6 Sol · $2 / $10；缓存 $0.20 · AA Index v4.3.2 47.63（max）</title></circle><circle cx="399.0" cy="215.9" r="9" fill="#2fd3a3" opacity="1.00"><title>GPT-6.1 Terra · $1 / $5；缓存 $0.05；&gt;272K：$2/$7.50 · AA Index v5.0 48（发布日快照）</title></circle><circle cx="78.0" cy="310.2" r="9" fill="#2fd3a3" opacity="0.45"><title>GPT-6 Luna · $0.10 / $0.50；缓存 $0.01 · AA Index v4.3.2 38.12（max），$0.07/任务</title></circle><circle cx="592.3" cy="225.7" r="9" fill="#2fd3a3" opacity="0.45"><title>GPT-5.6 Sol · 促销 $4 / $20；至少至 2026-11-21；标价 $5/$30 · AA Index v4.3.2 46.97</title></circle><circle cx="648.8" cy="360.0" r="9" fill="none" stroke="#9aa7c7" stroke-width="1.5"><title>GPT-5.5 · $5 / $30；缓存 $0.50；&gt;272K：$10/$45 · AA Index v5.0.1 未找到</title></circle><circle cx="688.9" cy="53.5" r="13" fill="#ff8a5c" opacity="1.00"><title>Claude Fable 5.2 · $8 / $40；快速模式 $16/$80；缓存 $0.20 · AA Index 65（max，#1），$26.54/任务</title></circle><text x="696.9" y="37.5" class="n" text-anchor="end">★ Fable 5.2</text><circle cx="48.0" cy="360.0" r="9" fill="none" stroke="#9aa7c7" stroke-width="1.5"><title>Claude Mythos 5.2 · 未找到/未核实；仅限审核准入，无公开价目 · 独立复测：未找到/未核实 无单独独立测试</title></circle><circle cx="720.0" cy="206.3" r="9" fill="#ff8a5c" opacity="0.45"><title>Claude Fable 5.1 · $10 / $50；缓存 $0.25 · AA Index v5.0 49（Google 表引述）</title></circle><circle cx="592.3" cy="110.8" r="9" fill="#ff8a5c" opacity="1.00"><title>Claude Opus 5.5 · $4 / $20；快速模式 $8/$40；缓存 $0.20 · AA Index 59（max），$10.04/任务</title></circle><circle cx="495.6" cy="139.5" r="9" fill="#ff8a5c" opacity="1.00"><title>Claude Sonnet 5.5 · $2 / $10；缓存读 $0.10（自 2026-10-07） · AA Index 56（#3/216，2026-10 初）</title></circle><circle cx="78.0" cy="360.0" r="9" fill="none" stroke="#9aa7c7" stroke-width="1.5"><title>Claude Haiku 5.5 · $0.10 / $0.50；提示 ≤100K；&gt;100K 为 $0.50/$2.50 · AA Index 未找到</title></circle><circle cx="495.6" cy="101.3" r="13" fill="#6ea5ff" opacity="1.00"><title>Gemini 4 Carbon · 促销 $2 / $10；至 2026-11-30；12-01 起 $4/$20；缓存 $0.10 · AA Index v5.0.1 60（high），$5.48/任务（促销价计；按标价为 $7.76）</title></circle><text x="495.6" y="85.3" class="n" text-anchor="middle">★ Gemini 4 Carbon</text><circle cx="495.6" cy="196.8" r="9" fill="#6ea5ff" opacity="1.00"><title>Gemini 4 Argon · 促销 $2 / $10；至 2026-11-30；12-01 起 $4/$20；缓存 $0.10 · AA Index 50（high），$1.99/任务</title></circle><circle cx="455.5" cy="187.2" r="9" fill="#6ea5ff" opacity="1.00"><title>Gemini 4 Hydrogen · $1.50 / $7.50；全上下文统一价，无促销 · AA Index v5.0.1 51（high），$1.87/任务，8.3 分钟/任务</title></circle><circle cx="358.9" cy="225.4" r="9" fill="#6ea5ff" opacity="0.45"><title>Gemini 3.8 Flash · 促销 $0.75 / $3.75；至 2026-12-31；2027-01-01 起 $1.50/$7.50 · AA Index v4.2 47（high），$0.58/任务（v4.1.1 口径为 59，版本改版不可比）</title></circle><circle cx="521.0" cy="360.0" r="9" fill="none" stroke="#9aa7c7" stroke-width="1.5"><title>Gemini 3.1 Pro · ≤200K：$2 / $12；&gt;200K：$4/$18；缓存 $0.20；无免费层 · AA Index v5.0.1 未找到（2026-02 旧版指数曾领先，版本已改不可比）</title></circle></svg></div>
+    <div class="h3d-host" id="h3dHost"></div>
+    <div class="h3d-tip" id="h3dTip" role="status" aria-live="polite" hidden></div>
+    <div class="h3d-legend" aria-hidden="true">
+      <span><i class="dot d-oa"></i>OpenAI</span><span><i class="dot d-an"></i>Anthropic</span><span><i class="dot d-go"></i>Google</span>
+      <span class="lg-k">高度 = AA Index · 横向 = 输出价（对数）· 3D 视图纵深 = 厂商</span>
+      <span class="lg-k">实心 = AA Index v5.0.1 图中 9 款 · 半透明 = 其他版本口径（不可比）· 地面圆环 = AA 分未找到</span>
+    </div>
+    <p class="h3d-hint" id="h3dHint">悬停或点一下节点，看名称与数值</p>
+    <span class="h3d-badge" id="h3dBadge">静态图</span>
+  </div>
+</section>
+
+<div class="expiry" role="note">
+  <div class="expiry__a"><b>保质期</b>检索日 2026-11-16 · 价格与分数会变</div>
+  <div class="expiry__b">Gemini 4 Carbon / Argon 促销价 <span class="mono">$2 / $10</span> 只到 <b>2026-11-30</b>，12-01 起涨到 <span class="mono">$4 / $20</span><span class="expiry__cd" id="cd"></span></div>
+</div>
+
+<div class="intro">
+  <p class="lede">本页已按 <strong>2026 年 11 月的当前一代</strong>重做：三款旗舰——OpenAI <strong>GPT-6 Astra</strong>、Anthropic <strong>Claude Fable 5.2</strong>、Google <strong>Gemini 4 Carbon</strong>——连同同代另外 15 款模型全部进一张总对比表。结论仍是<strong>没有总冠军</strong>：临床推理、湿实验、文献综述、编码各有领先者，且性价比赢家不在旗舰层。</p>
+  <div class="alert" role="note">
+          <span class="ic" aria-hidden="true">!</span>
+          <p><strong>先看这条：厂商互报分数会互相打架，不能直接比。</strong>同一个 HealthBench Professional，GPT-6 Astra 在 OpenAI 自报里是 <span class="mono">63.4%</span>，在 Anthropic 的运行里却是 <span class="mono">70.3%</span>（Fable 5.2 系统卡里又记为 66.0%）——评分器、长度调整、努力级别都不同。本页在冲突处<strong>并列两种数字、不做取舍</strong>；标「未找到」即截至 2026-11-16 未在公开来源中找到，不是没有。</p>
+        </div>
+</div>
+
+<section id="usecase">
+  <div class="bar"><b>选型</b><span>依据来自下方三类证据</span><i>第 1 章</i></div>
+  <h2>按用途选型：先看你要做什么</h2>
+  <p class="sec-sub">排序针对当前一代 18 款模型，依据来自上面三节；每个场景都标了置信度与证据缺口。点一个场景看名次、依据与代价。</p>
+  <div class="ucg" id="ucGrid"></div>
+  <div class="ucd" id="ucDetail" role="region" aria-live="polite" hidden></div>
+  <template id="valueTpl"><div class="callout">
+          <p><strong>性价比不在旗舰层：</strong>GPT-6.1 Sol（$2/$10）AA 指数 55，仅比 Astra 低 2 分，任务成本 $1.27 对 $6.24；Gemini 4 Hydrogen（$1.50/$7.50）AA 指数 51，与 Argon 持平，$1.87 对 $4.97；Sonnet 5.5 在 Terminal-Bench 4.0 与 HealthBench Professional 上同时超过更贵的 Opus 5.5 和 Fable 5.1。<strong>价格悬崖：</strong>Carbon / Argon 促销价 $2/$10 只到 2026-11-30，12 月 1 日起涨到 $4/$20。</p>
+        </div></template>
+</section>
+
+<section id="verdict">
+  <div class="bar"><b>结论</b><span>四项最能分开当前一代的证据</span><i>第 2 章</i></div>
+  <h2>一眼结论</h2>
+  <p class="sec-sub">四项最能分开当前一代的证据。注意：医学考试类基准（MedQA）对这 18 款模型一款分数都没有——它已经饱和归档，别再用它选型。</p>
+  <div class="verdicts">
+          <div class="vcard">
+            <div class="k">综合智能 · AA Index v5.0.1（独立复测）</div>
+            <div class="big">65</div>
+            <div class="who"><span class="dot d-an"></span>Claude Fable 5.2 居首</div>
+            <p>Gemini 4 Carbon 60、Opus 5.5 59、GPT-6 Astra 57。但 Fable 每任务 $26.54、41.8 分钟，是全场最贵最慢（Artificial Analysis，2026-11-16 live）。</p>
+          </div>
+          <div class="vcard">
+            <div class="k">临床推理 · HealthBench Professional（长度调整）</div>
+            <div class="big">69.2%</div>
+            <div class="who"><span class="dot d-an"></span>Claude Sonnet 5.5 居首——不是旗舰</div>
+            <p>$2/$10 的 Sonnet 5.5 超过 Opus 5.5（65.6%）与 Fable 5.2（67.7%）；Astra 两次运行冲突（63.4% 自报 / 70.3% Anthropic 运行）。</p>
+          </div>
+          <div class="vcard">
+            <div class="k">湿实验 · BioBasicsBench（OpenAI，2026-11-06）</div>
+            <div class="big">66.7%</div>
+            <div class="who"><span class="dot d-oa"></span>GPT-6 Astra 居首</div>
+            <p>100 项湿实验任务、均值 rubric 奖励（不是解决率）。只有 OpenAI 模型参测——Claude / Gemini 在湿实验上的位置完全未知。</p>
+          </div>
+          <div class="vcard">
+            <div class="k">不编造答案 · AA-Omniscience 条件幻觉率（越低越好）</div>
+            <div class="big">4.3%</div>
+            <div class="who"><span class="dot d-go"></span>Gemini 4 Argon 全场最低</div>
+            <p>Carbon 11.4%；而知识最广的 Fable 5.2（正确率 79%）不知道时猜得最多：59.3%。文献综述选型先看这一项。</p>
+          </div>
+        </div>
+  <div class="callout">
+          <p><strong>性价比不在旗舰层：</strong>GPT-6.1 Sol（$2/$10）AA 指数 55，仅比 Astra 低 2 分，任务成本 $1.27 对 $6.24；Gemini 4 Hydrogen（$1.50/$7.50）AA 指数 51，与 Argon 持平，$1.87 对 $4.97；Sonnet 5.5 在 Terminal-Bench 4.0 与 HealthBench Professional 上同时超过更贵的 Opus 5.5 和 Fable 5.1。<strong>价格悬崖：</strong>Carbon / Argon 促销价 $2/$10 只到 2026-11-30，12 月 1 日起涨到 $4/$20。</p>
+        </div>
+</section>
+
+<section id="master">
+  <div class="bar"><b>总表</b><span>同代 18 款 · ★ 旗舰</span><i>第 3 章</i></div>
+  <h2>总对比表：同代 18 款模型</h2>
+  <p class="sec-sub">价格为标准 API 价（美元 / 每百万 token，输入 / 输出），括号内为促销价与到期日。「官方关键分」均为厂商运行；「独立复测」均为第三方运行。上下文口径不同：OpenAI / Anthropic 的 1M 上下文与 128K 最大输出相互独立；Google 的 1,048,576 是输入＋思考＋输出共享预算，同步响应默认最大输出仅约 64K。</p>
+  <div class="mfilter" id="mfilter">
+    <div class="mf-row" role="group" aria-label="按厂商筛选"><span class="mf-k">厂商</span><button type="button" class="chip" data-f="v" data-k="all" aria-pressed="true">全部</button><button type="button" class="chip" data-f="v" data-k="openai" aria-pressed="false"><i class="dot d-oa"></i>OpenAI</button><button type="button" class="chip" data-f="v" data-k="anthropic" aria-pressed="false"><i class="dot d-an"></i>Anthropic</button><button type="button" class="chip" data-f="v" data-k="google" aria-pressed="false"><i class="dot d-go"></i>Google</button><button type="button" class="chip" data-f="star" data-k="1" aria-pressed="false">只看 ★</button></div>
+    <div class="mf-row" role="group" aria-label="按价位筛选"><span class="mf-k">价位</span><button type="button" class="chip" data-f="tier" data-k="all" aria-pressed="true">全部</button><button type="button" class="chip" data-f="tier" data-k="low" aria-pressed="false">输出 &lt;$5</button><button type="button" class="chip" data-f="tier" data-k="mid" aria-pressed="false">$5–12</button><button type="button" class="chip" data-f="tier" data-k="high" aria-pressed="false">≥$20</button><button type="button" class="chip" data-f="tier" data-k="na" aria-pressed="false">未公开</button></div>
+    <p class="mf-note">价位按表中首列价格的<b>输出价</b>（$/1M）分档，为本站划分；<span id="mfCount">显示 18 / 18 款</span></p>
+  </div>
+  <div class="tscroll" id="tscroll" tabindex="0" aria-label="18 款模型总对比表，可横向滚动">
+    <table class="tbl">
+          <caption>★ = 本期重点比较的三款旗舰。知识截止：GPT-6 Astra / 6.1 Sol 2026-04-30，Terra 2026-06-01，Luna 2026-05-18，5.6 Sol 2026-02-16，5.5 2025-12-01；Claude 全系 2026-06；Gemini 全系 2026-03。</caption>
+          <thead><tr><th>模型</th><th>发布</th><th>上下文 / 最大输出</th><th class="num">价格 $/1M 入/出</th><th><span class="etag e-off">官方自报</span>官方关键分（厂商运行）</th><th><span class="etag e-ind">独立第三方</span>独立复测关键分</th></tr></thead>
+          <tbody>
+            <tr data-v="openai" data-tier="high" data-star="1"><td class="mname" data-l="模型"><span class="dot d-oa"></span>GPT-6 Astra <span class="pill flag">★旗舰</span></td><td data-l="发布">2026-09-03</td><td data-l="上下文">1,050,000 / 128,000</td><td class="num" data-l="价格">$10 / $50<span class="sub">&gt;272K 提示：$20/$75；缓存 $1</span></td><td data-l="官方分">HealthBench Prof 63.4%（长度调整）；BioBasicsBench 66.7%；GPQA Diamond 96.0%；Terminal-Bench-Science 64.6%；HLE（带工具）57.2%；Terminal-Bench 4.0 57.9%</td><td data-l="独立分">AA Index <b>57</b>（max），$6.24/任务；AA-Omniscience 条件幻觉率 49.8%；Vals Index 65.02%（#8）；LMArena Text 1474（#36）</td></tr>
+            <tr data-v="openai" data-tier="mid"><td class="mname" data-l="模型"><span class="dot d-oa"></span>GPT-6.1 Sol</td><td data-l="发布">2026-09-29</td><td data-l="上下文">1,050,000 / 128,000</td><td class="num" data-l="价格">$2 / $10<span class="sub">缓存 $0.10；&gt;272K：$4/$15</span></td><td data-l="官方分">BioBasicsBench 62.0%；HealthBench Prof 64.2%（长度调整）；DeepSWE 与 Astra 持平（厂商称）</td><td data-l="独立分">AA Index <b>55</b>（max），$1.27/任务；AA HLE 52.9%；LiveBench 81.6</td></tr>
+            <tr data-v="openai" data-tier="mid"><td class="mname" data-l="模型"><span class="dot d-oa"></span>GPT-6 Sol</td><td data-l="发布">2026-09-22</td><td data-l="上下文">1,050,000 / 128,000</td><td class="num" data-l="价格">$2 / $10<span class="sub">缓存 $0.20</span></td><td data-l="官方分"><span class="pill none">未找到</span> 发布一周后即被 6.1 Sol 取代，无独立系统卡分数</td><td data-l="独立分">AA Index v4.3.2 47.63（max）；AA Coding Agent Index 57；v5.0.1 未找到</td></tr>
+            <tr data-v="openai" data-tier="mid"><td class="mname" data-l="模型"><span class="dot d-oa"></span>GPT-6.1 Terra</td><td data-l="发布">2026-10-26</td><td data-l="上下文">1,050,000 / 128,000</td><td class="num" data-l="价格">$1 / $5<span class="sub">缓存 $0.05；&gt;272K：$2/$7.50</span></td><td data-l="官方分">HealthBench Prof 62.7%；HealthBench 55.1%；MentalHealthBench 55.5%；Terminal-Bench 4.0 50.3%（max）；OSWorld 2.1 74.2%</td><td data-l="独立分">AA Index v5.0 <b>48</b>（发布日快照）；MLCR-AA 30.6%</td></tr>
+            <tr data-v="openai" data-tier="low"><td class="mname" data-l="模型"><span class="dot d-oa"></span>GPT-6 Luna</td><td data-l="发布">2026-09-22</td><td data-l="上下文">1,050,000 / 128,000</td><td class="num" data-l="价格">$0.10 / $0.50<span class="sub">缓存 $0.01</span></td><td data-l="官方分">BioBasicsBench 38.3%；DeepSWE 1.1 66.6%；OSWorld 2.0 52.7%；事实错误率 7.6%</td><td data-l="独立分">AA Index v4.3.2 38.12（max），$0.07/任务；HLE 38.5%；LiveBench 72.0</td></tr>
+            <tr data-v="openai" data-tier="high"><td class="mname" data-l="模型"><span class="dot d-oa"></span>GPT-5.6 Sol</td><td data-l="发布">预览 2026-06-26；GA 2026-07-09</td><td data-l="上下文">1,050,000 / 128,000</td><td class="num" data-l="价格">促销 $4 / $20<span class="sub">至少至 2026-11-21；标价 $5/$30</span></td><td data-l="官方分">HealthBench Prof 60.5%；HealthBench 57.0 / Hard 33.1；Terminal-Bench 2.1 88.8%；BioBasicsBench 43.8%</td><td data-l="独立分">AA Index v4.3.2 46.97；v5.0.1 未找到</td></tr>
+            <tr data-v="openai" data-tier="high"><td class="mname" data-l="模型"><span class="dot d-oa"></span>GPT-5.5</td><td data-l="发布">2026-04-23<span class="sub">ChatGPT/Codex 已于 2026-10-14 退役，API 仍在</span></td><td data-l="上下文">1,050,000 / 128,000</td><td class="num" data-l="价格">$5 / $30<span class="sub">缓存 $0.50；&gt;272K：$10/$45</span></td><td data-l="官方分">HealthBench Prof 51.8%（系统卡；发布表另记 49.5%——冲突）；SWE-bench Pro 58.6%；Terminal-Bench 2.0 82.7%</td><td data-l="独立分">LiveBench 80.2；AA Index v5.0.1 未找到；BioBasicsBench 未找到</td></tr>
+            <tr data-v="anthropic" data-tier="high" data-star="1"><td class="mname" data-l="模型"><span class="dot d-an"></span>Claude Fable 5.2 <span class="pill flag">★旗舰</span></td><td data-l="发布">2026-11-09</td><td data-l="上下文">1,000,000 / 128,000</td><td class="num" data-l="价格">$8 / $40<span class="sub">快速模式 $16/$80；缓存 $0.20</span></td><td data-l="官方分">HealthBench Prof 67.7% 长度调整（原始 71.1%）；PhysicianBench 64.4%；SWE-bench Pro 93.0%；Terminal-Bench-Science 74.6%；HLE（带工具）74.2%；FrontierCode 2.0 49.1%（xhigh）</td><td data-l="独立分">AA Index <b>65</b>（max，#1），$26.54/任务；Vals Index 71.31%（#1/37）；Epoch ECI 174.24（#1）；AA-Omniscience 正确率 79%、条件幻觉率 59.3%；LMArena 尚未上榜（票数不足）</td></tr>
+            <tr data-v="anthropic" data-tier="na"><td class="mname" data-l="模型"><span class="dot d-an"></span>Claude Mythos 5.2<span class="sub">与 Fable 5.2 同权重，护栏不同</span></td><td data-l="发布">2026-11-09</td><td data-l="上下文">1,000,000 / 128,000</td><td class="num" data-l="价格"><span class="pill none">未找到/未核实</span><span class="sub">仅限审核准入，无公开价目</span></td><td data-l="官方分">Terminal-Bench-Science 75.3%；CyScenarioBench 76.3%；CVE Rediscovery 89.6%；de novo binder design 85.1%（24h）</td><td data-l="独立分"><span class="pill none">未找到/未核实</span> 无单独独立测试</td></tr>
+            <tr data-v="anthropic" data-tier="high"><td class="mname" data-l="模型"><span class="dot d-an"></span>Claude Fable 5.1</td><td data-l="发布">2026-09-01</td><td data-l="上下文">1,000,000 / 128,000</td><td class="num" data-l="价格">$10 / $50<span class="sub">缓存 $0.25</span></td><td data-l="官方分">Terminal-Bench 4.0 55.8%；HLE（带工具）65.0%；SWE-bench Pro 81.2%；HealthBench Prof 57.8% 长度调整（Sonnet 5.5 系统卡另记 62.1%——冲突）；PhysicianBench 61.0%</td><td data-l="独立分">AA Index v5.0 49（Google 表引述）；LMArena Text 1502（Max）；Vals Index 未找到</td></tr>
+            <tr data-v="anthropic" data-tier="high"><td class="mname" data-l="模型"><span class="dot d-an"></span>Claude Opus 5.5</td><td data-l="发布">2026-09-22</td><td data-l="上下文">1,000,000 / 128,000<span class="sub">Batch API 300,000</span></td><td class="num" data-l="价格">$4 / $20<span class="sub">快速模式 $8/$40；缓存 $0.20</span></td><td data-l="官方分">HealthBench Prof 65.6% 长度调整（原始 77.1%）；PhysicianBench 68.4%；Terminal-Bench 4.0 66.4%（xhigh）；SWE-bench Pro 89.9%；ProgramBench 91.2%</td><td data-l="独立分">AA Index <b>59</b>（max），$10.04/任务；AA-Omniscience 条件幻觉率 50.3%；LMArena Text 1507（High）；Vals Index 70.2%（厂商转述）</td></tr>
+            <tr data-v="anthropic" data-tier="mid"><td class="mname" data-l="模型"><span class="dot d-an"></span>Claude Sonnet 5.5</td><td data-l="发布">2026-09-28</td><td data-l="上下文">1,000,000 / 128,000</td><td class="num" data-l="价格">$2 / $10<span class="sub">缓存读 $0.10（自 2026-10-07）</span></td><td data-l="官方分">HealthBench Prof <b>69.2%</b> 长度调整（原始 77.1%，Claude 家族最高）；Terminal-Bench 4.0 <b>70.6%</b>（家族最高）；SWE-bench Pro 81.3%；GDPval-AA 1844</td><td data-l="独立分">AA Index <b>56</b>（#3/216，2026-10 初）；LMArena 分数未找到；Vals Index 未找到</td></tr>
+            <tr data-v="anthropic" data-tier="low"><td class="mname" data-l="模型"><span class="dot d-an"></span>Claude Haiku 5.5</td><td data-l="发布">2026-10-07</td><td data-l="上下文">1,000,000 / 128,000</td><td class="num" data-l="价格">$0.10 / $0.50<span class="sub">提示 ≤100K；&gt;100K 为 $0.50/$2.50</span></td><td data-l="官方分">Terminal-Bench 4.0 39.2%（Haiku 4.5 为 0.0%）；HLE（带工具）57.4%；GDPval-AA 1620；SWE-bench Multilingual 83.7%</td><td data-l="独立分">AA Index 未找到；其余独立复测未找到</td></tr>
+            <tr data-v="google" data-tier="mid" data-star="1"><td class="mname" data-l="模型"><span class="dot d-go"></span>Gemini 4 Carbon <span class="pill flag">★旗舰</span></td><td data-l="发布">宣布 2026-10-28；GA 2026-11-10</td><td data-l="上下文">1,048,576（共享）/ 65,536<span class="sub">长解码可达约 1M</span></td><td class="num" data-l="价格">促销 $2 / $10<span class="sub">至 2026-11-30；12-01 起 $4/$20；缓存 $0.10</span></td><td data-l="官方分">AA Index v5.0 59；Vals Index v2.2 70.4%；Agents' Last Exam v1.1 77.4%；AutomationBench 53.9%；GraphWalks BFS F1（256K–1M）96.2%；17 行对比中 15 行领先</td><td data-l="独立分">AA Index v5.0.1 <b>60</b>（high），$5.48/任务（促销价计；按标价为 $7.76）；AA-Omniscience 条件幻觉率 11.4%；LMArena Text 1526（#1/395）；Epoch GPQA Diamond 96.5%（#1）；CursorBench 4.0 60.4%（#1）</td></tr>
+            <tr data-v="google" data-tier="mid"><td class="mname" data-l="模型"><span class="dot d-go"></span>Gemini 4 Argon</td><td data-l="发布">宣布 2026-09-30；GA 2026-10-13</td><td data-l="上下文">1,048,576（共享）/ 65,536<span class="sub">长解码可达约 1M</span></td><td class="num" data-l="价格">促销 $2 / $10<span class="sub">至 2026-11-30；12-01 起 $4/$20；缓存 $0.10</span></td><td data-l="官方分">Vals Index 68.9%（Carbon 表另记 69.2%——冲突）；Terminal-Bench 4.0 57.4%；LABBench 2 88.8%；FrontierSWE v2 55.0%</td><td data-l="独立分">AA Index <b>50</b>（high），$1.99/任务；GPQA Diamond 96.4%（Epoch）；AA-Omniscience 条件幻觉率 <b>4.3%</b>（全场最低）；LMArena Text 1522（#2）</td></tr>
+            <tr data-v="google" data-tier="mid"><td class="mname" data-l="模型"><span class="dot d-go"></span>Gemini 4 Hydrogen</td><td data-l="发布">2026-11-12（GA）</td><td data-l="上下文">1,048,576（共享）/ 64,000<span class="sub">后台长解码可达 1M</span></td><td class="num" data-l="价格">$1.50 / $7.50<span class="sub">全上下文统一价，无促销</span></td><td data-l="官方分">AA Index 51（high；xhigh 54）；Terminal-Bench 4.1 57.0%；Agents' Last Exam v1.1 71.6%；Vals Tax Agent Bench 52.3%（#1）；MKA 53.4%（同级领先）</td><td data-l="独立分">AA Index v5.0.1 <b>51</b>（high），$1.87/任务，8.3 分钟/任务；xhigh 54，$3.16/任务</td></tr>
+            <tr data-v="google" data-tier="low"><td class="mname" data-l="模型"><span class="dot d-go"></span>Gemini 3.8 Flash</td><td data-l="发布">2026-09-02（GA）</td><td data-l="上下文">1,048,576 / 65,536</td><td class="num" data-l="价格">促销 $0.75 / $3.75<span class="sub">至 2026-12-31；2027-01-01 起 $1.50/$7.50</span></td><td data-l="官方分">DeepSWE v1.1 73.7%；Terminal-Bench 2.1 89.4%；LABBench2 86.2%（已发布最高）；BioMysteryBench 较难一半 56.5%；HLE-Verified 54.9%</td><td data-l="独立分">AA Index v4.2 47（high），$0.58/任务（v4.1.1 口径为 59，版本改版不可比）；Vals 汇总 Terminal-Bench 2.1 81.3%（低于自报 89.4%）</td></tr>
+            <tr data-v="google" data-tier="mid"><td class="mname" data-l="模型"><span class="dot d-go"></span>Gemini 3.1 Pro</td><td data-l="发布">2026-02-19（预览）<span class="sub">截至 2026-10-23 仍为预览，无 GA</span></td><td data-l="上下文">1,048,576 / 65,536</td><td class="num" data-l="价格">≤200K：$2 / $12<span class="sub">&gt;200K：$4/$18；缓存 $0.20；无免费层</span></td><td data-l="官方分">GPQA Diamond 94.3%；SWE-bench Verified 80.6%；ARC-AGI-2 77.1%；HLE（无工具）44.4%；MRCR v2 84.9%（128K）/ 26.3%（1M）</td><td data-l="独立分">AA Index v5.0.1 未找到（2026-02 旧版指数曾领先，版本已改不可比）；其余独立复测未找到</td></tr>
+          </tbody>
+        </table>
+  </div>
+  <p class="note" style="margin-top:10px">未纳入主表：GPT-6.1 Astra（2026 年 9 月底因内部对齐测试未通过被搁置，未发布）、GPT-6.2 Sol（仅泄露，未宣布）、Claude Fable 5.5（未宣布，仅传闻）、Gemini 3.6 / 3.7 Flash（已被 3.8 Flash 取代）、GPT-5.6 Terra / Luna 与 GPT-5.5 Pro（同代其他价位，报告仅提及）。</p>
+</section>
+
+<section id="official">
+  <div class="bar"><b class="e-off">官方自报</b><span>厂商用自己的环境跑自己的模型</span><i>第 4 章</i></div>
+  <h2>① 官方评测（厂商自报）</h2>
+  <p class="sec-sub">以下全部是厂商用自己的环境跑自己模型的结果，表中出现的竞争对手分数也是该厂商运行的，<strong>跨厂商不可直接比较</strong>。三款旗舰的医学相关官方分集中在 HealthBench Professional 与 BioBasicsBench 上；MedQA / MedMCQA / PubMedQA 三家均未发布。</p>
+  <div class="cgrid">
+    <figure class="ccard rv">
+      <h4>HealthBench Professional — 长度调整分（厂商运行）</h4>
+      <p class="csub">OpenAI 与 Anthropic 两套运行并存；有冲突值的模型，几个值并列显示，不做取舍</p>
+      <div class="hb" id="chHealth"></div>
+      <p class="cna">未找到：Hydrogen / 3.8 Flash / 3.1 Pro 的 HealthBench / PhysicianBench 分数（Google 未公布医学基准）。图中只含证据文件列出数值的 9 款。</p>
+      <div class="takeaway"><strong>读法：</strong>临床推理这一项，$2/$10 的 Sonnet 5.5 居首；Astra 若按 Anthropic 运行的 70.3% 则会居首——同一基准两次运行差 6.9 分，这本身就是结论：跨厂商比较不可靠。</div>
+      <figcaption class="cap"><span class="etag e-off">官方自报</span>数据：OpenAI GPT-6 Astra 发布页；Anthropic Claude Fable / Mythos 5.2 发布页（含系统卡健康分）。</figcaption>
+    </figure>
+    <figure class="ccard rv">
+      <h4>BioBasicsBench — 湿实验任务（仅 OpenAI 模型，厂商运行）</h4>
+      <p class="csub">100 项任务 · Xhigh 平均 rubric 奖励 · 不是任务解决率 · 任务未公开</p>
+      <div class="hb" id="chBio"></div>
+      <p class="cna">未找到：Claude / Gemini 的 BioBasicsBench 分数（未参测）；GPT-5.5 的该项分数亦未找到。</p>
+      <div class="takeaway"><strong>读法：</strong>Astra 66.7%（95% CI 60.3–73.1%）与 6.1 Sol 62.0%（55.6–68.4%）置信区间重叠，差距不具决定性。OpenAI 原话：「更高的基准分数并不意味着模型已能在实验室中做出可靠判断。」已记录失败：克隆凝胶选错菌落、忽视矛盾证据、菌落计数高估约 12%。</div>
+      <figcaption class="cap"><span class="etag e-off">官方自报</span>数据：OpenAI BioBasicsBench（2026-11-06）。须线 = 95% CI。</figcaption>
+    </figure>
+  </div>
+  <h3>三款旗舰官方要点</h3>
+  <div class="tscroll small"><table class="tbl">
+          <thead><tr><th>旗舰</th><th>官方关键数据（厂商运行）</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td class="mname" data-l="旗舰"><span class="dot d-oa"></span>GPT-6 Astra<span class="sub">2026-09-03 · API id gpt-6-astra</span></td><td data-l="官方分">GPQA Diamond 96.0%；HLE（带工具）57.2%；Terminal-Bench-Science 0.1 64.6%；FrontierCode 1.1 Extended 64.5%；DeepSWE v1.1 74.1%；内部幻觉基准 4.2%（越低越好）；MRCR v2 512K–1M 96.3%</td><td data-l="备注">快速模式最高 2 倍速、2 倍价；Fable 5.1 因拒答被排除在 LifeSciBench / GeneBench / MedChemBench 之外（OpenAI 脚注）</td></tr>
+            <tr><td class="mname" data-l="旗舰"><span class="dot d-an"></span>Claude Fable 5.2<span class="sub">2026-11-09 · 与 Mythos 5.2 同权重</span></td><td data-l="官方分">FrontierCode 2.0 49.1%（xhigh）；FrontierSWE v2 69.9%；Terminal-Bench-Science 0.1 74.6%；SWE-bench Pro 93.0%；Terminal-Bench 4.0 67.6%；HLE（带工具）74.2%；HealthBench 原始 58.8% / 调整 59.6%；PhysicianBench 64.4%</td><td data-l="备注">健康分由 Artificial Analysis 运行（系统卡 §8.16）；价格比 Fable 5.1 低 20%；Anthropic 建议多数工作先用 Opus 5.5（$4/$20）；退役不早于 2027-11-09</td></tr>
+            <tr><td class="mname" data-l="旗舰"><span class="dot d-go"></span>Gemini 4 Carbon<span class="sub">宣布 2026-10-28 · GA 2026-11-10 · 基于 Argon</span></td><td data-l="官方分">Google 17 行表中 15 行领先：AA Index v5.0 59；Vals Index v2.2 70.4%；Terminal-Bench 4.0（AA 运行）65.2%；Agents' Last Exam v1.1 77.4%；AutomationBench 53.9%；Terminal-Bench-Science 0.1（AA 运行）64.8%</td><td data-l="备注">落后的两行：FrontierSWE 2（Astra 65.5% 领先）与 OSWorld-2.1（Opus 5.5 87.2% 领先）；GA 帖称 375 项 agentic honesty 任务 92% 通过、拒绝填写缺失实验数据 98%（厂商，未独立验证）；无免费层</td></tr>
+          </tbody>
+        </table></div>
+  <div class="callout warn">
+          <p><strong>厂商科学轶事都是 n=1、无对照，不作选型依据：</strong>Fable 5.2 的「1,000 个智能体 30 小时形式化费马大定理」「衣壳预测 28/34」；Carbon 的 Axiom Bio 生产分析迁移、蛋白质结构同源物检出提高 40 倍——都只是厂商叙述，没有对照与复核。</p>
+        </div>
+  <p class="src-line">来源：<a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">OpenAI GPT-6 Astra 发布页</a>；<a href="https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/" target="_blank" rel="noopener">OpenAI BioBasicsBench（2026-11-06）</a>；<a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener">Anthropic Fable / Mythos 5.2 发布页</a>；<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">Google Gemini 4 Carbon 宣布</a> 与 <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/" target="_blank" rel="noopener">GA 页</a>。</p>
+</section>
+
+<section id="independent">
+  <div class="bar"><b class="e-ind">独立第三方</b><span>同一套评测跑所有模型</span><i>第 5 章</i></div>
+  <h2>② 独立排行（第三方同口径复测）</h2>
+  <p class="sec-sub">独立方的价值在于同一套评测跑所有模型。当前一代最完整的独立来源是 Artificial Analysis（AA Index v5.0.1，2026-11-16 首页 live 核验）；医学专项独立榜对这一代基本是空白——见下方缺口表。</p>
+  <div class="cgrid">
+    <figure class="ccard rv">
+      <h4>AA Intelligence Index v5.0.1（独立复测）</h4>
+      <p class="csub">9 项评测，60% 为私有测试 · 条上标注证据文件给出的每任务成本 / 时间</p>
+      <div class="hb race" id="chAA"></div>
+      <p class="cna">不入图：Haiku 5.5 / GPT-5.5 / Gemini 3.1 Pro 的 AA Index v5.0.1 分数未找到；Mythos 5.2 未找到 / 未核实。其他版本口径（版本改版不可比）：GPT-6 Sol v4.3.2 47.63、GPT-6 Luna v4.3.2 38.12、GPT-5.6 Sol v4.3.2 46.97、Fable 5.1 v5.0 49（Google 表引述）、3.8 Flash v4.2 47。图中 GPT-6.1 Terra 为 AA Index v5.0 48（发布日快照），Sonnet 5.5 为 56（#3/216，2026-10 初）。</p>
+      <div class="takeaway"><strong>读法：</strong>Fable 5.2 居首但 $26.54/任务、41.8 分钟/任务；Carbon $5.48/任务（促销价计，按标价 $7.76）、33.0 分钟；Astra $6.24/任务、20.8 分钟最快。AA 的 Healthcare &amp; Medical 子指数：Fable 65（#1）、Carbon 57（#3）、Astra 54（#5）；Engineering：Fable 73、Carbon 65、Astra 62。</div>
+      <figcaption class="cap"><span class="etag e-ind">独立第三方</span>数据：Artificial Analysis（AA Index v5.0.1，2026-11-16 live）。</figcaption>
+    </figure>
+    <figure class="ccard rv">
+      <h4>AA-Omniscience 条件幻觉率 — 不知道时猜的比例（越低越好）</h4>
+      <p class="csub">在未答对的问题中给出错误答案而非拒绝的比例 · 独立复测</p>
+      <div class="hb low" id="chHal"></div>
+      <p class="cna">其余 13 款：证据文件中无该项数值，不入图。</p>
+      <div class="takeaway"><strong>读法：</strong>正确率排序正好相反：Fable 79% ＞ Astra 63% ＞ Carbon 58%。Fable 知道得最多，但不知道时猜得也最多——做文献综述时这是最危险的组合；Argon 的 4.3% 是全场最低。</div>
+      <figcaption class="cap"><span class="etag e-ind">独立第三方</span>数据：Artificial Analysis AA-Omniscience。</figcaption>
+    </figure>
+    <figure class="ccard wide rv" id="scWrap">
+      <h4>价格 vs AA Index：性价比赢家不在旗舰层</h4>
+      <p class="csub">横轴对数刻度 · 纵轴 AA Index · 高亮为证据文件点名的性价比模型（GPT-6.1 Sol、Gemini 4 Hydrogen、Claude Sonnet 5.5）</p>
+      <div class="ctl" role="group" aria-label="横轴口径"><button type="button" class="chip" data-x="out" aria-pressed="true">横轴：输出标价 $/1M</button><button type="button" class="chip" data-x="task" aria-pressed="false">横轴：AA 每任务成本</button></div>
+      <div class="sc" id="chScatter"></div>
+      <p class="cna" id="scNa"></p>
+      <figcaption class="cap"><span class="etag e-ind">独立第三方</span>AA Index 与每任务成本：Artificial Analysis（2026-11-16 live）；输出价：总对比表首列价格（Carbon / Argon 为促销价，至 2026-11-30）。</figcaption>
+    </figure>
+  </div>
+  <h3>其他独立榜单</h3>
+  <div class="tscroll small"><table class="tbl">
+          <thead><tr><th>榜单</th><th>结果</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td class="mname" data-l="榜单">Vals Index v2.2<span class="sub">8 项金融/编码/法律/税务基准复合 · 2026-11-15 快照</span></td><td data-l="结果">Fable 5.2 <span class="mono">71.31%</span>（37 款 #1）＞ Sonnet 5.5 <span class="mono">70.85%</span> ＞ Carbon <span class="mono">70.45%</span>（#3）＞ Astra <span class="mono">65.02%</span>（#8）</td><td data-l="说明">每测试成本：Fable $17.94、Carbon $10.51、Astra $21.28</td></tr>
+            <tr><td class="mname" data-l="榜单">LMArena Text（风格控制，2026-11-11）</td><td data-l="结果">Carbon（High）<span class="mono">1526</span>（395 款 #1）＞ Argon <span class="mono">1522</span> ＞ Opus 5.5 <span class="mono">1507</span> ＞ Astra（Max）<span class="mono">1474</span>（#36）</td><td data-l="说明">Fable 5.2 截至 11-11 票数不足、尚未上榜；医学与健康类别：Fable 5.1 1529、Argon 1527、Carbon 1525（274 票，±37）、Opus 5.5 1511</td></tr>
+            <tr><td class="mname" data-l="榜单">Epoch AI — ECI 与 GPQA Diamond</td><td data-l="结果">ECI：Fable 5.2 <span class="mono">174.24</span>（#1，2026-11-15 重估 173.44）＞ Carbon <span class="mono">169.76</span> ＞ Astra <span class="mono">169.16</span>；GPQA Diamond：Carbon <span class="mono">96.5%</span>（#1）＞ Argon 96.4% ＞ Astra 95.8% ＞ Fable 5.2 93.9%（#18）</td><td data-l="说明">ECI 置信区间重叠，领先不具决定性；Fable 分数基于发布前 10 项基准，Astra 为 24 项</td></tr>
+            <tr><td class="mname" data-l="榜单">CursorBench 4.0（Cursor）/ WANDR（Perplexity）</td><td data-l="结果">CursorBench：Carbon（High）<span class="mono">60.4%</span>（#1，$9.22/任务）＞ Fable 5.2（Max）60.0%（$32.79）＞ Opus 5.5 57.8% ＞ Sonnet 5.5 55.5%；WANDR：Carbon 0.857 ＞ Fable 5.2 0.851 ＞ Astra 0.735</td><td data-l="说明">Cursor 内部任务口径；成本差距远大于分数差距</td></tr>
+            <tr><td class="mname" data-l="榜单">AA VIALS-AA（生命科学视觉推理）<span class="sub">161 项任务 · pass^3 · 2026-11-06–10</span></td><td data-l="结果">Fable 5.2 <span class="mono">67%</span> ＞ Carbon <span class="mono">64%</span> ＞ Astra <span class="mono">63%</span> ＞ Opus 5.5 <span class="mono">61%</span></td><td data-l="说明">Fable 每任务约 37 次工具调用，Astra 约 8 次（受测中最少）</td></tr>
+            <tr><td class="mname" data-l="榜单">AA MKA（多模态知识智能体，200 项私有任务）</td><td data-l="结果">Fable 5.2 <span class="mono">57%</span>（$31.97/任务）＞ Carbon <span class="mono">54%</span>（$6.29/任务）＞ Opus 5.5 53% ＞ Astra 50.24%</td><td data-l="说明">Google 报告称前三名统计上无差异；评判器为 GPT-6 Luna（medium）</td></tr>
+            <tr><td class="mname" data-l="榜单">AA Coding Agent Index v2.0（套装，2026-10-23）</td><td data-l="结果">Claude Code＋Opus 5.5 <span class="mono">0.617</span>（$11.42/任务）＞ Antigravity＋Carbon 0.594（$7.74）＞ Codex＋Astra 0.547（$7.04）＞ Codex＋GPT-6.1 Sol 0.541（<span class="mono">$1.50/任务</span>，性价比领先）</td><td data-l="说明">Terminal-Bench 4.1（2026-11-13）：Claude Code 的 Opus 5.5 与 Fable 5.2 并列 65.8%，Sonnet 5.5 63.9%，Codex GPT-6.1 Sol 60.9%，Codex Astra 60.3%</td></tr>
+          </tbody>
+        </table></div>
+  <h3>医学专项独立榜：这一代基本是空白</h3>
+  <div class="tscroll small"><table class="tbl">
+          <thead><tr><th>条目</th><th>状态</th></tr></thead>
+          <tbody>
+            <tr><td class="mname" data-l="条目">Vals MedQA</td><td data-l="状态"><span class="pill none">已归档</span> 饱和（近期模型 &gt;95%），归档最高分 o1 96.52%；三款旗舰无分数</td></tr>
+            <tr><td class="mname" data-l="条目">MedQA / MedMCQA / PubMedQA</td><td data-l="状态"><span class="pill none">未找到</span> 18 款模型中任何一款均未找到分数（2026-11-16 搜索）</td></tr>
+            <tr><td class="mname" data-l="条目">MedHELM</td><td data-l="状态"><span class="pill none">未覆盖</span> 仅有 2026 年 3 月 Nature Medicine 原版（9 款旧模型）；未找到覆盖当前旗舰的 Q2 2026 更新</td></tr>
+            <tr><td class="mname" data-l="条目">Vals MedCode</td><td data-l="状态">最高分 Claude Opus 5 为 63.57%；Fable 5.2 / Carbon / Astra 的分数<span class="pill none">未找到</span></td></tr>
+            <tr><td class="mname" data-l="条目">SWE-bench Pro</td><td data-l="状态">仅 Anthropic 公布 Claude 系分数（Fable 93.0% / Opus 89.9% / Sonnet 81.3% / Fable 5.1 81.2%）；Astra 与 Carbon 均未公布</td></tr>
+          </tbody>
+        </table></div>
+  <p class="src-line">来源：<a href="https://artificialanalysis.ai/" target="_blank" rel="noopener">Artificial Analysis（AA Index v5.0.1，2026-11-16 live）</a>；<a href="https://artificialanalysis.ai/articles/google-deepmind-multimodal-knowledge-agent" target="_blank" rel="noopener">AA MKA</a>；<a href="https://www.vals.ai/llms.txt" target="_blank" rel="noopener">Vals AI</a> 与 <a href="https://www.vals.ai/benchmarks/medqa" target="_blank" rel="noopener">Vals MedQA（已归档）</a>；<a href="https://aimap.page/en/benchmarks/lmarena-text/" target="_blank" rel="noopener">LMArena Text（AIMap）</a>；<a href="https://www.benchleader.com/benchmarks/gpqa_diamond" target="_blank" rel="noopener">Epoch GPQA Diamond（BenchLeader）</a>。</p>
+</section>
+
+<section id="practitioner">
+  <div class="bar"><b class="e-prac">实践者实测</b><span>与基准分开看</span><i>第 6 章</i></div>
+  <h2>③ 实践者测评（与基准分开看）</h2>
+  <p class="sec-sub">先把边界说清：<strong>截至 2026-11-16，没有任何针对当前三款旗舰的系统性临床医生 / 研究者实测研究</strong>——没有生信流程研究、没有湿实验使用研究、没有基金写作评测。能找到的系统性研究用的是上一代模型，只能当方向性先验；针对旗舰的只有个案评测，每项都标了样本量。</p>
+  <div class="prac">
+          <div class="study">
+            <div class="study-head"><h4>文献检索：Cochrane 纳入研究召回（上一代模型）</h4><span class="etype">系统性研究 · 20 个问题 · 720 条回复</span><span class="conf low">可信度：低–中等，仅方向性先验</span></div>
+            <p>Liu 等（arXiv:2608.13786v2，2026-08-13 提交、09-29 修订）：20 个 Cochrane 综述问题 × 3 款聊天机器人（GPT-5.5 / Claude Sonnet 5 / Gemini 3.1 Pro，均带联网）× 3 种角色 × 4 次重复。</p>
+            <ul>
+              <li>Cochrane 纳入研究召回率：ChatGPT <span class="finding">63.1% ±29.5%</span> ＞ Claude <span class="finding">37.0% ±23.8%</span> ＞ Gemini <span class="finding">17.3% ±13.1%</span>（p=2.0e-5）；平均仅 39.2%。</li>
+              <li>「研究者」角色（42.8%）优于临床医生（38.6%）与患者（36.1%）；样本量是唯一显著预测因子（每翻倍 OR 1.50，95% CI 1.24–1.81）；引用已排除研究 5.0%。</li>
+              <li>含义：即便上一代最好的也漏约 37%——聊天机器人替代不了系统综述的数据库检索。当前旗舰无直接证据，本页不把这组数字平移到新一代。</li>
+            </ul>
+            <p class="src-line">来源：<a href="https://arxiv.org/abs/2608.13786v2" target="_blank" rel="noopener">arXiv:2608.13786v2</a>。</p>
+          </div>
+
+          <div class="study">
+            <div class="study-head"><h4>引文可靠性：Gemini 4 Carbon 的 DOI 测试</h4><span class="etype">个案测试 · n=30 条主张 · 无联网 · 3 次运行</span><span class="conf low">可信度：低（样本小，仅测 DOI）</span></div>
+            <ul>
+              <li>TrueStandard（2026-11-12）：Carbon 编造 DOI 率 <span class="finding">5.9%</span>（合并，95% CI 3.0–11.3%）vs Argon 7.6%（p=0.63，不显著）；把真实 DOI 归给错误论文：Carbon 11.1% vs Argon 15.3%（p=0.37，不显著）。</li>
+              <li>与 AA-Omniscience 的方向一致（Gemini 系更少编造），但 n=30 太小，差异不显著——每条 AI 给的引文仍须回 PubMed / Crossref 核验。</li>
+            </ul>
+            <p class="src-line">来源：<a href="https://truestandard.ai/releases/gemini-4-carbon" target="_blank" rel="noopener">TrueStandard（2026-11-12）</a>。</p>
+          </div>
+
+          <div class="study">
+            <div class="study-head"><h4>代码库审计：Theo Browne 实测 Gemini 4 Carbon</h4><span class="etype">个案评测 · n=1 名开发者 · 非盲、无预注册</span><span class="conf low">可信度：低</span></div>
+            <ul>
+              <li>虚假主张率：Carbon <span class="finding">18%</span>（Rust 审查 79 条主张中 23 条虚假），较 Argon 的 36% 减半，但作者称其「远差于 Muse 系列之外的任何模型」（多数其他模型 0–1%）。</li>
+              <li>速度：同一任务 Carbon（low）22 分 21 秒 vs Opus 5.5（high）9 分 33 秒；9 轮代码审查 Carbon 平均 16 分 44 秒 vs Opus 5.5 的 3 分 31 秒（约 5 倍慢）；首 token &gt;11 秒，约为 Fable 5.2 的 20 倍；同一 2 个文件被重读 16–17 次。</li>
+              <li>正面：为其开源项目的一份真实安全报告给出了最佳修复方案；作者结论是「几乎只对网络安全开发工作有用」。</li>
+            </ul>
+            <p class="src-line">来源：<a href="https://www.iamaurya.com/blog/gemini-4-carbon-claims-vs-independent-tests" target="_blank" rel="noopener">iamaurya 汇总</a>；<a href="https://dailyagentic.info/article/gemini-4-carbon-is-5-times-slower-coder-says" target="_blank" rel="noopener">Daily Agentic</a>。</p>
+          </div>
+
+          <div class="study">
+            <div class="study-head"><h4>智能体长程工作：Ethan Mollick 实测 Fable 5.2</h4><span class="etype">个案评测 · n=1 · 预发布使用 · 无计量</span><span class="conf low">可信度：低（轶事，但有公开产物）</span></div>
+            <ul>
+              <li>一段提示生成 471 个 3D 世界、约 25,000 次智能体运行、143 万行代码；智能体写出 87,500 词规则书，但产出从每天数百降至每天约十余个而「AI 自己没有注意到」——需要另设评审团队纠错。</li>
+              <li>另有 182 页研究论文（未按要求预注册）等案例；与 Opus 5.5 的 5 例对比中 Fable 赢 4 例。</li>
+              <li>Devin / 早期测试者（厂商帖汇总，无独立验证）：浏览器电子表格跑 50 小时、约 $11,700 token——长程智能体的成本量级参考。</li>
+            </ul>
+            <p class="src-line">来源：Mollick 公开评测（2026-11-09，经研究报告汇总）；<a href="https://multiai.co/blog/fable-5-2-vs-opus-5-5" target="_blank" rel="noopener">MultiAI 自测</a>（892,000 token 文档上 Opus 5.5 快于 Fable 5.2；小型厂商相邻博客，低置信度）。</p>
+          </div>
+
+          <div class="study">
+            <div class="study-head"><h4>临床 / 生信 / 湿实验 / 基金写作的实测</h4><span class="etype">证据缺失</span><span class="conf none">可信度：无</span></div>
+            <p><strong>未找到</strong>针对当前旗舰的系统性临床医生 / 研究者实测、生物信息学流程研究、湿实验使用研究或基金写作评测（厂商轶事除外）。Claude Science（测试版，60+ 科学数据库、沙箱代码执行）在评测文章中被提及，但无附带评测数据。这四类用途的选型目前只能靠基准外推，见下一节的置信度标注。</p>
+          </div>
+        </div>
+</section>
+
+<section id="limits">
+  <div class="bar"><b>局限</b><span>上面所有数字不能证明什么</span><i>第 7 章</i></div>
+  <h2>局限与未证之事</h2>
+  <p class="sec-sub">这一节和排行同样重要：它划定上面所有数字「不能证明什么」。</p>
+  <div class="limits">
+          <div class="limit"><span class="n">01</span><p><strong>厂商互报不可比</strong>Astra 的 HealthBench Professional 有 63.4%（OpenAI 自报）、70.3% 与 66.0%（Anthropic 两份系统卡）三个值；Fable 5.1 有 57.8% 与 62.1% 两值；GPT-5.5 有 51.8% 与 49.5% 两值；Argon 的 Vals Index 有 68.9% 与 69.2% 两值。评分器、长度调整、努力级别、版本都不同，本页一律并列、不取舍。</p></div>
+          <div class="limit"><span class="n">02</span><p><strong>医学基准大面积空白</strong>MedQA 已饱和归档；MedQA / MedMCQA / PubMedQA 对 18 款模型一款分数都没有；MedHELM 无覆盖当前旗舰的更新；PhysicianBench 只有 Anthropic 公布 4 款 Claude。临床选型证据比看上去薄得多。</p></div>
+          <div class="limit"><span class="n">03</span><p><strong>BioBasicsBench 只测了一家</strong>仅 7 款 OpenAI 模型参测，任务未公开、无法独立复核，且分数是 rubric 部分计分而非解决率。湿实验排行只在 OpenAI 家族内有效。</p></div>
+          <div class="limit"><span class="n">04</span><p><strong>没有临床头对头与实测研究</strong>当前旗舰之间不存在临床结局、诊断准确率或患者安全的前瞻比较；实践者侧的系统性研究（Cochrane 召回）测的是上一代，只能当先验。</p></div>
+          <div class="limit"><span class="n">05</span><p><strong>领先幅度多在噪声内</strong>Epoch ECI 前三名置信区间重叠；MKA 前三名统计上无差异；PhysicianBench 系统卡自称「在噪声范围内」；BioBasicsBench 前两名置信区间重叠。榜首的名次别当成定论。</p></div>
+          <div class="limit"><span class="n">06</span><p><strong>上下文口径与长上下文衰减</strong>Google 的 1M 是输入＋思考＋输出共享，同步输出默认仅约 64K；Gemini 3.1 Pro 的 MRCR 召回从 128K 的 84.9% 跌到 1M 的 26.3%。窗口大小 ≠ 可靠回忆。</p></div>
+          <div class="limit"><span class="n">07</span><p><strong>价格有时效</strong>Carbon / Argon 促销价到 2026-11-30，12-01 起 $4/$20；3.8 Flash 到 2026-12-31；GPT-5.6 Sol 促销至少到 2026-11-21。AA 的 Carbon 每任务成本 $5.48（促销计）与 $7.76（标价计）两口径并存。预算以厂商定价页实时值为准。</p></div>
+          <div class="limit"><span class="n">08</span><p><strong>能力与「不编造」是两回事</strong>AA-Omniscience 正确率最高的 Fable 5.2（79%）条件幻觉率也最高（59.3%）；Browne 实测 Carbon 有 18% 虚假主张。综述与引文场景必须单独看幻觉指标，并逐条核验。</p></div>
+        </div>
+  <div class="missing">
+          <h4>明确「未找到」的条目（不要脑补）</h4>
+          <ul>
+            <li>MedQA / MedMCQA / PubMedQA：18 款模型中任何一款均<strong>未找到</strong>分数。</li>
+            <li>MedHELM 覆盖当前旗舰的 Q2 2026 更新：<strong>未找到</strong>。</li>
+            <li>BioBasicsBench 的 Claude / Gemini 分数：<strong>未找到</strong>（未参测）；GPT-5.5 的该项分数亦未找到。</li>
+            <li>SWE-bench / SWE-bench Pro：GPT-6 Astra 与 Gemini 4 Carbon 均<strong>未公布</strong>。</li>
+            <li>Mythos 5.2 的公开价格与独立复测：<strong>未找到 / 未核实</strong>（仅限审核准入）。</li>
+            <li>GPT-6 Sol 的官方基准分数：<strong>未找到</strong>（无独立系统卡）。</li>
+            <li>Haiku 5.5 / GPT-5.5 / Gemini 3.1 Pro 的 AA Index v5.0.1 分数；Fable 5.2 的 LMArena Text 排名（票数不足未上榜）；Sonnet 5.5 / Fable 5.1 / GPT-6 Sol 的 Vals Index：均<strong>未找到</strong>。</li>
+            <li>Hydrogen / 3.8 Flash / 3.1 Pro 的 HealthBench / PhysicianBench 分数：<strong>未找到</strong>（Google 未公布医学基准）。</li>
+            <li>针对当前旗舰的系统性临床 / 生信 / 湿实验 / 基金写作实测：<strong>未找到</strong>。</li>
+          </ul>
+        </div>
+</section>
+
+<section id="sources" class="srcs">
+  <div class="bar"><b>来源</b><span>2026-11-16 访问核验</span><i>第 8 章</i></div>
+  
+        <h3>主要来源（2026-11-16 访问核验）</h3>
+        <ol>
+          <li>OpenAI 官方：<a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">GPT-6 Astra 发布页</a>；<a href="https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/" target="_blank" rel="noopener">BioBasicsBench</a>；<a href="https://developers.openai.com/api/docs/models/gpt-5.5" target="_blank" rel="noopener">GPT-5.5 模型页</a></li>
+          <li>Anthropic 官方：<a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener">Claude Fable / Mythos 5.2 发布页</a>（含系统卡健康分）</li>
+          <li>Google 官方：<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">Gemini 4 Carbon 宣布</a>；<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/" target="_blank" rel="noopener">Carbon GA 页</a>；<a href="https://uhnivenko.com/signals/gemini-4-carbon-coding-agents-benchmarks-access" target="_blank" rel="noopener">Carbon 17 行表转录</a></li>
+          <li>Artificial Analysis：<a href="https://artificialanalysis.ai/" target="_blank" rel="noopener">首页（AA Index v5.0.1 live）</a>；<a href="https://artificialanalysis.ai/articles/google-deepmind-multimodal-knowledge-agent" target="_blank" rel="noopener">MKA</a>；<a href="https://modelmenu.dev/best-llm-for-coding" target="_blank" rel="noopener">Coding Agent Index</a></li>
+          <li>Vals AI：<a href="https://www.vals.ai/llms.txt" target="_blank" rel="noopener">llms.txt</a>；<a href="https://www.vals.ai/benchmarks/medqa" target="_blank" rel="noopener">MedQA（已归档）</a>；<a href="https://benchlm.ai/benchmarks/valsindex" target="_blank" rel="noopener">Vals Index</a></li>
+          <li>LMArena / Epoch：<a href="https://aimap.page/en/benchmarks/lmarena-text/" target="_blank" rel="noopener">LMArena Text（AIMap）</a>；<a href="https://www.benchleader.com/benchmarks/gpqa_diamond" target="_blank" rel="noopener">Epoch GPQA Diamond</a>；LiveBench 2.0（2026-11-12）</li>
+          <li>VIALS-AA：<a href="https://news.sulat.com/2026/11/10/claude-fable-5-2-mythos-devin-early-access-builds/" target="_blank" rel="noopener">Sulat 汇总</a>；MKA 报道：<a href="https://www.techtimes.com/articles/330437/20261111/gemini-4-carbon-statistically-ties-claude-fable-52-mka-benchmark-five-six-times-lower-cost.htm" target="_blank" rel="noopener">TechTimes</a></li>
+          <li>实践者：<a href="https://arxiv.org/abs/2608.13786v2" target="_blank" rel="noopener">Liu 等 Cochrane 检索研究（arXiv:2608.13786v2）</a>；<a href="https://truestandard.ai/releases/gemini-4-carbon" target="_blank" rel="noopener">TrueStandard Carbon 引文测试</a>；<a href="https://www.iamaurya.com/blog/gemini-4-carbon-claims-vs-independent-tests" target="_blank" rel="noopener">Browne 审计汇总</a>；<a href="https://theagenticweekly.com/best/ai-coding-agents" target="_blank" rel="noopener">Terminal-Bench 4.1 榜单</a></li>
+        </ol>
+        <p class="foot-note">本页所有分数均来自上列来源，未做推算或补全；查不到的一律标「未找到 / 未核实」，来源冲突处并列两值。本页为 2026-11-16 的检索快照；Carbon / Argon 将于 2026-12-01 调价，定型选型前请复核厂商定价页与最新榜单。</p>
+      
+</section>
+
+<footer class="sitefoot">本页数字全部来自上列来源的检索快照，本站只做排版与重绘图表，未做推算或补全。头图 3D 场景与图表为本站依据同一份数据绘制。仅供学习交流，不构成医疗或采购建议。· aiai 学院 · 前沿观察特刊 · <a href="../#frontier">返回前沿观察</a></footer>
+</main>
+
+<script>window.LLM_RANK_MODELS=[{"name": "GPT-6 Astra", "short": "GPT-6 Astra", "v": "openai", "star": 1, "out": 50, "aa": 57, "kind": "v501", "rel": "2026-09-03", "price": "$10 / $50；>272K 提示：$20/$75；缓存 $1", "aaTxt": "AA Index 57（max），$6.24/任务", "ind": "AA Index 57（max），$6.24/任务；AA-Omniscience 条件幻觉率 49.8%；Vals Index 65.02%（#8）；LMArena Text 1474（#36）"}, {"name": "GPT-6.1 Sol", "short": "GPT-6.1 Sol", "v": "openai", "star": 0, "out": 10, "aa": 55, "kind": "v501", "rel": "2026-09-29", "price": "$2 / $10；缓存 $0.10；>272K：$4/$15", "aaTxt": "AA Index 55（max），$1.27/任务", "ind": "AA Index 55（max），$1.27/任务；AA HLE 52.9%；LiveBench 81.6"}, {"name": "GPT-6 Sol", "short": "GPT-6 Sol", "v": "openai", "star": 0, "out": 10, "aa": 47.63, "kind": "old", "rel": "2026-09-22", "price": "$2 / $10；缓存 $0.20", "aaTxt": "AA Index v4.3.2 47.63（max）", "ind": "AA Index v4.3.2 47.63（max）；AA Coding Agent Index 57；v5.0.1 未找到"}, {"name": "GPT-6.1 Terra", "short": "GPT-6.1 Terra", "v": "openai", "star": 0, "out": 5, "aa": 48, "kind": "v501", "rel": "2026-10-26", "price": "$1 / $5；缓存 $0.05；>272K：$2/$7.50", "aaTxt": "AA Index v5.0 48（发布日快照）", "ind": "AA Index v5.0 48（发布日快照）；MLCR-AA 30.6%"}, {"name": "GPT-6 Luna", "short": "GPT-6 Luna", "v": "openai", "star": 0, "out": 0.5, "aa": 38.12, "kind": "old", "rel": "2026-09-22", "price": "$0.10 / $0.50；缓存 $0.01", "aaTxt": "AA Index v4.3.2 38.12（max），$0.07/任务", "ind": "AA Index v4.3.2 38.12（max），$0.07/任务；HLE 38.5%；LiveBench 72.0"}, {"name": "GPT-5.6 Sol", "short": "GPT-5.6 Sol", "v": "openai", "star": 0, "out": 20, "aa": 46.97, "kind": "old", "rel": "预览 2026-06-26；GA 2026-07-09", "price": "促销 $4 / $20；至少至 2026-11-21；标价 $5/$30", "aaTxt": "AA Index v4.3.2 46.97", "ind": "AA Index v4.3.2 46.97；v5.0.1 未找到"}, {"name": "GPT-5.5", "short": "GPT-5.5", "v": "openai", "star": 0, "out": 30, "aa": null, "kind": "none", "rel": "2026-04-23；ChatGPT/Codex 已于 2026-10-14 退役，API 仍在", "price": "$5 / $30；缓存 $0.50；>272K：$10/$45", "aaTxt": "AA Index v5.0.1 未找到", "ind": "LiveBench 80.2；AA Index v5.0.1 未找到；BioBasicsBench 未找到"}, {"name": "Claude Fable 5.2", "short": "Fable 5.2", "v": "anthropic", "star": 1, "out": 40, "aa": 65, "kind": "v501", "rel": "2026-11-09", "price": "$8 / $40；快速模式 $16/$80；缓存 $0.20", "aaTxt": "AA Index 65（max，#1），$26.54/任务", "ind": "AA Index 65（max，#1），$26.54/任务；Vals Index 71.31%（#1/37）；Epoch ECI 174.24（#1）；AA-Omniscience 正确率 79%、条件幻觉率 59.3%；LMArena 尚未上榜（票数不足）"}, {"name": "Claude Mythos 5.2", "short": "Mythos 5.2", "v": "anthropic", "star": 0, "out": null, "aa": null, "kind": "none", "rel": "2026-11-09", "price": "未找到/未核实；仅限审核准入，无公开价目", "aaTxt": "独立复测：未找到/未核实 无单独独立测试", "ind": "未找到/未核实 无单独独立测试"}, {"name": "Claude Fable 5.1", "short": "Fable 5.1", "v": "anthropic", "star": 0, "out": 50, "aa": 49, "kind": "old", "rel": "2026-09-01", "price": "$10 / $50；缓存 $0.25", "aaTxt": "AA Index v5.0 49（Google 表引述）", "ind": "AA Index v5.0 49（Google 表引述）；LMArena Text 1502（Max）；Vals Index 未找到"}, {"name": "Claude Opus 5.5", "short": "Opus 5.5", "v": "anthropic", "star": 0, "out": 20, "aa": 59, "kind": "v501", "rel": "2026-09-22", "price": "$4 / $20；快速模式 $8/$40；缓存 $0.20", "aaTxt": "AA Index 59（max），$10.04/任务", "ind": "AA Index 59（max），$10.04/任务；AA-Omniscience 条件幻觉率 50.3%；LMArena Text 1507（High）；Vals Index 70.2%（厂商转述）"}, {"name": "Claude Sonnet 5.5", "short": "Sonnet 5.5", "v": "anthropic", "star": 0, "out": 10, "aa": 56, "kind": "v501", "rel": "2026-09-28", "price": "$2 / $10；缓存读 $0.10（自 2026-10-07）", "aaTxt": "AA Index 56（#3/216，2026-10 初）", "ind": "AA Index 56（#3/216，2026-10 初）；LMArena 分数未找到；Vals Index 未找到"}, {"name": "Claude Haiku 5.5", "short": "Haiku 5.5", "v": "anthropic", "star": 0, "out": 0.5, "aa": null, "kind": "none", "rel": "2026-10-07", "price": "$0.10 / $0.50；提示 ≤100K；>100K 为 $0.50/$2.50", "aaTxt": "AA Index 未找到", "ind": "AA Index 未找到；其余独立复测未找到"}, {"name": "Gemini 4 Carbon", "short": "Gemini 4 Carbon", "v": "google", "star": 1, "out": 10, "aa": 60, "kind": "v501", "rel": "宣布 2026-10-28；GA 2026-11-10", "price": "促销 $2 / $10；至 2026-11-30；12-01 起 $4/$20；缓存 $0.10", "aaTxt": "AA Index v5.0.1 60（high），$5.48/任务（促销价计；按标价为 $7.76）", "ind": "AA Index v5.0.1 60（high），$5.48/任务（促销价计；按标价为 $7.76）；AA-Omniscience 条件幻觉率 11.4%；LMArena Text 1526（#1/395）；Epoch GPQA Diamond 96.5%（#1）；CursorBench 4.0 60.4%（#1）"}, {"name": "Gemini 4 Argon", "short": "Gemini 4 Argon", "v": "google", "star": 0, "out": 10, "aa": 50, "kind": "v501", "rel": "宣布 2026-09-30；GA 2026-10-13", "price": "促销 $2 / $10；至 2026-11-30；12-01 起 $4/$20；缓存 $0.10", "aaTxt": "AA Index 50（high），$1.99/任务", "ind": "AA Index 50（high），$1.99/任务；GPQA Diamond 96.4%（Epoch）；AA-Omniscience 条件幻觉率 4.3%（全场最低）；LMArena Text 1522（#2）"}, {"name": "Gemini 4 Hydrogen", "short": "Gemini 4 Hydrogen", "v": "google", "star": 0, "out": 7.5, "aa": 51, "kind": "v501", "rel": "2026-11-12（GA）", "price": "$1.50 / $7.50；全上下文统一价，无促销", "aaTxt": "AA Index v5.0.1 51（high），$1.87/任务，8.3 分钟/任务", "ind": "AA Index v5.0.1 51（high），$1.87/任务，8.3 分钟/任务；xhigh 54，$3.16/任务"}, {"name": "Gemini 3.8 Flash", "short": "Gemini 3.8 Flash", "v": "google", "star": 0, "out": 3.75, "aa": 47, "kind": "old", "rel": "2026-09-02（GA）", "price": "促销 $0.75 / $3.75；至 2026-12-31；2027-01-01 起 $1.50/$7.50", "aaTxt": "AA Index v4.2 47（high），$0.58/任务（v4.1.1 口径为 59，版本改版不可比）", "ind": "AA Index v4.2 47（high），$0.58/任务（v4.1.1 口径为 59，版本改版不可比）；Vals 汇总 Terminal-Bench 2.1 81.3%（低于自报 89.4%）"}, {"name": "Gemini 3.1 Pro", "short": "Gemini 3.1 Pro", "v": "google", "star": 0, "out": 12, "aa": null, "kind": "none", "rel": "2026-02-19（预览）；截至 2026-10-23 仍为预览，无 GA", "price": "≤200K：$2 / $12；>200K：$4/$18；缓存 $0.20；无免费层", "aaTxt": "AA Index v5.0.1 未找到（2026-02 旧版指数曾领先，版本已改不可比）", "ind": "AA Index v5.0.1 未找到（2026-02 旧版指数曾领先，版本已改不可比）；其余独立复测未找到"}];
+window.LLM_RANK_UC_ORDER=["clin", "wet", "lit", "bio", "value", "write", "eng"];
+window.LLM_RANK_USECASES=[
+        { id: 'lit', tab: '文献综述与证据合成', title: '医学文献综述与证据合成',
+          note: '置信度：中等。前两名主要由幻觉率与 MKA 支撑，而非直接的检索召回率——唯一的系统性 Cochrane 研究测的是上一代模型。',
+          ranks: [
+            { name: 'Gemini 4 Argon', vendor: 'google', body: 'AA-Omniscience 条件幻觉率 <b>4.3%</b>，全场最低<span class="et et-i">（独立）</span>；LABBench 2 88.8%<span class="et et-o">（厂商）</span>；LMArena Text 1522（#2）。<b>代价：</b>MKA 分数未找到；$2/$10 促销价 2026-11-30 到期。' },
+            { name: 'Gemini 4 Carbon', vendor: 'google', body: 'MKA 54%（独立，与榜首统计上无差异），$6.29/任务 vs Fable 的 $31.97；条件幻觉率 11.4%；TrueStandard 编造 DOI 率 5.9%（n=30）。厂商称拒绝填写缺失实验数据 98%（未独立验证）。<b>代价：</b>慢——AA 33.0 分钟/任务，Browne 实测约 5 倍于 Opus 5.5。' },
+            { name: 'Claude Fable 5.2', vendor: 'anthropic', body: 'MKA 57% 最高<span class="et et-i">（独立）</span>；VIALS-AA 67%；AA-Omniscience 正确率 79% 最高。<b>代价：</b>不知道时猜得最多（条件幻觉率 59.3%），综述里「自信编造」风险最高；$26.54/任务最贵。' },
+            { name: 'GPT-6 Astra', vendor: 'openai', body: 'GPQA Diamond 96.0%<span class="et et-o">（厂商）</span>；GDP.pdf 全通过 31.0% 最高<span class="et et-i">（独立）</span>；MKA 50.24%。<b>代价：</b>条件幻觉率 49.8%，无系统性检索研究。' },
+            { name: 'Claude Opus 5.5', vendor: 'anthropic', body: 'MKA 53%<span class="et et-i">（独立）</span>；AA-Briefcase Elo 1801。<b>代价：</b>均衡但无突出综述证据；$10.04/任务。6.1 Sol / Sonnet 5.5 / Hydrogen 等无 MKA 或综述类独立分数，无法排行。' }
+          ] },
+        { id: 'clin', tab: '临床推理', title: '临床推理',
+          note: '置信度：中等。Sonnet 5.5 居首基于单一厂商体系内的比较；MedQA / MedMCQA / PubMedQA 对 18 款模型均无分数，PhysicianBench 仅 Anthropic 公布。',
+          ranks: [
+            { name: 'Claude Sonnet 5.5', vendor: 'anthropic', body: 'HealthBench Professional <b>69.2%</b> 长度调整（厂商，Claude 家族最高，原始 77.1%）；HealthBench 各努力级别均领先 Opus 5.5 与 Fable 5.1。<b>代价：</b>$2/$10 仅为 Opus 一半、Fable 5.1 的五分之一；但 PhysicianBench 分数未找到。' },
+            { name: 'GPT-6 Astra', vendor: 'openai', body: 'HealthBench Professional <b>70.3%</b>（Anthropic 运行）vs <b>63.4%</b>（OpenAI 自报）——两次运行冲突：取前者居首，取后者落至第 4。同一基准差 6.9 分，跨厂商比较不可靠。' },
+            { name: 'Claude Opus 5.5', vendor: 'anthropic', body: 'PhysicianBench <b>68.4%</b>（厂商，家族最高，系统卡称在噪声范围内）；HealthBench Professional 65.6% 长度调整（原始 77.1%）；HealthBench 原始 64.3% 最高。临床问答最稳，但长度调整后落后 Sonnet 与 Fable。' },
+            { name: 'Claude Fable 5.2', vendor: 'anthropic', body: 'HealthBench Professional 67.7% 长度调整（原始 71.1%，AA 运行）；PhysicianBench 64.4%。<b>代价：</b>$8/$40 最贵一档，原始分低于 Opus。' },
+            { name: 'GPT-6.1 Terra', vendor: 'openai', body: 'HealthBench Professional 62.7%<span class="et et-o">（厂商）</span>；MentalHealthBench 55.5%。<b>代价：</b>$1/$5 是临床推理性价比最高者；但 HealthBench 55.1% 低于 5.6 Terra 的 57.0%。上一代 GPT-5.6 Sol（60.5%）/ GPT-5.5（51.8%）仅作基线。' }
+          ] },
+        { id: 'bio', tab: '生信编码', title: '生物信息学编码',
+          note: '置信度：中等。所有编码证据均为通用软件工程基准——没有任何针对 Nextflow / Snakemake、单细胞分析、变异 calling 的系统性研究。',
+          ranks: [
+            { name: 'Claude Fable 5.2', vendor: 'anthropic', body: 'FrontierCode 2.0 49.1% xhigh、FrontierSWE v2 69.9%、SWE-bench Pro 93.0%、Terminal-Bench 4.0 67.6%（均厂商）；AA Index 65<span class="et et-i">（独立）</span>；Terminal-Bench 4.1 套装 65.8%。<b>代价：</b>$26.54/任务、41.8 分钟最贵最慢；ProgramBench 上 68% 任务耗尽上下文。' },
+            { name: 'Claude Sonnet 5.5', vendor: 'anthropic', body: 'Terminal-Bench 4.0 <b>70.6%</b>（厂商，家族最高）；SWE-bench Pro 81.3%；Terminal-Bench 4.1 63.9%<span class="et et-i">（独立）</span>；AA Index 56。<b>代价：</b>$2/$10 编码性价比之王；FrontierCode / FrontierSWE 分数未找到。' },
+            { name: 'Claude Opus 5.5', vendor: 'anthropic', body: 'SWE-bench Pro 89.9%、ProgramBench 91.2%<span class="et et-o">（厂商）</span>；AA Coding Agent Index 0.617（独立，Claude Code 套装最高）；Terminal-Bench 4.1 65.8%。<b>代价：</b>$4/$20，为 Fable 一半。' },
+            { name: 'Gemini 4 Carbon', vendor: 'google', body: 'CursorBench 4.0 60.4% #1（独立，$9.22/任务）；Terminal-Bench 4.0（AA）65.2%；LMArena Coding 1568 #1。<b>代价：</b>Browne 实测约 5 倍慢于 Opus 5.5、18% 虚假主张。' },
+            { name: 'GPT-6 Astra', vendor: 'openai', body: 'DeepSWE v1.1 74.1%、Terminal-Bench-Science 64.6%<span class="et et-o">（厂商）</span>；Codex＋Astra 的 AA Coding Agent Index 0.547<span class="et et-i">（独立）</span>。终端科学任务强，通用编码落后 Claude 系。性价比备选：GPT-6.1 Sol 套装 0.541、仅 $1.50/任务。' }
+          ] },
+        { id: 'wet', tab: '湿实验 / 实验设计', title: '湿实验与实验设计',
+          note: '关键说明：BioBasicsBench 仅测 OpenAI 模型、任务未公开——本排行只在 OpenAI 家族内有效；Claude 与 Gemini 在湿实验上的相对位置完全未知，无法自信排行。',
+          ranks: [
+            { name: 'GPT-6 Astra', vendor: 'openai', body: 'BioBasicsBench <b>66.7%</b>（95% CI 60.3–73.1%，官方，2026-11-06）。唯一有湿实验基准分数的旗舰。<b>代价：</b>OpenAI 明确警告分数 ≠ 实验室可靠判断；已记录选错菌落、忽视矛盾证据、计数高估约 12%。' },
+            { name: 'GPT-6.1 Sol', vendor: 'openai', body: 'BioBasicsBench 62.0%（95% CI 55.6–68.4%）。与 Astra 置信区间重叠，差距不具决定性；$2/$10。' },
+            { name: 'GPT-5.6 Sol', vendor: 'openai', body: 'BioBasicsBench 43.8%<span class="et et-o">（官方）</span>——上一代基线。' },
+            { name: 'GPT-6 Luna', vendor: 'openai', body: 'BioBasicsBench 38.3%<span class="et et-o">（官方）</span>。最便宜，但湿实验能力最弱。' },
+            { name: 'Claude 全系 / Gemini 全系', vendor: 'anthropic', body: '<b>未找到 BioBasicsBench 分数，无法排行。</b>相邻证据（不同基准、不可直接比）：Argon LABBench 2 88.8%<span class="et et-o">（厂商）</span>、3.8 Flash LABBench2 86.2%<span class="et et-o">（厂商）</span>、Mythos 5.2 de novo binder design 85.1%（厂商，24h）。结论：只能当起草助手，方案必须人工复核。' }
+          ] },
+        { id: 'write', tab: '长文档 / 基金写作', title: '长文档与基金写作',
+          note: '置信度：低至中等。没有任何独立的长文档 / 基金写作横向测试，本排行是长上下文检索与文档理解基准的外推，不是真实基金写作成绩。',
+          ranks: [
+            { name: 'Gemini 4 Carbon', vendor: 'google', body: 'GraphWalks BFS F1（256K–1M）<b>96.2%</b><span class="et et-o">（厂商）</span>；MKA 54%<span class="et et-i">（独立）</span>；GDP.pdf 全通过 28.4%。<b>代价：</b>每任务 33.0 分钟，首 token 慢。' },
+            { name: 'Gemini 4 Argon', vendor: 'google', body: 'GraphWalks 在其厂商表中领先；Vals Index 68.9%（文档密集型知识工作）；LMArena Text 1522<span class="et et-i">（独立）</span>。<b>代价：</b>与 Carbon 同架构、更便宜（$1.99/任务）；MKA 分数未找到。' },
+            { name: 'GPT-6 Astra', vendor: 'openai', body: 'MRCR v2 8-needle 512K–1M 96.3%<span class="et et-o">（厂商）</span>；GDP.pdf 全通过 31.0% 最高<span class="et et-i">（独立）</span>。<b>代价：</b>128K 输出上限低于 Google 的长解码。' },
+            { name: 'Claude Opus 5.5', vendor: 'anthropic', body: 'ProgramBench 91.2%<span class="et et-o">（厂商）</span>；MultiAI 自测 892,000 token 文档快于 Fable 5.2（个案，n 未说明，低置信度）；AA-Briefcase Elo 1801<span class="et et-i">（独立）</span>。<b>代价：</b>GDP.pdf 全通过 26.2% 低于 Astra。' },
+            { name: 'Claude Fable 5.2', vendor: 'anthropic', body: 'AA-Briefcase Elo 1785；VIALS-AA 67%<span class="et et-i">（独立）</span>。<b>代价：</b>ProgramBench 上 68% 任务耗尽上下文；$26.54/任务。备选 Hydrogen：MKA 53.4%（同级领先）＋后台长解码可达 1M 输出，但 AA Index 仅 51。' }
+          ] },
+        { id: 'eng', tab: 'Agentic 工程', title: 'Agentic 工程（智能体工程）',
+          note: '置信度：中等。无针对医学科研智能体工作流（文献筛选、数据提取、实验记录）的系统性研究；Mollick 与 Devin 的轶事均为 n=1 且无对照。',
+          ranks: [
+            { name: 'Claude Fable 5.2', vendor: 'anthropic', body: 'AA Index 65 #1、Epoch ECI 174.24 #1（独立，置信区间与 Astra 重叠）；OSWorld 2.1 offline 89.3%、Remote Labor Index 41.3%<span class="et et-o">（厂商）</span>；LMArena Agent 28.6% #1。<b>代价：</b>$26.54/任务、41.8 分钟；Mollick 实测中智能体需另设评审团队纠错。' },
+            { name: 'Gemini 4 Carbon', vendor: 'google', body: 'AA Index 60<span class="et et-i">（独立）</span>；CursorBench 4.0 60.4% #1；AutomationBench 53.9% 领先<span class="et et-o">（厂商）</span>；WANDR 0.857；LMArena Text 1526 #1。<b>代价：</b>慢——Browne 实测约 5 倍于 Opus 5.5。' },
+            { name: 'Claude Opus 5.5', vendor: 'anthropic', body: 'AA Index 59<span class="et et-i">（独立）</span>；OSWorld 2.1 87.2%（厂商，Google 表中领先 Carbon）；CursorBench 57.8%。Anthropic 推荐的默认起点，$4/$20 为 Fable 一半。' },
+            { name: 'Claude Sonnet 5.5', vendor: 'anthropic', body: 'AA Index 56<span class="et et-i">（独立）</span>；Terminal-Bench 4.0 70.6%<span class="et et-o">（厂商）</span>；GDPval-AA 1844。$2/$10，智能体性价比最高。' },
+            { name: 'GPT-6 Astra', vendor: 'openai', body: 'AA Index 57<span class="et et-i">（独立）</span>；OSWorld 2.0 72.6%（厂商，约 40 分钟/任务）。智能体速度最快（AA 20.8 分钟/任务），但 AutomationBench（41.4%）与 OSWorld 均落后。便宜备选：Argon（AA 50，$1.99/任务）/ Hydrogen（AA 51，$1.87/任务，8.3 分钟）。' }
+          ] }
+      ];</script>
+<script src="../assets/llm-rankv1.0.js?v=1.0" defer></script>
+</body>
+</html>

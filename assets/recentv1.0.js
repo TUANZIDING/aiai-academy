@@ -36,7 +36,7 @@
     </a>`;
   }
 
-  Promise.all([getJSON('data/frontierv1.0.json?v=1.5'), getJSON('data/voicesv1.1.json?v=1.5.0')]).then(([fr, vo]) => {
+  Promise.all([getJSON('data/frontierv1.0.json?v=1.6'), getJSON('data/voicesv1.1.json?v=1.5.0')]).then(([fr, vo]) => {
     const all = [].concat(fromFrontier(fr), fromLessons(window.AIAI_LESSON_ITEMS), fromVoices(vo));
     const seen = new Set();
     const list = all.map((x, i) => Object.assign(x, { i }))

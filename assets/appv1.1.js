@@ -177,7 +177,7 @@
   function renderGear() {
     $('#gearGrid').innerHTML = learn.gear.map(g => `
       <article class="gear-card"><span class="tag">${esc(g.group)}</span>
-        <h3><a href="${esc(g.url)}" target="_blank" rel="noopener">${esc(g.name)} ↗</a></h3>
+        <h3>${/^https?:/.test(g.url) ? `<a href="${esc(g.url)}" target="_blank" rel="noopener">${esc(g.name)} ↗</a>` : `<a href="${esc(g.url)}">${esc(g.name)} →</a>`}</h3>
         <dl><dt>擅长</dt><dd>${esc(g.good)}</dd><dt>医生怎么用</dt><dd>${esc(g.use)}</dd><dt>小心</dt><dd>${esc(g.care)}</dd></dl></article>`).join('');
   }
   function renderLibrary() {
@@ -191,6 +191,6 @@
     $('#libList').innerHTML = learn.library.filter(c => libTopic === 'all' || c.topic === libTopic).map(c =>
       `<a class="lib-item" href="${esc(c.url)}" target="_blank" rel="noopener"><span>${esc(learn.topics[c.topic])}</span><b>${esc(c.title)}</b></a>`).join('');
   }
-  fetch('data/learnv1.0.json?v=2.1').then(r => r.json()).then(d => { learn = d; renderConcepts(); renderGear(); renderLibrary(); if (level) renderGrid(); })
+  fetch('data/learnv1.0.json?v=2.2').then(r => r.json()).then(d => { learn = d; renderConcepts(); renderGear(); renderLibrary(); if (level) renderGrid(); })
     .catch(() => { $('#conceptGrid').innerHTML = '<p class="sub">词典数据加载失败，请刷新页面。</p>'; });
 })();
