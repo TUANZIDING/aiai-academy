@@ -36,7 +36,7 @@
     fab.setAttribute('aria-pressed', String(playing));
     playBtn.textContent = playing ? 'Ⅱ' : '▶';
     playBtn.setAttribute('aria-label', playing ? '暂停' : '播放');
-    if (t) { tEl.textContent = t.zh ? t.zh + ' · ' + t.title : t.title; aEl.textContent = t.artist + ' · ' + t.license; }
+    if (t) { tEl.textContent = t.zh || t.title; aEl.textContent = (t.zh ? t.title + ' · ' : '') + t.artist + ' · ' + t.license; }
     stEl.textContent = failed ? '加载失败 · 点击 ▶ 重试' : loading ? '正在加载…' : playing ? (shuffle ? '正在播放 · 随机漫游' : '正在播放 · 顺序播放') : '点 ▶ 开始，不会自动播放';
     shufBtn.setAttribute('aria-pressed', String(shuffle));
     fab.setAttribute('aria-label', playing ? '音乐室 · 正在播放 ' + (t ? t.title : '') : '打开音乐室');
