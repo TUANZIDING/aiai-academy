@@ -1,0 +1,116 @@
+{
+ "version": "1.0",
+ "note": "所有曲目来自 Kevin MacLeod (incompetech.com)，CC BY 4.0，站内再编码为 96 kbps MP3。",
+ "tracks": [
+  {
+   "id": "gymnopedie-no1",
+   "title": "Gymnopedie No 1",
+   "zh": "萨蒂 · 吉诺佩蒂 第一号",
+   "artist": "Kevin MacLeod",
+   "file": "assets/music/gymnopedie-no1v1.0.mp3",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Gymnopedie%20No%201.mp3",
+   "sourceSite": "https://incompetech.com"
+  },
+  {
+   "id": "meditation-impromptu-01",
+   "title": "Meditation Impromptu 01",
+   "zh": "冥想即兴 · 一",
+   "artist": "Kevin MacLeod",
+   "file": "assets/music/meditation-impromptu-01v1.0.mp3",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Meditation%20Impromptu%2001.mp3",
+   "sourceSite": "https://incompetech.com"
+  },
+  {
+   "id": "peaceful-desolation",
+   "title": "Peaceful Desolation",
+   "zh": "静谧旷野",
+   "artist": "Kevin MacLeod",
+   "file": "assets/music/peaceful-desolationv1.0.mp3",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Peaceful%20Desolation.mp3",
+   "sourceSite": "https://incompetech.com"
+  },
+  {
+   "id": "dreamer",
+   "title": "Dreamer",
+   "zh": "梦想家",
+   "artist": "Kevin MacLeod",
+   "file": "assets/music/dreamerv1.0.mp3",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Dreamer.mp3",
+   "sourceSite": "https://incompetech.com"
+  },
+  {
+   "id": "touching-moments-two",
+   "title": "Touching Moments Two - Higher",
+   "zh": "温柔时刻",
+   "artist": "Kevin MacLeod",
+   "file": "assets/music/touching-moments-twov1.0.mp3",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Touching%20Moments%20Two%20-%20Higher.mp3",
+   "sourceSite": "https://incompetech.com"
+  },
+  {
+   "id": "gymnopedie-no2",
+   "title": "Gymnopedie No 2",
+   "zh": "萨蒂 · 吉诺佩蒂 第二号",
+   "artist": "Kevin MacLeod",
+   "file": "assets/music/gymnopedie-no2v1.0.mp3",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Gymnopedie%20No%202.mp3",
+   "sourceSite": "https://incompetech.com"
+  },
+  {
+   "id": "meditation-impromptu-02",
+   "title": "Meditation Impromptu 02",
+   "zh": "冥想即兴 · 二",
+   "artist": "Kevin MacLeod",
+   "file": "assets/music/meditation-impromptu-02v1.0.mp3",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Meditation%20Impromptu%2002.mp3",
+   "sourceSite": "https://incompetech.com"
+  },
+  {
+   "id": "lasting-hope",
+   "title": "Lasting Hope",
+   "zh": "长久的希望",
+   "artist": "Kevin MacLeod",
+   "file": "assets/music/lasting-hopev1.0.mp3",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Lasting%20Hope.mp3",
+   "sourceSite": "https://incompetech.com"
+  },
+  {
+   "id": "carefree",
+   "title": "Carefree",
+   "zh": "无忧午后",
+   "artist": "Kevin MacLeod",
+   "file": "assets/music/carefreev1.0.mp3",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Carefree.mp3",
+   "sourceSite": "https://incompetech.com"
+  },
+  {
+   "id": "unity-piano",
+   "title": "Unity",
+   "zh": "热血钢琴",
+   "artist": "Kevin MacLeod",
+   "file": "assets/music/unity-pianov1.0.mp3",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Unity.mp3",
+   "sourceSite": "https://incompetech.com"
+  }
+ ]
+}

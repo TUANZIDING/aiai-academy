@@ -1,0 +1,58 @@
+/* aiai 音乐室 v1.0 · 左下角浮动小播放器（右下角留给光标球和"回到顶部"） */
+.mroom{position:fixed;left:18px;bottom:18px;z-index:90;font-size:14px;color:var(--navy,#14213d)}
+html.w-open .mroom{display:none}
+.mr-fab{position:relative;width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,.9);background:var(--turf,#1d5a3a);color:#fff;font:700 1.25rem/1 system-ui,sans-serif;cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 26px rgba(20,33,61,.28);transition:transform .2s,background .2s}
+.mr-fab:hover{transform:translateY(-2px)}
+.mroom.playing .mr-fab{background:var(--orange,#e8641b)}
+.mr-fab .eq{position:absolute;right:-4px;top:-4px;display:none;align-items:flex-end;gap:2px;height:14px;padding:3px 4px;border-radius:8px;background:var(--navy,#14213d);color:var(--gold,#f2b134)}
+.mroom.playing .mr-fab .eq{display:inline-flex}
+.mr-fab .eq i{width:2px;height:4px;background:currentColor;border-radius:1px;animation:mrEq .9s infinite ease-in-out}
+.mr-fab .eq i:nth-child(2){animation-delay:.2s}.mr-fab .eq i:nth-child(3){animation-delay:.4s}
+@keyframes mrEq{0%,100%{height:3px}50%{height:10px}}
+.mroom.open .mr-fab{display:none}
+.mr-panel{width:min(320px,calc(100vw - 36px));box-sizing:border-box;padding:12px 14px 12px;border-radius:18px;background:rgba(255,253,248,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(20,33,61,.12);box-shadow:0 18px 44px rgba(20,33,61,.22)}
+.mr-panel[hidden]{display:none}
+.mr-head{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.mr-k{font-size:.66rem;font-weight:800;letter-spacing:.18em;color:var(--turf,#1d5a3a)}
+.mr-count{font-size:.7rem;color:#7a8290;flex:1}
+.mr-panel button{font:inherit;cursor:pointer}
+.mr-min{width:26px;height:26px;border-radius:50%;border:1px solid rgba(20,33,61,.15);background:#fff;color:var(--navy,#14213d);font-weight:700;line-height:1;padding:0}
+.mr-now{display:flex;align-items:center;gap:10px}
+.mr-play{flex:none;width:42px;height:42px;border-radius:50%;border:0;background:var(--turf,#1d5a3a);color:#fff;font-size:1rem;font-weight:700}
+.mroom.playing .mr-play{background:var(--orange,#e8641b)}
+.mr-info{min-width:0;flex:1}
+.mr-t{display:block;font-weight:800;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mr-a{display:block;font-size:.72rem;color:#7a8290;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mr-st{display:block;font-size:.7rem;color:var(--orange,#e8641b);margin-top:1px}
+.mr-bar{position:relative;height:5px;margin:10px 0 4px;border-radius:3px;background:rgba(20,33,61,.1);cursor:pointer}
+.mr-bar i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:3px;background:linear-gradient(90deg,var(--gold,#f2b134),var(--orange,#e8641b))}
+.mr-ctl{display:flex;align-items:center;gap:6px}
+.mr-ctl>button{height:30px;min-width:30px;padding:0 8px;border-radius:999px;border:1px solid rgba(20,33,61,.14);background:#fff;color:var(--navy,#14213d);font-size:.82rem}
+.mr-shuf[aria-pressed=true]{background:var(--navy,#14213d);color:#fff;border-color:var(--navy,#14213d)}
+.mr-time{font-size:.68rem;color:#7a8290;font-variant-numeric:tabular-nums;margin-left:auto;white-space:nowrap}
+.mr-foot{display:flex;align-items:center;gap:8px;margin-top:8px}
+.mr-volw{display:flex;align-items:center;gap:6px;flex:1;font-size:.8rem;color:#7a8290}
+.mr-vol{flex:1;min-width:0;accent-color:var(--orange,#e8641b);cursor:pointer}
+.mr-listbtn{height:28px;padding:0 10px;border-radius:999px;border:1px solid rgba(20,33,61,.14);background:#fff;color:var(--navy,#14213d);font-size:.78rem}
+.mr-listbtn[aria-expanded=true]{border-color:var(--orange,#e8641b);color:var(--orange,#e8641b)}
+.mr-list{margin-top:10px;border-top:1px dashed rgba(20,33,61,.15);padding-top:8px}
+.mr-list[hidden]{display:none}
+.mr-list p{margin:0 0 6px;font-size:.72rem;font-weight:800;letter-spacing:.12em;color:var(--turf,#1d5a3a)}
+.mr-list ol{list-style:none;margin:0;padding:0;max-height:min(232px,40vh);overflow-y:auto;overscroll-behavior:contain}
+.mr-list li button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:6px 8px;border:0;border-radius:10px;background:transparent;color:inherit}
+.mr-list li button:hover{background:rgba(20,33,61,.05)}
+.mr-list li button[aria-current=true]{background:rgba(232,100,27,.1)}
+.mr-list li button[aria-current=true] .mr-no{color:var(--orange,#e8641b)}
+.mr-no{font:700 .72rem/1 ui-monospace,Menlo,monospace;color:#9aa1ac}
+.mr-lt{min-width:0}.mr-lt b{display:block;font-size:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mr-lt small{display:block;font-size:.68rem;color:#8a919c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mr-panel :focus-visible,.mr-fab:focus-visible{outline:2px solid var(--orange,#e8641b);outline-offset:2px}
+/* 投屏模式：降低存在感 */
+html.projector .mroom:not(.open){opacity:.55}
+html.projector .mroom:hover{opacity:1}
+@media (max-width:520px){.mroom{left:12px;bottom:12px}.mr-fab{width:44px;height:44px}}
+@media (prefers-reduced-motion:reduce){.mr-fab .eq i{animation:none;height:8px}}
+/* 页脚曲目署名 */
+.mr-credits{margin:6px auto 0;max-width:760px;font-size:.78rem}
+.mr-credits summary{cursor:pointer;display:inline}
+.mr-credits ol{margin:8px 0 0;padding-left:1.4em;text-align:left;line-height:1.7}

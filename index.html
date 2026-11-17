@@ -18,17 +18,25 @@
 <link rel="stylesheet" href="assets/micro-hallv1.0.css?v=1.1.0">
 <link rel="stylesheet" href="assets/voices-homev1.0.css?v=1.4.0">
 <link rel="stylesheet" href="assets/home-polishv1.0.css?v=1.0">
+<link rel="stylesheet" href="assets/musicv1.0.css?v=1.0">
 <style>.brand .aiai-mark{height:38px;width:auto;display:block}.w-brand .aiai-mark{height:34px;width:auto;display:block}.w-brand .aiai-sub{display:flex;flex-direction:column;line-height:1.2;font-size:.92rem}.w-brand .aiai-sub small,.brand small{display:block;font-size:.6rem;letter-spacing:.2em;font-weight:500;opacity:.7}</style>
-<style>html.w-open .music-ctl,html.w-open body>.fb-ball,html.w-open body>.fb-trail{display:none}</style>
+<style>html.w-open .mroom,html.w-open body>.fb-ball,html.w-open body>.fb-trail{display:none}</style>
 </head>
 <body>
 <a class="skip" href="#main">跳到主要内容</a>
 <div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-label="aiai 人工智能学院欢迎页"><iframe id="wEnter" src="welcome/" title="aiai 人工智能学院 · 从一个问题出发" style="display:block;width:100%;height:100%;border:0"></iframe></div>
 
-<div class="music-ctl" id="musicCtl" data-music>
-  <audio id="bgm" data-src="assets/music/unity-pianov1.0.mp3" loop preload="none"></audio>
-  <button class="music-fab" data-music-toggle aria-pressed="false" aria-label="背景音乐 Unity · 热血钢琴"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span class="mf-t" data-music-status>播放音乐</span></button>
-  <input class="music-vol" type="range" min="0" max="100" step="1" value="30" aria-label="背景音乐音量">
+<div class="mroom" id="mroom" data-list="data/musicv1.0.json?v=1.0">
+  <audio id="bgm" preload="none"></audio>
+  <button class="mr-fab" type="button" aria-expanded="false" aria-pressed="false" aria-controls="mrPanel" aria-label="打开音乐室" title="aiai 音乐室">♫<span class="eq" aria-hidden="true"><i></i><i></i><i></i></span></button>
+  <section class="mr-panel" id="mrPanel" aria-label="aiai 音乐室" hidden>
+    <div class="mr-head"><span class="mr-k">aiai · MUSIC ROOM</span><span class="mr-count">随机漫游 · 10 首</span><button class="mr-min" type="button" aria-label="收起音乐室" title="收起">−</button></div>
+    <div class="mr-now"><button class="mr-play" type="button" aria-label="播放">▶</button><div class="mr-info"><b class="mr-t">轻音乐</b><span class="mr-a">Kevin MacLeod · CC BY 4.0</span><span class="mr-st" role="status">点 ▶ 开始，不会自动播放</span></div></div>
+    <div class="mr-bar" aria-hidden="true"><i></i></div>
+    <div class="mr-ctl"><button class="mr-prev" type="button" aria-label="上一首">‹‹</button><button class="mr-next" type="button" aria-label="下一首">››</button><button class="mr-shuf" type="button" aria-pressed="true" title="随机漫游">⤮ 随机漫游</button><span class="mr-time">0:00</span></div>
+    <div class="mr-foot"><label class="mr-volw"><span aria-hidden="true">♪</span><input class="mr-vol" type="range" min="0" max="100" step="1" value="30" aria-label="音量"></label><button class="mr-listbtn" type="button" aria-expanded="false" aria-controls="mrList">☷ 歌单</button></div>
+    <div class="mr-list" id="mrList" hidden><p>选择此刻的旋律</p><ol></ol></div>
+  </section>
 </div>
 
 <header class="nav">
@@ -467,11 +475,11 @@
   </div>
   <p>aiai 人工智能学院 · Learn AI. Verify Everything. Build for Care.</p>
   <p class="muted" id="updated"></p>
-  <p class="muted">背景音乐：“Unity” Kevin MacLeod (<a href="https://incompetech.com" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+  <details class="muted mr-credits"><summary>音乐室曲目署名：10 首，均为 Kevin MacLeod (incompetech.com) · CC BY 4.0（点开查看）</summary><ol><li>“Gymnopedie No 1” Kevin MacLeod (<a href="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Gymnopedie%20No%201.mp3" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · 站内转码为 96 kbps</li><li>“Meditation Impromptu 01” Kevin MacLeod (<a href="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Meditation%20Impromptu%2001.mp3" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · 站内转码为 96 kbps</li><li>“Peaceful Desolation” Kevin MacLeod (<a href="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Peaceful%20Desolation.mp3" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · 站内转码为 96 kbps</li><li>“Dreamer” Kevin MacLeod (<a href="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Dreamer.mp3" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · 站内转码为 96 kbps</li><li>“Touching Moments Two - Higher” Kevin MacLeod (<a href="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Touching%20Moments%20Two%20-%20Higher.mp3" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · 站内转码为 96 kbps</li><li>“Gymnopedie No 2” Kevin MacLeod (<a href="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Gymnopedie%20No%202.mp3" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · 站内转码为 96 kbps</li><li>“Meditation Impromptu 02” Kevin MacLeod (<a href="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Meditation%20Impromptu%2002.mp3" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · 站内转码为 96 kbps</li><li>“Lasting Hope” Kevin MacLeod (<a href="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Lasting%20Hope.mp3" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · 站内转码为 96 kbps</li><li>“Carefree” Kevin MacLeod (<a href="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Carefree.mp3" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · 站内转码为 96 kbps</li><li>“Unity” Kevin MacLeod (<a href="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Unity.mp3" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · 站内转码为 96 kbps</li></ol></details>
   <p class="ft-top"><a href="#top">回到顶部 ↑</a></p>
 </footer>
 <script src="assets/appv1.1.js?v=1.0"></script>
-<script src="assets/welcomev1.0.js?v=20261104-home"></script>
+<script src="assets/welcomev1.1.js?v=1.1"></script>
 <script src="assets/campv1.1.js?v=1.0" defer></script>
 <script src="assets/cursorv1.0.js?v=2.0.1" defer></script>
 <script src="assets/home-v3v1.0.js?v=3.0.1" defer></script>
@@ -483,6 +491,7 @@
 <script src="assets/voices-homev1.0.js?v=1.5.0" defer></script>
 <script src="assets/recentv1.0.js?v=1.0" defer></script>
 <script src="assets/shelfv1.2.js?v=1.2" defer></script>
+<script src="assets/musicv1.0.js?v=1.0" defer></script>
 <script>document.addEventListener("click",e=>{const d=document.querySelector(".nav-more[open]");if(d&&(!d.contains(e.target)||e.target.closest(".menu a")))d.removeAttribute("open")});</script>
 </body>
 </html>
