@@ -1,4 +1,4 @@
-/* 医学科研大模型选型榜 v1.0 —— 图表、筛选、用途卡片、3D 头图懒加载。图表数值全部取自证据文件（2026-11-16 检索）。 */
+/* 医学科研大模型选型榜 v1.0 —— 图表、筛选、用途卡片、3D 头图懒加载。图表数值取自 2026-11-16 证据文件，2026-11-17 对照一手来源复核。 */
 (function () {
   'use strict';
   var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -67,11 +67,11 @@
   }
 
   bars($('chHealth'), [
-    { label: 'Sonnet 5.5', v: 'anthropic', vals: [{ x: 69.2 }], note: '原始 77.1%' },
-    { label: 'Fable 5.2', v: 'anthropic', star: 1, vals: [{ x: 67.7 }], note: '原始 71.1%' },
-    { label: 'Opus 5.5', v: 'anthropic', vals: [{ x: 65.6 }], note: '原始 77.1%' },
-    { label: 'GPT-6.1 Sol', v: 'openai', vals: [{ x: 64.2 }] },
-    { label: 'GPT-6 Astra', v: 'openai', star: 1, vals: [{ x: 63.4, tag: 'OpenAI 自报' }, { x: 70.3, tag: 'Anthropic 运行', conf: 1 }, { x: 66.0, tag: 'Fable 5.2 系统卡', conf: 1 }], note: '冲突：三个值并列' },
+    { label: 'Fable 5.2', v: 'anthropic', star: 1, vals: [{ x: 67.7, tag: 'AA' }], note: 'AA 独立运行居首' },
+    { label: 'GPT-6 Astra', v: 'openai', star: 1, vals: [{ x: 66.0, tag: 'AA' }, { x: 70.3, tag: 'Anthropic 运行', conf: 1 }, { x: 64.7, tag: 'OpenAI 系统卡', conf: 1 }], note: '三个值并列' },
+    { label: 'GPT-6.1 Sol', v: 'openai', vals: [{ x: 65.1, tag: 'AA' }, { x: 64.2, tag: 'OpenAI', conf: 1 }] },
+    { label: 'Sonnet 5.5', v: 'anthropic', vals: [{ x: 63.0, tag: 'AA' }, { x: 69.2, tag: 'Anthropic 自测', conf: 1 }] },
+    { label: 'Opus 5.5', v: 'anthropic', vals: [{ x: 59.9, tag: 'AA' }, { x: 65.6, tag: 'Anthropic 自测', conf: 1 }] },
     { label: 'GPT-6.1 Terra', v: 'openai', vals: [{ x: 62.7 }] },
     { label: 'GPT-5.6 Sol', v: 'openai', vals: [{ x: 60.5 }] },
     { label: 'Fable 5.1', v: 'anthropic', vals: [{ x: 57.8 }, { x: 62.1, tag: 'Sonnet 5.5 系统卡', conf: 1 }], note: '冲突：两个值并列' },
@@ -86,9 +86,9 @@
   ], { max: 100, fmt: function (x) { return x.toFixed(1) + '%'; } });
 
   bars($('chHal'), [
-    { label: 'Gemini 4 Argon', v: 'google', vals: [{ x: 4.3 }], note: '全场最低' },
-    { label: 'Gemini 4 Carbon', v: 'google', star: 1, vals: [{ x: 11.4 }], note: '正确率 58%' },
-    { label: 'GPT-6 Astra', v: 'openai', star: 1, vals: [{ x: 49.8 }], note: '正确率 63%' },
+    { label: 'Gemini 4 Argon', v: 'google', vals: [{ x: 4.3 }], note: '最低档（high）' },
+    { label: 'Gemini 4 Carbon', v: 'google', star: 1, vals: [{ x: 11.4 }], note: 'high 档；正确率 58%' },
+    { label: 'GPT-6 Astra', v: 'openai', star: 1, vals: [{ x: 49.8 }], note: '正确率 62%' },
     { label: 'Opus 5.5', v: 'anthropic', vals: [{ x: 50.3 }] },
     { label: 'Fable 5.2', v: 'anthropic', star: 1, vals: [{ x: 59.3 }], note: '正确率 79%' }
   ], { max: 100, fmt: function (x) { return x.toFixed(1) + '%'; } });
@@ -97,15 +97,15 @@
   (function () {
     var el = $('chAA'); if (!el) return;
     var rows = [
-      { label: 'Fable 5.2', v: 'anthropic', star: 1, x: 65, note: '$26.54/任务 · 41.8 分钟/任务' },
-      { label: 'Gemini 4 Carbon', v: 'google', star: 1, x: 60, note: '$5.48/任务（促销价计，按标价 $7.76）· 33.0 分钟' },
+      { label: 'Fable 5.2', v: 'anthropic', star: 1, x: 65, note: '$26.54/任务 · 约 41 分钟' },
+      { label: 'Gemini 4 Carbon', v: 'google', star: 1, x: 60, note: '$5.48/任务（促销价计）· 约 32 分钟' },
       { label: 'Opus 5.5', v: 'anthropic', x: 59, note: '$10.04/任务' },
-      { label: 'GPT-6 Astra', v: 'openai', star: 1, x: 57, note: '$6.24/任务 · 20.8 分钟（最快）' },
-      { label: 'Sonnet 5.5', v: 'anthropic', x: 56, note: '#3/216，2026-10 初' },
+      { label: 'GPT-6 Astra', v: 'openai', star: 1, x: 57, note: '$6.24/任务 · 约 20 分钟' },
+      { label: 'Sonnet 5.5', v: 'anthropic', x: 55, note: '$10.02/任务' },
       { label: 'GPT-6.1 Sol', v: 'openai', x: 55, note: '$1.27/任务' },
-      { label: 'Gemini 4 Hydrogen', v: 'google', x: 51, note: '$1.87/任务 · 8.3 分钟/任务' },
-      { label: 'Gemini 4 Argon', v: 'google', x: 50, note: '$1.99/任务' },
-      { label: 'GPT-6.1 Terra', v: 'openai', x: 48, note: 'AA Index v5.0（发布日快照）' }
+      { label: 'Gemini 4 Hydrogen', v: 'google', x: 51, note: '$1.87/任务 · 约 8 分钟' },
+      { label: 'GPT-6.1 Terra', v: 'openai', x: 51, note: '$0.96/任务' },
+      { label: 'Gemini 4 Argon', v: 'google', x: 50, note: '$4.97/任务' }
     ];
     var start = [3, 5, 8, 0, 2, 4, 1, 6, 7]; // 起跑顺序：OpenAI → Anthropic → Google
     var RH = 44, max = 70;
@@ -137,16 +137,17 @@
       { n: 'Gemini 4 Carbon', v: 'google', star: 1, aa: 60, out: 10, task: 5.48 },
       { n: 'Opus 5.5', v: 'anthropic', aa: 59, out: 20, task: 10.04 },
       { n: 'GPT-6 Astra', v: 'openai', star: 1, aa: 57, out: 50, task: 6.24 },
-      { n: 'Sonnet 5.5', v: 'anthropic', aa: 56, out: 10, task: null, win: 1 },
+      { n: 'Sonnet 5.5', v: 'anthropic', aa: 55, out: 10, task: 10.02, win: 1 },
       { n: 'GPT-6.1 Sol', v: 'openai', aa: 55, out: 10, task: 1.27, win: 1 },
       { n: 'Gemini 4 Hydrogen', v: 'google', aa: 51, out: 7.5, task: 1.87, win: 1 },
-      { n: 'Gemini 4 Argon', v: 'google', aa: 50, out: 10, task: 1.99 },
-      { n: 'GPT-6.1 Terra', v: 'openai', aa: 48, out: 5, task: null }
+      { n: 'Gemini 4 Argon', v: 'google', aa: 50, out: 10, task: 4.97 },
+      { n: 'GPT-6.1 Terra', v: 'openai', aa: 51, out: 5, task: 0.96 }
     ];
     // 标签朝向（避免重叠）：[输出价模式, 每任务成本模式]，1=右，-1=左
-    var SIDE = { 'Sonnet 5.5': [1, 1], 'GPT-6.1 Sol': [-1, 1], 'Gemini 4 Carbon': [1, 1], 'Gemini 4 Argon': [1, 1], 'Gemini 4 Hydrogen': [-1, -1], 'Fable 5.2': [-1, -1], 'GPT-6 Astra': [-1, 1], 'Opus 5.5': [1, 1], 'GPT-6.1 Terra': [-1, 1] };
+    var SIDE = { 'Sonnet 5.5': [1, 1], 'GPT-6.1 Sol': [-1, 1], 'Gemini 4 Carbon': [1, -1], 'Gemini 4 Argon': [1, 1], 'Gemini 4 Hydrogen': [1, 1], 'Fable 5.2': [-1, -1], 'GPT-6 Astra': [-1, 1], 'Opus 5.5': [1, 1], 'GPT-6.1 Terra': [1, 1] };
+    var DY = { 'Gemini 4 Hydrogen': [-14, 0], 'GPT-6.1 Terra': [16, 16] };
     var W = 760, H = 340, L = 46, R = 24, T = 16, B = 44;
-    var AX = { out: { lo: 4, hi: 60, ticks: [5, 10, 20, 50], lab: '输出标价 $/1M（对数）' }, task: { lo: 1, hi: 32, ticks: [1, 2, 5, 10, 20], lab: 'AA 每任务成本 $（对数）' } };
+    var AX = { out: { lo: 4, hi: 60, ticks: [5, 10, 20, 50], lab: '输出标价 $/1M（对数）' }, task: { lo: 0.8, hi: 32, ticks: [1, 2, 5, 10, 20], lab: 'AA 每任务成本 $（对数）' } };
     var ylo = 45, yhi = 67;
     function X(mode, x) { var a = AX[mode]; return L + (Math.log(x) - Math.log(a.lo)) / (Math.log(a.hi) - Math.log(a.lo)) * (W - L - R); }
     function Y(a) { return T + (1 - (a - ylo) / (yhi - ylo)) * (H - T - B); }
@@ -172,11 +173,11 @@
         if (x == null) { gi.classList.add('hide'); miss.push(p.n); return; }
         gi.classList.remove('hide');
         var side = (SIDE[p.n] || [1, 1])[mode === 'out' ? 0 : 1];
-        t.setAttribute('x', side * (p.star ? 13 : 11)); t.setAttribute('text-anchor', side > 0 ? 'start' : 'end');
+        t.setAttribute('x', side * (p.star ? 13 : 11)); t.setAttribute('text-anchor', side > 0 ? 'start' : 'end'); t.setAttribute('y', 4 + (DY[p.n] || [0, 0])[mode === 'out' ? 0 : 1]);
         gi.style.transform = 'translate(' + X(mode, x).toFixed(1) + 'px,' + Y(p.aa).toFixed(1) + 'px)';
         if (!first) gi.style.opacity = '';
       });
-      $('scNa').textContent = mode === 'task' ? '每任务成本未找到：' + miss.join('、') + '（不入图）。Carbon 的 $5.48 为促销价计，按标价为 $7.76。' : 'Carbon / Argon 的 $10 为促销输出价（至 2026-11-30；12-01 起 $20）。只含证据文件 AA Index 图中的 9 款。';
+      $('scNa').textContent = mode === 'task' ? (miss.length ? '每任务成本未找到：' + miss.join('、') + '。' : '') + 'Carbon / Argon 按促销价计（标价下约翻倍）。' : 'Carbon / Argon 的 $10 为促销输出价，12-01 起 $20。';
     }
     place(true);
     function reveal() { g.forEach(function (gi, i) { setTimeout(function () { if (!gi.classList.contains('hide')) gi.style.opacity = ''; }, RM ? 0 : i * 90); }); }
