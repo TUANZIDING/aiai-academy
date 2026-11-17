@@ -23,6 +23,7 @@
 .vtag{position:absolute;left:10px;top:10px;background:var(--orange);color:#fff;font-size:.7rem;font-weight:800;padding:3px 9px;border-radius:999px}
 .vcard b{font-size:1rem;margin-top:6px;line-height:1.35}
 .vcard small{color:var(--muted);font-size:.85rem;line-height:1.4}
+.vcard .vdate{color:var(--muted);font-size:.72rem;font-variant-numeric:tabular-nums;letter-spacing:.02em;opacity:.85}
 .vcard:focus-visible .vthumb{outline:3px solid var(--orange);outline-offset:3px}
 #vplayer{border:0;padding:0;background:transparent;width:min(1100px,94vw);max-height:94vh;overflow:visible}
 #vplayer.vert{width:min(420px,92vw)}

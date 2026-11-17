@@ -3,8 +3,11 @@
 var root=document.getElementById('reels'); if(!root) return;
 var dlg=document.getElementById('vplayer'), vid=dlg.querySelector('video'), ttl=dlg.querySelector('.vp-title'), sub=dlg.querySelector('.vp-sub'), hls=null, BASE='media/v/';
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-fetch('data/videosv1.0.json?v=1.1').then(function(r){return r.json()}).then(function(d){
+fetch('data/videosv1.0.json?v=1.2').then(function(r){return r.json()}).then(function(d){
   BASE=d.base||BASE; var n=0;
+  var okD=function(x){return typeof x==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(x)};
+  /* 每行按 date 倒序（新的在前），同日期保持原顺序；无日期的排最后 */
+  d.rows.forEach(function(row){row.items=row.items.map(function(it,k){return {it:it,k:k}}).sort(function(a,b){var x=okD(a.it.date)?a.it.date:'',y=okD(b.it.date)?b.it.date:'';return x<y?1:x>y?-1:a.k-b.k}).map(function(o){return o.it})});
   d.rows.forEach(function(row,i){
     n+=row.items.length;
     var sec=document.createElement('div'); sec.className='reel rv'; sec.id='reel-'+row.id;
@@ -13,7 +16,7 @@ fetch('data/videosv1.0.json?v=1.1').then(function(r){return r.json()}).then(func
     var tr=sec.querySelector('.reel-track');
     row.items.forEach(function(it){
       var b=document.createElement('button'); b.className='vcard'+(it.v?' vert':''); b.type='button';
-      b.innerHTML='<span class="vthumb"><img src="'+BASE+it.id+'/poster.webp" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span><span class="vdur">'+esc(it.dur)+'</span>'+(it.tag?'<span class="vtag">'+esc(it.tag)+'</span>':'')+'</span><b>'+esc(it.title)+'</b><small>'+esc(it.sub)+'</small>';
+      b.innerHTML='<span class="vthumb"><img src="'+BASE+it.id+'/poster.webp" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span><span class="vdur">'+esc(it.dur)+'</span>'+(it.tag?'<span class="vtag">'+esc(it.tag)+'</span>':'')+'</span><b>'+esc(it.title)+'</b><small>'+esc(it.sub)+'</small>'+(okD(it.date)?'<time class="vdate" datetime="'+esc(it.date)+'">'+esc(it.date)+'</time>':'');
       b.onclick=function(){open(it)};
       tr.appendChild(b);
     });
@@ -25,7 +28,8 @@ fetch('data/videosv1.0.json?v=1.1').then(function(r){return r.json()}).then(func
     if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){sec.classList.add('in');io.disconnect()}})});io.observe(sec)} else sec.classList.add('in');
   });
   var c=document.querySelector('[data-n="videos"]'); if(c) c.firstChild.nodeValue=n;
-  var q=location.hash.match(/^#v-(.+)$/); if(q) d.rows.forEach(function(r){r.items.forEach(function(it){if(it.id===q[1]) open(it)})});
+  function deep(){var q=location.hash.match(/^#v-(.+)$/); if(q) d.rows.forEach(function(r){r.items.forEach(function(it){if(it.id===q[1]&&!dlg.open) open(it)})})}
+  deep(); window.addEventListener('hashchange',deep); /* 站内链接（如 最近更新）点 #v-<id> 也能直接打开 */
 });
 function open(it){
   var src=BASE+it.id+'/index.m3u8';

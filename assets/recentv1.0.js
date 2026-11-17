@@ -1,6 +1,6 @@
 /* 最近更新 v1.0：从已有数据中只取带真实日期的条目，按日期倒序取前 6 条，横向展示。
    来源：data/frontierv1.0.json（date）、课件馆 ITEMS（lessons-catalogv1.2.js 暴露的 window.AIAI_LESSON_ITEMS，date）、
-   data/voicesv1.1.json（已发布期次的 verifiedAt 核查日）。没有日期的条目一律不收。 */
+   data/voicesv1.1.json（已发布期次的 verifiedAt 核查日）、data/videosv1.0.json（放映厅最新一部，date）。没有日期的条目一律不收。 */
 (() => {
   const root = document.getElementById('recentRail');
   if (!root) return;
@@ -26,6 +26,14 @@
     }));
   }
 
+  function fromVideos(d) {
+    const all = [];
+    ((d && d.rows) || []).forEach(r => (r.items || []).forEach(i => { if (okDate(i.date)) all.push(i); }));
+    if (!all.length) return [];
+    const top = all.reduce((a, b) => (b.date > a.date ? b : a)); // 只收最新一部，同日期取数据中靠前者
+    return [{ mod: '放映厅', date: top.date, title: top.title, sub: top.sub || '', href: '#v-' + top.id, go: '去看视频', ext: false }];
+  }
+
   function card(it) {
     const tgt = it.ext ? ' target="_blank" rel="noopener"' : '';
     return `<a class="rc-card" href="${esc(it.href)}"${tgt}>
@@ -36,8 +44,8 @@
     </a>`;
   }
 
-  Promise.all([getJSON('data/frontierv1.0.json?v=1.6'), getJSON('data/voicesv1.1.json?v=1.5.0')]).then(([fr, vo]) => {
-    const all = [].concat(fromFrontier(fr), fromLessons(window.AIAI_LESSON_ITEMS), fromVoices(vo));
+  Promise.all([getJSON('data/frontierv1.0.json?v=1.6'), getJSON('data/voicesv1.1.json?v=1.5.0'), getJSON('data/videosv1.0.json?v=1.2')]).then(([fr, vo, vi]) => {
+    const all = [].concat(fromVideos(vi), fromFrontier(fr), fromLessons(window.AIAI_LESSON_ITEMS), fromVoices(vo));
     const seen = new Set();
     const list = all.map((x, i) => Object.assign(x, { i }))
       .filter(x => (seen.has(x.href) ? false : seen.add(x.href)))
